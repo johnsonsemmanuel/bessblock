@@ -1,0 +1,214 @@
+/* Shared kerb subpage styles */
+.kerb-sub-benefits {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-4);
+}
+
+.kerb-sub-benefit {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-3);
+  padding: var(--spacing-4) var(--spacing-5);
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast), transform var(--transition-fast);
+}
+
+.kerb-sub-benefit:hover {
+  border-color: var(--color-bessblock-blue);
+  box-shadow: 0 4px 20px rgba(64, 64, 136, 0.08);
+  transform: translateY(-2px);
+}
+
+.kerb-sub-benefit-dot {
+  width: 8px;
+  height: 8px;
+  min-width: 8px;
+  border-radius: 50%;
+  background: var(--color-bessblock-blue);
+  margin-top: 7px;
+}
+
+.kerb-sub-benefit span {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.kerb-sub-specs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-1);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: var(--spacing-6);
+}
+
+.kerb-sub-spec {
+  padding: var(--spacing-4) var(--spacing-5);
+  background: var(--bg-card);
+  border-bottom: 1px solid var(--color-grey-100);
+}
+
+.kerb-sub-spec:nth-last-child(-n+2) {
+  border-bottom: none;
+}
+
+.kerb-sub-spec-label {
+  display: block;
+  font-size: var(--text-xs);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-bessblock-blue);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: var(--spacing-1);
+}
+
+.kerb-sub-spec-value {
+  font-size: var(--text-sm);
+  color: var(--text);
+  line-height: 1.5;
+}
+
+.kerb-sub-tech {
+  max-width: 720px;
+}
+
+.kerb-sub-tech p {
+  font-size: var(--text-base);
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin-bottom: var(--spacing-3);
+}
+
+.kerb-sub-tech p:last-child {
+  margin-bottom: 0;
+}
+
+.kerb-sub-apps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-3);
+}
+
+.kerb-sub-app {
+  padding: var(--spacing-4) var(--spacing-5);
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  font-size: var(--text-sm);
+  color: var(--text);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast), transform var(--transition-fast);
+}
+
+.kerb-sub-app:hover {
+  border-color: var(--color-bessblock-blue);
+  box-shadow: 0 4px 20px rgba(64, 64, 136, 0.08);
+  transform: translateY(-2px);
+}
+
+.kerb-sub-instruction {
+  padding: var(--spacing-6);
+  background: var(--bg-section);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+
+.kerb-sub-instruction p {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: var(--spacing-2);
+  padding-left: var(--spacing-5);
+  position: relative;
+}
+
+.kerb-sub-instruction p::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--color-bessblock-blue);
+}
+
+.kerb-sub-instruction p:last-child {
+  margin-bottom: 0;
+}
+
+.kerb-sub-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-4);
+}
+
+.kerb-sub-gallery-item {
+  aspect-ratio: 4 / 3;
+  border-radius: 8px;
+  background: var(--bg-section);
+  border: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-2);
+  color: var(--color-grey-400);
+  font-size: var(--text-xs);
+  transition: border-color var(--transition-fast);
+}
+
+.kerb-sub-gallery-item:hover {
+  border-color: var(--color-bessblock-blue);
+}
+
+.kerb-sub-gallery-item svg {
+  opacity: 0.3;
+}
+
+.kerb-sub-gallery-featured {
+  grid-column: 1 / -1;
+  aspect-ratio: 16 / 6;
+}
+
+.kerb-sub-related {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-4);
+}
+
+@media (max-width: 1024px) {
+  .kerb-sub-benefits {
+    grid-template-columns: 1fr;
+  }
+
+  .kerb-sub-apps {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .kerb-sub-related {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .kerb-sub-specs {
+    grid-template-columns: 1fr;
+  }
+
+  .kerb-sub-apps {
+    grid-template-columns: 1fr;
+  }
+
+  .kerb-sub-gallery {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .kerb-sub-related {
+    grid-template-columns: 1fr;
+  }
+}

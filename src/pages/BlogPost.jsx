@@ -1,0 +1,76 @@
+import { useParams, Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
+import blogPosts from '../data/blog';
+import PageHero from '../components/PageHero';
+import ScrollReveal from '../components/ScrollReveal';
+import './Blog.css';
+
+export default function BlogPost() {
+  const { slug } = useParams();
+  const post = blogPosts.find(p => p.slug === slug);
+
+  if (!post) {
+    return (
+      <div className="page">
+        <PageHero title="Post Not Found" description="The article you're looking for doesn't exist." bgImage="/images/hero/paving-hero.jpg" />
+        <section className="section">
+          <div className="container" style={{ textAlign: 'center' }}>
+            <Link to="/insights/blog" className="blog-card-link" style={{ fontSize: 'var(--text-base)' }}>
+              &larr; Back to Blog
+            </Link>
+          </div>
+        </section>
+      </div>
+    );
+  }
+
+  return (
+    <div className="page">
+      <PageHero title="Blog" description={post.title} bgImage="/images/hero/paving-hero.jpg" />
+
+      <section className="section">
+        <div className="container blog-post">
+          <Link to="/insights/blog" className="blog-post-back">
+            &larr; Back to Blog
+          </Link>
+
+          <motion.article
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4 }}
+          >
+            <img
+              src={post.image}
+              alt={post.imageAlt}
+              className="blog-post-image"
+            />
+
+            <h1 className="blog-post-title">{post.title}</h1>
+
+            <div className="blog-post-meta">
+              <span>{post.date}</span>
+              <span className="blog-card-cat">{post.category}</span>
+              <span>By {post.author}</span>
+            </div>
+
+            {post.sections.map((section, i) => (
+              <ScrollReveal key={i}>
+                <div className="blog-post-section">
+                  {section.heading && <h2>{section.heading}</h2>}
+                  {section.body && <p>{section.body}</p>}
+                  {section.subs && section.subs.length > 0 && (
+                    <ul>
+                      {section.subs.map((sub, j) => (
+                        <li key={j}>{sub}</li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
+              </ScrollReveal>
+            ))}
+          </motion.article>
+        </div>
+      </section>
+    </div>
+  );
+}

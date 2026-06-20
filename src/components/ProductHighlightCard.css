@@ -1,0 +1,119 @@
+.highlight-card-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.highlight-card {
+  position: relative;
+  height: 350px;
+  width: 100%;
+  max-width: 350px;
+  border-radius: 16px;
+  background: var(--card);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  cursor: pointer;
+}
+
+.highlight-card:hover {
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.12);
+  transform: translateY(-4px);
+}
+
+.highlight-card-inner {
+  position: absolute;
+  inset: 16px;
+  border-radius: 12px;
+  background: var(--color-grey-50);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.02);
+  transform: translateZ(20px);
+  transform-style: preserve-3d;
+  overflow: hidden;
+}
+
+.highlight-card-grid {
+  position: absolute;
+  inset: 0;
+  background-image: none;
+  mask-image: none;
+  -webkit-mask-image: none;
+}
+
+.highlight-card-glow {
+  pointer-events: none;
+  position: absolute;
+  inset: -1px;
+  border-radius: 12px;
+  opacity: 0;
+}
+
+.highlight-card-content {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  padding: 24px;
+}
+
+.highlight-card-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--card-foreground);
+}
+
+.highlight-card-category {
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-medium);
+}
+
+.highlight-card-body {
+  color: var(--card-foreground);
+}
+
+.highlight-card-title {
+  font-size: var(--text-3xl);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.highlight-card-desc {
+  margin-top: 8px;
+  max-width: 60%;
+  font-size: var(--text-xs);
+  color: var(--muted-foreground);
+  line-height: 1.6;
+}
+
+.highlight-card-image {
+  position: absolute;
+  right: -48px;
+  bottom: -48px;
+  height: 224px;
+  width: 224px;
+  object-fit: contain;
+  transform: translateZ(50px);
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .highlight-card {
+    width: 100%;
+    height: 320px;
+  }
+
+  .highlight-card-desc {
+    max-width: 70%;
+  }
+
+  .highlight-card-image {
+    right: -32px;
+    bottom: -32px;
+    height: 180px;
+    width: 180px;
+  }
+}

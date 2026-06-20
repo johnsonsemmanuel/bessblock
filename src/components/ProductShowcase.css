@@ -1,0 +1,191 @@
+.ps-container {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  min-height: 420px;
+}
+
+.ps-track {
+  display: flex;
+  width: 100%;
+  height: 420px;
+  align-items: stretch;
+  overflow: hidden;
+  position: relative;
+}
+
+.ps-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow: hidden;
+  cursor: pointer;
+  transition: flex 700ms ease-in-out, box-shadow 700ms ease-in-out, z-index 0s;
+  border: 2px solid #292929;
+  min-height: 100px;
+}
+
+.ps-card.ps-card-active {
+  border-color: #ffffff;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.ps-card-bg {
+  position: absolute;
+  inset: 0;
+  transition: background-color 700ms ease-in-out;
+}
+
+.ps-pattern {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  mix-blend-mode: overlay;
+  opacity: 0.15;
+}
+
+.ps-pattern-dots {
+  background: transparent;
+}
+
+.ps-pattern-lines {
+  background: transparent;
+}
+
+.ps-pattern-grid {
+  background: transparent;
+}
+
+.ps-pattern-cross {
+  background: transparent;
+}
+
+.ps-pattern-stripes {
+  background: transparent;
+}
+
+.ps-card-shadow {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 120px;
+  pointer-events: none;
+  transition: bottom 700ms ease-in-out, box-shadow 700ms ease-in-out;
+}
+
+.ps-label {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 20px;
+  display: flex;
+  align-items: center;
+  height: 48px;
+  padding: 0 16px;
+  gap: 12px;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.ps-icon {
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(32, 32, 32, 0.85);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.18);
+  border: 2px solid #444;
+  flex-shrink: 0;
+}
+
+.ps-icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.ps-info {
+  color: #ffffff;
+  white-space: nowrap;
+  position: relative;
+  overflow: hidden;
+}
+
+.ps-title {
+  font-weight: 700;
+  font-size: 1.125rem;
+  transition: opacity 700ms ease-in-out, transform 700ms ease-in-out;
+}
+
+.ps-desc {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.6);
+  transition: opacity 700ms ease-in-out, transform 700ms ease-in-out;
+}
+
+.ps-actions {
+  position: absolute;
+  bottom: 80px;
+  left: 16px;
+  z-index: 2;
+}
+
+.ps-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 20px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--color-grey-900);
+  background: var(--color-bessblock-yellow);
+  border-radius: 6px;
+  transition: background 200ms ease;
+}
+
+.ps-btn:hover {
+  background: var(--color-bessblock-yellow-dark);
+}
+
+@media (max-width: 768px) {
+  .ps-track {
+    height: 360px;
+  }
+
+  .ps-desc {
+    font-size: 0.75rem;
+  }
+
+  .ps-label {
+    bottom: 12px;
+    padding: 0 8px;
+    gap: 8px;
+  }
+
+  .ps-icon {
+    width: 36px;
+    height: 36px;
+    min-width: 36px;
+  }
+
+  .ps-icon svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .ps-title {
+    font-size: 0.875rem;
+  }
+
+  .ps-actions {
+    bottom: 64px;
+    left: 8px;
+  }
+
+  .ps-btn {
+    padding: 6px 14px;
+    font-size: 0.75rem;
+  }
+}

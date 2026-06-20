@@ -1,0 +1,120 @@
+.abtn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: inherit;
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: 0.02em;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  overflow: hidden;
+  border: none;
+  min-height: 48px;
+  transition: transform 150ms ease;
+}
+
+.abtn:active {
+  transform: scale(0.96);
+}
+
+.abtn-text {
+  transition: opacity 500ms ease;
+}
+
+.abtn-icon {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  bottom: 5px;
+  border-radius: 5px;
+  z-index: 10;
+  display: grid;
+  place-items: center;
+  width: 34px;
+  transition: width 500ms ease, background 500ms ease;
+}
+
+.abtn:active .abtn-icon {
+  transform: scale(0.95);
+}
+
+/* sizes */
+.abtn-sm {
+  padding: 10px 20px;
+  font-size: 0.8125rem;
+}
+.abtn-sm .abtn-icon { width: 28px; }
+.abtn-sm:hover .abtn-icon { width: calc(100% - 10px); }
+
+.abtn-md {
+  padding: 12px 28px;
+  font-size: 0.9375rem;
+}
+.abtn-md .abtn-icon { width: 34px; }
+.abtn-md:hover .abtn-icon { width: calc(100% - 10px); }
+
+.abtn-lg {
+  padding: 14px 36px;
+  font-size: 1.0625rem;
+}
+.abtn-lg .abtn-icon { width: 38px; }
+.abtn-lg:hover .abtn-icon { width: calc(100% - 10px); }
+
+/* variants */
+.abtn-primary {
+  background: var(--color-bessblock-blue);
+  color: var(--hero-text);
+}
+.abtn-primary:hover {
+  background: var(--color-bessblock-blue-dark);
+}
+.abtn-primary .abtn-icon {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.abtn-yellow {
+  background: var(--color-bessblock-yellow);
+  color: var(--color-grey-900);
+}
+.abtn-yellow:hover {
+  background: var(--color-bessblock-yellow-dark);
+}
+.abtn-yellow .abtn-icon {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.abtn-outline {
+  border: 1px solid var(--color-grey-500);
+  color: var(--hero-text);
+  background: transparent;
+}
+.abtn-outline:hover {
+  background: var(--color-white);
+  color: var(--color-grey-900);
+  border-color: var(--color-white);
+}
+.abtn-outline .abtn-icon {
+  background: rgba(255, 255, 255, 0.12);
+}
+.abtn-outline:hover .abtn-text {
+  opacity: 0;
+}
+
+.abtn-outline-dark {
+  border: 1px solid var(--border);
+  color: var(--text);
+  background: transparent;
+}
+.abtn-outline-dark:hover {
+  background: var(--bg);
+  color: var(--color-bessblock-blue);
+  border-color: var(--color-bessblock-blue);
+}
+.abtn-outline-dark .abtn-icon {
+  background: rgba(64, 64, 136, 0.08);
+}
+.abtn-outline-dark:hover .abtn-text {
+  opacity: 0;
+}

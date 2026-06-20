@@ -1,0 +1,71 @@
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 6px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--color-grey-600);
+  transition: color var(--transition-fast), background var(--transition-fast);
+  margin-left: var(--spacing-1);
+  flex-shrink: 0;
+}
+
+.theme-toggle:hover {
+  color: var(--color-bessblock-blue);
+  background: rgba(64, 64, 136, 0.06);
+}
+
+.theme-toggle-icon {
+  position: absolute;
+  transition: opacity var(--transition-base), transform var(--transition-base);
+}
+
+.theme-toggle-sun {
+  opacity: 1;
+  transform: rotate(0deg) scale(1);
+}
+
+.theme-toggle-moon {
+  opacity: 0;
+  transform: rotate(90deg) scale(0);
+}
+
+[data-theme='dark'] .theme-toggle-sun {
+  opacity: 1;
+  transform: rotate(0deg) scale(1);
+}
+
+[data-theme='dark'] .theme-toggle-moon {
+  opacity: 0;
+  transform: rotate(90deg) scale(0);
+}
+
+[data-theme='light'] .theme-toggle-sun {
+  opacity: 1;
+  transform: rotate(0deg) scale(1);
+}
+
+[data-theme='light'] .theme-toggle-moon {
+  opacity: 0;
+  transform: rotate(90deg) scale(0);
+}
+
+/* Show moon in dark mode by overriding inline */
+.theme-toggle .theme-toggle-moon {
+  opacity: 0;
+  transform: rotate(90deg) scale(0);
+}
+
+[data-theme='dark'] .theme-toggle .theme-toggle-moon {
+  opacity: 1;
+  transform: rotate(0deg) scale(1);
+}
+
+[data-theme='dark'] .theme-toggle .theme-toggle-sun {
+  opacity: 0;
+  transform: rotate(-90deg) scale(0);
+}

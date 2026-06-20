@@ -1,0 +1,150 @@
+import { Link } from 'react-router-dom';
+import { ArrowRight } from 'lucide-react';
+import PageHero from '../components/PageHero';
+import SectionTitle from '../components/SectionTitle';
+import ScrollReveal from '../components/ScrollReveal';
+import AnimatedButton from '../components/AnimatedButton';
+import './About.css';
+import './Walling.css';
+
+const specs = [
+  { label: 'System', value: 'Terraforce® Terralite' },
+  { label: 'Finish', value: 'Rockface (standard)' },
+  { label: 'Block type', value: 'Dry-stack interlocking' },
+  { label: 'Application', value: 'Light landscaping, DIY' },
+  { label: 'Wall types', value: 'Gravity, curved, stepped' },
+  { label: 'Compatibility', value: 'Stairblock systems' },
+];
+
+const techItems = [
+  'Smaller retaining block for light landscaping applications.',
+  'Dry-stack interlocking system for straightforward installation.',
+  'Rockface finish as the standard appearance.',
+  'Suitable for curved walls, steps, and transitions from vertical to inclined walls.',
+  'Can be used with Stairblock systems for added design flexibility.',
+];
+
+const apps = [
+  'Flowerbed borders.', 'Tree rings.', 'Braai areas.',
+  'Patio walls.', 'Driveway walls.', 'Garden landscaping and light retaining.',
+];
+
+const features = [
+  'Smaller retaining block for DIY-friendly installation.',
+  'Dry-stack interlocking system for mortar-free construction.',
+  'Rockface finish for a natural textured appearance.',
+  'Suitable for tight curves, stepped transitions, and compact layouts.',
+  'Can be reversed to create steps and used with Stairblock units.',
+];
+
+const related = [
+  { name: 'L Range - Standard Option', path: '/products/walling/l-range-standard' },
+  { name: 'L Range - Rock Face Option', path: '/products/walling/l-range-rock-face' },
+  { name: '4x4 Step Block', path: '/products/walling/4x4-step-block' },
+  { name: 'Retaining Walls', path: '/products/walling/retaining-walls' },
+];
+
+export default function Terralite() {
+  return (
+    <div className="page">
+      <PageHero title="Terralite" description="Terralite is Terraforce's smaller retaining wall block, aimed mainly at the DIY and light landscaping market. It is a dry-stack, interlocking concrete block system that is easy to use for garden walls, borders, and small retaining projects." bgImage="/images/products/retaining-wall-3.jpg" />
+
+      <section className="section">
+        <div className="container">
+          <SectionTitle label="Overview" title="Compact retaining for landscaping" align="left" />
+          <ScrollReveal>
+            <div className="wall-sub-overview">
+              <p>Terralite is a smaller landscaping retaining wall block designed for garden projects, light retaining, and DIY applications. Its compact size and interlocking dry-stack format make it easy to install and ideal for curved walls, borders, and stepped landscape features.</p>
+              <p>Supplied largely in a rockface finish, Terralite delivers a natural, textured appearance that suits decorative garden settings as well as practical retaining needs. It can also be reversed to create steps and used in combination with Stairblock units for added design flexibility.</p>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      <section className="section section-light">
+        <div className="container">
+          <SectionTitle label="Key Features" title="Built for gardens and DIY" align="left" />
+          <div className="wall-sub-benefits">
+            {features.map((item, i) => (
+              <ScrollReveal key={i} delay={i * 0.05}>
+                <div className="wall-sub-benefit">
+                  <div className="wall-sub-benefit-dot" />
+                  <span>{item}</span>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="container">
+          <SectionTitle label="Detailed Specifications" title="Technical data" align="left" />
+          <div className="wall-sub-specs">
+            {specs.map((s, i) => (
+              <ScrollReveal key={i} delay={i * 0.04}>
+                <div className="wall-sub-spec">
+                  <span className="wall-sub-spec-label">{s.label}</span>
+                  <span className="wall-sub-spec-value">{s.value}</span>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section section-light">
+        <div className="container">
+          <SectionTitle label="Technical Information" title="How Terralite works" align="left" />
+          <div className="wall-sub-tech">
+            {techItems.map((item, i) => (
+              <ScrollReveal key={i} delay={i * 0.04}>
+                <p>{item}</p>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="container">
+          <SectionTitle label="Applications" title="Where Terralite is used" align="left" />
+          <div className="wall-sub-apps">
+            {apps.map((app, i) => (
+              <ScrollReveal key={i} delay={i * 0.04}>
+                <div className="wall-sub-app">{app}</div>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section section-light">
+        <div className="container">
+          <SectionTitle label="Related Products" title="Explore more Terraforce® options" align="left" />
+          <div className="wall-sub-related">
+            {related.map(r => (
+              <Link key={r.name} to={r.path} className="product-related-link">
+                <span>{r.name}</span>
+                <ArrowRight size={16} className="product-related-arrow" />
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section section-blue">
+        <div className="container">
+          <div className="about-cta">
+            <h2 className="about-cta-title" style={{ color: 'var(--color-white)' }}>Need Terralite for your garden project?</h2>
+            <p className="about-cta-text" style={{ color: 'rgba(255,255,255,0.8)' }}>Contact our team for pricing, delivery, and technical information.</p>
+            <div className="about-cta-actions">
+              <AnimatedButton to="/contact" variant="yellow">Request a Quote</AnimatedButton>
+              <AnimatedButton to="/products/walling/retaining-walls" variant="outline">View All Retaining Walls</AnimatedButton>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}
