@@ -83,6 +83,10 @@
   --hero-overlay-mid: rgba(15, 15, 20, 0.55);
   --hero-overlay-to: rgba(15, 15, 20, 0.05);
   --hero-overlay-top: rgba(15, 15, 20, 0.85);
+
+  /* Subtle manufacturing pattern */
+  --pattern-dot: url("data:image/svg+xml,%3Csvg width='28' height='28' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='14' cy='14' r='1.2' fill='%23404088' opacity='0.06'/%3E%3C/svg%3E");
+  --pattern-cross: url("data:image/svg+xml,%3Csvg width='40' height='40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 40L40 0' stroke='%23404088' stroke-width='0.4' opacity='0.04'/%3E%3C/svg%3E");
 }
 
 [data-theme='dark'] {

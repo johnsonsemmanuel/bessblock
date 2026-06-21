@@ -33,6 +33,32 @@
   color: var(--color-grey-900);
   line-height: 1.2;
   letter-spacing: -0.02em;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 4px;
+}
+
+.section-title-center .section-title-heading::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: var(--color-bessblock-blue);
+  border-radius: 2px;
+}
+
+.section-title-left .section-title-heading::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: var(--color-bessblock-blue);
+  border-radius: 2px;
 }
 
 .section-title-heading-light {

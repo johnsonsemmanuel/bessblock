@@ -1,9 +1,11 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, CheckCircle2 } from 'lucide-react';
+import SEO from '../components/SEO';
 import PageHero from '../components/PageHero';
 import SectionTitle from '../components/SectionTitle';
 import ScrollReveal from '../components/ScrollReveal';
 import AnimatedButton from '../components/AnimatedButton';
+import SpecSheet from '../components/SpecSheet';
 import './About.css';
 import './Kerbs.css';
 
@@ -51,7 +53,9 @@ const related = [
 
 export default function DemarcationKerbs() {
   return (
-    <div className="page">
+    <>
+      <SEO title="Demarcation Kerbs" description="Bessblock demarcation kerbs provide clear visual separation between traffic lanes, pedestrian areas, cycle routes, and paved zones for safer streets." />
+      <div className="page">
       <PageHero title="Demarcation Kerbs" description="Bessblock Demarcation Kerbs are designed to provide clear visual separation between traffic lanes, pedestrian areas, cycle routes, and other paved zones. They are a practical way to improve safety, guide movement, and give public or private spaces a clean, organised finish." bgImage="/images/products/retaining-wall-2.jpg" />
 
       <section className="section">
@@ -73,7 +77,7 @@ export default function DemarcationKerbs() {
             {benefits.map((item, i) => (
               <ScrollReveal key={i} delay={i * 0.05}>
                 <div className="kerb-sub-benefit">
-                  <div className="kerb-sub-benefit-dot" />
+                  <CheckCircle2 size={16} className="kerb-sub-benefit-dot" />
                   <span>{item}</span>
                 </div>
               </ScrollReveal>
@@ -85,16 +89,7 @@ export default function DemarcationKerbs() {
       <section className="section">
         <div className="container">
           <SectionTitle label="Detailed Specifications" title="Technical data" align="left" />
-          <div className="kerb-sub-specs">
-            {specs.map((s, i) => (
-              <ScrollReveal key={i} delay={i * 0.04}>
-                <div className="kerb-sub-spec">
-                  <span className="kerb-sub-spec-label">{s.label}</span>
-                  <span className="kerb-sub-spec-value">{s.value}</span>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
+          <ScrollReveal><SpecSheet specs={specs} /></ScrollReveal>
         </div>
       </section>
 
@@ -164,5 +159,6 @@ export default function DemarcationKerbs() {
         </div>
       </section>
     </div>
+    </>
   );
 }

@@ -1,10 +1,12 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowRight, Plus, Lock, Grid3x3, Image, Layers, Wrench, Clock } from 'lucide-react';
+import { ArrowRight, Plus, Lock, Grid3x3, Image, Layers, Wrench, Clock, Info } from 'lucide-react';
+import SEO from '../components/SEO';
 import PageHero from '../components/PageHero';
 import SectionTitle from '../components/SectionTitle';
 import ScrollReveal from '../components/ScrollReveal';
 import AnimatedButton from '../components/AnimatedButton';
+import SpecSheet from '../components/SpecSheet';
 import './About.css';
 import './RectangularPavingBlocks.css';
 import './InterlockingPavingBlocks.css';
@@ -70,18 +72,11 @@ function ImgPlaceholder({ label, className }) {
   );
 }
 
-function SpecImgPlaceholder({ label }) {
-  return (
-    <div className="inter-spec-img">
-      <Image size={36} />
-      <span>{label}</span>
-    </div>
-  );
-}
-
 export default function InterlockingPavingBlocks() {
   return (
-    <div className="page">
+    <>
+      <SEO title="Interlocking Paving Blocks" description="Precision-engineered interlocking concrete paving blocks from Bessblock for durable, stable pavement surfaces for pedestrian and vehicular traffic." />
+      <div className="page">
       <PageHero title="Interlocking Paving Blocks" description="Precision-engineered concrete paving units designed to interlock with adjacent blocks, creating a durable and stable pavement surface. Their unique shape distributes loads effectively, making them suitable for both pedestrian and vehicular traffic." bgImage="/images/products/interlocking-paving-1.jpg" />
 
       {/* How It Works */}
@@ -130,46 +125,11 @@ export default function InterlockingPavingBlocks() {
         </div>
       </section>
 
-      {/* Detailed Specs alternating */}
+      {/* Detailed Specs */}
       <section className="section">
         <div className="container">
           <SectionTitle label="Specifications" title="Detailed product data" align="left" />
-          <div className="inter-spec-alt">
-            <div className="inter-spec-row">
-              <ScrollReveal direction="left">
-                <div>
-                  <div className="rect-tech-grid" style={{ margin: 0 }}>
-                    {specs.slice(0, 4).map((spec, i) => (
-                      <div key={i} className="rect-tech-cell">
-                        <span className="rect-tech-label">{spec.label}</span>
-                        <span className="rect-tech-value">{spec.value}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </ScrollReveal>
-              <ScrollReveal direction="right" delay={0.1}>
-                <SpecImgPlaceholder label="Product dimensions" />
-              </ScrollReveal>
-            </div>
-            <div className="inter-spec-row">
-              <ScrollReveal direction="left">
-                <SpecImgPlaceholder label="Interlocking mechanism" />
-              </ScrollReveal>
-              <ScrollReveal direction="right" delay={0.1}>
-                <div>
-                  <div className="rect-tech-grid" style={{ margin: 0 }}>
-                    {specs.slice(4).map((spec, i) => (
-                      <div key={i} className="rect-tech-cell">
-                        <span className="rect-tech-label">{spec.label}</span>
-                        <span className="rect-tech-value">{spec.value}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </ScrollReveal>
-            </div>
-          </div>
+          <ScrollReveal><SpecSheet specs={specs} columns={2} /></ScrollReveal>
         </div>
       </section>
 
@@ -181,7 +141,7 @@ export default function InterlockingPavingBlocks() {
             {techItems.map((item, i) => (
               <ScrollReveal key={i} delay={i * 0.05}>
                 <div className="inter-tech-item">
-                  <div className="inter-tech-dot" />
+                  <Info size={16} className="inter-tech-dot" />
                   <p>{item}</p>
                 </div>
               </ScrollReveal>
@@ -254,5 +214,6 @@ export default function InterlockingPavingBlocks() {
         </div>
       </section>
     </div>
+    </>
   );
 }

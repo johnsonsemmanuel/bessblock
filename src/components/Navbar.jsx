@@ -192,17 +192,19 @@ export default function Navbar() {
                 </NavigationMenuContent>
               </NavigationMenuItem>
 
+              <NavigationMenuItem className="nm-item-theme">
+                <ThemeToggle />
+              </NavigationMenuItem>
+
               <NavigationMenuItem>
                 <NavigationMenuLink asChild>
-                  <Link to="/contact" className="nm-trigger nav-cta-link">Contact</Link>
+                  <Link to="/contact" className="nm-trigger nav-cta-link">Request a Quote</Link>
                 </NavigationMenuLink>
               </NavigationMenuItem>
             </NavigationMenuList>
 
             <NavigationMenuIndicator />
           </NavigationMenu>
-
-          <ThemeToggle />
         </div>
       </div>
     </nav>

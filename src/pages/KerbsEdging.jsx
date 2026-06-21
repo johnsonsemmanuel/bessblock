@@ -1,9 +1,11 @@
+import SEO from '../components/SEO';
 import PageHero from '../components/PageHero';
 import SectionTitle from '../components/SectionTitle';
 import ScrollReveal from '../components/ScrollReveal';
 import AnimatedButton from '../components/AnimatedButton';
 import { ProductHighlightCard } from '../components/ProductHighlightCard';
 import productCategories from '../data/products';
+import { CheckCircle2 } from 'lucide-react';
 import './About.css';
 import './KerbsEdging.css';
 
@@ -32,7 +34,9 @@ const apps = [
 export default function KerbsEdging() {
   const cat = productCategories.find(c => c.id === 'kerbs-edging');
   return (
-    <div className="page">
+    <>
+      <SEO title="Kerbs & Edging" description="Explore Bessblock's range of concrete kerbs and edging — road kerbs, demarcation kerbs, garden kerbs, barrier kerbs, gutter kerbs, and slotted kerbs." />
+      <div className="page">
       <PageHero
         title="Kerbs & Edging"
         description="Bessblock's Kerbs & Edging range is designed to provide clean boundaries, edge restraint, and durable finishing detail for roads, pavements, driveways, parking areas, and landscaped spaces."
@@ -57,7 +61,7 @@ export default function KerbsEdging() {
             {benefits.map((item, i) => (
               <ScrollReveal key={i} delay={i * 0.05}>
                 <div className="kerbs-benefit-card">
-                  <div className="kerbs-benefit-dot" />
+                  <CheckCircle2 size={16} className="kerbs-benefit-dot" />
                   <span>{item}</span>
                 </div>
               </ScrollReveal>
@@ -157,5 +161,6 @@ export default function KerbsEdging() {
         </div>
       </section>
     </div>
+    </>
   );
 }

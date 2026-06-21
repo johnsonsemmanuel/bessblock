@@ -12,6 +12,7 @@
 
 .navbar-scrolled {
   padding: var(--spacing-2) 0;
+  background: var(--bg);
   box-shadow: 0 1px 12px rgba(0, 0, 0, 0.06);
 }
 
@@ -75,6 +76,10 @@
 }
 
 .navbar-hamburger:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.navbar-scrolled .navbar-hamburger:hover {
   background: rgba(var(--bg-card-rgb), 0.5);
 }
 
@@ -82,10 +87,14 @@
   display: block;
   width: 22px;
   height: 2px;
-  background: var(--text);
+  background: var(--hero-text);
   transition: transform var(--transition-base), opacity var(--transition-base);
   border-radius: 1px;
   transform-origin: center;
+}
+
+.navbar-scrolled .navbar-hamburger span {
+  background: var(--text);
 }
 
 .navbar-hamburger.open span:nth-child(1) {
@@ -172,10 +181,13 @@
     text-align: center;
   }
 
-  .navbar-menu .theme-toggle {
-    position: absolute;
-    top: var(--spacing-5);
-    right: calc(var(--container-padding) + 56px);
-    z-index: 1102;
+  .nm-item-theme {
+    display: flex;
+    align-items: center;
+  }
+
+  .nm-item-theme .theme-toggle {
+    color: var(--hero-text);
+    margin-left: 0;
   }
 }

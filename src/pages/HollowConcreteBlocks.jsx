@@ -1,9 +1,11 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, Image } from 'lucide-react';
+import { ArrowRight, Image, CheckCircle2 } from 'lucide-react';
+import SEO from '../components/SEO';
 import PageHero from '../components/PageHero';
 import SectionTitle from '../components/SectionTitle';
 import ScrollReveal from '../components/ScrollReveal';
 import AnimatedButton from '../components/AnimatedButton';
+import SpecSheet from '../components/SpecSheet';
 import './About.css';
 import './Walling.css';
 
@@ -49,7 +51,9 @@ const related = [
 
 export default function HollowConcreteBlocks() {
   return (
-    <div className="page">
+    <>
+      <SEO title="Hollow Concrete Blocks" description="Bessblock hollow concrete blocks — lightweight, strong walling units for residential, commercial, and industrial construction with good thermal performance." />
+      <div className="page">
       <PageHero title="Hollow Concrete Blocks" description="Hollow Concrete Blocks are the primary walling unit for general construction. They are commonly used in residential, commercial, and industrial buildings because they offer a practical balance of strength, weight, and build efficiency." bgImage="/images/products/hollow-blocks-1.jpg" />
 
       {/* Benefits */}
@@ -66,7 +70,7 @@ export default function HollowConcreteBlocks() {
             ].map((item, i) => (
               <ScrollReveal key={i} delay={i * 0.05}>
                 <div className="wall-sub-benefit">
-                  <div className="wall-sub-benefit-dot" />
+                  <CheckCircle2 size={16} className="wall-sub-benefit-dot" />
                   <span>{item}</span>
                 </div>
               </ScrollReveal>
@@ -79,16 +83,7 @@ export default function HollowConcreteBlocks() {
       <section className="section section-light">
         <div className="container">
           <SectionTitle label="Detailed Specifications" title="Sizes & performance data" align="left" />
-          <div className="wall-sub-specs">
-            {specs.map((s, i) => (
-              <ScrollReveal key={i} delay={i * 0.03}>
-                <div className="wall-sub-spec">
-                  <span className="wall-sub-spec-label">{s.label}</span>
-                  <span className="wall-sub-spec-value">{s.value}</span>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
+          <ScrollReveal><SpecSheet specs={specs} /></ScrollReveal>
         </div>
       </section>
 
@@ -181,5 +176,6 @@ export default function HollowConcreteBlocks() {
         </div>
       </section>
     </div>
+    </>
   );
 }

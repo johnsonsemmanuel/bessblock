@@ -8,13 +8,22 @@
   background: none;
   border: none;
   cursor: pointer;
-  color: var(--color-grey-600);
+  color: var(--hero-text);
   transition: color var(--transition-fast), background var(--transition-fast);
   margin-left: var(--spacing-1);
   flex-shrink: 0;
 }
 
 .theme-toggle:hover {
+  color: var(--color-bessblock-yellow);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.navbar-scrolled .theme-toggle {
+  color: var(--color-grey-600);
+}
+
+.navbar-scrolled .theme-toggle:hover {
   color: var(--color-bessblock-blue);
   background: rgba(64, 64, 136, 0.06);
 }

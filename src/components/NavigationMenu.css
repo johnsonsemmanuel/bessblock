@@ -22,7 +22,7 @@
   padding: var(--spacing-2) var(--spacing-3);
   font-size: var(--text-sm);
   font-weight: var(--font-weight-medium);
-  color: var(--text-secondary);
+  color: var(--hero-text);
   letter-spacing: 0.02em;
   background: none;
   border: none;
@@ -34,11 +34,26 @@
 }
 
 .nm-trigger:hover {
+  color: var(--color-bessblock-yellow);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.nm-trigger[data-state='open'] {
+  color: var(--color-bessblock-yellow);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* When scrolled, revert to dark text on light background */
+.navbar-scrolled .nm-trigger {
+  color: var(--text-secondary);
+}
+
+.navbar-scrolled .nm-trigger:hover {
   color: var(--color-bessblock-blue);
   background: rgba(var(--bg-card-rgb), 0.5);
 }
 
-.nm-trigger[data-state='open'] {
+.navbar-scrolled .nm-trigger[data-state='open'] {
   color: var(--color-bessblock-blue);
   background: rgba(var(--bg-card-rgb), 0.6);
 }
@@ -65,7 +80,8 @@
   width: auto;
   min-width: 600px;
   max-width: 960px;
-  top: calc(var(--navbar-height, 68px) + var(--spacing-2));
+  top: calc(var(--navbar-height, 68px) - 4px);
+  padding-top: 12px;
   perspective: 2000px;
   pointer-events: none;
   z-index: 20;
@@ -78,27 +94,27 @@
   background: var(--bg-card);
   box-shadow: 0 16px 48px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  transition: height var(--transition-base);
+  transition: opacity 150ms ease;
   transform-origin: top center;
   border: 1px solid var(--border);
 }
 
 .nm-viewport[data-state='open'] {
-  animation: nmViewportIn 200ms ease;
+  animation: nmViewportIn 150ms ease;
 }
 
 .nm-viewport[data-state='closed'] {
-  animation: nmViewportOut 150ms ease;
+  animation: nmViewportOut 120ms ease;
 }
 
 @keyframes nmViewportIn {
-  from { opacity: 0; transform: rotateX(-3deg) scale(0.97); }
-  to { opacity: 1; transform: rotateX(0deg) scale(1); }
+  from { opacity: 0; transform: scale(0.97); }
+  to { opacity: 1; transform: scale(1); }
 }
 
 @keyframes nmViewportOut {
-  from { opacity: 1; transform: rotateX(0deg) scale(1); }
-  to { opacity: 0; transform: rotateX(-3deg) scale(0.97); }
+  from { opacity: 1; transform: scale(1); }
+  to { opacity: 0; transform: scale(0.97); }
 }
 
 /* ── Content inside viewport ── */

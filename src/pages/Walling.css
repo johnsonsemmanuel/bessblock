@@ -61,15 +61,25 @@
 .walling-tech {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: var(--spacing-1);
   border: 1px solid var(--border);
   border-radius: 10px;
   overflow: hidden;
+  background: var(--bg-card);
 }
 
 .walling-tech-item {
-  padding: var(--spacing-5) var(--spacing-6);
+  padding: 14px 24px;
   background: var(--bg-card);
+  border-bottom: 1px solid var(--border);
+  border-right: 1px solid var(--border);
+}
+
+.walling-tech-item:nth-child(3n) {
+  border-right: none;
+}
+
+.walling-tech-item:nth-child(n+4) {
+  border-bottom: none;
 }
 
 .walling-tech-item:nth-child(even) {
@@ -82,13 +92,14 @@
   font-weight: var(--font-weight-semibold);
   color: var(--color-bessblock-blue);
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  margin-bottom: var(--spacing-1);
+  letter-spacing: 0.04em;
+  margin-bottom: 2px;
 }
 
 .walling-tech-value {
-  font-size: var(--text-base);
+  font-size: var(--text-sm);
   color: var(--text);
+  font-weight: var(--font-weight-medium);
   line-height: 1.5;
 }
 
@@ -136,12 +147,9 @@
 }
 
 .wall-sub-benefit-dot {
-  width: 8px;
-  height: 8px;
-  min-width: 8px;
-  border-radius: 50%;
-  background: var(--color-bessblock-blue);
-  margin-top: 7px;
+  color: var(--color-bessblock-blue);
+  flex-shrink: 0;
+  margin-top: 3px;
 }
 
 .wall-sub-benefit span {
@@ -153,17 +161,21 @@
 .wall-sub-specs {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: var(--spacing-1);
   border: 1px solid var(--border);
   border-radius: 10px;
   overflow: hidden;
   margin-bottom: var(--spacing-6);
+  background: var(--bg-card);
 }
 
 .wall-sub-spec {
-  padding: var(--spacing-4) var(--spacing-5);
+  padding: 14px 24px;
+  border-bottom: 1px solid var(--border);
   background: var(--bg-card);
-  border-bottom: 1px solid var(--color-grey-100);
+}
+
+.wall-sub-spec:nth-child(even) {
+  background: var(--bg-section);
 }
 
 .wall-sub-spec:nth-last-child(-n+2) {
@@ -177,12 +189,13 @@
   color: var(--color-bessblock-blue);
   text-transform: uppercase;
   letter-spacing: 0.04em;
-  margin-bottom: var(--spacing-1);
+  margin-bottom: 2px;
 }
 
 .wall-sub-spec-value {
   font-size: var(--text-sm);
   color: var(--text);
+  font-weight: var(--font-weight-medium);
   line-height: 1.5;
 }
 

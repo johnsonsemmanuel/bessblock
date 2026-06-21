@@ -1,35 +1,85 @@
+import { useState } from 'react';
+import { motion } from 'framer-motion';
 import PageHero from '../components/PageHero';
-import TeamMemberCard from '../components/TeamMemberCard';
+import SEO from '../components/SEO';
 import './About.css';
+import './Leadership.css';
 
 const team = [
-  { name: 'Emmanuel Johnson', role: 'Managing Director', bio: 'Over 20 years of experience in concrete manufacturing and construction supply chain management.', image: '/images/team/george.jpg' },
-  { name: 'Sarah Mensah', role: 'Operations Director', bio: 'Specialist in production optimization and quality systems implementation.', image: '/images/team/hope.jpg' },
-  { name: 'James Osei', role: 'Technical Manager', bio: 'Civil engineer with expertise in concrete technology and product development.', image: '/images/team/joel.jpg' },
-  { name: 'Grace Ankrah', role: 'Commercial Director', bio: 'Leading business development and client relations across institutional projects.' },
+  {
+    name: 'Emmanuel Johnson',
+    role: 'Managing Director',
+    bio: 'Over 20 years of experience in concrete manufacturing and construction supply chain management.',
+    image: '/images/team/george.jpg',
+  },
+  {
+    name: 'Sarah Mensah',
+    role: 'Operations Director',
+    bio: 'Specialist in production optimization and quality systems implementation.',
+    image: '/images/team/hope.jpg',
+  },
+  {
+    name: 'James Osei',
+    role: 'Technical Manager',
+    bio: 'Civil engineer with expertise in concrete technology and product development.',
+    image: '/images/team/joel.jpg',
+  },
+  {
+    name: 'Grace Ankrah',
+    role: 'Commercial Director',
+    bio: 'Leading business development and client relations across institutional projects.',
+  },
 ];
 
 export default function Leadership() {
+  const [expandedIndex, setExpandedIndex] = useState(null);
+
   return (
-    <div className="page">
-      <PageHero title="Leadership" description="Our management team brings decades of combined experience in concrete manufacturing, engineering, and project delivery." bgImage="/images/hero/paving-hero.jpg" />
+    <>
+      <SEO title="Leadership" description="Meet the leadership team behind Bessblock Concrete Products Ltd — experienced professionals driving quality, operations, and growth." />
+      <div className="page">
+      <PageHero
+        title="Leadership"
+        description="Bessblock's leadership team brings together experience in operations, production, sales, and financial oversight to guide the company with focus and accountability. Working closely with the wider RG Group, the team is committed to driving quality, operational efficiency, and sustainable growth while supporting customers, partners, and project delivery across every stage of the business."
+        bgImage="/images/hero/paving-hero.jpg"
+      />
 
       <section className="section">
         <div className="container">
-          <div className="team-grid">
+          <div className="leadership-grid">
             {team.map((member, i) => (
-              <TeamMemberCard
+              <motion.div
                 key={i}
-                name={member.name}
-                role={member.role}
-                bio={member.bio}
-                image={member.image}
-                index={i}
-              />
+                className={`leadership-card ${member.image ? '' : 'leadership-card-noimg'} ${expandedIndex === i ? 'expanded' : ''}`}
+                onClick={() => setExpandedIndex(expandedIndex === i ? null : i)}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-40px' }}
+                transition={{ duration: 0.4, delay: i * 0.1 }}
+              >
+                {member.image && (
+                  <div
+                    className="leadership-bg"
+                    style={{ backgroundImage: `url(${member.image})` }}
+                  />
+                )}
+                <div className="leadership-overlay" />
+                <div className="leadership-body">
+                  {!member.image && (
+                    <div className="leadership-initials">
+                      {member.name.split(' ').map(n => n[0]).join('')}
+                    </div>
+                  )}
+                  <h3 className="leadership-name">{member.name}</h3>
+                  <span className="leadership-role">{member.role}</span>
+                  <p className="leadership-bio">{member.bio}</p>
+                </div>
+              </motion.div>
             ))}
           </div>
         </div>
       </section>
     </div>
+    </>
   );
 }

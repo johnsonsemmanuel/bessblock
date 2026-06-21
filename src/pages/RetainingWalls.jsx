@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, Grid3x3 } from 'lucide-react';
+import { ArrowRight, Grid3x3, CheckCircle2 } from 'lucide-react';
+import SEO from '../components/SEO';
 import PageHero from '../components/PageHero';
 import SectionTitle from '../components/SectionTitle';
 import ScrollReveal from '../components/ScrollReveal';
@@ -40,7 +41,9 @@ export default function RetainingWalls() {
   );
 
   return (
-    <div className="page">
+    <>
+      <SEO title="Retaining Walls" description="Bessblock's licensed Terraforce® retaining wall system for soil retention, erosion control, terracing, and reinforced slopes with modular interlocking blocks." />
+      <div className="page">
       <PageHero
         title="Retaining Walls"
         description="Bessblock's Retaining Walls is a licensed Terraforce® retaining wall system designed for soil retention, erosion control, terracing, and reinforced slopes. The Terraforce® system combines a reversible hollow-core block design with horizontal interlock, allowing wall angles and curves to be formed to suit project requirements."
@@ -68,7 +71,7 @@ export default function RetainingWalls() {
             {benefits.map((item, i) => (
               <ScrollReveal key={i} delay={i * 0.05}>
                 <div className="retaining-benefit-card">
-                  <div className="retaining-benefit-dot" />
+                  <CheckCircle2 size={16} className="retaining-benefit-dot" />
                   <span>{item}</span>
                 </div>
               </ScrollReveal>
@@ -182,5 +185,6 @@ export default function RetainingWalls() {
         </div>
       </section>
     </div>
+    </>
   );
 }

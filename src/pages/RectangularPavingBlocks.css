@@ -74,19 +74,24 @@
 .rect-tech-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: var(--spacing-1);
   border: 1px solid var(--border);
   border-radius: 10px;
   overflow: hidden;
+  background: var(--bg-card);
 }
 
 .rect-tech-cell {
-  padding: var(--spacing-5) var(--spacing-6);
+  padding: 14px 24px;
+  border-bottom: 1px solid var(--border);
   background: var(--bg-card);
 }
 
 .rect-tech-cell:nth-child(even) {
   background: var(--bg-section);
+}
+
+.rect-tech-cell:nth-last-child(-n+2) {
+  border-bottom: none;
 }
 
 .rect-tech-label {
@@ -95,13 +100,14 @@
   font-weight: var(--font-weight-semibold);
   color: var(--color-bessblock-blue);
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  margin-bottom: var(--spacing-1);
+  letter-spacing: 0.04em;
+  margin-bottom: 2px;
 }
 
 .rect-tech-value {
-  font-size: var(--text-base);
+  font-size: var(--text-sm);
   color: var(--text);
+  font-weight: var(--font-weight-medium);
   line-height: 1.5;
 }
 

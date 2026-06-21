@@ -162,12 +162,9 @@
 }
 
 .inter-tech-dot {
-  width: 10px;
-  height: 10px;
-  min-width: 10px;
-  border-radius: 50%;
-  background: var(--color-bessblock-blue);
-  margin-top: 6px;
+  color: var(--color-bessblock-blue);
+  flex-shrink: 0;
+  margin-top: 2px;
 }
 
 .inter-tech-item p {

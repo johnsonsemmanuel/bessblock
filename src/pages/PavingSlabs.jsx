@@ -1,12 +1,15 @@
 import PageHero from '../components/PageHero';
 import { ProductHighlightCard } from '../components/ProductHighlightCard';
+import SEO from '../components/SEO';
 import { SlabIcon } from '../components/CategoryIcons';
 import productCategories from '../data/products';
 
 export default function PavingSlabs() {
   const cat = productCategories.find(c => c.id === 'paving-slabs');
   return (
-    <div className="page">
+    <>
+      <SEO title="Paving Slabs" description="Explore Bessblock's concrete paving slab range — textured, smooth, and large format slabs for pedestrian areas, patios, and commercial spaces." />
+      <div className="page">
       <PageHero title="Paving Slabs" description={cat.description} bgImage="/images/products/interlocking-paving-2.jpg" />
       <section className="section">
         <div className="container">
@@ -31,5 +34,6 @@ export default function PavingSlabs() {
         </div>
       </section>
     </div>
+    </>
   );
 }

@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import SectionTitle from '../components/SectionTitle';
+import SEO from '../components/SEO';
 import PageHero from '../components/PageHero';
 import './Insights.css';
 
@@ -13,7 +14,9 @@ const articles = [
 
 export default function Insights() {
   return (
-    <div className="page">
+    <>
+      <SEO title="Insights" description="Technical articles, industry knowledge, and best practices from the Bessblock team on concrete products and construction." />
+      <div className="page">
       <PageHero
         title="Insights"
         description="Technical articles, industry knowledge, and best practices from the Bessblock team."
@@ -46,5 +49,6 @@ export default function Insights() {
         </div>
       </section>
     </div>
+    </>
   );
 }

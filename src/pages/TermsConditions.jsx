@@ -1,9 +1,12 @@
+import SEO from '../components/SEO';
 import PageHero from '../components/PageHero';
 import './Legal.css';
 
 export default function TermsConditions() {
   return (
-    <div className="page">
+    <>
+      <SEO title="Terms & Conditions" description="The terms governing your use of the Bessblock website and our concrete products and services." />
+      <div className="page">
       <PageHero title="Terms & Conditions" description="The terms governing your use of the Bessblock website and our products and services." bgImage="/images/hero/paving-hero.jpg" />
 
       <section className="section">
@@ -47,5 +50,6 @@ export default function TermsConditions() {
         </div>
       </section>
     </div>
+    </>
   );
 }

@@ -1,8 +1,10 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight, Hexagon, Lock, Layers, Shield, Wrench } from 'lucide-react';
+import SEO from '../components/SEO';
 import PageHero from '../components/PageHero';
 import SectionTitle from '../components/SectionTitle';
 import ScrollReveal from '../components/ScrollReveal';
+import SpecSheet from '../components/SpecSheet';
 import AnimatedButton from '../components/AnimatedButton';
 import './About.css';
 import './HexagonalPavingBlocks.css';
@@ -55,7 +57,9 @@ function TechImgPlaceholder({ label }) {
 
 export default function HexagonalPavingBlocks() {
   return (
-    <div className="page">
+    <>
+      <SEO title="Hexagonal Paving Blocks" description="Distinctive hexagonal concrete paving blocks from Bessblock with superior interlocking for excellent load distribution in landscaping and high-traffic areas." />
+      <div className="page">
       <PageHero title="Hexagonal Paving Blocks" description="Hexagonal paving blocks provide a distinctive appearance and excellent load distribution due to their six-sided geometry. They are widely used in landscaping and high-traffic paved areas." bgImage="/images/products/hexagonal-paving-blocks-1.png" />
 
       {/* Overview with hex image */}
@@ -105,16 +109,7 @@ export default function HexagonalPavingBlocks() {
       <section className="section">
         <div className="container">
           <SectionTitle label="Specifications" title="Technical data" align="left" />
-          <div className="hex-specs-grid">
-            {specs.map((spec, i) => (
-              <ScrollReveal key={i} delay={i * 0.05}>
-                <div className="hex-spec-card">
-                  <span className="hex-spec-card-label">{spec.label}</span>
-                  <span className="hex-spec-card-value">{spec.value}</span>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
+          <SpecSheet specs={specs} />
         </div>
       </section>
 
@@ -144,7 +139,7 @@ export default function HexagonalPavingBlocks() {
             {applications.map((app, i) => (
               <ScrollReveal key={i} delay={i * 0.04}>
                 <li className="hex-app-item">
-                  <div className="hex-app-dot" />
+                  <ArrowRight size={14} className="hex-app-dot" />
                   <span>{app}</span>
                 </li>
               </ScrollReveal>
@@ -201,5 +196,6 @@ export default function HexagonalPavingBlocks() {
         </div>
       </section>
     </div>
+    </>
   );
 }

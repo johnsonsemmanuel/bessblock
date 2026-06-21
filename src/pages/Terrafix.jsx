@@ -1,9 +1,11 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
+import SEO from '../components/SEO';
 import PageHero from '../components/PageHero';
 import SectionTitle from '../components/SectionTitle';
 import ScrollReveal from '../components/ScrollReveal';
 import AnimatedButton from '../components/AnimatedButton';
+import SpecSheet from '../components/SpecSheet';
 import './About.css';
 import './Walling.css';
 
@@ -31,7 +33,9 @@ const related = [
 
 export default function Terrafix() {
   return (
-    <div className="page">
+    <>
+      <SEO title="Terrafix" description="Terraforce® Terrafix — a retaining wall block designed for geosynthetic reinforced segmental retaining wall systems requiring higher wall heights." />
+      <div className="page">
       <PageHero title="Terrafix" description="A Terraforce retaining wall block designed for geosynthetic reinforced segmental retaining wall systems where higher wall heights and additional reinforcement are required." bgImage="/images/products/retaining-wall-2.jpg" />
 
       <section className="section">
@@ -48,16 +52,7 @@ export default function Terrafix() {
       <section className="section section-light">
         <div className="container">
           <SectionTitle label="Specifications" title="Technical data" align="left" />
-          <div className="wall-sub-specs">
-            {specs.map((s, i) => (
-              <ScrollReveal key={i} delay={i * 0.04}>
-                <div className="wall-sub-spec">
-                  <span className="wall-sub-spec-label">{s.label}</span>
-                  <span className="wall-sub-spec-value">{s.value}</span>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
+          <ScrollReveal><SpecSheet specs={specs} /></ScrollReveal>
         </div>
       </section>
 
@@ -114,5 +109,6 @@ export default function Terrafix() {
         </div>
       </section>
     </div>
+    </>
   );
 }

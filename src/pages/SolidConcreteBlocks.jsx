@@ -1,9 +1,11 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, Image } from 'lucide-react';
+import { ArrowRight, Image, CheckCircle2 } from 'lucide-react';
+import SEO from '../components/SEO';
 import PageHero from '../components/PageHero';
 import SectionTitle from '../components/SectionTitle';
 import ScrollReveal from '../components/ScrollReveal';
 import AnimatedButton from '../components/AnimatedButton';
+import SpecSheet from '../components/SpecSheet';
 import './About.css';
 import './Walling.css';
 
@@ -46,7 +48,9 @@ const related = [
 
 export default function SolidConcreteBlocks() {
   return (
-    <div className="page">
+    <>
+      <SEO title="Solid Concrete Blocks" description="Dense solid concrete blocks from Bessblock for foundations, load-bearing walls, and heavy-duty structural applications requiring high strength and durability." />
+      <div className="page">
       <PageHero title="Solid Concrete Blocks" description="Solid Concrete Blocks are dense masonry units used where higher load performance and greater structural robustness are required. They are especially useful in foundations, retaining substructures, and load-bearing wall segments." bgImage="/images/products/solid-blocks-1.jpg" />
 
       {/* Benefits */}
@@ -63,7 +67,7 @@ export default function SolidConcreteBlocks() {
             ].map((item, i) => (
               <ScrollReveal key={i} delay={i * 0.05}>
                 <div className="wall-sub-benefit">
-                  <div className="wall-sub-benefit-dot" />
+                  <CheckCircle2 size={16} className="wall-sub-benefit-dot" />
                   <span>{item}</span>
                 </div>
               </ScrollReveal>
@@ -76,16 +80,7 @@ export default function SolidConcreteBlocks() {
       <section className="section section-light">
         <div className="container">
           <SectionTitle label="Detailed Specifications" title="Technical data" align="left" />
-          <div className="wall-sub-specs">
-            {specs.map((s, i) => (
-              <ScrollReveal key={i} delay={i * 0.04}>
-                <div className="wall-sub-spec">
-                  <span className="wall-sub-spec-label">{s.label}</span>
-                  <span className="wall-sub-spec-value">{s.value}</span>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
+          <ScrollReveal><SpecSheet specs={specs} /></ScrollReveal>
         </div>
       </section>
 
@@ -181,5 +176,6 @@ export default function SolidConcreteBlocks() {
         </div>
       </section>
     </div>
+    </>
   );
 }

@@ -1,8 +1,10 @@
-import { Image, CheckCircle2 } from 'lucide-react';
+import { CheckCircle2 } from 'lucide-react';
+import SEO from '../components/SEO';
 import PageHero from '../components/PageHero';
 import SectionTitle from '../components/SectionTitle';
 import ScrollReveal from '../components/ScrollReveal';
 import AnimatedButton from '../components/AnimatedButton';
+import SpecSheet from '../components/SpecSheet';
 import './RectangularPavingBlocks.css';
 
 const benefits = [
@@ -22,23 +24,15 @@ const techItems = [
   { label: 'Typical use', value: 'Footpaths, patios, terraces, courtyards, garden areas, and utility spaces.' },
 ];
 
-function ImgPlaceholder({ label }) {
-  return (
-    <div className="rect-hero-img">
-      <Image size={40} />
-      <span>{label}</span>
-    </div>
-  );
-}
-
 export default function RectangularPavingBlocks() {
   return (
-    <div className="page">
+    <>
+      <SEO title="Rectangular Paving Blocks" description="High-quality precast rectangular concrete paving blocks from Bessblock for pedestrian, residential, commercial, and industrial surfacing applications." />
+      <div className="page">
       <PageHero title="Rectangular Paving Block" bgImage="/images/products/rectangular-paving-1.jpg">
         <p className="page-hero-desc">
           Rectangular concrete paving block manufactured from high-quality cement, graded aggregates, and pigments (where applicable), compacted under high pressure to ensure dimensional accuracy and durability.
         </p>
-        <ImgPlaceholder label="Product image — rectangular paving blocks" />
       </PageHero>
 
       <section className="section">
@@ -80,16 +74,7 @@ export default function RectangularPavingBlocks() {
       <section className="section">
         <div className="container">
           <SectionTitle label="Technical Range" title="Specifications at a glance" align="left" />
-          <div className="rect-tech-grid">
-            {techItems.map((item, i) => (
-              <ScrollReveal key={i} delay={i * 0.03}>
-                <div className="rect-tech-cell">
-                  <span className="rect-tech-label">{item.label}</span>
-                  <span className="rect-tech-value">{item.value}</span>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
+          <ScrollReveal><SpecSheet specs={techItems} /></ScrollReveal>
         </div>
       </section>
 
@@ -121,9 +106,15 @@ export default function RectangularPavingBlocks() {
                 </div>
               </ScrollReveal>
             </div>
-            <div className="rect-specs-img">
-              <Image size={40} />
-              <span>Dimension diagram — coming soon</span>
+            <div
+              className="rect-specs-img"
+              style={{
+                backgroundImage: 'url(https://images.unsplash.com/photo-1590674899484-d5640d0f7b3e?w=600&q=80)',
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+              }}
+            >
+              <span>Dimension reference</span>
             </div>
           </div>
         </div>
@@ -144,5 +135,6 @@ export default function RectangularPavingBlocks() {
         </div>
       </section>
     </div>
+    </>
   );
 }

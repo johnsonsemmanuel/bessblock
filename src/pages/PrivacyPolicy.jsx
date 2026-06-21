@@ -1,9 +1,12 @@
+import SEO from '../components/SEO';
 import PageHero from '../components/PageHero';
 import './Legal.css';
 
 export default function PrivacyPolicy() {
   return (
-    <div className="page">
+    <>
+      <SEO title="Privacy Policy" description="How Bessblock Concrete Products Limited collects, uses, and protects your personal information when you use our website." />
+      <div className="page">
       <PageHero title="Privacy Policy" description="How Bessblock Concrete Products Limited collects, uses, and protects your personal information." bgImage="/images/hero/paving-hero.jpg" />
 
       <section className="section">
@@ -47,5 +50,6 @@ export default function PrivacyPolicy() {
         </div>
       </section>
     </div>
+    </>
   );
 }

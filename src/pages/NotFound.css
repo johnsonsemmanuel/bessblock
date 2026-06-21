@@ -1,0 +1,116 @@
+.not-found-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background: var(--color-grey-900);
+}
+
+.not-found-bg {
+  position: absolute;
+  inset: 0;
+  background-image: var(--pattern-dot);
+  background-repeat: repeat;
+  opacity: 0.6;
+}
+
+.not-found-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, transparent 0%, rgba(20, 20, 20, 0.6) 100%);
+}
+
+.not-found-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: var(--spacing-12);
+}
+
+.not-found-code {
+  display: block;
+  font-size: clamp(5rem, 15vw, 10rem);
+  font-weight: 800;
+  line-height: 1;
+  color: var(--color-bessblock-blue);
+  letter-spacing: -0.04em;
+  margin-bottom: var(--spacing-4);
+}
+
+.not-found-title {
+  font-size: var(--text-3xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--hero-text);
+  margin-bottom: var(--spacing-4);
+}
+
+.not-found-desc {
+  font-size: var(--text-lg);
+  color: var(--hero-text-secondary);
+  max-width: 420px;
+  margin: 0 auto var(--spacing-8);
+  line-height: 1.7;
+}
+
+.not-found-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-4);
+}
+
+.not-found-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  padding: var(--spacing-3) var(--spacing-6);
+  border-radius: 8px;
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-semibold);
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.not-found-btn-primary {
+  background: var(--color-bessblock-blue);
+  color: #fff;
+}
+
+.not-found-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(64, 64, 136, 0.3);
+}
+
+.not-found-btn-secondary {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--hero-text);
+}
+
+.not-found-btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .not-found-code {
+    font-size: clamp(4rem, 20vw, 6rem);
+  }
+
+  .not-found-title {
+    font-size: var(--text-2xl);
+  }
+
+  .not-found-actions {
+    flex-direction: column;
+  }
+
+  .not-found-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}

@@ -1,18 +1,39 @@
+"use client";
+
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import { ChevronRight } from 'lucide-react';
 import productCategories from '../data/products';
 import FlickeringGrid from './FlickeringGrid';
-import { ArrowRight } from 'lucide-react';
 import './Footer.css';
 
-function FooterLink({ to, children }) {
-  return (
-    <Link to={to} className="footer-link">
-      <span>{children}</span>
-      <ArrowRight size={14} className="footer-link-arrow" />
-    </Link>
-  );
-}
+const footerLinks = [
+  {
+    title: 'Products',
+    links: productCategories.map(cat => ({
+      title: cat.name,
+      url: cat.path,
+    })),
+  },
+  {
+    title: 'Company',
+    links: [
+      { title: 'Who We Are', url: '/about' },
+      { title: 'Manufacturing & Quality', url: '/about/manufacturing' },
+      { title: 'Leadership', url: '/about/leadership' },
+      { title: 'Projects Gallery', url: '/projects' },
+    ],
+  },
+  {
+    title: 'Resources',
+    links: [
+      { title: 'Insights', url: '/insights' },
+      { title: 'FAQs', url: '/faqs' },
+      { title: 'Contact', url: '/contact' },
+      { title: 'Privacy Policy', url: '/privacy-policy' },
+    ],
+  },
+];
 
 function SocialIcon({ name }) {
   const svgs = {
@@ -31,6 +52,10 @@ function SocialIcon({ name }) {
   );
 }
 
+function LogoIcon() {
+  return <img src="/bessblocklogo.png" alt="Bessblock" className="footer-logo-img" />;
+}
+
 export default function Footer() {
   const [tablet, setTablet] = useState(false);
 
@@ -42,68 +67,52 @@ export default function Footer() {
   }, []);
 
   return (
-    <footer className="footer">
+    <footer id="footer" className="footer">
       <div className="container">
-        <div className="footer-grid">
-          <div className="footer-brand">
-            <div className="footer-logo">
-              <img src="/bessblocklogo.png" alt="Bessblock" className="footer-logo-img" />
-            </div>
-            <p className="footer-tagline">
+        <div className="footer-top">
+          <div className="footer-brand-section">
+            <Link to="/" className="footer-logo-link">
+              <LogoIcon />
+              <span className="footer-logo-text">Bessblock</span>
+            </Link>
+            <p className="footer-description">
               Premium concrete block manufacturing for infrastructure and institutional projects.
             </p>
-            <div className="footer-social">
+            <div className="footer-badges">
               <SocialIcon name="linkedin" />
               <SocialIcon name="twitter" />
               <SocialIcon name="facebook" />
               <SocialIcon name="instagram" />
             </div>
           </div>
-
-          <div className="footer-group">
-            <h4 className="footer-group-title">Products</h4>
-            {productCategories.map(cat => (
-              <FooterLink key={cat.id} to={cat.path}>{cat.name}</FooterLink>
+          <div className="footer-links-section">
+            {footerLinks.map((column, i) => (
+              <ul key={i} className="footer-link-column">
+                <li className="footer-link-title">{column.title}</li>
+                {column.links.map((link, j) => (
+                  <li key={j} className="footer-link-item">
+                    <Link to={link.url} className="footer-link">
+                      <span>{link.title}</span>
+                      <ChevronRight size={14} className="footer-link-arrow" />
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             ))}
-          </div>
-
-          <div className="footer-group">
-            <h4 className="footer-group-title">About</h4>
-            <FooterLink to="/about">Who We Are</FooterLink>
-            <FooterLink to="/about/manufacturing">Manufacturing & Quality</FooterLink>
-            <FooterLink to="/about/leadership">Leadership</FooterLink>
-            <FooterLink to="/projects">Projects Gallery</FooterLink>
-          </div>
-
-          <div className="footer-group">
-            <h4 className="footer-group-title">Resources</h4>
-            <FooterLink to="/insights">Insights</FooterLink>
-            <FooterLink to="/faqs">FAQs</FooterLink>
-            <FooterLink to="/contact">Contact</FooterLink>
-            <FooterLink to="/privacy-policy">Privacy Policy</FooterLink>
-            <FooterLink to="/terms-conditions">Terms & Conditions</FooterLink>
           </div>
         </div>
       </div>
-
-      <div className="footer-grid-container">
-        <div className="footer-grid-overlay" />
+      <div className="footer-grid-area">
         <FlickeringGrid
           text={tablet ? 'BESSBLOCK' : 'PRECISION BLOCK MANUFACTURING'}
-          fontSize={tablet ? 48 : 80}
+          fontSize={tablet ? 70 : 90}
           className="footer-grid-canvas"
           squareSize={2}
           gridGap={tablet ? 2 : 3}
           color="#6B7280"
-          maxOpacity={0.2}
-          flickerChance={0.08}
+          maxOpacity={0.3}
+          flickerChance={0.1}
         />
-      </div>
-
-      <div className="container">
-        <div className="footer-bottom">
-          <p>&copy; {new Date().getFullYear()} Bessblock Concrete Products Limited. All rights reserved.</p>
-        </div>
       </div>
     </footer>
   );

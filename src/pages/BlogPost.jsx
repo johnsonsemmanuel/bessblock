@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import blogPosts from '../data/blog';
 import PageHero from '../components/PageHero';
 import ScrollReveal from '../components/ScrollReveal';
+import SEO from '../components/SEO';
 import './Blog.css';
 
 export default function BlogPost() {
@@ -11,7 +12,9 @@ export default function BlogPost() {
 
   if (!post) {
     return (
-      <div className="page">
+      <>
+        <SEO title="Blog Post" description="The article you're looking for doesn't exist." />
+        <div className="page">
         <PageHero title="Post Not Found" description="The article you're looking for doesn't exist." bgImage="/images/hero/paving-hero.jpg" />
         <section className="section">
           <div className="container" style={{ textAlign: 'center' }}>
@@ -21,11 +24,14 @@ export default function BlogPost() {
           </div>
         </section>
       </div>
+    </>
     );
   }
 
   return (
-    <div className="page">
+    <>
+      <SEO title={post?.title || 'Blog Post'} description={post?.excerpt || ''} />
+      <div className="page">
       <PageHero title="Blog" description={post.title} bgImage="/images/hero/paving-hero.jpg" />
 
       <section className="section">
@@ -72,5 +78,6 @@ export default function BlogPost() {
         </div>
       </section>
     </div>
+    </>
   );
 }

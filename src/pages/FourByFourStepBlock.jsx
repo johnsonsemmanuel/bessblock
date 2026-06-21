@@ -1,9 +1,11 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
+import SEO from '../components/SEO';
 import PageHero from '../components/PageHero';
 import SectionTitle from '../components/SectionTitle';
 import ScrollReveal from '../components/ScrollReveal';
 import AnimatedButton from '../components/AnimatedButton';
+import SpecSheet from '../components/SpecSheet';
 import './About.css';
 import './Walling.css';
 
@@ -31,7 +33,9 @@ const related = [
 
 export default function FourByFourStepBlock() {
   return (
-    <div className="page">
+    <>
+      <SEO title="4x4 Step Block" description="Terraforce® 4x4 Step Block for creating stepped transitions and tiered wall layouts within retaining wall systems without cutting or special detailing." />
+      <div className="page">
       <PageHero title="4x4 Step Block" description="A Terraforce retaining wall component designed for creating stepped transitions, tiered wall layouts, and changes in wall elevation within the retaining wall system." bgImage="/images/products/retaining-wall-1.jpg" />
 
       <section className="section">
@@ -48,16 +52,7 @@ export default function FourByFourStepBlock() {
       <section className="section section-light">
         <div className="container">
           <SectionTitle label="Specifications" title="Technical data" align="left" />
-          <div className="wall-sub-specs">
-            {specs.map((s, i) => (
-              <ScrollReveal key={i} delay={i * 0.04}>
-                <div className="wall-sub-spec">
-                  <span className="wall-sub-spec-label">{s.label}</span>
-                  <span className="wall-sub-spec-value">{s.value}</span>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
+          <ScrollReveal><SpecSheet specs={specs} /></ScrollReveal>
         </div>
       </section>
 
@@ -114,5 +109,6 @@ export default function FourByFourStepBlock() {
         </div>
       </section>
     </div>
+    </>
   );
 }

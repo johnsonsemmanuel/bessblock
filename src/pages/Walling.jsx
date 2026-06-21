@@ -1,4 +1,5 @@
 import { Grid3x3, Wrench, Shield, Home, PanelBottom } from 'lucide-react';
+import SEO from '../components/SEO';
 import PageHero from '../components/PageHero';
 import SectionTitle from '../components/SectionTitle';
 import ScrollReveal from '../components/ScrollReveal';
@@ -28,7 +29,9 @@ const techItems = [
 export default function Walling() {
   const cat = productCategories.find(c => c.id === 'walling');
   return (
-    <div className="page">
+    <>
+      <SEO title="Walling" description="Explore Bessblock's concrete walling range — hollow blocks, solid blocks, ceiling blocks, and retaining walls for residential, commercial, and industrial construction." />
+      <div className="page">
       <PageHero title="Walling" description="Bessblock's walling range is designed to provide practical, durable, and cost-effective concrete solutions for residential, commercial, and industrial construction. The range covers hollow blocks, solid blocks, and ceiling blocks, giving customers a complete set of masonry products for both structural and non-structural applications." bgImage="/images/products/hollow-blocks-1.jpg" />
 
       <section className="section">
@@ -132,5 +135,6 @@ export default function Walling() {
         </div>
       </section>
     </div>
+    </>
   );
 }

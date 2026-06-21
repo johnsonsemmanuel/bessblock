@@ -1,0 +1,180 @@
+/* ─── Category cards on Products page ─── */
+.pc-card {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  min-height: 320px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 40px;
+  isolation: isolate;
+  margin-bottom: var(--spacing-8);
+}
+
+.pc-card-bg {
+  position: absolute;
+  inset: -10px;
+  z-index: 0;
+  will-change: transform;
+}
+
+.pc-card-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(180deg, rgba(20,20,20,0.15) 0%, rgba(20,20,20,0.75) 100%);
+}
+
+.pc-card-content {
+  position: relative;
+  z-index: 2;
+  color: white;
+}
+
+.pc-card-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: rgba(255,218,69,0.2);
+  color: var(--color-bessblock-yellow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.pc-card-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.pc-card-title {
+  font-size: var(--text-3xl);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: 8px;
+  letter-spacing: -0.02em;
+}
+
+.pc-card-desc {
+  font-size: var(--text-sm);
+  color: rgba(255,255,255,0.75);
+  line-height: 1.6;
+  max-width: 500px;
+}
+
+.pc-card-tags {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.pc-card-tag {
+  padding: 6px 16px;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.2);
+  font-size: var(--text-sm);
+  color: white;
+  transition: background var(--transition-fast), border-color var(--transition-fast);
+  backdrop-filter: blur(4px);
+}
+
+.pc-card-tag:hover {
+  background: rgba(255,255,255,0.2);
+  border-color: rgba(255,255,255,0.4);
+}
+
+.pc-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-6);
+}
+
+/* ─── Products CTA ─── */
+
+.products-cta {
+  text-align: center;
+  padding: var(--spacing-8) 0;
+}
+
+.products-cta-title {
+  font-size: var(--text-2xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--text);
+  margin-bottom: var(--spacing-3);
+}
+
+.products-cta-desc {
+  font-size: var(--text-base);
+  color: var(--text-secondary);
+  max-width: 480px;
+  margin: 0 auto var(--spacing-6);
+  line-height: 1.7;
+}
+
+.products-cta-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-4);
+}
+
+.products-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--spacing-3) var(--spacing-6);
+  border-radius: 8px;
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-semibold);
+  text-decoration: none;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.products-cta-btn-primary {
+  background: var(--color-bessblock-blue);
+  color: #fff;
+}
+
+.products-cta-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(64, 64, 136, 0.3);
+}
+
+.products-cta-btn-secondary {
+  border: 1px solid var(--border);
+  color: var(--text);
+}
+
+.products-cta-btn-secondary:hover {
+  border-color: var(--color-bessblock-blue);
+  color: var(--color-bessblock-blue);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .pc-card {
+    min-height: 240px;
+    padding: 24px;
+  }
+
+  .pc-card-title {
+    font-size: var(--text-2xl);
+  }
+
+  .pc-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .products-cta-actions {
+    flex-direction: column;
+  }
+
+  .products-cta-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}

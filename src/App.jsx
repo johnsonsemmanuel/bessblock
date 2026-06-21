@@ -1,4 +1,5 @@
 import { Routes, Route, useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
 import { AnimatePresence } from 'framer-motion';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -46,15 +47,29 @@ import FAQs from './pages/FAQs';
 import Contact from './pages/Contact';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsConditions from './pages/TermsConditions';
+import NotFound from './pages/NotFound';
+import ErrorBoundary from './components/ErrorBoundary';
 import CookieConsent from './components/CookieConsent';
+import BackToTop from './components/BackToTop';
 
 function Layout({ children }) {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
   return (
     <>
       <Navbar />
-      <main>{children}</main>
+      <main>
+        <ErrorBoundary>
+          {children}
+        </ErrorBoundary>
+      </main>
       <Footer />
       <CookieConsent />
+      <BackToTop />
     </>
   );
 }
@@ -125,6 +140,7 @@ export default function App() {
           <Route path="/contact" element={<AnimatedPage><Contact /></AnimatedPage>} />
           <Route path="/privacy-policy" element={<AnimatedPage><PrivacyPolicy /></AnimatedPage>} />
           <Route path="/terms-conditions" element={<AnimatedPage><TermsConditions /></AnimatedPage>} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </Layout>
     </AnimatePresence>

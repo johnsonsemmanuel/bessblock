@@ -1,10 +1,11 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import SEO from '../components/SEO';
 import SectionTitle from '../components/SectionTitle';
 import ProductShowcase from '../components/ProductShowcase';
 import AnimatedButton from '../components/AnimatedButton';
-import { ArrowRight, CheckCircle } from 'lucide-react';
+import { ArrowRight, CheckCircle, Star } from 'lucide-react';
 import ScrollReveal from '../components/ScrollReveal';
 import { ProgressiveBlur } from '../components/ProgressiveBlur';
 import './Home.css';
@@ -41,21 +42,21 @@ const whyItems = [
 ];
 
 const appItems = [
-  { label: 'Domestic driveways and gardens.', link: '/products/paving-blocks' },
-  { label: 'Footpaths and pedestrian areas.', link: '/products/paving-blocks' },
-  { label: 'Commercial forecourts and parking areas.', link: '/products/paving-blocks' },
-  { label: 'Landscaping and public realm schemes.', link: '/products/paving-slabs' },
-  { label: 'Roads, estate developments, and edge restraint.', link: '/products/kerbs-edging' },
-  { label: 'Retaining and terracing applications.', link: '/products/walling/retaining-walls' },
+  { label: 'Domestic driveways and gardens.', link: '/products/paving-blocks', image: 'https://images.unsplash.com/photo-1590674899484-d5640d0f7b3e?w=800&q=80' },
+  { label: 'Footpaths and pedestrian areas.', link: '/products/paving-blocks', image: 'https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=800&q=80' },
+  { label: 'Commercial forecourts and parking areas.', link: '/products/paving-blocks', image: 'https://images.unsplash.com/photo-1625377619917-f0386cc2ad66?w=800&q=80' },
+  { label: 'Landscaping and public realm schemes.', link: '/products/paving-slabs', image: 'https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=800&q=80' },
+  { label: 'Roads, estate developments, and edge restraint.', link: '/products/kerbs-edging', image: 'https://images.unsplash.com/photo-1541625602330-2277a4c46182?w=800&q=80' },
+  { label: 'Retaining and terracing applications.', link: '/products/walling/retaining-walls', image: 'https://images.unsplash.com/photo-1504307651254-84280e7f79d8?w=800&q=80' },
 ];
 
 const categoryLinks = [
-  { name: 'Paving Blocks.', path: '/products/paving-blocks' },
-  { name: 'Walling.', path: '/products/walling' },
-  { name: 'Paving Slabs.', path: '/products/paving-slabs' },
-  { name: 'Retaining Walls.', path: '/products/walling/retaining-walls' },
-  { name: 'Kerbs & Edging.', path: '/products/kerbs-edging' },
-  { name: 'Step Risers.', path: '/products/step-risers' },
+  { name: 'Paving Blocks', path: '/products/paving-blocks', image: 'https://images.unsplash.com/photo-1590674899484-d5640d0f7b3e?w=800&q=80' },
+  { name: 'Walling', path: '/products/walling', image: 'https://images.unsplash.com/photo-1567016526105-22da7c13161a?w=800&q=80' },
+  { name: 'Paving Slabs', path: '/products/paving-slabs', image: 'https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=800&q=80' },
+  { name: 'Retaining Walls', path: '/products/walling/retaining-walls', image: 'https://images.unsplash.com/photo-1504307651254-84280e7f79d8?w=800&q=80' },
+  { name: 'Kerbs & Edging', path: '/products/kerbs-edging', image: 'https://images.unsplash.com/photo-1558459654-c430be5b5717?w=800&q=80' },
+  { name: 'Step Risers', path: '/products/step-risers', image: 'https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=800&q=80' },
 ];
 
 export default function Home() {
@@ -67,6 +68,8 @@ export default function Home() {
   }, []);
 
   return (
+    <>
+      <SEO title="Home" description="Bessblock Concrete Products Ltd — manufacturer of concrete blocks, paving units, kerbs, and edging solutions for infrastructure and institutional projects in Ghana." />
     <div className="page">
       {/* Hero */}
       <section className="hero">
@@ -148,7 +151,7 @@ export default function Home() {
           >
             {trustItems.map((item, i) => (
               <motion.div key={i} className="home-trust-item" variants={fadeUp}>
-                <div className="home-trust-dot" />
+                <Star size={16} className="home-trust-dot" />
                 <p className="home-trust-text">{item}</p>
               </motion.div>
             ))}
@@ -170,8 +173,12 @@ export default function Home() {
             {categoryLinks.map((cat, i) => (
               <ScrollReveal key={cat.name} delay={i * 0.05}>
                 <Link to={cat.path} className="home-range-card">
-                  <span className="home-range-name">{cat.name}</span>
-                  <ArrowRight size={20} className="home-range-arrow" />
+                  <div className="home-range-card-bg" style={{ backgroundImage: `url(${cat.image})` }} />
+                  <div className="home-range-card-overlay" />
+                  <div className="home-range-card-content">
+                    <span className="home-range-name">{cat.name}</span>
+                    <ArrowRight size={24} className="home-range-arrow" />
+                  </div>
                 </Link>
               </ScrollReveal>
             ))}
@@ -259,8 +266,12 @@ export default function Home() {
             {appItems.map((app, i) => (
               <ScrollReveal key={i} delay={i * 0.05}>
                 <Link to={app.link} className="home-app-card">
-                  <span className="home-app-label">{app.label}</span>
-                  <ArrowRight size={16} className="home-app-arrow" />
+                  <div className="home-app-card-bg" style={{ backgroundImage: `url(${app.image})` }} />
+                  <div className="home-app-card-overlay" />
+                  <div className="home-app-card-content">
+                    <span className="home-app-label">{app.label}</span>
+                    <ArrowRight size={24} className="home-app-arrow" />
+                  </div>
                 </Link>
               </ScrollReveal>
             ))}
@@ -326,6 +337,47 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Testimonials */}
+      <section className="section-light">
+        <div className="container">
+          <SectionTitle label="Testimonials" title="What Our Clients Say" />
+          <div className="home-testimonials">
+            {[
+              {
+                quote: 'Bessblock delivered consistent quality across multiple project phases. Their technical support during specification was invaluable.',
+                author: 'Project Director',
+                company: 'Urban Roads Authority',
+              },
+              {
+                quote: 'We specified Bessblock blocks for our university campus development and were impressed by the dimensional accuracy and strength.',
+                author: 'Chief Architect',
+                company: 'State University',
+              },
+              {
+                quote: 'The team at Bessblock worked with us to meet a tight delivery schedule for our hospital complex. Reliable partner.',
+                author: 'Contracts Manager',
+                company: 'Ministry of Health',
+              },
+            ].map((t, i) => (
+              <motion.div
+                key={i}
+                className="home-testimonial-card"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: i * 0.1 }}
+              >
+                <p className="home-testimonial-quote">&ldquo;{t.quote}&rdquo;</p>
+                <div className="home-testimonial-author">
+                  <span className="home-testimonial-name">{t.author}</span>
+                  <span className="home-testimonial-org">{t.company}</span>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Final CTA */}
       <section className="section home-cta">
         <div className="container">
@@ -349,5 +401,6 @@ export default function Home() {
         </div>
       </section>
     </div>
+    </>
   );
 }

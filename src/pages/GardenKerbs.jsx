@@ -1,9 +1,11 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, CheckCircle2 } from 'lucide-react';
+import SEO from '../components/SEO';
 import PageHero from '../components/PageHero';
 import SectionTitle from '../components/SectionTitle';
 import ScrollReveal from '../components/ScrollReveal';
 import AnimatedButton from '../components/AnimatedButton';
+import SpecSheet from '../components/SpecSheet';
 import './About.css';
 import './Kerbs.css';
 
@@ -52,7 +54,9 @@ const related = [
 
 export default function GardenKerbs() {
   return (
-    <div className="page">
+    <>
+      <SEO title="Garden Kerbs" description="Bessblock garden kerbs create neat boundaries for lawns, paths, flower beds, and landscaped edges with a clean, finished appearance for outdoor spaces." />
+      <div className="page">
       <PageHero title="Garden Kerbs" description="Bessblock Garden Kerbs are designed to create neat boundaries for lawns, paths, flower beds, and landscaped edges while giving outdoor spaces a clean, finished appearance. They are a simple and effective way to separate soft landscaping from paved or trafficked areas without the heavier look of road kerbs." bgImage="/images/products/retaining-wall-3.jpg" />
 
       <section className="section">
@@ -74,7 +78,7 @@ export default function GardenKerbs() {
             {benefits.map((item, i) => (
               <ScrollReveal key={i} delay={i * 0.05}>
                 <div className="kerb-sub-benefit">
-                  <div className="kerb-sub-benefit-dot" />
+                  <CheckCircle2 size={16} className="kerb-sub-benefit-dot" />
                   <span>{item}</span>
                 </div>
               </ScrollReveal>
@@ -86,16 +90,7 @@ export default function GardenKerbs() {
       <section className="section">
         <div className="container">
           <SectionTitle label="Detailed Specifications" title="Technical data" align="left" />
-          <div className="kerb-sub-specs">
-            {specs.map((s, i) => (
-              <ScrollReveal key={i} delay={i * 0.04}>
-                <div className="kerb-sub-spec">
-                  <span className="kerb-sub-spec-label">{s.label}</span>
-                  <span className="kerb-sub-spec-value">{s.value}</span>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
+          <ScrollReveal><SpecSheet specs={specs} /></ScrollReveal>
         </div>
       </section>
 
@@ -165,5 +160,6 @@ export default function GardenKerbs() {
         </div>
       </section>
     </div>
+    </>
   );
 }

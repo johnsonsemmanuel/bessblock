@@ -1,12 +1,15 @@
 import PageHero from '../components/PageHero';
 import { ProductHighlightCard } from '../components/ProductHighlightCard';
+import SEO from '../components/SEO';
 import { PavingIcon } from '../components/CategoryIcons';
 import productCategories from '../data/products';
 
 export default function PavingBlocks() {
   const cat = productCategories.find(c => c.id === 'paving-blocks');
   return (
-    <div className="page">
+    <>
+      <SEO title="Paving Blocks" description="Explore Bessblock's range of concrete paving blocks including interlocking, rectangular, and hexagonal options for durable pavement surfaces." />
+      <div className="page">
       <PageHero title="Paving Blocks" description={cat.description} bgImage="/images/products/interlocking-paving-1.jpg" />
       <section className="section">
         <div className="container">
@@ -31,5 +34,6 @@ export default function PavingBlocks() {
         </div>
       </section>
     </div>
+    </>
   );
 }

@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, CheckCircle2 } from 'lucide-react';
+import SEO from '../components/SEO';
 import PageHero from '../components/PageHero';
 import SectionTitle from '../components/SectionTitle';
 import ScrollReveal from '../components/ScrollReveal';
@@ -46,7 +47,9 @@ const related = [
 
 export default function Terralite() {
   return (
-    <div className="page">
+    <>
+      <SEO title="Terralite" description="Terraforce® Terralite — a compact dry-stack interlocking retaining block for DIY landscaping, garden walls, borders, and small retaining projects." />
+      <div className="page">
       <PageHero title="Terralite" description="Terralite is Terraforce's smaller retaining wall block, aimed mainly at the DIY and light landscaping market. It is a dry-stack, interlocking concrete block system that is easy to use for garden walls, borders, and small retaining projects." bgImage="/images/products/retaining-wall-3.jpg" />
 
       <section className="section">
@@ -68,7 +71,7 @@ export default function Terralite() {
             {features.map((item, i) => (
               <ScrollReveal key={i} delay={i * 0.05}>
                 <div className="wall-sub-benefit">
-                  <div className="wall-sub-benefit-dot" />
+                  <CheckCircle2 size={16} className="wall-sub-benefit-dot" />
                   <span>{item}</span>
                 </div>
               </ScrollReveal>
@@ -146,5 +149,6 @@ export default function Terralite() {
         </div>
       </section>
     </div>
+    </>
   );
 }

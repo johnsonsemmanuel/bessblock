@@ -1,9 +1,11 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, CheckCircle2 } from 'lucide-react';
+import SEO from '../components/SEO';
 import PageHero from '../components/PageHero';
 import SectionTitle from '../components/SectionTitle';
 import ScrollReveal from '../components/ScrollReveal';
 import AnimatedButton from '../components/AnimatedButton';
+import SpecSheet from '../components/SpecSheet';
 import './About.css';
 import './Walling.css';
 
@@ -45,7 +47,9 @@ const related = [
 
 export default function LRangeRockFace() {
   return (
-    <div className="page">
+    <>
+      <SEO title="L-Range Rock Face" description="Terraforce® L Range Rock Face Option — a dry-stack interlocking retaining block with a rugged rock-face finish for natural-looking retaining walls." />
+      <div className="page">
       <PageHero title="L Range - Rock Face Option" description="A versatile concrete retaining block designed for landscaping, erosion control, and retaining wall construction. It uses the same dry-stack interlocking system as the standard option, but with a rock-face finish for a more rugged, natural appearance." bgImage="/images/products/retaining-wall-2.jpg" />
 
       <section className="section">
@@ -67,7 +71,7 @@ export default function LRangeRockFace() {
             {features.map((item, i) => (
               <ScrollReveal key={i} delay={i * 0.05}>
                 <div className="wall-sub-benefit">
-                  <div className="wall-sub-benefit-dot" />
+                  <CheckCircle2 size={16} className="wall-sub-benefit-dot" />
                   <span>{item}</span>
                 </div>
               </ScrollReveal>
@@ -79,16 +83,7 @@ export default function LRangeRockFace() {
       <section className="section">
         <div className="container">
           <SectionTitle label="Detailed Specifications" title="Technical data" align="left" />
-          <div className="wall-sub-specs">
-            {specs.map((s, i) => (
-              <ScrollReveal key={i} delay={i * 0.04}>
-                <div className="wall-sub-spec">
-                  <span className="wall-sub-spec-label">{s.label}</span>
-                  <span className="wall-sub-spec-value">{s.value}</span>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
+          <ScrollReveal><SpecSheet specs={specs} /></ScrollReveal>
         </div>
       </section>
 
@@ -145,5 +140,6 @@ export default function LRangeRockFace() {
         </div>
       </section>
     </div>
+    </>
   );
 }

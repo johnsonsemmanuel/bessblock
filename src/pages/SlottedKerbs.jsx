@@ -1,9 +1,11 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, CheckCircle2 } from 'lucide-react';
+import SEO from '../components/SEO';
 import PageHero from '../components/PageHero';
 import SectionTitle from '../components/SectionTitle';
 import ScrollReveal from '../components/ScrollReveal';
 import AnimatedButton from '../components/AnimatedButton';
+import SpecSheet from '../components/SpecSheet';
 import './About.css';
 import './Kerbs.css';
 
@@ -52,7 +54,9 @@ const related = [
 
 export default function SlottedKerbs() {
   return (
-    <div className="page">
+    <>
+      <SEO title="Slotted Kerbs" description="Bessblock slotted kerbs combine edge restraint with integrated drainage slots for effective surface water management along roads and paved areas." />
+      <div className="page">
       <PageHero title="Slotted Kerbs" description="Bessblock Slotted Kerbs are designed to combine edge restraint with drainage performance, making them suitable for projects where surface water needs to be guided away efficiently. They provide a practical kerb solution for roads, paved areas, and drainage-led layouts." bgImage="/images/products/retaining-wall-3.jpg" />
 
       <section className="section">
@@ -74,7 +78,7 @@ export default function SlottedKerbs() {
             {benefits.map((item, i) => (
               <ScrollReveal key={i} delay={i * 0.05}>
                 <div className="kerb-sub-benefit">
-                  <div className="kerb-sub-benefit-dot" />
+                  <CheckCircle2 size={16} className="kerb-sub-benefit-dot" />
                   <span>{item}</span>
                 </div>
               </ScrollReveal>
@@ -86,16 +90,7 @@ export default function SlottedKerbs() {
       <section className="section">
         <div className="container">
           <SectionTitle label="Detailed Specifications" title="Technical data" align="left" />
-          <div className="kerb-sub-specs">
-            {specs.map((s, i) => (
-              <ScrollReveal key={i} delay={i * 0.04}>
-                <div className="kerb-sub-spec">
-                  <span className="kerb-sub-spec-label">{s.label}</span>
-                  <span className="kerb-sub-spec-value">{s.value}</span>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
+          <ScrollReveal><SpecSheet specs={specs} /></ScrollReveal>
         </div>
       </section>
 
@@ -165,5 +160,6 @@ export default function SlottedKerbs() {
         </div>
       </section>
     </div>
+    </>
   );
 }

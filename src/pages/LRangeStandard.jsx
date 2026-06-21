@@ -1,9 +1,11 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, CheckCircle2 } from 'lucide-react';
+import SEO from '../components/SEO';
 import PageHero from '../components/PageHero';
 import SectionTitle from '../components/SectionTitle';
 import ScrollReveal from '../components/ScrollReveal';
 import AnimatedButton from '../components/AnimatedButton';
+import SpecSheet from '../components/SpecSheet';
 import './About.css';
 import './Walling.css';
 
@@ -48,7 +50,9 @@ const related = [
 
 export default function LRangeStandard() {
   return (
-    <div className="page">
+    <>
+      <SEO title="L-Range Standard" description="Terraforce® L Range Standard Option — a versatile dry-stack interlocking concrete retaining block for landscaping, erosion control, and gravity retaining walls." />
+      <div className="page">
       <PageHero title="L Range - Standard Option" description="A versatile concrete retaining block for landscaping and erosion control, designed to stack without mortar in most applications using dry-stacked construction for faster installation and reduced consumables." bgImage="/images/products/retaining-wall-1.jpg" />
 
       <section className="section">
@@ -70,7 +74,7 @@ export default function LRangeStandard() {
             {features.map((item, i) => (
               <ScrollReveal key={i} delay={i * 0.05}>
                 <div className="wall-sub-benefit">
-                  <div className="wall-sub-benefit-dot" />
+                  <CheckCircle2 size={16} className="wall-sub-benefit-dot" />
                   <span>{item}</span>
                 </div>
               </ScrollReveal>
@@ -82,16 +86,7 @@ export default function LRangeStandard() {
       <section className="section">
         <div className="container">
           <SectionTitle label="Detailed Specifications" title="Technical data" align="left" />
-          <div className="wall-sub-specs">
-            {specs.map((s, i) => (
-              <ScrollReveal key={i} delay={i * 0.04}>
-                <div className="wall-sub-spec">
-                  <span className="wall-sub-spec-label">{s.label}</span>
-                  <span className="wall-sub-spec-value">{s.value}</span>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
+          <ScrollReveal><SpecSheet specs={specs} /></ScrollReveal>
         </div>
       </section>
 
@@ -161,5 +156,6 @@ export default function LRangeStandard() {
         </div>
       </section>
     </div>
+    </>
   );
 }

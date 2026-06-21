@@ -1,12 +1,15 @@
 import SectionTitle from '../components/SectionTitle';
 import blogPosts from '../data/blog';
+import SEO from '../components/SEO';
 import PageHero from '../components/PageHero';
 import BlogCard from '../components/BlogCard';
 import './Blog.css';
 
 export default function Blog() {
   return (
-    <div className="page">
+    <>
+      <SEO title="Blog" description="News, insights, and technical articles from the Bessblock team on concrete products, construction best practices, and industry developments." />
+      <div className="page">
       <PageHero
         title="Blog"
         description="News, insights, and technical articles from the Bessblock team."
@@ -27,5 +30,6 @@ export default function Blog() {
         </div>
       </section>
     </div>
+    </>
   );
 }

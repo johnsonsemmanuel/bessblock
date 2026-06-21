@@ -1,9 +1,11 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
+import SEO from '../components/SEO';
 import PageHero from '../components/PageHero';
 import SectionTitle from '../components/SectionTitle';
 import ScrollReveal from '../components/ScrollReveal';
 import AnimatedButton from '../components/AnimatedButton';
+import SpecSheet from '../components/SpecSheet';
 import './About.css';
 import './Walling.css';
 
@@ -31,7 +33,9 @@ const related = [
 
 export default function Terracrete() {
   return (
-    <div className="page">
+    <>
+      <SEO title="Terracrete" description="Terraforce® Terracrete — a retaining wall solution for constrained sites using cement stabilised backfill where conventional reinforced wall construction is impractical." />
+      <div className="page">
       <PageHero title="Terracrete" description="A Terraforce retaining wall solution designed for use with cement stabilised backfill in constrained site conditions where space or geometry limits conventional reinforced wall construction." bgImage="/images/products/retaining-wall-3.jpg" />
 
       <section className="section">
@@ -48,16 +52,7 @@ export default function Terracrete() {
       <section className="section section-light">
         <div className="container">
           <SectionTitle label="Specifications" title="Technical data" align="left" />
-          <div className="wall-sub-specs">
-            {specs.map((s, i) => (
-              <ScrollReveal key={i} delay={i * 0.04}>
-                <div className="wall-sub-spec">
-                  <span className="wall-sub-spec-label">{s.label}</span>
-                  <span className="wall-sub-spec-value">{s.value}</span>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
+          <ScrollReveal><SpecSheet specs={specs} /></ScrollReveal>
         </div>
       </section>
 
@@ -114,5 +109,6 @@ export default function Terracrete() {
         </div>
       </section>
     </div>
+    </>
   );
 }

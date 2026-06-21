@@ -46,7 +46,17 @@ export const ProductHighlightCard = React.forwardRef(
         {...props}
       >
         <div className="highlight-card-inner">
-          <div className="highlight-card-grid" />
+          {imageSrc && (
+            <div className="highlight-card-bg-wrapper">
+              <motion.div
+                className="highlight-card-bg"
+                style={{ backgroundImage: `url(${imageSrc})` }}
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
+              />
+            </div>
+          )}
+          <div className="highlight-card-overlay" />
 
           <motion.div
             className="highlight-card-glow"
@@ -67,17 +77,6 @@ export const ProductHighlightCard = React.forwardRef(
               <p className="highlight-card-desc">{description}</p>
             </div>
           </div>
-
-          {imageSrc && (
-            <motion.img
-              src={imageSrc}
-              alt={imageAlt}
-              style={{ transform: "translateZ(50px)" }}
-              whileHover={{ scale: 1.1, y: -20, x: 10 }}
-              transition={{ type: "spring", stiffness: 300, damping: 20 }}
-              className="highlight-card-image"
-            />
-          )}
         </div>
       </motion.div>
     );

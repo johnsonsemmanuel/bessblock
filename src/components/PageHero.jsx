@@ -4,7 +4,15 @@ import { ProgressiveBlur } from './ProgressiveBlur';
 export default function PageHero({ title, description, children, bgImage }) {
   return (
     <section className="page-hero">
-      {bgImage && <div className="page-hero-bg" style={{ backgroundImage: `url(${bgImage})` }} />}
+      {bgImage && (
+        <motion.div
+          className="page-hero-bg"
+          style={{ backgroundImage: `url(${bgImage})` }}
+          initial={{ scale: 1.1 }}
+          animate={{ scale: 1 }}
+          transition={{ duration: 1.2, ease: 'easeOut' }}
+        />
+      )}
       {bgImage && <div className="page-hero-overlay" />}
       <div className="container" style={{ position: 'relative', zIndex: 1 }}>
         <motion.div

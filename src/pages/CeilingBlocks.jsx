@@ -1,9 +1,11 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, Image } from 'lucide-react';
+import { ArrowRight, Image, CheckCircle2 } from 'lucide-react';
+import SEO from '../components/SEO';
 import PageHero from '../components/PageHero';
 import SectionTitle from '../components/SectionTitle';
 import ScrollReveal from '../components/ScrollReveal';
 import AnimatedButton from '../components/AnimatedButton';
+import SpecSheet from '../components/SpecSheet';
 import './About.css';
 import './Walling.css';
 
@@ -47,7 +49,9 @@ const related = [
 
 export default function CeilingBlocks() {
   return (
-    <div className="page">
+    <>
+      <SEO title="Ceiling Blocks" description="Bessblock ceiling blocks for rib-and-block slab systems — non-structural concrete infill units for suspended floors and ceilings in building construction." />
+      <div className="page">
       <PageHero title="Ceiling Blocks" description="Ceiling Blocks are non-structural concrete infill units used in rib-and-block slab systems for suspended floors and ceilings. They are designed to work between reinforced concrete ribs or beams as part of a structural floor or roof assembly." bgImage="/images/products/ceiling-blocks-1.png" />
 
       {/* Benefits */}
@@ -64,7 +68,7 @@ export default function CeilingBlocks() {
             ].map((item, i) => (
               <ScrollReveal key={i} delay={i * 0.05}>
                 <div className="wall-sub-benefit">
-                  <div className="wall-sub-benefit-dot" />
+                  <CheckCircle2 size={16} className="wall-sub-benefit-dot" />
                   <span>{item}</span>
                 </div>
               </ScrollReveal>
@@ -77,16 +81,7 @@ export default function CeilingBlocks() {
       <section className="section section-light">
         <div className="container">
           <SectionTitle label="Detailed Specifications" title="Technical data" align="left" />
-          <div className="wall-sub-specs">
-            {specs.map((s, i) => (
-              <ScrollReveal key={i} delay={i * 0.04}>
-                <div className="wall-sub-spec">
-                  <span className="wall-sub-spec-label">{s.label}</span>
-                  <span className="wall-sub-spec-value">{s.value}</span>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
+          <ScrollReveal><SpecSheet specs={specs} /></ScrollReveal>
         </div>
       </section>
 
@@ -182,5 +177,6 @@ export default function CeilingBlocks() {
         </div>
       </section>
     </div>
+    </>
   );
 }
