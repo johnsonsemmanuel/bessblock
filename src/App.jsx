@@ -45,6 +45,7 @@ import Blog from './pages/Blog';
 import BlogPost from './pages/BlogPost';
 import FAQs from './pages/FAQs';
 import Contact from './pages/Contact';
+import RequestQuote from './pages/RequestQuote';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsConditions from './pages/TermsConditions';
 import NotFound from './pages/NotFound';
@@ -61,8 +62,11 @@ function Layout({ children }) {
 
   return (
     <>
+      <a href="#main-content" className="skip-link">
+        Skip to main content
+      </a>
       <Navbar />
-      <main>
+      <main id="main-content">
         <ErrorBoundary>
           {children}
         </ErrorBoundary>
@@ -137,6 +141,7 @@ export default function App() {
           <Route path="/insights/blog" element={<AnimatedPage><Blog /></AnimatedPage>} />
           <Route path="/insights/blog/:slug" element={<AnimatedPage><BlogPost /></AnimatedPage>} />
           <Route path="/faqs" element={<AnimatedPage><FAQs /></AnimatedPage>} />
+          <Route path="/request-quote" element={<AnimatedPage><RequestQuote /></AnimatedPage>} />
           <Route path="/contact" element={<AnimatedPage><Contact /></AnimatedPage>} />
           <Route path="/privacy-policy" element={<AnimatedPage><PrivacyPolicy /></AnimatedPage>} />
           <Route path="/terms-conditions" element={<AnimatedPage><TermsConditions /></AnimatedPage>} />

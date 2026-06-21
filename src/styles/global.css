@@ -9,6 +9,25 @@
   box-sizing: border-box;
 }
 
+.skip-link {
+  position: fixed;
+  top: -100%;
+  left: 16px;
+  z-index: 10000;
+  padding: 12px 20px;
+  background: var(--color-bessblock-blue);
+  color: #fff;
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-semibold);
+  border-radius: 0 0 8px 8px;
+  text-decoration: none;
+  transition: top 200ms ease;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
 html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
@@ -153,6 +172,12 @@ input, textarea {
   background-size: cover;
   background-position: center;
   z-index: -2;
+  animation: heroBgReveal 1.2s ease-out;
+}
+
+@keyframes heroBgReveal {
+  from { transform: scale(1.1); }
+  to { transform: scale(1); }
 }
 
 .page-hero-overlay {

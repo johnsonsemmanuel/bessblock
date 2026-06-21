@@ -56,7 +56,7 @@ export default function DemarcationKerbs() {
     <>
       <SEO title="Demarcation Kerbs" description="Bessblock demarcation kerbs provide clear visual separation between traffic lanes, pedestrian areas, cycle routes, and paved zones for safer streets." />
       <div className="page">
-      <PageHero title="Demarcation Kerbs" description="Bessblock Demarcation Kerbs are designed to provide clear visual separation between traffic lanes, pedestrian areas, cycle routes, and other paved zones. They are a practical way to improve safety, guide movement, and give public or private spaces a clean, organised finish." bgImage="/images/products/retaining-wall-2.jpg" />
+      <PageHero title="Demarcation Kerbs" description="Bessblock Demarcation Kerbs are designed to provide clear visual separation between traffic lanes, pedestrian areas, cycle routes, and other paved zones. They are a practical way to improve safety, guide movement, and give public or private spaces a clean, organised finish." bgImage="/images/hero/concrete-texture-2.jpg" />
 
       <section className="section">
         <div className="container">
@@ -152,7 +152,7 @@ export default function DemarcationKerbs() {
             <h2 className="about-cta-title" style={{ color: 'var(--color-white)' }}>Need demarcation kerbs for safer streets?</h2>
             <p className="about-cta-text" style={{ color: 'rgba(255,255,255,0.8)' }}>Contact our team for pricing, delivery, and technical information.</p>
             <div className="about-cta-actions">
-              <AnimatedButton to="/contact" variant="yellow">Request a Quote</AnimatedButton>
+              <AnimatedButton to="/request-quote" variant="yellow">Request a Quote</AnimatedButton>
               <AnimatedButton to="/products/kerbs-edging" variant="outline">View All Kerbs</AnimatedButton>
             </div>
           </div>

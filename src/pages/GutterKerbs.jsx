@@ -57,7 +57,7 @@ export default function GutterKerbs() {
     <>
       <SEO title="Gutter Kerbs" description="Bessblock gutter kerbs combine edge restraint with water management, helping guide surface runoff along roads, driveways, and paved areas." />
       <div className="page">
-      <PageHero title="Gutter Kerbs" description="Bessblock Gutter Kerbs are designed to combine edge restraint with water management, helping guide surface runoff along roads, driveways, and paved areas. They are a practical choice where the kerb line also needs to support drainage performance and keep the paved edge tidy and durable." bgImage="/images/products/retaining-wall-2.jpg" />
+      <PageHero title="Gutter Kerbs" description="Bessblock Gutter Kerbs are designed to combine edge restraint with water management, helping guide surface runoff along roads, driveways, and paved areas. They are a practical choice where the kerb line also needs to support drainage performance and keep the paved edge tidy and durable." bgImage="/images/hero/concrete-texture-2.jpg" />
 
       <section className="section">
         <div className="container">
@@ -153,7 +153,7 @@ export default function GutterKerbs() {
             <h2 className="about-cta-title" style={{ color: 'var(--color-white)' }}>Need gutter kerbs for drainage management?</h2>
             <p className="about-cta-text" style={{ color: 'rgba(255,255,255,0.8)' }}>Contact our team for pricing, delivery, and technical information.</p>
             <div className="about-cta-actions">
-              <AnimatedButton to="/contact" variant="yellow">Request a Quote</AnimatedButton>
+              <AnimatedButton to="/request-quote" variant="yellow">Request a Quote</AnimatedButton>
               <AnimatedButton to="/products/kerbs-edging" variant="outline">View All Kerbs</AnimatedButton>
             </div>
           </div>

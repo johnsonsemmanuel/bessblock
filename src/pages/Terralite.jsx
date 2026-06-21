@@ -50,7 +50,7 @@ export default function Terralite() {
     <>
       <SEO title="Terralite" description="Terraforce® Terralite — a compact dry-stack interlocking retaining block for DIY landscaping, garden walls, borders, and small retaining projects." />
       <div className="page">
-      <PageHero title="Terralite" description="Terralite is Terraforce's smaller retaining wall block, aimed mainly at the DIY and light landscaping market. It is a dry-stack, interlocking concrete block system that is easy to use for garden walls, borders, and small retaining projects." bgImage="/images/products/retaining-wall-3.jpg" />
+      <PageHero title="Terralite" description="Terralite is Terraforce's smaller retaining wall block, aimed mainly at the DIY and light landscaping market. It is a dry-stack, interlocking concrete block system that is easy to use for garden walls, borders, and small retaining projects." bgImage="/images/hero/concrete-texture-1.jpg" />
 
       <section className="section">
         <div className="container">
@@ -142,7 +142,7 @@ export default function Terralite() {
             <h2 className="about-cta-title" style={{ color: 'var(--color-white)' }}>Need Terralite for your garden project?</h2>
             <p className="about-cta-text" style={{ color: 'rgba(255,255,255,0.8)' }}>Contact our team for pricing, delivery, and technical information.</p>
             <div className="about-cta-actions">
-              <AnimatedButton to="/contact" variant="yellow">Request a Quote</AnimatedButton>
+              <AnimatedButton to="/request-quote" variant="yellow">Request a Quote</AnimatedButton>
               <AnimatedButton to="/products/walling/retaining-walls" variant="outline">View All Retaining Walls</AnimatedButton>
             </div>
           </div>

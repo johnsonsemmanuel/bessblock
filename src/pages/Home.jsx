@@ -5,16 +5,17 @@ import SEO from '../components/SEO';
 import SectionTitle from '../components/SectionTitle';
 import ProductShowcase from '../components/ProductShowcase';
 import AnimatedButton from '../components/AnimatedButton';
+import LazyBackground from '../components/LazyBackground';
 import { ArrowRight, CheckCircle, Star } from 'lucide-react';
 import ScrollReveal from '../components/ScrollReveal';
 import { ProgressiveBlur } from '../components/ProgressiveBlur';
 import './Home.css';
 
 const heroSlides = [
-  { image: '/images/hero/paving-hero.jpg' },
-  { image: '/images/hero/rectangular-paving.jpg' },
-  { image: '/images/hero/walling-hero.jpg' },
-  { image: '/images/hero/retaining-walls-hero.jpg' },
+  { image: '/images/hero/construction-aerial-1.jpg' },
+  { image: '/images/hero/construction-aerial-2.jpg' },
+  { image: '/images/hero/construction-aerial-3.jpg' },
+  { image: '/images/hero/construction-aerial-4.jpg' },
 ];
 
 const stagger = {
@@ -61,18 +62,24 @@ const categoryLinks = [
 
 export default function Home() {
   const [slide, setSlide] = useState(0);
+  const [paused, setPaused] = useState(false);
 
   useEffect(() => {
+    if (paused) return;
     const timer = setInterval(() => setSlide(s => (s + 1) % heroSlides.length), 5000);
     return () => clearInterval(timer);
-  }, []);
+  }, [paused]);
 
   return (
     <>
       <SEO title="Home" description="Bessblock Concrete Products Ltd — manufacturer of concrete blocks, paving units, kerbs, and edging solutions for infrastructure and institutional projects in Ghana." />
     <div className="page">
       {/* Hero */}
-      <section className="hero">
+      <section
+        className="hero"
+        onMouseEnter={() => setPaused(true)}
+        onMouseLeave={() => setPaused(false)}
+      >
         <AnimatePresence mode="wait">
           <motion.div
             key={slide}
@@ -119,7 +126,7 @@ export default function Home() {
               transition={{ duration: 0.5, delay: 0.35 }}
             >
               <AnimatedButton to="/products/paving-blocks" variant="primary">Explore Products</AnimatedButton>
-              <AnimatedButton to="/contact" variant="outline">Request a Quote</AnimatedButton>
+              <AnimatedButton to="/request-quote" variant="outline">Request a Quote</AnimatedButton>
               <AnimatedButton to="/about/manufacturing" variant="outline">Download Specifications</AnimatedButton>
             </motion.div>
           </motion.div>
@@ -173,7 +180,7 @@ export default function Home() {
             {categoryLinks.map((cat, i) => (
               <ScrollReveal key={cat.name} delay={i * 0.05}>
                 <Link to={cat.path} className="home-range-card">
-                  <div className="home-range-card-bg" style={{ backgroundImage: `url(${cat.image})` }} />
+                  <LazyBackground src={cat.image} className="home-range-card-bg" />
                   <div className="home-range-card-overlay" />
                   <div className="home-range-card-content">
                     <span className="home-range-name">{cat.name}</span>
@@ -266,7 +273,7 @@ export default function Home() {
             {appItems.map((app, i) => (
               <ScrollReveal key={i} delay={i * 0.05}>
                 <Link to={app.link} className="home-app-card">
-                  <div className="home-app-card-bg" style={{ backgroundImage: `url(${app.image})` }} />
+                  <LazyBackground src={app.image} className="home-app-card-bg" />
                   <div className="home-app-card-overlay" />
                   <div className="home-app-card-content">
                     <span className="home-app-label">{app.label}</span>
@@ -393,9 +400,9 @@ export default function Home() {
               Speak to Bessblock for product advice, project support, and quotation requests. Whether you need paving, walling, retaining walls, kerbs, or step systems, our team can help you choose the right concrete solution for your project.
             </p>
             <div className="home-cta-actions">
-              <AnimatedButton to="/contact" variant="primary" size="lg">Contact Bessblock</AnimatedButton>
-              <AnimatedButton to="/contact" variant="outline" size="lg">Request a Quote</AnimatedButton>
-              <AnimatedButton to="/products/paving-blocks" variant="outline" size="lg">View Products</AnimatedButton>
+              <AnimatedButton to="/request-quote" variant="primary" size="lg">Request a Quote</AnimatedButton>
+              <AnimatedButton to="/products" variant="outline" size="lg">View All Products</AnimatedButton>
+              <AnimatedButton to="/projects" variant="outline" size="lg">Project Gallery</AnimatedButton>
             </div>
           </motion.div>
         </div>

@@ -36,7 +36,7 @@ export default function FourByFourStepBlock() {
     <>
       <SEO title="4x4 Step Block" description="Terraforce® 4x4 Step Block for creating stepped transitions and tiered wall layouts within retaining wall systems without cutting or special detailing." />
       <div className="page">
-      <PageHero title="4x4 Step Block" description="A Terraforce retaining wall component designed for creating stepped transitions, tiered wall layouts, and changes in wall elevation within the retaining wall system." bgImage="/images/products/retaining-wall-1.jpg" />
+      <PageHero title="4x4 Step Block" description="A Terraforce retaining wall component designed for creating stepped transitions, tiered wall layouts, and changes in wall elevation within the retaining wall system." bgImage="/images/hero/concrete-texture-2.jpg" />
 
       <section className="section">
         <div className="container">
@@ -102,7 +102,7 @@ export default function FourByFourStepBlock() {
             <h2 className="about-cta-title" style={{ color: 'var(--color-white)' }}>Need step blocks for your retaining wall?</h2>
             <p className="about-cta-text" style={{ color: 'rgba(255,255,255,0.8)' }}>Contact our team for pricing, delivery, and technical information.</p>
             <div className="about-cta-actions">
-              <AnimatedButton to="/contact" variant="yellow">Request a Quote</AnimatedButton>
+              <AnimatedButton to="/request-quote" variant="yellow">Request a Quote</AnimatedButton>
               <AnimatedButton to="/products/walling/retaining-walls" variant="outline">View All Retaining Walls</AnimatedButton>
             </div>
           </div>

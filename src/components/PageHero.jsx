@@ -1,16 +1,15 @@
 import { motion } from 'framer-motion';
+import LazyBackground from './LazyBackground';
 import { ProgressiveBlur } from './ProgressiveBlur';
 
 export default function PageHero({ title, description, children, bgImage }) {
   return (
     <section className="page-hero">
       {bgImage && (
-        <motion.div
+        <LazyBackground
+          src={bgImage}
           className="page-hero-bg"
-          style={{ backgroundImage: `url(${bgImage})` }}
-          initial={{ scale: 1.1 }}
-          animate={{ scale: 1 }}
-          transition={{ duration: 1.2, ease: 'easeOut' }}
+          style={{ backgroundSize: 'cover', backgroundPosition: 'center' }}
         />
       )}
       {bgImage && <div className="page-hero-overlay" />}

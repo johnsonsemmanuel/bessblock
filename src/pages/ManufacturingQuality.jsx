@@ -38,7 +38,7 @@ export default function ManufacturingQuality() {
     <>
       <SEO title="Manufacturing & Quality" description="Learn how Bessblock manufactures concrete blocks, paving units, and kerbs with automated Besser production, mist curing, and rigorous quality control." />
       <div className="page">
-      <PageHero title="Manufacturing & Quality" bgImage="/images/hero/hollow-blocks.jpg">
+      <PageHero title="Manufacturing & Quality" bgImage="/images/hero/concrete-texture-2.jpg">
         <p className="page-hero-desc">
           At Bessblock, manufacturing is built around one clear principle: every block, paver, and concrete product should leave the plant consistent, durable, and fit for purpose. Our production process combines modern plant operations, controlled material handling, and quality-focused curing methods to help ensure dependable performance across all product lines.
         </p>
@@ -234,7 +234,7 @@ export default function ManufacturingQuality() {
             </p>
             <div className="about-cta-actions">
               <AnimatedButton to="/products/paving-blocks" variant="yellow">Explore Products</AnimatedButton>
-              <AnimatedButton to="/contact" variant="outline">Request a Quote</AnimatedButton>
+              <AnimatedButton to="/request-quote" variant="outline">Request a Quote</AnimatedButton>
               <AnimatedButton to="/contact" variant="outline">Contact Bessblock</AnimatedButton>
             </div>
           </motion.div>

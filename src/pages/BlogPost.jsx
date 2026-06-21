@@ -15,7 +15,7 @@ export default function BlogPost() {
       <>
         <SEO title="Blog Post" description="The article you're looking for doesn't exist." />
         <div className="page">
-        <PageHero title="Post Not Found" description="The article you're looking for doesn't exist." bgImage="/images/hero/paving-hero.jpg" />
+        <PageHero title="Post Not Found" description="The article you're looking for doesn't exist." bgImage="/images/hero/concrete-texture-2.jpg" />
         <section className="section">
           <div className="container" style={{ textAlign: 'center' }}>
             <Link to="/insights/blog" className="blog-card-link" style={{ fontSize: 'var(--text-base)' }}>
@@ -32,7 +32,7 @@ export default function BlogPost() {
     <>
       <SEO title={post?.title || 'Blog Post'} description={post?.excerpt || ''} />
       <div className="page">
-      <PageHero title="Blog" description={post.title} bgImage="/images/hero/paving-hero.jpg" />
+      <PageHero title="Blog" description={post.title} bgImage="/images/hero/concrete-texture-2.jpg" />
 
       <section className="section">
         <div className="container blog-post">

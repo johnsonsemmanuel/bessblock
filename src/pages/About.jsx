@@ -10,7 +10,7 @@ export default function About() {
     <>
       <SEO title="About" description="Learn about Bessblock Concrete Products Ltd — a leading manufacturer of concrete blocks, paving units, and kerbs in Ghana, serving residential, commercial, and institutional projects." />
       <div className="page">
-      <PageHero title="About Bessblock" bgImage="/images/hero/walling-hero.jpg">
+      <PageHero title="About Bessblock" bgImage="/images/hero/concrete-texture-1.jpg">
         <p className="page-hero-desc">
           Bessblock Concrete Products Ltd (Bessblock) is a specialist manufacturer of concrete products serving the needs of residential, commercial, and civil construction projects. As part of the RG Group, Bessblock was established to help ensure the timely supply of high-quality materials that support project delivery, durability, and consistency across every stage of development.
         </p>
@@ -114,7 +114,7 @@ export default function About() {
             </p>
             <div className="about-cta-actions">
               <AnimatedButton to="/products/paving-blocks" variant="primary">Explore Products</AnimatedButton>
-              <AnimatedButton to="/contact" variant="outline-dark">Request a Quote</AnimatedButton>
+              <AnimatedButton to="/request-quote" variant="outline-dark">Request a Quote</AnimatedButton>
               <AnimatedButton to="/contact" variant="outline-dark">Contact Bessblock</AnimatedButton>
             </div>
           </motion.div>

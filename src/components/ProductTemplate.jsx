@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import SectionTitle from './SectionTitle';
 import SEO from './SEO';
 import Breadcrumbs from './Breadcrumbs';
+import LazyBackground from './LazyBackground';
 import { Check, ArrowRight } from 'lucide-react';
 import { ProductHighlightCard } from './ProductHighlightCard';
 import SpecSheet from './SpecSheet';
@@ -30,12 +31,14 @@ export default function ProductTemplate({ productKey, heroImage }) {
     <>
       <SEO title={product.name} description={product.overview?.slice(0, 160)} />
       <div className="page">
-      <section
-        className="product-hero"
-        style={heroImage ? { backgroundImage: `url(${heroImage})` } : undefined}
-      >
+      <section className="product-hero">
+        <LazyBackground
+          src={heroImage}
+          className="product-hero-bg-fill"
+          style={{ position: 'absolute', inset: 0, zIndex: 0, backgroundSize: 'cover', backgroundPosition: 'center' }}
+        />
         {heroImage && <div className="product-hero-overlay" />}
-        <div className="container">
+        <div className="container" style={{ position: 'relative', zIndex: 1 }}>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -122,7 +125,7 @@ export default function ProductTemplate({ productKey, heroImage }) {
                 <p className="product-sidebar-cta-desc">
                   Our team can provide pricing, technical specifications, and delivery options.
                 </p>
-                <Link to="/contact" className="product-sidebar-cta-btn">
+                <Link to="/request-quote" className="product-sidebar-cta-btn">
                   Request a Quote
                   <ArrowRight size={16} />
                 </Link>
@@ -137,7 +140,7 @@ export default function ProductTemplate({ productKey, heroImage }) {
         <div className="container">
           <SectionTitle label="Project Gallery" title="See it in action" align="left" />
           <div className="product-gallery-grid">
-            {['/images/hero/paving-hero.jpg', '/images/hero/walling-hero.jpg', '/images/hero/products-hero.jpg'].map((img, i) => (
+            {['/images/hero/construction-aerial-1.jpg', '/images/hero/construction-aerial-2.jpg', '/images/hero/construction-aerial-3.jpg'].map((img, i) => (
               <Link key={i} to="/projects" className="product-gallery-card">
                 <div className="product-gallery-image" style={{ backgroundImage: `url(${img})` }} />
                 <div className="product-gallery-overlay">

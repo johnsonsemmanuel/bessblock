@@ -29,7 +29,7 @@ export default function RectangularPavingBlocks() {
     <>
       <SEO title="Rectangular Paving Blocks" description="High-quality precast rectangular concrete paving blocks from Bessblock for pedestrian, residential, commercial, and industrial surfacing applications." />
       <div className="page">
-      <PageHero title="Rectangular Paving Block" bgImage="/images/products/rectangular-paving-1.jpg">
+      <PageHero title="Rectangular Paving Block" bgImage="/images/hero/concrete-texture-1.jpg">
         <p className="page-hero-desc">
           Rectangular concrete paving block manufactured from high-quality cement, graded aggregates, and pigments (where applicable), compacted under high pressure to ensure dimensional accuracy and durability.
         </p>
@@ -128,7 +128,7 @@ export default function RectangularPavingBlocks() {
               Contact our team for technical specifications, pricing, and project-specific advice.
             </p>
             <div className="about-cta-actions">
-              <AnimatedButton to="/contact" variant="yellow">Request a Quote</AnimatedButton>
+              <AnimatedButton to="/request-quote" variant="yellow">Request a Quote</AnimatedButton>
               <AnimatedButton to="/products/paving-blocks" variant="outline">View All Paving</AnimatedButton>
             </div>
           </div>

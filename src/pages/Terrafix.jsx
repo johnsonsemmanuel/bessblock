@@ -36,7 +36,7 @@ export default function Terrafix() {
     <>
       <SEO title="Terrafix" description="Terraforce® Terrafix — a retaining wall block designed for geosynthetic reinforced segmental retaining wall systems requiring higher wall heights." />
       <div className="page">
-      <PageHero title="Terrafix" description="A Terraforce retaining wall block designed for geosynthetic reinforced segmental retaining wall systems where higher wall heights and additional reinforcement are required." bgImage="/images/products/retaining-wall-2.jpg" />
+      <PageHero title="Terrafix" description="A Terraforce retaining wall block designed for geosynthetic reinforced segmental retaining wall systems where higher wall heights and additional reinforcement are required." bgImage="/images/hero/concrete-texture-1.jpg" />
 
       <section className="section">
         <div className="container">
@@ -102,7 +102,7 @@ export default function Terrafix() {
             <h2 className="about-cta-title" style={{ color: 'var(--color-white)' }}>Need Terrafix for a reinforced wall project?</h2>
             <p className="about-cta-text" style={{ color: 'rgba(255,255,255,0.8)' }}>Contact our team for pricing, delivery, and technical information.</p>
             <div className="about-cta-actions">
-              <AnimatedButton to="/contact" variant="yellow">Request a Quote</AnimatedButton>
+              <AnimatedButton to="/request-quote" variant="yellow">Request a Quote</AnimatedButton>
               <AnimatedButton to="/products/walling/retaining-walls" variant="outline">View All Retaining Walls</AnimatedButton>
             </div>
           </div>

@@ -57,7 +57,7 @@ export default function BarrierKerbs() {
     <>
       <SEO title="Barrier Kerbs" description="Bessblock barrier kerbs provide strong physical separation between vehicles and pedestrian areas for improved safety in high-traffic locations." />
       <div className="page">
-      <PageHero title="Barrier Kerbs" description="Bessblock Barrier Kerbs are designed to provide a stronger, more protective edge than standard edging or low-profile kerbs. They are used where vehicles need clearer physical separation from pedestrian areas, structures, or sensitive paved zones." bgImage="/images/products/retaining-wall-1.jpg" />
+      <PageHero title="Barrier Kerbs" description="Bessblock Barrier Kerbs are designed to provide a stronger, more protective edge than standard edging or low-profile kerbs. They are used where vehicles need clearer physical separation from pedestrian areas, structures, or sensitive paved zones." bgImage="/images/hero/concrete-texture-1.jpg" />
 
       <section className="section">
         <div className="container">
@@ -153,7 +153,7 @@ export default function BarrierKerbs() {
             <h2 className="about-cta-title" style={{ color: 'var(--color-white)' }}>Need barrier kerbs for higher safety?</h2>
             <p className="about-cta-text" style={{ color: 'rgba(255,255,255,0.8)' }}>Contact our team for pricing, delivery, and technical information.</p>
             <div className="about-cta-actions">
-              <AnimatedButton to="/contact" variant="yellow">Request a Quote</AnimatedButton>
+              <AnimatedButton to="/request-quote" variant="yellow">Request a Quote</AnimatedButton>
               <AnimatedButton to="/products/kerbs-edging" variant="outline">View All Kerbs</AnimatedButton>
             </div>
           </div>

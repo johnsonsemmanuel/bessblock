@@ -108,7 +108,7 @@ export default function ProductShowcase() {
             >
               <div
                 className="ps-card-bg"
-                style={{ backgroundColor: isActive ? item.color : '#18181b' }}
+                style={{ backgroundColor: isActive ? item.color : 'var(--color-grey-900)' }}
               />
               <PatternBackground index={index} />
               <PatternBackground index={index + 5} />

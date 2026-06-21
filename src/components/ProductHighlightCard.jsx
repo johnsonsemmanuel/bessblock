@@ -2,6 +2,7 @@ import * as React from "react";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { Link } from "react-router-dom";
 import { cn } from "@/lib/utils";
+import LazyBackground from "./LazyBackground";
 import "./ProductHighlightCard.css";
 
 export const ProductHighlightCard = React.forwardRef(
@@ -48,12 +49,7 @@ export const ProductHighlightCard = React.forwardRef(
         <div className="highlight-card-inner">
           {imageSrc && (
             <div className="highlight-card-bg-wrapper">
-              <motion.div
-                className="highlight-card-bg"
-                style={{ backgroundImage: `url(${imageSrc})` }}
-                whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
-              />
+              <LazyBackground src={imageSrc} className="highlight-card-bg" />
             </div>
           )}
           <div className="highlight-card-overlay" />

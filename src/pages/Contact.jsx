@@ -1,5 +1,6 @@
+import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { MapPin, Phone, Mail, Clock, Send, Building2, ArrowRight } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, Send, Building2, ArrowRight, CheckCircle, AlertCircle } from 'lucide-react';
 import AnimatedButton from '../components/AnimatedButton';
 import SEO from '../components/SEO';
 import PageHero from '../components/PageHero';
@@ -31,7 +32,83 @@ const contactDetails = [
   },
 ];
 
+const subjects = [
+  { value: 'product', label: 'Product Inquiry' },
+  { value: 'quote', label: 'Request a Quote' },
+  { value: 'technical', label: 'Technical Support' },
+  { value: 'delivery', label: 'Delivery Inquiry' },
+  { value: 'other', label: 'Other' },
+];
+
+const initialForm = { name: '', email: '', company: '', subject: '', message: '' };
+
+function validate(form) {
+  const errors = {};
+  if (!form.name.trim()) errors.name = 'Full name is required';
+  if (!form.email.trim()) errors.email = 'Email address is required';
+  else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) errors.email = 'Please enter a valid email address';
+  if (!form.subject) errors.subject = 'Please select a subject';
+  if (!form.message.trim()) errors.message = 'Message is required';
+  else if (form.message.trim().length < 10) errors.message = 'Message must be at least 10 characters';
+  return errors;
+}
+
 export default function Contact() {
+  const [form, setForm] = useState(initialForm);
+  const [errors, setErrors] = useState({});
+  const [status, setStatus] = useState('idle'); // idle | submitting | success | error
+  const [touched, setTouched] = useState({});
+
+  const handleChange = (e) => {
+    const { id, value } = e.target;
+    setForm(prev => ({ ...prev, [id]: value }));
+    if (touched[id]) {
+      const newErrors = validate({ ...form, [id]: value });
+      setErrors(prev => ({ ...prev, [id]: newErrors[id] }));
+    }
+  };
+
+  const handleBlur = (e) => {
+    const { id } = e.target;
+    setTouched(prev => ({ ...prev, [id]: true }));
+    const newErrors = validate(form);
+    setErrors(prev => ({ ...prev, [id]: newErrors[id] }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const newErrors = validate(form);
+    setErrors(newErrors);
+    setTouched({ name: true, email: true, subject: true, message: true });
+
+    if (Object.keys(newErrors).length > 0) return;
+
+    setStatus('submitting');
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          access_key: 'YOUR_ACCESS_KEY_HERE',
+          name: form.name,
+          email: form.email,
+          company: form.company,
+          subject: form.subject,
+          message: form.message,
+        }),
+      });
+
+      if (!response.ok) throw new Error('Submission failed');
+
+      setStatus('success');
+      setForm(initialForm);
+      setTouched({});
+    } catch {
+      setStatus('error');
+      setTimeout(() => setStatus('idle'), 6000);
+    }
+  };
+
   return (
     <>
       <SEO title="Contact" description="Get in touch with Bessblock Concrete Products Ltd for product inquiries, technical support, quotations, and project consultations." />
@@ -39,7 +116,7 @@ export default function Contact() {
         <PageHero
           title="Contact"
           description="Get in touch with our team for product inquiries, technical support, or to discuss your project requirements."
-          bgImage="/images/hero/retaining-walls-hero.jpg"
+          bgImage="/images/hero/concrete-texture-2.jpg"
         />
 
         <section className="section">
@@ -65,41 +142,143 @@ export default function Contact() {
                 transition={{ duration: 0.4, delay: 0.1 }}
               >
                 <div className="contact-form-card">
-                  <form className="contact-form" onSubmit={e => e.preventDefault()}>
-                    <div className="form-row">
-                      <div className="form-group">
-                        <label htmlFor="name">Full Name</label>
-                        <input type="text" id="name" placeholder="Your name" />
+                  {status === 'success' ? (
+                    <motion.div
+                      className="contact-success"
+                      initial={{ opacity: 0, scale: 0.95 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                    >
+                      <div className="contact-success-icon">
+                        <CheckCircle size={48} />
+                      </div>
+                      <h3 className="contact-success-title">Message Sent!</h3>
+                      <p className="contact-success-desc">
+                        Thank you for reaching out. Our team will respond within 24 hours.
+                      </p>
+                      <AnimatedButton
+                        variant="primary"
+                        onClick={() => setStatus('idle')}
+                      >
+                        Send Another Message
+                      </AnimatedButton>
+                    </motion.div>
+                  ) : (
+                    <form className="contact-form" onSubmit={handleSubmit} noValidate>
+                      <div className="form-row">
+                        <div className="form-group">
+                          <label htmlFor="name">
+                            Full Name <span className="form-required" aria-hidden="true">*</span>
+                          </label>
+                          <input
+                            type="text"
+                            id="name"
+                            placeholder="Your name"
+                            value={form.name}
+                            onChange={handleChange}
+                            onBlur={handleBlur}
+                            required
+                            aria-required="true"
+                            aria-invalid={!!errors.name}
+                            aria-describedby={errors.name ? 'name-error' : undefined}
+                            className={errors.name ? 'input-error' : ''}
+                          />
+                          {errors.name && <span id="name-error" className="form-error" role="alert">{errors.name}</span>}
+                        </div>
+                        <div className="form-group">
+                          <label htmlFor="email">
+                            Email Address <span className="form-required" aria-hidden="true">*</span>
+                          </label>
+                          <input
+                            type="email"
+                            id="email"
+                            placeholder="your@email.com"
+                            value={form.email}
+                            onChange={handleChange}
+                            onBlur={handleBlur}
+                            required
+                            aria-required="true"
+                            aria-invalid={!!errors.email}
+                            aria-describedby={errors.email ? 'email-error' : undefined}
+                            className={errors.email ? 'input-error' : ''}
+                          />
+                          {errors.email && <span id="email-error" className="form-error" role="alert">{errors.email}</span>}
+                        </div>
                       </div>
                       <div className="form-group">
-                        <label htmlFor="email">Email Address</label>
-                        <input type="email" id="email" placeholder="your@email.com" />
+                        <label htmlFor="company">Company / Organisation</label>
+                        <input
+                          type="text"
+                          id="company"
+                          placeholder="Company name"
+                          value={form.company}
+                          onChange={handleChange}
+                        />
                       </div>
-                    </div>
-                    <div className="form-group">
-                      <label htmlFor="company">Company / Organisation</label>
-                      <input type="text" id="company" placeholder="Company name" />
-                    </div>
-                    <div className="form-group">
-                      <label htmlFor="subject">Subject</label>
-                      <select id="subject">
-                        <option value="">Select a subject</option>
-                        <option value="product">Product Inquiry</option>
-                        <option value="quote">Request a Quote</option>
-                        <option value="technical">Technical Support</option>
-                        <option value="delivery">Delivery Inquiry</option>
-                        <option value="other">Other</option>
-                      </select>
-                    </div>
-                    <div className="form-group">
-                      <label htmlFor="message">Message</label>
-                      <textarea id="message" rows={5} placeholder="Tell us about your project requirements..." />
-                    </div>
-                    <AnimatedButton variant="primary" type="submit">
-                      <Send size={16} />
-                      Send Message
-                    </AnimatedButton>
-                  </form>
+                      <div className="form-group">
+                        <label htmlFor="subject">
+                          Subject <span className="form-required" aria-hidden="true">*</span>
+                        </label>
+                        <select
+                          id="subject"
+                          value={form.subject}
+                          onChange={handleChange}
+                          onBlur={handleBlur}
+                          required
+                          aria-required="true"
+                          aria-invalid={!!errors.subject}
+                          aria-describedby={errors.subject ? 'subject-error' : undefined}
+                          className={errors.subject ? 'input-error' : ''}
+                        >
+                          <option value="">Select a subject</option>
+                          {subjects.map(s => (
+                            <option key={s.value} value={s.value}>{s.label}</option>
+                          ))}
+                        </select>
+                        {errors.subject && <span id="subject-error" className="form-error" role="alert">{errors.subject}</span>}
+                      </div>
+                      <div className="form-group">
+                        <label htmlFor="message">
+                          Message <span className="form-required" aria-hidden="true">*</span>
+                        </label>
+                        <textarea
+                          id="message"
+                          rows={5}
+                          placeholder="Tell us about your project requirements..."
+                          value={form.message}
+                          onChange={handleChange}
+                          onBlur={handleBlur}
+                          required
+                          aria-required="true"
+                          aria-invalid={!!errors.message}
+                          aria-describedby={errors.message ? 'message-error' : undefined}
+                          className={errors.message ? 'input-error' : ''}
+                        />
+                        {errors.message && <span id="message-error" className="form-error" role="alert">{errors.message}</span>}
+                      </div>
+                      <AnimatedButton
+                        variant="primary"
+                        type="submit"
+                        disabled={status === 'submitting'}
+                      >
+                        {status === 'submitting' ? (
+                          <>Sending<span className="contact-sending-dots"><span>.</span><span>.</span><span>.</span></span></>
+                        ) : (
+                          <><Send size={16} /> Send Message</>
+                        )}
+                      </AnimatedButton>
+                      {status === 'error' && (
+                        <motion.div
+                          className="contact-form-error-banner"
+                          initial={{ opacity: 0, y: -8 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          role="alert"
+                        >
+                          <AlertCircle size={16} />
+                          <span>Something went wrong. Please try again or email us directly at <a href="mailto:info@bessblock.com">info@bessblock.com</a>.</span>
+                        </motion.div>
+                      )}
+                    </form>
+                  )}
                 </div>
               </motion.div>
 

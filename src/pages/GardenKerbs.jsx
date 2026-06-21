@@ -57,7 +57,7 @@ export default function GardenKerbs() {
     <>
       <SEO title="Garden Kerbs" description="Bessblock garden kerbs create neat boundaries for lawns, paths, flower beds, and landscaped edges with a clean, finished appearance for outdoor spaces." />
       <div className="page">
-      <PageHero title="Garden Kerbs" description="Bessblock Garden Kerbs are designed to create neat boundaries for lawns, paths, flower beds, and landscaped edges while giving outdoor spaces a clean, finished appearance. They are a simple and effective way to separate soft landscaping from paved or trafficked areas without the heavier look of road kerbs." bgImage="/images/products/retaining-wall-3.jpg" />
+      <PageHero title="Garden Kerbs" description="Bessblock Garden Kerbs are designed to create neat boundaries for lawns, paths, flower beds, and landscaped edges while giving outdoor spaces a clean, finished appearance. They are a simple and effective way to separate soft landscaping from paved or trafficked areas without the heavier look of road kerbs." bgImage="/images/hero/concrete-texture-1.jpg" />
 
       <section className="section">
         <div className="container">
@@ -153,7 +153,7 @@ export default function GardenKerbs() {
             <h2 className="about-cta-title" style={{ color: 'var(--color-white)' }}>Need garden kerbs for your landscape?</h2>
             <p className="about-cta-text" style={{ color: 'rgba(255,255,255,0.8)' }}>Contact our team for pricing, delivery, and technical information.</p>
             <div className="about-cta-actions">
-              <AnimatedButton to="/contact" variant="yellow">Request a Quote</AnimatedButton>
+              <AnimatedButton to="/request-quote" variant="yellow">Request a Quote</AnimatedButton>
               <AnimatedButton to="/products/kerbs-edging" variant="outline">View All Kerbs</AnimatedButton>
             </div>
           </div>

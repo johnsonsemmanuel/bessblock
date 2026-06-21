@@ -54,7 +54,7 @@ export default function HollowConcreteBlocks() {
     <>
       <SEO title="Hollow Concrete Blocks" description="Bessblock hollow concrete blocks — lightweight, strong walling units for residential, commercial, and industrial construction with good thermal performance." />
       <div className="page">
-      <PageHero title="Hollow Concrete Blocks" description="Hollow Concrete Blocks are the primary walling unit for general construction. They are commonly used in residential, commercial, and industrial buildings because they offer a practical balance of strength, weight, and build efficiency." bgImage="/images/products/hollow-blocks-1.jpg" />
+      <PageHero title="Hollow Concrete Blocks" description="Hollow Concrete Blocks are the primary walling unit for general construction. They are commonly used in residential, commercial, and industrial buildings because they offer a practical balance of strength, weight, and build efficiency." bgImage="/images/hero/concrete-texture-1.jpg" />
 
       {/* Benefits */}
       <section className="section">
@@ -169,7 +169,7 @@ export default function HollowConcreteBlocks() {
             <h2 className="about-cta-title" style={{ color: 'var(--color-white)' }}>Need hollow blocks for your project?</h2>
             <p className="about-cta-text" style={{ color: 'rgba(255,255,255,0.8)' }}>Contact our team for pricing, delivery, and technical information.</p>
             <div className="about-cta-actions">
-              <AnimatedButton to="/contact" variant="yellow">Request a Quote</AnimatedButton>
+              <AnimatedButton to="/request-quote" variant="yellow">Request a Quote</AnimatedButton>
               <AnimatedButton to="/products/walling" variant="outline">View All Walling</AnimatedButton>
             </div>
           </div>

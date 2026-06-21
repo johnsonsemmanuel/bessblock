@@ -50,7 +50,7 @@ export default function LRangeRockFace() {
     <>
       <SEO title="L-Range Rock Face" description="Terraforce® L Range Rock Face Option — a dry-stack interlocking retaining block with a rugged rock-face finish for natural-looking retaining walls." />
       <div className="page">
-      <PageHero title="L Range - Rock Face Option" description="A versatile concrete retaining block designed for landscaping, erosion control, and retaining wall construction. It uses the same dry-stack interlocking system as the standard option, but with a rock-face finish for a more rugged, natural appearance." bgImage="/images/products/retaining-wall-2.jpg" />
+      <PageHero title="L Range - Rock Face Option" description="A versatile concrete retaining block designed for landscaping, erosion control, and retaining wall construction. It uses the same dry-stack interlocking system as the standard option, but with a rock-face finish for a more rugged, natural appearance." bgImage="/images/hero/concrete-texture-1.jpg" />
 
       <section className="section">
         <div className="container">
@@ -133,7 +133,7 @@ export default function LRangeRockFace() {
             <h2 className="about-cta-title" style={{ color: 'var(--color-white)' }}>Need rock-face retaining blocks?</h2>
             <p className="about-cta-text" style={{ color: 'rgba(255,255,255,0.8)' }}>Contact our team for pricing, delivery, and technical information.</p>
             <div className="about-cta-actions">
-              <AnimatedButton to="/contact" variant="yellow">Request a Quote</AnimatedButton>
+              <AnimatedButton to="/request-quote" variant="yellow">Request a Quote</AnimatedButton>
               <AnimatedButton to="/products/walling/retaining-walls" variant="outline">View All Retaining Walls</AnimatedButton>
             </div>
           </div>

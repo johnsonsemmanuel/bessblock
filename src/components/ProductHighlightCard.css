@@ -43,6 +43,11 @@
   background-size: cover;
   background-position: center;
   will-change: transform;
+  transition: transform 0.6s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.highlight-card:hover .highlight-card-bg {
+  transform: scale(1.05);
 }
 
 .highlight-card-overlay {

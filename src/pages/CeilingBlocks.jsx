@@ -52,7 +52,7 @@ export default function CeilingBlocks() {
     <>
       <SEO title="Ceiling Blocks" description="Bessblock ceiling blocks for rib-and-block slab systems — non-structural concrete infill units for suspended floors and ceilings in building construction." />
       <div className="page">
-      <PageHero title="Ceiling Blocks" description="Ceiling Blocks are non-structural concrete infill units used in rib-and-block slab systems for suspended floors and ceilings. They are designed to work between reinforced concrete ribs or beams as part of a structural floor or roof assembly." bgImage="/images/products/ceiling-blocks-1.png" />
+      <PageHero title="Ceiling Blocks" description="Ceiling Blocks are non-structural concrete infill units used in rib-and-block slab systems for suspended floors and ceilings. They are designed to work between reinforced concrete ribs or beams as part of a structural floor or roof assembly." bgImage="/images/hero/concrete-texture-2.jpg" />
 
       {/* Benefits */}
       <section className="section">
@@ -170,7 +170,7 @@ export default function CeilingBlocks() {
             <h2 className="about-cta-title" style={{ color: 'var(--color-white)' }}>Need ceiling blocks for your project?</h2>
             <p className="about-cta-text" style={{ color: 'rgba(255,255,255,0.8)' }}>Contact our team for pricing, delivery, and technical information.</p>
             <div className="about-cta-actions">
-              <AnimatedButton to="/contact" variant="yellow">Request a Quote</AnimatedButton>
+              <AnimatedButton to="/request-quote" variant="yellow">Request a Quote</AnimatedButton>
               <AnimatedButton to="/products/walling" variant="outline">View All Walling</AnimatedButton>
             </div>
           </div>

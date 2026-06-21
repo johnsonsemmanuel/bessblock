@@ -77,7 +77,7 @@ export default function InterlockingPavingBlocks() {
     <>
       <SEO title="Interlocking Paving Blocks" description="Precision-engineered interlocking concrete paving blocks from Bessblock for durable, stable pavement surfaces for pedestrian and vehicular traffic." />
       <div className="page">
-      <PageHero title="Interlocking Paving Blocks" description="Precision-engineered concrete paving units designed to interlock with adjacent blocks, creating a durable and stable pavement surface. Their unique shape distributes loads effectively, making them suitable for both pedestrian and vehicular traffic." bgImage="/images/products/interlocking-paving-1.jpg" />
+      <PageHero title="Interlocking Paving Blocks" description="Precision-engineered concrete paving units designed to interlock with adjacent blocks, creating a durable and stable pavement surface. Their unique shape distributes loads effectively, making them suitable for both pedestrian and vehicular traffic." bgImage="/images/hero/concrete-texture-1.jpg" />
 
       {/* How It Works */}
       <section className="section">
@@ -207,7 +207,7 @@ export default function InterlockingPavingBlocks() {
               Contact our team for technical specifications, pricing, and project-specific advice.
             </p>
             <div className="about-cta-actions">
-              <AnimatedButton to="/contact" variant="yellow">Request a Quote</AnimatedButton>
+              <AnimatedButton to="/request-quote" variant="yellow">Request a Quote</AnimatedButton>
               <AnimatedButton to="/products/paving-blocks" variant="outline">View All Paving</AnimatedButton>
             </div>
           </div>

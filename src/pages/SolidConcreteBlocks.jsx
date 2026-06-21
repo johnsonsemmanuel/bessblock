@@ -51,7 +51,7 @@ export default function SolidConcreteBlocks() {
     <>
       <SEO title="Solid Concrete Blocks" description="Dense solid concrete blocks from Bessblock for foundations, load-bearing walls, and heavy-duty structural applications requiring high strength and durability." />
       <div className="page">
-      <PageHero title="Solid Concrete Blocks" description="Solid Concrete Blocks are dense masonry units used where higher load performance and greater structural robustness are required. They are especially useful in foundations, retaining substructures, and load-bearing wall segments." bgImage="/images/products/solid-blocks-1.jpg" />
+      <PageHero title="Solid Concrete Blocks" description="Solid Concrete Blocks are dense masonry units used where higher load performance and greater structural robustness are required. They are especially useful in foundations, retaining substructures, and load-bearing wall segments." bgImage="/images/hero/concrete-texture-2.jpg" />
 
       {/* Benefits */}
       <section className="section">
@@ -169,7 +169,7 @@ export default function SolidConcreteBlocks() {
             <h2 className="about-cta-title" style={{ color: 'var(--color-white)' }}>Need solid blocks for your project?</h2>
             <p className="about-cta-text" style={{ color: 'rgba(255,255,255,0.8)' }}>Contact our team for pricing, delivery, and technical information.</p>
             <div className="about-cta-actions">
-              <AnimatedButton to="/contact" variant="yellow">Request a Quote</AnimatedButton>
+              <AnimatedButton to="/request-quote" variant="yellow">Request a Quote</AnimatedButton>
               <AnimatedButton to="/products/walling" variant="outline">View All Walling</AnimatedButton>
             </div>
           </div>

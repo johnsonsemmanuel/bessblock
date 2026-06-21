@@ -32,7 +32,7 @@ export default function Walling() {
     <>
       <SEO title="Walling" description="Explore Bessblock's concrete walling range — hollow blocks, solid blocks, ceiling blocks, and retaining walls for residential, commercial, and industrial construction." />
       <div className="page">
-      <PageHero title="Walling" description="Bessblock's walling range is designed to provide practical, durable, and cost-effective concrete solutions for residential, commercial, and industrial construction. The range covers hollow blocks, solid blocks, and ceiling blocks, giving customers a complete set of masonry products for both structural and non-structural applications." bgImage="/images/products/hollow-blocks-1.jpg" />
+      <PageHero title="Walling" description="Bessblock's walling range is designed to provide practical, durable, and cost-effective concrete solutions for residential, commercial, and industrial construction. The range covers hollow blocks, solid blocks, and ceiling blocks, giving customers a complete set of masonry products for both structural and non-structural applications." bgImage="/images/hero/concrete-texture-2.jpg" />
 
       <section className="section">
         <div className="container">
@@ -128,7 +128,7 @@ export default function Walling() {
               Contact our team for technical specifications, pricing, and project advice.
             </p>
             <div className="about-cta-actions">
-              <AnimatedButton to="/contact" variant="yellow">Request a Quote</AnimatedButton>
+              <AnimatedButton to="/request-quote" variant="yellow">Request a Quote</AnimatedButton>
               <AnimatedButton to="/products" variant="outline">View All Products</AnimatedButton>
             </div>
           </div>

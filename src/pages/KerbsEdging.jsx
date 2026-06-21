@@ -40,7 +40,7 @@ export default function KerbsEdging() {
       <PageHero
         title="Kerbs & Edging"
         description="Bessblock's Kerbs & Edging range is designed to provide clean boundaries, edge restraint, and durable finishing detail for roads, pavements, driveways, parking areas, and landscaped spaces."
-        bgImage="/images/products/retaining-wall-1.jpg"
+        bgImage="/images/hero/concrete-texture-2.jpg"
       />
 
       <section className="section">
@@ -154,7 +154,7 @@ export default function KerbsEdging() {
               Contact our team for technical specifications, pricing, and project advice.
             </p>
             <div className="about-cta-actions">
-              <AnimatedButton to="/contact" variant="yellow">Request a Quote</AnimatedButton>
+              <AnimatedButton to="/request-quote" variant="yellow">Request a Quote</AnimatedButton>
               <AnimatedButton to="/products" variant="outline">View All Products</AnimatedButton>
             </div>
           </div>

@@ -10,6 +10,7 @@ import {
   NavigationMenuIndicator,
 } from './NavigationMenu';
 import ThemeToggle from './ThemeToggle';
+import SearchBar from './SearchBar';
 import productCategories from '../data/products';
 import './Navbar.css';
 
@@ -192,13 +193,17 @@ export default function Navbar() {
                 </NavigationMenuContent>
               </NavigationMenuItem>
 
+              <NavigationMenuItem className="nm-item-search">
+                <SearchBar />
+              </NavigationMenuItem>
+
               <NavigationMenuItem className="nm-item-theme">
                 <ThemeToggle />
               </NavigationMenuItem>
 
               <NavigationMenuItem>
                 <NavigationMenuLink asChild>
-                  <Link to="/contact" className="nm-trigger nav-cta-link">Request a Quote</Link>
+                  <Link to="/request-quote" className="nm-trigger nav-cta-link">Request a Quote</Link>
                 </NavigationMenuLink>
               </NavigationMenuItem>
             </NavigationMenuList>

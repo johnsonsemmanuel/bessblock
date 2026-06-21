@@ -53,7 +53,7 @@ export default function LRangeStandard() {
     <>
       <SEO title="L-Range Standard" description="Terraforce® L Range Standard Option — a versatile dry-stack interlocking concrete retaining block for landscaping, erosion control, and gravity retaining walls." />
       <div className="page">
-      <PageHero title="L Range - Standard Option" description="A versatile concrete retaining block for landscaping and erosion control, designed to stack without mortar in most applications using dry-stacked construction for faster installation and reduced consumables." bgImage="/images/products/retaining-wall-1.jpg" />
+      <PageHero title="L Range - Standard Option" description="A versatile concrete retaining block for landscaping and erosion control, designed to stack without mortar in most applications using dry-stacked construction for faster installation and reduced consumables." bgImage="/images/hero/concrete-texture-2.jpg" />
 
       <section className="section">
         <div className="container">
@@ -149,7 +149,7 @@ export default function LRangeStandard() {
             <h2 className="about-cta-title" style={{ color: 'var(--color-white)' }}>Need L Range blocks for your project?</h2>
             <p className="about-cta-text" style={{ color: 'rgba(255,255,255,0.8)' }}>Contact our team for pricing, delivery, and technical information.</p>
             <div className="about-cta-actions">
-              <AnimatedButton to="/contact" variant="yellow">Request a Quote</AnimatedButton>
+              <AnimatedButton to="/request-quote" variant="yellow">Request a Quote</AnimatedButton>
               <AnimatedButton to="/products/walling/retaining-walls" variant="outline">View All Retaining Walls</AnimatedButton>
             </div>
           </div>

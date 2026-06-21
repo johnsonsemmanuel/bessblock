@@ -36,7 +36,7 @@ export default function Terracrete() {
     <>
       <SEO title="Terracrete" description="Terraforce® Terracrete — a retaining wall solution for constrained sites using cement stabilised backfill where conventional reinforced wall construction is impractical." />
       <div className="page">
-      <PageHero title="Terracrete" description="A Terraforce retaining wall solution designed for use with cement stabilised backfill in constrained site conditions where space or geometry limits conventional reinforced wall construction." bgImage="/images/products/retaining-wall-3.jpg" />
+      <PageHero title="Terracrete" description="A Terraforce retaining wall solution designed for use with cement stabilised backfill in constrained site conditions where space or geometry limits conventional reinforced wall construction." bgImage="/images/hero/concrete-texture-2.jpg" />
 
       <section className="section">
         <div className="container">
@@ -102,7 +102,7 @@ export default function Terracrete() {
             <h2 className="about-cta-title" style={{ color: 'var(--color-white)' }}>Need Terracrete for a constrained site?</h2>
             <p className="about-cta-text" style={{ color: 'rgba(255,255,255,0.8)' }}>Contact our team for pricing, delivery, and technical information.</p>
             <div className="about-cta-actions">
-              <AnimatedButton to="/contact" variant="yellow">Request a Quote</AnimatedButton>
+              <AnimatedButton to="/request-quote" variant="yellow">Request a Quote</AnimatedButton>
               <AnimatedButton to="/products/walling/retaining-walls" variant="outline">View All Retaining Walls</AnimatedButton>
             </div>
           </div>

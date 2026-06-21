@@ -18,7 +18,7 @@ export default function ProjectsGallery() {
     <>
       <SEO title="Projects Gallery" description="Browse a selection of infrastructure, commercial, and institutional projects supplied by Bessblock Concrete Products Ltd across Ghana." />
       <div className="page">
-      <PageHero title="Projects Gallery" description="A selection of projects supplied by Bessblock Concrete Products across infrastructure, commercial, and institutional sectors." bgImage="/images/hero/paving-hero.jpg" />
+      <PageHero title="Projects Gallery" description="A selection of projects supplied by Bessblock Concrete Products across infrastructure, commercial, and institutional sectors." bgImage="/images/hero/concrete-texture-2.jpg" />
 
       <section className="section">
         <div className="container">
@@ -60,7 +60,7 @@ export default function ProjectsGallery() {
             <p className="projects-cta-desc">
               We supply products for projects of all sizes. Contact our team to discuss your requirements.
             </p>
-            <Link to="/contact" className="projects-cta-btn">Request a Quote</Link>
+            <Link to="/request-quote" className="projects-cta-btn">Request a Quote</Link>
           </motion.div>
         </div>
       </section>

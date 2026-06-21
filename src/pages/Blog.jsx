@@ -13,7 +13,7 @@ export default function Blog() {
       <PageHero
         title="Blog"
         description="News, insights, and technical articles from the Bessblock team."
-        bgImage="/images/hero/paving-hero.jpg"
+        bgImage="/images/hero/concrete-texture-1.jpg"
       />
 
       <section className="section">

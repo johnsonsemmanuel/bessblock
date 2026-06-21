@@ -58,7 +58,7 @@ export default function RoadKerbs() {
     <>
       <SEO title="Road Kerbs" description="Bessblock road kerbs provide strong edge restraint and a clean, durable finish for roads, parking areas, pavements, and traffic-bearing surfaces." />
       <div className="page">
-      <PageHero title="Road Kerbs" description="Bessblock Road Kerbs are designed to provide strong edge restraint and a clean, durable finish for roads, parking areas, pavements, and other traffic-bearing surfaces. They help hold the pavement structure in place while defining the road edge clearly and professionally." bgImage="/images/products/retaining-wall-1.jpg" />
+      <PageHero title="Road Kerbs" description="Bessblock Road Kerbs are designed to provide strong edge restraint and a clean, durable finish for roads, parking areas, pavements, and other traffic-bearing surfaces. They help hold the pavement structure in place while defining the road edge clearly and professionally." bgImage="/images/hero/concrete-texture-2.jpg" />
 
       <section className="section">
         <div className="container">
@@ -154,7 +154,7 @@ export default function RoadKerbs() {
             <h2 className="about-cta-title" style={{ color: 'var(--color-white)' }}>Need road kerbs for your project?</h2>
             <p className="about-cta-text" style={{ color: 'rgba(255,255,255,0.8)' }}>Contact our team for pricing, delivery, and technical information.</p>
             <div className="about-cta-actions">
-              <AnimatedButton to="/contact" variant="yellow">Request a Quote</AnimatedButton>
+              <AnimatedButton to="/request-quote" variant="yellow">Request a Quote</AnimatedButton>
               <AnimatedButton to="/products/kerbs-edging" variant="outline">View All Kerbs</AnimatedButton>
             </div>
           </div>
