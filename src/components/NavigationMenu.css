@@ -302,23 +302,6 @@
   background: var(--bg-section);
 }
 
-.nav-cat-image {
-  position: relative;
-  height: 72px;
-  flex-shrink: 0;
-  background: var(--cat-gradient);
-  background-size: cover;
-  background-position: center;
-  overflow: hidden;
-}
-
-.nav-cat-blur {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.15) 100%);
-  pointer-events: none;
-}
-
 .nav-cat-body {
   padding: var(--spacing-3) var(--spacing-3) var(--spacing-2);
 }

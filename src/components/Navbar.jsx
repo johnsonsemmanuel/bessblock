@@ -48,24 +48,10 @@ function AboutContent() {
 }
 
 function ProductsContent() {
-  const catImages = {
-    'paving-blocks': '/images/products/interlocking-paving-1.jpg',
-    'walling': '/images/products/hollow-blocks-1.jpg',
-    'paving-slabs': '/images/products/interlocking-paving-2.jpg',
-    'step-risers': '/images/products/rectangular-paving-1.jpg',
-    'kerbs-edging': '/images/products/retaining-wall-1.jpg',
-  };
-
   return (
     <div className="nm-dropdown-products">
       {productCategories.map(cat => (
-        <div key={cat.id} className="nav-cat-card" style={{ '--cat-gradient': cat.imageGradient }}>
-          <div
-            className="nav-cat-image"
-            style={{ backgroundImage: `url(${catImages[cat.id]})` }}
-          >
-            <div className="nav-cat-blur" />
-          </div>
+        <div key={cat.id} className="nav-cat-card">
           <div className="nav-cat-body">
             <NavigationMenuLink asChild>
               <Link to={cat.path} className="nav-cat-title">{cat.name}</Link>
