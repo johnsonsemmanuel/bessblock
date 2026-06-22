@@ -1,22 +1,12 @@
 import { motion } from 'framer-motion';
 import { Shield, Factory, Droplets, CheckCircle, Settings, Truck, HardHat, Ruler, Hammer } from 'lucide-react';
 import ScrollReveal from '../components/ScrollReveal';
+import SectionTitle from '../components/SectionTitle';
 import AnimatedButton from '../components/AnimatedButton';
 import PageHero from '../components/PageHero';
+import LazyBackground from '../components/LazyBackground';
 import SEO from '../components/SEO';
 import './About.css';
-
-function ImgBlock({ label, icon: Icon = Factory }) {
-  return (
-    <div className="about-image-block">
-      <div className="about-image-block-inner">
-        <Icon size={48} strokeWidth={1} />
-        <span>{label}</span>
-      </div>
-      <div className="about-image-accent" />
-    </div>
-  );
-}
 
 const stats = [
   { icon: Shield, number: '100%', label: 'Production quality monitored at every stage' },
@@ -33,6 +23,13 @@ const qcItems = [
   { icon: Droplets, text: 'Curing control before release to stock or delivery.' },
 ];
 
+const mfgImages = [
+  'https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=700&q=80',
+  'https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?w=700&q=80',
+  'https://images.unsplash.com/photo-1581092335871-4c7e9e4dcfed?w=700&q=80',
+  'https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=700&q=80',
+];
+
 export default function ManufacturingQuality() {
   return (
     <>
@@ -40,10 +37,7 @@ export default function ManufacturingQuality() {
       <div className="page">
       <PageHero title="Manufacturing & Quality" bgImage="/images/hero/concrete-texture-2.jpg">
         <p className="page-hero-desc">
-          At Bessblock, manufacturing is built around one clear principle: every block, paver, and concrete product should leave the plant consistent, durable, and fit for purpose. Our production process combines modern plant operations, controlled material handling, and quality-focused curing methods to help ensure dependable performance across all product lines.
-        </p>
-        <p className="page-hero-desc">
-          Bessblock's manufacturing approach is hinged on strength, not just a background process. That means showing visitors that the company is not simply selling concrete products, but producing them with a disciplined system designed to support contractors, developers, engineers, and project owners.
+          At Bessblock, every block, paver, and concrete product is manufactured under controlled conditions combining modern plant operations, automated production, and quality-focused curing methods to deliver consistent, durable, and fit-for-purpose results across all product lines.
         </p>
       </PageHero>
 
@@ -76,10 +70,11 @@ export default function ManufacturingQuality() {
           <div className="about-split">
             <ScrollReveal direction="left">
               <div className="about-split-text">
-                <h2 className="about-heading">
-                  <span className="about-heading-accent" />
-                  Built for consistency
-                </h2>
+                <SectionTitle
+                  label="Quality First"
+                  title="Built for consistency"
+                  align="left"
+                />
                 <p className="about-text">
                   Bessblock manufactures its products under controlled production conditions so that size, shape, finish, and strength remain as consistent as possible from batch to batch. This matters because in construction, small variations can affect installation speed, alignment, structural performance, and overall appearance.
                 </p>
@@ -90,7 +85,9 @@ export default function ManufacturingQuality() {
             </ScrollReveal>
             <ScrollReveal direction="right" delay={0.1}>
               <div className="about-split-media">
-                <ImgBlock label="Quality-controlled production facility" icon={Factory} />
+                <LazyBackground src={mfgImages[0]} className="about-image-block about-image-block-photo">
+                  <div className="about-image-block-label">Quality-controlled production facility</div>
+                </LazyBackground>
               </div>
             </ScrollReveal>
           </div>
@@ -103,15 +100,18 @@ export default function ManufacturingQuality() {
           <div className="about-split">
             <ScrollReveal direction="left">
               <div className="about-split-media">
-                <ImgBlock label="Besser automated block machine" icon={Settings} />
+                <LazyBackground src={mfgImages[1]} className="about-image-block about-image-block-photo">
+                  <div className="about-image-block-label">Besser automated block machine</div>
+                </LazyBackground>
               </div>
             </ScrollReveal>
             <ScrollReveal direction="right" delay={0.1}>
               <div className="about-split-text">
-                <h2 className="about-heading">
-                  <span className="about-heading-accent" />
-                  Automated block production
-                </h2>
+                <SectionTitle
+                  label="Automation"
+                  title="Automated block production"
+                  align="left"
+                />
                 <p className="about-text">
                   A major part of Bessblock's quality story is its automated Besser block making system. Besser is widely recognised as a leading provider of concrete products equipment and production systems, with a long-standing reputation for engineering, durability, and support for the precast and masonry industries.
                 </p>
@@ -133,10 +133,11 @@ export default function ManufacturingQuality() {
           <div className="about-split">
             <ScrollReveal direction="left">
               <div className="about-split-text">
-                <h2 className="about-heading">
-                  <span className="about-heading-accent" />
-                  Mist curing system
-                </h2>
+                <SectionTitle
+                  label="Curing Process"
+                  title="Mist curing system"
+                  align="left"
+                />
                 <p className="about-text">
                   A key part of our quality process is our special mist curing system. This controlled curing method helps retain moisture during the early strength development stage, supporting better hydration of the concrete and improving the final durability of the product.
                 </p>
@@ -147,7 +148,9 @@ export default function ManufacturingQuality() {
             </ScrollReveal>
             <ScrollReveal direction="right" delay={0.1}>
               <div className="about-split-media">
-                <ImgBlock label="Controlled mist curing environment" icon={Droplets} />
+                <LazyBackground src={mfgImages[2]} className="about-image-block about-image-block-photo">
+                  <div className="about-image-block-label">Controlled mist curing environment</div>
+                </LazyBackground>
               </div>
             </ScrollReveal>
           </div>
@@ -158,10 +161,11 @@ export default function ManufacturingQuality() {
       <section className="section section-light">
         <div className="container">
           <ScrollReveal>
-            <h2 className="about-heading">
-              <span className="about-heading-accent" />
-              Quality control standards
-            </h2>
+            <SectionTitle
+              label="Standards"
+              title="Quality control standards"
+              align="left"
+            />
             <p className="about-text">
               Bessblock's quality control starts with raw materials and continues through batching, moulding, compaction, curing, inspection, and dispatch. Every stage is monitored to help ensure the final product meets the expectations of customers who depend on concrete products for structural performance, durability, and appearance.
             </p>
@@ -195,15 +199,18 @@ export default function ManufacturingQuality() {
           <div className="about-split">
             <ScrollReveal direction="left">
               <div className="about-split-media">
-                <ImgBlock label="Dependable products for every project" icon={HardHat} />
+                <LazyBackground src={mfgImages[3]} className="about-image-block about-image-block-photo">
+                  <div className="about-image-block-label">Dependable products for every project</div>
+                </LazyBackground>
               </div>
             </ScrollReveal>
             <ScrollReveal direction="right" delay={0.1}>
               <div className="about-split-text">
-                <h2 className="about-heading">
-                  <span className="about-heading-accent" />
-                  Why it matters
-                </h2>
+                <SectionTitle
+                  label="Value"
+                  title="Why it matters"
+                  align="left"
+                />
                 <p className="about-text">
                   For contractors and engineers, manufacturing quality affects everything downstream: installation time, waste, maintenance, and long-term performance. For developers and property owners, it affects appearance, reliability, and value.
                 </p>
@@ -235,7 +242,6 @@ export default function ManufacturingQuality() {
             <div className="about-cta-actions">
               <AnimatedButton to="/products/paving-blocks" variant="yellow">Explore Products</AnimatedButton>
               <AnimatedButton to="/request-quote" variant="outline">Request a Quote</AnimatedButton>
-              <AnimatedButton to="/contact" variant="outline">Contact Bessblock</AnimatedButton>
             </div>
           </motion.div>
         </div>

@@ -12,10 +12,7 @@ export default function About() {
       <div className="page">
       <PageHero title="About Bessblock" bgImage="/images/hero/concrete-texture-1.jpg">
         <p className="page-hero-desc">
-          Bessblock Concrete Products Ltd (Bessblock) is a specialist manufacturer of concrete products serving the needs of residential, commercial, and civil construction projects. As part of the RG Group, Bessblock was established to help ensure the timely supply of high-quality materials that support project delivery, durability, and consistency across every stage of development.
-        </p>
-        <p className="page-hero-desc">
-          Bessblock exists to solve a practical construction challenge: when projects depend on dependable materials, quality and timing matter just as much as price. That is why our focus is on producing concrete products that contractors, developers, engineers, and project managers can rely on for performance, specification compliance, and ease of installation.
+          Bessblock Concrete Products Ltd is a specialist manufacturer of concrete products serving residential, commercial, and civil construction projects across Ghana. As part of the RG Group, we are focused on producing materials that contractors, developers, and engineers can rely on for performance, specification compliance, and ease of installation.
         </p>
       </PageHero>
 
@@ -115,7 +112,6 @@ export default function About() {
             <div className="about-cta-actions">
               <AnimatedButton to="/products/paving-blocks" variant="primary">Explore Products</AnimatedButton>
               <AnimatedButton to="/request-quote" variant="outline-dark">Request a Quote</AnimatedButton>
-              <AnimatedButton to="/contact" variant="outline-dark">Contact Bessblock</AnimatedButton>
             </div>
           </motion.div>
         </div>
