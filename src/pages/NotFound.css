@@ -73,7 +73,7 @@
   cursor: pointer;
   border: none;
   font-family: inherit;
-  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast), background var(--transition-fast);
 }
 
 .not-found-btn-primary {

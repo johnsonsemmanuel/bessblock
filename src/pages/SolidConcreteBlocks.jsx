@@ -138,8 +138,9 @@ export default function SolidConcreteBlocks() {
               '/images/products/solid-blocks-5.jpg',
             ].map((img, i) => (
               <ScrollReveal key={i} delay={i * 0.05}>
-                <div className="wall-sub-gallery-item" style={i === 0 ? { gridColumn: '1 / -1', aspectRatio: '16 / 6', backgroundImage: `url(${img})`, backgroundSize: 'cover', backgroundPosition: 'center' } : { backgroundImage: `url(${img})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
-                </div>
+                <div className="wall-sub-gallery-item"
+                  style={{ backgroundImage: `url(${img})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
+                />
               </ScrollReveal>
             ))}
           </div>

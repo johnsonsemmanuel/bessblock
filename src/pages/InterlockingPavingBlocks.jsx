@@ -178,7 +178,7 @@ export default function InterlockingPavingBlocks() {
           <SectionTitle label="Project Gallery" title="See interlocking in action" align="left" />
           <div className="inter-gallery-grid">
             {galImages.map((img, i) => (
-              <div key={i} className={`inter-gallery-cell ${i === 0 ? 'inter-gallery-featured' : ''}`}
+              <div key={i} className="inter-gallery-cell"
                 style={{ backgroundImage: `url(${img})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
               />
             ))}

@@ -294,10 +294,6 @@
   opacity: 0.3;
 }
 
-.wall-sub-gallery-featured {
-  grid-column: 1 / -1;
-  aspect-ratio: 16 / 6;
-}
 
 .wall-sub-related {
   display: grid;

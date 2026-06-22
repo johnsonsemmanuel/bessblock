@@ -140,7 +140,7 @@ export default function HollowConcreteBlocks() {
               '/images/products/hollow-blocks-4.jpg',
               '/images/products/hollow-blocks-1.jpg',
             ].map((img, i) => (
-              <div key={i} className={`wall-sub-gallery-item ${i === 0 ? 'wall-sub-gallery-featured' : ''}`}
+              <div key={i} className="wall-sub-gallery-item"
                 style={{ backgroundImage: `url(${img})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
               />
             ))}
