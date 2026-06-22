@@ -37,10 +37,10 @@ export default function NewsletterSignup({ variant = 'default', className = '' }
   if (variant === 'footer') {
     return (
       <div className={className}>
-        <p style={{ fontSize: 13, color: 'var(--text-secondary)', marginBottom: 10 }}>
+        <p style={{ fontSize: 12, color: 'var(--text-secondary)', marginBottom: 8, lineHeight: 1.4 }}>
           Get the latest product updates and project inspiration.
         </p>
-        <form onSubmit={handleSubmit} style={{ display: 'flex', gap: 8 }}>
+        <form onSubmit={handleSubmit} style={{ display: 'flex', gap: 6 }}>
           <input
             type="email"
             value={email}
@@ -49,8 +49,8 @@ export default function NewsletterSignup({ variant = 'default', className = '' }
             required
             aria-label="Email for newsletter"
             style={{
-              flex: 1, padding: '6px 10px', borderRadius: 6, border: '1px solid var(--border)',
-              fontSize: 12, fontFamily: 'inherit', outline: 'none',
+              flex: 1, padding: '4px 8px', borderRadius: 5, border: '1px solid var(--border)',
+              fontSize: 11, fontFamily: 'inherit', outline: 'none',
               background: 'var(--bg-card)', color: 'var(--text)',
             }}
           />
@@ -58,13 +58,13 @@ export default function NewsletterSignup({ variant = 'default', className = '' }
             type="submit"
             disabled={status === 'submitting'}
             style={{
-              padding: '6px 12px', borderRadius: 6, border: 'none',
+              padding: '4px 10px', borderRadius: 5, border: 'none',
               background: 'var(--color-bessblock-blue)', color: '#fff',
-              fontSize: 12, fontWeight: 600, cursor: 'pointer',
+              fontSize: 11, fontWeight: 600, cursor: 'pointer',
               transition: 'background var(--transition-fast)',
             }}
           >
-            {status === 'submitting' ? <Loader2 size={14} style={{ animation: 'spin 1s linear infinite' }} /> : 'Subscribe'}
+            {status === 'submitting' ? <Loader2 size={12} style={{ animation: 'spin 1s linear infinite' }} /> : 'Subscribe'}
           </button>
         </form>
       </div>
