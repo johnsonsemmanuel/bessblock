@@ -58,7 +58,7 @@ export default function RoadKerbs() {
     <>
       <SEO title="Road Kerbs" description="Bessblock road kerbs provide strong edge restraint and a clean, durable finish for roads, parking areas, pavements, and traffic-bearing surfaces." />
       <div className="page">
-      <PageHero title="Road Kerbs" description="Bessblock Road Kerbs are designed to provide strong edge restraint and a clean, durable finish for roads, parking areas, pavements, and other traffic-bearing surfaces. They help hold the pavement structure in place while defining the road edge clearly and professionally." bgImage="/images/hero/concrete-texture-2.jpg" />
+      <PageHero title="Road Kerbs" description="Bessblock Road Kerbs are designed to provide strong edge restraint and a clean, durable finish for roads, parking areas, pavements, and other traffic-bearing surfaces. They help hold the pavement structure in place while defining the road edge clearly and professionally." bgImage="/images/hero/concrete-texture-2.webp" />
 
       <section className="section">
         <div className="container">

@@ -54,7 +54,7 @@ export default function HollowConcreteBlocks() {
     <>
       <SEO title="Hollow Concrete Blocks" description="Bessblock hollow concrete blocks, lightweight, strong walling units for residential, commercial, and industrial construction with good thermal performance." />
       <div className="page">
-      <PageHero title="Hollow Concrete Blocks" description="Hollow Concrete Blocks are the primary walling unit for general construction. They are commonly used in residential, commercial, and industrial buildings because they offer a practical balance of strength, weight, and build efficiency." bgImage="/images/hero/concrete-texture-1.jpg" />
+      <PageHero title="Hollow Concrete Blocks" description="Hollow Concrete Blocks are the primary walling unit for general construction. They are commonly used in residential, commercial, and industrial buildings because they offer a practical balance of strength, weight, and build efficiency." bgImage="/images/hero/concrete-texture-1.webp" />
 
       {/* Benefits */}
       <section className="section">
@@ -135,10 +135,10 @@ export default function HollowConcreteBlocks() {
           <SectionTitle label="Project Gallery" title="Hollow blocks in action" align="left" />
           <div className="wall-sub-gallery">
             {[
-              '/images/products/hollow-blocks-2.jpg',
-              '/images/products/hollow-blocks-3.jpg',
-              '/images/products/hollow-blocks-4.jpg',
-              '/images/products/hollow-blocks-1.jpg',
+              '/images/products/hollow-blocks-2.webp',
+              '/images/products/hollow-blocks-3.webp',
+              '/images/products/hollow-blocks-4.webp',
+              '/images/products/hollow-blocks-1.webp',
             ].map((img, i) => (
               <div key={i} className="wall-sub-gallery-item"
                 style={{ backgroundImage: `url(${img})`, backgroundSize: 'cover', backgroundPosition: 'center' }}

@@ -51,7 +51,7 @@ export default function SolidConcreteBlocks() {
     <>
       <SEO title="Solid Concrete Blocks" description="Dense solid concrete blocks from Bessblock for foundations, load-bearing walls, and heavy-duty structural applications requiring high strength and durability." />
       <div className="page">
-      <PageHero title="Solid Concrete Blocks" description="Solid Concrete Blocks are dense masonry units used where higher load performance and greater structural robustness are required. They are especially useful in foundations, retaining substructures, and load-bearing wall segments." bgImage="/images/hero/concrete-texture-2.jpg" />
+      <PageHero title="Solid Concrete Blocks" description="Solid Concrete Blocks are dense masonry units used where higher load performance and greater structural robustness are required. They are especially useful in foundations, retaining substructures, and load-bearing wall segments." bgImage="/images/hero/concrete-texture-2.webp" />
 
       {/* Benefits */}
       <section className="section">
@@ -132,10 +132,10 @@ export default function SolidConcreteBlocks() {
           <SectionTitle label="Project Gallery" title="Solid block applications" align="left" />
           <div className="wall-sub-gallery">
             {[
-              '/images/products/solid-blocks-2.jpg',
-              '/images/products/solid-blocks-3.jpg',
-              '/images/products/solid-blocks-4.jpg',
-              '/images/products/solid-blocks-5.jpg',
+              '/images/products/solid-blocks-2.webp',
+              '/images/products/solid-blocks-3.webp',
+              '/images/products/solid-blocks-4.webp',
+              '/images/products/solid-blocks-5.webp',
             ].map((img, i) => (
               <ScrollReveal key={i} delay={i * 0.05}>
                 <div className="wall-sub-gallery-item"

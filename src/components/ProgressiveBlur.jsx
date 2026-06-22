@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 
-export const GRADIENT_ANGLES = {
+const GRADIENT_ANGLES = {
   top: 0,
   right: 90,
   bottom: 180,

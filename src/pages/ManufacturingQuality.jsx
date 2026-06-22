@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Shield, Factory, Droplets, CheckCircle, Settings, Truck, HardHat, Ruler, Hammer } from 'lucide-react';
+import { Shield, Droplets, Settings, Truck, HardHat, Ruler, Hammer } from 'lucide-react';
 import ScrollReveal from '../components/ScrollReveal';
 import SectionTitle from '../components/SectionTitle';
 import AnimatedButton from '../components/AnimatedButton';
@@ -24,10 +24,10 @@ const qcItems = [
 ];
 
 const mfgImages = [
-  '/images/production/IMG_1803.jpg',
-  '/images/production/IMG_1873.jpg',
-  '/images/production/IMG_0628.jpg',
-  '/images/production/IMG_1836.jpg',
+  '/images/production/IMG_1803.webp',
+  '/images/production/IMG_1873.webp',
+  '/images/production/IMG_0628.webp',
+  '/images/production/IMG_1836.webp',
 ];
 
 export default function ManufacturingQuality() {
@@ -35,7 +35,7 @@ export default function ManufacturingQuality() {
     <>
       <SEO title="Manufacturing & Quality" description="Learn how Bessblock manufactures concrete blocks, paving units, and kerbs with automated Besser production, mist curing, and rigorous quality control." />
       <div className="page">
-      <PageHero title="Manufacturing & Quality" bgImage="/images/hero/concrete-texture-2.jpg">
+      <PageHero title="Manufacturing & Quality" bgImage="/images/hero/concrete-texture-2.webp">
         <p className="page-hero-desc">
           At Bessblock, every block, paver, and concrete product is manufactured under controlled conditions combining modern plant operations, automated production, and quality-focused curing methods to deliver consistent, durable, and fit-for-purpose results across all product lines.
         </p>

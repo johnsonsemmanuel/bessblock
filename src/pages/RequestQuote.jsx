@@ -100,7 +100,7 @@ export default function RequestQuote() {
         <PageHero
           title="Request a Quote"
           description="Tell us about your project requirements and our team will provide a detailed quotation within 24 hours."
-          bgImage="/images/hero/concrete-texture-1.jpg"
+          bgImage="/images/hero/concrete-texture-1.webp"
         />
 
         <section className="section">

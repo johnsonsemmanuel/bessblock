@@ -5,14 +5,12 @@ import './CookieConsent.css';
 
 export default function CookieConsent() {
   const [visible, setVisible] = useState(false);
-  const [persistent, setPersistent] = useState(false);
 
   useEffect(() => {
     const accepted = localStorage.getItem('bessblock-cookies');
     if (!accepted) {
       const timer = setTimeout(() => {
         setVisible(true);
-        setPersistent(true);
       }, 1000);
       return () => clearTimeout(timer);
     }
@@ -21,19 +19,16 @@ export default function CookieConsent() {
   const accept = () => {
     localStorage.setItem('bessblock-cookies', 'accepted');
     setVisible(false);
-    setPersistent(false);
   };
 
   const decline = () => {
     localStorage.setItem('bessblock-cookies', 'declined');
     setVisible(false);
-    setPersistent(false);
   };
 
   const showAgain = () => {
     localStorage.removeItem('bessblock-cookies');
     setVisible(true);
-    setPersistent(true);
   };
 
   return (

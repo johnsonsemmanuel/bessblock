@@ -7,7 +7,7 @@ export default function TermsConditions() {
     <>
       <SEO title="Terms & Conditions" description="The terms governing your use of the Bessblock website and our concrete products and services." />
       <div className="page">
-      <PageHero title="Terms & Conditions" description="The terms governing your use of the Bessblock website and our products and services." bgImage="/images/hero/concrete-texture-2.jpg" />
+      <PageHero title="Terms & Conditions" description="The terms governing your use of the Bessblock website and our products and services." bgImage="/images/hero/concrete-texture-2.webp" />
 
       <section className="section">
         <div className="container">

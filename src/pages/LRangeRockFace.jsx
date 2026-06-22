@@ -50,7 +50,7 @@ export default function LRangeRockFace() {
     <>
       <SEO title="L-Range Rock Face" description="Terraforce® L Range Rock Face Option, a dry-stack interlocking retaining block with a rugged rock-face finish for natural-looking retaining walls." />
       <div className="page">
-      <PageHero title="L Range - Rock Face Option" description="A versatile concrete retaining block designed for landscaping, erosion control, and retaining wall construction. It uses the same dry-stack interlocking system as the standard option, but with a rock-face finish for a more rugged, natural appearance." bgImage="/images/hero/concrete-texture-1.jpg" />
+      <PageHero title="L Range - Rock Face Option" description="A versatile concrete retaining block designed for landscaping, erosion control, and retaining wall construction. It uses the same dry-stack interlocking system as the standard option, but with a rock-face finish for a more rugged, natural appearance." bgImage="/images/hero/concrete-texture-1.webp" />
 
       <section className="section">
         <div className="container">

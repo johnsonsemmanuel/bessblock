@@ -1,14 +1,5 @@
 import './SpecSheet.css';
 
-function DefaultIcon() {
-  return (
-    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-      <rect x="1" y="1" width="12" height="12" rx="2" stroke="currentColor" strokeWidth="1.5" />
-      <path d="M4.5 7L6.5 9L9.5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
-  );
-}
-
 export default function SpecSheet({ specs, title, variant = 'full', columns = 2 }) {
   if (!specs || specs.length === 0) return null;
 

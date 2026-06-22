@@ -12,12 +12,12 @@ import './RectangularPavingBlocks.css';
 import './InterlockingPavingBlocks.css';
 
 const galImages = [
-  '/images/products/interlocking-paving-1.jpg',
-  '/images/products/interlocking-paving-2.jpg',
-  '/images/products/interlocking-paving-3.jpg',
-  '/images/products/interlocking-paving-4.jpg',
-  '/images/products/hexagonal-paving-blocks-1.jpg',
-  '/images/products/rectangular-paving-1.jpg',
+  '/images/products/interlocking-paving-1.webp',
+  '/images/products/interlocking-paving-2.webp',
+  '/images/products/interlocking-paving-3.webp',
+  '/images/products/interlocking-paving-4.webp',
+  '/images/products/hexagonal-paving-blocks-1.webp',
+  '/images/products/rectangular-paving-1.webp',
 ];
 
 function PlusIcon() {
@@ -72,20 +72,12 @@ const related = [
   { name: 'Hexagonal Paving Block', path: '/products/paving-blocks/hexagonal' },
 ];
 
-function ImgPlaceholder({ src, className }) {
-  return (
-    <div className={`inter-hero-img ${className || ''}`}
-      style={{ backgroundImage: `url(${src})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
-    />
-  );
-}
-
 export default function InterlockingPavingBlocks() {
   return (
     <>
       <SEO title="Interlocking Paving Blocks" description="Precision-engineered interlocking concrete paving blocks from Bessblock for durable, stable pavement surfaces for pedestrian and vehicular traffic." />
       <div className="page">
-      <PageHero title="Interlocking Paving Blocks" description="Precision-engineered concrete paving units designed to interlock with adjacent blocks, creating a durable and stable pavement surface. Their unique shape distributes loads effectively, making them suitable for both pedestrian and vehicular traffic." bgImage="/images/hero/concrete-texture-1.jpg" />
+      <PageHero title="Interlocking Paving Blocks" description="Precision-engineered concrete paving units designed to interlock with adjacent blocks, creating a durable and stable pavement surface. Their unique shape distributes loads effectively, making them suitable for both pedestrian and vehicular traffic." bgImage="/images/hero/concrete-texture-1.webp" />
 
       {/* How It Works */}
       <section className="section">

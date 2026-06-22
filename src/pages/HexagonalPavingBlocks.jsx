@@ -42,7 +42,7 @@ export default function HexagonalPavingBlocks() {
     <>
       <SEO title="Hexagonal Paving Blocks" description="Distinctive hexagonal concrete paving blocks from Bessblock with superior interlocking for excellent load distribution in landscaping and high-traffic areas." />
       <div className="page">
-      <PageHero title="Hexagonal Paving Blocks" description="Hexagonal paving blocks provide a distinctive appearance and excellent load distribution due to their six-sided geometry. They are widely used in landscaping and high-traffic paved areas." bgImage="/images/hero/concrete-texture-2.jpg" />
+      <PageHero title="Hexagonal Paving Blocks" description="Hexagonal paving blocks provide a distinctive appearance and excellent load distribution due to their six-sided geometry. They are widely used in landscaping and high-traffic paved areas." bgImage="/images/hero/concrete-texture-2.webp" />
 
       {/* Overview with hex image */}
       <section className="section">
@@ -58,7 +58,7 @@ export default function HexagonalPavingBlocks() {
             </ScrollReveal>
             <ScrollReveal direction="right" delay={0.1}>
               <div className="hex-overview-img"
-                style={{ backgroundImage: 'url(/images/products/hexagonal-paving-blocks-2.jpg)', backgroundSize: 'cover', backgroundPosition: 'center' }}
+                style={{ backgroundImage: 'url(/images/products/hexagonal-paving-blocks-2.webp)', backgroundSize: 'cover', backgroundPosition: 'center' }}
               />
             </ScrollReveal>
           </div>
@@ -110,7 +110,7 @@ export default function HexagonalPavingBlocks() {
             </ScrollReveal>
             <ScrollReveal direction="right" delay={0.1}>
               <div className="hex-tech-img"
-                style={{ backgroundImage: 'url(/images/products/hexagonal-paving-blocks-3.jpg)', backgroundSize: 'cover', backgroundPosition: 'center' }}
+                style={{ backgroundImage: 'url(/images/products/hexagonal-paving-blocks-3.webp)', backgroundSize: 'cover', backgroundPosition: 'center' }}
               />
             </ScrollReveal>
           </div>
@@ -140,12 +140,12 @@ export default function HexagonalPavingBlocks() {
           <SectionTitle label="Project Gallery" title="Hexagonal in the real world" align="left" />
           <div className="hex-gallery">
             {[
-              '/images/products/hexagonal-paving-blocks-4.jpg',
-              '/images/products/hexagonal-paving-blocks-1.jpg',
-              '/images/products/hexagonal-paving-blocks-2.jpg',
-              '/images/products/hexagonal-paving-blocks-3.jpg',
-              '/images/products/hexagonal-paving-blocks-4.jpg',
-              '/images/products/hexagonal-paving-blocks-1.jpg',
+              '/images/products/hexagonal-paving-blocks-4.webp',
+              '/images/products/hexagonal-paving-blocks-1.webp',
+              '/images/products/hexagonal-paving-blocks-2.webp',
+              '/images/products/hexagonal-paving-blocks-3.webp',
+              '/images/products/hexagonal-paving-blocks-4.webp',
+              '/images/products/hexagonal-paving-blocks-1.webp',
             ].map((img, i) => (
               <ScrollReveal key={i} delay={i * 0.04}>
                 <div className="hex-gallery-item"

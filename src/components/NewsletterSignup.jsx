@@ -5,15 +5,22 @@ export default function NewsletterSignup({ variant = 'default', className = '' }
   const [email, setEmail] = useState('');
   const [status, setStatus] = useState('idle');
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!email.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return;
     setStatus('submitting');
-    // Placeholder — integrate with Mailchimp, Brevo, or similar here
-    setTimeout(() => {
+    try {
+      const res = await fetch('/api/newsletter', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email }),
+      });
+      if (!res.ok) throw new Error('Failed to subscribe');
       setStatus('success');
       setEmail('');
-    }, 800);
+    } catch {
+      setStatus('idle');
+    }
   };
 
   if (status === 'success') {

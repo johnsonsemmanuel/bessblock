@@ -3,7 +3,7 @@ import { useLocation } from 'react-router-dom';
 
 const SITE_NAME = 'Bessblock Concrete Products Ltd';
 const DEFAULT_DESC = 'Bessblock Concrete Products Ltd, manufacturer of concrete paving blocks, walling blocks, kerbs, paving slabs, and step risers for infrastructure and institutional projects in Ghana.';
-const DEFAULT_IMAGE = '/images/hero/concrete-texture-1.jpg';
+const DEFAULT_IMAGE = '/images/hero/concrete-texture-1.webp';
 const SITE_URL = 'https://bessblock.com';
 
 const organizationSchema = {

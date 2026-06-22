@@ -4,7 +4,7 @@ const productCategories = [
     name: 'Paving Blocks',
     path: '/products/paving-blocks',
     description: 'Premium concrete paving solutions designed for durability and aesthetic excellence in commercial and institutional applications.',
-    image: '/images/categories/paving-blocks.jpg',
+    image: '/images/categories/paving-blocks.webp',
     imageGradient: '#404088',
     subcategories: [
       { id: 'interlocking-paving-blocks', name: 'Interlocking Paving Blocks', path: '/products/paving-blocks/interlocking', description: 'Engineered interlocking system for superior load distribution and long-lasting pavement.' },
@@ -17,7 +17,7 @@ const productCategories = [
     name: 'Walling',
     path: '/products/walling',
     description: 'Structural and decorative concrete walling solutions engineered for strength, thermal efficiency, and architectural versatility.',
-    image: '/images/categories/walling.jpg',
+    image: '/images/categories/walling.webp',
     imageGradient: '#4a4a8a',
     subcategories: [
       { id: 'hollow-concrete-blocks', name: 'Hollow Concrete Blocks', path: '/products/walling/hollow-concrete-blocks', description: 'Lightweight yet robust hollow blocks optimized for structural wall construction.' },
@@ -37,7 +37,7 @@ const productCategories = [
     name: 'Paving Slabs',
     path: '/products/paving-slabs',
     description: 'Large-format concrete slabs designed for pedestrian areas, patios, and public spaces requiring a premium finish.',
-    image: '/images/categories/paving-slabs.jpg',
+    image: '/images/categories/paving-slabs.webp',
     imageGradient: '#5a5a9a',
     subcategories: [
       { id: 'textured-paving-slabs', name: 'Textured Paving Slabs', path: '/products/paving-slabs/textured', description: 'Surface-textured slabs offering slip resistance and visual interest for public areas.' },
@@ -50,7 +50,7 @@ const productCategories = [
     name: 'Step Risers',
     path: '/products/step-risers',
     description: 'Precast concrete step and riser units designed for durable, safe, and visually consistent stair construction.',
-    image: '/images/categories/step-risers.jpg',
+    image: '/images/categories/step-risers.webp',
     imageGradient: '#6a6aaa',
     subcategories: [
       { id: 'standard-step-risers', name: 'Standard Step Risers', path: '/products/step-risers/standard', description: 'Standard rise-and-go units for straightforward stair installations in residential and commercial settings.' },
@@ -63,7 +63,7 @@ const productCategories = [
     name: 'Kerbs & Edging',
     path: '/products/kerbs-edging',
     description: 'Precision-engineered kerb and edging solutions for road infrastructure, demarcation, and landscape definition.',
-    image: '/images/categories/kerbs-edging.jpg',
+    image: '/images/categories/kerbs-edging.webp',
     imageGradient: '#3a3a78',
     subcategories: [
       { id: 'road-kerbs', name: 'Road Kerbs', path: '/products/kerbs-edging/road-kerbs', description: 'Heavy-duty road kerbs manufactured for high-traffic roadway applications.' },

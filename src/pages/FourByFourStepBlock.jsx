@@ -36,7 +36,7 @@ export default function FourByFourStepBlock() {
     <>
       <SEO title="4x4 Step Block" description="Terraforce® 4x4 Step Block for creating stepped transitions and tiered wall layouts within retaining wall systems without cutting or special detailing." />
       <div className="page">
-      <PageHero title="4x4 Step Block" description="A Terraforce retaining wall component designed for creating stepped transitions, tiered wall layouts, and changes in wall elevation within the retaining wall system." bgImage="/images/hero/concrete-texture-2.jpg" />
+      <PageHero title="4x4 Step Block" description="A Terraforce retaining wall component designed for creating stepped transitions, tiered wall layouts, and changes in wall elevation within the retaining wall system." bgImage="/images/hero/concrete-texture-2.webp" />
 
       <section className="section">
         <div className="container">

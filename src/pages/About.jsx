@@ -10,7 +10,7 @@ export default function About() {
     <>
       <SEO title="About" description="Learn about Bessblock Concrete Products Ltd, a leading manufacturer of concrete blocks, paving units, and kerbs in Ghana, serving residential, commercial, and institutional projects." />
       <div className="page">
-      <PageHero title="About Bessblock" bgImage="/images/hero/concrete-texture-1.jpg">
+      <PageHero title="About Bessblock" bgImage="/images/hero/concrete-texture-1.webp">
         <p className="page-hero-desc">
           Bessblock Concrete Products Ltd is a specialist manufacturer of concrete products serving residential, commercial, and civil construction projects across Ghana. As part of the RG Group, we are focused on producing materials that contractors, developers, and engineers can rely on for performance, specification compliance, and ease of installation.
         </p>

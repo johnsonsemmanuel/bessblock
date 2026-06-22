@@ -3,7 +3,6 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
 import SectionTitle from '../components/SectionTitle';
-import ProductShowcase from '../components/ProductShowcase';
 import AnimatedButton from '../components/AnimatedButton';
 import LazyBackground from '../components/LazyBackground';
 import { ArrowRight, CheckCircle, Star } from 'lucide-react';
@@ -15,10 +14,10 @@ import testimonials, { trustedCompanies } from '../data/testimonials';
 import './Home.css';
 
 const heroSlides = [
-  { image: '/images/hero/construction-aerial-1.jpg', label: 'Aerial view of a building under construction' },
-  { image: '/images/hero/construction-aerial-2.jpg', label: 'Construction site with roads and buildings' },
-  { image: '/images/hero/construction-aerial-3.jpg', label: 'Brown and gray concrete building foundation' },
-  { image: '/images/hero/construction-aerial-4.jpg', label: 'Aerial view of a concrete structure' },
+  { image: '/images/hero/construction-aerial-1.webp', label: 'Aerial view of a building under construction' },
+  { image: '/images/hero/construction-aerial-2.webp', label: 'Construction site with roads and buildings' },
+  { image: '/images/hero/construction-aerial-3.webp', label: 'Brown and gray concrete building foundation' },
+  { image: '/images/hero/construction-aerial-4.webp', label: 'Aerial view of a concrete structure' },
 ];
 
 const stagger = {
@@ -46,21 +45,21 @@ const whyItems = [
 ];
 
 const appItems = [
-  { label: 'Domestic driveways and gardens.', link: '/products/paving-blocks', image: '/images/products/interlocking-paving-1.jpg' },
-  { label: 'Footpaths and pedestrian areas.', link: '/products/paving-blocks', image: '/images/products/rectangular-paving-1.jpg' },
-  { label: 'Commercial forecourts and parking areas.', link: '/products/paving-blocks', image: '/images/products/interlocking-paving-2.jpg' },
-  { label: 'Landscaping and public realm schemes.', link: '/products/paving-slabs', image: '/images/products/hexagonal-paving-blocks-1.jpg' },
-  { label: 'Roads, estate developments, and edge restraint.', link: '/products/kerbs-edging', image: '/images/products/rectangular-paving-5.jpg' },
-  { label: 'Retaining and terracing applications.', link: '/products/walling/retaining-walls', image: '/images/products/retaining-wall-1.jpg' },
+  { label: 'Domestic driveways and gardens.', link: '/products/paving-blocks', image: '/images/products/interlocking-paving-1.webp' },
+  { label: 'Footpaths and pedestrian areas.', link: '/products/paving-blocks', image: '/images/products/rectangular-paving-1.webp' },
+  { label: 'Commercial forecourts and parking areas.', link: '/products/paving-blocks', image: '/images/products/interlocking-paving-2.webp' },
+  { label: 'Landscaping and public realm schemes.', link: '/products/paving-slabs', image: '/images/products/hexagonal-paving-blocks-1.webp' },
+  { label: 'Roads, estate developments, and edge restraint.', link: '/products/kerbs-edging', image: '/images/products/rectangular-paving-5.webp' },
+  { label: 'Retaining and terracing applications.', link: '/products/walling/retaining-walls', image: '/images/products/retaining-wall-1.webp' },
 ];
 
 const categoryLinks = [
-  { name: 'Paving Blocks', path: '/products/paving-blocks', image: '/images/products/interlocking-paving-1.jpg' },
-  { name: 'Walling', path: '/products/walling', image: '/images/products/hollow-blocks-1.jpg' },
-  { name: 'Paving Slabs', path: '/products/paving-slabs', image: '/images/products/rectangular-paving-2.jpg' },
-  { name: 'Retaining Walls', path: '/products/walling/retaining-walls', image: '/images/products/retaining-wall-1.jpg' },
-  { name: 'Kerbs & Edging', path: '/products/kerbs-edging', image: '/images/products/rectangular-paving-3.jpg' },
-  { name: 'Step Risers', path: '/products/step-risers', image: '/images/products/rectangular-paving-4.jpg' },
+  { name: 'Paving Blocks', path: '/products/paving-blocks', image: '/images/products/interlocking-paving-1.webp' },
+  { name: 'Walling', path: '/products/walling', image: '/images/products/hollow-blocks-1.webp' },
+  { name: 'Paving Slabs', path: '/products/paving-slabs', image: '/images/products/rectangular-paving-2.webp' },
+  { name: 'Retaining Walls', path: '/products/walling/retaining-walls', image: '/images/products/retaining-wall-1.webp' },
+  { name: 'Kerbs & Edging', path: '/products/kerbs-edging', image: '/images/products/rectangular-paving-3.webp' },
+  { name: 'Step Risers', path: '/products/step-risers', image: '/images/products/rectangular-paving-4.webp' },
 ];
 
 export default function Home() {

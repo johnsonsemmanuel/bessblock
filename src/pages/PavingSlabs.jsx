@@ -10,14 +10,14 @@ export default function PavingSlabs() {
     <>
       <SEO title="Paving Slabs" description="Explore Bessblock's concrete paving slab range, textured, smooth, and large format slabs for pedestrian areas, patios, and commercial spaces." />
       <div className="page">
-      <PageHero title="Paving Slabs" description={cat.description} bgImage="/images/hero/concrete-texture-1.jpg" />
+      <PageHero title="Paving Slabs" description={cat.description} bgImage="/images/hero/concrete-texture-1.webp" />
       <section className="section">
         <div className="container">
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 'var(--spacing-6)' }}>
               {[
-                { ...cat.subcategories[0], image: '/images/products/rectangular-paving-2.jpg' },
-                { ...cat.subcategories[1], image: '/images/products/rectangular-paving-3.jpg' },
-                { ...cat.subcategories[2], image: '/images/products/rectangular-paving-4.jpg' },
+                { ...cat.subcategories[0], image: '/images/products/rectangular-paving-2.webp' },
+                { ...cat.subcategories[1], image: '/images/products/rectangular-paving-3.webp' },
+                { ...cat.subcategories[2], image: '/images/products/rectangular-paving-4.webp' },
               ].map(sub => (
               <ProductHighlightCard
                 key={sub.id}

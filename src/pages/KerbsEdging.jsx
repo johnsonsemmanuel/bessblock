@@ -41,7 +41,7 @@ export default function KerbsEdging() {
       <PageHero
         title="Kerbs & Edging"
         description="Bessblock's Kerbs & Edging range is designed to provide clean boundaries, edge restraint, and durable finishing detail for roads, pavements, driveways, parking areas, and landscaped spaces."
-        bgImage="/images/hero/concrete-texture-2.jpg"
+        bgImage="/images/hero/concrete-texture-2.webp"
       />
 
       <section className="section">
@@ -76,12 +76,12 @@ export default function KerbsEdging() {
           <SectionTitle label="Product Range" title="Our kerb and edging products" />
           <div className="kerbs-sub-grid">
             {[
-              { ...cat.subcategories[0], image: '/images/products/rectangular-paving-5.jpg' },
-              { ...cat.subcategories[1], image: '/images/products/rectangular-paving-6.jpg' },
-              { ...cat.subcategories[2], image: '/images/products/rectangular-paving-7.jpg' },
-              { ...cat.subcategories[3], image: '/images/products/rectangular-paving-8.jpg' },
-              { ...cat.subcategories[4], image: '/images/products/interlocking-paving-1.jpg' },
-              { ...cat.subcategories[5], image: '/images/products/hexagonal-paving-blocks-2.jpg' },
+              { ...cat.subcategories[0], image: '/images/products/rectangular-paving-5.webp' },
+              { ...cat.subcategories[1], image: '/images/products/rectangular-paving-6.webp' },
+              { ...cat.subcategories[2], image: '/images/products/rectangular-paving-7.webp' },
+              { ...cat.subcategories[3], image: '/images/products/rectangular-paving-8.webp' },
+              { ...cat.subcategories[4], image: '/images/products/interlocking-paving-1.webp' },
+              { ...cat.subcategories[5], image: '/images/products/hexagonal-paving-blocks-2.webp' },
             ].map((sub, i) => (
               <ScrollReveal key={sub.id} delay={i * 0.06}>
                 <ProductHighlightCard

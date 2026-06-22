@@ -21,7 +21,7 @@ export default function Insights() {
         <PageHero
           title="Insights"
           description="Technical articles, industry knowledge, and best practices from the Bessblock team."
-          bgImage="/images/hero/concrete-texture-1.jpg"
+          bgImage="/images/hero/concrete-texture-1.webp"
         />
 
         {/* Featured post */}

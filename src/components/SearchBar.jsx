@@ -21,11 +21,11 @@ export default function SearchBar() {
 
   useEffect(() => {
     if (open) {
-      setOpen(false);
+      setOpen(false); // eslint-disable-line react-hooks/set-state-in-effect
       setQuery('');
       setResults([]);
     }
-    // eslint-disable-next-line react-hooks/set-state-in-effect
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [location]);
 
   useEffect(() => {

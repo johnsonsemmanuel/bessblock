@@ -1,4 +1,3 @@
-import SectionTitle from '../components/SectionTitle';
 import blogPosts from '../data/blog';
 import SEO from '../components/SEO';
 import PageHero from '../components/PageHero';
@@ -13,7 +12,7 @@ export default function Blog() {
       <PageHero
         title="Blog"
         description="News, insights, and technical articles from the Bessblock team."
-        bgImage="/images/hero/concrete-texture-1.jpg"
+        bgImage="/images/hero/concrete-texture-1.webp"
       />
 
       <section className="section">

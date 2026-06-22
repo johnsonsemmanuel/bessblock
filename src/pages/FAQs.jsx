@@ -96,7 +96,7 @@ export default function FAQs() {
     <>
       <SEO title="FAQs" description="Frequently asked questions about Bessblock concrete products, ordering process, delivery, and technical specifications." />
       <div className="page">
-      <PageHero title="FAQs" description="Frequently asked questions about our products, ordering process, and delivery." bgImage="/images/hero/concrete-texture-1.jpg" />
+      <PageHero title="FAQs" description="Frequently asked questions about our products, ordering process, and delivery." bgImage="/images/hero/concrete-texture-1.webp" />
 
       <section className="section" style={{ position: 'relative', overflow: 'hidden' }}>
         <Factory size={280} className="decor-icon decor-icon-tl" />

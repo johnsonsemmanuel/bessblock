@@ -4,38 +4,33 @@
   color: var(--color-bessblock-blue);
   pointer-events: none;
   z-index: 0;
+  display: none;
 }
-
 .decor-icon-tl {
   top: -40px;
   left: -60px;
   transform: rotate(-15deg);
 }
-
 .decor-icon-tr {
   top: -30px;
   right: -40px;
   transform: rotate(25deg);
 }
-
 .decor-icon-br {
   bottom: -30px;
   right: -20px;
   transform: rotate(10deg);
 }
-
 [data-theme='dark'] .decor-icon {
   opacity: 0.02;
 }
-
 .faqs-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: var(--spacing-5);
   position: relative;
   z-index: 1;
 }
-
 .faq-card {
   border: 1px solid var(--border);
   border-radius: 12px;
@@ -43,17 +38,14 @@
   transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
   background: var(--bg-card);
 }
-
 .faq-card:hover {
   border-color: var(--color-bessblock-blue);
   box-shadow: 0 4px 16px rgba(64, 64, 136, 0.08);
 }
-
 .faq-card-open {
   border-color: var(--color-bessblock-blue);
   box-shadow: 0 4px 20px rgba(64, 64, 136, 0.1);
 }
-
 .faq-card-header {
   width: 100%;
   display: flex;
@@ -71,11 +63,9 @@
   transition: background var(--transition-fast);
   line-height: 1.4;
 }
-
 .faq-card-header:hover {
   background: var(--border);
 }
-
 .faq-card-icon {
   display: inline-flex;
   align-items: center;
@@ -87,22 +77,18 @@
   color: #fff;
   flex-shrink: 0;
 }
-
 .faq-chevron {
   flex-shrink: 0;
   transition: transform var(--transition-base);
   color: var(--color-grey-400);
 }
-
 .faq-card-open .faq-chevron {
   transform: rotate(180deg);
 }
-
 .faq-card-body {
   overflow: hidden;
-  transition: max-height 0.35s ease;
+  transition: max-height 0.3s ease;
 }
-
 .faq-item {
   width: 100%;
   display: flex;
@@ -120,23 +106,18 @@
   font-family: inherit;
   transition: background var(--transition-fast), color var(--transition-fast);
 }
-
 .faq-item:last-child {
   border-bottom: none;
 }
-
 .faq-item:hover {
   background: var(--bg-section);
   color: var(--color-bessblock-blue);
 }
-
 .faq-q-icon {
   color: var(--color-bessblock-blue);
   flex-shrink: 0;
   margin-top: 3px;
 }
-
-/* ── Modal ── */
 .faq-modal-backdrop {
   position: fixed;
   inset: 0;
@@ -147,25 +128,24 @@
   justify-content: center;
   padding: var(--spacing-4);
 }
-
 .faq-modal {
   position: relative;
   background: var(--bg-card);
-  border-radius: 16px;
-  padding: var(--spacing-8);
+  border-radius: 12px;
+  padding: var(--spacing-6) var(--spacing-5);
   max-width: 560px;
   width: 100%;
   box-shadow: 0 24px 64px rgba(0, 0, 0, 0.2);
-  max-height: 80vh;
+  max-height: 85vh;
   overflow-y: auto;
+  margin: var(--spacing-4);
 }
-
 .faq-modal-close {
   position: absolute;
-  top: var(--spacing-4);
-  right: var(--spacing-4);
-  width: 36px;
-  height: 36px;
+  top: var(--spacing-3);
+  right: var(--spacing-3);
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -176,12 +156,10 @@
   color: var(--text-secondary);
   transition: background var(--transition-fast), color var(--transition-fast);
 }
-
 .faq-modal-close:hover {
   background: var(--color-bessblock-blue);
   color: #fff;
 }
-
 .faq-modal-category {
   display: inline-block;
   padding: 3px 10px;
@@ -194,35 +172,29 @@
   letter-spacing: 0.04em;
   margin-bottom: var(--spacing-4);
 }
-
 .faq-modal-question {
-  font-size: var(--text-lg);
+  font-size: var(--text-base);
   font-weight: var(--font-weight-bold);
   color: var(--text);
   margin-bottom: var(--spacing-4);
   line-height: 1.4;
+  padding-right: var(--spacing-8);
 }
-
 .faq-modal-answer {
   font-size: var(--text-base);
   color: var(--text-secondary);
   line-height: 1.7;
 }
-
-/* ─── FAQs CTA ─── */
-
 .faqs-cta {
   text-align: center;
   padding: var(--spacing-8) 0;
 }
-
 .faqs-cta-title {
   font-size: var(--text-2xl);
   font-weight: var(--font-weight-bold);
   color: var(--text);
   margin-bottom: var(--spacing-3);
 }
-
 .faqs-cta-desc {
   font-size: var(--text-base);
   color: var(--text-secondary);
@@ -230,7 +202,6 @@
   margin: 0 auto var(--spacing-6);
   line-height: 1.7;
 }
-
 .faqs-cta-btn {
   display: inline-flex;
   align-items: center;
@@ -243,41 +214,65 @@
   text-decoration: none;
   transition: transform var(--transition-fast), box-shadow var(--transition-fast);
 }
-
 .faqs-cta-btn:hover {
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(64, 64, 136, 0.3);
 }
 
-@media (max-width: 768px) {
+@media (min-width: 769px) {
   .faqs-grid {
-    grid-template-columns: 1fr;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-5);
+    position: relative;
+    z-index: 1;
   }
-
   .decor-icon {
-    display: none;
+    position: absolute;
+    opacity: 0.035;
+    color: var(--color-bessblock-blue);
+    pointer-events: none;
+    z-index: 0;
+    display: inline;
   }
-
   .faq-modal {
-    padding: var(--spacing-6) var(--spacing-5);
-    max-height: 85vh;
-    margin: var(--spacing-4);
-    border-radius: 12px;
+    position: relative;
+    background: var(--bg-card);
+    border-radius: 16px;
+    padding: var(--spacing-8);
+    max-width: 560px;
+    width: 100%;
+    box-shadow: 0 24px 64px rgba(0, 0, 0, 0.2);
+    max-height: 80vh;
+    overflow-y: auto;
+    margin: 0;
   }
-
   .faq-modal-question {
-    font-size: var(--text-base);
-    padding-right: var(--spacing-8);
+    font-size: var(--text-lg);
+    font-weight: var(--font-weight-bold);
+    color: var(--text);
+    margin-bottom: var(--spacing-4);
+    line-height: 1.4;
+    padding-right: 0;
   }
-
   .faq-modal-close {
-    width: 44px;
-    height: 44px;
-    top: var(--spacing-3);
-    right: var(--spacing-3);
+    position: absolute;
+    top: var(--spacing-4);
+    right: var(--spacing-4);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg-section);
+    border: none;
+    cursor: pointer;
+    color: var(--text-secondary);
+    transition: background var(--transition-fast), color var(--transition-fast);
   }
-
   .faq-card-body {
-    transition: max-height 0.3s ease;
+    overflow: hidden;
+    transition: max-height 0.35s ease;
   }
 }

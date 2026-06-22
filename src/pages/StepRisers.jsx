@@ -10,14 +10,14 @@ export default function StepRisers() {
     <>
       <SEO title="Step Risers" description="Explore Bessblock's concrete step riser range, standard step risers, wide tread steps, and bullnose steps for durable outdoor stair construction." />
       <div className="page">
-      <PageHero title="Step Risers" description={cat.description} bgImage="/images/hero/concrete-texture-2.jpg" />
+      <PageHero title="Step Risers" description={cat.description} bgImage="/images/hero/concrete-texture-2.webp" />
       <section className="section">
         <div className="container">
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 'var(--spacing-6)' }}>
               {[
-                { ...cat.subcategories[0], image: '/images/products/rectangular-paving-1.jpg' },
-                { ...cat.subcategories[1], image: '/images/products/rectangular-paving-2.jpg' },
-                { ...cat.subcategories[2], image: '/images/products/rectangular-paving-3.jpg' },
+                { ...cat.subcategories[0], image: '/images/products/rectangular-paving-1.webp' },
+                { ...cat.subcategories[1], image: '/images/products/rectangular-paving-2.webp' },
+                { ...cat.subcategories[2], image: '/images/products/rectangular-paving-3.webp' },
               ].map(sub => (
               <ProductHighlightCard
                 key={sub.id}

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Calculator, Ruler, RefreshCw } from 'lucide-react';
+import { Calculator, RefreshCw } from 'lucide-react';
 
 const presetProducts = [
   { label: 'Interlocking Paving (60mm)', unit: 'blocks', coverage: 17, unitLabel: 'blocks' },

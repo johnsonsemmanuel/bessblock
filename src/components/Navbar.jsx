@@ -125,7 +125,7 @@ export default function Navbar() {
   }, [scrolled]);
 
   useEffect(() => {
-    setMobileOpen(false);
+    setMobileOpen(false); // eslint-disable-line react-hooks/set-state-in-effect
   }, [location]);
 
   useEffect(() => {

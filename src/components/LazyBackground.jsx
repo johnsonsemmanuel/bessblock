@@ -1,5 +1,9 @@
 import { useRef, useState, useEffect } from 'react';
 
+function toWebP(url) {
+  return url.replace(/\.(jpe?g|png)$/i, '.webp');
+}
+
 export default function LazyBackground({ src, className, children, style, ...props }) {
   const ref = useRef(null);
   const [loaded, setLoaded] = useState(false);
@@ -22,12 +26,16 @@ export default function LazyBackground({ src, className, children, style, ...pro
     return () => observer.disconnect();
   }, []);
 
+  const bgImage = src !== toWebP(src)
+    ? `image-set(url("${toWebP(src)}") type("image/webp"), url("${src}") type("image/jpeg"))`
+    : `url(${src})`;
+
   return (
     <div
       ref={ref}
       className={className}
       style={{
-        backgroundImage: `url(${src})`,
+        backgroundImage: bgImage,
         opacity: loaded ? 1 : 0,
         transition: 'opacity 0.4s ease',
         ...style,

@@ -9,7 +9,7 @@ export function useLazyLoad({ rootMargin = '200px' } = {}) {
     if (!el) return;
 
     if ('loading' in HTMLImageElement.prototype) {
-      setIsVisible(true);
+      setIsVisible(true); // eslint-disable-line react-hooks/set-state-in-effect
       return;
     }
 

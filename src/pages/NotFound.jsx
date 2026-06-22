@@ -1,8 +1,7 @@
 import { Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
-import { Home, ArrowLeft, Search, ArrowRight, Package, FileText, Rows3 } from 'lucide-react';
-import { performSearch } from '../lib/search';
+import { Home, ArrowLeft, Search, ArrowRight, Package, FileText } from 'lucide-react';
 import SEO from '../components/SEO';
 import './NotFound.css';
 

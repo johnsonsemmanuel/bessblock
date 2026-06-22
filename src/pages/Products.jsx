@@ -13,39 +13,39 @@ import './Products.css';
 const icons = { 'paving-blocks': PavingIcon, 'walling': WallingIcon, 'paving-slabs': SlabIcon, 'step-risers': StepIcon, 'kerbs-edging': KerbIcon };
 
 const subImages = {
-  'interlocking-paving-blocks': '/images/products/interlocking-paving-1.jpg',
-  'rectangular-paving-blocks': '/images/products/rectangular-paving-1.jpg',
-  'hexagonal-paving-blocks': '/images/products/hexagonal-paving-blocks-1.jpg',
-  'hollow-concrete-blocks': '/images/products/hollow-blocks-1.jpg',
-  'solid-concrete-blocks': '/images/products/solid-blocks-1.jpg',
-  'ceiling-blocks': '/images/products/ceiling-blocks-1.jpg',
-  'retaining-walls': '/images/products/retaining-wall-1.jpg',
-  'l-range-standard': '/images/products/retaining-wall-1.jpg',
-  'l-range-rock-face': '/images/products/retaining-wall-2.jpg',
-  '4x4-step-block': '/images/products/retaining-wall-3.jpg',
-  'terralite': '/images/products/retaining-wall-1.jpg',
-  'terrafix': '/images/products/retaining-wall-2.jpg',
-  'terracrete': '/images/products/retaining-wall-3.jpg',
-  'road-kerbs': '/images/products/rectangular-paving-5.jpg',
-  'demarcation-kerbs': '/images/products/rectangular-paving-6.jpg',
-  'garden-kerbs': '/images/products/rectangular-paving-7.jpg',
-  'barrier-kerbs': '/images/products/rectangular-paving-8.jpg',
-  'gutter-kerbs': '/images/products/interlocking-paving-1.jpg',
-  'slotted-kerbs': '/images/products/hexagonal-paving-blocks-2.jpg',
-  'textured-paving-slabs': '/images/products/rectangular-paving-2.jpg',
-  'smooth-paving-slabs': '/images/products/rectangular-paving-4.jpg',
-  'large-format-slabs': '/images/products/rectangular-paving-5.jpg',
-  'standard-step-risers': '/images/products/rectangular-paving-6.jpg',
-  'wide-tread-steps': '/images/products/rectangular-paving-7.jpg',
-  'bullnose-steps': '/images/products/rectangular-paving-8.jpg',
+  'interlocking-paving-blocks': '/images/products/interlocking-paving-1.webp',
+  'rectangular-paving-blocks': '/images/products/rectangular-paving-1.webp',
+  'hexagonal-paving-blocks': '/images/products/hexagonal-paving-blocks-1.webp',
+  'hollow-concrete-blocks': '/images/products/hollow-blocks-1.webp',
+  'solid-concrete-blocks': '/images/products/solid-blocks-1.webp',
+  'ceiling-blocks': '/images/products/ceiling-blocks-1.webp',
+  'retaining-walls': '/images/products/retaining-wall-1.webp',
+  'l-range-standard': '/images/products/retaining-wall-1.webp',
+  'l-range-rock-face': '/images/products/retaining-wall-2.webp',
+  '4x4-step-block': '/images/products/retaining-wall-3.webp',
+  'terralite': '/images/products/retaining-wall-1.webp',
+  'terrafix': '/images/products/retaining-wall-2.webp',
+  'terracrete': '/images/products/retaining-wall-3.webp',
+  'road-kerbs': '/images/products/rectangular-paving-5.webp',
+  'demarcation-kerbs': '/images/products/rectangular-paving-6.webp',
+  'garden-kerbs': '/images/products/rectangular-paving-7.webp',
+  'barrier-kerbs': '/images/products/rectangular-paving-8.webp',
+  'gutter-kerbs': '/images/products/interlocking-paving-1.webp',
+  'slotted-kerbs': '/images/products/hexagonal-paving-blocks-2.webp',
+  'textured-paving-slabs': '/images/products/rectangular-paving-2.webp',
+  'smooth-paving-slabs': '/images/products/rectangular-paving-4.webp',
+  'large-format-slabs': '/images/products/rectangular-paving-5.webp',
+  'standard-step-risers': '/images/products/rectangular-paving-6.webp',
+  'wide-tread-steps': '/images/products/rectangular-paving-7.webp',
+  'bullnose-steps': '/images/products/rectangular-paving-8.webp',
 };
 
 const categoryImages = {
-  'paving-blocks': '/images/products/interlocking-paving-1.jpg',
-  'walling': '/images/products/hollow-blocks-1.jpg',
-  'paving-slabs': '/images/products/rectangular-paving-2.jpg',
-  'step-risers': '/images/products/rectangular-paving-3.jpg',
-  'kerbs-edging': '/images/products/rectangular-paving-4.jpg',
+  'paving-blocks': '/images/products/interlocking-paving-1.webp',
+  'walling': '/images/products/hollow-blocks-1.webp',
+  'paving-slabs': '/images/products/rectangular-paving-2.webp',
+  'step-risers': '/images/products/rectangular-paving-3.webp',
+  'kerbs-edging': '/images/products/rectangular-paving-4.webp',
 };
 
 function match(filter, text) {
@@ -157,7 +157,7 @@ export default function Products() {
       <PageHero
         title="All Products"
         description="Comprehensive range of concrete blocks, paving units, kerbs, and edging solutions for infrastructure and institutional projects."
-        bgImage="/images/hero/concrete-texture-2.jpg"
+        bgImage="/images/hero/concrete-texture-2.webp"
       />
 
       <section className="section">

@@ -33,7 +33,7 @@ export default function Walling() {
     <>
       <SEO title="Walling" description="Explore Bessblock's concrete walling range, hollow blocks, solid blocks, ceiling blocks, and retaining walls for residential, commercial, and industrial construction." />
       <div className="page">
-      <PageHero title="Walling" description="Bessblock's walling range provides practical, durable concrete solutions for residential, commercial, and industrial construction. The range covers hollow blocks, solid blocks, and ceiling blocks for both structural and non-structural applications." bgImage="/images/hero/concrete-texture-2.jpg" />
+      <PageHero title="Walling" description="Bessblock's walling range provides practical, durable concrete solutions for residential, commercial, and industrial construction. The range covers hollow blocks, solid blocks, and ceiling blocks for both structural and non-structural applications." bgImage="/images/hero/concrete-texture-2.webp" />
 
       <section className="section">
         <div className="container">
@@ -94,16 +94,16 @@ export default function Walling() {
           <SectionTitle label="Product Range" title="Explore our walling products" />
           <div className="walling-sub-grid">
               {[
-                { ...cat.subcategories[0], image: '/images/products/hollow-blocks-1.jpg' },
-                { ...cat.subcategories[1], image: '/images/products/solid-blocks-1.jpg' },
-                { ...cat.subcategories[2], image: '/images/products/ceiling-blocks-1.jpg' },
-                { ...cat.subcategories[3], image: '/images/products/retaining-wall-1.jpg' },
-                { ...cat.subcategories[4], image: '/images/products/retaining-wall-2.jpg' },
-                { ...cat.subcategories[5], image: '/images/products/retaining-wall-3.jpg' },
-                { ...cat.subcategories[6], image: '/images/products/hollow-blocks-2.jpg' },
-                { ...cat.subcategories[7], image: '/images/products/solid-blocks-2.jpg' },
-                { ...cat.subcategories[8], image: '/images/products/ceiling-blocks-2.jpg' },
-                { ...cat.subcategories[9], image: '/images/products/hollow-blocks-3.jpg' },
+                { ...cat.subcategories[0], image: '/images/products/hollow-blocks-1.webp' },
+                { ...cat.subcategories[1], image: '/images/products/solid-blocks-1.webp' },
+                { ...cat.subcategories[2], image: '/images/products/ceiling-blocks-1.webp' },
+                { ...cat.subcategories[3], image: '/images/products/retaining-wall-1.webp' },
+                { ...cat.subcategories[4], image: '/images/products/retaining-wall-2.webp' },
+                { ...cat.subcategories[5], image: '/images/products/retaining-wall-3.webp' },
+                { ...cat.subcategories[6], image: '/images/products/hollow-blocks-2.webp' },
+                { ...cat.subcategories[7], image: '/images/products/solid-blocks-2.webp' },
+                { ...cat.subcategories[8], image: '/images/products/ceiling-blocks-2.webp' },
+                { ...cat.subcategories[9], image: '/images/products/hollow-blocks-3.webp' },
               ].map((sub, i) => (
               <ScrollReveal key={sub.id} delay={i * 0.06}>
                 <ProductHighlightCard

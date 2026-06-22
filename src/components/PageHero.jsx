@@ -4,7 +4,7 @@ import { ProgressiveBlur } from './ProgressiveBlur';
 
 export default function PageHero({ title, description, children, bgImage }) {
   return (
-    <section className="page-hero">
+    <header className="page-hero">
       {bgImage && (
         <LazyBackground
           src={bgImage}
@@ -51,6 +51,6 @@ export default function PageHero({ title, description, children, bgImage }) {
       <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: '120px', zIndex: 1, overflow: 'hidden' }}>
         <ProgressiveBlur direction="bottom" blurLayers={6} blurIntensity={0.35} />
       </div>
-    </section>
+    </header>
   );
 }

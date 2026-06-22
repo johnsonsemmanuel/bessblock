@@ -116,7 +116,7 @@ export default function Contact() {
         <PageHero
           title="Contact"
           description="Get in touch with our team for product inquiries, technical support, or to discuss your project requirements."
-          bgImage="/images/hero/concrete-texture-2.jpg"
+          bgImage="/images/hero/concrete-texture-2.webp"
         />
 
         <section className="section">

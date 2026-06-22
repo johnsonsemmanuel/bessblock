@@ -7,7 +7,7 @@ export default function PrivacyPolicy() {
     <>
       <SEO title="Privacy Policy" description="How Bessblock Concrete Products Limited collects, uses, and protects your personal information when you use our website." />
       <div className="page">
-      <PageHero title="Privacy Policy" description="How Bessblock Concrete Products Limited collects, uses, and protects your personal information." bgImage="/images/hero/concrete-texture-1.jpg" />
+      <PageHero title="Privacy Policy" description="How Bessblock Concrete Products Limited collects, uses, and protects your personal information." bgImage="/images/hero/concrete-texture-1.webp" />
 
       <section className="section">
         <div className="container">

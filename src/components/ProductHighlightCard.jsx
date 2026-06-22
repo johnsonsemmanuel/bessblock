@@ -6,7 +6,7 @@ import LazyBackground from "./LazyBackground";
 import "./ProductHighlightCard.css";
 
 export const ProductHighlightCard = React.forwardRef(
-  ({ className, categoryIcon, category, title, description, imageSrc, imageAlt, to, ...props }, ref) => {
+  ({ className, categoryIcon, category, title, description, imageSrc, to, ...props }, ref) => {
     const mouseX = useMotionValue(0.5);
     const mouseY = useMotionValue(0.5);
 

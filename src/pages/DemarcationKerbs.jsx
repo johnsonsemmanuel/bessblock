@@ -56,7 +56,7 @@ export default function DemarcationKerbs() {
     <>
       <SEO title="Demarcation Kerbs" description="Bessblock demarcation kerbs provide clear visual separation between traffic lanes, pedestrian areas, cycle routes, and paved zones for safer streets." />
       <div className="page">
-      <PageHero title="Demarcation Kerbs" description="Bessblock Demarcation Kerbs are designed to provide clear visual separation between traffic lanes, pedestrian areas, cycle routes, and other paved zones. They are a practical way to improve safety, guide movement, and give public or private spaces a clean, organised finish." bgImage="/images/hero/concrete-texture-2.jpg" />
+      <PageHero title="Demarcation Kerbs" description="Bessblock Demarcation Kerbs are designed to provide clear visual separation between traffic lanes, pedestrian areas, cycle routes, and other paved zones. They are a practical way to improve safety, guide movement, and give public or private spaces a clean, organised finish." bgImage="/images/hero/concrete-texture-2.webp" />
 
       <section className="section">
         <div className="container">
