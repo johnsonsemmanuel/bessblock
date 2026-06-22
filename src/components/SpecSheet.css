@@ -112,16 +112,14 @@
   .spec-sheet-grid.cols-3 .spec-sheet-row:last-child {
   border-bottom: none;
 }
-.spec-sheet-grid.cols-2,
+@media (max-width: 768px) {
+  .spec-sheet-grid.cols-2,
   .spec-sheet-grid.cols-3 {
-  grid-template-columns: 1fr;
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (min-width: 769px) {
-  .spec-sheet-grid.cols-2,
-  .spec-sheet-grid.cols-3 {
-    grid-template-columns: initial;
-  }
   .spec-sheet-grid.cols-2 .spec-sheet-row:last-child,
   .spec-sheet-grid.cols-3 .spec-sheet-row:last-child {
     border-bottom: none;

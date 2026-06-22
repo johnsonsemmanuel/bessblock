@@ -216,11 +216,6 @@
   }
 }
 @media (min-width: 1025px) {
-  .hex-overview-split,
-  .hex-tech-layout {
-    grid-template-columns: initial;
-    gap: normal;
-  }
   .hex-benefits-grid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);

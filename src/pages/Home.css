@@ -442,12 +442,14 @@
   color: var(--color-grey-500);
   font-weight: var(--font-weight-medium);
 }
-.home-market-grid {
-  grid-template-columns: 1fr;
-}
-.home-quality-grid {
-  grid-template-columns: 1fr;
-  gap: var(--spacing-8);
+@media (max-width: 768px) {
+  .home-market-grid {
+    grid-template-columns: 1fr;
+  }
+  .home-quality-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-8);
+  }
 }
 
 @media (min-width: 769px) {
@@ -529,12 +531,8 @@
     max-width: 360px;
     margin-left: auto;
   }
-  .home-quality-grid {
-    grid-template-columns: initial;
-    gap: normal;
-  }
   .home-market-grid {
-    grid-template-columns: initial;
+    grid-template-columns: repeat(4, 1fr);
   }
   .home-stats {
     display: grid;

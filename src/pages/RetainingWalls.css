@@ -158,8 +158,4 @@
     grid-template-columns: repeat(4, 1fr);
     gap: var(--spacing-3);
   }
-  .retaining-families,
-  .retaining-sub-grid {
-    grid-template-columns: initial;
-  }
 }

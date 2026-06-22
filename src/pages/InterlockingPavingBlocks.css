@@ -264,9 +264,11 @@
     color: #606060;
     font-size: var(--text-sm);
   }
-  .inter-steps,
+  .inter-steps {
+    grid-template-columns: repeat(3, 1fr);
+  }
   .inter-benefits {
-    grid-template-columns: initial;
+    grid-template-columns: repeat(4, 1fr);
   }
   .inter-apps-grid {
     display: grid;
