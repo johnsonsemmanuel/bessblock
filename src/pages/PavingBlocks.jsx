@@ -17,7 +17,7 @@ export default function PavingBlocks() {
               {[
                 { ...cat.subcategories[0], image: '/images/products/interlocking-paving-1.jpg' },
                 { ...cat.subcategories[1], image: '/images/products/rectangular-paving-1.jpg' },
-                { ...cat.subcategories[2], image: '/images/products/hexagonal-paving-blocks-1.png' },
+                { ...cat.subcategories[2], image: '/images/products/hexagonal-paving-blocks-1.jpg' },
               ].map(sub => (
               <ProductHighlightCard
                 key={sub.id}

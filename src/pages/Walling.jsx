@@ -95,7 +95,7 @@ export default function Walling() {
             {[
               { ...cat.subcategories[0], image: '/images/products/hollow-blocks-1.jpg' },
               { ...cat.subcategories[1], image: '/images/products/solid-blocks-1.jpg' },
-              { ...cat.subcategories[2], image: '/images/products/ceiling-blocks-1.png' },
+              { ...cat.subcategories[2], image: '/images/products/ceiling-blocks-1.jpg' },
               { ...cat.subcategories[3], image: '/images/products/retaining-wall-1.jpg' },
               { ...cat.subcategories[4], image: '/images/products/retaining-wall-2.jpg' },
               { ...cat.subcategories[5], image: '/images/products/retaining-wall-3.jpg' },
