@@ -76,7 +76,7 @@
   --page-hero-bg: var(--color-grey-900);
 
   --hero-text: #ffffff;
-  --hero-text-secondary: #a0a0a0;
+  --hero-text-secondary: rgba(255, 255, 255, 0.85);
   --text-tertiary: var(--text-muted);
 
   /* Hero overlay — adapts per theme */
@@ -123,7 +123,7 @@
   --page-hero-bg: var(--color-bessblock-blue);
 
   --hero-text: #ffffff;
-  --hero-text-secondary: #a0a0a0;
+  --hero-text-secondary: rgba(255, 255, 255, 0.85);
 
   /* Hero overlay — lighter in dark mode so image is more visible */
   --hero-overlay-from: rgba(15, 15, 20, 0.82);

@@ -1,9 +1,12 @@
 import { Link } from 'react-router-dom';
-import { motion, AnimatePresence } from 'framer-motion';
-import { useState, useEffect } from 'react';
-import { ChevronDown, Grid3x3, Home, PanelBottom, Ruler, Layers, MapPin, Mountain, ArrowUpDown, Truck, HelpCircle, Warehouse, X, Factory, HardHat, Settings } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { useState } from 'react';
+import { Grid3x3, Home, PanelBottom, Ruler, Layers, MapPin, Mountain, ArrowUpDown, Truck, Warehouse, Factory, HardHat, Settings } from 'lucide-react';
 import SEO from '../components/SEO';
 import PageHero from '../components/PageHero';
+import ScrollReveal from '../components/ScrollReveal';
+import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from '../components/Accordion';
+import '../components/Accordion.css';
 import './FAQs.css';
 
 const faqData = [
@@ -73,24 +76,6 @@ const faqData = [
 
 export default function FAQs() {
   const [openCategory, setOpenCategory] = useState(null);
-  const [modal, setModal] = useState(null);
-
-  useEffect(() => {
-    if (modal) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = '';
-    }
-    return () => { document.body.style.overflow = ''; };
-  }, [modal]);
-
-  useEffect(() => {
-    const handle = (e) => {
-      if (e.key === 'Escape' && modal) setModal(null);
-    };
-    document.addEventListener('keydown', handle);
-    return () => document.removeEventListener('keydown', handle);
-  }, [modal]);
 
   return (
     <>
@@ -124,16 +109,19 @@ export default function FAQs() {
                       <Icon size={16} />
                     </span>
                     <span style={{ flex: 1 }}>{group.category}</span>
-                    <ChevronDown size={14} className="faq-chevron" />
                   </button>
-                  <div className="faq-card-body" style={{ maxHeight: isOpen ? `${group.questions.length * 60}px` : '0' }}>
-                    {group.questions.map((faq, fi) => (
-                      <button key={fi} className="faq-item" onClick={() => setModal({ ...faq, category: group.category })}>
-                        <HelpCircle size={14} className="faq-q-icon" />
-                        <span>{faq.q}</span>
-                      </button>
-                    ))}
-                  </div>
+                  {isOpen && (
+                    <div className="faq-card-body">
+                      <Accordion type="single" collapsible>
+                        {group.questions.map((faq, fi) => (
+                          <AccordionItem key={fi} value={`q-${fi}`}>
+                            <AccordionTrigger>{faq.q}</AccordionTrigger>
+                            <AccordionContent>{faq.a}</AccordionContent>
+                          </AccordionItem>
+                        ))}
+                      </Accordion>
+                    </div>
+                  )}
                 </motion.div>
               );
             })}
@@ -141,51 +129,25 @@ export default function FAQs() {
         </div>
       </section>
 
-      <section className="section-light">
-        <div className="container">
-          <motion.div
-            className="faqs-cta"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.4 }}
-          >
-            <h2 className="faqs-cta-title">Still Have Questions?</h2>
-            <p className="faqs-cta-desc">
-              Our team is ready to help with product specifications, technical advice, or project support.
-            </p>
-            <Link to="/contact" className="faqs-cta-btn">Contact Us</Link>
-          </motion.div>
-        </div>
-      </section>
-
-      <AnimatePresence>
-        {modal && (
-          <motion.div
-            className="faq-modal-backdrop"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            onClick={() => setModal(null)}
-          >
+      <ScrollReveal>
+        <section className="section-light">
+          <div className="container">
             <motion.div
-              className="faq-modal"
-              initial={{ opacity: 0, scale: 0.92, y: 20 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.92, y: 20 }}
-              transition={{ type: 'spring', damping: 28, stiffness: 400 }}
-              onClick={e => e.stopPropagation()}
+              className="faqs-cta"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4 }}
             >
-              <button className="faq-modal-close" onClick={() => setModal(null)}>
-                <X size={18} />
-              </button>
-              <span className="faq-modal-category">{modal.category}</span>
-              <h3 className="faq-modal-question">{modal.q}</h3>
-              <p className="faq-modal-answer">{modal.a}</p>
+              <h2 className="faqs-cta-title">Still Have Questions?</h2>
+              <p className="faqs-cta-desc">
+                Our team is ready to help with product specifications, technical advice, or project support.
+              </p>
+              <Link to="/contact" className="faqs-cta-btn">Contact Us</Link>
             </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+          </div>
+        </section>
+      </ScrollReveal>
     </div>
     </>
   );
