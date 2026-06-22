@@ -2,7 +2,8 @@
   position: relative;
   min-height: 100vh;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
+  padding-bottom: 20vh;
 }
 .hero-bg {
   position: absolute;
