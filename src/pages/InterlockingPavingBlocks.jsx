@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowRight, Plus, Lock, Grid3x3, Image, Layers, Wrench, Clock, Info } from 'lucide-react';
+import { ArrowRight, Plus, Lock, Grid3x3, Layers, Wrench, Clock, Info } from 'lucide-react';
 import SEO from '../components/SEO';
 import PageHero from '../components/PageHero';
 import SectionTitle from '../components/SectionTitle';
@@ -10,6 +10,15 @@ import SpecSheet from '../components/SpecSheet';
 import './About.css';
 import './RectangularPavingBlocks.css';
 import './InterlockingPavingBlocks.css';
+
+const galImages = [
+  '/images/products/interlocking-paving-1.jpg',
+  '/images/products/interlocking-paving-2.jpg',
+  '/images/products/interlocking-paving-3.jpg',
+  '/images/products/interlocking-paving-4.jpg',
+  '/images/products/hexagonal-paving-blocks-1.jpg',
+  '/images/products/rectangular-paving-1.jpg',
+];
 
 function PlusIcon() {
   return <Plus size={24} />;
@@ -63,12 +72,11 @@ const related = [
   { name: 'Hexagonal Paving Block', path: '/products/paving-blocks/hexagonal' },
 ];
 
-function ImgPlaceholder({ label, className }) {
+function ImgPlaceholder({ src, className }) {
   return (
-    <div className={`inter-hero-img ${className || ''}`}>
-      <Image size={40} />
-      <span>{label}</span>
-    </div>
+    <div className={`inter-hero-img ${className || ''}`}
+      style={{ backgroundImage: `url(${src})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
+    />
   );
 }
 
@@ -169,15 +177,10 @@ export default function InterlockingPavingBlocks() {
         <div className="container">
           <SectionTitle label="Project Gallery" title="See interlocking in action" align="left" />
           <div className="inter-gallery-grid">
-            <div className="inter-gallery-cell inter-gallery-featured">
-              <Image size={40} />
-              <span>Featured project, coming soon</span>
-            </div>
-            {[1, 2, 3, 4, 5].map(i => (
-              <div key={i} className="inter-gallery-cell">
-                <Image size={24} />
-                <span>Project image</span>
-              </div>
+            {galImages.map((img, i) => (
+              <div key={i} className={`inter-gallery-cell ${i === 0 ? 'inter-gallery-featured' : ''}`}
+                style={{ backgroundImage: `url(${img})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
+              />
             ))}
           </div>
         </div>

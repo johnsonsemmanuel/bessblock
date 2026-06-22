@@ -13,6 +13,34 @@ import './ProductTemplate.css';
 
 const categoryIcons = { 'paving-blocks': PavingIcon, 'walling': WallingIcon, 'paving-slabs': SlabIcon, 'step-risers': StepIcon, 'kerbs-edging': KerbIcon };
 
+const productImages = {
+  'interlocking-paving-blocks': '/images/products/interlocking-paving-1.jpg',
+  'rectangular-paving-blocks': '/images/products/rectangular-paving-1.jpg',
+  'hexagonal-paving-blocks': '/images/products/hexagonal-paving-blocks-1.jpg',
+  'hollow-concrete-blocks': '/images/products/hollow-blocks-1.jpg',
+  'solid-concrete-blocks': '/images/products/solid-blocks-1.jpg',
+  'ceiling-blocks': '/images/products/ceiling-blocks-1.jpg',
+  'retaining-walls': '/images/products/retaining-wall-1.jpg',
+  'road-kerbs': '/images/products/rectangular-paving-5.jpg',
+  'demarcation-kerbs': '/images/products/rectangular-paving-6.jpg',
+  'garden-kerbs': '/images/products/rectangular-paving-7.jpg',
+  'barrier-kerbs': '/images/products/rectangular-paving-8.jpg',
+  'gutter-kerbs': '/images/products/interlocking-paving-1.jpg',
+  'slotted-kerbs': '/images/products/hexagonal-paving-blocks-2.jpg',
+  'textured-paving-slabs': '/images/products/rectangular-paving-2.jpg',
+  'smooth-paving-slabs': '/images/products/rectangular-paving-4.jpg',
+  'large-format-slabs': '/images/products/rectangular-paving-5.jpg',
+  'standard-step-risers': '/images/products/rectangular-paving-6.jpg',
+  'wide-tread-steps': '/images/products/rectangular-paving-7.jpg',
+  'bullnose-steps': '/images/products/rectangular-paving-8.jpg',
+  'l-range-standard': '/images/products/retaining-wall-1.jpg',
+  'l-range-rock-face': '/images/products/retaining-wall-2.jpg',
+  '4x4-step-block': '/images/products/retaining-wall-3.jpg',
+  'terralite': '/images/products/retaining-wall-1.jpg',
+  'terrafix': '/images/products/retaining-wall-2.jpg',
+  'terracrete': '/images/products/retaining-wall-3.jpg',
+};
+
 const containerVariants = {
   hidden: {},
   visible: { transition: { staggerChildren: 0.08 } },
@@ -173,6 +201,8 @@ export default function ProductTemplate({ productKey, heroImage }) {
                     title={related.name}
                     description={related.overview.slice(0, 100) + '...'}
                     to={`/products/${related.category}/${key}`}
+                    imageSrc={productImages[key]}
+                    imageAlt={related.name}
                   />
                 );
               })}

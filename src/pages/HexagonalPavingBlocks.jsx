@@ -37,24 +37,6 @@ const related = [
   { name: 'Kerbs & Edging', path: '/products/kerbs-edging' },
 ];
 
-function HexImgagePlaceholder({ label }) {
-  return (
-    <div className="hex-overview-img">
-      <Hexagon size={36} />
-      <span>{label}</span>
-    </div>
-  );
-}
-
-function TechImgPlaceholder({ label }) {
-  return (
-    <div className="hex-tech-img">
-      <Hexagon size={36} />
-      <span>{label}</span>
-    </div>
-  );
-}
-
 export default function HexagonalPavingBlocks() {
   return (
     <>
@@ -75,7 +57,9 @@ export default function HexagonalPavingBlocks() {
               </div>
             </ScrollReveal>
             <ScrollReveal direction="right" delay={0.1}>
-              <HexImgagePlaceholder label="Hexagonal block, coming soon" />
+              <div className="hex-overview-img"
+                style={{ backgroundImage: 'url(/images/products/hexagonal-paving-blocks-2.jpg)', backgroundSize: 'cover', backgroundPosition: 'center' }}
+              />
             </ScrollReveal>
           </div>
         </div>
@@ -125,7 +109,9 @@ export default function HexagonalPavingBlocks() {
               </div>
             </ScrollReveal>
             <ScrollReveal direction="right" delay={0.1}>
-              <TechImgPlaceholder label="Technical diagram, coming soon" />
+              <div className="hex-tech-img"
+                style={{ backgroundImage: 'url(/images/products/hexagonal-paving-blocks-3.jpg)', backgroundSize: 'cover', backgroundPosition: 'center' }}
+              />
             </ScrollReveal>
           </div>
         </div>
@@ -153,12 +139,18 @@ export default function HexagonalPavingBlocks() {
         <div className="container">
           <SectionTitle label="Project Gallery" title="Hexagonal in the real world" align="left" />
           <div className="hex-gallery">
-            {[0, 1, 2, 3, 4, 5].map(i => (
+            {[
+              '/images/products/hexagonal-paving-blocks-4.jpg',
+              '/images/products/hexagonal-paving-blocks-1.jpg',
+              '/images/products/hexagonal-paving-blocks-2.jpg',
+              '/images/products/hexagonal-paving-blocks-3.jpg',
+              '/images/products/hexagonal-paving-blocks-4.jpg',
+              '/images/products/hexagonal-paving-blocks-1.jpg',
+            ].map((img, i) => (
               <ScrollReveal key={i} delay={i * 0.04}>
-                <div className="hex-gallery-item">
-                  <Hexagon size={24} />
-                  <span>Project image</span>
-                </div>
+                <div className="hex-gallery-item"
+                  style={{ backgroundImage: `url(${img})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
+                />
               </ScrollReveal>
             ))}
           </div>

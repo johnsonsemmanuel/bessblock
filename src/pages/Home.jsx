@@ -45,21 +45,21 @@ const whyItems = [
 ];
 
 const appItems = [
-  { label: 'Domestic driveways and gardens.', link: '/products/paving-blocks', image: 'https://images.unsplash.com/photo-1590674899484-d5640d0f7b3e?w=800&q=80' },
-  { label: 'Footpaths and pedestrian areas.', link: '/products/paving-blocks', image: 'https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=800&q=80' },
-  { label: 'Commercial forecourts and parking areas.', link: '/products/paving-blocks', image: 'https://images.unsplash.com/photo-1625377619917-f0386cc2ad66?w=800&q=80' },
-  { label: 'Landscaping and public realm schemes.', link: '/products/paving-slabs', image: 'https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=800&q=80' },
-  { label: 'Roads, estate developments, and edge restraint.', link: '/products/kerbs-edging', image: 'https://images.unsplash.com/photo-1541625602330-2277a4c46182?w=800&q=80' },
-  { label: 'Retaining and terracing applications.', link: '/products/walling/retaining-walls', image: 'https://images.unsplash.com/photo-1504307651254-84280e7f79d8?w=800&q=80' },
+  { label: 'Domestic driveways and gardens.', link: '/products/paving-blocks', image: '/images/products/interlocking-paving-1.jpg' },
+  { label: 'Footpaths and pedestrian areas.', link: '/products/paving-blocks', image: '/images/products/rectangular-paving-1.jpg' },
+  { label: 'Commercial forecourts and parking areas.', link: '/products/paving-blocks', image: '/images/products/interlocking-paving-2.jpg' },
+  { label: 'Landscaping and public realm schemes.', link: '/products/paving-slabs', image: '/images/products/hexagonal-paving-blocks-1.jpg' },
+  { label: 'Roads, estate developments, and edge restraint.', link: '/products/kerbs-edging', image: '/images/products/rectangular-paving-5.jpg' },
+  { label: 'Retaining and terracing applications.', link: '/products/walling/retaining-walls', image: '/images/products/retaining-wall-1.jpg' },
 ];
 
 const categoryLinks = [
-  { name: 'Paving Blocks', path: '/products/paving-blocks', image: 'https://images.unsplash.com/photo-1590674899484-d5640d0f7b3e?w=800&q=80' },
-  { name: 'Walling', path: '/products/walling', image: 'https://images.unsplash.com/photo-1567016526105-22da7c13161a?w=800&q=80' },
-  { name: 'Paving Slabs', path: '/products/paving-slabs', image: 'https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=800&q=80' },
-  { name: 'Retaining Walls', path: '/products/walling/retaining-walls', image: 'https://images.unsplash.com/photo-1504307651254-84280e7f79d8?w=800&q=80' },
-  { name: 'Kerbs & Edging', path: '/products/kerbs-edging', image: 'https://images.unsplash.com/photo-1558459654-c430be5b5717?w=800&q=80' },
-  { name: 'Step Risers', path: '/products/step-risers', image: 'https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=800&q=80' },
+  { name: 'Paving Blocks', path: '/products/paving-blocks', image: '/images/products/interlocking-paving-1.jpg' },
+  { name: 'Walling', path: '/products/walling', image: '/images/products/hollow-blocks-1.jpg' },
+  { name: 'Paving Slabs', path: '/products/paving-slabs', image: '/images/products/rectangular-paving-2.jpg' },
+  { name: 'Retaining Walls', path: '/products/walling/retaining-walls', image: '/images/products/retaining-wall-1.jpg' },
+  { name: 'Kerbs & Edging', path: '/products/kerbs-edging', image: '/images/products/rectangular-paving-3.jpg' },
+  { name: 'Step Risers', path: '/products/step-risers', image: '/images/products/rectangular-paving-4.jpg' },
 ];
 
 export default function Home() {

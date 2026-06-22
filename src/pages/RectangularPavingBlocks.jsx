@@ -109,7 +109,7 @@ export default function RectangularPavingBlocks() {
             <div
               className="rect-specs-img"
               style={{
-                backgroundImage: 'url(https://images.unsplash.com/photo-1590674899484-d5640d0f7b3e?w=600&q=80)',
+                backgroundImage: 'url(/images/products/rectangular-paving-1.jpg)',
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
               }}

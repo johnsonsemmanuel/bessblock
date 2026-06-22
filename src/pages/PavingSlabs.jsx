@@ -15,9 +15,9 @@ export default function PavingSlabs() {
         <div className="container">
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 'var(--spacing-6)' }}>
               {[
-                { ...cat.subcategories[0], image: '/images/products/interlocking-paving-2.jpg' },
-                { ...cat.subcategories[1], image: '/images/products/interlocking-paving-3.jpg' },
-                { ...cat.subcategories[2], image: '/images/products/interlocking-paving-4.jpg' },
+                { ...cat.subcategories[0], image: '/images/products/rectangular-paving-2.jpg' },
+                { ...cat.subcategories[1], image: '/images/products/rectangular-paving-3.jpg' },
+                { ...cat.subcategories[2], image: '/images/products/rectangular-paving-4.jpg' },
               ].map(sub => (
               <ProductHighlightCard
                 key={sub.id}

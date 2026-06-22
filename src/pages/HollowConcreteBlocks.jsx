@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, Image, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, CheckCircle2 } from 'lucide-react';
 import SEO from '../components/SEO';
 import PageHero from '../components/PageHero';
 import SectionTitle from '../components/SectionTitle';
@@ -134,15 +134,15 @@ export default function HollowConcreteBlocks() {
         <div className="container">
           <SectionTitle label="Project Gallery" title="Hollow blocks in action" align="left" />
           <div className="wall-sub-gallery">
-            <div className="wall-sub-gallery-item wall-sub-gallery-featured">
-              <Image size={36} />
-              <span>Hollow block wall construction, coming soon</span>
-            </div>
-            {[1, 2, 3].map(i => (
-              <div key={i} className="wall-sub-gallery-item">
-                <Image size={24} />
-                <span>Project image</span>
-              </div>
+            {[
+              '/images/products/hollow-blocks-2.jpg',
+              '/images/products/hollow-blocks-3.jpg',
+              '/images/products/hollow-blocks-4.jpg',
+              '/images/products/hollow-blocks-1.jpg',
+            ].map((img, i) => (
+              <div key={i} className={`wall-sub-gallery-item ${i === 0 ? 'wall-sub-gallery-featured' : ''}`}
+                style={{ backgroundImage: `url(${img})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
+              />
             ))}
           </div>
         </div>

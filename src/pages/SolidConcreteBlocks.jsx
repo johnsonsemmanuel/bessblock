@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, Image, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, CheckCircle2 } from 'lucide-react';
 import SEO from '../components/SEO';
 import PageHero from '../components/PageHero';
 import SectionTitle from '../components/SectionTitle';
@@ -132,15 +132,13 @@ export default function SolidConcreteBlocks() {
           <SectionTitle label="Project Gallery" title="Solid block applications" align="left" />
           <div className="wall-sub-gallery">
             {[
-              'Foundation walling with solid blocks.',
-              'Boundary wall construction.',
-              'Heavy-duty retaining base course.',
-              'Industrial enclosure wall in progress.',
-            ].map((label, i) => (
+              '/images/products/solid-blocks-2.jpg',
+              '/images/products/solid-blocks-3.jpg',
+              '/images/products/solid-blocks-4.jpg',
+              '/images/products/solid-blocks-5.jpg',
+            ].map((img, i) => (
               <ScrollReveal key={i} delay={i * 0.05}>
-                <div className="wall-sub-gallery-item" style={i === 0 ? { gridColumn: '1 / -1', aspectRatio: '16 / 6' } : {}}>
-                  <Image size={24} />
-                  <span>{label}</span>
+                <div className="wall-sub-gallery-item" style={i === 0 ? { gridColumn: '1 / -1', aspectRatio: '16 / 6', backgroundImage: `url(${img})`, backgroundSize: 'cover', backgroundPosition: 'center' } : { backgroundImage: `url(${img})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
                 </div>
               </ScrollReveal>
             ))}

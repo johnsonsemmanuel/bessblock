@@ -16,8 +16,8 @@ export default function StepRisers() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 'var(--spacing-6)' }}>
               {[
                 { ...cat.subcategories[0], image: '/images/products/rectangular-paving-1.jpg' },
-                { ...cat.subcategories[1], image: '/images/products/rectangular-paving-1.jpg' },
-                { ...cat.subcategories[2], image: '/images/products/rectangular-paving-1.jpg' },
+                { ...cat.subcategories[1], image: '/images/products/rectangular-paving-2.jpg' },
+                { ...cat.subcategories[2], image: '/images/products/rectangular-paving-3.jpg' },
               ].map(sub => (
               <ProductHighlightCard
                 key={sub.id}

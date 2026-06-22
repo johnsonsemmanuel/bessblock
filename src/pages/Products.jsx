@@ -12,12 +12,40 @@ import './Products.css';
 
 const icons = { 'paving-blocks': PavingIcon, 'walling': WallingIcon, 'paving-slabs': SlabIcon, 'step-risers': StepIcon, 'kerbs-edging': KerbIcon };
 
+const subImages = {
+  'interlocking-paving-blocks': '/images/products/interlocking-paving-1.jpg',
+  'rectangular-paving-blocks': '/images/products/rectangular-paving-1.jpg',
+  'hexagonal-paving-blocks': '/images/products/hexagonal-paving-blocks-1.jpg',
+  'hollow-concrete-blocks': '/images/products/hollow-blocks-1.jpg',
+  'solid-concrete-blocks': '/images/products/solid-blocks-1.jpg',
+  'ceiling-blocks': '/images/products/ceiling-blocks-1.jpg',
+  'retaining-walls': '/images/products/retaining-wall-1.jpg',
+  'l-range-standard': '/images/products/retaining-wall-1.jpg',
+  'l-range-rock-face': '/images/products/retaining-wall-2.jpg',
+  '4x4-step-block': '/images/products/retaining-wall-3.jpg',
+  'terralite': '/images/products/retaining-wall-1.jpg',
+  'terrafix': '/images/products/retaining-wall-2.jpg',
+  'terracrete': '/images/products/retaining-wall-3.jpg',
+  'road-kerbs': '/images/products/rectangular-paving-5.jpg',
+  'demarcation-kerbs': '/images/products/rectangular-paving-6.jpg',
+  'garden-kerbs': '/images/products/rectangular-paving-7.jpg',
+  'barrier-kerbs': '/images/products/rectangular-paving-8.jpg',
+  'gutter-kerbs': '/images/products/interlocking-paving-1.jpg',
+  'slotted-kerbs': '/images/products/hexagonal-paving-blocks-2.jpg',
+  'textured-paving-slabs': '/images/products/rectangular-paving-2.jpg',
+  'smooth-paving-slabs': '/images/products/rectangular-paving-4.jpg',
+  'large-format-slabs': '/images/products/rectangular-paving-5.jpg',
+  'standard-step-risers': '/images/products/rectangular-paving-6.jpg',
+  'wide-tread-steps': '/images/products/rectangular-paving-7.jpg',
+  'bullnose-steps': '/images/products/rectangular-paving-8.jpg',
+};
+
 const categoryImages = {
-  'paving-blocks': 'https://images.unsplash.com/photo-1590674899484-d5640d0f7b3e?w=800&q=80',
-  'walling': 'https://images.unsplash.com/photo-1567016526105-22da7c13161a?w=800&q=80',
-  'paving-slabs': 'https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=800&q=80',
-  'step-risers': 'https://images.unsplash.com/photo-1504307651254-84280e7f79d8?w=800&q=80',
-  'kerbs-edging': 'https://images.unsplash.com/photo-1558459654-c430be5b5717?w=800&q=80',
+  'paving-blocks': '/images/products/interlocking-paving-1.jpg',
+  'walling': '/images/products/hollow-blocks-1.jpg',
+  'paving-slabs': '/images/products/rectangular-paving-2.jpg',
+  'step-risers': '/images/products/rectangular-paving-3.jpg',
+  'kerbs-edging': '/images/products/rectangular-paving-4.jpg',
 };
 
 function match(filter, text) {
@@ -61,6 +89,8 @@ function CategoryCard({ cat, filter, icons: iconMap, images }) {
                 title={sub.name}
                 description={sub.description}
                 to={sub.path}
+                imageSrc={subImages[sub.id]}
+                imageAlt={sub.name}
               />
             ))}
           </div>
@@ -95,6 +125,8 @@ function CategoryCard({ cat, filter, icons: iconMap, images }) {
                 title={sub.name}
                 description={sub.description}
                 to={sub.path}
+                imageSrc={subImages[sub.id]}
+                imageAlt={sub.name}
               />
             ))}
           </div>

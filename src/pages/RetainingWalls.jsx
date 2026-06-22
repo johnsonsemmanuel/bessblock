@@ -163,6 +163,8 @@ export default function RetainingWalls() {
                   title={sub.name}
                   description={sub.description}
                   to={sub.path}
+                  imageSrc={`/images/products/retaining-wall-${(i % 3) + 1}.jpg`}
+                  imageAlt={sub.name}
                 />
               </ScrollReveal>
             ))}

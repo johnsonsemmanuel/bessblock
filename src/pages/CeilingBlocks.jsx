@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, Image, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, CheckCircle2 } from 'lucide-react';
 import SEO from '../components/SEO';
 import PageHero from '../components/PageHero';
 import SectionTitle from '../components/SectionTitle';
@@ -133,15 +133,13 @@ export default function CeilingBlocks() {
           <SectionTitle label="Project Gallery" title="Ceiling blocks in construction" align="left" />
           <div className="wall-sub-gallery">
             {[
-              'Rib-and-block slab construction.',
-              'Ceiling block installation between beams.',
-              'Suspended slab under construction.',
-              'Structural infill layout before topping.',
-            ].map((label, i) => (
+              '/images/products/ceiling-blocks-2.jpg',
+              '/images/products/ceiling-blocks-3.jpg',
+              '/images/products/ceiling-blocks-rib.jpg',
+              '/images/products/ceiling-blocks-1.jpg',
+            ].map((img, i) => (
               <ScrollReveal key={i} delay={i * 0.05}>
-                <div className="wall-sub-gallery-item" style={i === 0 ? { gridColumn: '1 / -1', aspectRatio: '16 / 6' } : {}}>
-                  <Image size={24} />
-                  <span>{label}</span>
+                <div className="wall-sub-gallery-item" style={i === 0 ? { gridColumn: '1 / -1', aspectRatio: '16 / 6', backgroundImage: `url(${img})`, backgroundSize: 'cover', backgroundPosition: 'center' } : { backgroundImage: `url(${img})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
                 </div>
               </ScrollReveal>
             ))}
