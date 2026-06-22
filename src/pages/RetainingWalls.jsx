@@ -6,6 +6,7 @@ import SectionTitle from '../components/SectionTitle';
 import ScrollReveal from '../components/ScrollReveal';
 import AnimatedButton from '../components/AnimatedButton';
 import { ProductHighlightCard } from '../components/ProductHighlightCard';
+import { WallingIcon } from '../components/CategoryIcons';
 import productCategories from '../data/products';
 import './About.css';
 import './RetainingWalls.css';
@@ -159,6 +160,7 @@ export default function RetainingWalls() {
             {retainingSubs.map((sub, i) => (
               <ScrollReveal key={sub.id} delay={i * 0.06}>
                 <ProductHighlightCard
+                  categoryIcon={WallingIcon}
                   category="Retaining Walls"
                   title={sub.name}
                   description={sub.description}

@@ -4,6 +4,7 @@ import SectionTitle from '../components/SectionTitle';
 import ScrollReveal from '../components/ScrollReveal';
 import AnimatedButton from '../components/AnimatedButton';
 import { ProductHighlightCard } from '../components/ProductHighlightCard';
+import { KerbIcon } from '../components/CategoryIcons';
 import productCategories from '../data/products';
 import { CheckCircle2 } from 'lucide-react';
 import './About.css';
@@ -84,6 +85,7 @@ export default function KerbsEdging() {
             ].map((sub, i) => (
               <ScrollReveal key={sub.id} delay={i * 0.06}>
                 <ProductHighlightCard
+                  categoryIcon={KerbIcon}
                   category="Kerbs & Edging"
                   title={sub.name}
                   description={sub.description}
