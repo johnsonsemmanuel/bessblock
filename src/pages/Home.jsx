@@ -14,10 +14,10 @@ import testimonials, { trustedCompanies } from '../data/testimonials';
 import './Home.css';
 
 const heroSlides = [
-  { image: '/images/hero/construction-aerial-1.webp', label: 'Aerial view of a building under construction' },
-  { image: '/images/hero/construction-aerial-2.webp', label: 'Construction site with roads and buildings' },
-  { image: '/images/hero/construction-aerial-3.webp', label: 'Brown and gray concrete building foundation' },
-  { image: '/images/hero/construction-aerial-4.webp', label: 'Aerial view of a concrete structure' },
+  { image: '/images/hero/production-site-1.webp', label: 'Bessblock production facility and operations' },
+  { image: '/images/hero/production-site-2.webp', label: 'Concrete block manufacturing at Bessblock' },
+  { image: '/images/hero/production-site-3.webp', label: 'Bessblock product showcase and site development' },
+  { image: '/images/hero/production-site-4.webp', label: 'Bessblock team at work in the factory' },
 ];
 
 const stagger = {
