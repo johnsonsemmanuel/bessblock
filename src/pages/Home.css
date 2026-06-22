@@ -7,7 +7,7 @@
 
 .hero-bg {
   position: absolute;
-  top: -80px;
+  top: calc(-1 * var(--navbar-height));
   left: 0;
   right: 0;
   bottom: 0;
@@ -15,11 +15,12 @@
   background-size: cover;
   background-position: center;
   z-index: -2;
+  animation: heroBgReveal 1.2s ease-out;
 }
 
 .hero-bg-overlay {
   position: absolute;
-  top: -80px;
+  top: calc(-1 * var(--navbar-height));
   left: 0;
   right: 0;
   bottom: 0;
@@ -70,7 +71,7 @@
 .hero::before {
   content: '';
   position: absolute;
-  top: -80px;
+  top: calc(-1 * var(--navbar-height));
   left: 0;
   right: 0;
   height: 200px;

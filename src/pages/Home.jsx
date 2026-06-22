@@ -12,10 +12,10 @@ import { ProgressiveBlur } from '../components/ProgressiveBlur';
 import './Home.css';
 
 const heroSlides = [
-  { image: '/images/hero/construction-aerial-1.jpg' },
-  { image: '/images/hero/construction-aerial-2.jpg' },
-  { image: '/images/hero/construction-aerial-3.jpg' },
-  { image: '/images/hero/construction-aerial-4.jpg' },
+  { image: '/images/hero/construction-aerial-1.jpg', label: 'Aerial view of a building under construction' },
+  { image: '/images/hero/construction-aerial-2.jpg', label: 'Construction site with roads and buildings' },
+  { image: '/images/hero/construction-aerial-3.jpg', label: 'Brown and gray concrete building foundation' },
+  { image: '/images/hero/construction-aerial-4.jpg', label: 'Aerial view of a concrete structure' },
 ];
 
 const stagger = {
@@ -89,6 +89,8 @@ export default function Home() {
             exit={{ opacity: 0 }}
             transition={{ duration: 1, ease: 'easeInOut' }}
             style={{ backgroundImage: `url(${heroSlides[slide].image})` }}
+            role="img"
+            aria-label={heroSlides[slide].label}
           />
         </AnimatePresence>
         <div className="hero-bg-overlay" />
@@ -117,7 +119,7 @@ export default function Home() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.25 }}
             >
-              Bessblock manufactures high-quality concrete products for paving, walling, retaining, edging, and step systems that support residential, commercial, and infrastructure projects. From everyday practical solutions to engineered retaining wall systems, we help contractors, developers, and specifiers build with confidence.
+              High-quality concrete products for paving, walling, retaining, and drainage — trusted by contractors, developers, and specifiers across Ghana.
             </motion.p>
             <motion.div
               className="hero-actions"
@@ -127,7 +129,6 @@ export default function Home() {
             >
               <AnimatedButton to="/products/paving-blocks" variant="primary">Explore Products</AnimatedButton>
               <AnimatedButton to="/request-quote" variant="outline">Request a Quote</AnimatedButton>
-              <AnimatedButton to="/about/manufacturing" variant="outline">Download Specifications</AnimatedButton>
             </motion.div>
           </motion.div>
         </div>

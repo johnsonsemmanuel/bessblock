@@ -7,7 +7,7 @@
 
 .product-hero-bg-fill {
   position: absolute;
-  top: -80px;
+  top: calc(-1 * var(--navbar-height));
   left: 0;
   right: 0;
   bottom: 0;
@@ -18,7 +18,7 @@
 
 .product-hero-overlay {
   position: absolute;
-  top: -80px;
+  top: calc(-1 * var(--navbar-height));
   left: 0;
   right: 0;
   bottom: 0;
@@ -35,7 +35,7 @@
 .product-hero::before {
   content: '';
   position: absolute;
-  top: -80px;
+  top: calc(-1 * var(--navbar-height));
   left: 0;
   right: 0;
   height: 180px;

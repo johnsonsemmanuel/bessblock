@@ -161,11 +161,12 @@ input, textarea {
   position: relative;
   color: var(--hero-text);
   padding: var(--spacing-20) 0 var(--spacing-16);
+  min-height: 360px;
 }
 
 .page-hero-bg {
   position: absolute;
-  top: -80px;
+  top: calc(-1 * var(--navbar-height));
   left: 0;
   right: 0;
   bottom: 0;
@@ -182,7 +183,7 @@ input, textarea {
 
 .page-hero-overlay {
   position: absolute;
-  top: -80px;
+  top: calc(-1 * var(--navbar-height));
   left: 0;
   right: 0;
   bottom: 0;
@@ -199,7 +200,7 @@ input, textarea {
 .page-hero::before {
   content: '';
   position: absolute;
-  top: -80px;
+  top: calc(-1 * var(--navbar-height));
   left: 0;
   right: 0;
   height: 180px;
@@ -276,6 +277,7 @@ input, textarea {
 
   .page-hero {
     padding: var(--spacing-16) 0 var(--spacing-12);
+    min-height: 300px;
   }
 
   .page-hero-title {
@@ -295,6 +297,7 @@ input, textarea {
 
   .page-hero {
     padding: var(--spacing-12) 0 var(--spacing-10);
+    min-height: 260px;
   }
 }
 
