@@ -23,12 +23,7 @@
   right: 0;
   bottom: 0;
   z-index: 1;
-  background: linear-gradient(
-    90deg,
-    rgba(20, 20, 20, 0.88) 0%,
-    rgba(20, 20, 20, 0.5) 45%,
-    rgba(20, 20, 20, 0.05) 100%
-  );
+  background: var(--hero-overlay-solid);
 }
 
 /* Top gradient so transparent navbar blends into hero */

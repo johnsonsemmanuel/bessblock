@@ -35,15 +35,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background:
-    linear-gradient(
-      90deg,
-      var(--hero-overlay-from) 0%,
-      var(--hero-overlay-from) 15%,
-      var(--hero-overlay-mid) 35%,
-      transparent 65%
-    ),
-    radial-gradient(ellipse 140% 60% at 30% 50%, transparent 40%, rgba(0,0,0,0.25) 100%);
+  background: var(--hero-overlay-solid);
   z-index: -1;
 }
 

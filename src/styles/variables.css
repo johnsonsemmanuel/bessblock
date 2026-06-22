@@ -84,6 +84,7 @@
   --hero-overlay-mid: rgba(15, 15, 20, 0.55);
   --hero-overlay-to: rgba(15, 15, 20, 0.05);
   --hero-overlay-top: rgba(15, 15, 20, 0.85);
+  --hero-overlay-solid: rgba(15, 15, 20, 0.75);
 
   /* Subtle manufacturing pattern */
   --pattern-dot: url("data:image/svg+xml,%3Csvg width='28' height='28' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='14' cy='14' r='1.2' fill='%23404088' opacity='0.06'/%3E%3C/svg%3E");
@@ -130,4 +131,5 @@
   --hero-overlay-mid: rgba(15, 15, 20, 0.4);
   --hero-overlay-to: rgba(15, 15, 20, 0.02);
   --hero-overlay-top: rgba(15, 15, 20, 0.75);
+  --hero-overlay-solid: rgba(15, 15, 20, 0.65);
 }

@@ -204,12 +204,7 @@ input, select, textarea {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(
-    90deg,
-    rgba(20, 20, 20, 0.88) 0%,
-    rgba(20, 20, 20, 0.5) 45%,
-    transparent 75%
-  );
+  background: var(--hero-overlay-solid);
   z-index: -1;
 }
 
