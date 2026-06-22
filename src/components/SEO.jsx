@@ -5,10 +5,40 @@ const DEFAULT_DESC = 'Bessblock Concrete Products Ltd, manufacturer of concrete 
 const DEFAULT_IMAGE = '/images/hero/concrete-texture-1.jpg';
 const SITE_URL = 'https://bessblock.com';
 
-export default function SEO({ title, description, image, type = 'website' }) {
+const organizationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: SITE_NAME,
+  url: SITE_URL,
+  logo: `${SITE_URL}/bessblocklogo.png`,
+  description: DEFAULT_DESC,
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Industrial Area, Accra',
+    addressCountry: 'GH',
+  },
+  contactPoint: {
+    '@type': 'ContactPoint',
+    telephone: '+233-302-555-019',
+    contactType: 'sales',
+    email: 'info@bessblock.com',
+  },
+  sameAs: [
+    'https://linkedin.com/company/bessblock',
+    'https://facebook.com/bessblock',
+    'https://twitter.com/bessblock',
+    'https://instagram.com/bessblock',
+  ],
+};
+
+export default function SEO({ title, description, image, type = 'website', schema }) {
   const pageTitle = title ? `${title} | ${SITE_NAME}` : SITE_NAME;
   const pageDesc = description || DEFAULT_DESC;
   const pageImage = image || DEFAULT_IMAGE;
+
+  const pageSchema = schema
+    ? { ...schema, '@context': 'https://schema.org' }
+    : null;
 
   return (
     <Helmet>
@@ -23,6 +53,16 @@ export default function SEO({ title, description, image, type = 'website' }) {
       <meta name="twitter:title" content={pageTitle} />
       <meta name="twitter:description" content={pageDesc} />
       <meta name="twitter:image" content={pageImage} />
+
+      <script type="application/ld+json">
+        {JSON.stringify(organizationSchema)}
+      </script>
+
+      {pageSchema && (
+        <script type="application/ld+json">
+          {JSON.stringify(pageSchema)}
+        </script>
+      )}
     </Helmet>
   );
 }

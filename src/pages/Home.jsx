@@ -11,6 +11,7 @@ import ScrollReveal from '../components/ScrollReveal';
 import { ProgressiveBlur } from '../components/ProgressiveBlur';
 import TestimonialsSection from '../components/TestimonialsSection';
 import CTAWithVerticalMarquee from '../components/CTAWithVerticalMarquee';
+import testimonials, { trustedCompanies } from '../data/testimonials';
 import './Home.css';
 
 const heroSlides = [
@@ -349,38 +350,8 @@ export default function Home() {
 
       <TestimonialsSection
         subtitle="See what our clients say about working with Bessblock"
-        testimonials={[
-          {
-            id: 1,
-            name: 'Project Director',
-            role: 'Project Director',
-            company: 'Urban Roads Authority',
-            content: 'Bessblock delivered consistent quality across multiple project phases. Their technical support during specification was invaluable.',
-            rating: 5,
-          },
-          {
-            id: 2,
-            name: 'Chief Architect',
-            role: 'Chief Architect',
-            company: 'State University',
-            content: 'We specified Bessblock blocks for our university campus development and were impressed by the dimensional accuracy and strength.',
-            rating: 5,
-          },
-          {
-            id: 3,
-            name: 'Contracts Manager',
-            role: 'Contracts Manager',
-            company: 'Ministry of Health',
-            content: 'The team at Bessblock worked with us to meet a tight delivery schedule for our hospital complex. Reliable partner.',
-            rating: 5,
-          },
-        ]}
-        trustedCompanies={[
-          'Ministry of Roads',
-          'Ghana Highway Authority',
-          'Urban Roads Department',
-          'Department of Feeder Roads',
-        ]}
+        testimonials={testimonials}
+        trustedCompanies={trustedCompanies}
         trustedCompaniesTitle="Trusted by government agencies and institutions"
       />
 

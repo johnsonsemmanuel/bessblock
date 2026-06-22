@@ -150,6 +150,13 @@ export default function SearchBar() {
             </div>
           )}
 
+          {query.trim() && results.length > 0 && (
+            <Link to={`/search?q=${encodeURIComponent(query)}`} className="search-bar-view-all" onClick={() => { setOpen(false); setQuery(''); setResults([]); }}>
+              <span>View all results</span>
+              <ArrowRight size={14} />
+            </Link>
+          )}
+
           <div className="search-bar-hint">
             Press <kbd>Esc</kbd> to close &middot; <kbd>&uarr;</kbd> <kbd>&darr;</kbd> to navigate
           </div>

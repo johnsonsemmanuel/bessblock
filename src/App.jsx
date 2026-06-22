@@ -49,9 +49,11 @@ import RequestQuote from './pages/RequestQuote';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsConditions from './pages/TermsConditions';
 import NotFound from './pages/NotFound';
+import SearchResults from './pages/SearchResults';
 import ErrorBoundary from './components/ErrorBoundary';
 import CookieConsent from './components/CookieConsent';
 import BackToTop from './components/BackToTop';
+import LiveChat from './components/LiveChat';
 
 function Layout({ children }) {
   const { pathname } = useLocation();
@@ -74,6 +76,7 @@ function Layout({ children }) {
       <Footer />
       <CookieConsent />
       <BackToTop />
+      <LiveChat />
     </>
   );
 }
@@ -145,6 +148,7 @@ export default function App() {
           <Route path="/contact" element={<AnimatedPage><Contact /></AnimatedPage>} />
           <Route path="/privacy-policy" element={<AnimatedPage><PrivacyPolicy /></AnimatedPage>} />
           <Route path="/terms-conditions" element={<AnimatedPage><TermsConditions /></AnimatedPage>} />
+          <Route path="/search" element={<AnimatedPage><SearchResults /></AnimatedPage>} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Layout>

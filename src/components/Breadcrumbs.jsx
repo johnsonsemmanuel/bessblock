@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import { ChevronRight } from 'lucide-react';
 
 const labels = {
@@ -42,6 +43,7 @@ const labels = {
   'blog': 'Blog',
   'faqs': 'FAQs',
   'contact': 'Contact',
+  'search': 'Search',
   'privacy-policy': 'Privacy Policy',
   'terms-conditions': 'Terms & Conditions',
 };
@@ -49,28 +51,56 @@ const labels = {
 export default function Breadcrumbs({ path, current }) {
   const segments = path.split('/').filter(Boolean);
 
+  const itemListElements = [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://bessblock.com/' },
+    ...segments.map((seg, i) => {
+      const to = '/' + segments.slice(0, i + 1).join('/');
+      const isLast = i === segments.length - 1;
+      const label = labels[seg] || seg.replace(/-/g, ' ');
+      return {
+        '@type': 'ListItem',
+        position: i + 2,
+        name: isLast ? (current || label) : label,
+        item: isLast ? undefined : `https://bessblock.com${to}`,
+      };
+    }),
+  ].filter(Boolean);
+
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: itemListElements,
+  };
+
   return (
-    <nav className="breadcrumbs" aria-label="Breadcrumb">
-      <ol className="breadcrumbs-list">
-        <li className="breadcrumbs-item">
-          <Link to="/" className="breadcrumbs-link">Home</Link>
-        </li>
-        {segments.map((seg, i) => {
-          const to = '/' + segments.slice(0, i + 1).join('/');
-          const isLast = i === segments.length - 1;
-          const label = labels[seg] || seg.replace(/-/g, ' ');
-          return (
-            <li key={seg} className="breadcrumbs-item">
-              <ChevronRight size={12} className="breadcrumbs-sep" />
-              {isLast ? (
-                <span className="breadcrumbs-current">{current || label}</span>
-              ) : (
-                <Link to={to} className="breadcrumbs-link">{label}</Link>
-              )}
-            </li>
-          );
-        })}
-      </ol>
-    </nav>
+    <>
+      <Helmet>
+        <script type="application/ld+json">
+          {JSON.stringify(breadcrumbSchema)}
+        </script>
+      </Helmet>
+      <nav className="breadcrumbs" aria-label="Breadcrumb">
+        <ol className="breadcrumbs-list">
+          <li className="breadcrumbs-item">
+            <Link to="/" className="breadcrumbs-link">Home</Link>
+          </li>
+          {segments.map((seg, i) => {
+            const to = '/' + segments.slice(0, i + 1).join('/');
+            const isLast = i === segments.length - 1;
+            const label = labels[seg] || seg.replace(/-/g, ' ');
+            return (
+              <li key={seg} className="breadcrumbs-item">
+                <ChevronRight size={12} className="breadcrumbs-sep" />
+                {isLast ? (
+                  <span className="breadcrumbs-current">{current || label}</span>
+                ) : (
+                  <Link to={to} className="breadcrumbs-link">{label}</Link>
+                )}
+              </li>
+            );
+          })}
+        </ol>
+      </nav>
+    </>
   );
 }

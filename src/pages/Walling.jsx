@@ -5,6 +5,7 @@ import SectionTitle from '../components/SectionTitle';
 import ScrollReveal from '../components/ScrollReveal';
 import AnimatedButton from '../components/AnimatedButton';
 import { ProductHighlightCard } from '../components/ProductHighlightCard';
+import CoverageCalculator from '../components/CoverageCalculator';
 import { WallingIcon } from '../components/CategoryIcons';
 import productCategories from '../data/products';
 import './Walling.css';
@@ -117,6 +118,13 @@ export default function Walling() {
               </ScrollReveal>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="section section-light">
+        <div className="container">
+          <SectionTitle title="Coverage Calculator" label="Estimate quantity" />
+          <CoverageCalculator />
         </div>
       </section>
 

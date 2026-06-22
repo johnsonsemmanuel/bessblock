@@ -189,6 +189,24 @@
   line-height: 1.6;
 }
 
+/* ─── View All ──────────────────────────── */
+.search-bar-view-all {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-2);
+  padding: var(--spacing-3) var(--spacing-4);
+  border-top: 1px solid var(--border);
+  font-size: var(--text-sm);
+  color: var(--color-primary);
+  font-weight: var(--font-weight-semibold);
+  text-decoration: none;
+  transition: background var(--transition-fast);
+}
+
+.search-bar-view-all:hover {
+  background: var(--bg-section);
+}
 /* ─── Hint ──────────────────────────────── */
 
 .search-bar-hint {

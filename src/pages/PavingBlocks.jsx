@@ -1,6 +1,8 @@
 import PageHero from '../components/PageHero';
 import { ProductHighlightCard } from '../components/ProductHighlightCard';
 import SEO from '../components/SEO';
+import SectionTitle from '../components/SectionTitle';
+import CoverageCalculator from '../components/CoverageCalculator';
 import { PavingIcon } from '../components/CategoryIcons';
 import productCategories from '../data/products';
 
@@ -31,6 +33,13 @@ export default function PavingBlocks() {
               />
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="section section-light">
+        <div className="container">
+          <SectionTitle title="Coverage Calculator" label="Estimate quantity" />
+          <CoverageCalculator />
         </div>
       </section>
     </div>

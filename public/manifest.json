@@ -1,0 +1,16 @@
+{
+  "name": "Bessblock Concrete Products Ltd",
+  "short_name": "Bessblock",
+  "description": "Premium concrete block manufacturing for infrastructure and institutional projects in Ghana.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#404088",
+  "icons": [
+    {
+      "src": "/bessblocklogo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 import SectionTitle from './SectionTitle';
 import SEO from './SEO';
 import Breadcrumbs from './Breadcrumbs';
@@ -53,7 +53,7 @@ const sectionVariants = {
 
 export default function ProductTemplate({ productKey, heroImage }) {
   const product = productPages[productKey];
-  if (!product) return null;
+  if (!product) return <Navigate to="/" replace />;
 
   return (
     <>

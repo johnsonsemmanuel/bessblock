@@ -2,34 +2,9 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import PageHero from '../components/PageHero';
 import SEO from '../components/SEO';
+import team from '../data/team';
 import './About.css';
 import './Leadership.css';
-
-const team = [
-  {
-    name: 'Emmanuel Johnson',
-    role: 'Managing Director',
-    bio: 'Over 20 years of experience in concrete manufacturing and construction supply chain management.',
-    image: '/images/team/george.jpg',
-  },
-  {
-    name: 'Sarah Mensah',
-    role: 'Operations Director',
-    bio: 'Specialist in production optimization and quality systems implementation.',
-    image: '/images/team/hope.jpg',
-  },
-  {
-    name: 'James Osei',
-    role: 'Technical Manager',
-    bio: 'Civil engineer with expertise in concrete technology and product development.',
-    image: '/images/team/joel.jpg',
-  },
-  {
-    name: 'Grace Ankrah',
-    role: 'Commercial Director',
-    bio: 'Leading business development and client relations across institutional projects.',
-  },
-];
 
 export default function Leadership() {
   const [expandedIndex, setExpandedIndex] = useState(null);
