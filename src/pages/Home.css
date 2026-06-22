@@ -30,8 +30,8 @@
     transparent 60%
   );
   z-index: -1;
-  -webkit-mask-image: linear-gradient(180deg, black 50%, transparent 100%);
-  mask-image: linear-gradient(180deg, black 50%, transparent 100%);
+  -webkit-mask-image: linear-gradient(180deg, transparent 0%, black 25%, black 100%);
+  mask-image: linear-gradient(180deg, transparent 0%, black 25%, black 100%);
 }
 .hero-dots {
   position: absolute;
@@ -74,9 +74,12 @@
   pointer-events: none;
 }
 .hero-content {
-  max-width: 860px;
-  padding: var(--spacing-16) 0;
+  width: 100%;
+  padding: var(--spacing-16) var(--container-padding);
   text-align: left;
+}
+.hero-content-inner {
+  max-width: 860px;
 }
 .hero-label {
   display: inline-block;
@@ -88,7 +91,7 @@
   margin-bottom: var(--spacing-5);
 }
 .hero-title {
-  font-size: clamp(2.5rem, 5vw, 5rem);
+  font-size: clamp(2.5rem, 6.5vw, 6rem);
   font-weight: var(--font-weight-bold);
   color: var(--hero-text);
   line-height: 1.05;

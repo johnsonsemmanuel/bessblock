@@ -104,9 +104,9 @@ export default function Home() {
           />
         )}
         <div className="hero-bg-overlay" />
-        <div className="container">
+        <div className="hero-content">
           <motion.div
-            className="hero-content"
+            className="hero-content-inner"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
