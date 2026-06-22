@@ -27,9 +27,9 @@ export default function LazyBackground({ src, className, children, style, ...pro
       ref={ref}
       className={className}
       style={{
-        backgroundImage: loaded ? `url(${src})` : 'none',
-        backgroundColor: loaded ? undefined : 'var(--color-grey-900)',
-        transition: 'background-image 0.3s ease',
+        backgroundImage: `url(${src})`,
+        opacity: loaded ? 1 : 0,
+        transition: 'opacity 0.4s ease',
         ...style,
       }}
       {...props}
