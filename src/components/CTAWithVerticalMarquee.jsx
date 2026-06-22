@@ -53,7 +53,7 @@ export default function CTAWithVerticalMarquee() {
         const distance = Math.abs(centerY - itemCenterY);
         const maxDistance = containerRect.height / 2;
         const normalizedDistance = Math.min(distance / maxDistance, 1);
-        item.style.opacity = String(1 - normalizedDistance * 0.75);
+        item.style.opacity = String(1 - normalizedDistance * 0.5);
       });
 
       frameId = requestAnimationFrame(updateOpacity);
@@ -79,9 +79,8 @@ export default function CTAWithVerticalMarquee() {
               Speak to Bessblock for product advice, project support, and quotation requests. Whether you need paving, walling, retaining walls, kerbs, or step systems, our team can help you choose the right concrete solution for your project.
             </p>
             <div className="cta-marquee-actions">
-              <AnimatedButton to="/request-quote" variant="primary" size="lg">Request a Quote</AnimatedButton>
+               <AnimatedButton to="/request-quote" variant="primary" size="lg">Request a Quote</AnimatedButton>
               <AnimatedButton to="/products" variant="outline" size="lg">View All Products</AnimatedButton>
-              <AnimatedButton to="/projects" variant="outline" size="lg">Project Gallery</AnimatedButton>
             </div>
           </motion.div>
 
