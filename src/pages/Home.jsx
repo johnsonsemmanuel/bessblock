@@ -9,6 +9,7 @@ import LazyBackground from '../components/LazyBackground';
 import { ArrowRight, CheckCircle, Star } from 'lucide-react';
 import ScrollReveal from '../components/ScrollReveal';
 import { ProgressiveBlur } from '../components/ProgressiveBlur';
+import TestimonialsSection from '../components/TestimonialsSection';
 import './Home.css';
 
 const heroSlides = [
@@ -345,46 +346,42 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section className="section section-light">
-        <div className="container">
-          <SectionTitle label="Testimonials" title="What Our Clients Say" />
-          <div className="home-testimonials">
-            {[
-              {
-                quote: 'Bessblock delivered consistent quality across multiple project phases. Their technical support during specification was invaluable.',
-                author: 'Project Director',
-                company: 'Urban Roads Authority',
-              },
-              {
-                quote: 'We specified Bessblock blocks for our university campus development and were impressed by the dimensional accuracy and strength.',
-                author: 'Chief Architect',
-                company: 'State University',
-              },
-              {
-                quote: 'The team at Bessblock worked with us to meet a tight delivery schedule for our hospital complex. Reliable partner.',
-                author: 'Contracts Manager',
-                company: 'Ministry of Health',
-              },
-            ].map((t, i) => (
-              <motion.div
-                key={i}
-                className="home-testimonial-card"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: i * 0.1 }}
-              >
-                <p className="home-testimonial-quote">&ldquo;{t.quote}&rdquo;</p>
-                <div className="home-testimonial-author">
-                  <span className="home-testimonial-name">{t.author}</span>
-                  <span className="home-testimonial-org">{t.company}</span>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <TestimonialsSection
+        subtitle="See what our clients say about working with Bessblock"
+        testimonials={[
+          {
+            id: 1,
+            name: 'Project Director',
+            role: 'Project Director',
+            company: 'Urban Roads Authority',
+            content: 'Bessblock delivered consistent quality across multiple project phases. Their technical support during specification was invaluable.',
+            rating: 5,
+          },
+          {
+            id: 2,
+            name: 'Chief Architect',
+            role: 'Chief Architect',
+            company: 'State University',
+            content: 'We specified Bessblock blocks for our university campus development and were impressed by the dimensional accuracy and strength.',
+            rating: 5,
+          },
+          {
+            id: 3,
+            name: 'Contracts Manager',
+            role: 'Contracts Manager',
+            company: 'Ministry of Health',
+            content: 'The team at Bessblock worked with us to meet a tight delivery schedule for our hospital complex. Reliable partner.',
+            rating: 5,
+          },
+        ]}
+        trustedCompanies={[
+          'Ministry of Roads',
+          'Ghana Highway Authority',
+          'Urban Roads Department',
+          'Department of Feeder Roads',
+        ]}
+        trustedCompaniesTitle="Trusted by government agencies and institutions"
+      />
 
       {/* Final CTA */}
       <section className="section home-cta">
