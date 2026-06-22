@@ -315,6 +315,22 @@
   gap: var(--spacing-4);
 }
 
+.home-app-card-h {
+  width: 340px;
+  min-height: 220px;
+  flex-shrink: 0;
+}
+
+.home-apps-scroll {
+  display: flex;
+  gap: var(--spacing-5);
+  padding: var(--spacing-8) var(--spacing-8);
+}
+
+.scroll-x-spacer {
+  height: 100vh;
+}
+
 .home-app-card {
   min-height: 200px;
 }

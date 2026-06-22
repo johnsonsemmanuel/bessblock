@@ -10,6 +10,9 @@ import ScrollReveal from '../components/ScrollReveal';
 import { ProgressiveBlur } from '../components/ProgressiveBlur';
 import TestimonialsSection from '../components/TestimonialsSection';
 import CTAWithVerticalMarquee from '../components/CTAWithVerticalMarquee';
+import { ScrollXCarousel, ScrollXCarouselContainer, ScrollXCarouselWrap, ScrollXCarouselProgress } from '../components/ScrollXCarousel';
+import { DotPattern } from '../components/DotPattern';
+import '../components/ScrollXCarousel.css';
 import testimonials, { trustedCompanies } from '../data/testimonials';
 import './Home.css';
 
@@ -271,19 +274,24 @@ export default function Home() {
       </section>
 
       {/* Applications section */}
-      <section className="section">
-        <div className="container">
-          <SectionTitle
-            label="Applications"
-            title="Built for a wide range of projects"
-          />
-          <p className="home-apps-intro">
-            Bessblock products are suitable for many site conditions and design needs, from small domestic improvements to larger construction and infrastructure works. Clear application-led navigation will help customers quickly identify the best product for their use case.
-          </p>
-          <div className="home-apps-grid">
-            {appItems.map((app, i) => (
-              <ScrollReveal key={i} delay={i * 0.05}>
-                <Link to={app.link} className="home-app-card">
+      <ScrollXCarousel>
+        <section className="section" style={{ paddingBottom: 0 }}>
+          <div className="container">
+            <SectionTitle
+              label="Applications"
+              title="Built for a wide range of projects"
+            />
+            <p className="home-apps-intro">
+              Bessblock products are suitable for many site conditions and design needs, from small domestic improvements to larger construction and infrastructure works. Clear application-led navigation will help customers quickly identify the best product for their use case.
+            </p>
+          </div>
+        </section>
+
+        <div style={{ position: 'relative' }}>
+          <ScrollXCarouselContainer>
+            <ScrollXCarouselWrap className="home-apps-scroll">
+              {appItems.map((app, i) => (
+                <Link key={i} to={app.link} className="home-app-card home-app-card-h">
                   <LazyBackground src={app.image} className="home-app-card-bg" />
                   <div className="home-app-card-overlay" />
                   <div className="home-app-card-content">
@@ -291,11 +299,15 @@ export default function Home() {
                     <ArrowRight size={24} className="home-app-arrow" />
                   </div>
                 </Link>
-              </ScrollReveal>
-            ))}
-          </div>
+              ))}
+            </ScrollXCarouselWrap>
+            <ScrollXCarouselProgress />
+            <DotPattern width={20} height={20} cx={1.5} cy={1.5} cr={1} className="fill-[var(--color-bessblock-blue)]/10 md:fill-[var(--color-bessblock-blue)]/15" />
+          </ScrollXCarouselContainer>
         </div>
-      </section>
+
+        <div className="scroll-x-spacer" />
+      </ScrollXCarousel>
 
       {/* Project gallery teaser */}
       <section className="section section-light">

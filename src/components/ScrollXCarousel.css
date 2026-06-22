@@ -1,0 +1,44 @@
+.scroll-x {
+  position: relative;
+  width: 100%;
+}
+
+.scroll-x-container {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+}
+
+.scroll-x-wrap {
+  display: flex;
+  gap: var(--spacing-5);
+  padding: var(--spacing-8) 0;
+  width: fit-content;
+}
+
+.scroll-x-progress-track {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--border);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.scroll-x-progress-bar {
+  height: 100%;
+  background: var(--color-bessblock-blue);
+  border-radius: 2px;
+  transform-origin: left;
+}
+
+@media (max-width: 768px) {
+  .scroll-x-wrap {
+    gap: var(--spacing-3);
+    padding: var(--spacing-4) 0;
+  }
+}
