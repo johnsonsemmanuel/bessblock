@@ -5,7 +5,7 @@ import SEO from '../components/SEO';
 import SectionTitle from '../components/SectionTitle';
 import AnimatedButton from '../components/AnimatedButton';
 import LazyBackground from '../components/LazyBackground';
-import { ArrowRight, CheckCircle, ChevronDown, Star } from 'lucide-react';
+import { ArrowRight, CheckCircle, ChevronDown, Circle } from 'lucide-react';
 import ScrollReveal from '../components/ScrollReveal';
 import { ProgressiveBlur } from '../components/ProgressiveBlur';
 import TestimonialsSection from '../components/TestimonialsSection';
@@ -172,7 +172,7 @@ export default function Home() {
           >
             {trustItems.map((item, i) => (
               <motion.div key={i} className="home-trust-item" variants={fadeUp}>
-                <Star size={16} className="home-trust-dot" />
+                <Circle size={10} className="home-trust-dot" />
                 <p className="home-trust-text">{item}</p>
               </motion.div>
             ))}

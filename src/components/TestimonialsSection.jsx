@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { motion, useAnimation, useInView } from 'framer-motion';
-import { ChevronLeft, ChevronRight, Quote, Star } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Quote, Circle } from 'lucide-react';
 import './TestimonialsSection.css';
 
 const avatarColors = ['#404088', '#5a5a9e', '#2e2e6b', '#ffda45', '#e6c130'];
@@ -121,7 +121,7 @@ export default function TestimonialsSection({
                       </div>
                       <div className="testimonial-stars">
                         {[...Array(t.rating)].map((_, i) => (
-                          <Star key={i} size={16} className="testimonial-star" />
+                          <Circle key={i} size={12} className="testimonial-star" />
                         ))}
                       </div>
                     </div>

@@ -1,9 +1,24 @@
 .footer {
+  position: relative;
   background: var(--color-grey-900);
   color: var(--color-white);
   width: 100%;
   padding-bottom: 0;
   overflow: hidden;
+  isolation: isolate;
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image: url('/images/hero/concrete-texture-2.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.06;
+  pointer-events: none;
 }
 
 /* ─── Top section: brand + links ─── */

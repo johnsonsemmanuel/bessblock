@@ -1,4 +1,4 @@
-import { CheckCircle2, Shield, Layers, Wrench, Clock, Zap } from 'lucide-react';
+import { CheckCircle2, Shield, Layers, Wrench, Clock, Award } from 'lucide-react';
 import SEO from '../components/SEO';
 import PageHero from '../components/PageHero';
 import SectionTitle from '../components/SectionTitle';
@@ -10,7 +10,7 @@ import './About.css';
 
 const benefits = [
   { title: 'Heavy-Duty Durability', text: 'Designed to withstand heavy traffic loads and harsh weather conditions.', icon: Shield },
-  { title: 'High Compressive Strength', text: 'Manufactured to achieve excellent compressive strength for long-term performance.', icon: Zap },
+  { title: 'High Compressive Strength', text: 'Manufactured to achieve excellent compressive strength for long-term performance.', icon: Award },
   { title: 'Easy to Repair', text: 'Individual blocks can be removed and replaced without affecting surrounding pavement.', icon: Wrench },
   { title: 'Variety of Finishes', text: 'Available in multiple colours and finishes to complement different architectural designs.', icon: Layers },
   { title: 'Improved Traction', text: 'Textured surface provides improved traction for pedestrians and vehicles.', icon: Clock },
