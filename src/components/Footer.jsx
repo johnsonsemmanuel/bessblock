@@ -4,7 +4,6 @@ import { useState, useEffect } from 'react';
 import { ChevronRight } from 'lucide-react';
 import productCategories from '../data/products';
 import FlickeringGrid from './FlickeringGrid';
-import NewsletterSignup from './NewsletterSignup';
 import './Footer.css';
 
 const footerLinks = [
@@ -101,11 +100,6 @@ export default function Footer() {
               </ul>
             ))}
           </div>
-        </div>
-      </div>
-      <div className="footer-newsletter-area">
-        <div className="container">
-          <NewsletterSignup variant="footer" />
         </div>
       </div>
       <div className="footer-grid-area">
