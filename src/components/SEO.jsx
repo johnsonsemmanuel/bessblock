@@ -1,4 +1,5 @@
 import { Helmet } from 'react-helmet-async';
+import { useLocation } from 'react-router-dom';
 
 const SITE_NAME = 'Bessblock Concrete Products Ltd';
 const DEFAULT_DESC = 'Bessblock Concrete Products Ltd, manufacturer of concrete paving blocks, walling blocks, kerbs, paving slabs, and step risers for infrastructure and institutional projects in Ghana.';
@@ -32,9 +33,11 @@ const organizationSchema = {
 };
 
 export default function SEO({ title, description, image, type = 'website', schema }) {
+  const { pathname } = useLocation();
   const pageTitle = title ? `${title} | ${SITE_NAME}` : SITE_NAME;
   const pageDesc = description || DEFAULT_DESC;
   const pageImage = image || DEFAULT_IMAGE;
+  const canonical = `${SITE_URL}${pathname}`;
 
   const pageSchema = schema
     ? { ...schema, '@context': 'https://schema.org' }
@@ -44,11 +47,12 @@ export default function SEO({ title, description, image, type = 'website', schem
     <Helmet>
       <title>{pageTitle}</title>
       <meta name="description" content={pageDesc} />
+      <link rel="canonical" href={canonical} />
       <meta property="og:title" content={pageTitle} />
       <meta property="og:description" content={pageDesc} />
       <meta property="og:image" content={pageImage} />
       <meta property="og:type" content={type} />
-      <meta property="og:url" content={SITE_URL} />
+      <meta property="og:url" content={canonical} />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={pageTitle} />
       <meta name="twitter:description" content={pageDesc} />

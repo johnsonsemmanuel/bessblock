@@ -173,10 +173,6 @@ input, textarea {
   color: var(--color-white);
 }
 
-.section-light {
-  background: var(--bg-section);
-}
-
 .page-hero {
   position: relative;
   color: var(--hero-text);

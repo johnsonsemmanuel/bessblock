@@ -30,7 +30,23 @@ export default function BlogPost() {
 
   return (
     <>
-      <SEO title={post?.title || 'Blog Post'} description={post?.excerpt || ''} />
+      <SEO
+        title={post?.title || 'Blog Post'}
+        description={post?.excerpt || ''}
+        schema={{
+          '@type': 'Article',
+          headline: post.title,
+          description: post.excerpt,
+          image: `${window.location.origin}${post.image}`,
+          datePublished: post.date,
+          author: { '@type': 'Person', name: post.author },
+          publisher: {
+            '@type': 'Organization',
+            name: 'Bessblock Concrete Products Ltd',
+            logo: { '@type': 'ImageObject', url: 'https://bessblock.com/bessblocklogo.png' },
+          },
+        }}
+      />
       <div className="page">
       <PageHero title="Blog" description={post.title} bgImage="/images/hero/concrete-texture-2.jpg" />
 

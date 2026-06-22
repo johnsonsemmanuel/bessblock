@@ -148,6 +148,7 @@ export default function Navbar() {
           className={`navbar-hamburger ${mobileOpen ? 'open' : ''}`}
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Menu"
+          aria-expanded={mobileOpen}
         >
           <span /><span /><span />
         </button>
