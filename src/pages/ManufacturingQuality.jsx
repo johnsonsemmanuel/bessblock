@@ -24,10 +24,10 @@ const qcItems = [
 ];
 
 const mfgImages = [
-  'https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=700&q=80',
-  'https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?w=700&q=80',
-  'https://images.unsplash.com/photo-1581092335871-4c7e9e4dcfed?w=700&q=80',
-  'https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=700&q=80',
+  '/images/production/IMG_1803.jpg',
+  '/images/production/IMG_1873.jpg',
+  '/images/production/IMG_0628.jpg',
+  '/images/production/IMG_1836.jpg',
 ];
 
 export default function ManufacturingQuality() {

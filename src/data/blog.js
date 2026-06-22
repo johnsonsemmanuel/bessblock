@@ -6,7 +6,7 @@ const blogPosts = [
     author: 'Bessblock Admin',
     category: 'Construction',
     readTime: '7 min read',
-    image: 'https://bessblock.com/wp-content/uploads/2022/08/TEMA-PORT-EXPANSION-PROJECT.jpg',
+    image: '/images/production/IMG_1750.jpg',
     imageAlt: 'Bessblock paving blocks at Tema Port Expansion project',
     excerpt: 'A comprehensive guide to choosing the right paving blocks for heavy-duty industrial floors, commercial spaces, and roadworks in Ghana.',
     sections: [
@@ -63,7 +63,7 @@ const blogPosts = [
     author: 'Bessblock Admin',
     category: 'Uncategorized',
     readTime: '6 min read',
-    image: 'https://bessblock.com/wp-content/uploads/2025/08/Quality-building-blocks-by-Bessblock-Concrete-Products-Ltd-scaled.jpg',
+    image: '/images/production/IMG_1838.jpg',
     imageAlt: 'Quality building blocks by Bessblock Concrete Products Ltd',
     excerpt: 'Choosing low-quality building blocks may seem like an easy way to cut costs up front, but the real cost often surfaces later in structural failures and high maintenance.',
     sections: [
@@ -116,7 +116,7 @@ const blogPosts = [
     author: 'Bessblock',
     category: 'Construction',
     readTime: '5 min read',
-    image: 'https://bessblock.com/wp-content/uploads/2023/06/HOLLOW-BLOCK-3.jpg',
+    image: '/images/production/IMG_1840.jpg',
     imageAlt: 'Hollow concrete blocks by Bessblock',
     excerpt: 'Hollow concrete block masonry has been widely used both in developing and developed countries to replace fired clay brick masonry wall construction.',
     sections: [

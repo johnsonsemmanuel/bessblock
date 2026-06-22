@@ -96,6 +96,112 @@
   transform: translateY(-2px);
 }
 
+/* ── Search ── */
+.not-found-search {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  max-width: 400px;
+  margin: 0 auto var(--spacing-8);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: border-color var(--transition-fast);
+}
+
+.not-found-search:focus-within {
+  border-color: var(--color-bessblock-blue);
+}
+
+.not-found-search-icon {
+  flex-shrink: 0;
+  margin-left: var(--spacing-4);
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.not-found-search-input {
+  flex: 1;
+  padding: var(--spacing-3) var(--spacing-3);
+  background: none;
+  border: none;
+  outline: none;
+  font-size: var(--text-sm);
+  font-family: inherit;
+  color: var(--hero-text);
+}
+
+.not-found-search-input::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.not-found-search-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: none;
+  background: var(--color-bessblock-blue);
+  color: #fff;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background var(--transition-fast);
+}
+
+.not-found-search-btn:hover {
+  background: var(--color-bessblock-blue-dark);
+}
+
+/* ── Popular links ── */
+.not-found-links {
+  margin-bottom: var(--spacing-8);
+}
+
+.not-found-links-label {
+  display: block;
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: rgba(255, 255, 255, 0.4);
+  margin-bottom: var(--spacing-3);
+}
+
+.not-found-links-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--spacing-2);
+}
+
+.not-found-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  padding: var(--spacing-2) var(--spacing-3);
+  border-radius: 8px;
+  font-size: var(--text-sm);
+  color: var(--hero-text-secondary);
+  background: rgba(255, 255, 255, 0.06);
+  text-decoration: none;
+  transition: background var(--transition-fast), color var(--transition-fast);
+}
+
+.not-found-link:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--hero-text);
+}
+
+.not-found-link-arrow {
+  opacity: 0;
+  transition: opacity var(--transition-fast), transform var(--transition-fast);
+}
+
+.not-found-link:hover .not-found-link-arrow {
+  opacity: 1;
+  transform: translateX(2px);
+}
+
 @media (max-width: 768px) {
   .not-found-code {
     font-size: clamp(4rem, 20vw, 6rem);

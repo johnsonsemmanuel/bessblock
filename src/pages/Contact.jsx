@@ -89,7 +89,7 @@ export default function Contact() {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          access_key: 'YOUR_ACCESS_KEY_HERE',
+          access_key: import.meta.env.VITE_WEB3FORMS_KEY,
           name: form.name,
           email: form.email,
           company: form.company,

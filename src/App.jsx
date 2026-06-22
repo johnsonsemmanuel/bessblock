@@ -1,59 +1,60 @@
 import { Routes, Route, useLocation } from 'react-router-dom';
-import { useEffect } from 'react';
+import { useEffect, Suspense, lazy } from 'react';
 import { AnimatePresence } from 'framer-motion';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import PageTransition from './components/PageTransition';
 import Home from './pages/Home';
-import About from './pages/About';
-import ManufacturingQuality from './pages/ManufacturingQuality';
-import Leadership from './pages/Leadership';
-import Products from './pages/Products';
-import PavingBlocks from './pages/PavingBlocks';
-import InterlockingPavingBlocks from './pages/InterlockingPavingBlocks';
-import RectangularPavingBlocks from './pages/RectangularPavingBlocks';
-import HexagonalPavingBlocks from './pages/HexagonalPavingBlocks';
-import Walling from './pages/Walling';
-import HollowConcreteBlocks from './pages/HollowConcreteBlocks';
-import SolidConcreteBlocks from './pages/SolidConcreteBlocks';
-import CeilingBlocks from './pages/CeilingBlocks';
-import RetainingWalls from './pages/RetainingWalls';
-import LRangeStandard from './pages/LRangeStandard';
-import LRangeRockFace from './pages/LRangeRockFace';
-import Terralite from './pages/Terralite';
-import FourByFourStepBlock from './pages/FourByFourStepBlock';
-import Terrafix from './pages/Terrafix';
-import Terracrete from './pages/Terracrete';
-import KerbsEdging from './pages/KerbsEdging';
-import RoadKerbs from './pages/RoadKerbs';
-import DemarcationKerbs from './pages/DemarcationKerbs';
-import GardenKerbs from './pages/GardenKerbs';
-import BarrierKerbs from './pages/BarrierKerbs';
-import GutterKerbs from './pages/GutterKerbs';
-import SlottedKerbs from './pages/SlottedKerbs';
-import PavingSlabs from './pages/PavingSlabs';
-import TexturedPavingSlabs from './pages/TexturedPavingSlabs';
-import SmoothPavingSlabs from './pages/SmoothPavingSlabs';
-import LargeFormatSlabs from './pages/LargeFormatSlabs';
-import StepRisers from './pages/StepRisers';
-import StandardStepRisers from './pages/StandardStepRisers';
-import WideTreadSteps from './pages/WideTreadSteps';
-import BullnoseSteps from './pages/BullnoseSteps';
-import ProjectsGallery from './pages/ProjectsGallery';
-import Insights from './pages/Insights';
-import Blog from './pages/Blog';
-import BlogPost from './pages/BlogPost';
-import FAQs from './pages/FAQs';
-import Contact from './pages/Contact';
-import RequestQuote from './pages/RequestQuote';
-import PrivacyPolicy from './pages/PrivacyPolicy';
-import TermsConditions from './pages/TermsConditions';
 import NotFound from './pages/NotFound';
-import SearchResults from './pages/SearchResults';
 import ErrorBoundary from './components/ErrorBoundary';
 import CookieConsent from './components/CookieConsent';
 import BackToTop from './components/BackToTop';
 import LiveChat from './components/LiveChat';
+
+const About = lazy(() => import('./pages/About'));
+const ManufacturingQuality = lazy(() => import('./pages/ManufacturingQuality'));
+const Leadership = lazy(() => import('./pages/Leadership'));
+const Products = lazy(() => import('./pages/Products'));
+const PavingBlocks = lazy(() => import('./pages/PavingBlocks'));
+const InterlockingPavingBlocks = lazy(() => import('./pages/InterlockingPavingBlocks'));
+const RectangularPavingBlocks = lazy(() => import('./pages/RectangularPavingBlocks'));
+const HexagonalPavingBlocks = lazy(() => import('./pages/HexagonalPavingBlocks'));
+const Walling = lazy(() => import('./pages/Walling'));
+const HollowConcreteBlocks = lazy(() => import('./pages/HollowConcreteBlocks'));
+const SolidConcreteBlocks = lazy(() => import('./pages/SolidConcreteBlocks'));
+const CeilingBlocks = lazy(() => import('./pages/CeilingBlocks'));
+const RetainingWalls = lazy(() => import('./pages/RetainingWalls'));
+const LRangeStandard = lazy(() => import('./pages/LRangeStandard'));
+const LRangeRockFace = lazy(() => import('./pages/LRangeRockFace'));
+const Terralite = lazy(() => import('./pages/Terralite'));
+const FourByFourStepBlock = lazy(() => import('./pages/FourByFourStepBlock'));
+const Terrafix = lazy(() => import('./pages/Terrafix'));
+const Terracrete = lazy(() => import('./pages/Terracrete'));
+const KerbsEdging = lazy(() => import('./pages/KerbsEdging'));
+const RoadKerbs = lazy(() => import('./pages/RoadKerbs'));
+const DemarcationKerbs = lazy(() => import('./pages/DemarcationKerbs'));
+const GardenKerbs = lazy(() => import('./pages/GardenKerbs'));
+const BarrierKerbs = lazy(() => import('./pages/BarrierKerbs'));
+const GutterKerbs = lazy(() => import('./pages/GutterKerbs'));
+const SlottedKerbs = lazy(() => import('./pages/SlottedKerbs'));
+const PavingSlabs = lazy(() => import('./pages/PavingSlabs'));
+const TexturedPavingSlabs = lazy(() => import('./pages/TexturedPavingSlabs'));
+const SmoothPavingSlabs = lazy(() => import('./pages/SmoothPavingSlabs'));
+const LargeFormatSlabs = lazy(() => import('./pages/LargeFormatSlabs'));
+const StepRisers = lazy(() => import('./pages/StepRisers'));
+const StandardStepRisers = lazy(() => import('./pages/StandardStepRisers'));
+const WideTreadSteps = lazy(() => import('./pages/WideTreadSteps'));
+const BullnoseSteps = lazy(() => import('./pages/BullnoseSteps'));
+const ProjectsGallery = lazy(() => import('./pages/ProjectsGallery'));
+const Insights = lazy(() => import('./pages/Insights'));
+const Blog = lazy(() => import('./pages/Blog'));
+const BlogPost = lazy(() => import('./pages/BlogPost'));
+const FAQs = lazy(() => import('./pages/FAQs'));
+const Contact = lazy(() => import('./pages/Contact'));
+const RequestQuote = lazy(() => import('./pages/RequestQuote'));
+const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'));
+const TermsConditions = lazy(() => import('./pages/TermsConditions'));
+const SearchResults = lazy(() => import('./pages/SearchResults'));
 
 function Layout({ children }) {
   const { pathname } = useLocation();
@@ -83,9 +84,11 @@ function Layout({ children }) {
 
 function AnimatedPage({ children }) {
   return (
-    <PageTransition>
-      {children}
-    </PageTransition>
+    <Suspense fallback={<div className="page-loading"><div className="page-loading-spinner" /></div>}>
+      <PageTransition>
+        {children}
+      </PageTransition>
+    </Suspense>
   );
 }
 

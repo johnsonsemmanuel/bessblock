@@ -24,6 +24,12 @@ export default function CookieConsent() {
     setPersistent(false);
   };
 
+  const decline = () => {
+    localStorage.setItem('bessblock-cookies', 'declined');
+    setVisible(false);
+    setPersistent(false);
+  };
+
   const showAgain = () => {
     localStorage.removeItem('bessblock-cookies');
     setVisible(true);
@@ -50,7 +56,7 @@ export default function CookieConsent() {
             </div>
             <div className="cookie-consent-actions">
               <button className="cookie-btn cookie-btn-accept" onClick={accept}>Accept</button>
-              <button className="cookie-btn cookie-btn-decline" onClick={accept}>Decline</button>
+              <button className="cookie-btn cookie-btn-decline" onClick={decline}>Decline</button>
             </div>
           </motion.div>
         )}
