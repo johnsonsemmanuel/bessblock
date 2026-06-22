@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { ChevronDown, Grid3x3, Home, PanelBottom, Ruler, Layers, MapPin, Mountain, ArrowUpDown, Truck, HelpCircle, Warehouse, X, Factory, HardHat, Settings } from 'lucide-react';
 import SEO from '../components/SEO';
 import PageHero from '../components/PageHero';
@@ -75,6 +75,23 @@ export default function FAQs() {
   const [openCategory, setOpenCategory] = useState(null);
   const [modal, setModal] = useState(null);
 
+  useEffect(() => {
+    if (modal) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => { document.body.style.overflow = ''; };
+  }, [modal]);
+
+  useEffect(() => {
+    const handle = (e) => {
+      if (e.key === 'Escape' && modal) setModal(null);
+    };
+    document.addEventListener('keydown', handle);
+    return () => document.removeEventListener('keydown', handle);
+  }, [modal]);
+
   return (
     <>
       <SEO title="FAQs" description="Frequently asked questions about Bessblock concrete products, ordering process, delivery, and technical specifications." />
@@ -109,7 +126,7 @@ export default function FAQs() {
                     <span style={{ flex: 1 }}>{group.category}</span>
                     <ChevronDown size={14} className="faq-chevron" />
                   </button>
-                  <div className="faq-card-body" style={{ maxHeight: isOpen ? `${group.questions.length * 160}px` : '0' }}>
+                  <div className="faq-card-body" style={{ maxHeight: isOpen ? `${group.questions.length * 60}px` : '0' }}>
                     {group.questions.map((faq, fi) => (
                       <button key={fi} className="faq-item" onClick={() => setModal({ ...faq, category: group.category })}>
                         <HelpCircle size={14} className="faq-q-icon" />

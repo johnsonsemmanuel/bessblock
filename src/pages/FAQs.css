@@ -259,11 +259,25 @@
   }
 
   .faq-modal {
-    padding: var(--spacing-6);
+    padding: var(--spacing-6) var(--spacing-5);
     max-height: 85vh;
+    margin: var(--spacing-4);
+    border-radius: 12px;
   }
 
   .faq-modal-question {
     font-size: var(--text-base);
+    padding-right: var(--spacing-8);
+  }
+
+  .faq-modal-close {
+    width: 44px;
+    height: 44px;
+    top: var(--spacing-3);
+    right: var(--spacing-3);
+  }
+
+  .faq-card-body {
+    transition: max-height 0.3s ease;
   }
 }
