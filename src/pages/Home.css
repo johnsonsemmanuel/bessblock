@@ -530,12 +530,23 @@
 }
 
 /* CTA */
-.home-cta-card {
+.home-cta {
   background: var(--color-grey-900);
-  border-radius: 12px;
+  background-image: none;
+}
+
+.home-cta-card {
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 16px;
   padding: var(--spacing-16);
   text-align: center;
   transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.home-cta-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
 }
 
 .home-cta-card:hover {
