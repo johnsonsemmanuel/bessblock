@@ -5,7 +5,7 @@ import SEO from '../components/SEO';
 import SectionTitle from '../components/SectionTitle';
 import AnimatedButton from '../components/AnimatedButton';
 import LazyBackground from '../components/LazyBackground';
-import { ArrowRight, CheckCircle, Star } from 'lucide-react';
+import { ArrowRight, CheckCircle, ChevronDown, Star } from 'lucide-react';
 import ScrollReveal from '../components/ScrollReveal';
 import { ProgressiveBlur } from '../components/ProgressiveBlur';
 import TestimonialsSection from '../components/TestimonialsSection';
@@ -154,6 +154,9 @@ export default function Home() {
               aria-label={`Slide ${i + 1}`}
             />
           ))}
+        </div>
+        <div className="hero-scroll-indicator" aria-hidden="true">
+          <ChevronDown size={24} />
         </div>
       </section>
 

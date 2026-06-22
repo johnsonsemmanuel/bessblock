@@ -16,7 +16,16 @@
   background-size: cover;
   background-position: center;
   z-index: -2;
-  animation: heroBgReveal 1.2s ease-out;
+  animation: heroBgPan 25s ease-in-out infinite alternate;
+}
+
+@keyframes heroBgPan {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
 }
 
 .hero-bg-overlay {
@@ -25,12 +34,15 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(
-    90deg,
-    var(--hero-overlay-from) 0%,
-    var(--hero-overlay-mid) 40%,
-    transparent 70%
-  );
+  background:
+    linear-gradient(
+      90deg,
+      var(--hero-overlay-from) 0%,
+      var(--hero-overlay-from) 15%,
+      var(--hero-overlay-mid) 35%,
+      transparent 65%
+    ),
+    radial-gradient(ellipse 140% 60% at 30% 50%, transparent 40%, rgba(0,0,0,0.25) 100%);
   z-index: -1;
 }
 
@@ -66,6 +78,29 @@
 .hero-dot.active {
   background: var(--color-bessblock-yellow);
   transform: scale(1.25);
+}
+
+.hero-scroll-indicator {
+  position: absolute;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgba(255, 255, 255, 0.6);
+  animation: heroScrollBounce 2.4s ease-in-out infinite;
+  z-index: 2;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+
+@keyframes heroScrollBounce {
+  0%, 100% {
+    transform: translateX(-50%) translateY(0);
+    opacity: 0.4;
+  }
+  50% {
+    transform: translateX(-50%) translateY(10px);
+    opacity: 0.9;
+  }
 }
 
 /* Top gradient so transparent navbar blends into hero */
