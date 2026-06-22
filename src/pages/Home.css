@@ -74,7 +74,7 @@
   pointer-events: none;
 }
 .hero-content {
-  max-width: 680px;
+  max-width: 860px;
   padding: var(--spacing-16) 0;
   text-align: left;
 }
@@ -88,7 +88,7 @@
   margin-bottom: var(--spacing-5);
 }
 .hero-title {
-  font-size: var(--text-4xl);
+  font-size: clamp(2.5rem, 5vw, 5rem);
   font-weight: var(--font-weight-bold);
   color: var(--hero-text);
   line-height: 1.05;
@@ -99,11 +99,11 @@
   color: var(--color-bessblock-yellow);
 }
 .hero-desc {
-  font-size: var(--text-lg);
+  font-size: clamp(var(--text-base), 1.4vw, var(--text-xl));
   color: var(--hero-text-secondary);
   line-height: 1.7;
   margin-bottom: var(--spacing-8);
-  max-width: 520px;
+  max-width: 600px;
 }
 .hero-actions {
   display: flex;
