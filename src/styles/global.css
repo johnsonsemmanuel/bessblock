@@ -116,8 +116,9 @@ button {
   background: none;
 }
 
-input, textarea {
+input, select, textarea {
   font-family: inherit;
+  font-size: 16px;
 }
 
 .container {

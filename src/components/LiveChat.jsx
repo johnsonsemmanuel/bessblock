@@ -128,7 +128,7 @@ export default function LiveChat() {
               aria-label="Chat message"
               style={{
                 flex: 1, padding: '10px 14px', borderRadius: 10, border: '1px solid var(--border)',
-                fontSize: 14, fontFamily: 'inherit', outline: 'none',
+                fontSize: 16, fontFamily: 'inherit', outline: 'none',
                 background: 'var(--bg-section)', color: 'var(--text)',
               }}
               disabled={sending}

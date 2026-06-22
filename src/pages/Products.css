@@ -85,7 +85,7 @@
   border: none;
   outline: none;
   background: none;
-  font-size: var(--text-sm);
+  font-size: 16px;
   font-family: var(--font-primary);
   color: var(--text);
   padding: 12px 0;

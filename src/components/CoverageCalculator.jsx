@@ -60,7 +60,7 @@ export default function CoverageCalculator({ className = '' }) {
             onChange={e => { setProduct(e.target.value); setResult(null); }}
             style={{
               width: '100%', padding: '10px 12px', borderRadius: 8, border: '1px solid var(--border)',
-              fontSize: 14, fontFamily: 'inherit', outline: 'none',
+              fontSize: 16, fontFamily: 'inherit', outline: 'none',
               background: 'var(--bg)', color: 'var(--text)', cursor: 'pointer',
             }}
           >
@@ -85,7 +85,7 @@ export default function CoverageCalculator({ className = '' }) {
               required
               style={{
                 flex: 1, padding: '10px 12px', borderRadius: 8, border: '1px solid var(--border)',
-                fontSize: 14, fontFamily: 'inherit', outline: 'none',
+                fontSize: 16, fontFamily: 'inherit', outline: 'none',
                 background: 'var(--bg)', color: 'var(--text)',
               }}
             />
