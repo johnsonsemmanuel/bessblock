@@ -1,4 +1,4 @@
-import { CheckCircle2 } from 'lucide-react';
+import { CheckCircle2, Shield, Layers, Wrench, Clock, Zap } from 'lucide-react';
 import SEO from '../components/SEO';
 import PageHero from '../components/PageHero';
 import SectionTitle from '../components/SectionTitle';
@@ -6,14 +6,15 @@ import ScrollReveal from '../components/ScrollReveal';
 import AnimatedButton from '../components/AnimatedButton';
 import SpecSheet from '../components/SpecSheet';
 import './RectangularPavingBlocks.css';
+import './About.css';
 
 const benefits = [
-  { text: 'Designed to withstand heavy traffic loads and harsh weather conditions.' },
-  { text: 'Manufactured to achieve excellent compressive strength for long-term performance.' },
-  { text: 'Individual blocks can be removed and replaced without affecting surrounding pavement.' },
-  { text: 'Available in multiple colours and finishes to complement different architectural designs.' },
-  { text: 'Textured surface provides improved traction for pedestrians and vehicles.' },
-  { text: 'Offers lower maintenance costs compared to conventional concrete or asphalt surfaces.' },
+  { title: 'Heavy-Duty Durability', text: 'Designed to withstand heavy traffic loads and harsh weather conditions.', icon: Shield },
+  { title: 'High Compressive Strength', text: 'Manufactured to achieve excellent compressive strength for long-term performance.', icon: Zap },
+  { title: 'Easy to Repair', text: 'Individual blocks can be removed and replaced without affecting surrounding pavement.', icon: Wrench },
+  { title: 'Variety of Finishes', text: 'Available in multiple colours and finishes to complement different architectural designs.', icon: Layers },
+  { title: 'Improved Traction', text: 'Textured surface provides improved traction for pedestrians and vehicles.', icon: Clock },
+  { title: 'Low Maintenance', text: 'Offers lower maintenance costs compared to conventional concrete or asphalt surfaces.', icon: CheckCircle2 },
 ];
 
 const techItems = [
@@ -55,18 +56,20 @@ export default function RectangularPavingBlocks() {
         <div className="container">
           <SectionTitle label="Key Benefits" title="Built for performance" align="left" />
           <div className="rect-benefits-grid">
-            {benefits.map((b, i) => (
-              <ScrollReveal key={i} delay={i * 0.04}>
-                <div className="rect-benefit-card">
-                  <div className="rect-benefit-img">
-                    <CheckCircle2 size={28} />
+            {benefits.map((b, i) => {
+              const Icon = b.icon;
+              return (
+                <ScrollReveal key={i} delay={i * 0.04}>
+                  <div className="rect-benefit-card">
+                    <div className="rect-benefit-icon">
+                      <Icon size={22} />
+                    </div>
+                    <h3 className="rect-benefit-title">{b.title}</h3>
+                    <p className="rect-benefit-text">{b.text}</p>
                   </div>
-                  <div className="rect-benefit-body">
-                    <p>{b.text}</p>
-                  </div>
-                </div>
-              </ScrollReveal>
-            ))}
+                </ScrollReveal>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -122,12 +125,12 @@ export default function RectangularPavingBlocks() {
 
       <section className="section section-blue">
         <div className="container">
-          <div className="about-cta">
-            <h2 className="about-cta-title" style={{ color: 'var(--color-white)' }}>Need more information?</h2>
-            <p className="about-cta-text" style={{ color: 'rgba(255,255,255,0.8)' }}>
+          <div className="rect-cta-card">
+            <h2 className="rect-cta-title">Need more information?</h2>
+            <p className="rect-cta-text">
               Contact our team for technical specifications, pricing, and project-specific advice.
             </p>
-            <div className="about-cta-actions">
+            <div className="rect-cta-actions">
               <AnimatedButton to="/request-quote" variant="yellow">Request a Quote</AnimatedButton>
               <AnimatedButton to="/products/paving-blocks" variant="outline">View All Paving</AnimatedButton>
             </div>

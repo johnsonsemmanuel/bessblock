@@ -49,8 +49,8 @@ export default function NewsletterSignup({ variant = 'default', className = '' }
             required
             aria-label="Email for newsletter"
             style={{
-              flex: 1, padding: '8px 12px', borderRadius: 6, border: '1px solid var(--border)',
-              fontSize: 13, fontFamily: 'inherit', outline: 'none',
+              flex: 1, padding: '6px 10px', borderRadius: 6, border: '1px solid var(--border)',
+              fontSize: 12, fontFamily: 'inherit', outline: 'none',
               background: 'var(--bg-card)', color: 'var(--text)',
             }}
           />
@@ -58,9 +58,9 @@ export default function NewsletterSignup({ variant = 'default', className = '' }
             type="submit"
             disabled={status === 'submitting'}
             style={{
-              padding: '8px 14px', borderRadius: 6, border: 'none',
+              padding: '6px 12px', borderRadius: 6, border: 'none',
               background: 'var(--color-bessblock-blue)', color: '#fff',
-              fontSize: 13, fontWeight: 600, cursor: 'pointer',
+              fontSize: 12, fontWeight: 600, cursor: 'pointer',
               transition: 'background var(--transition-fast)',
             }}
           >

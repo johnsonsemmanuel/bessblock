@@ -42,30 +42,36 @@
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: 10px;
-  overflow: hidden;
-  transition: box-shadow var(--transition-fast), border-color var(--transition-fast);
+  padding: var(--spacing-6);
+  transition: box-shadow var(--transition-fast), border-color var(--transition-fast), transform var(--transition-fast);
 }
 
 .rect-benefit-card:hover {
   border-color: var(--color-bessblock-blue);
   box-shadow: 0 4px 20px rgba(64, 64, 136, 0.08);
+  transform: translateY(-2px);
 }
 
-.rect-benefit-img {
-  width: 100%;
-  aspect-ratio: 3 / 2;
-  background: var(--bg-section);
+.rect-benefit-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: var(--color-bessblock-blue);
+  color: white;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--color-grey-400);
+  margin-bottom: var(--spacing-4);
 }
 
-.rect-benefit-body {
-  padding: var(--spacing-4) var(--spacing-5);
+.rect-benefit-title {
+  font-size: var(--text-base);
+  font-weight: var(--font-weight-bold);
+  color: var(--text);
+  margin-bottom: var(--spacing-2);
 }
 
-.rect-benefit-body p {
+.rect-benefit-text {
   font-size: var(--text-sm);
   color: var(--text-secondary);
   line-height: 1.6;
@@ -180,9 +186,45 @@
   background: var(--color-bessblock-blue);
 }
 
+.rect-cta-card {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+  padding: var(--spacing-12) var(--spacing-10);
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.rect-cta-title {
+  font-size: var(--text-3xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-white);
+  margin-bottom: var(--spacing-4);
+}
+
+.rect-cta-text {
+  font-size: var(--text-base);
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.7;
+  margin-bottom: var(--spacing-8);
+}
+
+.rect-cta-actions {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-4);
+  flex-wrap: wrap;
+}
+
 @media (max-width: 1024px) {
   .rect-benefits-grid {
     grid-template-columns: 1fr 1fr;
+  }
+
+  .rect-cta-card {
+    padding: var(--spacing-10) var(--spacing-6);
   }
 
   .rect-specs-layout {
