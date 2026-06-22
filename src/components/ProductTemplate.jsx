@@ -168,7 +168,7 @@ export default function ProductTemplate({ productKey, heroImage }) {
         <div className="container">
           <SectionTitle label="Project Gallery" title="See it in action" align="left" />
           <div className="product-gallery-grid">
-            {['/images/hero/construction-aerial-1.webp', '/images/hero/construction-aerial-2.webp', '/images/hero/construction-aerial-3.webp'].map((img, i) => (
+            {['/images/hero/production-site-3.webp', '/images/hero/production-site-4.webp', '/images/hero/production-site-1.webp'].map((img, i) => (
               <Link key={i} to="/projects" className="product-gallery-card">
                 <div className="product-gallery-image" style={{ backgroundImage: `url(${img})` }} />
                 <div className="product-gallery-overlay">
