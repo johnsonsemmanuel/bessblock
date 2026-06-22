@@ -2,14 +2,17 @@
   margin-bottom: var(--spacing-12);
   max-width: 720px;
 }
+
 .section-title-center {
   margin-left: auto;
   margin-right: auto;
   text-align: center;
 }
+
 .section-title-left {
   text-align: left;
 }
+
 .section-title-label {
   display: inline-block;
   font-size: var(--text-sm);
@@ -19,11 +22,13 @@
   text-transform: uppercase;
   margin-bottom: var(--spacing-3);
 }
+
 .section-title-label-light {
   color: var(--color-bessblock-yellow);
 }
+
 .section-title-heading {
-  font-size: var(--text-3xl);
+  font-size: var(--text-4xl);
   font-weight: var(--font-weight-bold);
   color: var(--color-grey-900);
   line-height: 1.2;
@@ -32,6 +37,7 @@
   display: inline-block;
   padding-bottom: 4px;
 }
+
 .section-title-center .section-title-heading::after {
   content: '';
   position: absolute;
@@ -43,6 +49,7 @@
   background: var(--color-bessblock-blue);
   border-radius: 2px;
 }
+
 .section-title-left .section-title-heading::after {
   content: '';
   position: absolute;
@@ -53,19 +60,13 @@
   background: var(--color-bessblock-blue);
   border-radius: 2px;
 }
+
 .section-title-heading-light {
   color: var(--hero-text);
 }
 
-@media (min-width: 769px) {
+@media (max-width: 768px) {
   .section-title-heading {
-    font-size: var(--text-4xl);
-    font-weight: var(--font-weight-bold);
-    color: var(--color-grey-900);
-    line-height: 1.2;
-    letter-spacing: -0.02em;
-    position: relative;
-    display: inline-block;
-    padding-bottom: 4px;
+    font-size: var(--text-3xl);
   }
 }

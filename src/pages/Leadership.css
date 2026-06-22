@@ -1,19 +1,22 @@
 .leadership-grid {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(4, 1fr);
   gap: var(--spacing-6);
 }
+
 .leadership-card {
   position: relative;
-  height: 340px;
+  height: 380px;
   border-radius: 12px;
   overflow: hidden;
   cursor: pointer;
   background: var(--color-grey-900);
 }
+
 .leadership-card-noimg {
   background: linear-gradient(135deg, var(--color-bessblock-blue) 0%, #2a2a6e 100%);
 }
+
 .leadership-initials {
   width: 72px;
   height: 72px;
@@ -28,6 +31,7 @@
   margin-bottom: var(--spacing-4);
   backdrop-filter: blur(4px);
 }
+
 .leadership-bg {
   position: absolute;
   inset: 0;
@@ -35,9 +39,11 @@
   background-position: center;
   transition: transform 0.5s ease;
 }
+
 .leadership-card:hover .leadership-bg {
   transform: scale(1.06);
 }
+
 .leadership-overlay {
   position: absolute;
   inset: 0;
@@ -49,9 +55,11 @@
   );
   transition: opacity 0.4s ease;
 }
+
 .leadership-card:hover .leadership-overlay {
   opacity: 0.85;
 }
+
 .leadership-body {
   position: absolute;
   bottom: 0;
@@ -60,6 +68,7 @@
   padding: var(--spacing-6);
   z-index: 1;
 }
+
 .leadership-name {
   font-size: var(--text-lg);
   font-weight: var(--font-weight-bold);
@@ -67,6 +76,7 @@
   margin-bottom: var(--spacing-1);
   line-height: 1.3;
 }
+
 .leadership-role {
   display: block;
   font-size: var(--text-sm);
@@ -74,6 +84,7 @@
   font-weight: var(--font-weight-semibold);
   margin-bottom: var(--spacing-2);
 }
+
 .leadership-bio {
   font-size: var(--text-sm);
   color: rgba(255, 255, 255, 0.7);
@@ -84,35 +95,30 @@
   transition: max-height 0.4s ease, opacity 0.4s ease, margin 0.4s ease;
   margin-top: 0;
 }
+
 .leadership-card:hover .leadership-bio,
 .leadership-card.expanded .leadership-bio {
   max-height: 120px;
   opacity: 1;
   margin-top: var(--spacing-3);
 }
+
 .leadership-card.expanded .leadership-overlay {
   opacity: 0.85;
 }
 
-@media (min-width: 641px) {
+@media (max-width: 1024px) {
   .leadership-grid {
-    display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: var(--spacing-6);
-  }
-  .leadership-card {
-    position: relative;
-    height: 380px;
-    border-radius: 12px;
-    overflow: hidden;
-    cursor: pointer;
-    background: var(--color-grey-900);
   }
 }
-@media (min-width: 1025px) {
+
+@media (max-width: 640px) {
   .leadership-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: var(--spacing-6);
+    grid-template-columns: 1fr;
+  }
+
+  .leadership-card {
+    height: 340px;
   }
 }

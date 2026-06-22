@@ -14,25 +14,30 @@
   color: #606060;
   font-size: var(--text-sm);
 }
+
 .rect-hero-img svg {
   opacity: 0.4;
 }
+
 .rect-overview {
   max-width: 720px;
   margin: 0 auto;
-  padding-left: var(--spacing-4);
+  padding-left: var(--spacing-6);
   border-left: 3px solid var(--color-bessblock-blue);
 }
+
 .rect-overview p {
   font-size: var(--text-base);
   color: var(--text-secondary);
   line-height: 1.8;
 }
+
 .rect-benefits-grid {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: var(--spacing-5);
 }
+
 .rect-benefit-card {
   background: var(--bg-card);
   border: 1px solid var(--border);
@@ -40,10 +45,12 @@
   overflow: hidden;
   transition: box-shadow var(--transition-fast), border-color var(--transition-fast);
 }
+
 .rect-benefit-card:hover {
   border-color: var(--color-bessblock-blue);
   box-shadow: 0 4px 20px rgba(64, 64, 136, 0.08);
 }
+
 .rect-benefit-img {
   width: 100%;
   aspect-ratio: 3 / 2;
@@ -53,33 +60,40 @@
   justify-content: center;
   color: var(--color-grey-400);
 }
+
 .rect-benefit-body {
   padding: var(--spacing-4) var(--spacing-5);
 }
+
 .rect-benefit-body p {
   font-size: var(--text-sm);
   color: var(--text-secondary);
   line-height: 1.6;
 }
+
 .rect-tech-grid {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 1fr;
   border: 1px solid var(--border);
   border-radius: 10px;
   overflow: hidden;
   background: var(--bg-card);
 }
+
 .rect-tech-cell {
   padding: 14px 24px;
   border-bottom: 1px solid var(--border);
   background: var(--bg-card);
 }
+
 .rect-tech-cell:nth-child(even) {
   background: var(--bg-section);
 }
+
 .rect-tech-cell:nth-last-child(-n+2) {
   border-bottom: none;
 }
+
 .rect-tech-label {
   display: block;
   font-size: var(--text-xs);
@@ -89,18 +103,21 @@
   letter-spacing: 0.04em;
   margin-bottom: 2px;
 }
+
 .rect-tech-value {
   font-size: var(--text-sm);
   color: var(--text);
   font-weight: var(--font-weight-medium);
   line-height: 1.5;
 }
+
 .rect-specs-layout {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--spacing-8);
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-10);
   align-items: start;
 }
+
 .rect-specs-img {
   aspect-ratio: 4 / 3;
   border-radius: 10px;
@@ -113,19 +130,22 @@
   gap: var(--spacing-3);
   color: var(--color-grey-400);
   font-size: var(--text-sm);
-  position: static;
+  position: sticky;
   top: 100px;
-  order: -1;
 }
+
 .rect-specs-img svg {
   opacity: 0.4;
 }
+
 .rect-spec-group {
   margin-bottom: var(--spacing-6);
 }
+
 .rect-spec-group:last-child {
   margin-bottom: 0;
 }
+
 .rect-spec-group-title {
   font-size: var(--text-base);
   font-weight: var(--font-weight-bold);
@@ -135,11 +155,13 @@
   border-bottom: 2px solid var(--color-bessblock-blue);
   display: inline-block;
 }
+
 .rect-spec-items {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-2);
 }
+
 .rect-spec-item {
   display: flex;
   align-items: baseline;
@@ -148,6 +170,7 @@
   color: var(--text-secondary);
   line-height: 1.6;
 }
+
 .rect-spec-item::before {
   content: '';
   width: 6px;
@@ -157,53 +180,32 @@
   background: var(--color-bessblock-blue);
 }
 
-@media (min-width: 769px) {
+@media (max-width: 1024px) {
   .rect-benefits-grid {
-    display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: var(--spacing-5);
   }
-  .rect-tech-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    overflow: hidden;
-    background: var(--bg-card);
+
+  .rect-specs-layout {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-8);
   }
-  .rect-overview {
-    max-width: 720px;
-    margin: 0 auto;
-    padding-left: var(--spacing-6);
-    border-left: 3px solid var(--color-bessblock-blue);
+
+  .rect-specs-img {
+    order: -1;
+    position: static;
   }
 }
-@media (min-width: 1025px) {
+
+@media (max-width: 768px) {
   .rect-benefits-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--spacing-5);
+    grid-template-columns: 1fr;
   }
-  .rect-specs-layout {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--spacing-10);
-    align-items: start;
+
+  .rect-tech-grid {
+    grid-template-columns: 1fr;
   }
-  .rect-specs-img {
-    aspect-ratio: 4 / 3;
-    border-radius: 10px;
-    background: var(--bg-section);
-    border: 1px solid var(--border);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: var(--spacing-3);
-    color: var(--color-grey-400);
-    font-size: var(--text-sm);
-    position: sticky;
-    top: 100px;
-    order: 0;
+
+  .rect-overview {
+    padding-left: var(--spacing-4);
   }
 }

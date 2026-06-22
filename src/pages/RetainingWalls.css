@@ -1,20 +1,24 @@
 .retaining-overview {
   max-width: 720px;
 }
+
 .retaining-overview p {
   font-size: var(--text-base);
   color: var(--text-secondary);
   line-height: 1.8;
   margin-bottom: var(--spacing-4);
 }
+
 .retaining-overview p:last-child {
   margin-bottom: 0;
 }
+
 .retaining-benefits {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 1fr;
   gap: var(--spacing-4);
 }
+
 .retaining-benefit-card {
   display: flex;
   align-items: flex-start;
@@ -25,24 +29,29 @@
   border-radius: 8px;
   transition: border-color var(--transition-fast);
 }
+
 .retaining-benefit-card:hover {
   border-color: var(--color-bessblock-blue);
 }
+
 .retaining-benefit-dot {
   color: var(--color-bessblock-blue);
   flex-shrink: 0;
   margin-top: 3px;
 }
+
 .retaining-benefit-card span {
   font-size: var(--text-sm);
   color: var(--text-secondary);
   line-height: 1.6;
 }
+
 .retaining-apps {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(4, 1fr);
   gap: var(--spacing-3);
 }
+
 .retaining-app {
   padding: var(--spacing-4) var(--spacing-5);
   background: var(--bg-card);
@@ -52,26 +61,32 @@
   color: var(--text);
   transition: border-color var(--transition-fast);
 }
+
 .retaining-app:hover {
   border-color: var(--color-bessblock-blue);
 }
+
 .retaining-tech {
   max-width: 720px;
 }
+
 .retaining-tech p {
   font-size: var(--text-base);
   color: var(--text-secondary);
   line-height: 1.8;
   margin-bottom: var(--spacing-4);
 }
+
 .retaining-tech p:last-child {
   margin-bottom: 0;
 }
+
 .retaining-families {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: var(--spacing-4);
 }
+
 .retaining-family-card {
   display: flex;
   align-items: center;
@@ -86,10 +101,12 @@
   color: var(--text);
   transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
 }
+
 .retaining-family-card:hover {
   border-color: var(--color-bessblock-blue);
   box-shadow: 0 4px 16px rgba(64, 64, 136, 0.08);
 }
+
 .retaining-family-icon {
   width: 36px;
   height: 36px;
@@ -101,61 +118,66 @@
   justify-content: center;
   flex-shrink: 0;
 }
+
 .retaining-family-arrow {
   margin-left: auto;
   color: var(--color-bessblock-blue);
   flex-shrink: 0;
   transition: transform var(--transition-fast);
 }
+
 .retaining-family-card:hover .retaining-family-arrow {
   transform: translateX(4px);
 }
+
 .retaining-finish {
   max-width: 720px;
 }
+
 .retaining-finish p {
   font-size: var(--text-base);
   color: var(--text-secondary);
   line-height: 1.8;
 }
+
 .retaining-project-use {
   max-width: 720px;
 }
+
 .retaining-project-use p {
   font-size: var(--text-base);
   color: var(--text-secondary);
   line-height: 1.8;
 }
+
 .retaining-sub-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: var(--spacing-6);
 }
-.retaining-families,
-  .retaining-sub-grid {
-  grid-template-columns: 1fr;
-}
 
-@media (min-width: 769px) {
-  .retaining-apps {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--spacing-3);
+@media (max-width: 1024px) {
+  .retaining-benefits {
+    grid-template-columns: 1fr;
   }
+
+  .retaining-apps {
+    grid-template-columns: 1fr 1fr;
+  }
+
   .retaining-families,
   .retaining-sub-grid {
     grid-template-columns: 1fr 1fr;
   }
 }
-@media (min-width: 1025px) {
-  .retaining-benefits {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--spacing-4);
-  }
+
+@media (max-width: 768px) {
   .retaining-apps {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: var(--spacing-3);
+    grid-template-columns: 1fr;
+  }
+
+  .retaining-families,
+  .retaining-sub-grid {
+    grid-template-columns: 1fr;
   }
 }

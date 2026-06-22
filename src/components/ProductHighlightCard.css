@@ -3,10 +3,11 @@
   text-decoration: none;
   color: inherit;
 }
+
 .highlight-card {
   position: relative;
   width: 100%;
-  max-width: 100%;
+  max-width: 400px;
   aspect-ratio: 3 / 4;
   border-radius: 16px;
   background: var(--color-grey-900);
@@ -14,10 +15,12 @@
   transition: transform var(--transition-fast), box-shadow var(--transition-fast);
   cursor: pointer;
 }
+
 .highlight-card:hover {
   box-shadow: 0 8px 40px rgba(0, 0, 0, 0.12);
   transform: translateY(-4px);
 }
+
 .highlight-card-inner {
   position: absolute;
   inset: 0;
@@ -26,12 +29,14 @@
   transform-style: preserve-3d;
   overflow: hidden;
 }
+
 .highlight-card-bg-wrapper {
   position: absolute;
   inset: -10px;
   z-index: 0;
   overflow: hidden;
 }
+
 .highlight-card-bg {
   width: 100%;
   height: 100%;
@@ -40,15 +45,18 @@
   will-change: transform;
   transition: transform 0.6s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
+
 .highlight-card:hover .highlight-card-bg {
   transform: scale(1.05);
 }
+
 .highlight-card-overlay {
   position: absolute;
   inset: 0;
   z-index: 1;
   background: linear-gradient(180deg, rgba(20,20,20,0.15) 0%, rgba(20,20,20,0.8) 100%);
 }
+
 .highlight-card-glow {
   pointer-events: none;
   position: absolute;
@@ -57,6 +65,7 @@
   border-radius: 50%;
   z-index: 2;
 }
+
 .highlight-card-content {
   position: relative;
   z-index: 10;
@@ -66,20 +75,24 @@
   height: 100%;
   padding: 24px;
 }
+
 .highlight-card-header {
   display: flex;
   align-items: center;
   gap: 8px;
   color: white;
 }
+
 .highlight-card-category {
   font-size: var(--text-sm);
   font-weight: var(--font-weight-medium);
   color: rgba(255,255,255,0.8);
 }
+
 .highlight-card-body {
   color: white;
 }
+
 .highlight-card-title {
   font-size: var(--text-3xl);
   font-weight: var(--font-weight-bold);
@@ -88,6 +101,7 @@
   color: white;
   text-shadow: 0 2px 8px rgba(0,0,0,0.3);
 }
+
 .highlight-card-desc {
   margin-top: 8px;
   max-width: 100%;
@@ -96,21 +110,13 @@
   line-height: 1.6;
 }
 
-@media (min-width: 769px) {
+@media (max-width: 768px) {
   .highlight-card {
-    position: relative;
-    max-width: 400px;
-    aspect-ratio: 3 / 4;
-    border-radius: 16px;
-    background: var(--color-grey-900);
-    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
-    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
-    cursor: pointer;
+    width: 100%;
+    max-width: 100%;
   }
+
   .highlight-card-desc {
-    margin-top: 8px;
-    font-size: var(--text-sm);
-    color: rgba(255,255,255,0.75);
-    line-height: 1.6;
+    max-width: 100%;
   }
 }

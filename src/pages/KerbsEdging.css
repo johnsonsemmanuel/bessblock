@@ -1,20 +1,24 @@
 .kerbs-overview {
   max-width: 720px;
 }
+
 .kerbs-overview p {
   font-size: var(--text-base);
   color: var(--text-secondary);
   line-height: 1.8;
   margin-bottom: var(--spacing-4);
 }
+
 .kerbs-overview p:last-child {
   margin-bottom: 0;
 }
+
 .kerbs-benefits {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 1fr;
   gap: var(--spacing-4);
 }
+
 .kerbs-benefit-card {
   display: flex;
   align-items: flex-start;
@@ -25,43 +29,52 @@
   border-radius: 8px;
   transition: border-color var(--transition-fast);
 }
+
 .kerbs-benefit-card:hover {
   border-color: var(--color-bessblock-blue);
 }
+
 .kerbs-benefit-dot {
   color: var(--color-bessblock-blue);
   flex-shrink: 0;
   margin-top: 3px;
 }
+
 .kerbs-benefit-card span {
   font-size: var(--text-sm);
   color: var(--text-secondary);
   line-height: 1.6;
 }
+
 .kerbs-sub-grid {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: var(--spacing-6);
 }
+
 .kerbs-specs {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 1fr;
   border: 1px solid var(--border);
   border-radius: 10px;
   overflow: hidden;
   background: var(--bg-card);
 }
+
 .kerbs-spec {
   padding: 14px 24px;
   border-bottom: 1px solid var(--border);
   background: var(--bg-card);
 }
+
 .kerbs-spec:nth-child(even) {
   background: var(--bg-section);
 }
+
 .kerbs-spec:nth-last-child(-n+2) {
   border-bottom: none;
 }
+
 .kerbs-spec-label {
   display: block;
   font-size: var(--text-xs);
@@ -71,29 +84,35 @@
   letter-spacing: 0.04em;
   margin-bottom: 2px;
 }
+
 .kerbs-spec-value {
   font-size: var(--text-sm);
   color: var(--text);
   font-weight: var(--font-weight-medium);
   line-height: 1.5;
 }
+
 .kerbs-tech {
   max-width: 720px;
 }
+
 .kerbs-tech p {
   font-size: var(--text-base);
   color: var(--text-secondary);
   line-height: 1.8;
   margin-bottom: var(--spacing-4);
 }
+
 .kerbs-tech p:last-child {
   margin-bottom: 0;
 }
+
 .kerbs-apps {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(4, 1fr);
   gap: var(--spacing-3);
 }
+
 .kerbs-app {
   padding: var(--spacing-4) var(--spacing-5);
   background: var(--bg-card);
@@ -103,44 +122,35 @@
   color: var(--text);
   transition: border-color var(--transition-fast);
 }
+
 .kerbs-app:hover {
   border-color: var(--color-bessblock-blue);
 }
 
-@media (min-width: 769px) {
-  .kerbs-specs {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    overflow: hidden;
-    background: var(--bg-card);
+@media (max-width: 1024px) {
+  .kerbs-benefits {
+    grid-template-columns: 1fr;
   }
+
   .kerbs-sub-grid {
-    display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: var(--spacing-6);
   }
+
   .kerbs-apps {
-    display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: var(--spacing-3);
   }
 }
-@media (min-width: 1025px) {
-  .kerbs-benefits {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--spacing-4);
+
+@media (max-width: 768px) {
+  .kerbs-specs {
+    grid-template-columns: 1fr;
   }
+
   .kerbs-sub-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--spacing-6);
+    grid-template-columns: 1fr;
   }
+
   .kerbs-apps {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: var(--spacing-3);
+    grid-template-columns: 1fr;
   }
 }

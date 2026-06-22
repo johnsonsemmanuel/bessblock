@@ -2,20 +2,24 @@
   max-width: 720px;
   margin: 0 auto;
 }
+
 .walling-overview p {
   font-size: var(--text-base);
   color: var(--text-secondary);
   line-height: 1.8;
   margin-bottom: var(--spacing-4);
 }
+
 .walling-overview p:last-child {
   margin-bottom: 0;
 }
+
 .walling-benefits-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: var(--spacing-5);
 }
+
 .walling-benefit-card {
   padding: var(--spacing-6);
   background: var(--bg-card);
@@ -23,10 +27,12 @@
   border-radius: 10px;
   transition: box-shadow var(--transition-fast), border-color var(--transition-fast);
 }
+
 .walling-benefit-card:hover {
   border-color: var(--color-bessblock-blue);
   box-shadow: 0 4px 20px rgba(64, 64, 136, 0.08);
 }
+
 .walling-benefit-icon {
   width: 44px;
   height: 44px;
@@ -38,40 +44,48 @@
   justify-content: center;
   margin-bottom: var(--spacing-3);
 }
+
 .walling-benefit-card h3 {
   font-size: var(--text-base);
   font-weight: var(--font-weight-bold);
   color: var(--text);
   margin-bottom: var(--spacing-2);
 }
+
 .walling-benefit-card p {
   font-size: var(--text-sm);
   color: var(--text-secondary);
   line-height: 1.6;
 }
+
 .walling-tech {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(3, 1fr);
   border: 1px solid var(--border);
   border-radius: 10px;
   overflow: hidden;
   background: var(--bg-card);
 }
+
 .walling-tech-item {
   padding: 14px 24px;
   background: var(--bg-card);
   border-bottom: 1px solid var(--border);
   border-right: 1px solid var(--border);
 }
+
 .walling-tech-item:nth-child(3n) {
   border-right: none;
 }
+
 .walling-tech-item:nth-child(n+4) {
   border-bottom: none;
 }
+
 .walling-tech-item:nth-child(even) {
   background: var(--bg-section);
 }
+
 .walling-tech-label {
   display: block;
   font-size: var(--text-xs);
@@ -81,34 +95,42 @@
   letter-spacing: 0.04em;
   margin-bottom: 2px;
 }
+
 .walling-tech-value {
   font-size: var(--text-sm);
   color: var(--text);
   font-weight: var(--font-weight-medium);
   line-height: 1.5;
 }
+
 .walling-sub-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: var(--spacing-6);
 }
+
+/* Shared subpage styles */
 .wall-sub-overview {
   max-width: 720px;
 }
+
 .wall-sub-overview p {
   font-size: var(--text-base);
   color: var(--text-secondary);
   line-height: 1.8;
   margin-bottom: var(--spacing-4);
 }
+
 .wall-sub-overview p:last-child {
   margin-bottom: 0;
 }
+
 .wall-sub-benefits {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 1fr;
   gap: var(--spacing-4);
 }
+
 .wall-sub-benefit {
   display: flex;
   align-items: flex-start;
@@ -119,39 +141,47 @@
   border-radius: 8px;
   transition: border-color var(--transition-fast);
 }
+
 .wall-sub-benefit:hover {
   border-color: var(--color-bessblock-blue);
 }
+
 .wall-sub-benefit-dot {
   color: var(--color-bessblock-blue);
   flex-shrink: 0;
   margin-top: 3px;
 }
+
 .wall-sub-benefit span {
   font-size: var(--text-sm);
   color: var(--text-secondary);
   line-height: 1.6;
 }
+
 .wall-sub-specs {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 1fr;
   border: 1px solid var(--border);
   border-radius: 10px;
   overflow: hidden;
   margin-bottom: var(--spacing-6);
   background: var(--bg-card);
 }
+
 .wall-sub-spec {
   padding: 14px 24px;
   border-bottom: 1px solid var(--border);
   background: var(--bg-card);
 }
+
 .wall-sub-spec:nth-child(even) {
   background: var(--bg-section);
 }
+
 .wall-sub-spec:nth-last-child(-n+2) {
   border-bottom: none;
 }
+
 .wall-sub-spec-label {
   display: block;
   font-size: var(--text-xs);
@@ -161,29 +191,35 @@
   letter-spacing: 0.04em;
   margin-bottom: 2px;
 }
+
 .wall-sub-spec-value {
   font-size: var(--text-sm);
   color: var(--text);
   font-weight: var(--font-weight-medium);
   line-height: 1.5;
 }
+
 .wall-sub-tech {
   max-width: 720px;
 }
+
 .wall-sub-tech p {
   font-size: var(--text-base);
   color: var(--text-secondary);
   line-height: 1.8;
   margin-bottom: var(--spacing-3);
 }
+
 .wall-sub-tech p:last-child {
   margin-bottom: 0;
 }
+
 .wall-sub-apps {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: var(--spacing-3);
 }
+
 .wall-sub-app {
   padding: var(--spacing-4) var(--spacing-5);
   background: var(--bg-card);
@@ -193,15 +229,18 @@
   color: var(--text);
   transition: border-color var(--transition-fast);
 }
+
 .wall-sub-app:hover {
   border-color: var(--color-bessblock-blue);
 }
+
 .wall-sub-instruction {
   padding: var(--spacing-6);
   background: var(--bg-section);
   border: 1px solid var(--border);
   border-radius: 10px;
 }
+
 .wall-sub-instruction p {
   font-size: var(--text-sm);
   color: var(--text-secondary);
@@ -210,6 +249,7 @@
   padding-left: var(--spacing-5);
   position: relative;
 }
+
 .wall-sub-instruction p::before {
   content: '';
   position: absolute;
@@ -220,14 +260,17 @@
   border-radius: 50%;
   background: var(--color-bessblock-blue);
 }
+
 .wall-sub-instruction p:last-child {
   margin-bottom: 0;
 }
+
 .wall-sub-gallery {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: var(--spacing-4);
 }
+
 .wall-sub-gallery-item {
   aspect-ratio: 4 / 3;
   border-radius: 8px;
@@ -242,17 +285,22 @@
   font-size: var(--text-xs);
   transition: border-color var(--transition-fast);
 }
+
 .wall-sub-gallery-item:hover {
   border-color: var(--color-bessblock-blue);
 }
+
 .wall-sub-gallery-item svg {
   opacity: 0.3;
 }
+
+
 .wall-sub-related {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: var(--spacing-4);
 }
+
 .product-related-link {
   display: flex;
   align-items: center;
@@ -267,83 +315,68 @@
   color: var(--text);
   transition: border-color var(--transition-fast), box-shadow var(--transition-fast), transform var(--transition-fast);
 }
+
 .product-related-link:hover {
   border-color: var(--color-bessblock-blue);
   box-shadow: 0 4px 20px rgba(64, 64, 136, 0.08);
   transform: translateY(-2px);
 }
+
 .product-related-arrow {
   color: var(--color-bessblock-blue);
   transition: transform var(--transition-fast);
 }
+
 .product-related-link:hover .product-related-arrow {
   transform: translateX(4px);
 }
-.walling-benefits-grid,
-  .walling-sub-grid {
-  grid-template-columns: 1fr;
-}
 
-@media (min-width: 769px) {
+@media (max-width: 1024px) {
   .walling-benefits-grid,
   .walling-sub-grid {
     grid-template-columns: 1fr 1fr;
   }
+
   .walling-tech {
-    display: grid;
     grid-template-columns: 1fr 1fr;
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    overflow: hidden;
-    background: var(--bg-card);
   }
-  .wall-sub-specs {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    overflow: hidden;
-    margin-bottom: var(--spacing-6);
-    background: var(--bg-card);
+
+  .wall-sub-benefits {
+    grid-template-columns: 1fr;
   }
+
   .wall-sub-apps {
-    display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: var(--spacing-3);
   }
-  .wall-sub-gallery {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--spacing-4);
-  }
+
   .wall-sub-related {
-    display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: var(--spacing-4);
   }
 }
-@media (min-width: 1025px) {
+
+@media (max-width: 768px) {
+  .walling-benefits-grid,
+  .walling-sub-grid {
+    grid-template-columns: 1fr;
+  }
+
   .walling-tech {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    overflow: hidden;
-    background: var(--bg-card);
+    grid-template-columns: 1fr;
   }
-  .wall-sub-benefits {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--spacing-4);
+
+  .wall-sub-specs {
+    grid-template-columns: 1fr;
   }
+
   .wall-sub-apps {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--spacing-3);
+    grid-template-columns: 1fr;
   }
+
+  .wall-sub-gallery {
+    grid-template-columns: 1fr 1fr;
+  }
+
   .wall-sub-related {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--spacing-4);
+    grid-template-columns: 1fr;
   }
 }

@@ -1,12 +1,13 @@
 .inter-hero-split {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--spacing-6);
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-12);
   align-items: center;
 }
+
 .inter-hero-img {
   width: 100%;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 1;
   border-radius: 10px;
   background: #202020;
   border: 1px solid #303030;
@@ -18,15 +19,18 @@
   color: #606060;
   font-size: var(--text-sm);
 }
+
 .inter-hero-img svg {
   opacity: 0.4;
 }
+
 .inter-steps {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: var(--spacing-6);
   counter-reset: step;
 }
+
 .inter-step {
   counter-increment: step;
   text-align: center;
@@ -37,10 +41,12 @@
   position: relative;
   transition: box-shadow var(--transition-fast), border-color var(--transition-fast);
 }
+
 .inter-step:hover {
   border-color: var(--color-bessblock-blue);
   box-shadow: 0 4px 20px rgba(64, 64, 136, 0.08);
 }
+
 .inter-step-num {
   width: 44px;
   height: 44px;
@@ -54,26 +60,31 @@
   font-weight: var(--font-weight-bold);
   margin: 0 auto var(--spacing-4);
 }
+
 .inter-step-icon {
   margin-bottom: var(--spacing-3);
   color: var(--color-bessblock-blue);
 }
+
 .inter-step h3 {
   font-size: var(--text-base);
   font-weight: var(--font-weight-bold);
   color: var(--text);
   margin-bottom: var(--spacing-2);
 }
+
 .inter-step p {
   font-size: var(--text-sm);
   color: var(--text-secondary);
   line-height: 1.6;
 }
+
 .inter-benefits {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: var(--spacing-6);
 }
+
 .inter-benefit-icon {
   width: 56px;
   height: 56px;
@@ -85,34 +96,41 @@
   color: var(--hero-text);
   margin-bottom: var(--spacing-3);
 }
+
 .inter-benefit h3 {
   font-size: var(--text-base);
   font-weight: var(--font-weight-semibold);
   color: var(--text);
   margin-bottom: var(--spacing-1);
 }
+
 .inter-benefit p {
   font-size: var(--text-sm);
   color: var(--text-secondary);
   line-height: 1.5;
 }
+
 .inter-spec-alt {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-8);
 }
+
 .inter-spec-row {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--spacing-6);
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-10);
   align-items: center;
 }
+
 .inter-spec-row-reverse {
   direction: rtl;
 }
+
 .inter-spec-row-reverse > * {
   direction: ltr;
 }
+
 .inter-spec-img {
   aspect-ratio: 4 / 3;
   border-radius: 10px;
@@ -126,34 +144,41 @@
   color: var(--color-grey-400);
   font-size: var(--text-sm);
 }
+
 .inter-spec-img svg {
   opacity: 0.4;
 }
+
 .inter-tech-list {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-4);
 }
+
 .inter-tech-item {
   display: flex;
   align-items: flex-start;
   gap: var(--spacing-3);
 }
+
 .inter-tech-dot {
   color: var(--color-bessblock-blue);
   flex-shrink: 0;
   margin-top: 2px;
 }
+
 .inter-tech-item p {
   font-size: var(--text-base);
   color: var(--text-secondary);
   line-height: 1.7;
 }
+
 .inter-apps-grid {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: var(--spacing-3);
 }
+
 .inter-app-card {
   padding: var(--spacing-5) var(--spacing-6);
   background: var(--bg-card);
@@ -165,16 +190,19 @@
   text-decoration: none;
   transition: border-color var(--transition-fast), box-shadow var(--transition-fast), transform var(--transition-fast);
 }
+
 .inter-app-card:hover {
   border-color: var(--color-bessblock-blue);
   box-shadow: 0 4px 20px rgba(64, 64, 136, 0.08);
   transform: translateY(-2px);
 }
+
 .inter-gallery-grid {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: var(--spacing-4);
 }
+
 .inter-gallery-cell {
   aspect-ratio: 4 / 3;
   border-radius: 8px;
@@ -188,14 +216,47 @@
   color: var(--color-grey-400);
   font-size: var(--text-xs);
 }
+
 .inter-gallery-cell svg {
   opacity: 0.3;
 }
+
+
+@media (max-width: 1024px) {
+  .inter-hero-split {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-6);
+  }
+
+  .inter-hero-img {
+    aspect-ratio: 16 / 9;
+  }
+
+  .inter-steps,
+  .inter-benefits {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .inter-apps-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .inter-gallery-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .inter-spec-row {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-6);
+  }
+}
+
 .product-related-links {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: var(--spacing-4);
 }
+
 .product-related-link {
   display: flex;
   align-items: center;
@@ -210,80 +271,33 @@
   color: var(--text);
   transition: border-color var(--transition-fast), box-shadow var(--transition-fast), transform var(--transition-fast);
 }
+
 .product-related-link:hover {
   border-color: var(--color-bessblock-blue);
   box-shadow: 0 4px 20px rgba(64, 64, 136, 0.08);
   transform: translateY(-2px);
 }
+
 .product-related-arrow {
   color: var(--color-bessblock-blue);
   transition: transform var(--transition-fast);
 }
+
 .product-related-link:hover .product-related-arrow {
   transform: translateX(4px);
 }
-.inter-steps,
-  .inter-benefits {
-  grid-template-columns: 1fr;
-}
 
-@media (min-width: 769px) {
+@media (max-width: 768px) {
   .inter-steps,
   .inter-benefits {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
   }
+
   .inter-apps-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--spacing-3);
+    grid-template-columns: 1fr;
   }
+
   .inter-gallery-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--spacing-4);
-  }
-}
-@media (min-width: 1025px) {
-  .inter-hero-split {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--spacing-12);
-    align-items: center;
-  }
-  .inter-hero-img {
-    width: 100%;
-    aspect-ratio: 1;
-    border-radius: 10px;
-    background: #202020;
-    border: 1px solid #303030;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: var(--spacing-3);
-    color: #606060;
-    font-size: var(--text-sm);
-  }
-  .inter-steps {
-    grid-template-columns: repeat(3, 1fr);
-  }
-  .inter-benefits {
-    grid-template-columns: repeat(4, 1fr);
-  }
-  .inter-apps-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--spacing-3);
-  }
-  .inter-gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--spacing-4);
-  }
-  .inter-spec-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--spacing-10);
-    align-items: center;
+    grid-template-columns: 1fr;
   }
 }

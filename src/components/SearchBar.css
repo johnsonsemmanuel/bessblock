@@ -3,6 +3,7 @@
   display: flex;
   align-items: center;
 }
+
 .search-bar-toggle {
   display: inline-flex;
   align-items: center;
@@ -16,21 +17,25 @@
   cursor: pointer;
   transition: background var(--transition-fast), color var(--transition-fast);
 }
+
 .navbar-scrolled .search-bar-toggle {
   color: var(--text);
 }
+
 .search-bar-toggle:hover {
   background: rgba(255, 255, 255, 0.1);
 }
+
 .navbar-scrolled .search-bar-toggle:hover {
   background: var(--bg-section);
 }
+
 .search-bar-dropdown {
-  position: fixed;
-  top: 60px;
-  right: 8px;
-  width: auto;
-  max-width: none;
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  width: 420px;
+  max-width: calc(100vw - 32px);
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: 14px;
@@ -38,8 +43,8 @@
   overflow: hidden;
   z-index: 2000;
   animation: searchFadeIn 0.15s ease;
-  left: 8px;
 }
+
 @keyframes searchFadeIn {
   from { opacity: 0; transform: translateY(-4px); }
   to { opacity: 1; transform: translateY(0); }
@@ -52,10 +57,12 @@
   padding: var(--spacing-3) var(--spacing-4);
   border-bottom: 1px solid var(--border);
 }
+
 .search-bar-input-icon {
   color: var(--text-muted);
   flex-shrink: 0;
 }
+
 .search-bar-input {
   flex: 1;
   border: none;
@@ -65,9 +72,11 @@
   font-family: var(--font-primary);
   color: var(--text);
 }
+
 .search-bar-input::placeholder {
   color: var(--text-muted);
 }
+
 .search-bar-clear {
   display: inline-flex;
   align-items: center;
@@ -81,15 +90,20 @@
   cursor: pointer;
   transition: background var(--transition-fast), color var(--transition-fast);
 }
+
 .search-bar-clear:hover {
   background: var(--bg-section);
   color: var(--text);
 }
+
+/* ─── Results ──────────────────────────── */
+
 .search-bar-results {
   max-height: 380px;
   overflow-y: auto;
   padding: var(--spacing-2);
 }
+
 .search-bar-item {
   display: flex;
   align-items: center;
@@ -100,10 +114,12 @@
   color: inherit;
   transition: background var(--transition-fast);
 }
+
 .search-bar-item:hover,
 .search-bar-item-focused {
   background: var(--bg-section);
 }
+
 .search-bar-item-icon {
   display: inline-flex;
   align-items: center;
@@ -115,6 +131,7 @@
   color: var(--item-color);
   flex-shrink: 0;
 }
+
 .search-bar-item-body {
   flex: 1;
   min-width: 0;
@@ -122,6 +139,7 @@
   flex-direction: column;
   gap: 1px;
 }
+
 .search-bar-item-title {
   font-size: var(--text-sm);
   font-weight: var(--font-weight-semibold);
@@ -130,6 +148,7 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
 .search-bar-item-desc {
   font-size: var(--text-xs);
   color: var(--text-muted);
@@ -137,6 +156,7 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
 .search-bar-item-type {
   font-size: var(--text-xs);
   color: var(--text-muted);
@@ -145,17 +165,22 @@
   border-radius: 4px;
   flex-shrink: 0;
 }
+
 .search-bar-item-arrow {
   color: var(--text-muted);
   flex-shrink: 0;
   opacity: 0;
   transition: opacity var(--transition-fast), transform var(--transition-fast);
 }
+
 .search-bar-item:hover .search-bar-item-arrow,
 .search-bar-item-focused .search-bar-item-arrow {
   opacity: 1;
   transform: translateX(2px);
 }
+
+/* ─── Empty ─────────────────────────────── */
+
 .search-bar-empty {
   padding: var(--spacing-8) var(--spacing-4);
   text-align: center;
@@ -163,6 +188,8 @@
   color: var(--text-muted);
   line-height: 1.6;
 }
+
+/* ─── View All ──────────────────────────── */
 .search-bar-view-all {
   display: flex;
   align-items: center;
@@ -176,9 +203,12 @@
   text-decoration: none;
   transition: background var(--transition-fast);
 }
+
 .search-bar-view-all:hover {
   background: var(--bg-section);
 }
+/* ─── Hint ──────────────────────────────── */
+
 .search-bar-hint {
   padding: var(--spacing-2) var(--spacing-4);
   border-top: 1px solid var(--border);
@@ -186,6 +216,7 @@
   color: var(--text-muted);
   text-align: center;
 }
+
 .search-bar-hint kbd {
   display: inline-block;
   padding: 1px 5px;
@@ -198,20 +229,15 @@
   text-align: center;
 }
 
-@media (min-width: 769px) {
+/* ─── Responsive ────────────────────────── */
+
+@media (max-width: 768px) {
   .search-bar-dropdown {
-    position: absolute;
-    top: calc(100% + 8px);
-    right: 0;
-    width: 420px;
-    max-width: calc(100vw - 32px);
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: 14px;
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15), 0 4px 12px rgba(0, 0, 0, 0.08);
-    overflow: hidden;
-    z-index: 2000;
-    animation: searchFadeIn 0.15s ease;
-    left: auto;
+    position: fixed;
+    top: 60px;
+    left: 8px;
+    right: 8px;
+    width: auto;
+    max-width: none;
   }
 }

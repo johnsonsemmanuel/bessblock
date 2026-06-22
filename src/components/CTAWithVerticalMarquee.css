@@ -9,86 +9,97 @@
   padding: var(--spacing-20) 0;
   overflow: hidden;
 }
+
 .cta-marquee-layout {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--spacing-10);
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-12);
   align-items: center;
 }
+
 .cta-marquee-content {
-  max-width: 100%;
-  text-align: center;
+  max-width: 520px;
 }
+
 .cta-marquee-title {
-  font-size: var(--text-3xl);
+  font-size: var(--text-4xl);
   font-weight: var(--font-weight-bold);
   color: var(--hero-text);
   line-height: 1.15;
   margin-bottom: var(--spacing-5);
 }
+
 .cta-marquee-text {
   font-size: var(--text-lg);
   color: var(--hero-text-secondary);
   line-height: 1.7;
   margin-bottom: var(--spacing-8);
 }
+
 .cta-marquee-actions {
   display: flex;
   gap: var(--spacing-4);
   flex-wrap: wrap;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
 }
+
 .cta-marquee-visual {
   position: relative;
-  height: 280px;
+  height: 500px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
 .cta-marquee-visual-inner {
   position: relative;
   width: 100%;
   height: 100%;
   overflow: hidden;
 }
+
 .cta-marquee-track-wrapper {
   display: flex;
   flex-direction: column;
   height: 100%;
   overflow: hidden;
 }
+
 .cta-marquee-track {
   display: flex;
   flex-direction: column;
   animation: cta-marquee-up var(--duration, 30s) linear infinite;
   will-change: transform;
 }
+
 .cta-marquee-track-duplicate {
   position: absolute;
   top: 100%;
   left: 0;
   right: 0;
 }
+
 .cta-marquee-pause-hover {
   animation-play-state: running;
 }
+
 .cta-marquee-track-wrapper:hover .cta-marquee-pause-hover {
   animation-play-state: paused;
 }
+
 .cta-marquee-reverse {
   animation-direction: reverse;
 }
+
 .cta-marquee-item {
-  font-size: 2rem;
+  font-size: 3.5rem;
   font-weight: var(--font-weight-light);
   color: var(--hero-text);
-  padding: var(--spacing-5) 0;
+  padding: var(--spacing-8) 0;
   line-height: 1.1;
   letter-spacing: -0.02em;
   white-space: nowrap;
 }
+
 .cta-marquee-vignette {
   position: absolute;
   left: 0;
@@ -97,79 +108,58 @@
   pointer-events: none;
   z-index: 2;
 }
+
 .cta-marquee-vignette-top {
   top: 0;
   background: linear-gradient(180deg, var(--color-grey-900) 0%, transparent 100%);
 }
+
 .cta-marquee-vignette-bottom {
   bottom: 0;
   background: linear-gradient(0deg, var(--color-grey-900) 0%, transparent 100%);
 }
 
-@media (min-width: 769px) {
-  .cta-marquee-visual {
-    position: relative;
-    height: 350px;
-    display: flex;
-    align-items: center;
+@media (max-width: 1024px) {
+  .cta-marquee-layout {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-10);
+  }
+
+  .cta-marquee-content {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .cta-marquee-actions {
     justify-content: center;
   }
+
+  .cta-marquee-visual {
+    height: 350px;
+  }
+
   .cta-marquee-item {
     font-size: 2.5rem;
-    font-weight: var(--font-weight-light);
-    color: var(--hero-text);
     padding: var(--spacing-6) 0;
-    line-height: 1.1;
-    letter-spacing: -0.02em;
-    white-space: nowrap;
-  }
-  .cta-marquee-title {
-    font-size: var(--text-4xl);
-    font-weight: var(--font-weight-bold);
-    color: var(--hero-text);
-    line-height: 1.15;
-    margin-bottom: var(--spacing-5);
-  }
-  .cta-marquee-actions {
-    display: flex;
-    gap: var(--spacing-4);
-    flex-wrap: wrap;
-    justify-content: center;
-    flex-direction: row;
-    align-items: stretch;
   }
 }
-@media (min-width: 1025px) {
-  .cta-marquee-layout {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--spacing-12);
-    align-items: center;
-  }
-  .cta-marquee-content {
-    max-width: 520px;
-    text-align: start;
-  }
-  .cta-marquee-actions {
-    display: flex;
-    gap: var(--spacing-4);
-    flex-wrap: wrap;
-    justify-content: flex-start;
-  }
+
+@media (max-width: 768px) {
   .cta-marquee-visual {
-    position: relative;
-    height: 500px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    height: 280px;
   }
+
   .cta-marquee-item {
-    font-size: 3.5rem;
-    font-weight: var(--font-weight-light);
-    color: var(--hero-text);
-    padding: var(--spacing-8) 0;
-    line-height: 1.1;
-    letter-spacing: -0.02em;
-    white-space: nowrap;
+    font-size: 2rem;
+    padding: var(--spacing-5) 0;
+  }
+
+  .cta-marquee-title {
+    font-size: var(--text-3xl);
+  }
+
+  .cta-marquee-actions {
+    flex-direction: column;
+    align-items: center;
   }
 }
