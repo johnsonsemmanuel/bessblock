@@ -86,16 +86,19 @@
 }
 
 .abtn-outline {
-  border: 1px solid var(--color-grey-500);
-  color: var(--hero-text);
-  background: transparent;
+  border: 1px solid var(--color-bessblock-blue);
+  color: var(--color-bessblock-blue);
+  background: var(--color-white);
 }
 .abtn-outline:hover {
-  background: var(--color-white);
-  color: var(--color-grey-900);
-  border-color: var(--color-white);
+  background: var(--color-bessblock-blue);
+  color: var(--color-white);
+  border-color: var(--color-bessblock-blue);
 }
 .abtn-outline .abtn-icon {
+  background: rgba(64, 64, 136, 0.08);
+}
+.abtn-outline:hover .abtn-icon {
   background: rgba(255, 255, 255, 0.12);
 }
 .abtn-outline:hover .abtn-text {
@@ -103,17 +106,20 @@
 }
 
 .abtn-outline-dark {
-  border: 1px solid var(--border);
-  color: var(--text);
-  background: transparent;
+  border: 1px solid var(--color-bessblock-blue);
+  color: var(--color-bessblock-blue);
+  background: var(--color-white);
 }
 .abtn-outline-dark:hover {
-  background: var(--bg);
-  color: var(--color-bessblock-blue);
+  background: var(--color-bessblock-blue);
+  color: var(--color-white);
   border-color: var(--color-bessblock-blue);
 }
 .abtn-outline-dark .abtn-icon {
   background: rgba(64, 64, 136, 0.08);
+}
+.abtn-outline-dark:hover .abtn-icon {
+  background: rgba(255, 255, 255, 0.12);
 }
 .abtn-outline-dark:hover .abtn-text {
   opacity: 0;

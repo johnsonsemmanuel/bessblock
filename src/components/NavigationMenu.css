@@ -6,6 +6,7 @@
   align-items: center;
   overflow: visible;
 }
+
 .nm-list {
   display: flex;
   flex: 1;
@@ -13,6 +14,7 @@
   align-items: center;
   gap: var(--spacing-1);
 }
+
 .nm-trigger {
   display: inline-flex;
   align-items: center;
@@ -30,71 +32,81 @@
   border-radius: 8px;
   transition: color var(--transition-fast), background var(--transition-fast);
 }
+
 .nm-trigger:hover {
   color: var(--color-bessblock-yellow);
   background: rgba(255, 255, 255, 0.1);
 }
+
 .nm-trigger[data-state='open'] {
   color: var(--color-bessblock-yellow);
   background: rgba(255, 255, 255, 0.15);
 }
+
+/* When scrolled, revert to dark text on light background */
 .navbar-scrolled .nm-trigger {
   color: var(--text-secondary);
 }
+
 .navbar-scrolled .nm-trigger:hover {
   color: var(--color-bessblock-blue);
   background: rgba(var(--bg-card-rgb), 0.5);
 }
+
 .navbar-scrolled .nm-trigger[data-state='open'] {
   color: var(--color-bessblock-blue);
   background: rgba(var(--bg-card-rgb), 0.6);
 }
+
 .nm-trigger:focus-visible {
   outline: 2px solid var(--color-bessblock-blue);
   outline-offset: 2px;
 }
+
 .nm-chevron {
   flex-shrink: 0;
   transition: transform var(--transition-base);
 }
+
 .nm-trigger[data-state='open'] .nm-chevron {
   transform: rotate(180deg);
 }
+
+/* ── Viewport wrapper: compact dropdown centred below navbar ── */
 .nm-viewport-wrapper {
-  position: static;
+  position: fixed;
   left: 50%;
-  transform: none;
-  width: 100%;
-  min-width: auto;
-  max-width: 400px;
+  transform: translateX(-50%);
+  width: auto;
+  min-width: 600px;
+  max-width: 960px;
   top: calc(var(--navbar-height, 68px) - 4px);
   padding-top: 12px;
-  perspective: none;
-  pointer-events: auto;
+  perspective: 2000px;
+  pointer-events: none;
   z-index: 20;
-  display: block;
-  margin: 0 auto;
 }
+
 .nm-viewport {
   width: 100% !important;
   pointer-events: auto;
-  border-radius: 0;
-  background: transparent;
-  box-shadow: none;
-  overflow: visible;
+  border-radius: 12px;
+  background: var(--bg-card);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
   transition: opacity 150ms ease;
   transform-origin: top center;
-  border: none;
-  height: auto !important;
-  transform: none !important;
-  animation: none !important;
+  border: 1px solid var(--border);
 }
+
 .nm-viewport[data-state='open'] {
   animation: nmViewportIn 150ms ease;
 }
+
 .nm-viewport[data-state='closed'] {
   animation: nmViewportOut 120ms ease;
 }
+
 @keyframes nmViewportIn {
   from { opacity: 0; transform: scale(0.97); }
   to { opacity: 1; transform: scale(1); }
@@ -104,54 +116,69 @@
   from { opacity: 1; transform: scale(1); }
   to { opacity: 0; transform: scale(0.97); }
 }
+
+/* ── Content inside viewport ── */
 .nm-content {
   width: 100%;
 }
+
 .nm-content[data-motion='from-start'] {
   animation: nmEnterFromLeft 200ms ease;
 }
+
 .nm-content[data-motion='from-end'] {
   animation: nmEnterFromRight 200ms ease;
 }
+
 .nm-content[data-motion='to-start'] {
   animation: nmExitToLeft 150ms ease;
 }
+
 .nm-content[data-motion='to-end'] {
   animation: nmExitToRight 150ms ease;
 }
+
 @keyframes nmEnterFromLeft {
   from { opacity: 0; transform: translateX(-16px); }
   to { opacity: 1; transform: translateX(0); }
 }
+
 @keyframes nmEnterFromRight {
   from { opacity: 0; transform: translateX(16px); }
   to { opacity: 1; transform: translateX(0); }
 }
+
 @keyframes nmExitToLeft {
   from { opacity: 1; transform: translateX(0); }
   to { opacity: 0; transform: translateX(-16px); }
 }
+
 @keyframes nmExitToRight {
   from { opacity: 1; transform: translateX(0); }
   to { opacity: 0; transform: translateX(16px); }
 }
+
+/* ── Indicator arrow bridging trigger row and viewport ── */
 .nm-indicator {
   position: absolute;
   top: calc(100% - 1px);
   z-index: 21;
-  display: none;
+  display: flex;
   height: 12px;
   align-items: flex-end;
   justify-content: center;
   overflow: hidden;
   transition: width var(--transition-base), transform 250ms ease;
 }
+
 .nm-indicator[data-state='visible'] {
   animation: nmFadeIn 200ms ease;
 }
+
 .nm-indicator[data-state='hidden'] {
   animation: nmFadeOut 150ms ease;
 }
+
 .nm-indicator-arrow {
   position: relative;
   top: 60%;
@@ -162,20 +189,27 @@
   background: var(--bg-card);
   box-shadow: -3px -3px 8px rgba(0, 0, 0, 0.06);
 }
+
 @keyframes nmFadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
 }
+
 @keyframes nmFadeOut {
   from { opacity: 1; }
   to { opacity: 0; }
 }
+
+/* ── Full-width dropdown panels ── */
+
+/* About panel: horizontal link cards */
 .nm-dropdown-about {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: var(--spacing-3);
   padding: var(--spacing-4);
 }
+
 .nm-dropdown-about .nav-about-card {
   display: flex;
   flex-direction: column;
@@ -185,29 +219,35 @@
   text-decoration: none;
   transition: transform var(--transition-fast), box-shadow var(--transition-fast), background var(--transition-fast);
 }
+
 .nm-dropdown-about .nav-about-card:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
   background: var(--bg-section);
 }
+
 .nav-about-title {
   font-size: var(--text-sm);
   font-weight: var(--font-weight-semibold);
   color: var(--color-bessblock-blue);
   margin-bottom: var(--spacing-1);
 }
+
 .nav-about-desc {
   font-size: var(--text-xs);
   color: var(--text-tertiary);
   line-height: 1.5;
   margin: 0;
 }
+
+/* Insights panel: horizontal link cards */
 .nm-dropdown-insights {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: var(--spacing-3);
   padding: var(--spacing-4);
 }
+
 .nm-dropdown-insights .nav-insight-card {
   display: flex;
   flex-direction: column;
@@ -217,29 +257,36 @@
   text-decoration: none;
   transition: transform var(--transition-fast), box-shadow var(--transition-fast), background var(--transition-fast);
 }
+
 .nm-dropdown-insights .nav-insight-card:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
   background: var(--bg-section);
 }
+
 .nav-insight-title {
   font-size: var(--text-sm);
   font-weight: var(--font-weight-semibold);
   color: var(--color-bessblock-blue);
   margin-bottom: var(--spacing-1);
 }
+
 .nav-insight-desc {
   font-size: var(--text-xs);
   color: var(--text-tertiary);
   line-height: 1.5;
   margin: 0;
 }
+
+/* ── Products Mega Menu ── */
 .nm-dropdown-products {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: var(--spacing-3);
   padding: var(--spacing-4);
 }
+
+/* ── Category Card ── */
 .nav-cat-card {
   display: flex;
   flex-direction: column;
@@ -248,14 +295,17 @@
   background: var(--bg-section);
   transition: transform var(--transition-base), box-shadow var(--transition-base), background var(--transition-fast);
 }
+
 .nav-cat-card:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
   background: var(--bg-section);
 }
+
 .nav-cat-body {
   padding: var(--spacing-3) var(--spacing-3) var(--spacing-2);
 }
+
 .nav-cat-title {
   display: block;
   font-size: var(--text-sm);
@@ -265,9 +315,11 @@
   margin-bottom: var(--spacing-1);
   transition: color var(--transition-fast);
 }
+
 .nav-cat-title:hover {
   color: var(--color-bessblock-blue-dark);
 }
+
 .nav-cat-desc {
   font-size: var(--text-xs);
   color: var(--text-tertiary);
@@ -278,12 +330,14 @@
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
+
 .nav-cat-subs {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 1fr;
   gap: 2px 4px;
   padding: 0 var(--spacing-3) var(--spacing-3);
 }
+
 .nav-cat-sub {
   display: block;
   padding: var(--spacing-1) var(--spacing-1);
@@ -294,14 +348,18 @@
   transition: background var(--transition-fast), color var(--transition-fast);
   line-height: 1.4;
 }
+
 .nav-cat-sub:hover {
   background: var(--bg-card);
   color: var(--color-bessblock-blue);
 }
+
 .nav-cat-all {
   color: var(--color-bessblock-blue);
   font-weight: var(--font-weight-medium);
 }
+
+/* ── Legacy fallbacks ── */
 .nm-link {
   display: block;
   padding: var(--spacing-1) var(--spacing-2);
@@ -312,97 +370,72 @@
   transition: background var(--transition-fast), color var(--transition-fast);
   line-height: 1.5;
 }
+
 .nm-link:hover {
   background: var(--bg-section);
   color: var(--color-bessblock-blue);
 }
+
 .nm-link:focus-visible {
   outline: 2px solid var(--color-bessblock-blue);
   outline-offset: 2px;
 }
+
 .nm-link[data-active] {
   color: var(--color-bessblock-blue);
   font-weight: var(--font-weight-semibold);
 }
-.nav-cat-image {
-  height: 48px;
-}
-.nm-content[data-state='open'] {
-  position: static !important;
-  animation: none !important;
-  margin: var(--spacing-2) 0;
-  padding: var(--spacing-3);
-  border-radius: 12px;
-  background: var(--bg-section);
-}
-.nm-dropdown-products,
-  .nm-dropdown-about,
-  .nm-dropdown-insights {
-  grid-template-columns: 1fr;
-  padding: var(--spacing-3);
-}
 
-@media (min-width: 1025px) {
+@media (max-width: 1024px) {
   .nm-viewport-wrapper {
-    position: fixed;
-    left: 50%;
-    transform: translateX(-50%);
-    width: auto;
-    min-width: 600px;
-    max-width: 960px;
-    top: calc(var(--navbar-height, 68px) - 4px);
-    padding-top: 12px;
-    perspective: 2000px;
-    pointer-events: none;
-    z-index: 20;
-    display: inline;
-    margin: 0;
-  }
-  .nm-viewport {
-    pointer-events: auto;
-    border-radius: 12px;
-    background: var(--bg-card);
-    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    transition: opacity 150ms ease;
-    transform-origin: top center;
-    border: 1px solid var(--border);
-    height: auto;
-    transform: none;
-    animation: none;
-  }
-  .nm-content[data-state='open'] {
     position: static;
-    animation: none;
-    margin: 0;
-    padding: 0;
+    transform: none;
+    width: 100%;
+    min-width: auto;
+    max-width: 400px;
+    pointer-events: auto;
+    display: block;
+    margin: 0 auto;
+    perspective: none;
+  }
+
+  .nm-viewport {
+    width: 100% !important;
+    height: auto !important;
+    background: transparent;
+    box-shadow: none;
+    border: none;
     border-radius: 0;
-    background: none;
+    overflow: visible;
+    transform: none !important;
+    animation: none !important;
   }
+
+  .nm-content[data-state='open'] {
+    position: static !important;
+    animation: none !important;
+    margin: var(--spacing-2) 0;
+    padding: var(--spacing-3);
+    border-radius: 12px;
+    background: var(--bg-section);
+  }
+
   .nm-indicator {
-    position: absolute;
-    top: calc(100% - 1px);
-    z-index: 21;
-    display: flex;
-    height: 12px;
-    align-items: flex-end;
-    justify-content: center;
-    overflow: hidden;
-    transition: width var(--transition-base), transform 250ms ease;
+    display: none;
   }
+
   .nm-dropdown-products,
   .nm-dropdown-about,
   .nm-dropdown-insights {
-    grid-template-columns: initial;
-    padding: 0;
+    grid-template-columns: 1fr;
+    padding: var(--spacing-3);
   }
+
   .nav-cat-image {
-    height: auto;
+    height: 48px;
   }
+
   .nav-cat-subs {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2px 4px;
-    padding: 0 var(--spacing-3) var(--spacing-3);
+    grid-template-columns: 1fr;
   }
 }
