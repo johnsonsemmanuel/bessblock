@@ -2,6 +2,7 @@ import SEO from '../components/SEO';
 import PageHero from '../components/PageHero';
 import SectionTitle from '../components/SectionTitle';
 import ScrollReveal from '../components/ScrollReveal';
+import SpecSheet from '../components/SpecSheet';
 import AnimatedButton from '../components/AnimatedButton';
 import { ProductHighlightCard } from '../components/ProductHighlightCard';
 import { KerbIcon } from '../components/CategoryIcons';
@@ -24,6 +25,15 @@ const techItems = [
   'They are often supported with backing concrete or haunching to improve stability.',
   'The laying process generally requires correct line, level, and joint control.',
   'Wider kerb systems may also support water management and traffic separation.',
+];
+
+const specs = [
+  { label: 'Product type', value: 'Precast concrete kerbs and edging units.' },
+  { label: 'Material', value: 'Cement, aggregates, and water.' },
+  { label: 'Typical length', value: '1,000mm across variants.' },
+  { label: 'Typical use', value: 'Edge restraint, road separation, drainage control, and landscaping boundaries.' },
+  { label: 'Finish options', value: 'Standard grey and project-specific finishes.' },
+  { label: 'Installation method', value: 'Laid on a concrete bed with rear haunching where required.' },
 ];
 
 const apps = [
@@ -102,23 +112,7 @@ export default function KerbsEdging() {
       <section className="section section-light">
         <div className="container">
           <SectionTitle label="Detailed Specifications" title="Common specifications" align="left" />
-          <div className="kerbs-specs">
-            {[
-              { label: 'Product type', value: 'Precast concrete kerbs and edging units.' },
-              { label: 'Material', value: 'Cement, aggregates, and water.' },
-              { label: 'Typical length', value: '1,000mm across variants.' },
-              { label: 'Typical use', value: 'Edge restraint, road separation, drainage control, and landscaping boundaries.' },
-              { label: 'Finish options', value: 'Standard grey and project-specific finishes.' },
-              { label: 'Installation method', value: 'Laid on a concrete bed with rear haunching where required.' },
-            ].map((s, i) => (
-              <ScrollReveal key={i} delay={i * 0.04}>
-                <div className="kerbs-spec">
-                  <span className="kerbs-spec-label">{s.label}</span>
-                  <span className="kerbs-spec-value">{s.value}</span>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
+          <ScrollReveal><SpecSheet specs={specs} columns={2} /></ScrollReveal>
         </div>
       </section>
 

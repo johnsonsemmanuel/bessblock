@@ -3,6 +3,7 @@ import SEO from '../components/SEO';
 import PageHero from '../components/PageHero';
 import SectionTitle from '../components/SectionTitle';
 import ScrollReveal from '../components/ScrollReveal';
+import SpecSheet from '../components/SpecSheet';
 import AnimatedButton from '../components/AnimatedButton';
 import { ProductHighlightCard } from '../components/ProductHighlightCard';
 import CoverageCalculator from '../components/CoverageCalculator';
@@ -76,16 +77,7 @@ export default function Walling() {
       <section className="section">
         <div className="container">
           <SectionTitle label="Technical Range" title="Common specifications" align="left" />
-          <div className="walling-tech">
-            {techItems.map((item, i) => (
-              <ScrollReveal key={i} delay={i * 0.04}>
-                <div className="walling-tech-item">
-                  <span className="walling-tech-label">{item.label}</span>
-                  <span className="walling-tech-value">{item.value}</span>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
+          <ScrollReveal><SpecSheet specs={techItems} columns={2} /></ScrollReveal>
         </div>
       </section>
 
