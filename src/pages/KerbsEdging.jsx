@@ -35,7 +35,7 @@ export default function KerbsEdging() {
   const cat = productCategories.find(c => c.id === 'kerbs-edging');
   return (
     <>
-      <SEO title="Kerbs & Edging" description="Explore Bessblock's range of concrete kerbs and edging — road kerbs, demarcation kerbs, garden kerbs, barrier kerbs, gutter kerbs, and slotted kerbs." />
+      <SEO title="Kerbs & Edging" description="Explore Bessblock's range of concrete kerbs and edging, road kerbs, demarcation kerbs, garden kerbs, barrier kerbs, gutter kerbs, and slotted kerbs." />
       <div className="page">
       <PageHero
         title="Kerbs & Edging"

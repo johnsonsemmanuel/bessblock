@@ -52,7 +52,7 @@ const related = [
 export default function HollowConcreteBlocks() {
   return (
     <>
-      <SEO title="Hollow Concrete Blocks" description="Bessblock hollow concrete blocks — lightweight, strong walling units for residential, commercial, and industrial construction with good thermal performance." />
+      <SEO title="Hollow Concrete Blocks" description="Bessblock hollow concrete blocks, lightweight, strong walling units for residential, commercial, and industrial construction with good thermal performance." />
       <div className="page">
       <PageHero title="Hollow Concrete Blocks" description="Hollow Concrete Blocks are the primary walling unit for general construction. They are commonly used in residential, commercial, and industrial buildings because they offer a practical balance of strength, weight, and build efficiency." bgImage="/images/hero/concrete-texture-1.jpg" />
 
@@ -136,7 +136,7 @@ export default function HollowConcreteBlocks() {
           <div className="wall-sub-gallery">
             <div className="wall-sub-gallery-item wall-sub-gallery-featured">
               <Image size={36} />
-              <span>Hollow block wall construction — coming soon</span>
+              <span>Hollow block wall construction, coming soon</span>
             </div>
             {[1, 2, 3].map(i => (
               <div key={i} className="wall-sub-gallery-item">

@@ -156,8 +156,8 @@ export default function Products() {
                 className="products-filter-select"
               >
                 <option value="default">Default order</option>
-                <option value="name-asc">Name A–Z</option>
-                <option value="name-desc">Name Z–A</option>
+                <option value="name-asc">Name A-Z</option>
+                <option value="name-desc">Name Z-A</option>
                 <option value="count">Most products first</option>
               </select>
             </div>
@@ -165,7 +165,7 @@ export default function Products() {
 
           {hasActiveFilter && (
             <p className="products-filter-result-count">
-              Showing filtered results — <Link to="/products" onClick={e => { e.preventDefault(); setFilter(''); }} className="products-filter-result-clear">clear filter</Link>
+              Showing filtered results, <Link to="/products" onClick={e => { e.preventDefault(); setFilter(''); }} className="products-filter-result-clear">clear filter</Link>
             </p>
           )}
 

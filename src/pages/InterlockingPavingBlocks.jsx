@@ -48,7 +48,7 @@ const specs = [
 
 const techItems = [
   'Produced using high-pressure vibration and hydraulic compaction.',
-  'Cured for a minimum of 14–28 days to achieve optimum strength.',
+  'Cured for a minimum of 14-28 days to achieve optimum strength.',
   'Individual units or blocks fit together tightly to form a durable and visually appealing surface.',
   'Suitable in commercial and domestic use such as pathways, gardens, footpaths, parking areas etc.',
 ];
@@ -171,7 +171,7 @@ export default function InterlockingPavingBlocks() {
           <div className="inter-gallery-grid">
             <div className="inter-gallery-cell inter-gallery-featured">
               <Image size={40} />
-              <span>Featured project — coming soon</span>
+              <span>Featured project, coming soon</span>
             </div>
             {[1, 2, 3, 4, 5].map(i => (
               <div key={i} className="inter-gallery-cell">

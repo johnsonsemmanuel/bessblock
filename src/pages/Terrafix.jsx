@@ -34,7 +34,7 @@ const related = [
 export default function Terrafix() {
   return (
     <>
-      <SEO title="Terrafix" description="Terraforce® Terrafix — a retaining wall block designed for geosynthetic reinforced segmental retaining wall systems requiring higher wall heights." />
+      <SEO title="Terrafix" description="Terraforce® Terrafix, a retaining wall block designed for geosynthetic reinforced segmental retaining wall systems requiring higher wall heights." />
       <div className="page">
       <PageHero title="Terrafix" description="A Terraforce retaining wall block designed for geosynthetic reinforced segmental retaining wall systems where higher wall heights and additional reinforcement are required." bgImage="/images/hero/concrete-texture-1.jpg" />
 

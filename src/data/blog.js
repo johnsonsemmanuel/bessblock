@@ -28,10 +28,10 @@ const blogPosts = [
         heading: 'Paving Block Types for Heavy-Duty Applications',
         body: 'Not all paving blocks are created equal. For heavy-duty industrial and roadwork applications, the block geometry, thickness, and manufacturing quality are critical factors. The interlocking mechanism provides exceptional load distribution, while the block\'s compressive strength determines its ability to withstand repeated heavy loads without cracking or settling.',
         subs: [
-          'Heavy-Duty Interlocking Blocks – ideal for container terminals, truck yards, and industrial hardstands. Compressive strength >40MPa with mechanical interlock for superior load distribution.',
-          'Standard Interlocking Blocks – suitable for service roads, parking areas, and light commercial zones. Compressive strength >35MPa with reliable jointing.',
-          'Permeable Paving Blocks – designed for areas requiring stormwater management. Open joint system allows water infiltration while maintaining load capacity.',
-          'Textured Pattern Blocks – for commercial precincts where aesthetics matter alongside durability. Slip-resistant surface with consistent colour finish.',
+          'Heavy-Duty Interlocking Blocks - ideal for container terminals, truck yards, and industrial hardstands. Compressive strength >40MPa with mechanical interlock for superior load distribution.',
+          'Standard Interlocking Blocks - suitable for service roads, parking areas, and light commercial zones. Compressive strength >35MPa with reliable jointing.',
+          'Permeable Paving Blocks - designed for areas requiring stormwater management. Open joint system allows water infiltration while maintaining load capacity.',
+          'Textured Pattern Blocks - for commercial precincts where aesthetics matter alongside durability. Slip-resistant surface with consistent colour finish.',
         ]
       },
       {
@@ -69,7 +69,7 @@ const blogPosts = [
     sections: [
       {
         heading: 'Short-Term Savings vs. Long-Term Liabilities',
-        body: 'When it comes to construction, every decision affects the safety, durability, and profitability of your project. Choosing low‑quality building blocks may seem like an easy way to cut costs up front – but the real cost often surfaces later in structural failures, high maintenance, and dissatisfied clients. For developers, contractors, and architects, quality isn\'t just a checkbox; it\'s the foundation of long‑term value.'
+        body: 'When it comes to construction, every decision affects the safety, durability, and profitability of your project. Choosing low‑quality building blocks may seem like an easy way to cut costs up front - but the real cost often surfaces later in structural failures, high maintenance, and dissatisfied clients. For developers, contractors, and architects, quality isn\'t just a checkbox; it\'s the foundation of long‑term value.'
       },
       {
         heading: 'The Hidden Costs of Inferior Blocks',
@@ -141,12 +141,12 @@ const blogPosts = [
         heading: 'Advantages of Hollow Concrete Blocks',
         body: 'The benefits of using hollow concrete blocks extend beyond simple cost savings. Their engineered design provides multiple performance advantages over traditional building materials, making them the preferred choice for modern construction.',
         subs: [
-          'Highly durable with high fire resistance and no salinity – blocks resist weathering, pests, and fire better than clay bricks.',
-          'Cost-effective construction – one hollow block replaces approximately five clay bricks, reducing mortar usage, labour costs, and construction time.',
-          'Speedy construction – uniform size and lighter weight enable faster laying rates compared to clay brick masonry.',
-          'Environmentally friendly – machine-made with no harmful fumes; manufacturing consumes less energy than fired clay brick production.',
-          'Greater earthquake resistance – lighter weight reduces seismic forces on the structure.',
-          'Thermal insulation and soundproofing – the hollow cores provide natural insulation, keeping interiors cooler in hot climates and reducing noise transmission.',
+          'Highly durable with high fire resistance and no salinity - blocks resist weathering, pests, and fire better than clay bricks.',
+          'Cost-effective construction - one hollow block replaces approximately five clay bricks, reducing mortar usage, labour costs, and construction time.',
+          'Speedy construction - uniform size and lighter weight enable faster laying rates compared to clay brick masonry.',
+          'Environmentally friendly - machine-made with no harmful fumes; manufacturing consumes less energy than fired clay brick production.',
+          'Greater earthquake resistance - lighter weight reduces seismic forces on the structure.',
+          'Thermal insulation and soundproofing - the hollow cores provide natural insulation, keeping interiors cooler in hot climates and reducing noise transmission.',
         ]
       },
       {

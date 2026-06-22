@@ -8,7 +8,7 @@ import './About.css';
 export default function About() {
   return (
     <>
-      <SEO title="About" description="Learn about Bessblock Concrete Products Ltd — a leading manufacturer of concrete blocks, paving units, and kerbs in Ghana, serving residential, commercial, and institutional projects." />
+      <SEO title="About" description="Learn about Bessblock Concrete Products Ltd, a leading manufacturer of concrete blocks, paving units, and kerbs in Ghana, serving residential, commercial, and institutional projects." />
       <div className="page">
       <PageHero title="About Bessblock" bgImage="/images/hero/concrete-texture-1.jpg">
         <p className="page-hero-desc">

@@ -72,7 +72,7 @@ export default function Home() {
 
   return (
     <>
-      <SEO title="Home" description="Bessblock Concrete Products Ltd — manufacturer of concrete blocks, paving units, kerbs, and edging solutions for infrastructure and institutional projects in Ghana." />
+      <SEO title="Home" description="Bessblock Concrete Products Ltd, manufacturer of concrete blocks, paving units, kerbs, and edging solutions for infrastructure and institutional projects in Ghana." />
     <div className="page">
       {/* Hero */}
       <section
@@ -119,7 +119,7 @@ export default function Home() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.25 }}
             >
-              High-quality concrete products for paving, walling, retaining, and drainage — trusted by contractors, developers, and specifiers across Ghana.
+              High-quality concrete products for paving, walling, retaining, and drainage, trusted by contractors, developers, and specifiers across Ghana.
             </motion.p>
             <motion.div
               className="hero-actions"

@@ -34,7 +34,7 @@ const related = [
 export default function Terracrete() {
   return (
     <>
-      <SEO title="Terracrete" description="Terraforce® Terracrete — a retaining wall solution for constrained sites using cement stabilised backfill where conventional reinforced wall construction is impractical." />
+      <SEO title="Terracrete" description="Terraforce® Terracrete, a retaining wall solution for constrained sites using cement stabilised backfill where conventional reinforced wall construction is impractical." />
       <div className="page">
       <PageHero title="Terracrete" description="A Terraforce retaining wall solution designed for use with cement stabilised backfill in constrained site conditions where space or geometry limits conventional reinforced wall construction." bgImage="/images/hero/concrete-texture-2.jpg" />
 

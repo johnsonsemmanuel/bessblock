@@ -48,7 +48,7 @@ const related = [
 export default function Terralite() {
   return (
     <>
-      <SEO title="Terralite" description="Terraforce® Terralite — a compact dry-stack interlocking retaining block for DIY landscaping, garden walls, borders, and small retaining projects." />
+      <SEO title="Terralite" description="Terraforce® Terralite, a compact dry-stack interlocking retaining block for DIY landscaping, garden walls, borders, and small retaining projects." />
       <div className="page">
       <PageHero title="Terralite" description="Terralite is Terraforce's smaller retaining wall block, aimed mainly at the DIY and light landscaping market. It is a dry-stack, interlocking concrete block system that is easy to use for garden walls, borders, and small retaining projects." bgImage="/images/hero/concrete-texture-1.jpg" />
 

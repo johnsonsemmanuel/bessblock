@@ -8,7 +8,7 @@ export default function PavingSlabs() {
   const cat = productCategories.find(c => c.id === 'paving-slabs');
   return (
     <>
-      <SEO title="Paving Slabs" description="Explore Bessblock's concrete paving slab range — textured, smooth, and large format slabs for pedestrian areas, patios, and commercial spaces." />
+      <SEO title="Paving Slabs" description="Explore Bessblock's concrete paving slab range, textured, smooth, and large format slabs for pedestrian areas, patios, and commercial spaces." />
       <div className="page">
       <PageHero title="Paving Slabs" description={cat.description} bgImage="/images/hero/concrete-texture-1.jpg" />
       <section className="section">

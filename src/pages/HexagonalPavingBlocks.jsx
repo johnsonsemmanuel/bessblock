@@ -75,7 +75,7 @@ export default function HexagonalPavingBlocks() {
               </div>
             </ScrollReveal>
             <ScrollReveal direction="right" delay={0.1}>
-              <HexImgagePlaceholder label="Hexagonal block — coming soon" />
+              <HexImgagePlaceholder label="Hexagonal block, coming soon" />
             </ScrollReveal>
           </div>
         </div>
@@ -125,7 +125,7 @@ export default function HexagonalPavingBlocks() {
               </div>
             </ScrollReveal>
             <ScrollReveal direction="right" delay={0.1}>
-              <TechImgPlaceholder label="Technical diagram — coming soon" />
+              <TechImgPlaceholder label="Technical diagram, coming soon" />
             </ScrollReveal>
           </div>
         </div>

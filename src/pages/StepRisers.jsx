@@ -8,7 +8,7 @@ export default function StepRisers() {
   const cat = productCategories.find(c => c.id === 'step-risers');
   return (
     <>
-      <SEO title="Step Risers" description="Explore Bessblock's concrete step riser range — standard step risers, wide tread steps, and bullnose steps for durable outdoor stair construction." />
+      <SEO title="Step Risers" description="Explore Bessblock's concrete step riser range, standard step risers, wide tread steps, and bullnose steps for durable outdoor stair construction." />
       <div className="page">
       <PageHero title="Step Risers" description={cat.description} bgImage="/images/hero/concrete-texture-2.jpg" />
       <section className="section">

@@ -51,7 +51,7 @@ const related = [
 export default function LRangeStandard() {
   return (
     <>
-      <SEO title="L-Range Standard" description="Terraforce® L Range Standard Option — a versatile dry-stack interlocking concrete retaining block for landscaping, erosion control, and gravity retaining walls." />
+      <SEO title="L-Range Standard" description="Terraforce® L Range Standard Option, a versatile dry-stack interlocking concrete retaining block for landscaping, erosion control, and gravity retaining walls." />
       <div className="page">
       <PageHero title="L Range - Standard Option" description="A versatile concrete retaining block for landscaping and erosion control, designed to stack without mortar in most applications using dry-stacked construction for faster installation and reduced consumables." bgImage="/images/hero/concrete-texture-2.jpg" />
 

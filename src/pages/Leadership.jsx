@@ -36,7 +36,7 @@ export default function Leadership() {
 
   return (
     <>
-      <SEO title="Leadership" description="Meet the leadership team behind Bessblock Concrete Products Ltd — experienced professionals driving quality, operations, and growth." />
+      <SEO title="Leadership" description="Meet the leadership team behind Bessblock Concrete Products Ltd, experienced professionals driving quality, operations, and growth." />
       <div className="page">
       <PageHero
         title="Leadership"
