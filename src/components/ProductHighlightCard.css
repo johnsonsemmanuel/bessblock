@@ -60,9 +60,9 @@
 .highlight-card-glow {
   pointer-events: none;
   position: absolute;
-  inset: -1px;
-  border-radius: 16px;
-  opacity: 0;
+  width: 200%;
+  height: 200%;
+  border-radius: 50%;
   z-index: 2;
 }
 
