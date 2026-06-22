@@ -3,6 +3,8 @@ import { Building2, Truck, HardHat, Shield, Ruler, Layers, Trees, Warehouse, Che
 import ScrollReveal from '../components/ScrollReveal';
 import SectionTitle from '../components/SectionTitle';
 import LazyBackground from '../components/LazyBackground';
+import { FlowArt, FlowPanel } from '../components/FlowArt';
+import '../components/FlowArt.css';
 import AnimatedButton from '../components/AnimatedButton';
 import PageHero from '../components/PageHero';
 import SEO from '../components/SEO';
@@ -27,6 +29,37 @@ const whyItems = [
   { icon: HardHat, text: 'Products suited to both functional and aesthetic applications.' },
   { icon: Ruler, text: 'Support for contractors, developers, consultants, and engineers.' },
   { icon: Building2, text: 'A company structure backed by the wider strength of the RG Group.' },
+];
+
+const flowPanels = [
+  {
+    label: 'History',
+    title: 'Our Group Story',
+    bg: '/images/production/IMG_1873.webp',
+    text: 'Bessblock is part of the Regimanuel Gray Group, founded in 1991. What began as housing estate development grew into a diversified conglomerate spanning construction, concrete products, estate management, and infrastructure. Bessblock plays a key role in that ecosystem, supplying concrete products that support both internal projects and external customers.',
+    align: 'left',
+  },
+  {
+    label: 'Products',
+    title: 'What We Do',
+    bg: '/images/production/IMG_1803.webp',
+    text: 'Bessblock manufactures a focused range of concrete products for structural and landscape applications. Our product families include paving blocks, walling products, retaining walls, kerbs and edging, paving slabs, and step risers.',
+    align: 'right',
+  },
+  {
+    label: 'Value',
+    title: 'Why Bessblock',
+    bg: '/images/production/IMG_1836.webp',
+    text: 'Bessblock is built around the idea that concrete products should do more than fill a specification sheet. Our customers choose us for consistent quality, dependable supply, and products suited to both functional and aesthetic applications.',
+    align: 'left',
+  },
+  {
+    label: 'Mission',
+    title: 'Our Philosophy',
+    bg: '/images/production/IMG_0628.webp',
+    text: 'The RG Group philosophy is to invest in world-class, sustainable businesses from Ghana that serve generations. Bessblock reflects that through dependable manufacturing, practical product development, and a commitment to long-term value.',
+    align: 'right',
+  },
 ];
 
 const supportItems = [
@@ -71,140 +104,40 @@ export default function About() {
         </div>
       </section>
 
-      {/* Our Group Story */}
-      <section className="section">
-        <div className="container">
-          <div className="about-split">
-            <ScrollReveal direction="left">
-              <div className="about-split-text">
-                <SectionTitle label="History" title="Our Group Story" align="left" />
-                <p className="about-text">
-                  Bessblock is part of a wider family of businesses under Regimanuel Gray Group, a company founded in 1991 with housing estate development as its core business. Over time, the business expanded into turnkey project execution and site development, including road construction, drainage, and utility infrastructure, while building a strong base of dedicated local and expatriate personnel.
-                </p>
-                <p className="about-text">
-                  To support that growth, Regimanuel Gray established subsidiaries including Regimauel Concrete Products Ltd, Bessblock Concrete Products Ltd, Sierrablock Concrete Products Ltd, Desjoyaux Ghana Ltd, and Regimanuel Gray Estate Management Company Ltd. Together with its joint ventures, the Group has evolved into a diversified conglomerate with interests in construction, concrete products, estate management, and swimming pool construction.
-                </p>
-                <p className="about-text">
-                  Bessblock plays a key role in that ecosystem by supplying concrete products that support both internal projects and external customers. This gives the company a practical understanding of what projects need on the ground: consistent materials, dependable supply, and products that perform in real site conditions.
-                </p>
-              </div>
-            </ScrollReveal>
-            <ScrollReveal direction="right" delay={0.1}>
-              <div className="about-split-media">
-                <LazyBackground src="/images/production/IMG_1873.webp" className="about-image-block about-image-block-photo">
-                  <div className="about-image-block-label">Bessblock concrete products manufacturing facility</div>
-                </LazyBackground>
-              </div>
-            </ScrollReveal>
-          </div>
-        </div>
-      </section>
-
-      {/* What We Do */}
-      <section className="section section-light">
-        <div className="container">
-          <ScrollReveal>
-            <SectionTitle label="Products" title="What We Do" align="left" />
-            <p className="about-text">
-              Bessblock manufactures a focused range of concrete products designed for both structural and landscape applications. Our product families include paving blocks, walling products, retaining walls, kerbs and edging, paving slabs, and step risers, allowing us to serve a broad range of project types with one reliable supply partner.
-            </p>
-          </ScrollReveal>
-
-          <div className="about-stats" style={{ gridTemplateColumns: 'repeat(2, 1fr)', marginTop: 'var(--spacing-8)' }}>
-            {productAreas.map((item, i) => (
-              <ScrollReveal key={i} delay={i * 0.06}>
-                <motion.div
-                  className="about-stat-card"
-                  whileHover={{ y: -4 }}
-                  transition={{ duration: 0.2 }}
-                  style={{ textAlign: 'left' }}
-                >
-                  <div className="about-stat-icon">
-                    <item.icon size={22} />
-                  </div>
-                  <div className="about-stat-label" style={{ fontSize: 'var(--text-base)', fontWeight: 600, color: 'var(--text)', marginBottom: 'var(--spacing-1)' }}>
-                    {item.label}
-                  </div>
-                  <div className="about-stat-label">{item.text}</div>
-                </motion.div>
-              </ScrollReveal>
-            ))}
-          </div>
-
-          <ScrollReveal delay={0.25}>
-            <ul className="about-list">
-              <li>Residential developments.</li>
-              <li>Commercial and institutional projects.</li>
-              <li>Roads, estates, and infrastructure.</li>
-              <li>Landscaping and public realm schemes.</li>
-              <li>Retaining and soil-stabilisation works.</li>
-            </ul>
-            <p className="about-text">
-              For retaining walls in particular, Bessblock also aligns with Terraforce-style systems, which are designed as modular, interlocking, dry-stack concrete blocks for gravity and reinforced retaining wall construction. That makes the Bessblock retaining wall offer especially relevant to landscaping, embankment support, terracing, and slope stabilisation work.
-            </p>
-          </ScrollReveal>
-        </div>
-      </section>
-
-      {/* Why Bessblock */}
-      <section className="section">
-        <div className="container">
-          <div className="about-split">
-            <ScrollReveal direction="left">
-              <div className="about-split-media">
-                <LazyBackground src="/images/production/IMG_1803.webp" className="about-image-block about-image-block-photo">
-                  <div className="about-image-block-label">Quality-controlled production at every stage</div>
-                </LazyBackground>
-              </div>
-            </ScrollReveal>
-            <ScrollReveal direction="right" delay={0.1}>
-              <div className="about-split-text">
-                <SectionTitle label="Value" title="Why Bessblock" align="left" />
-                <p className="about-text">
-                  Bessblock is built around the idea that concrete products should do more than fill a specification sheet. They should help solve real problems on site, whether that means load-bearing performance, clean edge restraint, durable surface finishes, or engineered retaining solutions.
-                </p>
-                <p className="about-text">Our customers choose Bessblock because we offer:</p>
-                <ul className="about-list">
-                  {whyItems.map((item, i) => (
-                    <li key={i}>
-                      <span className="about-list-icon">
-                        <item.icon size={13} />
-                      </span>
+      {/* Story panels — scroll-driven flow */}
+      <FlowArt>
+        {flowPanels.map((panel, i) => (
+          <FlowPanel key={i} className="about-flow-panel">
+            <LazyBackground src={panel.bg} className="about-flow-bg" />
+            <div className="about-flow-overlay" />
+            <div className={`about-flow-content about-flow-content-${panel.align}`}>
+              <span className="about-flow-label">{panel.label}</span>
+              <h2 className="about-flow-title">{panel.title}</h2>
+              <p className="about-flow-text">{panel.text}</p>
+              {panel.title === 'What We Do' && (
+                <div className="about-flow-products">
+                  {productAreas.map((item, j) => (
+                    <div key={j} className="about-flow-product">
+                      <item.icon size={14} />
+                      <span>{item.label}</span>
+                    </div>
+                  ))}
+                </div>
+              )}
+              {panel.title === 'Why Bessblock' && (
+                <ul className="about-flow-list">
+                  {whyItems.map((item, j) => (
+                    <li key={j}>
+                      <item.icon size={13} />
                       {item.text}
                     </li>
                   ))}
                 </ul>
-              </div>
-            </ScrollReveal>
-          </div>
-        </div>
-      </section>
-
-      {/* Our Philosophy */}
-      <section className="section section-light">
-        <div className="container">
-          <div className="about-split">
-            <ScrollReveal direction="left">
-              <div className="about-split-text">
-                <SectionTitle label="Mission" title="Our Philosophy" align="left" />
-                <p className="about-text">
-                  The philosophy of the RG Group is to invest in and build world-class, sustainable businesses from Ghana that can serve generations.
-                </p>
-                <p className="about-text">
-                  Bessblock reflects that philosophy through a commitment to dependable manufacturing, practical product development, and long-term value. We aim to supply products that are not only strong and functional, but also relevant to modern construction demands and future growth.
-                </p>
-              </div>
-            </ScrollReveal>
-            <ScrollReveal direction="right" delay={0.1}>
-              <div className="about-split-media">
-                <LazyBackground src="/images/production/IMG_1836.webp" className="about-image-block about-image-block-photo">
-                  <div className="about-image-block-label">Commitment to long-term value and quality</div>
-                </LazyBackground>
-              </div>
-            </ScrollReveal>
-          </div>
-        </div>
-      </section>
+              )}
+            </div>
+          </FlowPanel>
+        ))}
+      </FlowArt>
 
       {/* Quality And Support */}
       <section className="section">
