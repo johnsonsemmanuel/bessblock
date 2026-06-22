@@ -64,11 +64,9 @@ function ProductsContent() {
                 <Link to={sub.path} className="nav-cat-sub">{sub.name}</Link>
               </NavigationMenuLink>
             ))}
-            {cat.subcategories.length > 4 && (
-              <NavigationMenuLink asChild>
-                <Link to={cat.path} className="nav-cat-sub nav-cat-all">View All &rarr;</Link>
-              </NavigationMenuLink>
-            )}
+            <NavigationMenuLink asChild>
+              <Link to={cat.path} className="nav-cat-sub nav-cat-all">View All &rarr;</Link>
+            </NavigationMenuLink>
           </div>
         </div>
       ))}
