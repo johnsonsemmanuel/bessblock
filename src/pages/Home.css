@@ -85,10 +85,10 @@
 
 .hero-content {
   max-width: 680px;
-  margin: 0 auto;
-  padding: var(--spacing-16) var(--container-padding);
+  margin-left: max(var(--container-padding), 6vw);
+  margin-right: var(--container-padding);
+  padding: var(--spacing-16) 0;
   text-align: left;
-  width: 100%;
 }
 
 .hero-label {
