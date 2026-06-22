@@ -84,8 +84,8 @@
 
 
 .hero-content {
-  max-width: 680px;
-  margin-left: max(var(--container-padding), 6vw);
+  max-width: 720px;
+  margin-left: max(var(--container-padding), 12vw);
   margin-right: var(--container-padding);
   padding: var(--spacing-16) 0;
   text-align: left;
@@ -102,7 +102,7 @@
 }
 
 .hero-title {
-  font-size: var(--text-6xl);
+  font-size: clamp(2.5rem, 5.5vw, 5.5rem);
   font-weight: var(--font-weight-bold);
   color: var(--hero-text);
   line-height: 1.05;
