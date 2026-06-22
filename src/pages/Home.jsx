@@ -346,7 +346,7 @@ export default function Home() {
       </section>
 
       {/* Testimonials */}
-      <section className="section-light">
+      <section className="section section-light">
         <div className="container">
           <SectionTitle label="Testimonials" title="What Our Clients Say" />
           <div className="home-testimonials">
