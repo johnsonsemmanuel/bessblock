@@ -597,6 +597,10 @@
     gap: var(--spacing-3);
   }
 
+  .hero-actions > :nth-child(3) {
+    grid-column: 1 / -1;
+  }
+
   .hero-actions .abtn {
     padding: 10px 16px;
     font-size: var(--text-sm);

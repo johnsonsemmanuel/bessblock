@@ -10,6 +10,7 @@ import ScrollReveal from '../components/ScrollReveal';
 import { ProgressiveBlur } from '../components/ProgressiveBlur';
 import TestimonialsSection from '../components/TestimonialsSection';
 import CTAWithVerticalMarquee from '../components/CTAWithVerticalMarquee';
+import DownloadSpecsModal from '../components/DownloadSpecsModal';
 import testimonials from '../data/testimonials';
 import './Home.css';
 
@@ -64,6 +65,7 @@ export default function Home() {
   const [slide, setSlide] = useState(0);
   const [leaving, setLeaving] = useState(null);
   const [paused, setPaused] = useState(false);
+  const [specsModalOpen, setSpecsModalOpen] = useState(false);
 
   useEffect(() => {
     if (paused) return;
@@ -137,7 +139,7 @@ export default function Home() {
             >
               <AnimatedButton to="/products" variant="primary">Explore Products</AnimatedButton>
               <AnimatedButton to="/request-quote" variant="outline">Request a Quote</AnimatedButton>
-              <AnimatedButton to="/products" variant="outline">Download Specifications</AnimatedButton>
+              <AnimatedButton type="button" variant="outline" onClick={() => setSpecsModalOpen(true)}>Download Specifications</AnimatedButton>
             </motion.div>
           </motion.div>
         </div>
@@ -373,6 +375,8 @@ export default function Home() {
       />
 
       <CTAWithVerticalMarquee />
+
+      <DownloadSpecsModal open={specsModalOpen} onClose={() => setSpecsModalOpen(false)} />
     </div>
     </>
   );
