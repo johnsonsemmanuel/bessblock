@@ -418,19 +418,13 @@
     padding: var(--spacing-3);
     border-radius: 12px;
     background: var(--bg-section);
-    max-height: 65vh;
+    max-height: 40vh;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
   }
 
-  .nm-item-products .nm-content[data-state='open'] {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    margin: 0;
-    z-index: 10;
-    max-height: 45vh;
+  .nm-content-products[data-state='open'] {
+    max-height: 55vh;
   }
 
   .nm-indicator {

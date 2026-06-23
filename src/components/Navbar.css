@@ -133,7 +133,9 @@
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.3s ease;
-    overflow: hidden;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
     z-index: 1100;
   }
 
@@ -163,10 +165,6 @@
     justify-content: center;
     text-align: center;
     border-radius: 10px;
-  }
-
-  .nm-item-products {
-    position: relative;
   }
 
   .navbar-menu .nm-trigger {
