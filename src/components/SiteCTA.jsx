@@ -1,5 +1,5 @@
-import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import AnimatedButton from './AnimatedButton';
 import './SiteCTA.css';
 
 export default function SiteCTA({
@@ -25,13 +25,13 @@ export default function SiteCTA({
             <p className="site-cta-desc">{description}</p>
           )}
           <div className="site-cta-actions">
-            <Link to={primaryLink} className="site-cta-btn site-cta-btn-primary">
+            <AnimatedButton to={primaryLink} variant="yellow">
               {primaryText}
-            </Link>
+            </AnimatedButton>
             {secondaryText && secondaryLink && (
-              <Link to={secondaryLink} className="site-cta-btn site-cta-btn-secondary">
+              <AnimatedButton to={secondaryLink} variant="outline">
                 {secondaryText}
-              </Link>
+              </AnimatedButton>
             )}
           </div>
         </motion.div>
