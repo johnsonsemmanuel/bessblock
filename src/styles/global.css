@@ -212,6 +212,8 @@ input, select, textarea {
   right: 0;
   bottom: 0;
   background: var(--hero-overlay-solid);
+  background-image: var(--pattern-block);
+  background-size: 60px 30px;
   z-index: -1;
 }
 
