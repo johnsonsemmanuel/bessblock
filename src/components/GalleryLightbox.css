@@ -100,14 +100,14 @@
 }
 
 .gl-image {
-  width: 100%;
-  height: 100%;
+  display: block;
   max-width: 90vw;
   max-height: 85vh;
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
+  width: auto;
+  height: auto;
+  object-fit: contain;
   border-radius: 4px;
+  transition: opacity 0.3s ease;
 }
 
 .gl-counter {

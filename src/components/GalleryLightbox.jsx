@@ -1,17 +1,18 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
 import { X, ChevronLeft, ChevronRight } from 'lucide-react';
-import LazyBackground from './LazyBackground';
 import ScrollReveal from './ScrollReveal';
 import './GalleryLightbox.css';
 
 export default function GalleryLightbox({ images, columns = 3 }) {
   const [open, setOpen] = useState(false);
   const [current, setCurrent] = useState(0);
+  const [imgLoaded, setImgLoaded] = useState(false);
   const touchStartX = useRef(0);
   const touchEndX = useRef(0);
 
   const openLightbox = useCallback((index) => {
     setCurrent(index);
+    setImgLoaded(false);
     setOpen(true);
   }, []);
 
@@ -21,10 +22,12 @@ export default function GalleryLightbox({ images, columns = 3 }) {
 
   const prev = useCallback(() => {
     setCurrent((c) => (c === 0 ? images.length - 1 : c - 1));
+    setImgLoaded(false);
   }, [images.length]);
 
   const next = useCallback(() => {
     setCurrent((c) => (c === images.length - 1 ? 0 : c + 1));
+    setImgLoaded(false);
   }, [images.length]);
 
   useEffect(() => {
@@ -104,7 +107,13 @@ export default function GalleryLightbox({ images, columns = 3 }) {
           </button>
 
           <div className="gl-slide">
-            <LazyBackground src={images[current]} className="gl-image" />
+            <img
+              src={images[current]}
+              alt={`Image ${current + 1}`}
+              className="gl-image"
+              onLoad={() => setImgLoaded(true)}
+              style={{ opacity: imgLoaded ? 1 : 0 }}
+            />
           </div>
 
           <button type="button" className="gl-nav gl-next" onClick={next} aria-label="Next">
