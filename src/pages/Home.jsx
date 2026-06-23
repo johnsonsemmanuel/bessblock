@@ -212,44 +212,85 @@ export default function Home() {
       <section className="section section-blue home-spotlight">
         <div className="container">
           <div className="home-spotlight-grid">
-            <ScrollReveal direction="left">
-              <div className="home-spotlight-content">
-                <div className="home-spotlight-image-wrap">
-                  <LazyBackground src="/images/products/interlocking-paving-1.webp" className="home-spotlight-image-bg" />
+            {[
+              {
+                image: '/images/products/interlocking-paving-1.webp',
+                label: 'Featured Product',
+                title: 'Paving blocks for strong, attractive surfaces',
+                text: 'Bessblock paving blocks are built for performance in pathways, driveways, parking areas, courtyards, and public spaces. With multiple thickness options, colour choices, and pattern possibilities, they offer a practical and visually appealing surface solution.',
+                button: 'View Paving Range',
+                link: '/products/paving-blocks',
+              },
+              {
+                image: '/images/products/retaining-wall-1.webp',
+                label: 'Featured Product',
+                title: 'Retaining wall systems for real site challenges',
+                text: 'Our retaining wall range includes modular solutions for soil retention, slope stabilisation, terracing, landscaping, and engineered applications. Terraforce-compatible products bring the benefit of dry-stack construction, curved layouts, drainage-friendly design, and the flexibility to support both gravity and reinforced wall systems.',
+                button: 'View Retaining Range',
+                link: '/products/walling/retaining-walls',
+              },
+            ].map((item, i) => (
+              <motion.div
+                key={item.title}
+                className="home-spotlight-card"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-60px' }}
+                transition={{ duration: 0.6, delay: i * 0.15, ease: [0.25, 0.1, 0.25, 1] }}
+              >
+                <div className="home-spotlight-card-image-wrap">
+                  <LazyBackground src={item.image} className="home-spotlight-card-image-bg" />
+                  <div className="home-spotlight-card-image-overlay" />
                 </div>
-                <div className="home-spotlight-text">
-                  <SectionTitle
-                    label="Featured Product"
-                    title="Paving blocks for strong, attractive surfaces"
-                    light
-                    align="left"
-                  />
-                  <p className="home-spotlight-text-desc">
-                    Bessblock paving blocks are built for performance in pathways, driveways, parking areas, courtyards, and public spaces. With multiple thickness options, colour choices, and pattern possibilities, they offer a practical and visually appealing surface solution.
-                  </p>
-                  <AnimatedButton to="/products/paving-blocks" variant="yellow">View Paving Range</AnimatedButton>
-                </div>
-              </div>
-            </ScrollReveal>
-            <ScrollReveal direction="right" delay={0.1}>
-              <div className="home-spotlight-content">
-                <div className="home-spotlight-image-wrap">
-                  <LazyBackground src="/images/products/retaining-wall-1.webp" className="home-spotlight-image-bg" />
-                </div>
-                <div className="home-spotlight-text">
-                  <SectionTitle
-                    label="Featured Product"
-                    title="Retaining wall systems for real site challenges"
-                    light
-                    align="left"
-                  />
-                  <p className="home-spotlight-text-desc">
-                    Our retaining wall range includes modular solutions for soil retention, slope stabilisation, terracing, landscaping, and engineered applications. Terraforce-compatible products bring the benefit of dry-stack construction, curved layouts, drainage-friendly design, and the flexibility to support both gravity and reinforced wall systems.
-                  </p>
-                  <AnimatedButton to="/products/walling/retaining-walls" variant="yellow">View Retaining Range</AnimatedButton>
-                </div>
-              </div>
-            </ScrollReveal>
+                <motion.div
+                  className="home-spotlight-card-body"
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  variants={{
+                    hidden: {},
+                    visible: { transition: { staggerChildren: 0.1, delayChildren: 0.15 } },
+                  }}
+                >
+                  <motion.span
+                    className="section-title-label section-title-label-light"
+                    variants={{
+                      hidden: { opacity: 0, y: 10 },
+                      visible: { opacity: 1, y: 0, transition: { duration: 0.4 } },
+                    }}
+                  >
+                    {item.label}
+                  </motion.span>
+                  <motion.h3
+                    className="section-title-heading section-title-heading-light"
+                    variants={{
+                      hidden: { opacity: 0, y: 10 },
+                      visible: { opacity: 1, y: 0, transition: { duration: 0.4 } },
+                    }}
+                  >
+                    {item.title}
+                  </motion.h3>
+                  <motion.p
+                    className="home-spotlight-card-text"
+                    variants={{
+                      hidden: { opacity: 0, y: 10 },
+                      visible: { opacity: 1, y: 0, transition: { duration: 0.4 } },
+                    }}
+                  >
+                    {item.text}
+                  </motion.p>
+                  <motion.div
+                    className="home-spotlight-card-actions"
+                    variants={{
+                      hidden: { opacity: 0, y: 10 },
+                      visible: { opacity: 1, y: 0, transition: { duration: 0.4 } },
+                    }}
+                  >
+                    <AnimatedButton to={item.link} variant="yellow">{item.button}</AnimatedButton>
+                  </motion.div>
+                </motion.div>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
