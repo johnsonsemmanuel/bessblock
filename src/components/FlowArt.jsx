@@ -5,6 +5,7 @@ import { cn } from '../lib/utils';
 export function FlowPanel({ children, className, style, ...props }) {
   const panelRef = useRef(null);
   const [reducedMotion, setReducedMotion] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
@@ -14,14 +15,22 @@ export function FlowPanel({ children, className, style, ...props }) {
     return () => mq.removeEventListener('change', update);
   }, []);
 
+  useEffect(() => {
+    const onResize = () => setIsMobile(window.innerWidth < 768);
+    onResize();
+    window.addEventListener('resize', onResize);
+    return () => window.removeEventListener('resize', onResize);
+  }, []);
+
   const { scrollYProgress } = useScroll({
     target: panelRef,
     offset: ['start end', 'start start'],
   });
 
-  const rotate = useTransform(scrollYProgress, [0, 1], reducedMotion ? [0, 0] : [30, 0]);
-  const scale = useTransform(scrollYProgress, [0, 1], reducedMotion ? [1, 1] : [0.95, 1]);
-  const opacity = useTransform(scrollYProgress, [0, 0.3, 1], reducedMotion ? [1, 1, 1] : [0.6, 1, 1]);
+  const noMotion = reducedMotion || isMobile;
+  const rotate = useTransform(scrollYProgress, [0, 1], noMotion ? [0, 0] : [30, 0]);
+  const scale = useTransform(scrollYProgress, [0, 1], noMotion ? [1, 1] : [0.95, 1]);
+  const opacity = useTransform(scrollYProgress, [0, 0.3, 1], noMotion ? [1, 1, 1] : [0.6, 1, 1]);
 
   return (
     <motion.div
