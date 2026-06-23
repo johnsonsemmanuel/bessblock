@@ -203,7 +203,7 @@ export default function Navbar() {
 
                 <NavigationMenuItem>
                   <NavigationMenuTrigger>Products</NavigationMenuTrigger>
-                  <NavigationMenuContent className="nm-content-products">
+                  <NavigationMenuContent>
                     <ProductsContent />
                   </NavigationMenuContent>
                 </NavigationMenuItem>

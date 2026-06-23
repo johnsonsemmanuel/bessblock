@@ -400,31 +400,27 @@
   }
 
   .nm-viewport {
-    width: 100%;
-    height: auto;
+    width: 100% !important;
+    height: auto !important;
     background: transparent;
     box-shadow: none;
     border: none;
     border-radius: 0;
     overflow: visible;
-    transform: none;
-    animation: none;
+    transform: none !important;
+    animation: none !important;
   }
 
   .nm-content[data-state='open'] {
-    position: static;
+    position: static !important;
     animation: none !important;
     margin: var(--spacing-2) 0;
     padding: var(--spacing-3);
     border-radius: 12px;
     background: var(--bg-section);
-    max-height: 40vh;
+    max-height: 60vh;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
-  }
-
-  .nm-content-products[data-state='open'] {
-    max-height: 55vh;
   }
 
   .nm-indicator {
