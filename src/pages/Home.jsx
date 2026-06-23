@@ -10,7 +10,7 @@ import ScrollReveal from '../components/ScrollReveal';
 import { ProgressiveBlur } from '../components/ProgressiveBlur';
 import TestimonialsSection from '../components/TestimonialsSection';
 import CTAWithVerticalMarquee from '../components/CTAWithVerticalMarquee';
-import testimonials, { trustedCompanies } from '../data/testimonials';
+import testimonials from '../data/testimonials';
 import './Home.css';
 
 const heroSlides = [
@@ -361,8 +361,6 @@ export default function Home() {
       <TestimonialsSection
         subtitle="See what our clients say about working with Bessblock"
         testimonials={testimonials}
-        trustedCompanies={trustedCompanies}
-        trustedCompaniesTitle="Trusted by government agencies and institutions"
       />
 
       <CTAWithVerticalMarquee />
