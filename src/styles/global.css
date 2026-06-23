@@ -228,27 +228,31 @@ input, select, textarea {
   pointer-events: none;
 }
 
-/* Bottom edge — gradient fade + block pattern that blends hero into the next section */
-.page-hero-bottom-edge {
+/* Block-patterned edge that adds vibe between hero and content */
+.page-hero-bottom-fade {
   position: absolute;
-  bottom: -80px;
+  bottom: -1px;
   left: 0;
   right: 0;
-  height: 200px;
+  height: 240px;
+  background: linear-gradient(180deg, transparent 0%, var(--hero-overlay-solid) 100%);
   z-index: 0;
   pointer-events: none;
-  background: linear-gradient(180deg, transparent 0%, var(--hero-overlay-solid) 70%, var(--hero-overlay-solid) 100%);
 }
 
-.page-hero-bottom-edge::after {
-  content: '';
+.page-hero-block-edge {
   position: absolute;
-  inset: 0;
+  bottom: -40px;
+  left: 0;
+  right: 0;
+  height: 100px;
+  z-index: 1;
+  pointer-events: none;
   background: var(--pattern-block);
   background-size: 60px 30px;
-  -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 25%, #000 60%, transparent 85%);
-  mask-image: linear-gradient(180deg, transparent 0%, #000 25%, #000 60%, transparent 85%);
-  opacity: 0.3;
+  -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 30%, #000 70%, transparent 100%);
+  mask-image: linear-gradient(180deg, transparent 0%, #000 30%, #000 70%, transparent 100%);
+  opacity: 0.35;
 }
 
 .page-hero-cta {

@@ -31,7 +31,8 @@ export default function PageHero({ title, description, children, bgImage }) {
     <header className="page-hero">
       {bgImage && <div className="page-hero-bg" style={bgStyle} />}
       {bgImage && <div className="page-hero-overlay" />}
-      <div className="page-hero-bottom-edge" />
+      <div className="page-hero-bottom-fade" />
+      <div className="page-hero-block-edge" />
       <div className="container" style={{ position: 'relative', zIndex: 1 }}>
         <motion.div
           initial={{ opacity: 0, y: 24 }}
