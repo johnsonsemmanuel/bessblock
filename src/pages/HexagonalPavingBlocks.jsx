@@ -1,13 +1,16 @@
-import { Link } from 'react-router-dom';
-import { ArrowRight, Hexagon, Lock, Layers, Shield, Wrench } from 'lucide-react';
+import { Hexagon, Lock, Layers, Shield, Wrench } from 'lucide-react';
 import SEO from '../components/SEO';
 import PageHero from '../components/PageHero';
 import SectionTitle from '../components/SectionTitle';
 import ScrollReveal from '../components/ScrollReveal';
 import SpecSheet from '../components/SpecSheet';
 import SiteCTA from '../components/SiteCTA';
+import GalleryLightbox from '../components/GalleryLightbox';
+import { ProductHighlightCard } from '../components/ProductHighlightCard';
+import { PavingIcon, WallingIcon, KerbIcon } from '../components/CategoryIcons';
 import './About.css';
 import './HexagonalPavingBlocks.css';
+import '../components/ProductTemplate.css';
 
 const benefits = [
   { icon: '⬡', title: 'Attractive design', desc: 'Distinctive geometric appearance' },
@@ -31,11 +34,46 @@ const applications = [
   'Entrance walkways', 'Landscaping projects', 'External circulation spaces',
 ];
 
+const galleryImages = [
+  '/images/products/hexagonal-paving-blocks-4.webp',
+  '/images/products/hexagonal-paving-blocks-1.webp',
+  '/images/products/hexagonal-paving-blocks-2.webp',
+  '/images/products/hexagonal-paving-blocks-3.webp',
+];
+
 const related = [
-  { name: 'Rectangular Paving Block', path: '/products/paving-blocks/rectangular' },
-  { name: 'Interlocking Paving Blocks', path: '/products/paving-blocks/interlocking' },
-  { name: 'Walling', path: '/products/walling' },
-  { name: 'Kerbs & Edging', path: '/products/kerbs-edging' },
+  {
+    name: 'Rectangular Paving Blocks',
+    path: '/products/paving-blocks/rectangular',
+    image: '/images/products/rectangular-paving-1.webp',
+    category: 'Paving Blocks',
+    icon: PavingIcon,
+    desc: 'Clean, strong rectangular paving for pedestrian and commercial use.',
+  },
+  {
+    name: 'Interlocking Paving Blocks',
+    path: '/products/paving-blocks/interlocking',
+    image: '/images/products/interlocking-paving-1.webp',
+    category: 'Paving Blocks',
+    icon: PavingIcon,
+    desc: 'Precision-engineered interlocking units for stable pavement surfaces.',
+  },
+  {
+    name: 'Walling',
+    path: '/products/walling',
+    image: '/images/categories/walling.webp',
+    category: 'Walling',
+    icon: WallingIcon,
+    desc: 'Hollow, solid, and ceiling blocks for construction.',
+  },
+  {
+    name: 'Kerbs & Edging',
+    path: '/products/kerbs-edging',
+    image: '/images/categories/kerbs-edging.webp',
+    category: 'Kerbs & Edging',
+    icon: KerbIcon,
+    desc: 'Precast concrete kerbs, edgings, and channels.',
+  },
 ];
 
 export default function HexagonalPavingBlocks() {
@@ -126,7 +164,6 @@ export default function HexagonalPavingBlocks() {
             {applications.map((app, i) => (
               <ScrollReveal key={i} delay={i * 0.04}>
                 <li className="hex-app-item">
-                  <ArrowRight size={14} className="hex-app-dot" />
                   <span>{app}</span>
                 </li>
               </ScrollReveal>
@@ -139,22 +176,7 @@ export default function HexagonalPavingBlocks() {
       <section className="section section-light">
         <div className="container">
           <SectionTitle label="Project Gallery" title="Hexagonal in the real world" align="left" />
-          <div className="hex-gallery">
-            {[
-              '/images/products/hexagonal-paving-blocks-4.webp',
-              '/images/products/hexagonal-paving-blocks-1.webp',
-              '/images/products/hexagonal-paving-blocks-2.webp',
-              '/images/products/hexagonal-paving-blocks-3.webp',
-              '/images/products/hexagonal-paving-blocks-4.webp',
-              '/images/products/hexagonal-paving-blocks-1.webp',
-            ].map((img, i) => (
-              <ScrollReveal key={i} delay={i * 0.04}>
-                <div className="hex-gallery-item"
-                  style={{ backgroundImage: `url(${img})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
-                />
-              </ScrollReveal>
-            ))}
-          </div>
+          <GalleryLightbox images={galleryImages} />
         </div>
       </section>
 
@@ -162,12 +184,19 @@ export default function HexagonalPavingBlocks() {
       <section className="section">
         <div className="container">
           <SectionTitle label="Related Products" title="Explore more" align="left" />
-          <div className="product-related-links">
-            {related.map(r => (
-              <Link key={r.name} to={r.path} className="product-related-link">
-                <span>{r.name}</span>
-                <ArrowRight size={16} className="product-related-arrow" />
-              </Link>
+          <div className="related-grid">
+            {related.map((r, i) => (
+              <ScrollReveal key={r.name} delay={i * 0.06}>
+                <ProductHighlightCard
+                  categoryIcon={r.icon}
+                  category={r.category}
+                  title={r.name}
+                  description={r.desc}
+                  to={r.path}
+                  imageSrc={r.image}
+                  imageAlt={r.name}
+                />
+              </ScrollReveal>
             ))}
           </div>
         </div>

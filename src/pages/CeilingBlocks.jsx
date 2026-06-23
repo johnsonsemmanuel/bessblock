@@ -1,12 +1,15 @@
-import { Link } from 'react-router-dom';
-import { ArrowRight, CheckCircle2 } from 'lucide-react';
+import { CheckCircle2 } from 'lucide-react';
 import SEO from '../components/SEO';
 import PageHero from '../components/PageHero';
 import SectionTitle from '../components/SectionTitle';
 import ScrollReveal from '../components/ScrollReveal';
 import SiteCTA from '../components/SiteCTA';
 import SpecSheet from '../components/SpecSheet';
+import GalleryLightbox from '../components/GalleryLightbox';
+import { ProductHighlightCard } from '../components/ProductHighlightCard';
+import { WallingIcon, SlabIcon } from '../components/CategoryIcons';
 import './Walling.css';
+import '../components/ProductTemplate.css';
 
 const specs = [
   { label: 'Dimensions', value: '400mm x 190mm x 150mm.' },
@@ -39,11 +42,46 @@ const installation = [
   'Follow the structural design and installation sequence precisely.',
 ];
 
+const galleryImages = [
+  '/images/products/ceiling-blocks-2.webp',
+  '/images/products/ceiling-blocks-3.webp',
+  '/images/products/ceiling-blocks-rib.webp',
+  '/images/products/ceiling-blocks-1.webp',
+];
+
 const related = [
-  { name: 'Hollow Concrete Blocks', path: '/products/walling/hollow-concrete-blocks' },
-  { name: 'Solid Concrete Blocks', path: '/products/walling/solid-concrete-blocks' },
-  { name: 'Retaining Walls', path: '/products/walling/retaining-walls' },
-  { name: 'Paving Slabs', path: '/products/paving-slabs' },
+  {
+    name: 'Hollow Concrete Blocks',
+    path: '/products/walling/hollow-concrete-blocks',
+    image: '/images/products/hollow-blocks-1.webp',
+    category: 'Walling',
+    icon: WallingIcon,
+    desc: 'Lightweight, strong walling units for general construction.',
+  },
+  {
+    name: 'Solid Concrete Blocks',
+    path: '/products/walling/solid-concrete-blocks',
+    image: '/images/products/solid-blocks-1.webp',
+    category: 'Walling',
+    icon: WallingIcon,
+    desc: 'Dense solid blocks for foundations and load-bearing walls.',
+  },
+  {
+    name: 'Retaining Walls',
+    path: '/products/walling/retaining-walls',
+    image: '/images/products/retaining-wall-1.webp',
+    category: 'Walling',
+    icon: WallingIcon,
+    desc: 'Terraforce® interlocking retaining wall system.',
+  },
+  {
+    name: 'Paving Slabs',
+    path: '/products/paving-slabs',
+    image: '/images/categories/paving-slabs.webp',
+    category: 'Paving Slabs',
+    icon: SlabIcon,
+    desc: 'Concrete slabs for pedestrian areas, patios, and public spaces.',
+  },
 ];
 
 export default function CeilingBlocks() {
@@ -130,20 +168,7 @@ export default function CeilingBlocks() {
       <section className="section section-light">
         <div className="container">
           <SectionTitle label="Project Gallery" title="Ceiling blocks in construction" align="left" />
-          <div className="wall-sub-gallery">
-            {[
-              '/images/products/ceiling-blocks-2.webp',
-              '/images/products/ceiling-blocks-3.webp',
-              '/images/products/ceiling-blocks-rib.webp',
-              '/images/products/ceiling-blocks-1.webp',
-            ].map((img, i) => (
-              <ScrollReveal key={i} delay={i * 0.05}>
-                <div className="wall-sub-gallery-item"
-                  style={{ backgroundImage: `url(${img})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
-                />
-              </ScrollReveal>
-            ))}
-          </div>
+          <GalleryLightbox images={galleryImages} />
         </div>
       </section>
 
@@ -151,12 +176,19 @@ export default function CeilingBlocks() {
       <section className="section">
         <div className="container">
           <SectionTitle label="Related Products" title="Explore more" align="left" />
-          <div className="wall-sub-related">
-            {related.map(r => (
-              <Link key={r.name} to={r.path} className="product-related-link">
-                <span>{r.name}</span>
-                <ArrowRight size={16} className="product-related-arrow" />
-              </Link>
+          <div className="related-grid">
+            {related.map((r, i) => (
+              <ScrollReveal key={r.name} delay={i * 0.06}>
+                <ProductHighlightCard
+                  categoryIcon={r.icon}
+                  category={r.category}
+                  title={r.name}
+                  description={r.desc}
+                  to={r.path}
+                  imageSrc={r.image}
+                  imageAlt={r.name}
+                />
+              </ScrollReveal>
             ))}
           </div>
         </div>

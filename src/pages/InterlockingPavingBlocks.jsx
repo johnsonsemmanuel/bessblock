@@ -1,14 +1,17 @@
-import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowRight, Plus, Lock, Grid3x3, Layers, Wrench, Clock, Info, Award, Shield, CheckCircle2 } from 'lucide-react';
+import { Plus, Lock, Grid3x3, Layers, Wrench, Clock, Info, Award, Shield, CheckCircle2 } from 'lucide-react';
 import SEO from '../components/SEO';
 import PageHero from '../components/PageHero';
 import SectionTitle from '../components/SectionTitle';
 import ScrollReveal from '../components/ScrollReveal';
 import SiteCTA from '../components/SiteCTA';
 import SpecSheet from '../components/SpecSheet';
+import GalleryLightbox from '../components/GalleryLightbox';
+import { ProductHighlightCard } from '../components/ProductHighlightCard';
+import { PavingIcon } from '../components/CategoryIcons';
 import './RectangularPavingBlocks.css';
 import './InterlockingPavingBlocks.css';
+import '../components/ProductTemplate.css';
 
 const galImages = [
   '/images/products/interlocking-paving-1.webp',
@@ -70,8 +73,22 @@ const applications = [
 ];
 
 const related = [
-  { name: 'Rectangular Paving Blocks', path: '/products/paving-blocks/rectangular' },
-  { name: 'Hexagonal Paving Block', path: '/products/paving-blocks/hexagonal' },
+  {
+    name: 'Rectangular Paving Blocks',
+    path: '/products/paving-blocks/rectangular',
+    image: '/images/products/rectangular-paving-1.webp',
+    category: 'Paving Blocks',
+    icon: PavingIcon,
+    desc: 'Clean, strong rectangular paving for pedestrian and commercial use.',
+  },
+  {
+    name: 'Hexagonal Paving Blocks',
+    path: '/products/paving-blocks/hexagonal',
+    image: '/images/products/hexagonal-paving-blocks-1.webp',
+    category: 'Paving Blocks',
+    icon: PavingIcon,
+    desc: 'Six-sided interlocking blocks for superior load distribution.',
+  },
 ];
 
 export default function InterlockingPavingBlocks() {
@@ -173,13 +190,7 @@ export default function InterlockingPavingBlocks() {
       <section className="section section-light">
         <div className="container">
           <SectionTitle label="Project Gallery" title="See interlocking in action" align="left" />
-          <div className="inter-gallery-grid">
-            {galImages.map((img, i) => (
-              <div key={i} className="inter-gallery-cell"
-                style={{ backgroundImage: `url(${img})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
-              />
-            ))}
-          </div>
+          <GalleryLightbox images={galImages} />
         </div>
       </section>
 
@@ -187,12 +198,19 @@ export default function InterlockingPavingBlocks() {
       <section className="section">
         <div className="container">
           <SectionTitle label="Related Products" title="Explore more paving solutions" align="left" />
-          <div className="product-related-links">
-            {related.map(r => (
-              <Link key={r.name} to={r.path} className="product-related-link">
-                <span>{r.name}</span>
-                <ArrowRight size={16} className="product-related-arrow" />
-              </Link>
+          <div className="related-grid">
+            {related.map((r, i) => (
+              <ScrollReveal key={r.name} delay={i * 0.06}>
+                <ProductHighlightCard
+                  categoryIcon={r.icon}
+                  category={r.category}
+                  title={r.name}
+                  description={r.desc}
+                  to={r.path}
+                  imageSrc={r.image}
+                  imageAlt={r.name}
+                />
+              </ScrollReveal>
             ))}
           </div>
         </div>

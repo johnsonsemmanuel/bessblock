@@ -6,7 +6,11 @@ import SectionTitle from '../components/SectionTitle';
 import ScrollReveal from '../components/ScrollReveal';
 import SiteCTA from '../components/SiteCTA';
 import SpecSheet from '../components/SpecSheet';
+import GalleryLightbox from '../components/GalleryLightbox';
+import { ProductHighlightCard } from '../components/ProductHighlightCard';
+import { WallingIcon, KerbIcon } from '../components/CategoryIcons';
 import './Walling.css';
+import '../components/ProductTemplate.css';
 
 const specs = [
   { label: 'Sizes', value: '4", 5", 6", and 8" blocks.' },
@@ -41,11 +45,46 @@ const installation = [
   'Walling should be built in accordance with the engineer\'s specification and relevant site standards.',
 ];
 
+const galleryImages = [
+  '/images/products/hollow-blocks-2.webp',
+  '/images/products/hollow-blocks-3.webp',
+  '/images/products/hollow-blocks-4.webp',
+  '/images/products/hollow-blocks-1.webp',
+];
+
 const related = [
-  { name: 'Solid Concrete Blocks', path: '/products/walling/solid-concrete-blocks' },
-  { name: 'Ceiling Blocks', path: '/products/walling/ceiling-blocks' },
-  { name: 'Kerbs & Edging', path: '/products/kerbs-edging' },
-  { name: 'Retaining Walls', path: '/products/walling/retaining-walls' },
+  {
+    name: 'Solid Concrete Blocks',
+    path: '/products/walling/solid-concrete-blocks',
+    image: '/images/products/solid-blocks-1.webp',
+    category: 'Walling',
+    icon: WallingIcon,
+    desc: 'Dense solid blocks for foundations and load-bearing walls.',
+  },
+  {
+    name: 'Ceiling Blocks',
+    path: '/products/walling/ceiling-blocks',
+    image: '/images/products/ceiling-blocks-1.webp',
+    category: 'Walling',
+    icon: WallingIcon,
+    desc: 'Non-structural infill units for rib-and-block slab systems.',
+  },
+  {
+    name: 'Retaining Walls',
+    path: '/products/walling/retaining-walls',
+    image: '/images/products/retaining-wall-1.webp',
+    category: 'Walling',
+    icon: WallingIcon,
+    desc: 'Terraforce® interlocking retaining wall system.',
+  },
+  {
+    name: 'Kerbs & Edging',
+    path: '/products/kerbs-edging',
+    image: '/images/categories/kerbs-edging.webp',
+    category: 'Kerbs & Edging',
+    icon: KerbIcon,
+    desc: 'Precast concrete kerbs, edgings, and channels.',
+  },
 ];
 
 export default function HollowConcreteBlocks() {
@@ -132,18 +171,7 @@ export default function HollowConcreteBlocks() {
       <section className="section section-light">
         <div className="container">
           <SectionTitle label="Project Gallery" title="Hollow blocks in action" align="left" />
-          <div className="wall-sub-gallery">
-            {[
-              '/images/products/hollow-blocks-2.webp',
-              '/images/products/hollow-blocks-3.webp',
-              '/images/products/hollow-blocks-4.webp',
-              '/images/products/hollow-blocks-1.webp',
-            ].map((img, i) => (
-              <div key={i} className="wall-sub-gallery-item"
-                style={{ backgroundImage: `url(${img})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
-              />
-            ))}
-          </div>
+          <GalleryLightbox images={galleryImages} />
         </div>
       </section>
 
@@ -151,12 +179,19 @@ export default function HollowConcreteBlocks() {
       <section className="section">
         <div className="container">
           <SectionTitle label="Related Products" title="Explore more walling solutions" align="left" />
-          <div className="wall-sub-related">
-            {related.map(r => (
-              <Link key={r.name} to={r.path} className="product-related-link">
-                <span>{r.name}</span>
-                <ArrowRight size={16} className="product-related-arrow" />
-              </Link>
+          <div className="related-grid">
+            {related.map((r, i) => (
+              <ScrollReveal key={r.name} delay={i * 0.06}>
+                <ProductHighlightCard
+                  categoryIcon={r.icon}
+                  category={r.category}
+                  title={r.name}
+                  description={r.desc}
+                  to={r.path}
+                  imageSrc={r.image}
+                  imageAlt={r.name}
+                />
+              </ScrollReveal>
             ))}
           </div>
         </div>
