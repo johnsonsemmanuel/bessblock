@@ -15,7 +15,7 @@ export default function PavingBlocks() {
       <PageHero title="Paving Blocks" description={cat.description} bgImage="/images/hero/concrete-texture-1.webp" />
       <section className="section">
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 'var(--spacing-6)' }}>
+          <div className="subcategory-grid">
               {[
                 { ...cat.subcategories[0], image: '/images/products/interlocking-paving-1.webp' },
                 { ...cat.subcategories[1], image: '/images/products/rectangular-paving-1.webp' },

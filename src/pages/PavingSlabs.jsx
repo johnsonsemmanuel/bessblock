@@ -13,7 +13,7 @@ export default function PavingSlabs() {
       <PageHero title="Paving Slabs" description={cat.description} bgImage="/images/hero/concrete-texture-1.webp" />
       <section className="section">
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 'var(--spacing-6)' }}>
+          <div className="subcategory-grid">
               {[
                 { ...cat.subcategories[0], image: '/images/products/rectangular-paving-2.webp' },
                 { ...cat.subcategories[1], image: '/images/products/rectangular-paving-3.webp' },

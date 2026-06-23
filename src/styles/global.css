@@ -390,3 +390,23 @@ input, select, textarea {
   color: var(--hero-text);
   font-weight: var(--font-weight-medium);
 }
+
+/* ─── Shared product subcategory grid ─── */
+
+.subcategory-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-6);
+}
+
+@media (max-width: 1024px) {
+  .subcategory-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .subcategory-grid {
+    grid-template-columns: 1fr;
+  }
+}

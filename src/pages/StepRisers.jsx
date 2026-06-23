@@ -13,7 +13,7 @@ export default function StepRisers() {
       <PageHero title="Step Risers" description={cat.description} bgImage="/images/hero/concrete-texture-2.webp" />
       <section className="section">
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 'var(--spacing-6)' }}>
+          <div className="subcategory-grid">
               {[
                 { ...cat.subcategories[0], image: '/images/products/rectangular-paving-1.webp' },
                 { ...cat.subcategories[1], image: '/images/products/rectangular-paving-2.webp' },
