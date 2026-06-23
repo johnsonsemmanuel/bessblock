@@ -5,7 +5,7 @@ import SEO from '../components/SEO';
 import SectionTitle from '../components/SectionTitle';
 import AnimatedButton from '../components/AnimatedButton';
 import LazyBackground from '../components/LazyBackground';
-import { ArrowRight, CheckCircle, ChevronDown, Circle } from 'lucide-react';
+import { ArrowRight, CheckCircle, ChevronDown, ShieldCheck, Truck, HeadsetIcon, LayoutGrid } from 'lucide-react';
 import ScrollReveal from '../components/ScrollReveal';
 import { ProgressiveBlur } from '../components/ProgressiveBlur';
 import CTAWithVerticalMarquee from '../components/CTAWithVerticalMarquee';
@@ -29,10 +29,10 @@ const fadeUp = {
 };
 
 const trustItems = [
-  'Durable concrete products manufactured for long-term performance.',
-  'Reliable supply for projects of different sizes and requirements.',
-  'Technical support for contractors, engineers, and project teams.',
-  'Product options for domestic, commercial, and civil applications.',
+  { text: 'Durable concrete products manufactured for long-term performance.', icon: ShieldCheck },
+  { text: 'Reliable supply for projects of different sizes and requirements.', icon: Truck },
+  { text: 'Technical support for contractors, engineers, and project teams.', icon: HeadsetIcon },
+  { text: 'Product options for domestic, commercial, and civil applications.', icon: LayoutGrid },
 ];
 
 const whyItems = [
@@ -171,10 +171,13 @@ export default function Home() {
             whileInView="visible"
             viewport={{ once: true, margin: '-40px' }}
           >
-            {trustItems.map((item, i) => (
-              <motion.div key={i} className="home-trust-item" variants={fadeUp}>
-                <Circle size={10} className="home-trust-dot" />
-                <p className="home-trust-text">{item}</p>
+            {trustItems.map(({ text, icon: TrustIcon }, i) => (
+              <motion.div key={i} className="home-trust-card" variants={fadeUp}>
+                <div className="home-trust-card-icon">
+                  <TrustIcon size={18} />
+                </div>
+                <p className="home-trust-card-text">{text}</p>
+                <div className="home-trust-card-bar" />
               </motion.div>
             ))}
           </motion.div>
