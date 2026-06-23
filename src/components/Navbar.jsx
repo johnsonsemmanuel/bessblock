@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import {
   NavigationMenu,
   NavigationMenuList,
@@ -109,7 +109,6 @@ export default function Navbar() {
   const hamburgerRef = useRef(null);
 
   const location = useLocation();
-  const navigate = useNavigate();
 
   const closeMobile = useCallback(() => {
     setMobileOpen(false);
@@ -203,9 +202,7 @@ export default function Navbar() {
                 </NavigationMenuItem>
 
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger onClick={() => navigate('/products')}>
-                    Products
-                  </NavigationMenuTrigger>
+                  <NavigationMenuTrigger>Products</NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <ProductsContent />
                   </NavigationMenuContent>
