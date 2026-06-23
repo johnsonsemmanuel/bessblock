@@ -1,9 +1,71 @@
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { motion, useMotionValue, useTransform } from 'framer-motion';
+import { useRef, useState } from 'react';
 import SEO from '../components/SEO';
 import PageHero from '../components/PageHero';
 import projects from '../data/projects';
 import './ProjectsGallery.css';
+
+function ProjectRevealCard({ project, i }) {
+  const [hovered, setHovered] = useState(false);
+  const cardRef = useRef(null);
+  // useMotionValue to track hover state progress
+
+  const highlights = project.scope.split(', ');
+
+  return (
+    <motion.div
+      ref={cardRef}
+      className="project-card"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: '-40px' }}
+      transition={{ duration: 0.4, delay: i * 0.08 }}
+      onHoverStart={() => setHovered(true)}
+      onHoverEnd={() => setHovered(false)}
+      onFocus={() => setHovered(true)}
+      onBlur={() => setHovered(false)}
+      tabIndex={0}
+    >
+      {/* Base – always visible */}
+      <div className="project-card-base">
+        <div className="project-card-bg" style={{ backgroundImage: `url(${project.image})` }} />
+        <div className="project-card-base-fade" />
+        <div className="project-card-base-content">
+          <p className="project-card-client-label">{project.client}</p>
+          <h3 className="project-card-base-title">{project.title}</h3>
+        </div>
+      </div>
+
+      {/* Overlay – revealed on hover via clip-path */}
+      <motion.div
+        className="project-card-overlay"
+        initial={false}
+        animate={{
+          clipPath: hovered
+            ? 'circle(150% at 50% 50%)'
+            : 'circle(0% at 50% 50%)',
+        }}
+        transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+      >
+        <div className="project-card-overlay-body">
+          <p className="project-card-overlay-client">{project.client}</p>
+          <h3 className="project-card-overlay-title">{project.title}</h3>
+          <p className="project-card-overlay-desc">{project.scope}</p>
+
+          <ul className="project-card-overlay-list">
+            {highlights.map((item, idx) => (
+              <li key={idx}>
+                <span className="project-card-overlay-dot" />
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </motion.div>
+    </motion.div>
+  );
+}
 
 export default function ProjectsGallery() {
   return (
@@ -15,40 +77,9 @@ export default function ProjectsGallery() {
       <section className="section">
         <div className="container">
           <div className="projects-grid">
-            {projects.map((project, i) => {
-              const highlights = project.scope.split(', ');
-
-              return (
-                <motion.div
-                  key={i}
-                  className="project-card"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: '-40px' }}
-                  transition={{ duration: 0.4, delay: i * 0.08 }}
-                >
-                  <div className="project-card-image-wrap">
-                    <div className="project-card-image" style={{ backgroundImage: `url(${project.image})` }} />
-                    <div className="project-card-image-fade" />
-                  </div>
-
-                  <div className="project-card-content">
-                    <p className="project-card-client">{project.client}</p>
-                    <h3 className="project-card-title">{project.title}</h3>
-                    <p className="project-card-desc">{project.scope}</p>
-
-                    <ul className="project-card-highlights">
-                      {highlights.map((item, idx) => (
-                        <li key={idx}>
-                          <span className="project-card-dot" />
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </motion.div>
-              );
-            })}
+            {projects.map((project, i) => (
+              <ProjectRevealCard key={i} project={project} i={i} />
+            ))}
           </div>
         </div>
       </section>

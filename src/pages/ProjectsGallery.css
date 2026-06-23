@@ -10,77 +10,103 @@
   border-radius: 24px;
   background: var(--bg-card);
   border: 1px solid var(--border);
+  outline: none;
 }
 
-/* ─── Image section ─── */
+/* ─── Base layer ─── */
 
-.project-card-image-wrap {
+.project-card-base {
   position: relative;
-  height: 260px;
-  overflow: hidden;
+  height: 380px;
+  display: flex;
+  align-items: flex-end;
 }
 
-.project-card-image {
+.project-card-bg {
   position: absolute;
-  inset: -10px;
+  inset: 0;
   background-size: cover;
   background-position: center;
   will-change: transform;
   transition: transform 0.45s ease;
 }
 
-.project-card:hover .project-card-image {
-  transform: scale(1.1);
+.project-card:hover .project-card-bg {
+  transform: scale(1.08);
 }
 
-.project-card-image-fade {
+.project-card-base-fade {
   position: absolute;
-  bottom: 0;
-  height: 128px;
-  width: 100%;
-  background: linear-gradient(to top, rgb(var(--bg-card-rgb)), rgba(var(--bg-card-rgb), 0.75), transparent);
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgb(var(--bg-card-rgb)) 0%,
+    rgba(var(--bg-card-rgb), 0.6) 35%,
+    transparent 60%
+  );
 }
 
-/* ─── Content section ─── */
-
-.project-card-content {
+.project-card-base-content {
   position: relative;
-  z-index: 10;
+  z-index: 2;
   padding: var(--spacing-6);
-  background: var(--bg-card);
-  color: var(--text);
+  width: 100%;
 }
 
-.project-card-client {
-  font-size: var(--text-sm);
+.project-card-client-label {
+  font-size: var(--text-xs);
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.06em;
   color: var(--text-secondary);
   margin-bottom: var(--spacing-1);
 }
 
-.project-card-title {
+.project-card-base-title {
+  font-size: var(--text-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--text);
+  margin: 0;
+}
+
+/* ─── Overlay layer ─── */
+
+.project-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgb(var(--bg-card-rgb));
+  display: flex;
+  align-items: center;
+}
+
+.project-card-overlay-body {
+  padding: var(--spacing-6);
+  width: 100%;
+}
+
+.project-card-overlay-client {
+  font-size: var(--text-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-bessblock-blue);
+  font-weight: var(--font-weight-medium);
+  margin-bottom: var(--spacing-1);
+}
+
+.project-card-overlay-title {
   font-size: var(--text-2xl);
   font-weight: var(--font-weight-bold);
   color: var(--text);
   margin-bottom: var(--spacing-3);
-  transition: color var(--transition-fast);
 }
 
-.project-card:hover .project-card-title {
-  color: var(--color-bessblock-blue);
-}
-
-.project-card-desc {
+.project-card-overlay-desc {
   font-size: var(--text-sm);
   line-height: 1.7;
   color: var(--text-secondary);
   margin-bottom: var(--spacing-4);
 }
 
-/* ─── Highlights ─── */
-
-.project-card-highlights {
+.project-card-overlay-list {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--spacing-2);
@@ -89,7 +115,7 @@
   margin: 0;
 }
 
-.project-card-highlights li {
+.project-card-overlay-list li {
   display: flex;
   align-items: center;
   gap: var(--spacing-2);
@@ -100,7 +126,7 @@
   padding: 4px 8px;
 }
 
-.project-card-dot {
+.project-card-overlay-dot {
   width: 6px;
   height: 6px;
   border-radius: 50%;
