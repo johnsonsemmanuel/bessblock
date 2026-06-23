@@ -14,8 +14,9 @@ import './Home.css';
 
 const heroSlides = [
   { image: '/images/hero/production-site-1.webp', label: 'Bessblock production facility and operations' },
-  { image: '/images/hero/production-site-2.webp', label: 'Concrete block manufacturing at Bessblock' },
+  { image: '/images/products/hexagonal-paving-blocks-1.webp', label: 'Hexagonal paving blocks for landscaping and high-traffic areas' },
   { image: '/images/hero/production-site-3.webp', label: 'Bessblock product showcase and site development' },
+  { image: '/images/products/hexagonal-paving-blocks-2.webp', label: 'Precision-engineered hexagonal concrete paving' },
   { image: '/images/hero/production-site-4.webp', label: 'Bessblock team at work in the factory' },
 ];
 
