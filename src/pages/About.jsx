@@ -20,7 +20,6 @@ const productAreas = [
   { icon: Layers, label: 'Paving Blocks', text: 'Interlocking, rectangular, and hexagonal units for roads, estates, and public spaces.' },
   { icon: Warehouse, label: 'Walling & Retaining Walls', text: 'Modular walling blocks and Terraforce-style retaining systems for landscaping and stabilisation.' },
   { icon: Ruler, label: 'Kerbs & Edging', text: 'Edge restraint, road separation, and drainage control for infrastructure projects.' },
-  { icon: Trees, label: 'Specialist Products', text: 'Paving slabs, step risers, and ceiling blocks for residential and institutional use.' },
 ];
 
 const whyItems = [
@@ -36,28 +35,28 @@ const flowPanels = [
     label: 'History',
     title: 'Our Group Story',
     bg: '/images/production/IMG_1873.webp',
-    text: 'Bessblock is part of the Regimanuel Gray Group, founded in 1991. What began as housing estate development grew into a diversified conglomerate spanning construction, concrete products, estate management, and infrastructure. Bessblock plays a key role in that ecosystem, supplying concrete products that support both internal projects and external customers.',
+    text: 'Bessblock is part of a wider family of businesses under the Regimanuel Gray Group, a company founded in 1991 with housing estate development as its core business. Over time, the business expanded into turnkey project execution and site development, including road construction, drainage, and utility infrastructure, while building a strong base of dedicated local and expatriate personnel. To support that growth, the Group established several subsidiaries — Bessblock being one of them. Bessblock plays a key role in that ecosystem by supplying concrete products that support both internal projects and external customers. This gives the company a practical understanding of what projects need on the ground: consistent materials, dependable supply, and products that perform in real site conditions.',
     align: 'left',
   },
   {
     label: 'Products',
     title: 'What We Do',
     bg: '/images/production/IMG_1803.webp',
-    text: 'Bessblock manufactures a focused range of concrete products for structural and landscape applications. Our product families include paving blocks, walling products, retaining walls, kerbs and edging, paving slabs, and step risers.',
+    text: 'Bessblock manufactures a focused range of concrete products designed for both structural and landscape applications. Our product families include paving blocks, walling products, retaining walls, and kerbs and edging, allowing us to serve a broad range of project types with one reliable supply partner. Our range is built for use in residential developments, commercial and institutional projects, roads and infrastructure, landscaping and public realm schemes, and retaining and soil-stabilisation works. For retaining walls in particular, Bessblock aligns with Terraforce-style systems — modular, interlocking, dry-stack concrete blocks for gravity and reinforced retaining wall construction, making our offer especially relevant to landscaping, embankment support, terracing, and slope stabilisation work.',
     align: 'right',
   },
   {
     label: 'Value',
     title: 'Why Bessblock',
     bg: '/images/production/IMG_1836.webp',
-    text: 'Bessblock is built around the idea that concrete products should do more than fill a specification sheet. Our customers choose us for consistent quality, dependable supply, and products suited to both functional and aesthetic applications.',
+    text: 'Bessblock is built around the idea that concrete products should do more than fill a specification sheet. They should help solve real problems on site, whether that means load-bearing performance, clean edge restraint, durable surface finishes, or engineered retaining solutions. Our customers choose Bessblock because we offer consistent quality, dependable supply, and products suited to both functional and aesthetic applications.',
     align: 'left',
   },
   {
     label: 'Mission',
     title: 'Our Philosophy',
     bg: '/images/production/IMG_0628.webp',
-    text: 'The RG Group philosophy is to invest in world-class, sustainable businesses from Ghana that serve generations. Bessblock reflects that through dependable manufacturing, practical product development, and a commitment to long-term value.',
+    text: 'The RG Group philosophy is to invest in and build world-class, sustainable businesses from Ghana that can serve generations. Bessblock reflects that philosophy through a commitment to dependable manufacturing, practical product development, and long-term value. We aim to supply products that are not only strong and functional, but also relevant to modern construction demands and future growth.',
     align: 'right',
   },
 ];
@@ -77,7 +76,10 @@ export default function About() {
       <div className="page">
       <PageHero title="About Bessblock" bgImage="/images/hero/concrete-texture-1.webp">
         <p className="page-hero-desc">
-          Bessblock Concrete Products Ltd is a specialist manufacturer of concrete products serving residential, commercial, and civil construction projects across Ghana. As part of the RG Group, we are focused on producing materials that contractors, developers, and engineers can rely on for performance, specification compliance, and ease of installation.
+          Bessblock Concrete Products Ltd (Bessblock) is a specialist manufacturer of concrete products serving the needs of residential, commercial, and civil construction projects. As part of the RG Group, Bessblock was established to help ensure the timely supply of high-quality materials that support project delivery, durability, and consistency across every stage of development.
+        </p>
+        <p className="page-hero-desc">
+          Bessblock exists to solve a practical construction challenge: when projects depend on dependable materials, quality and timing matter just as much as price. That is why our focus is on producing concrete products that contractors, developers, engineers, and project managers can rely on for performance, specification compliance, and ease of installation.
         </p>
       </PageHero>
 
@@ -180,9 +182,11 @@ export default function About() {
         title="Need support with your next project?"
         description="Explore our products, review technical information, or contact our team for a quotation and product guidance."
         primaryText="Explore Products"
-        primaryLink="/products/paving-blocks"
+        primaryLink="/products"
         secondaryText="Request a Quote"
         secondaryLink="/request-quote"
+        tertiaryText="Contact Bessblock"
+        tertiaryLink="/contact"
       />
     </div>
     </>

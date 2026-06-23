@@ -9,6 +9,8 @@ export default function SiteCTA({
   primaryLink = '/request-quote',
   secondaryText,
   secondaryLink,
+  tertiaryText,
+  tertiaryLink,
 }) {
   return (
     <section className="section section-blue">
@@ -31,6 +33,11 @@ export default function SiteCTA({
             {secondaryText && secondaryLink && (
               <AnimatedButton to={secondaryLink} variant="outline">
                 {secondaryText}
+              </AnimatedButton>
+            )}
+            {tertiaryText && tertiaryLink && (
+              <AnimatedButton to={tertiaryLink} variant="outline">
+                {tertiaryText}
               </AnimatedButton>
             )}
           </div>

@@ -18,7 +18,7 @@ const aboutCards = [
   {
     to: '/about',
     title: 'Who We Are',
-    desc: 'Learn about BCPL\'s heritage, mission, and position as East Africa\'s leading concrete block manufacturer.',
+    desc: 'Learn about Bessblock\'s heritage, mission, and position as a leading concrete block manufacturer in Ghana.',
   },
   {
     to: '/about/manufacturing',
@@ -28,7 +28,7 @@ const aboutCards = [
   {
     to: '/about/leadership',
     title: 'Leadership',
-    desc: 'Meet the experienced team driving BCPL\'s vision and operational excellence.',
+    desc: 'Meet the experienced team driving Bessblock\'s vision and operational excellence.',
   },
 ];
 
@@ -195,7 +195,7 @@ export default function Navbar() {
                 </NavigationMenuItem>
 
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger>About BCPL</NavigationMenuTrigger>
+                  <NavigationMenuTrigger>About Bessblock</NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <AboutContent />
                   </NavigationMenuContent>

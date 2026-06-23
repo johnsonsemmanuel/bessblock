@@ -48,7 +48,7 @@ const appItems = [
   { label: 'Domestic driveways and gardens.', link: '/products/paving-blocks', image: '/images/categories/paving-blocks.webp' },
   { label: 'Footpaths and pedestrian areas.', link: '/products/paving-blocks', image: '/images/products/interlocking-paving-3.jpg' },
   { label: 'Commercial forecourts and parking areas.', link: '/products/paving-blocks', image: '/images/products/rectangular-paving-3.jpg' },
-  { label: 'Landscaping and public realm schemes.', link: '/products/paving-slabs', image: '/images/categories/paving-slabs.webp' },
+  { label: 'Landscaping and public realm schemes.', link: '/products/paving-blocks', image: '/images/categories/paving-blocks.webp' },
   { label: 'Roads, estate developments, and edge restraint.', link: '/products/kerbs-edging', image: '/images/categories/kerbs-edging.webp' },
   { label: 'Retaining and terracing applications.', link: '/products/walling/retaining-walls', image: '/images/categories/walling.webp' },
 ];
@@ -56,10 +56,8 @@ const appItems = [
 const categoryLinks = [
   { name: 'Paving Blocks', path: '/products/paving-blocks', image: '/images/products/interlocking-paving-1.webp' },
   { name: 'Walling', path: '/products/walling', image: '/images/products/hollow-blocks-1.webp' },
-  { name: 'Paving Slabs', path: '/products/paving-slabs', image: '/images/products/rectangular-paving-2.webp' },
   { name: 'Retaining Walls', path: '/products/walling/retaining-walls', image: '/images/products/retaining-wall-1.webp' },
   { name: 'Kerbs & Edging', path: '/products/kerbs-edging', image: '/images/products/rectangular-paving-3.webp' },
-  { name: 'Step Risers', path: '/products/step-risers', image: '/images/products/rectangular-paving-4.webp' },
 ];
 
 export default function Home() {
@@ -129,7 +127,7 @@ export default function Home() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.25 }}
             >
-              High-quality concrete products for paving, walling, retaining, and drainage, trusted by contractors, developers, and specifiers across Ghana.
+              Bessblock manufactures high-quality concrete products for paving, walling, retaining, and edging that support residential, commercial, and infrastructure projects. From everyday practical solutions to engineered retaining wall systems, we help contractors, developers, and specifiers build with confidence.
             </motion.p>
             <motion.div
               className="hero-actions"
@@ -139,6 +137,7 @@ export default function Home() {
             >
               <AnimatedButton to="/products" variant="primary">Explore Products</AnimatedButton>
               <AnimatedButton to="/request-quote" variant="outline">Request a Quote</AnimatedButton>
+              <AnimatedButton to="/products" variant="outline">Download Specifications</AnimatedButton>
             </motion.div>
           </motion.div>
         </div>
@@ -213,30 +212,40 @@ export default function Home() {
           <div className="home-spotlight-grid">
             <ScrollReveal direction="left">
               <div className="home-spotlight-content">
-                <SectionTitle
-                  label="Featured Product"
-                  title="Paving blocks for strong, attractive surfaces"
-                  light
-                  align="left"
-                />
-                <p className="home-spotlight-text">
-                  Bessblock paving blocks are built for performance in pathways, driveways, parking areas, courtyards, and public spaces. With multiple thickness options, colour choices, and pattern possibilities, they offer a practical and visually appealing surface solution.
-                </p>
-                <AnimatedButton to="/products/paving-blocks" variant="yellow">View Paving Range</AnimatedButton>
+                <div className="home-spotlight-image-wrap">
+                  <LazyBackground src="/images/products/interlocking-paving-1.webp" className="home-spotlight-image-bg" />
+                </div>
+                <div className="home-spotlight-text">
+                  <SectionTitle
+                    label="Featured Product"
+                    title="Paving blocks for strong, attractive surfaces"
+                    light
+                    align="left"
+                  />
+                  <p className="home-spotlight-text-desc">
+                    Bessblock paving blocks are built for performance in pathways, driveways, parking areas, courtyards, and public spaces. With multiple thickness options, colour choices, and pattern possibilities, they offer a practical and visually appealing surface solution.
+                  </p>
+                  <AnimatedButton to="/products/paving-blocks" variant="yellow">View Paving Range</AnimatedButton>
+                </div>
               </div>
             </ScrollReveal>
             <ScrollReveal direction="right" delay={0.1}>
               <div className="home-spotlight-content">
-                <SectionTitle
-                  label="Featured Product"
-                  title="Retaining wall systems for real site challenges"
-                  light
-                  align="left"
-                />
-                <p className="home-spotlight-text">
-                  Our retaining wall range includes modular solutions for soil retention, slope stabilisation, terracing, landscaping, and engineered applications. Terraforce-compatible products bring the benefit of dry-stack construction, curved layouts, drainage-friendly design, and the flexibility to support both gravity and reinforced wall systems.
-                </p>
-                <AnimatedButton to="/products/walling/retaining-walls" variant="yellow">View Retaining Range</AnimatedButton>
+                <div className="home-spotlight-image-wrap">
+                  <LazyBackground src="/images/products/retaining-wall-1.webp" className="home-spotlight-image-bg" />
+                </div>
+                <div className="home-spotlight-text">
+                  <SectionTitle
+                    label="Featured Product"
+                    title="Retaining wall systems for real site challenges"
+                    light
+                    align="left"
+                  />
+                  <p className="home-spotlight-text-desc">
+                    Our retaining wall range includes modular solutions for soil retention, slope stabilisation, terracing, landscaping, and engineered applications. Terraforce-compatible products bring the benefit of dry-stack construction, curved layouts, drainage-friendly design, and the flexibility to support both gravity and reinforced wall systems.
+                  </p>
+                  <AnimatedButton to="/products/walling/retaining-walls" variant="yellow">View Retaining Range</AnimatedButton>
+                </div>
               </div>
             </ScrollReveal>
           </div>
