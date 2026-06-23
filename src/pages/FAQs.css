@@ -99,8 +99,7 @@
 }
 
 .faq-card-body {
-  overflow: hidden;
-  transition: max-height 0.35s ease;
+  padding: 0 var(--spacing-5);
 }
 
 .faq-item {
@@ -220,6 +219,14 @@
     display: none;
   }
 
+  .accordion-trigger {
+    font-size: var(--text-sm);
+  }
+
+  .accordion-content-inner {
+    font-size: var(--text-sm);
+  }
+
   .faq-modal {
     padding: var(--spacing-6) var(--spacing-5);
     max-height: 85vh;
@@ -237,9 +244,5 @@
     height: 44px;
     top: var(--spacing-3);
     right: var(--spacing-3);
-  }
-
-  .faq-card-body {
-    transition: max-height 0.3s ease;
   }
 }
