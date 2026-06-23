@@ -89,6 +89,9 @@
   /* Subtle manufacturing pattern */
   --pattern-dot: url("data:image/svg+xml,%3Csvg width='28' height='28' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='14' cy='14' r='1.2' fill='%23404088' opacity='0.06'/%3E%3C/svg%3E");
   --pattern-cross: url("data:image/svg+xml,%3Csvg width='40' height='40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 40L40 0' stroke='%23404088' stroke-width='0.4' opacity='0.04'/%3E%3C/svg%3E");
+
+  /* Running-bond block pattern — concrete block wall */
+  --pattern-block: url("data:image/svg+xml,%3Csvg width='60' height='30' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='0.5' y='0.5' width='28' height='13' fill='none' stroke='%23404088' stroke-width='0.5' rx='1'/%3E%3Crect x='30.5' y='0.5' width='28' height='13' fill='none' stroke='%23404088' stroke-width='0.5' rx='1'/%3E%3Crect x='-13.5' y='15.5' width='28' height='13' fill='none' stroke='%23404088' stroke-width='0.5' rx='1'/%3E%3Crect x='16.5' y='15.5' width='28' height='13' fill='none' stroke='%23404088' stroke-width='0.5' rx='1'/%3E%3Crect x='46.5' y='15.5' width='28' height='13' fill='none' stroke='%23404088' stroke-width='0.5' rx='1'/%3E%3C/svg%3E");
 }
 
 [data-theme='dark'] {
@@ -125,6 +128,9 @@
 
   --hero-text: #ffffff;
   --hero-text-secondary: rgba(255, 255, 255, 0.85);
+
+  /* Block pattern — lighter in dark mode */
+  --pattern-block: url("data:image/svg+xml,%3Csvg width='60' height='30' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='0.5' y='0.5' width='28' height='13' fill='none' stroke='%235a5a9e' stroke-width='0.5' rx='1'/%3E%3Crect x='30.5' y='0.5' width='28' height='13' fill='none' stroke='%235a5a9e' stroke-width='0.5' rx='1'/%3E%3Crect x='-13.5' y='15.5' width='28' height='13' fill='none' stroke='%235a5a9e' stroke-width='0.5' rx='1'/%3E%3Crect x='16.5' y='15.5' width='28' height='13' fill='none' stroke='%235a5a9e' stroke-width='0.5' rx='1'/%3E%3Crect x='46.5' y='15.5' width='28' height='13' fill='none' stroke='%235a5a9e' stroke-width='0.5' rx='1'/%3E%3C/svg%3E");
 
   /* Hero overlay — lighter in dark mode so image is more visible */
   --hero-overlay-from: rgba(15, 15, 20, 0.82);

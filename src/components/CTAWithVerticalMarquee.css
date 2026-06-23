@@ -5,9 +5,26 @@
 
 .cta-marquee-section {
   background: var(--color-grey-900);
-  background-image: none;
+  background-image: var(--pattern-block);
+  background-repeat: repeat;
   padding: var(--spacing-20) 0;
   overflow: hidden;
+  position: relative;
+}
+
+.cta-marquee-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--color-grey-900);
+  opacity: 0.75;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.cta-marquee-section > .container {
+  position: relative;
+  z-index: 1;
 }
 
 .cta-marquee-layout {

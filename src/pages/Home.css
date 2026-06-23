@@ -39,6 +39,18 @@
   z-index: -1;
 }
 
+.hero-pattern {
+  position: absolute;
+  top: calc(-1 * var(--navbar-height));
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--pattern-block) repeat;
+  opacity: 0.5;
+  z-index: 0;
+  pointer-events: none;
+}
+
 /* Slider dots */
 .hero-dots {
   position: absolute;
@@ -328,8 +340,8 @@
 .home-spotlight-bg {
   position: absolute;
   inset: 0;
-  background: url('/images/hero/concrete-texture-1.webp') center / cover no-repeat;
-  opacity: 0.06;
+  background: var(--pattern-block) repeat;
+  opacity: 0.1;
   pointer-events: none;
   animation: spotlightBgReveal 1.8s ease-out forwards;
 }
