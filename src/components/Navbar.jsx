@@ -185,20 +185,13 @@ export default function Navbar() {
 
         <div
           className={`navbar-menu ${mobileOpen ? 'navbar-menu-open' : ''}`}
-          onClick={mobileOpen ? closeMobile : undefined}
+          onClick={mobileOpen ? (e) => { if (e.target === e.currentTarget) closeMobile(); } : undefined}
         >
-          <div className="navbar-menu-inner" onClick={e => e.stopPropagation()}>
-            <NavigationMenu>
+          <NavigationMenu>
               <NavigationMenuList>
                 <NavigationMenuItem>
                   <NavigationMenuLink asChild>
-                    <Link
-                      to="/"
-                      className="nm-trigger"
-                      ref={firstNavItemRef}
-                    >
-                      Home
-                    </Link>
+                    <Link to="/" className="nm-trigger">Home</Link>
                   </NavigationMenuLink>
                 </NavigationMenuItem>
 
@@ -248,7 +241,6 @@ export default function Navbar() {
 
               <NavigationMenuIndicator />
             </NavigationMenu>
-          </div>
         </div>
       </div>
     </nav>
