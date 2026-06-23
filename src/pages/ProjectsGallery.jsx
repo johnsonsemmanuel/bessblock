@@ -2,6 +2,9 @@ import { motion } from 'framer-motion';
 import { BookOpen } from 'lucide-react';
 import SEO from '../components/SEO';
 import PageHero from '../components/PageHero';
+import SectionTitle from '../components/SectionTitle';
+import ScrollReveal from '../components/ScrollReveal';
+import LazyBackground from '../components/LazyBackground';
 import SiteCTA from '../components/SiteCTA';
 import projects from '../data/projects';
 import './ProjectsGallery.css';
@@ -86,7 +89,36 @@ export default function ProjectsGallery() {
           </div>
         </section>
 
-        <SiteCTA />
+      {/* Company photo gallery */}
+      <section className="section section-light">
+        <div className="container">
+          <SectionTitle label="Company Gallery" title="Our products, people, and facility" />
+          <div className="gallery-grid">
+            {[
+              '/images/production/IMG_0500.webp',
+              '/images/production/IMG_0583.webp',
+              '/images/production/IMG_0598.webp',
+              '/images/production/IMG_0610.webp',
+              '/images/production/IMG_0618.webp',
+              '/images/production/IMG_0589.webp',
+              '/images/production/IMG_0599.webp',
+              '/images/production/IMG_0604.webp',
+              '/images/production/IMG_0611.webp',
+              '/images/production/IMG_0597.webp',
+              '/images/production/IMG_0614.webp',
+              '/images/production/IMG_0620.webp',
+            ].map((src, i) => (
+              <ScrollReveal key={i} delay={i * 0.03}>
+                <div className="gallery-grid-item">
+                  <LazyBackground src={src} className="gallery-grid-bg" />
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <SiteCTA />
       </div>
     </>
   );

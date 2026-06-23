@@ -324,9 +324,6 @@ export default function Home() {
               <p className="home-gallery-text">
                 Explore completed and ongoing projects to see how Bessblock products perform in real-world settings. Project imagery builds trust, demonstrates finish quality, and helps customers visualise colours, textures, and installation patterns.
               </p>
-              <p className="home-gallery-text-secondary">
-                A strong gallery is especially important for paving and retaining products because visual proof helps customers choose with confidence.
-              </p>
               <AnimatedButton to="/projects" variant="primary">View Project Gallery</AnimatedButton>
             </div>
             <div className="home-gallery-visual">
