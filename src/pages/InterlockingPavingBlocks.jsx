@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowRight, Plus, Lock, Grid3x3, Layers, Wrench, Clock, Info } from 'lucide-react';
+import { ArrowRight, Plus, Lock, Grid3x3, Layers, Wrench, Clock, Info, Award, Shield, CheckCircle2 } from 'lucide-react';
 import SEO from '../components/SEO';
 import PageHero from '../components/PageHero';
 import SectionTitle from '../components/SectionTitle';
@@ -42,6 +42,9 @@ const benefits = [
   { icon: '🔗', title: 'Interlocking strength', desc: 'Superior mechanical interlock prevents shifting.' },
   { icon: '🔧', title: 'Easy replacement', desc: 'Individual blocks removed and replaced without disrupting the surface.' },
   { icon: '🎨', title: 'Attractive finishes', desc: 'Multiple colours and textures for design flexibility.' },
+  { icon: '💰', title: 'Low maintenance', desc: 'Minimal upkeep costs compared to conventional paving surfaces.' },
+  { icon: '🛡️', title: 'Excellent durability', desc: 'Engineered to withstand heavy use and harsh weather conditions.' },
+  { icon: '👟', title: 'Slip-resistant', desc: 'Textured surface provides improved traction for pedestrians and vehicles.' },
 ];
 
 const specs = [
@@ -114,6 +117,9 @@ export default function InterlockingPavingBlocks() {
                     {i === 1 && <Lock size={24} />}
                     {i === 2 && <Wrench size={24} />}
                     {i === 3 && <Clock size={24} />}
+                    {i === 4 && <Award size={24} />}
+                    {i === 5 && <Shield size={24} />}
+                    {i === 6 && <CheckCircle2 size={24} />}
                   </div>
                   <h3>{b.title}</h3>
                   <p>{b.desc}</p>

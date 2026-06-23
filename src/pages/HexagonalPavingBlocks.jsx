@@ -21,6 +21,7 @@ const specs = [
   { label: 'Material', value: 'Cement, Riversand, Quarry Dust, Chippings, Water' },
   { label: 'Thickness', value: '60mm to 80mm.' },
   { label: 'Strength', value: '25 MPa to 50 MPa.' },
+  { label: 'Surface finish', value: 'Smooth or lightly textured.' },
   { label: 'Colours', value: 'Grey, sand, red, charcoal, custom.' },
   { label: 'Coverage', value: '~32 pcs per square meter.' },
 ];
