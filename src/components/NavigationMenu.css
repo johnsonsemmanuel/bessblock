@@ -400,15 +400,15 @@
   }
 
   .nm-viewport {
-    width: 100% !important;
-    height: auto !important;
+    width: 100%;
+    height: auto;
     background: transparent;
     box-shadow: none;
     border: none;
     border-radius: 0;
     overflow: visible;
-    transform: none !important;
-    animation: none !important;
+    transform: none;
+    animation: none;
   }
 
   .nm-content[data-state='open'] {

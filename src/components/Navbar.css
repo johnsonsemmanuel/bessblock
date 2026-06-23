@@ -190,26 +190,18 @@
     background: var(--bg-section);
   }
 
-  /* Hide nav items after Products trigger when Products content is open */
-  .nm-root:has(.nm-content-products[data-state='open']) .nm-list li:nth-child(n+4) {
-    display: none;
-  }
-
   /* Viewport fills remaining vertical space for scrollable content */
   .navbar-menu .nm-viewport-wrapper {
-    flex: 0 1 0;
+    flex: 1;
     display: flex;
     flex-direction: column;
     min-height: 0;
     overflow: hidden;
   }
 
-  .nm-root:has(.nm-content[data-state='open']) .nm-viewport-wrapper {
-    flex: 1;
-  }
-
   .navbar-menu .nm-viewport {
     flex: 1;
+    height: 100%;
     display: flex;
     flex-direction: column;
     min-height: 0;
@@ -217,8 +209,8 @@
   }
 
   .navbar-menu .nm-content-products[data-state='open'] {
-    height: 100%;
-    max-height: none;
+    flex: 1;
+    min-height: 0;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
     margin: 0;
