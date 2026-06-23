@@ -25,10 +25,10 @@ const organizationSchema = {
     email: 'info@bessblock.com',
   },
   sameAs: [
-    'https://linkedin.com/company/bessblock',
-    'https://facebook.com/bessblock',
+    'https://www.linkedin.com/company/bessblock-concrete-products-ltd/',
+    'https://www.facebook.com/share/1Cq24f1TiM/',
     'https://twitter.com/bessblock',
-    'https://instagram.com/bessblock',
+    'https://www.instagram.com/bessblock.concrete.products/',
   ],
 };
 
