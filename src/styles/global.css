@@ -198,7 +198,7 @@ input, select, textarea {
 
 @keyframes heroBgReveal {
   from {
-    transform: scale(1.12);
+    transform: scale(1.06);
   }
   to {
     transform: scale(1);
@@ -224,6 +224,18 @@ input, select, textarea {
   right: 0;
   height: 180px;
   background: linear-gradient(180deg, rgba(20,20,20,0.8) 0%, transparent 100%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Bottom fade — hero image blends into the overlay color so there's no hard edge */
+.page-hero-bottom-fade {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 200px;
+  background: linear-gradient(180deg, transparent 0%, var(--hero-overlay-solid) 100%);
   z-index: 0;
   pointer-events: none;
 }
