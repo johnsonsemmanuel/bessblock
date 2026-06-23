@@ -6,6 +6,7 @@ import SectionTitle from '../components/SectionTitle';
 import ScrollReveal from '../components/ScrollReveal';
 import SpecSheet from '../components/SpecSheet';
 import SiteCTA from '../components/SiteCTA';
+import GalleryLightbox from '../components/GalleryLightbox';
 import { ProductHighlightCard } from '../components/ProductHighlightCard';
 import { WallingIcon } from '../components/CategoryIcons';
 import productCategories from '../data/products';
@@ -196,17 +197,9 @@ export default function RetainingWalls() {
       <section className="section">
         <div className="container">
           <SectionTitle label="Project Gallery" title="See it in action" align="left" />
-          <div className="product-gallery-grid">
-            {['/images/products/retaining-wall-1.webp', '/images/products/retaining-wall-2.webp', '/images/products/retaining-wall-3.webp'].map((img, i) => (
-              <Link key={i} to="/projects" className="product-gallery-card">
-                <div className="product-gallery-image" style={{ backgroundImage: `url(${img})` }} />
-                <div className="product-gallery-overlay">
-                  <span>View Project</span>
-                  <ArrowRight size={16} />
-                </div>
-              </Link>
-            ))}
-          </div>
+          <GalleryLightbox
+            images={['/images/products/retaining-wall-1.webp', '/images/products/retaining-wall-2.webp', '/images/products/retaining-wall-3.webp']}
+          />
         </div>
       </section>
 

@@ -3,7 +3,8 @@ import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 import ScrollReveal from './ScrollReveal';
 import './GalleryLightbox.css';
 
-export default function GalleryLightbox({ images, columns = 3 }) {
+export default function GalleryLightbox({ images, columns }) {
+  const colCount = columns ?? Math.min(images.length, 4);
   const [open, setOpen] = useState(false);
   const [current, setCurrent] = useState(0);
   const [imgLoaded, setImgLoaded] = useState(false);
@@ -67,7 +68,7 @@ export default function GalleryLightbox({ images, columns = 3 }) {
 
   return (
     <>
-      <div className="gl-grid" style={{ '--gl-columns': columns }}>
+      <div className="gl-grid" style={{ '--gl-columns': colCount }}>
         {images.map((src, i) => (
           <ScrollReveal key={i} delay={i * 0.04}>
             <div

@@ -4,7 +4,8 @@ import SectionTitle from './SectionTitle';
 import SEO from './SEO';
 import Breadcrumbs from './Breadcrumbs';
 import LazyBackground from './LazyBackground';
-import { Check, ArrowRight } from 'lucide-react';
+import GalleryLightbox from './GalleryLightbox';
+import { Check } from 'lucide-react';
 import { ProductHighlightCard } from './ProductHighlightCard';
 import SpecSheet from './SpecSheet';
 import SiteCTA from './SiteCTA';
@@ -168,17 +169,7 @@ export default function ProductTemplate({ productKey, heroImage }) {
       <section className="section section-light">
         <div className="container">
           <SectionTitle label="Project Gallery" title="See it in action" align="left" />
-          <div className="product-gallery-grid">
-            {['/images/hero/production-site-3.webp', '/images/hero/production-site-4.webp', '/images/hero/production-site-1.webp'].map((img, i) => (
-              <Link key={i} to="/projects" className="product-gallery-card">
-                <div className="product-gallery-image" style={{ backgroundImage: `url(${img})` }} />
-                <div className="product-gallery-overlay">
-                  <span>View Project</span>
-                  <ArrowRight size={16} />
-                </div>
-              </Link>
-            ))}
-          </div>
+          <GalleryLightbox images={['/images/hero/production-site-3.webp', '/images/hero/production-site-4.webp', '/images/hero/production-site-1.webp']} />
         </div>
       </section>
 
