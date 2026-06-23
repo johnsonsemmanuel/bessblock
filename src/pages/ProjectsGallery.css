@@ -221,6 +221,17 @@
   overflow: hidden;
   background: var(--bg-section);
   border: 1px solid var(--border);
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  padding: 0;
+  outline: none;
+  display: block;
+  width: 100%;
+}
+
+.gallery-grid-item:focus-visible {
+  box-shadow: 0 0 0 3px var(--color-bessblock-blue);
 }
 
 .gallery-grid-bg {
