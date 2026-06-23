@@ -4,6 +4,7 @@ import SEO from '../components/SEO';
 import PageHero from '../components/PageHero';
 import SectionTitle from '../components/SectionTitle';
 import ScrollReveal from '../components/ScrollReveal';
+import SpecSheet from '../components/SpecSheet';
 import SiteCTA from '../components/SiteCTA';
 import './Walling.css';
 
@@ -82,16 +83,7 @@ export default function Terralite() {
       <section className="section">
         <div className="container">
           <SectionTitle label="Detailed Specifications" title="Technical data" align="left" />
-          <div className="wall-sub-specs">
-            {specs.map((s, i) => (
-              <ScrollReveal key={i} delay={i * 0.04}>
-                <div className="wall-sub-spec">
-                  <span className="wall-sub-spec-label">{s.label}</span>
-                  <span className="wall-sub-spec-value">{s.value}</span>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
+          <SpecSheet specs={specs} columns={2} />
         </div>
       </section>
 

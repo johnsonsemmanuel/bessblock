@@ -28,3 +28,13 @@
   color: var(--text);
   font-weight: var(--font-weight-semibold);
 }
+
+@media (max-width: 768px) {
+  .legal-content {
+    padding: 0 var(--spacing-3);
+  }
+
+  .legal-content h2 {
+    font-size: var(--text-lg);
+  }
+}

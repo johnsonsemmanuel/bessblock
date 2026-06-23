@@ -59,7 +59,7 @@ function ProductsContent() {
             <p className="nav-cat-desc">{cat.description}</p>
           </div>
           <div className="nav-cat-subs">
-            {cat.subcategories.slice(0, 4).map(sub => (
+            {cat.subcategories.map(sub => (
               <NavigationMenuLink key={sub.id} asChild>
                 <Link to={sub.path} className="nav-cat-sub">{sub.name}</Link>
               </NavigationMenuLink>
@@ -219,6 +219,12 @@ export default function Navbar() {
                   <NavigationMenuContent>
                     <InsightsContent />
                   </NavigationMenuContent>
+                </NavigationMenuItem>
+
+                <NavigationMenuItem>
+                  <NavigationMenuLink asChild>
+                    <Link to="/contact" className="nm-trigger">Contact</Link>
+                  </NavigationMenuLink>
                 </NavigationMenuItem>
 
                 <NavigationMenuItem className="nm-item-search">

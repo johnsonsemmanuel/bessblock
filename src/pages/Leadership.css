@@ -113,6 +113,12 @@
   }
 }
 
+@media (max-width: 768px) {
+  .leadership-card {
+    height: 320px;
+  }
+}
+
 @media (max-width: 640px) {
   .leadership-grid {
     grid-template-columns: 1fr;

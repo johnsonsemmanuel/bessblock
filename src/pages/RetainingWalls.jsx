@@ -4,11 +4,13 @@ import SEO from '../components/SEO';
 import PageHero from '../components/PageHero';
 import SectionTitle from '../components/SectionTitle';
 import ScrollReveal from '../components/ScrollReveal';
+import SpecSheet from '../components/SpecSheet';
 import SiteCTA from '../components/SiteCTA';
 import { ProductHighlightCard } from '../components/ProductHighlightCard';
 import { WallingIcon } from '../components/CategoryIcons';
 import productCategories from '../data/products';
 import './RetainingWalls.css';
+import '../components/ProductTemplate.css';
 
 const benefits = [
   'Reversible hollow-core concrete block system.',
@@ -32,6 +34,15 @@ const families = [
   { name: 'Terralite', id: 'terralite' },
   { name: 'Terrafix', id: 'terrafix' },
   { name: 'Terracrete', id: 'terracrete' },
+];
+
+const specs = [
+  { label: 'System', value: 'Terraforce® retaining wall system' },
+  { label: 'Block type', value: 'Reversible hollow-core interlocking' },
+  { label: 'Applications', value: 'Gravity, reinforced, stabilised backfill' },
+  { label: 'Finish options', value: 'Smooth face, rock face, planted' },
+  { label: 'Wall types', value: 'Straight, curved, stepped, terraced' },
+  { label: 'Permeability', value: 'Fully permeable and plantable' },
 ];
 
 export default function RetainingWalls() {
@@ -107,6 +118,14 @@ export default function RetainingWalls() {
         </div>
       </section>
 
+      {/* Specifications */}
+      <section className="section">
+        <div className="container">
+          <SectionTitle label="Detailed Specifications" title="Technical data" align="left" />
+          <SpecSheet specs={specs} columns={2} />
+        </div>
+      </section>
+
       {/* Product Range */}
       <section className="section">
         <div className="container">
@@ -168,6 +187,24 @@ export default function RetainingWalls() {
                   imageAlt={sub.name}
                 />
               </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Gallery */}
+      <section className="section">
+        <div className="container">
+          <SectionTitle label="Project Gallery" title="See it in action" align="left" />
+          <div className="product-gallery-grid">
+            {['/images/products/retaining-wall-1.webp', '/images/products/retaining-wall-2.webp', '/images/products/retaining-wall-3.webp'].map((img, i) => (
+              <Link key={i} to="/projects" className="product-gallery-card">
+                <div className="product-gallery-image" style={{ backgroundImage: `url(${img})` }} />
+                <div className="product-gallery-overlay">
+                  <span>View Project</span>
+                  <ArrowRight size={16} />
+                </div>
+              </Link>
             ))}
           </div>
         </div>

@@ -28,8 +28,10 @@ const footerLinks = [
     links: [
       { title: 'Insights', url: '/insights' },
       { title: 'FAQs', url: '/faqs' },
+      { title: 'Blog', url: '/insights/blog' },
       { title: 'Contact', url: '/contact' },
       { title: 'Privacy Policy', url: '/privacy-policy' },
+      { title: 'Terms & Conditions', url: '/terms-conditions' },
     ],
   },
 ];

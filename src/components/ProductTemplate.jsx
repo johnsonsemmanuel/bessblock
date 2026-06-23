@@ -7,6 +7,7 @@ import LazyBackground from './LazyBackground';
 import { Check, ArrowRight } from 'lucide-react';
 import { ProductHighlightCard } from './ProductHighlightCard';
 import SpecSheet from './SpecSheet';
+import SiteCTA from './SiteCTA';
 import { PavingIcon, WallingIcon, KerbIcon, SlabIcon, StepIcon } from './CategoryIcons';
 import { productPages } from '../data/products';
 import './ProductTemplate.css';
@@ -210,6 +211,13 @@ export default function ProductTemplate({ productKey, heroImage }) {
           </div>
         </section>
       )}
+
+      <SiteCTA
+        title={`Need ${product.name} for your project?`}
+        description="Contact our team for pricing, technical specifications, and delivery options."
+        secondaryText="Request a Quote"
+        secondaryLink="/request-quote"
+      />
     </div>
     </>
   );
