@@ -609,7 +609,8 @@
   }
 
   .hero-actions {
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
   }
 
   .home-trust-grid {
