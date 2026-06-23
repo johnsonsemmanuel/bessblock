@@ -8,7 +8,6 @@ import Home from './pages/Home';
 import NotFound from './pages/NotFound';
 import ErrorBoundary from './components/ErrorBoundary';
 import CookieConsent from './components/CookieConsent';
-import BackToTop from './components/BackToTop';
 import LiveChat from './components/LiveChat';
 
 const About = lazy(() => import('./pages/About'));
@@ -76,7 +75,6 @@ function Layout({ children }) {
       </main>
       <Footer />
       <CookieConsent />
-      <BackToTop />
       <LiveChat />
     </>
   );
