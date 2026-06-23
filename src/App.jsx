@@ -1,5 +1,5 @@
 import { Routes, Route, useLocation } from 'react-router-dom';
-import { useEffect, Suspense, lazy } from 'react';
+import { useEffect, useLayoutEffect, Suspense, lazy } from 'react';
 import { AnimatePresence } from 'framer-motion';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -58,7 +58,7 @@ const SearchResults = lazy(() => import('./pages/SearchResults'));
 function Layout({ children }) {
   const { pathname } = useLocation();
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     window.scrollTo(0, 0);
   }, [pathname]);
 
@@ -92,6 +92,10 @@ function AnimatedPage({ children }) {
 
 export default function App() {
   const location = useLocation();
+
+  useEffect(() => {
+    history.scrollRestoration = 'manual';
+  }, []);
 
   return (
     <AnimatePresence mode="wait">

@@ -1,17 +1,36 @@
 import { motion } from 'framer-motion';
-import LazyBackground from './LazyBackground';
+import { useState, useEffect } from 'react';
 import { ProgressiveBlur } from './ProgressiveBlur';
 
+function toWebP(url) {
+  return url.replace(/\.(jpe?g|png)$/i, '.webp');
+}
+
 export default function PageHero({ title, description, children, bgImage }) {
+  const [loaded, setLoaded] = useState(false);
+
+  useEffect(() => {
+    if (!bgImage) return;
+    const img = new Image();
+    img.onload = () => setLoaded(true);
+    img.src = bgImage;
+  }, [bgImage]);
+
+  const bgStyle = bgImage
+    ? {
+        backgroundImage: bgImage !== toWebP(bgImage)
+          ? `image-set(url("${toWebP(bgImage)}") type("image/webp"), url("${bgImage}") type("image/jpeg"))`
+          : `url(${bgImage})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        opacity: loaded ? 1 : 0,
+        transition: 'opacity 0.6s ease',
+      }
+    : {};
+
   return (
     <header className="page-hero">
-      {bgImage && (
-        <LazyBackground
-          src={bgImage}
-          className="page-hero-bg"
-          style={{ backgroundSize: 'cover', backgroundPosition: 'center' }}
-        />
-      )}
+      {bgImage && <div className="page-hero-bg" style={bgStyle} />}
       {bgImage && <div className="page-hero-overlay" />}
       <div className="container" style={{ position: 'relative', zIndex: 1 }}>
         <motion.div

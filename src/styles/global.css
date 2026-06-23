@@ -29,7 +29,7 @@
 }
 
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -190,12 +190,19 @@ input, select, textarea {
   background-size: cover;
   background-position: center;
   z-index: -2;
-  animation: heroBgReveal 1.2s ease-out;
+}
+
+.page-hero-bg[style*="opacity: 1"] {
+  animation: heroBgReveal 1.4s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
 }
 
 @keyframes heroBgReveal {
-  from { transform: scale(1.1); }
-  to { transform: scale(1); }
+  from {
+    transform: scale(1.12);
+  }
+  to {
+    transform: scale(1);
+  }
 }
 
 .page-hero-overlay {
