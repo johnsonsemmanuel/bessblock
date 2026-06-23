@@ -1,4 +1,4 @@
-import { Grid3x3, Wrench, Shield, Home, PanelBottom } from 'lucide-react';
+import { Grid3x3, Wrench, Shield, Home, PanelBottom, CheckCircle2 } from 'lucide-react';
 import SEO from '../components/SEO';
 import PageHero from '../components/PageHero';
 import SectionTitle from '../components/SectionTitle';
@@ -7,6 +7,7 @@ import SpecSheet from '../components/SpecSheet';
 import SiteCTA from '../components/SiteCTA';
 import { ProductHighlightCard } from '../components/ProductHighlightCard';
 import CoverageCalculator from '../components/CoverageCalculator';
+import '../components/CoverageCalculator.css';
 import { WallingIcon } from '../components/CategoryIcons';
 import productCategories from '../data/products';
 import './Walling.css';
@@ -115,8 +116,18 @@ export default function Walling() {
 
       <section className="section section-light">
         <div className="container">
-          <SectionTitle title="Coverage Calculator" label="Estimate quantity" />
-          <CoverageCalculator />
+          <div className="calculator-layout">
+            <div className="calculator-info">
+              <SectionTitle title="Coverage Calculator" label="Estimate quantity" />
+              <p>Use our coverage calculator to estimate the number of blocks needed for your walling project. Enter your wall area to get a quick quantity estimate.</p>
+              <ul>
+                <li><CheckCircle2 size={16} />Covers hollow, solid, and ceiling block ranges</li>
+                <li><CheckCircle2 size={16} />Based on standard block coverage rates</li>
+                <li><CheckCircle2 size={16} />Instant quantity estimate with unit count</li>
+              </ul>
+            </div>
+            <CoverageCalculator />
+          </div>
         </div>
       </section>
 

@@ -1,8 +1,10 @@
+import { CheckCircle2 } from 'lucide-react';
 import PageHero from '../components/PageHero';
 import { ProductHighlightCard } from '../components/ProductHighlightCard';
 import SEO from '../components/SEO';
 import SectionTitle from '../components/SectionTitle';
 import CoverageCalculator from '../components/CoverageCalculator';
+import '../components/CoverageCalculator.css';
 import { PavingIcon } from '../components/CategoryIcons';
 import productCategories from '../data/products';
 
@@ -38,8 +40,18 @@ export default function PavingBlocks() {
 
       <section className="section section-light">
         <div className="container">
-          <SectionTitle title="Coverage Calculator" label="Estimate quantity" />
-          <CoverageCalculator />
+          <div className="calculator-layout">
+            <div className="calculator-info">
+              <SectionTitle title="Coverage Calculator" label="Estimate quantity" />
+              <p>Use our coverage calculator to estimate the number of paving blocks needed for your project area. Simply select the product type and enter your area in square metres.</p>
+              <ul>
+                <li><CheckCircle2 size={16} />Covers interlocking, rectangular, and hexagonal paving</li>
+                <li><CheckCircle2 size={16} />Accounts for standard block coverage rates</li>
+                <li><CheckCircle2 size={16} />Instant quantity estimate with unit count</li>
+              </ul>
+            </div>
+            <CoverageCalculator />
+          </div>
         </div>
       </section>
     </div>
