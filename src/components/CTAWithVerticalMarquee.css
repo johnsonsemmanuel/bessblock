@@ -140,7 +140,7 @@
 
   .cta-marquee-item {
     font-size: 2.5rem;
-    padding: var(--spacing-6) 0;
+    padding: var(--spacing-10) 0;
   }
 }
 
@@ -151,7 +151,7 @@
 
   .cta-marquee-item {
     font-size: 2rem;
-    padding: var(--spacing-5) 0;
+    padding: var(--spacing-8) 0;
   }
 
   .cta-marquee-title {
@@ -159,7 +159,7 @@
   }
 
   .cta-marquee-actions {
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row;
+    justify-content: center;
   }
 }
