@@ -280,6 +280,30 @@
 }
 
 /* Spotlight */
+.home-spotlight {
+  position: relative;
+  overflow: hidden;
+}
+
+.home-spotlight-bg {
+  position: absolute;
+  inset: 0;
+  background: url('/images/hero/concrete-texture-1.webp') center / cover no-repeat;
+  opacity: 0.06;
+  pointer-events: none;
+  animation: spotlightBgReveal 1.8s ease-out forwards;
+}
+
+@keyframes spotlightBgReveal {
+  0% { opacity: 0; transform: scale(1.1); }
+  100% { opacity: 0.06; transform: scale(1); }
+}
+
+.home-spotlight > .container > .section-title {
+  position: relative;
+  z-index: 1;
+}
+
 .home-spotlight-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;

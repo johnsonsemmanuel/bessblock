@@ -8,10 +8,8 @@ import LazyBackground from '../components/LazyBackground';
 import { ArrowRight, CheckCircle, ChevronDown, Circle } from 'lucide-react';
 import ScrollReveal from '../components/ScrollReveal';
 import { ProgressiveBlur } from '../components/ProgressiveBlur';
-import TestimonialsSection from '../components/TestimonialsSection';
 import CTAWithVerticalMarquee from '../components/CTAWithVerticalMarquee';
 import DownloadSpecsModal from '../components/DownloadSpecsModal';
-import testimonials from '../data/testimonials';
 import './Home.css';
 
 const heroSlides = [
@@ -57,8 +55,10 @@ const appItems = [
 const categoryLinks = [
   { name: 'Paving Blocks', path: '/products/paving-blocks', image: '/images/products/interlocking-paving-1.webp' },
   { name: 'Walling', path: '/products/walling', image: '/images/products/hollow-blocks-1.webp' },
+  { name: 'Paving Slabs', path: '/products/paving-slabs', image: '/images/categories/paving-slabs.webp' },
   { name: 'Retaining Walls', path: '/products/walling/retaining-walls', image: '/images/products/retaining-wall-1.webp' },
   { name: 'Kerbs & Edging', path: '/products/kerbs-edging', image: '/images/products/rectangular-paving-3.webp' },
+  { name: 'Step Risers', path: '/products/step-risers', image: '/images/categories/step-risers.webp' },
 ];
 
 export default function Home() {
@@ -211,6 +211,12 @@ export default function Home() {
       {/* Featured Product Spotlight */}
       <section className="section section-blue home-spotlight">
         <div className="container">
+          <div className="home-spotlight-bg" aria-hidden="true" />
+          <SectionTitle
+            label="Featured Products"
+            title="Curated for your next project"
+            light
+          />
           <div className="home-spotlight-grid">
             {[
               {
@@ -406,11 +412,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      <TestimonialsSection
-        subtitle="See what our clients say about working with Bessblock"
-        testimonials={testimonials}
-      />
 
       <CTAWithVerticalMarquee />
 

@@ -8,6 +8,7 @@ const marqueeItems = [
   'Walling Systems',
   'Retaining Walls',
   'Kerbs & Edging',
+  'Step Risers',
 ];
 
 function VerticalMarquee({ children, pauseOnHover = false, reverse = false, speed = 30 }) {
@@ -74,11 +75,12 @@ export default function CTAWithVerticalMarquee() {
           >
             <h2 className="cta-marquee-title">Ready to start your project?</h2>
             <p className="cta-marquee-text">
-              Speak to Bessblock for product advice, project support, and quotation requests. Whether you need paving, walling, retaining walls, or kerbs, our team can help you choose the right concrete solution for your project.
+               Speak to Bessblock for product advice, project support, and quotation requests. Whether you need paving, walling, retaining walls, kerbs, or step systems, our team can help you choose the right concrete solution for your project.
             </p>
             <div className="cta-marquee-actions">
                <AnimatedButton to="/contact" variant="primary" size="lg">Contact Bessblock</AnimatedButton>
               <AnimatedButton to="/request-quote" variant="yellow" size="lg">Request a Quote</AnimatedButton>
+              <AnimatedButton to="/products" variant="outline" size="lg">View Products</AnimatedButton>
             </div>
           </motion.div>
 
