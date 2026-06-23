@@ -45,12 +45,12 @@ const whyItems = [
 ];
 
 const appItems = [
-  { label: 'Domestic driveways and gardens.', link: '/products/paving-blocks', image: '/images/products/interlocking-paving-1.webp' },
-  { label: 'Footpaths and pedestrian areas.', link: '/products/paving-blocks', image: '/images/products/rectangular-paving-1.webp' },
-  { label: 'Commercial forecourts and parking areas.', link: '/products/paving-blocks', image: '/images/products/interlocking-paving-2.webp' },
-  { label: 'Landscaping and public realm schemes.', link: '/products/paving-slabs', image: '/images/products/hexagonal-paving-blocks-1.webp' },
-  { label: 'Roads, estate developments, and edge restraint.', link: '/products/kerbs-edging', image: '/images/products/rectangular-paving-5.webp' },
-  { label: 'Retaining and terracing applications.', link: '/products/walling/retaining-walls', image: '/images/products/retaining-wall-1.webp' },
+  { label: 'Domestic driveways and gardens.', link: '/products/paving-blocks', image: '/images/hero/construction-aerial-1.webp' },
+  { label: 'Footpaths and pedestrian areas.', link: '/products/paving-blocks', image: '/images/hero/construction-aerial-2.webp' },
+  { label: 'Commercial forecourts and parking areas.', link: '/products/paving-blocks', image: '/images/hero/construction-aerial-3.webp' },
+  { label: 'Landscaping and public realm schemes.', link: '/products/paving-slabs', image: '/images/hero/production-site-3.webp' },
+  { label: 'Roads, estate developments, and edge restraint.', link: '/products/kerbs-edging', image: '/images/hero/construction-aerial-4.webp' },
+  { label: 'Retaining and terracing applications.', link: '/products/walling/retaining-walls', image: '/images/products/retaining-wall-2.webp' },
 ];
 
 const categoryLinks = [
