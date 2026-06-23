@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { BookOpen } from 'lucide-react';
 import SEO from '../components/SEO';
 import PageHero from '../components/PageHero';
@@ -40,11 +40,9 @@ export default function ProjectsGallery() {
       <div className="page">
         <PageHero title="Projects Gallery" description="A selection of projects supplied by Bessblock Concrete Products across infrastructure, commercial, and institutional sectors." bgImage="/images/hero/concrete-texture-2.webp" />
 
-      <AnimatePresence>
-        {lightboxIndex !== null && (
-          <Lightbox images={galleryImages} index={lightboxIndex} onClose={handleLightbox} />
-        )}
-      </AnimatePresence>
+      {lightboxIndex !== null && (
+        <Lightbox images={galleryImages} index={lightboxIndex} onClose={handleLightbox} />
+      )}
 
         <section className="section">
           <div className="container">

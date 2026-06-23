@@ -76,14 +76,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  max-width: 80vw;
-  max-height: 80vh;
+  max-width: 75vw;
+  max-height: 75vh;
   cursor: pointer;
 }
 
 .lightbox-image {
-  max-width: 80vw;
-  max-height: 80vh;
+  max-width: 75vw;
+  max-height: 75vh;
   width: auto;
   height: auto;
   object-fit: contain;
@@ -131,7 +131,7 @@
 
   .lightbox-image-area,
   .lightbox-image {
-    max-width: 88vw;
-    max-height: 75vh;
+    max-width: 85vw;
+    max-height: 70vh;
   }
 }
