@@ -430,7 +430,8 @@
   .nm-dropdown-about,
   .nm-dropdown-insights {
     grid-template-columns: 1fr;
-    padding: var(--spacing-3);
+    padding: var(--spacing-2);
+    gap: var(--spacing-1);
   }
 
   .nav-cat-image {
@@ -448,14 +449,35 @@
     align-items: center;
   }
 
-  .nav-about-card,
-  .nav-insight-card {
-    padding: var(--spacing-4) var(--spacing-4);
-    min-height: 44px;
+  .nm-dropdown-about .nav-about-card,
+  .nm-dropdown-insights .nav-insight-card {
+    padding: var(--spacing-3) var(--spacing-4);
+    min-height: 48px;
+    border-radius: 8px;
+    background: transparent;
+  }
+
+  .nm-dropdown-about .nav-about-card:hover,
+  .nm-dropdown-insights .nav-insight-card:hover {
+    background: var(--bg-card);
+    transform: none;
+    box-shadow: none;
+  }
+
+  .nm-dropdown-about .nav-about-title,
+  .nm-dropdown-insights .nav-insight-title {
+    font-size: var(--text-base);
+    margin-bottom: 2px;
+  }
+
+  .nm-dropdown-about .nav-about-desc,
+  .nm-dropdown-insights .nav-insight-desc {
+    font-size: var(--text-xs);
+    color: var(--text-secondary);
   }
 
   .nm-dropdown-about,
   .nm-dropdown-insights {
-    gap: var(--spacing-2);
+    gap: var(--spacing-1);
   }
 }
