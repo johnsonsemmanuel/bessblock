@@ -412,7 +412,7 @@
   }
 
   .nm-content[data-state='open'] {
-    position: static !important;
+    position: static;
     animation: none !important;
     margin: var(--spacing-2) 0;
     padding: var(--spacing-3);
@@ -421,6 +421,16 @@
     max-height: 65vh;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
+  }
+
+  .nm-item-products .nm-content[data-state='open'] {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    margin: 0;
+    z-index: 10;
+    max-height: 45vh;
   }
 
   .nm-indicator {
