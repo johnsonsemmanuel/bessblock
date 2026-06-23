@@ -73,6 +73,8 @@
   justify-content: center;
   border-radius: 8px;
   transition: background var(--transition-fast);
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
 }
 
 .navbar-hamburger:hover {

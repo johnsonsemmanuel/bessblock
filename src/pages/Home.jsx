@@ -137,7 +137,7 @@ export default function Home() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.35 }}
             >
-              <AnimatedButton to="/products/paving-blocks" variant="primary">Explore Products</AnimatedButton>
+              <AnimatedButton to="/products" variant="primary">Explore Products</AnimatedButton>
               <AnimatedButton to="/request-quote" variant="outline">Request a Quote</AnimatedButton>
             </motion.div>
           </motion.div>
