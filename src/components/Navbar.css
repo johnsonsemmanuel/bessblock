@@ -115,6 +115,10 @@
     display: flex;
   }
 
+  .navbar-hamburger.open span {
+    background: var(--text);
+  }
+
   .navbar-menu {
     position: fixed;
     inset: 0;
