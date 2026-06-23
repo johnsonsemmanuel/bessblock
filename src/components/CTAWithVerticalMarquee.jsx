@@ -79,7 +79,6 @@ export default function CTAWithVerticalMarquee() {
             <div className="cta-marquee-actions">
                <AnimatedButton to="/contact" variant="primary" size="lg">Contact Bessblock</AnimatedButton>
               <AnimatedButton to="/request-quote" variant="yellow" size="lg">Request a Quote</AnimatedButton>
-              <AnimatedButton to="/products" variant="outline" size="lg">View Products</AnimatedButton>
             </div>
           </motion.div>
 
