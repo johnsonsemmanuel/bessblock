@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Star } from 'lucide-react';
+import SectionTitle from './SectionTitle';
 import './TestimonialsSection.css';
 
 function initials(name) {
@@ -24,8 +25,7 @@ export default function TestimonialsSection({
           viewport={{ once: true }}
           transition={{ duration: 0.4 }}
         >
-          <div className="testimonials-badge">{badgeText}</div>
-          <h2 className="testimonials-title">{title}</h2>
+          <SectionTitle label={badgeText} title={title} />
           <p className="testimonials-subtitle">{subtitle}</p>
         </motion.div>
 

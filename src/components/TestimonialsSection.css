@@ -11,23 +11,6 @@
   margin-bottom: var(--spacing-12);
 }
 
-.testimonials-badge {
-  display: inline-block;
-  border-radius: 8px;
-  background: var(--color-bessblock-blue);
-  padding: 4px 12px;
-  font-size: var(--text-sm);
-  font-weight: var(--font-weight-medium);
-  color: #fff;
-}
-
-.testimonials-title {
-  font-size: var(--text-4xl);
-  font-weight: var(--font-weight-bold);
-  color: var(--text);
-  line-height: 1.2;
-}
-
 .testimonials-subtitle {
   max-width: 640px;
   font-size: var(--text-lg);
@@ -39,9 +22,9 @@
 
 .testimonials-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: var(--spacing-6);
-  max-width: 900px;
+  max-width: 1100px;
   margin: 0 auto;
 }
 
@@ -136,7 +119,7 @@
     grid-template-columns: 1fr;
   }
 
-  .testimonials-title {
-    font-size: var(--text-3xl);
+  .testimonials-subtitle {
+    font-size: var(--text-base);
   }
 }
