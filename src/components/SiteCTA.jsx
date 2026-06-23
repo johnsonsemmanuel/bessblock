@@ -11,10 +11,10 @@ export default function SiteCTA({
   secondaryLink,
 }) {
   return (
-    <section className="site-cta-section">
+    <section className="section section-blue">
       <div className="container">
         <motion.div
-          className="site-cta"
+          className="site-cta-card"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}

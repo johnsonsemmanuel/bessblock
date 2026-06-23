@@ -1,26 +1,27 @@
-/* ─── CTA section ─── */
+/* ─── Glassmorphism CTA card ─── */
 
-.site-cta-section {
-  padding: var(--spacing-16) 0;
-  background: var(--bg-section);
-}
-
-.site-cta {
+.site-cta-card {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+  padding: var(--spacing-12) var(--spacing-10);
   text-align: center;
-  max-width: 640px;
+  max-width: 680px;
   margin: 0 auto;
 }
 
 .site-cta-title {
   font-size: var(--text-3xl);
   font-weight: var(--font-weight-bold);
-  color: var(--text);
+  color: var(--color-white);
   margin-bottom: var(--spacing-4);
 }
 
 .site-cta-desc {
   font-size: var(--text-base);
-  color: var(--text-secondary);
+  color: rgba(255, 255, 255, 0.8);
   line-height: 1.7;
   margin-bottom: var(--spacing-8);
 }
@@ -40,26 +41,37 @@
   font-size: var(--text-sm);
   font-weight: var(--font-weight-semibold);
   text-decoration: none;
-  transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast), color var(--transition-fast);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast), background var(--transition-fast), border-color var(--transition-fast), color var(--transition-fast);
 }
 
 .site-cta-btn-primary {
-  background: var(--color-bessblock-blue);
-  color: #fff;
+  background: var(--color-bessblock-yellow, #eab308);
+  color: #1a1a2e;
 }
 
 .site-cta-btn-primary:hover {
+  background: var(--color-bessblock-yellow-dark, #d97706);
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(64, 64, 136, 0.3);
+  box-shadow: 0 6px 20px rgba(234, 179, 8, 0.3);
 }
 
 .site-cta-btn-secondary {
-  border: 1px solid var(--border);
-  color: var(--text);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  color: var(--color-white);
 }
 
 .site-cta-btn-secondary:hover {
-  border-color: var(--color-bessblock-blue);
-  color: var(--color-bessblock-blue);
+  border-color: var(--color-white);
+  background: rgba(255, 255, 255, 0.1);
   transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .site-cta-card {
+    padding: var(--spacing-10) var(--spacing-6);
+  }
+
+  .site-cta-title {
+    font-size: var(--text-2xl);
+  }
 }
