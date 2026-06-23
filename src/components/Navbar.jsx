@@ -1,5 +1,5 @@
-import { useState, useEffect, useRef } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { useState, useEffect, useRef, useCallback } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import {
   NavigationMenu,
   NavigationMenuList,
@@ -106,7 +106,18 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const navRef = useRef(null);
+  const hamburgerRef = useRef(null);
+
   const location = useLocation();
+  const navigate = useNavigate();
+
+  const closeMobile = useCallback(() => {
+    setMobileOpen(false);
+  }, []);
+
+  const toggleMobile = useCallback(() => {
+    setMobileOpen(prev => !prev);
+  }, []);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -114,26 +125,46 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  // Set --navbar-height for fixed-position dropdown to span full width
-  useEffect(() => {
+  const recalcNavHeight = useCallback(() => {
     if (navRef.current) {
       const h = navRef.current.offsetHeight;
       navRef.current.style.setProperty('--navbar-height', `${h}px`);
     }
-  }, [scrolled]);
+  }, []);
 
   useEffect(() => {
-    setMobileOpen(false);
-  }, [location]);
+    recalcNavHeight();
+    window.addEventListener('resize', recalcNavHeight);
+    return () => window.removeEventListener('resize', recalcNavHeight);
+  }, [recalcNavHeight]);
+
+  useEffect(() => {
+    if (scrolled) recalcNavHeight();
+  }, [scrolled, recalcNavHeight]);
+
+  useEffect(() => {
+    closeMobile();
+  }, [location, closeMobile]);
 
   useEffect(() => {
     if (mobileOpen) {
       document.body.style.overflow = 'hidden';
+      document.querySelector('.navbar-menu .nm-trigger')?.focus();
     } else {
       document.body.style.overflow = '';
+      hamburgerRef.current?.focus();
     }
     return () => { document.body.style.overflow = ''; };
   }, [mobileOpen]);
+
+  useEffect(() => {
+    if (!mobileOpen) return;
+    const onKeyDown = (e) => {
+      if (e.key === 'Escape') closeMobile();
+    };
+    document.addEventListener('keydown', onKeyDown);
+    return () => document.removeEventListener('keydown', onKeyDown);
+  }, [mobileOpen, closeMobile]);
 
   return (
     <nav ref={navRef} className={`navbar ${scrolled ? 'navbar-scrolled' : ''}`}>
@@ -143,67 +174,81 @@ export default function Navbar() {
         </Link>
 
         <button
+          ref={hamburgerRef}
           className={`navbar-hamburger ${mobileOpen ? 'open' : ''}`}
-          onClick={() => setMobileOpen(!mobileOpen)}
+          onClick={toggleMobile}
           aria-label="Menu"
           aria-expanded={mobileOpen}
         >
           <span /><span /><span />
         </button>
 
-        <div className={`navbar-menu ${mobileOpen ? 'navbar-menu-open' : ''}`}>
-          <NavigationMenu>
-            <NavigationMenuList>
-              <NavigationMenuItem>
-                <NavigationMenuLink asChild>
-                  <Link to="/" className="nm-trigger">Home</Link>
-                </NavigationMenuLink>
-              </NavigationMenuItem>
+        <div
+          className={`navbar-menu ${mobileOpen ? 'navbar-menu-open' : ''}`}
+          onClick={mobileOpen ? closeMobile : undefined}
+        >
+          <div className="navbar-menu-inner" onClick={e => e.stopPropagation()}>
+            <NavigationMenu>
+              <NavigationMenuList>
+                <NavigationMenuItem>
+                  <NavigationMenuLink asChild>
+                    <Link
+                      to="/"
+                      className="nm-trigger"
+                      ref={firstNavItemRef}
+                    >
+                      Home
+                    </Link>
+                  </NavigationMenuLink>
+                </NavigationMenuItem>
 
-              <NavigationMenuItem>
-                <NavigationMenuTrigger>About BCPL</NavigationMenuTrigger>
-                <NavigationMenuContent>
-                  <AboutContent />
-                </NavigationMenuContent>
-              </NavigationMenuItem>
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger>About BCPL</NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <AboutContent />
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
 
-              <NavigationMenuItem>
-                <NavigationMenuTrigger>Products</NavigationMenuTrigger>
-                <NavigationMenuContent>
-                  <ProductsContent />
-                </NavigationMenuContent>
-              </NavigationMenuItem>
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger onClick={() => navigate('/products')}>
+                    Products
+                  </NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <ProductsContent />
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
 
-              <NavigationMenuItem>
-                <NavigationMenuLink asChild>
-                  <Link to="/projects" className="nm-trigger">Projects Gallery</Link>
-                </NavigationMenuLink>
-              </NavigationMenuItem>
+                <NavigationMenuItem>
+                  <NavigationMenuLink asChild>
+                    <Link to="/projects" className="nm-trigger">Projects Gallery</Link>
+                  </NavigationMenuLink>
+                </NavigationMenuItem>
 
-              <NavigationMenuItem>
-                <NavigationMenuTrigger>Insights & FAQs</NavigationMenuTrigger>
-                <NavigationMenuContent>
-                  <InsightsContent />
-                </NavigationMenuContent>
-              </NavigationMenuItem>
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger>Insights & FAQs</NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <InsightsContent />
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
 
-              <NavigationMenuItem className="nm-item-search">
-                <SearchBar />
-              </NavigationMenuItem>
+                <NavigationMenuItem className="nm-item-search">
+                  <SearchBar />
+                </NavigationMenuItem>
 
-              <NavigationMenuItem className="nm-item-theme">
-                <ThemeToggle />
-              </NavigationMenuItem>
+                <NavigationMenuItem className="nm-item-theme">
+                  <ThemeToggle />
+                </NavigationMenuItem>
 
-              <NavigationMenuItem>
-                <NavigationMenuLink asChild>
-                  <Link to="/request-quote" className="nm-trigger nav-cta-link">Request a Quote</Link>
-                </NavigationMenuLink>
-              </NavigationMenuItem>
-            </NavigationMenuList>
+                <NavigationMenuItem>
+                  <NavigationMenuLink asChild>
+                    <Link to="/request-quote" className="nm-trigger nav-cta-link">Request a Quote</Link>
+                  </NavigationMenuLink>
+                </NavigationMenuItem>
+              </NavigationMenuList>
 
-            <NavigationMenuIndicator />
-          </NavigationMenu>
+              <NavigationMenuIndicator />
+            </NavigationMenu>
+          </div>
         </div>
       </div>
     </nav>

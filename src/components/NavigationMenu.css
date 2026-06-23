@@ -438,4 +438,22 @@
   .nav-cat-subs {
     grid-template-columns: 1fr;
   }
+
+  .nav-cat-sub {
+    padding: var(--spacing-3) var(--spacing-2);
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+
+  .nav-about-card,
+  .nav-insight-card {
+    padding: var(--spacing-4) var(--spacing-4);
+    min-height: 44px;
+  }
+
+  .nm-dropdown-about,
+  .nm-dropdown-insights {
+    gap: var(--spacing-2);
+  }
 }
