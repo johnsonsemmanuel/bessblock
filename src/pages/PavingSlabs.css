@@ -13,6 +13,19 @@
   border: 1px solid var(--border);
   border-radius: 12px;
   transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast);
+  position: relative;
+  overflow: hidden;
+}
+
+.slab-benefit-design {
+  position: absolute;
+  bottom: -6px;
+  right: -6px;
+  width: 70px;
+  height: auto;
+  color: var(--color-bessblock-blue);
+  opacity: 0.04;
+  pointer-events: none;
 }
 
 .slab-benefit-card:hover {

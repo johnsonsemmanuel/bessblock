@@ -5,6 +5,7 @@ import SEO from '../components/SEO';
 import SectionTitle from '../components/SectionTitle';
 import ScrollReveal from '../components/ScrollReveal';
 import SiteCTA from '../components/SiteCTA';
+import BlockDesign from '../components/BlockDesigns';
 import { StepIcon } from '../components/CategoryIcons';
 import productCategories from '../data/products';
 
@@ -45,6 +46,7 @@ export default function StepRisers() {
                     <b.icon size={22} />
                   </div>
                   <div className="about-stat-label" style={{ fontSize: 'var(--text-base)', color: 'var(--text-secondary)', lineHeight: 1.6 }}>{b.text}</div>
+                  <BlockDesign variant={['stack-bond', 'running-bond', 'hex-grid', 'interlock', 'stack-bond'][i]} className="paving-benefit-design" />
                 </div>
               </ScrollReveal>
             ))}

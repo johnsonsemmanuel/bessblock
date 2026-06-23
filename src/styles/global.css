@@ -230,31 +230,32 @@ input, select, textarea {
   pointer-events: none;
 }
 
-/* Block-patterned edge that adds vibe between hero and content */
+/* Bottom fade — hero image blends into overlay color so there's no hard edge */
 .page-hero-bottom-fade {
   position: absolute;
   bottom: -1px;
   left: 0;
   right: 0;
-  height: 240px;
+  height: 160px;
   background: linear-gradient(180deg, transparent 0%, var(--hero-overlay-solid) 100%);
   z-index: 0;
   pointer-events: none;
 }
 
+/* Block-patterned accent within the hero bottom zone */
 .page-hero-block-edge {
   position: absolute;
-  bottom: -40px;
+  bottom: 0;
   left: 0;
   right: 0;
-  height: 100px;
+  height: 80px;
   z-index: 1;
   pointer-events: none;
   background: var(--pattern-block);
   background-size: 60px 30px;
-  -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 30%, #000 70%, transparent 100%);
-  mask-image: linear-gradient(180deg, transparent 0%, #000 30%, #000 70%, transparent 100%);
-  opacity: 0.35;
+  -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 40%, #000 70%, transparent 100%);
+  mask-image: linear-gradient(180deg, transparent 0%, #000 40%, #000 70%, transparent 100%);
+  opacity: 0.25;
 }
 
 .page-hero-cta {

@@ -6,6 +6,7 @@ import SiteCTA from '../components/SiteCTA';
 import PageHero from '../components/PageHero';
 import LazyBackground from '../components/LazyBackground';
 import SEO from '../components/SEO';
+import BlockDesign from '../components/BlockDesigns';
 import './About.css';
 
 const stats = [
@@ -60,6 +61,7 @@ export default function ManufacturingQuality() {
                   </div>
                   <div className="about-stat-number">{stat.number}</div>
                   <div className="about-stat-label">{stat.label}</div>
+                  <BlockDesign variant={['running-bond', 'hex-grid', 'stack-bond'][i]} className="paving-benefit-design" />
                 </motion.div>
               </ScrollReveal>
             ))}

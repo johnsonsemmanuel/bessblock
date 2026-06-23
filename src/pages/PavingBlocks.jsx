@@ -4,6 +4,7 @@ import { ProductHighlightCard } from '../components/ProductHighlightCard';
 import SEO from '../components/SEO';
 import SectionTitle from '../components/SectionTitle';
 import ScrollReveal from '../components/ScrollReveal';
+import BlockDesign from '../components/BlockDesigns';
 import CoverageCalculator from '../components/CoverageCalculator';
 import SiteCTA from '../components/SiteCTA';
 import '../components/CoverageCalculator.css';
@@ -42,11 +43,12 @@ export default function PavingBlocks() {
           <div className="about-stats">
             {benefits.map((b, i) => (
               <ScrollReveal key={i} delay={i * 0.06}>
-                <div className="about-stat-card" style={{ textAlign: 'left' }}>
+                <div className="about-stat-card paving-benefit-card" style={{ textAlign: 'left' }}>
                   <div className="about-stat-icon">
                     <b.icon size={22} />
                   </div>
                   <div className="about-stat-label" style={{ fontSize: 'var(--text-base)', color: 'var(--text-secondary)', lineHeight: 1.6 }}>{b.text}</div>
+                  <BlockDesign variant={['stack-bond', 'running-bond', 'hex-grid', 'interlock', 'stack-bond'][i]} className="paving-benefit-design" />
                 </div>
               </ScrollReveal>
             ))}

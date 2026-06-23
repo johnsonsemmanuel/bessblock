@@ -148,6 +148,8 @@
   padding: var(--spacing-6) var(--spacing-5);
   text-align: center;
   transition: transform var(--transition-base), box-shadow var(--transition-base);
+  position: relative;
+  overflow: hidden;
 }
 
 .about-stat-card:hover {
@@ -379,6 +381,17 @@
 [data-theme='dark'] .about-text,
 [data-theme='dark'] .about-list li {
   color: var(--color-grey-500);
+}
+
+.paving-benefit-design {
+  position: absolute;
+  bottom: -6px;
+  right: -6px;
+  width: 70px;
+  height: auto;
+  color: var(--color-bessblock-blue);
+  opacity: 0.04;
+  pointer-events: none;
 }
 
 [data-theme='dark'] .about-stat-card {

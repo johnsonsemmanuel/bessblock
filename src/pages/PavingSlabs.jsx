@@ -5,6 +5,7 @@ import SEO from '../components/SEO';
 import SectionTitle from '../components/SectionTitle';
 import ScrollReveal from '../components/ScrollReveal';
 import SiteCTA from '../components/SiteCTA';
+import BlockDesign from '../components/BlockDesigns';
 import { SlabIcon } from '../components/CategoryIcons';
 import productCategories from '../data/products';
 import './PavingSlabs.css';
@@ -46,6 +47,7 @@ export default function PavingSlabs() {
                     <b.icon size={20} />
                   </div>
                   <p className="slab-benefit-text">{b.text}</p>
+                  <BlockDesign variant={['stack-bond', 'running-bond', 'hex-grid', 'interlock'][i]} className="slab-benefit-design" />
                 </div>
               </ScrollReveal>
             ))}

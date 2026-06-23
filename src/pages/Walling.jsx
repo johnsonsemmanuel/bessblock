@@ -6,6 +6,7 @@ import ScrollReveal from '../components/ScrollReveal';
 import SpecSheet from '../components/SpecSheet';
 import SiteCTA from '../components/SiteCTA';
 import { ProductHighlightCard } from '../components/ProductHighlightCard';
+import BlockDesign from '../components/BlockDesigns';
 import CoverageCalculator from '../components/CoverageCalculator';
 import '../components/CoverageCalculator.css';
 import { WallingIcon } from '../components/CategoryIcons';
@@ -68,6 +69,7 @@ export default function Walling() {
                   </div>
                   <h3>{b.title}</h3>
                   <p>{b.desc}</p>
+                  <BlockDesign variant={['running-bond', 'stack-bond', 'hex-grid', 'interlock', 'running-bond', 'stack-bond'][i]} className="walling-benefit-design" />
                 </div>
               </ScrollReveal>
             ))}
