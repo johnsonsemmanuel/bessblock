@@ -74,7 +74,7 @@ export default function HexagonalPavingBlocks() {
             {benefits.map((b, i) => (
               <ScrollReveal key={i} delay={i * 0.06}>
                 <div className="hex-benefit-card">
-                  <div className={`hex-benefit-icon ${i % 2 === 0 ? 'hex-benefit-hex' : 'hex-benefit-icon-rounded'}`}>
+                  <div className="hex-benefit-icon">
                     {i === 0 && <Hexagon size={22} />}
                     {i === 1 && <Lock size={22} />}
                     {i === 2 && <Layers size={22} />}

@@ -25,8 +25,8 @@
 }
 
 .hex-overview-img {
-  aspect-ratio: 1;
-  border-radius: 20px;
+  aspect-ratio: 4 / 3;
+  border-radius: 10px;
   background: var(--bg-section);
   border: 1px solid var(--border);
   display: flex;
@@ -36,7 +36,6 @@
   gap: var(--spacing-3);
   color: var(--color-grey-400);
   font-size: var(--text-sm);
-  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
 }
 
 .hex-overview-img svg {
@@ -73,14 +72,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.hex-benefit-icon-rounded {
   border-radius: 12px;
-}
-
-.hex-benefit-hex {
-  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
 }
 
 .hex-benefit-card h3 {
@@ -172,8 +164,8 @@
 }
 
 .hex-gallery-item {
-  aspect-ratio: 1;
-  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  aspect-ratio: 4 / 3;
+  border-radius: 8px;
   background: var(--bg-section);
   border: 1px solid var(--border);
   display: flex;
