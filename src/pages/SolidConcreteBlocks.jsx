@@ -50,7 +50,7 @@ export default function SolidConcreteBlocks() {
     <>
       <SEO title="Solid Concrete Blocks" description="Dense solid concrete blocks from Bessblock for foundations, load-bearing walls, and heavy-duty structural applications requiring high strength and durability." />
       <div className="page">
-      <PageHero title="Solid Concrete Blocks" description="Solid Concrete Blocks are dense masonry units used where higher load performance and greater structural robustness are required. They are especially useful in foundations, retaining substructures, and load-bearing wall segments." bgImage="/images/hero/concrete-texture-2.webp" />
+      <PageHero title="Solid Concrete Blocks" description="Solid Concrete Blocks are dense masonry units used where higher load performance and greater structural robustness are required. They are especially useful in foundations, retaining substructures, and load-bearing wall segments." bgImage="/images/products/solid-blocks-1.webp" />
 
       {/* Benefits */}
       <section className="section">

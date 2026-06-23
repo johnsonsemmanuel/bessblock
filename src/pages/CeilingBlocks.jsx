@@ -51,7 +51,7 @@ export default function CeilingBlocks() {
     <>
       <SEO title="Ceiling Blocks" description="Bessblock ceiling blocks for rib-and-block slab systems, non-structural concrete infill units for suspended floors and ceilings in building construction." />
       <div className="page">
-      <PageHero title="Ceiling Blocks" description="Ceiling Blocks are non-structural concrete infill units used in rib-and-block slab systems for suspended floors and ceilings. They are designed to work between reinforced concrete ribs or beams as part of a structural floor or roof assembly." bgImage="/images/hero/concrete-texture-2.webp" />
+      <PageHero title="Ceiling Blocks" description="Ceiling Blocks are non-structural concrete infill units used in rib-and-block slab systems for suspended floors and ceilings. They are designed to work between reinforced concrete ribs or beams as part of a structural floor or roof assembly." bgImage="/images/products/ceiling-blocks-1.webp" />
 
       {/* Benefits */}
       <section className="section">

@@ -53,7 +53,7 @@ export default function HollowConcreteBlocks() {
     <>
       <SEO title="Hollow Concrete Blocks" description="Bessblock hollow concrete blocks, lightweight, strong walling units for residential, commercial, and industrial construction with good thermal performance." />
       <div className="page">
-      <PageHero title="Hollow Concrete Blocks" description="Hollow Concrete Blocks are the primary walling unit for general construction. They are commonly used in residential, commercial, and industrial buildings because they offer a practical balance of strength, weight, and build efficiency." bgImage="/images/hero/concrete-texture-1.webp" />
+      <PageHero title="Hollow Concrete Blocks" description="Hollow Concrete Blocks are the primary walling unit for general construction. They are commonly used in residential, commercial, and industrial buildings because they offer a practical balance of strength, weight, and build efficiency." bgImage="/images/products/hollow-blocks-1.webp" />
 
       {/* Benefits */}
       <section className="section">

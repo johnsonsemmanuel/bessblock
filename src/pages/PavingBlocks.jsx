@@ -24,7 +24,7 @@ export default function PavingBlocks() {
     <>
       <SEO title="Paving Blocks" description="Explore Bessblock's range of concrete paving blocks including interlocking, rectangular, and hexagonal options for durable pavement surfaces." />
       <div className="page">
-      <PageHero title="Paving Blocks" description={cat.description} bgImage="/images/hero/concrete-texture-1.webp" />
+      <PageHero title="Paving Blocks" description={cat.description} bgImage="/images/products/interlocking-paving-1.webp" />
 
       <section className="section">
         <div className="container">

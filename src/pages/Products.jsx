@@ -158,7 +158,7 @@ export default function Products() {
       <PageHero
         title="All Products"
         description="Comprehensive range of concrete blocks, paving units, kerbs, and edging solutions for infrastructure and institutional projects."
-        bgImage="/images/hero/concrete-texture-2.webp"
+        bgImage="/images/products/rectangular-paving-1.webp"
       />
 
       <section className="section">
