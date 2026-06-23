@@ -133,9 +133,7 @@
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.3s ease;
-    overflow-y: auto;
-    overscroll-behavior: contain;
-    -webkit-overflow-scrolling: touch;
+    overflow: hidden;
     z-index: 1100;
   }
 
@@ -145,9 +143,13 @@
   }
 
   .navbar-menu .nm-root {
-    flex: 0 1 auto;
+    flex: 1;
     width: 100%;
     max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    overflow: hidden;
   }
 
   .navbar-menu .nm-list {
@@ -155,6 +157,7 @@
     align-items: stretch;
     width: 100%;
     gap: 2px;
+    flex-shrink: 0;
   }
 
   .nm-trigger {
@@ -184,6 +187,43 @@
   .navbar-scrolled .navbar-menu .nm-trigger:hover,
   .navbar-scrolled .navbar-menu .nm-trigger[data-state='open'] {
     color: var(--color-bessblock-blue);
+    background: var(--bg-section);
+  }
+
+  /* Hide nav items after Products trigger when Products content is open */
+  .nm-root:has(.nm-content-products[data-state='open']) .nm-list li:nth-child(n+4) {
+    display: none;
+  }
+
+  /* Viewport fills remaining vertical space for scrollable content */
+  .navbar-menu .nm-viewport-wrapper {
+    flex: 0 1 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    overflow: hidden;
+  }
+
+  .nm-root:has(.nm-content[data-state='open']) .nm-viewport-wrapper {
+    flex: 1;
+  }
+
+  .navbar-menu .nm-viewport {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    overflow: hidden;
+  }
+
+  .navbar-menu .nm-content-products[data-state='open'] {
+    height: 100%;
+    max-height: none;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    margin: 0;
+    padding: var(--spacing-3);
+    border-radius: 12px;
     background: var(--bg-section);
   }
 
