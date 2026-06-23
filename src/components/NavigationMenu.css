@@ -418,6 +418,8 @@
     padding: var(--spacing-3);
     border-radius: 12px;
     background: var(--bg-section);
+    max-height: 55vh;
+    overflow-y: auto;
   }
 
   .nm-indicator {
