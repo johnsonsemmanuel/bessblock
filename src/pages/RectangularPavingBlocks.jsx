@@ -3,10 +3,9 @@ import SEO from '../components/SEO';
 import PageHero from '../components/PageHero';
 import SectionTitle from '../components/SectionTitle';
 import ScrollReveal from '../components/ScrollReveal';
-import AnimatedButton from '../components/AnimatedButton';
+import SiteCTA from '../components/SiteCTA';
 import SpecSheet from '../components/SpecSheet';
 import './RectangularPavingBlocks.css';
-import './About.css';
 
 const benefits = [
   { title: 'Heavy-Duty Durability', text: 'Designed to withstand heavy traffic loads and harsh weather conditions.', icon: Shield },
@@ -123,20 +122,12 @@ export default function RectangularPavingBlocks() {
         </div>
       </section>
 
-      <section className="section section-blue">
-        <div className="container">
-          <div className="rect-cta-card">
-            <h2 className="rect-cta-title">Need more information?</h2>
-            <p className="rect-cta-text">
-              Contact our team for technical specifications, pricing, and project-specific advice.
-            </p>
-            <div className="rect-cta-actions">
-              <AnimatedButton to="/request-quote" variant="yellow">Request a Quote</AnimatedButton>
-              <AnimatedButton to="/products/paving-blocks" variant="outline">View All Paving</AnimatedButton>
-            </div>
-          </div>
-        </div>
-      </section>
+      <SiteCTA
+        title="Need more information?"
+        description="Contact our team for technical specifications, pricing, and project-specific advice."
+        secondaryText="View All Paving"
+        secondaryLink="/products/paving-blocks"
+      />
     </div>
     </>
   );

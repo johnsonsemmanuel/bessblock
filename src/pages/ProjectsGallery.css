@@ -195,46 +195,6 @@
   color: var(--text);
 }
 
-/* ─── Projects CTA ─── */
-
-.projects-cta {
-  text-align: center;
-  padding: var(--spacing-8) 0;
-}
-
-.projects-cta-title {
-  font-size: var(--text-2xl);
-  font-weight: var(--font-weight-bold);
-  color: var(--text);
-  margin-bottom: var(--spacing-3);
-}
-
-.projects-cta-desc {
-  font-size: var(--text-base);
-  color: var(--text-secondary);
-  max-width: 460px;
-  margin: 0 auto var(--spacing-6);
-  line-height: 1.7;
-}
-
-.projects-cta-btn {
-  display: inline-flex;
-  align-items: center;
-  padding: var(--spacing-3) var(--spacing-6);
-  border-radius: 8px;
-  font-size: var(--text-sm);
-  font-weight: var(--font-weight-semibold);
-  background: var(--color-bessblock-blue);
-  color: #fff;
-  text-decoration: none;
-  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
-}
-
-.projects-cta-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(64, 64, 136, 0.3);
-}
-
 @media (max-width: 1024px) {
   .projects-grid {
     grid-template-columns: 1fr 1fr;

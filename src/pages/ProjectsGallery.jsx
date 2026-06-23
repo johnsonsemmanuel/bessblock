@@ -1,8 +1,8 @@
-import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { BookOpen } from 'lucide-react';
 import SEO from '../components/SEO';
 import PageHero from '../components/PageHero';
+import SiteCTA from '../components/SiteCTA';
 import projects from '../data/projects';
 import './ProjectsGallery.css';
 
@@ -86,25 +86,7 @@ export default function ProjectsGallery() {
           </div>
         </section>
 
-        <section className="section-light">
-          <div className="container">
-            <motion.div
-              className="projects-cta"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4 }}
-            >
-              <h2 className="projects-cta-title">Have a Similar Project?</h2>
-              <p className="projects-cta-desc">
-                We supply products for projects of all sizes. Contact our team to discuss your requirements.
-              </p>
-              <Link to="/request-quote" className="projects-cta-btn">
-                Request a Quote
-              </Link>
-            </motion.div>
-          </div>
-        </section>
+        <SiteCTA />
       </div>
     </>
   );

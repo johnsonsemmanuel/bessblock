@@ -1,0 +1,65 @@
+/* ─── CTA section ─── */
+
+.site-cta-section {
+  padding: var(--spacing-16) 0;
+  background: var(--bg-section);
+}
+
+.site-cta {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.site-cta-title {
+  font-size: var(--text-3xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--text);
+  margin-bottom: var(--spacing-4);
+}
+
+.site-cta-desc {
+  font-size: var(--text-base);
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: var(--spacing-8);
+}
+
+.site-cta-actions {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-4);
+  flex-wrap: wrap;
+}
+
+.site-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--spacing-3) var(--spacing-6);
+  border-radius: 8px;
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-semibold);
+  text-decoration: none;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast), color var(--transition-fast);
+}
+
+.site-cta-btn-primary {
+  background: var(--color-bessblock-blue);
+  color: #fff;
+}
+
+.site-cta-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(64, 64, 136, 0.3);
+}
+
+.site-cta-btn-secondary {
+  border: 1px solid var(--border);
+  color: var(--text);
+}
+
+.site-cta-btn-secondary:hover {
+  border-color: var(--color-bessblock-blue);
+  color: var(--color-bessblock-blue);
+  transform: translateY(-2px);
+}
