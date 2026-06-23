@@ -1,0 +1,48 @@
+.slab-benefits-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-4);
+}
+
+.slab-benefit-card {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-4);
+  padding: var(--spacing-5);
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast);
+}
+
+.slab-benefit-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(64, 64, 136, 0.08);
+  border-color: var(--color-bessblock-blue);
+}
+
+.slab-benefit-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--color-bessblock-blue) 10%, transparent);
+  color: var(--color-bessblock-blue);
+}
+
+.slab-benefit-text {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin: 0;
+  padding-top: 2px;
+}
+
+@media (max-width: 768px) {
+  .slab-benefits-grid {
+    grid-template-columns: 1fr;
+  }
+}

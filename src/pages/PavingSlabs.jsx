@@ -7,6 +7,7 @@ import ScrollReveal from '../components/ScrollReveal';
 import SiteCTA from '../components/SiteCTA';
 import { SlabIcon } from '../components/CategoryIcons';
 import productCategories from '../data/products';
+import './PavingSlabs.css';
 
 const benefits = [
   { icon: Shield, text: 'Large-format concrete slabs for pedestrian areas, patios, and public spaces.' },
@@ -37,14 +38,14 @@ export default function PavingSlabs() {
       <section className="section section-light">
         <div className="container">
           <SectionTitle label="Key Benefits" title="Why choose Bessblock slabs" align="left" />
-          <div className="about-stats">
+          <div className="slab-benefits-grid">
             {benefits.map((b, i) => (
               <ScrollReveal key={i} delay={i * 0.06}>
-                <div className="about-stat-card" style={{ textAlign: 'left' }}>
-                  <div className="about-stat-icon">
-                    <b.icon size={22} />
+                <div className="slab-benefit-card">
+                  <div className="slab-benefit-icon">
+                    <b.icon size={20} />
                   </div>
-                  <div className="about-stat-label" style={{ fontSize: 'var(--text-base)', color: 'var(--text-secondary)', lineHeight: 1.6 }}>{b.text}</div>
+                  <p className="slab-benefit-text">{b.text}</p>
                 </div>
               </ScrollReveal>
             ))}
