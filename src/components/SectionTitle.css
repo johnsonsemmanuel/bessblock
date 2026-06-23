@@ -30,7 +30,7 @@
 .section-title-heading {
   font-size: var(--text-4xl);
   font-weight: var(--font-weight-bold);
-  color: var(--color-grey-900);
+  color: var(--text);
   line-height: 1.2;
   letter-spacing: -0.02em;
   position: relative;
