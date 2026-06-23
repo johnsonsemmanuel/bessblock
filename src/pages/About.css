@@ -229,34 +229,6 @@
   opacity: 0.3;
 }
 
-/* ─── CTA ─── */
-.about-cta {
-  text-align: center;
-  max-width: 640px;
-  margin: 0 auto;
-}
-
-.about-cta-title {
-  font-size: var(--text-3xl);
-  font-weight: var(--font-weight-bold);
-  color: var(--text);
-  margin-bottom: var(--spacing-4);
-}
-
-.about-cta-text {
-  font-size: var(--text-base);
-  color: var(--text-secondary);
-  line-height: 1.7;
-  margin-bottom: var(--spacing-8);
-}
-
-.about-cta-actions {
-  display: flex;
-  justify-content: center;
-  gap: var(--spacing-4);
-  flex-wrap: wrap;
-}
-
 /* ─── Flow panel styles ─── */
 .about-flow-panel {
   position: relative;
@@ -430,15 +402,6 @@
 
   .about-stats {
     grid-template-columns: 1fr;
-  }
-
-  .about-cta-title {
-    font-size: var(--text-2xl);
-  }
-
-  .about-cta-actions {
-    flex-direction: column;
-    align-items: center;
   }
 
   .about-image-accent {

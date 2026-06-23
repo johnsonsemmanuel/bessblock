@@ -5,7 +5,7 @@ import SectionTitle from '../components/SectionTitle';
 import LazyBackground from '../components/LazyBackground';
 import { FlowArt, FlowPanel } from '../components/FlowArt';
 import '../components/FlowArt.css';
-import AnimatedButton from '../components/AnimatedButton';
+import SiteCTA from '../components/SiteCTA';
 import PageHero from '../components/PageHero';
 import SEO from '../components/SEO';
 import './About.css';
@@ -176,26 +176,14 @@ export default function About() {
         </div>
       </section>
 
-      <section className="section section-light">
-        <div className="container">
-          <motion.div
-            className="about-cta"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
-            <h2 className="about-cta-title">Need support with your next project?</h2>
-            <p className="about-cta-text">
-              Explore our products, review technical information, or contact our team for a quotation and product guidance.
-            </p>
-            <div className="about-cta-actions">
-              <AnimatedButton to="/products/paving-blocks" variant="primary">Explore Products</AnimatedButton>
-              <AnimatedButton to="/request-quote" variant="outline-dark">Request a Quote</AnimatedButton>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+      <SiteCTA
+        title="Need support with your next project?"
+        description="Explore our products, review technical information, or contact our team for a quotation and product guidance."
+        primaryText="Explore Products"
+        primaryLink="/products/paving-blocks"
+        secondaryText="Request a Quote"
+        secondaryLink="/request-quote"
+      />
     </div>
     </>
   );

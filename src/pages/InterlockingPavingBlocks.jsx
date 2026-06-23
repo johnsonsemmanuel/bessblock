@@ -5,9 +5,8 @@ import SEO from '../components/SEO';
 import PageHero from '../components/PageHero';
 import SectionTitle from '../components/SectionTitle';
 import ScrollReveal from '../components/ScrollReveal';
-import AnimatedButton from '../components/AnimatedButton';
+import SiteCTA from '../components/SiteCTA';
 import SpecSheet from '../components/SpecSheet';
-import './About.css';
 import './RectangularPavingBlocks.css';
 import './InterlockingPavingBlocks.css';
 
@@ -193,21 +192,12 @@ export default function InterlockingPavingBlocks() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="section section-blue">
-        <div className="container">
-          <div className="about-cta">
-            <h2 className="about-cta-title" style={{ color: 'var(--color-white)' }}>Start your paving project</h2>
-            <p className="about-cta-text" style={{ color: 'rgba(255,255,255,0.8)' }}>
-              Contact our team for technical specifications, pricing, and project-specific advice.
-            </p>
-            <div className="about-cta-actions">
-              <AnimatedButton to="/request-quote" variant="yellow">Request a Quote</AnimatedButton>
-              <AnimatedButton to="/products/paving-blocks" variant="outline">View All Paving</AnimatedButton>
-            </div>
-          </div>
-        </div>
-      </section>
+      <SiteCTA
+        title="Start your paving project"
+        description="Contact our team for technical specifications, pricing, and project-specific advice."
+        secondaryText="View All Paving"
+        secondaryLink="/products/paving-blocks"
+      />
     </div>
     </>
   );

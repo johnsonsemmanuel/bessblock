@@ -1,10 +1,10 @@
-import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { Grid3x3, Home, PanelBottom, Ruler, Layers, MapPin, Mountain, ArrowUpDown, Truck, Warehouse, Factory, HardHat, Settings } from 'lucide-react';
 import SEO from '../components/SEO';
 import PageHero from '../components/PageHero';
 import ScrollReveal from '../components/ScrollReveal';
+import SiteCTA from '../components/SiteCTA';
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from '../components/Accordion';
 import '../components/Accordion.css';
 import './FAQs.css';
@@ -129,25 +129,12 @@ export default function FAQs() {
         </div>
       </section>
 
-      <ScrollReveal>
-        <section className="section-light">
-          <div className="container">
-            <motion.div
-              className="faqs-cta"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4 }}
-            >
-              <h2 className="faqs-cta-title">Still Have Questions?</h2>
-              <p className="faqs-cta-desc">
-                Our team is ready to help with product specifications, technical advice, or project support.
-              </p>
-              <Link to="/contact" className="faqs-cta-btn">Contact Us</Link>
-            </motion.div>
-          </div>
-        </section>
-      </ScrollReveal>
+      <SiteCTA
+        title="Still Have Questions?"
+        description="Our team is ready to help with product specifications, technical advice, or project support."
+        primaryText="Contact Us"
+        primaryLink="/contact"
+      />
     </div>
     </>
   );

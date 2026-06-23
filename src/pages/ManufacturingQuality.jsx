@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { Shield, Droplets, Settings, Truck, HardHat, Ruler, Hammer } from 'lucide-react';
 import ScrollReveal from '../components/ScrollReveal';
 import SectionTitle from '../components/SectionTitle';
-import AnimatedButton from '../components/AnimatedButton';
+import SiteCTA from '../components/SiteCTA';
 import PageHero from '../components/PageHero';
 import LazyBackground from '../components/LazyBackground';
 import SEO from '../components/SEO';
@@ -223,29 +223,14 @@ export default function ManufacturingQuality() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="section section-blue">
-        <div className="container">
-          <motion.div
-            className="about-cta"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
-            <h2 className="about-cta-title" style={{ color: 'var(--color-white)' }}>
-              Quality made into every product.
-            </h2>
-            <p className="about-cta-text" style={{ color: 'rgba(255, 255, 255, 0.8)' }}>
-              From automated production on the Besser block machine to careful mist curing and final inspection, Bessblock's manufacturing process is designed to produce concrete products you can trust on site.
-            </p>
-            <div className="about-cta-actions">
-              <AnimatedButton to="/products/paving-blocks" variant="yellow">Explore Products</AnimatedButton>
-              <AnimatedButton to="/request-quote" variant="outline">Request a Quote</AnimatedButton>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+      <SiteCTA
+        title="Quality made into every product."
+        description="From automated production on the Besser block machine to careful mist curing and final inspection, Bessblock's manufacturing process is designed to produce concrete products you can trust on site."
+        primaryText="Explore Products"
+        primaryLink="/products/paving-blocks"
+        secondaryText="Request a Quote"
+        secondaryLink="/request-quote"
+      />
     </div>
     </>
   );

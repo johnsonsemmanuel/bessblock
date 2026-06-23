@@ -3,12 +3,11 @@ import PageHero from '../components/PageHero';
 import SectionTitle from '../components/SectionTitle';
 import ScrollReveal from '../components/ScrollReveal';
 import SpecSheet from '../components/SpecSheet';
-import AnimatedButton from '../components/AnimatedButton';
+import SiteCTA from '../components/SiteCTA';
 import { ProductHighlightCard } from '../components/ProductHighlightCard';
 import { KerbIcon } from '../components/CategoryIcons';
 import productCategories from '../data/products';
 import { CheckCircle2 } from 'lucide-react';
-import './About.css';
 import './KerbsEdging.css';
 
 const benefits = [
@@ -142,20 +141,12 @@ export default function KerbsEdging() {
         </div>
       </section>
 
-      <section className="section section-blue">
-        <div className="container">
-          <div className="about-cta">
-            <h2 className="about-cta-title" style={{ color: 'var(--color-white)' }}>Need kerbs for your project?</h2>
-            <p className="about-cta-text" style={{ color: 'rgba(255,255,255,0.8)' }}>
-              Contact our team for technical specifications, pricing, and project advice.
-            </p>
-            <div className="about-cta-actions">
-              <AnimatedButton to="/request-quote" variant="yellow">Request a Quote</AnimatedButton>
-              <AnimatedButton to="/products" variant="outline">View All Products</AnimatedButton>
-            </div>
-          </div>
-        </div>
-      </section>
+      <SiteCTA
+        title="Need kerbs for your project?"
+        description="Contact our team for technical specifications, pricing, and project advice."
+        secondaryText="View All Products"
+        secondaryLink="/products"
+      />
     </div>
     </>
   );

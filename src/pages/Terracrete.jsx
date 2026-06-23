@@ -4,9 +4,8 @@ import SEO from '../components/SEO';
 import PageHero from '../components/PageHero';
 import SectionTitle from '../components/SectionTitle';
 import ScrollReveal from '../components/ScrollReveal';
-import AnimatedButton from '../components/AnimatedButton';
+import SiteCTA from '../components/SiteCTA';
 import SpecSheet from '../components/SpecSheet';
-import './About.css';
 import './Walling.css';
 
 const specs = [
@@ -96,18 +95,12 @@ export default function Terracrete() {
         </div>
       </section>
 
-      <section className="section section-blue">
-        <div className="container">
-          <div className="about-cta">
-            <h2 className="about-cta-title" style={{ color: 'var(--color-white)' }}>Need Terracrete for a constrained site?</h2>
-            <p className="about-cta-text" style={{ color: 'rgba(255,255,255,0.8)' }}>Contact our team for pricing, delivery, and technical information.</p>
-            <div className="about-cta-actions">
-              <AnimatedButton to="/request-quote" variant="yellow">Request a Quote</AnimatedButton>
-              <AnimatedButton to="/products/walling/retaining-walls" variant="outline">View All Retaining Walls</AnimatedButton>
-            </div>
-          </div>
-        </div>
-      </section>
+      <SiteCTA
+        title="Need Terracrete for a constrained site?"
+        description="Contact our team for pricing, delivery, and technical information."
+        secondaryText="View All Retaining Walls"
+        secondaryLink="/products/walling/retaining-walls"
+      />
     </div>
     </>
   );

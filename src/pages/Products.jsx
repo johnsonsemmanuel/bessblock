@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { Search, SlidersHorizontal } from 'lucide-react';
 import PageHero from '../components/PageHero';
 import LazyBackground from '../components/LazyBackground';
+import SiteCTA from '../components/SiteCTA';
 import { ProductHighlightCard } from '../components/ProductHighlightCard';
 import { PavingIcon, WallingIcon, KerbIcon, SlabIcon, StepIcon } from '../components/CategoryIcons';
 import productCategories from '../data/products';
@@ -209,30 +210,12 @@ export default function Products() {
         </div>
       </section>
 
-      <section className="section-light">
-        <div className="container">
-          <motion.div
-            className="products-cta"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.4 }}
-          >
-            <h2 className="products-cta-title">Need Help Choosing?</h2>
-            <p className="products-cta-desc">
-              Our technical team can help you select the right products for your project specifications.
-            </p>
-            <div className="products-cta-actions">
-              <Link to="/request-quote" className="products-cta-btn products-cta-btn-primary">
-                Request a Quote
-              </Link>
-              <Link to="/contact" className="products-cta-btn products-cta-btn-secondary">
-                Speak to an Expert
-              </Link>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+      <SiteCTA
+        title="Need Help Choosing?"
+        description="Our technical team can help you select the right products for your project specifications."
+        secondaryText="Speak to an Expert"
+        secondaryLink="/contact"
+      />
     </div>
     </>
   );
