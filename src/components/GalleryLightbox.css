@@ -5,8 +5,9 @@
 }
 
 .gl-thumb {
-  all: unset;
+  position: relative;
   display: block;
+  width: 100%;
   aspect-ratio: 4 / 3;
   border-radius: 8px;
   overflow: hidden;
@@ -14,6 +15,7 @@
   border: 1px solid var(--border);
   background: var(--bg-section);
   transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+  outline: none;
 }
 
 .gl-thumb:focus-visible {
@@ -27,10 +29,10 @@
 }
 
 .gl-thumb-img {
+  display: block;
   width: 100%;
   height: 100%;
-  background-size: cover;
-  background-position: center;
+  object-fit: cover;
 }
 
 .gl-overlay {

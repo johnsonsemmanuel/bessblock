@@ -185,7 +185,7 @@
 
 .related-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(var(--rel-columns, 3), 1fr);
   gap: var(--spacing-6);
 }
 

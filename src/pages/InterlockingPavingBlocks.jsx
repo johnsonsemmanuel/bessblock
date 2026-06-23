@@ -198,7 +198,7 @@ export default function InterlockingPavingBlocks() {
       <section className="section">
         <div className="container">
           <SectionTitle label="Related Products" title="Explore more paving solutions" align="left" />
-          <div className="related-grid">
+          <div className="related-grid" style={{ '--rel-columns': 4 }}>
             {related.map((r, i) => (
               <ScrollReveal key={r.name} delay={i * 0.06}>
                 <ProductHighlightCard

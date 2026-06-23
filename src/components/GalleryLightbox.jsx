@@ -55,19 +55,33 @@ export default function GalleryLightbox({ images, columns = 3 }) {
     }
   };
 
+  const handleThumbKeyDown = (e, i) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      openLightbox(i);
+    }
+  };
+
   return (
     <>
       <div className="gl-grid" style={{ '--gl-columns': columns }}>
         {images.map((src, i) => (
           <ScrollReveal key={i} delay={i * 0.04}>
-            <button
-              type="button"
+            <div
               className="gl-thumb"
               onClick={() => openLightbox(i)}
+              onKeyDown={(e) => handleThumbKeyDown(e, i)}
+              role="button"
+              tabIndex={0}
               aria-label={`Open image ${i + 1}`}
             >
-              <LazyBackground src={src} className="gl-thumb-img" />
-            </button>
+              <img
+                src={src}
+                alt={`Gallery image ${i + 1}`}
+                className="gl-thumb-img"
+                loading="lazy"
+              />
+            </div>
           </ScrollReveal>
         ))}
       </div>
