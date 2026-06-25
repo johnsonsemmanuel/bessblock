@@ -400,6 +400,31 @@ input, select, textarea {
   visibility: visible;
 }
 
+@media (max-width: 768px) {
+  .whatsapp-label {
+    display: none;
+  }
+}
+
+/* ── Side Label ────────────────────────── */
+
+.side-label {
+  position: fixed;
+  left: 0;
+  top: 50%;
+  z-index: 50;
+  transform: translateY(-50%);
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  font-size: var(--text-xs);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-muted);
+  letter-spacing: 0.15em;
+  padding: var(--spacing-8) var(--spacing-3);
+  pointer-events: none;
+  user-select: none;
+}
+
 /* ── Breadcrumbs ────────────────────────── */
 
 .breadcrumbs {

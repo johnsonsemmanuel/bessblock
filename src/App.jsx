@@ -9,6 +9,8 @@ import NotFound from './pages/NotFound';
 import ErrorBoundary from './components/ErrorBoundary';
 import CookieConsent from './components/CookieConsent';
 import LiveChat from './components/LiveChat';
+import SideLabel from './components/SideLabel';
+import Admin from './admin/Admin';
 
 const About = lazy(() => import('./pages/About'));
 const ManufacturingQuality = lazy(() => import('./pages/ManufacturingQuality'));
@@ -68,6 +70,7 @@ function Layout({ children }) {
         Skip to main content
       </a>
       <Navbar />
+      <SideLabel />
       <main id="main-content">
         <ErrorBoundary>
           {children}
@@ -99,9 +102,15 @@ export default function App() {
 
   return (
     <AnimatePresence mode="wait">
-      <Layout key={location.pathname}>
-        <Routes location={location}>
-          <Route path="/" element={<AnimatedPage><Home /></AnimatedPage>} />
+      <Routes location={location}>
+        {/* Admin — no Navbar/Footer */}
+        <Route path="/admin/*" element={<Admin />} />
+
+        {/* Public site */}
+        <Route path="*" element={
+          <Layout key={location.pathname}>
+            <Routes location={location}>
+              <Route path="/" element={<AnimatedPage><Home /></AnimatedPage>} />
 
           <Route path="/about" element={<AnimatedPage><About /></AnimatedPage>} />
           <Route path="/about/manufacturing" element={<AnimatedPage><ManufacturingQuality /></AnimatedPage>} />
@@ -155,8 +164,10 @@ export default function App() {
           <Route path="/terms-conditions" element={<AnimatedPage><TermsConditions /></AnimatedPage>} />
           <Route path="/search" element={<AnimatedPage><SearchResults /></AnimatedPage>} />
           <Route path="*" element={<NotFound />} />
-        </Routes>
-      </Layout>
+            </Routes>
+          </Layout>
+        } />
+      </Routes>
     </AnimatePresence>
   );
 }
