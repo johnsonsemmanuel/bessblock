@@ -41,21 +41,6 @@
   align-items: center;
 }
 
-.nav-cta-link {
-  background: var(--color-bessblock-blue);
-  color: var(--color-white) !important;
-  padding: var(--spacing-2) var(--spacing-6) !important;
-  border-radius: 8px;
-  font-weight: var(--font-weight-semibold) !important;
-  margin-left: var(--spacing-2);
-  min-height: 44px;
-  transition: background var(--transition-fast) !important;
-}
-
-.nav-cta-link:hover {
-  background: var(--color-bessblock-blue-dark) !important;
-}
-
 /* ── Hamburger ── */
 .navbar-hamburger {
   display: none;

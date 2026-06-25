@@ -11,6 +11,7 @@ import {
 } from './NavigationMenu';
 import ThemeToggle from './ThemeToggle';
 import SearchBar from './SearchBar';
+import AnimatedButton from './AnimatedButton';
 import productCategories from '../data/products';
 import './Navbar.css';
 
@@ -236,9 +237,7 @@ export default function Navbar() {
                 </NavigationMenuItem>
 
                 <NavigationMenuItem>
-                  <NavigationMenuLink asChild>
-                    <Link to="/request-quote" className="nm-trigger nav-cta-link">Request a Quote</Link>
-                  </NavigationMenuLink>
+                  <AnimatedButton to="/request-quote" variant="primary" size="sm">Request a Quote</AnimatedButton>
                 </NavigationMenuItem>
               </NavigationMenuList>
 
