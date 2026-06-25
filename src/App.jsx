@@ -10,7 +10,6 @@ import ErrorBoundary from './components/ErrorBoundary';
 import CookieConsent from './components/CookieConsent';
 import LiveChat from './components/LiveChat';
 import SideLabel from './components/SideLabel';
-import Admin from './admin/Admin';
 
 const About = lazy(() => import('./pages/About'));
 const ManufacturingQuality = lazy(() => import('./pages/ManufacturingQuality'));
@@ -56,6 +55,7 @@ const RequestQuote = lazy(() => import('./pages/RequestQuote'));
 const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'));
 const TermsConditions = lazy(() => import('./pages/TermsConditions'));
 const SearchResults = lazy(() => import('./pages/SearchResults'));
+const Admin = lazy(() => import('./admin/Admin'));
 
 function Layout({ children }) {
   const { pathname } = useLocation();
