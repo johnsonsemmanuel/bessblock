@@ -227,12 +227,6 @@ export default function Navbar() {
                   </NavigationMenuLink>
                 </NavigationMenuItem>
 
-                <NavigationMenuItem>
-                  <NavigationMenuLink asChild>
-                    <a href="/BessBlock PriceList Updated.pdf" download className="nm-trigger">Price List</a>
-                  </NavigationMenuLink>
-                </NavigationMenuItem>
-
                 <NavigationMenuItem className="nm-item-search">
                   <SearchBar />
                 </NavigationMenuItem>

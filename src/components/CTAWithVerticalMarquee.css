@@ -4,7 +4,7 @@
 }
 
 .cta-marquee-section {
-  background: var(--color-grey-900);
+  background: #141414;
   background-image: var(--pattern-block);
   background-repeat: repeat;
   padding: var(--spacing-20) 0;
@@ -16,7 +16,7 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: var(--color-grey-900);
+  background: #141414;
   opacity: 0.75;
   pointer-events: none;
   z-index: 0;
@@ -128,12 +128,12 @@
 
 .cta-marquee-vignette-top {
   top: 0;
-  background: linear-gradient(180deg, var(--color-grey-900) 0%, transparent 100%);
+  background: linear-gradient(180deg, #141414 0%, transparent 100%);
 }
 
 .cta-marquee-vignette-bottom {
   bottom: 0;
-  background: linear-gradient(0deg, var(--color-grey-900) 0%, transparent 100%);
+  background: linear-gradient(0deg, #141414 0%, transparent 100%);
 }
 
 @media (max-width: 1024px) {
