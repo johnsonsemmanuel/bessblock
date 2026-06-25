@@ -141,6 +141,7 @@ export default function Home() {
               <AnimatedButton to="/request-quote" variant="outline">Request a Quote</AnimatedButton>
               <a href="/BessBlock PriceList Updated.pdf" download className="abtn abtn-outline abtn-md">
                 <span className="abtn-text">Download Price List</span>
+                <span className="abtn-icon"><ArrowRight size={16} aria-hidden="true" /></span>
               </a>
             </motion.div>
           </motion.div>

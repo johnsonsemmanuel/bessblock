@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { Home, ArrowLeft, Search, ArrowRight, Package, FileText } from 'lucide-react';
 import SEO from '../components/SEO';
+import AnimatedButton from '../components/AnimatedButton';
 import './NotFound.css';
 
 const popularLinks = [
@@ -73,16 +74,13 @@ export default function NotFound() {
           </div>
 
           <div className="not-found-actions">
-            <Link to="/" className="not-found-btn not-found-btn-primary">
-              <Home size={18} />
-              Go Home
-            </Link>
+            <AnimatedButton to="/" variant="primary">Go Home</AnimatedButton>
             <button
-              className="not-found-btn not-found-btn-secondary"
+              className="abtn abtn-outline abtn-md"
               onClick={() => window.history.back()}
             >
-              <ArrowLeft size={18} />
-              Go Back
+              <span className="abtn-text">Go Back</span>
+              <span className="abtn-icon"><ArrowRight size={16} /></span>
             </button>
           </div>
         </motion.div>

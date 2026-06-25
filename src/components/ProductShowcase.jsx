@@ -154,7 +154,7 @@ export default function ProductShowcase() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.3, duration: 0.3 }}
                 >
-                  <Link to={item.path} className="ps-btn">View Range <span className="ps-btn-arrow"><ArrowRight size={12} /></span></Link>
+                  <Link to={item.path} className="abtn abtn-yellow abtn-sm"><span className="abtn-text">View Range</span><span className="abtn-icon" style={{background:'rgba(0,0,0,0.1)'}}><ArrowRight size={12} /></span></Link>
                 </motion.div>
               )}
             </motion.div>

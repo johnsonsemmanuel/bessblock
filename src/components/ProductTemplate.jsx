@@ -9,6 +9,7 @@ import { Check } from 'lucide-react';
 import { ProductHighlightCard } from './ProductHighlightCard';
 import SpecSheet from './SpecSheet';
 import SiteCTA from './SiteCTA';
+import AnimatedButton from './AnimatedButton';
 import { PavingIcon, WallingIcon, KerbIcon, SlabIcon, StepIcon } from './CategoryIcons';
 import { productPages } from '../data/products';
 import './ProductTemplate.css';
@@ -155,10 +156,7 @@ export default function ProductTemplate({ productKey, heroImage }) {
                 <p className="product-sidebar-cta-desc">
                   Our team can provide pricing, technical specifications, and delivery options.
                 </p>
-                <Link to="/request-quote" className="product-sidebar-cta-btn">
-                  Request a Quote
-                  <ArrowRight size={16} />
-                </Link>
+                <AnimatedButton to="/request-quote" variant="primary">Request a Quote</AnimatedButton>
               </motion.div>
             </aside>
           </div>

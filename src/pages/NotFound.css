@@ -61,41 +61,6 @@
   gap: var(--spacing-4);
 }
 
-.not-found-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--spacing-2);
-  padding: var(--spacing-3) var(--spacing-6);
-  border-radius: 8px;
-  font-size: var(--text-sm);
-  font-weight: var(--font-weight-semibold);
-  text-decoration: none;
-  cursor: pointer;
-  border: none;
-  font-family: inherit;
-  transition: transform var(--transition-fast), box-shadow var(--transition-fast), background var(--transition-fast);
-}
-
-.not-found-btn-primary {
-  background: var(--color-bessblock-blue);
-  color: #fff;
-}
-
-.not-found-btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(64, 64, 136, 0.3);
-}
-
-.not-found-btn-secondary {
-  background: rgba(255, 255, 255, 0.1);
-  color: var(--hero-text);
-}
-
-.not-found-btn-secondary:hover {
-  background: rgba(255, 255, 255, 0.15);
-  transform: translateY(-2px);
-}
-
 /* ── Search ── */
 .not-found-search {
   display: flex;

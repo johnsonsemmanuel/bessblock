@@ -215,22 +215,11 @@
 }
 
 .product-sidebar-cta-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--spacing-2);
-  padding: var(--spacing-2) var(--spacing-5);
-  border-radius: 8px;
-  font-size: var(--text-sm);
-  font-weight: var(--font-weight-semibold);
-  background: var(--color-bessblock-blue);
-  color: #fff;
-  text-decoration: none;
-  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  /* replaced by abtn */
 }
 
 .product-sidebar-cta-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(64, 64, 136, 0.3);
+  /* replaced by abtn */
 }
 
 @media (max-width: 1024px) {

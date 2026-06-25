@@ -49,12 +49,11 @@
   font-weight: var(--font-weight-semibold) !important;
   margin-left: var(--spacing-2);
   min-height: 44px;
-  transition: background var(--transition-fast), transform var(--transition-fast) !important;
+  transition: background var(--transition-fast) !important;
 }
 
 .nav-cta-link:hover {
   background: var(--color-bessblock-blue-dark) !important;
-  transform: translateY(-1px);
 }
 
 /* ── Hamburger ── */
