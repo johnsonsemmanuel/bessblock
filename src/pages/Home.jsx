@@ -9,7 +9,6 @@ import { ArrowRight, CheckCircle, ChevronDown, Box, Truck, HardHat, Grid3x3 } fr
 import ScrollReveal from '../components/ScrollReveal';
 import { ProgressiveBlur } from '../components/ProgressiveBlur';
 import CTAWithVerticalMarquee from '../components/CTAWithVerticalMarquee';
-import DownloadSpecsModal from '../components/DownloadSpecsModal';
 import './Home.css';
 
 const heroSlides = [
@@ -66,7 +65,6 @@ export default function Home() {
   const [slide, setSlide] = useState(0);
   const [leaving, setLeaving] = useState(null);
   const [paused, setPaused] = useState(false);
-  const [specsModalOpen, setSpecsModalOpen] = useState(false);
 
   useEffect(() => {
     if (paused) return;
@@ -141,7 +139,9 @@ export default function Home() {
             >
               <AnimatedButton to="/products" variant="primary">Explore Products</AnimatedButton>
               <AnimatedButton to="/request-quote" variant="outline">Request a Quote</AnimatedButton>
-              <AnimatedButton type="button" variant="outline" onClick={() => setSpecsModalOpen(true)}>Download Specifications</AnimatedButton>
+              <a href="/BessBlock PriceList Updated.pdf" download className="abtn abtn-outline abtn-md">
+                <span className="abtn-text">Download Price List</span>
+              </a>
             </motion.div>
           </motion.div>
         </div>
@@ -419,8 +419,6 @@ export default function Home() {
       </section>
 
       <CTAWithVerticalMarquee />
-
-      <DownloadSpecsModal open={specsModalOpen} onClose={() => setSpecsModalOpen(false)} />
     </div>
     </>
   );
