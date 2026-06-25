@@ -174,18 +174,18 @@
 .hero-actions .abtn-outline {
   border-color: rgba(255, 255, 255, 0.7);
   color: #fff;
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.15);
 }
 .hero-actions .abtn-outline:hover {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.25);
   border-color: #fff;
   color: #fff;
 }
 .hero-actions .abtn-outline .abtn-icon {
-  background: rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.15);
 }
 .hero-actions .abtn-outline:hover .abtn-icon {
-  background: rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.3);
 }
 
 /* Trust bar */

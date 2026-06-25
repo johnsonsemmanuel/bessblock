@@ -103,7 +103,7 @@
 .abtn-outline {
   border: 1.5px solid var(--color-bessblock-blue);
   color: var(--color-bessblock-blue);
-  background: transparent;
+  background: var(--bg-card);
 }
 .abtn-outline:hover {
   background: var(--color-bessblock-blue);
@@ -121,7 +121,7 @@
 .abtn-outline-hero {
   border: 1.5px solid rgba(255, 255, 255, 0.7);
   color: #fff;
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.12);
 }
 .abtn-outline-hero:hover {
   background: rgba(255, 255, 255, 0.2);
@@ -139,7 +139,7 @@
 [data-theme='dark'] .abtn-outline {
   border-color: var(--color-bessblock-blue-light);
   color: var(--color-bessblock-blue-light);
-  background: transparent;
+  background: var(--bg-card);
 }
 [data-theme='dark'] .abtn-outline:hover {
   background: var(--color-bessblock-blue);
