@@ -13,11 +13,11 @@ import DownloadSpecsModal from '../components/DownloadSpecsModal';
 import './Home.css';
 
 const heroSlides = [
-  { image: '/images/hero/production-site-1.webp', label: 'Bessblock production facility and operations' },
   { image: '/images/products/hexagonal-paving-blocks-1.webp', label: 'Hexagonal paving blocks for landscaping and high-traffic areas' },
-  { image: '/images/hero/production-site-3.webp', label: 'Bessblock product showcase and site development' },
   { image: '/images/products/hexagonal-paving-blocks-2.webp', label: 'Precision-engineered hexagonal concrete paving' },
-  { image: '/images/hero/production-site-4.webp', label: 'Bessblock team at work in the factory' },
+  { image: '/images/products/hexagonal-paving-blocks-3.webp', label: 'Durable hexagonal paving solutions by Bessblock' },
+  { image: '/images/products/hexagonal-paving-blocks-4.webp', label: 'Premium quality hexagonal paving blocks' },
+  { image: '/images/hero/production-site-1.webp', label: 'Bessblock production facility and operations' },
 ];
 
 const stagger = {
