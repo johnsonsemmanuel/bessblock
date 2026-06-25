@@ -12,11 +12,9 @@ import CTAWithVerticalMarquee from '../components/CTAWithVerticalMarquee';
 import './Home.css';
 
 const heroSlides = [
-  { image: '/images/products/hexagonal-paving-blocks-1.webp', label: 'Hexagonal paving blocks for landscaping and high-traffic areas' },
-  { image: '/images/products/hexagonal-paving-blocks-2.webp', label: 'Precision-engineered hexagonal concrete paving' },
-  { image: '/images/products/hexagonal-paving-blocks-3.webp', label: 'Durable hexagonal paving solutions by Bessblock' },
-  { image: '/images/products/hexagonal-paving-blocks-4.webp', label: 'Premium quality hexagonal paving blocks' },
   { image: '/images/hero/production-site-1.webp', label: 'Bessblock production facility and operations' },
+  { image: '/images/hero/production-site-3.webp', label: 'Bessblock product showcase and site development' },
+  { image: '/images/hero/production-site-4.webp', label: 'Bessblock team at work in the factory' },
 ];
 
 const stagger = {
@@ -139,7 +137,7 @@ export default function Home() {
             >
               <AnimatedButton to="/products" variant="primary">Explore Products</AnimatedButton>
               <AnimatedButton to="/request-quote" variant="outline">Request a Quote</AnimatedButton>
-              <a href="/BessBlock PriceList Updated.pdf" download className="abtn abtn-outline abtn-md">
+              <a href="/BCPL Price List 2026.pdf" download className="abtn abtn-outline abtn-md">
                 <span className="abtn-text">Download Price List</span>
                 <span className="abtn-icon"><ArrowRight size={16} aria-hidden="true" /></span>
               </a>

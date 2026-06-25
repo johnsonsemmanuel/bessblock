@@ -10,7 +10,7 @@
   max-width: 400px;
   aspect-ratio: 3 / 4;
   border-radius: 16px;
-  background: var(--color-grey-900);
+  background: #141414;
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
   transition: transform var(--transition-fast), box-shadow var(--transition-fast);
   cursor: pointer;

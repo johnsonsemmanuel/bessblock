@@ -165,7 +165,7 @@ input, select, textarea {
 }
 
 .section-dark {
-  background: var(--color-grey-900);
+  background: #141414;
   color: var(--color-white);
 }
 

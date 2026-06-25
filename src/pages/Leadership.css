@@ -10,7 +10,7 @@
   border-radius: 12px;
   overflow: hidden;
   cursor: pointer;
-  background: var(--color-grey-900);
+  background: #141414;
 }
 
 .leadership-card-noimg {

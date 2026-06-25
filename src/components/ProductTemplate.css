@@ -1,5 +1,5 @@
 .product-hero {
-  background: var(--color-grey-900);
+  background: #141414;
   color: var(--hero-text);
   padding: calc(var(--spacing-20) + 80px) 0 var(--spacing-16);
   position: relative;
