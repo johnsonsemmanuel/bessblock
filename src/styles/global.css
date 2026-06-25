@@ -353,13 +353,20 @@ input, select, textarea {
 
 /* ── WhatsApp Float ────────────────────────── */
 
-.whatsapp-float {
+.whatsapp-wrapper {
   position: fixed;
   bottom: 24px;
   right: 24px;
   z-index: 9999;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.whatsapp-float {
   width: 52px;
   height: 52px;
+  min-width: 52px;
   border-radius: 50%;
   background: #25D366;
   color: #fff;
@@ -374,6 +381,23 @@ input, select, textarea {
   transform: scale(1.1);
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
   color: #fff;
+}
+
+.whatsapp-label {
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--text);
+  background: var(--bg-card);
+  padding: 6px 14px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  white-space: nowrap;
+}
+
+.whatsapp-wrapper:hover .whatsapp-label {
+  opacity: 1;
+  visibility: visible;
 }
 
 /* ── Breadcrumbs ────────────────────────── */

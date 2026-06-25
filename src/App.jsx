@@ -1,5 +1,5 @@
 import { Routes, Route, useLocation } from 'react-router-dom';
-import { useEffect, useLayoutEffect, useState, Suspense, lazy, useCallback } from 'react';
+import { useEffect, useLayoutEffect, Suspense, lazy } from 'react';
 import { AnimatePresence } from 'framer-motion';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -9,7 +9,6 @@ import NotFound from './pages/NotFound';
 import ErrorBoundary from './components/ErrorBoundary';
 import CookieConsent from './components/CookieConsent';
 import LiveChat from './components/LiveChat';
-import Preloader from './components/Preloader';
 
 const About = lazy(() => import('./pages/About'));
 const ManufacturingQuality = lazy(() => import('./pages/ManufacturingQuality'));
@@ -93,15 +92,10 @@ function AnimatedPage({ children }) {
 
 export default function App() {
   const location = useLocation();
-  const [ready, setReady] = useState(false);
-
-  const handlePreloaderFinish = useCallback(() => setReady(true), []);
 
   useEffect(() => {
     history.scrollRestoration = 'manual';
   }, []);
-
-  if (!ready) return <Preloader onFinish={handlePreloaderFinish} />;
 
   return (
     <AnimatePresence mode="wait">
