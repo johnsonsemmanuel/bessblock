@@ -12,6 +12,7 @@ import CTAWithVerticalMarquee from '../components/CTAWithVerticalMarquee';
 import './Home.css';
 
 const heroSlides = [
+  { image: '/images/hero/hexagonal-paving-1.webp', label: 'Bessblock hexagonal paving blocks installation' },
   { image: '/images/hero/production-site-1.webp', label: 'Bessblock production facility and operations' },
   { image: '/images/hero/production-site-3.webp', label: 'Bessblock product showcase and site development' },
   { image: '/images/hero/production-site-4.webp', label: 'Bessblock team at work in the factory' },
