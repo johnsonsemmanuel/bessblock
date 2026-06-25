@@ -64,6 +64,11 @@ export default function Home() {
   const [leaving, setLeaving] = useState(null);
   const [paused, setPaused] = useState(false);
 
+  // Preload all hero images to prevent flash on transition
+  useEffect(() => {
+    heroSlides.forEach(s => { const img = new Image(); img.src = s.image; });
+  }, []);
+
   useEffect(() => {
     if (paused) return;
     const timer = setInterval(() => {
@@ -71,7 +76,7 @@ export default function Home() {
       setSlide(s => (s + 1) % heroSlides.length);
     }, 5000);
     return () => clearInterval(timer);
-  }, [paused]);
+  }, [paused, slide]);
 
   return (
     <>
@@ -84,7 +89,7 @@ export default function Home() {
         onMouseLeave={() => setPaused(false)}
       >
         <div
-          className="hero-bg"
+          className="hero-bg hero-bg-active"
           style={{ backgroundImage: `url(${heroSlides[slide].image})` }}
           role="img"
           aria-label={heroSlides[slide].label}
@@ -92,11 +97,11 @@ export default function Home() {
         {leaving !== null && (
           <motion.div
             className="hero-bg"
+            style={{ backgroundImage: `url(${heroSlides[leaving].image})`, zIndex: -1 }}
             initial={{ opacity: 1 }}
             animate={{ opacity: 0 }}
-            transition={{ duration: 1, ease: 'easeInOut' }}
+            transition={{ duration: 1.2, ease: 'easeInOut' }}
             onAnimationComplete={() => setLeaving(null)}
-            style={{ backgroundImage: `url(${heroSlides[leaving].image})` }}
             aria-hidden="true"
           />
         )}
