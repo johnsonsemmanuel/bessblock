@@ -10,6 +10,7 @@ import ErrorBoundary from './components/ErrorBoundary';
 import CookieConsent from './components/CookieConsent';
 import LiveChat from './components/LiveChat';
 import SideLabel from './components/SideLabel';
+import ScrollProgress from './components/ScrollProgress';
 
 const About = lazy(() => import('./pages/About'));
 const ManufacturingQuality = lazy(() => import('./pages/ManufacturingQuality'));
@@ -71,6 +72,7 @@ function Layout({ children }) {
       </a>
       <Navbar />
       <SideLabel />
+      <ScrollProgress />
       <main id="main-content">
         <ErrorBoundary>
           {children}

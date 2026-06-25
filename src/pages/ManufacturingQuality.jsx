@@ -235,8 +235,6 @@ export default function ManufacturingQuality() {
         primaryLink="/products/paving-blocks"
         secondaryText="Request a Quote"
         secondaryLink="/request-quote"
-        tertiaryText="Contact Bessblock"
-        tertiaryLink="/contact"
       />
     </div>
     </>

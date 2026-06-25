@@ -143,10 +143,6 @@ export default function Home() {
             >
               <AnimatedButton to="/products" variant="primary">Explore Products</AnimatedButton>
               <AnimatedButton to="/request-quote" variant="outline">Request a Quote</AnimatedButton>
-              <a href="/BCPL Price List 2026.pdf" download className="abtn abtn-outline abtn-md">
-                <span className="abtn-text">Download Price List</span>
-                <span className="abtn-icon"><ArrowRight size={16} aria-hidden="true" /></span>
-              </a>
             </motion.div>
           </motion.div>
         </div>

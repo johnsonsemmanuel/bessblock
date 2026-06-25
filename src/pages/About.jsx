@@ -185,8 +185,6 @@ export default function About() {
         primaryLink="/products"
         secondaryText="Request a Quote"
         secondaryLink="/request-quote"
-        tertiaryText="Contact Bessblock"
-        tertiaryLink="/contact"
       />
     </div>
     </>
