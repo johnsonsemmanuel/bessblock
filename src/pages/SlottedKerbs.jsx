@@ -1,12 +1,14 @@
-import { Link } from 'react-router-dom';
-import { ArrowRight, CheckCircle2 } from 'lucide-react';
+import { CheckCircle2 } from 'lucide-react';
 import SEO from '../components/SEO';
 import PageHero from '../components/PageHero';
 import SectionTitle from '../components/SectionTitle';
 import ScrollReveal from '../components/ScrollReveal';
 import SiteCTA from '../components/SiteCTA';
 import SpecSheet from '../components/SpecSheet';
+import { ProductHighlightCard } from '../components/ProductHighlightCard';
+import { KerbIcon } from '../components/CategoryIcons';
 import './Kerbs.css';
+import '../components/ProductTemplate.css';
 
 const specs = [
   { label: 'Product type', value: 'Precast concrete slotted kerb.' },
@@ -44,11 +46,11 @@ const benefits = [
 ];
 
 const related = [
-  { name: 'Road Kerbs', path: '/products/kerbs-edging/road-kerbs' },
-  { name: 'Garden Kerbs', path: '/products/kerbs-edging/garden-kerbs' },
-  { name: 'Barrier Kerbs', path: '/products/kerbs-edging/barrier-kerbs' },
-  { name: 'Gutter Kerbs', path: '/products/kerbs-edging/gutter-kerbs' },
-  { name: 'Demarcation Kerbs', path: '/products/kerbs-edging/demarcation-kerbs' },
+  { name: 'Road Kerbs', path: '/products/kerbs-edging/road-kerbs', image: '/images/categories/kerbs-edging.webp', desc: 'Strong edge restraint for roads, parking areas, and traffic surfaces.' },
+  { name: 'Garden Kerbs', path: '/products/kerbs-edging/garden-kerbs', image: '/images/categories/kerbs-edging.webp', desc: 'Neat boundaries for lawns, paths, and landscaped edges.' },
+  { name: 'Barrier Kerbs', path: '/products/kerbs-edging/barrier-kerbs', image: '/images/categories/kerbs-edging.webp', desc: 'Strong physical separation between vehicles and pedestrian areas.' },
+  { name: 'Gutter Kerbs', path: '/products/kerbs-edging/gutter-kerbs', image: '/images/categories/kerbs-edging.webp', desc: 'Edge restraint combined with surface water management.' },
+  { name: 'Demarcation Kerbs', path: '/products/kerbs-edging/demarcation-kerbs', image: '/images/categories/kerbs-edging.webp', desc: 'Clear visual separation between traffic lanes and pedestrian areas.' },
 ];
 
 export default function SlottedKerbs() {
@@ -135,12 +137,19 @@ export default function SlottedKerbs() {
       <section className="section">
         <div className="container">
           <SectionTitle label="Related Products" title="Explore more kerb options" align="left" />
-          <div className="kerb-sub-related">
-            {related.map(r => (
-              <Link key={r.name} to={r.path} className="product-related-link">
-                <span>{r.name}</span>
-                <ArrowRight size={16} className="product-related-arrow" />
-              </Link>
+          <div className="related-grid" style={{ '--rel-columns': 5 }}>
+            {related.map((r, i) => (
+              <ScrollReveal key={r.name} delay={i * 0.06}>
+                <ProductHighlightCard
+                  categoryIcon={KerbIcon}
+                  category="Kerbs & Edging"
+                  title={r.name}
+                  description={r.desc}
+                  to={r.path}
+                  imageSrc={r.image}
+                  imageAlt={r.name}
+                />
+              </ScrollReveal>
             ))}
           </div>
         </div>

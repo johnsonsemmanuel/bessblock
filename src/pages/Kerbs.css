@@ -94,6 +94,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: var(--spacing-3);
+  align-items: stretch;
 }
 
 .kerb-sub-app {
@@ -103,6 +104,8 @@
   border-radius: 10px;
   font-size: var(--text-sm);
   color: var(--text);
+  display: flex;
+  align-items: center;
   transition: border-color var(--transition-fast), box-shadow var(--transition-fast), transform var(--transition-fast);
 }
 
