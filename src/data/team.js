@@ -1,11 +1,5 @@
 const team = [
   {
-    name: 'Emmanuel Johnson',
-    role: 'Managing Director',
-    bio: 'Leads the overall strategy and operations of Bessblock Concrete Products Ltd, driving growth and operational excellence.',
-    image: '/images/team/emmanuel.webp',
-  },
-  {
     name: 'Joel Quartey',
     role: 'Operations Manager',
     bio: 'Oversees day-to-day production, quality control, and supply chain management at the manufacturing facility.',
