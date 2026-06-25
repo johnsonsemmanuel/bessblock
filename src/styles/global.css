@@ -411,26 +411,18 @@ input, select, textarea {
 
 .side-label {
   position: fixed;
-  left: var(--spacing-4);
-  bottom: var(--spacing-24);
+  left: var(--spacing-3);
+  top: 50%;
   z-index: 50;
-  display: flex;
-  align-items: center;
-  gap: var(--spacing-2);
-  font-size: var(--text-sm);
+  transform: translateY(-50%);
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  font-size: var(--text-xs);
   font-weight: var(--font-weight-medium);
   color: var(--text-secondary);
-  letter-spacing: 0.02em;
+  letter-spacing: 0.15em;
   pointer-events: none;
   user-select: none;
-}
-
-.side-label::before {
-  content: '';
-  width: 20px;
-  height: 1px;
-  background: var(--text-muted);
-  flex-shrink: 0;
 }
 
 /* ── Scroll Progress Bar (right) ────────── */
