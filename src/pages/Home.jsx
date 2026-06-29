@@ -43,7 +43,7 @@ const whyItems = [
 ];
 
 const appItems = [
-  { label: 'Domestic driveways and gardens.', link: '/products/paving-blocks', image: '/images/categories/paving-blocks.webp' },
+  { label: 'Domestic driveways and gardens.', link: '/products/paving-blocks', image: '/images/app-domestic-driveways.webp' },
   { label: 'Footpaths and pedestrian areas.', link: '/products/paving-blocks', image: '/images/products/interlocking-paving-3.jpg' },
   { label: 'Commercial forecourts and parking areas.', link: '/products/paving-blocks', image: '/images/products/rectangular-paving-3.jpg' },
   { label: 'Landscaping and public realm schemes.', link: '/products/paving-blocks', image: '/images/categories/paving-blocks.webp' },
