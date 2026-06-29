@@ -124,8 +124,8 @@ export default function Home() {
               Bessblock Concrete Products
             </motion.span>
             <h1 className="hero-title">
-              Built to perform.<br />
-              <span className="hero-title-accent">Designed to last.</span>
+              Premium<br />
+              <span className="hero-title-accent">Concrete Products</span>
             </h1>
             <motion.p
               className="hero-desc"
@@ -133,7 +133,7 @@ export default function Home() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.25 }}
             >
-              Bessblock manufactures high-quality concrete products for paving, walling, retaining, and edging that support residential, commercial, and infrastructure projects. From everyday practical solutions to engineered retaining wall systems, we help contractors, developers, and specifiers build with confidence.
+              Bessblock manufactures high quality concrete paving blocks, walling blocks, retaining wall systems, kerbs, edging products and concrete solutions for residential, commercial, and infrastructure developments. Trusted by contractors, developers, architects and engineers for durability and performance.
             </motion.p>
             <motion.div
               className="hero-actions"
