@@ -1,21 +1,27 @@
 const team = [
   {
-    name: 'Joel Quartey',
-    role: 'Operations Manager',
-    bio: 'Oversees day-to-day production, quality control, and supply chain management at the manufacturing facility.',
-    image: '/images/team/joel.webp',
+    name: 'Name TBC',
+    role: 'Commercial Manager',
+    bio: 'Details to follow.',
+    image: '',
+  },
+  {
+    name: 'Name TBC',
+    role: 'Account Manager',
+    bio: 'Details to follow.',
+    image: '',
   },
   {
     name: 'George Asante',
     role: 'Technical Manager',
     bio: 'Manages product development, technical specifications, and quality assurance processes.',
-    image: '/images/team/george.webp',
+    image: '',
   },
   {
     name: 'Hope Adjei',
-    role: 'Sales & Marketing Manager',
+    role: 'Sales and Marketing Executive',
     bio: 'Drives customer relationships, product promotion, and market development across all product lines.',
-    image: '/images/team/hope.webp',
+    image: '',
   },
 ];
 
