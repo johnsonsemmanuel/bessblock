@@ -27,11 +27,11 @@ const subImages = {
   'terralite': '/images/products/retaining-wall-1.webp',
   'terrafix': '/images/products/retaining-wall-2.webp',
   'terracrete': '/images/products/retaining-wall-3.webp',
-  'road-kerbs': '/images/products/rectangular-paving-5.webp',
-  'demarcation-kerbs': '/images/products/rectangular-paving-6.webp',
-  'garden-kerbs': '/images/products/rectangular-paving-7.webp',
-  'barrier-kerbs': '/images/products/rectangular-paving-8.webp',
-  'gutter-kerbs': '/images/products/interlocking-paving-1.webp',
+  'road-kerbs': '/images/products/road-kerbs.jpg',
+  'demarcation-kerbs': '/images/products/demarcation-kerbs.jpg',
+  'garden-kerbs': '/images/products/garden-kerbs.jpg',
+  'barrier-kerbs': '/images/products/barrier-kerbs.jpg',
+  'gutter-kerbs': '/images/products/gutter-kerbs.jpg',
   'slotted-kerbs': '/images/products/hexagonal-paving-blocks-2.webp',
   'textured-paving-slabs': '/images/products/textured-paving-slabs.jpg',
   'smooth-paving-slabs': '/images/products/smooth-paving-slabs.jpg',
@@ -46,7 +46,7 @@ const categoryImages = {
   'walling': '/images/products/hollow-blocks-1.webp',
   'paving-slabs': '/images/products/textured-paving-slabs.jpg',
   'step-risers': '/images/products/rectangular-paving-3.webp',
-  'kerbs-edging': '/images/products/rectangular-paving-4.webp',
+  'kerbs-edging': '/images/products/road-kerbs.jpg',
 };
 
 function match(filter, text) {

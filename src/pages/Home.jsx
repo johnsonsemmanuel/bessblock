@@ -47,7 +47,7 @@ const appItems = [
   { label: 'Footpaths and pedestrian areas.', link: '/products/paving-blocks', image: '/images/products/interlocking-paving-3.jpg' },
   { label: 'Commercial forecourts and parking areas.', link: '/products/paving-blocks', image: '/images/products/rectangular-paving-3.jpg' },
   { label: 'Landscaping and public realm schemes.', link: '/products/paving-blocks', image: '/images/categories/paving-blocks.webp' },
-  { label: 'Roads, estate developments, and edge restraint.', link: '/products/kerbs-edging', image: '/images/categories/kerbs-edging.webp' },
+  { label: 'Roads, estate developments, and edge restraint.', link: '/products/kerbs-edging', image: '/images/products/road-kerbs.jpg' },
   { label: 'Retaining and terracing applications.', link: '/products/walling/retaining-walls', image: '/images/categories/walling.webp' },
 ];
 
@@ -56,7 +56,7 @@ const categoryLinks = [
   { name: 'Walling', path: '/products/walling', image: '/images/products/hollow-blocks-1.webp' },
   { name: 'Paving Slabs', path: '/products/paving-slabs', image: '/images/categories/paving-slabs.jpg' },
   { name: 'Retaining Walls', path: '/products/walling/retaining-walls', image: '/images/products/retaining-wall-1.webp' },
-  { name: 'Kerbs & Edging', path: '/products/kerbs-edging', image: '/images/products/rectangular-paving-3.webp' },
+  { name: 'Kerbs & Edging', path: '/products/kerbs-edging', image: '/images/products/road-kerbs.jpg' },
   { name: 'Step Risers', path: '/products/step-risers', image: '/images/categories/step-risers.webp' },
 ];
 
