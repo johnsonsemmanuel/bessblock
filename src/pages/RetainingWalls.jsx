@@ -59,7 +59,7 @@ export default function RetainingWalls() {
       <PageHero
         title="Retaining Walls"
         description="Bessblock's Retaining Walls is a licensed Terraforce® retaining wall system designed for soil retention, erosion control, terracing, and reinforced slopes. The Terraforce® system combines a reversible hollow-core block design with horizontal interlock, allowing wall angles and curves to be formed to suit project requirements."
-        bgImage="/images/products/retaining-wall-1.webp"
+        bgImage="/images/products/retaining-walls.jpg"
       />
 
       {/* Overview */}
@@ -176,7 +176,16 @@ export default function RetainingWalls() {
         <div className="container">
           <SectionTitle label="Product Range" title="Explore Terraforce® products" />
           <div className="retaining-sub-grid">
-            {retainingSubs.map((sub, i) => (
+            {retainingSubs.map((sub, i) => {
+              const subImageMap = {
+                'l-range-standard': '/images/products/l-range-standard.jpg',
+                'l-range-rock-face': '/images/products/l-range-rock-face.jpg',
+                'terralite': '/images/products/terralite.jpg',
+                '4x4-step-block': '/images/products/4x4-step-block.jpg',
+                'terrafix': '/images/products/terrafix.jpg',
+                'terracrete': '/images/products/terracrete.jpg',
+              };
+              return (
               <ScrollReveal key={sub.id} delay={i * 0.06}>
                 <ProductHighlightCard
                   categoryIcon={WallingIcon}
@@ -184,11 +193,11 @@ export default function RetainingWalls() {
                   title={sub.name}
                   description={sub.description}
                   to={sub.path}
-                  imageSrc={`/images/products/retaining-wall-${(i % 3) + 1}.webp`}
+                  imageSrc={subImageMap[sub.id]}
                   imageAlt={sub.name}
                 />
               </ScrollReveal>
-            ))}
+            )})}
           </div>
         </div>
       </section>
@@ -198,7 +207,7 @@ export default function RetainingWalls() {
         <div className="container">
           <SectionTitle label="Project Gallery" title="See it in action" align="left" />
           <GalleryLightbox
-            images={['/images/products/retaining-wall-1.webp', '/images/products/retaining-wall-2.webp', '/images/products/retaining-wall-3.webp']}
+            images={['/images/products/retaining-walls.jpg', '/images/products/l-range-rock-face.jpg', '/images/products/4x4-step-block.jpg']}
           />
         </div>
       </section>

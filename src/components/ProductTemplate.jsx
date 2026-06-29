@@ -23,7 +23,7 @@ const productImages = {
   'hollow-concrete-blocks': '/images/products/hollow-blocks-1.webp',
   'solid-concrete-blocks': '/images/products/solid-blocks-1.webp',
   'ceiling-blocks': '/images/products/ceiling-blocks-1.webp',
-  'retaining-walls': '/images/products/retaining-wall-1.webp',
+  'retaining-walls': '/images/products/retaining-walls.jpg',
   'road-kerbs': '/images/products/road-kerbs.jpg',
   'demarcation-kerbs': '/images/products/demarcation-kerbs.jpg',
   'garden-kerbs': '/images/products/garden-kerbs.jpg',
@@ -36,12 +36,12 @@ const productImages = {
   'standard-step-risers': '/images/products/rectangular-paving-6.webp',
   'wide-tread-steps': '/images/products/rectangular-paving-7.webp',
   'bullnose-steps': '/images/products/rectangular-paving-8.webp',
-  'l-range-standard': '/images/products/retaining-wall-1.webp',
-  'l-range-rock-face': '/images/products/retaining-wall-2.webp',
-  '4x4-step-block': '/images/products/retaining-wall-3.webp',
-  'terralite': '/images/products/retaining-wall-1.webp',
-  'terrafix': '/images/products/retaining-wall-2.webp',
-  'terracrete': '/images/products/retaining-wall-3.webp',
+  'l-range-standard': '/images/products/l-range-standard.jpg',
+  'l-range-rock-face': '/images/products/l-range-rock-face.jpg',
+  '4x4-step-block': '/images/products/4x4-step-block.jpg',
+  'terralite': '/images/products/terralite.jpg',
+  'terrafix': '/images/products/terrafix.jpg',
+  'terracrete': '/images/products/terracrete.jpg',
 };
 
 const containerVariants = {
