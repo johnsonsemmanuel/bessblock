@@ -81,8 +81,9 @@ export default function StepRisers() {
       <SiteCTA
         title="Need step risers for your project?"
         description="Contact our team for product advice, pricing, and delivery information."
-        secondaryText="Request a Quote"
-        secondaryLink="/request-quote"
+        primaryText="Get a Quote"
+        secondaryText="Contact Us"
+        secondaryLink="/contact"
       />
     </div>
     </>

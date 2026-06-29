@@ -1,14 +1,15 @@
 import { motion, AnimatePresence } from 'framer-motion';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
 import SectionTitle from '../components/SectionTitle';
 import AnimatedButton from '../components/AnimatedButton';
 import LazyBackground from '../components/LazyBackground';
-import { ArrowRight, CheckCircle, ChevronDown, Box, Truck, HardHat, Grid3x3 } from 'lucide-react';
+import { ArrowRight, CheckCircle, ChevronDown, ChevronLeft, ChevronRight, Box, Truck, HardHat, Grid3x3 } from 'lucide-react';
 import ScrollReveal from '../components/ScrollReveal';
 import { ProgressiveBlur } from '../components/ProgressiveBlur';
 import CTAWithVerticalMarquee from '../components/CTAWithVerticalMarquee';
+import CoverageCalculator from '../components/CoverageCalculator';
 import './Home.css';
 
 const heroSlides = [
@@ -64,6 +65,23 @@ export default function Home() {
   const [slide, setSlide] = useState(0);
   const [leaving, setLeaving] = useState(null);
   const [paused, setPaused] = useState(false);
+  const touchRef = useRef({ startX: 0 });
+
+  const goTo = (i) => {
+    setLeaving(slide);
+    setSlide(i);
+  };
+
+  const next = () => goTo((slide + 1) % heroSlides.length);
+  const prev = () => goTo((slide - 1 + heroSlides.length) % heroSlides.length);
+
+  const onTouchStart = (e) => { touchRef.current.startX = e.touches[0].clientX; };
+  const onTouchEnd = (e) => {
+    const diff = touchRef.current.startX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 50) {
+      diff > 0 ? next() : prev();
+    }
+  };
 
   // Preload all hero images to prevent flash on transition
   useEffect(() => {
@@ -88,6 +106,8 @@ export default function Home() {
         className="hero"
         onMouseEnter={() => setPaused(true)}
         onMouseLeave={() => setPaused(false)}
+        onTouchStart={onTouchStart}
+        onTouchEnd={onTouchEnd}
       >
         <div
           className="hero-bg hero-bg-active"
@@ -149,6 +169,12 @@ export default function Home() {
         <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: '120px', overflow: 'hidden' }}>
           <ProgressiveBlur direction="bottom" blurLayers={6} blurIntensity={0.3} />
         </div>
+        <button className="hero-arrow hero-arrow-left" onClick={prev} aria-label="Previous slide">
+          <ChevronLeft size={24} />
+        </button>
+        <button className="hero-arrow hero-arrow-right" onClick={next} aria-label="Next slide">
+          <ChevronRight size={24} />
+        </button>
         <div className="hero-dots">
           {heroSlides.map((_, i) => (
             <button
@@ -334,6 +360,20 @@ export default function Home() {
               ))}
             </ul>
           </div>
+        </div>
+      </section>
+
+      {/* Coverage Calculator */}
+      <section className="section">
+        <div className="container">
+          <SectionTitle
+            label="Project Calculator"
+            title="Estimate your material needs"
+          />
+          <p className="home-apps-intro">
+            Use our coverage calculator to estimate how many blocks, kerbs, or paving units you need for your project.
+          </p>
+          <CoverageCalculator />
         </div>
       </section>
 

@@ -82,8 +82,9 @@ export default function PavingSlabs() {
       <SiteCTA
         title="Need paving slabs for your project?"
         description="Contact our team for product advice, pricing, and delivery information."
-        secondaryText="Request a Quote"
-        secondaryLink="/request-quote"
+        primaryText="Get a Quote"
+        secondaryText="Contact Us"
+        secondaryLink="/contact"
       />
     </div>
     </>

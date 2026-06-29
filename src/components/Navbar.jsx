@@ -103,6 +103,11 @@ function InsightsContent() {
   );
 }
 
+function isActive(pathname, to) {
+  if (to === '/') return pathname === '/';
+  return pathname.startsWith(to);
+}
+
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -191,19 +196,19 @@ export default function Navbar() {
               <NavigationMenuList>
                 <NavigationMenuItem>
                   <NavigationMenuLink asChild>
-                    <Link to="/" className="nm-trigger">Home</Link>
+                    <Link to="/" className={`nm-trigger${isActive(location.pathname, '/') ? ' active' : ''}`}>Home</Link>
                   </NavigationMenuLink>
                 </NavigationMenuItem>
 
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger>About Bessblock</NavigationMenuTrigger>
+                  <NavigationMenuTrigger className={isActive(location.pathname, '/about') ? 'active' : ''}>About Bessblock</NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <AboutContent />
                   </NavigationMenuContent>
                 </NavigationMenuItem>
 
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger>Products</NavigationMenuTrigger>
+                  <NavigationMenuTrigger className={isActive(location.pathname, '/products') ? 'active' : ''}>Products</NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <ProductsContent />
                   </NavigationMenuContent>
@@ -211,12 +216,12 @@ export default function Navbar() {
 
                 <NavigationMenuItem>
                   <NavigationMenuLink asChild>
-                    <Link to="/projects" className="nm-trigger">Projects Gallery</Link>
+                    <Link to="/projects" className={`nm-trigger${isActive(location.pathname, '/projects') ? ' active' : ''}`}>Projects Gallery</Link>
                   </NavigationMenuLink>
                 </NavigationMenuItem>
 
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger>Insights & FAQs</NavigationMenuTrigger>
+                  <NavigationMenuTrigger className={isActive(location.pathname, '/insights') || isActive(location.pathname, '/faqs') ? 'active' : ''}>Insights & FAQs</NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <InsightsContent />
                   </NavigationMenuContent>
@@ -224,7 +229,7 @@ export default function Navbar() {
 
                 <NavigationMenuItem>
                   <NavigationMenuLink asChild>
-                    <Link to="/contact" className="nm-trigger">Contact</Link>
+                    <Link to="/contact" className={`nm-trigger${isActive(location.pathname, '/contact') ? ' active' : ''}`}>Contact</Link>
                   </NavigationMenuLink>
                 </NavigationMenuItem>
 

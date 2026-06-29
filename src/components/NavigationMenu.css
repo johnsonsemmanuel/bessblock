@@ -33,14 +33,17 @@
   transition: color var(--transition-fast), background var(--transition-fast);
 }
 
+.nm-trigger.active,
 .nm-trigger:hover {
   color: var(--color-bessblock-yellow);
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 215, 0, 0.12);
+  box-shadow: 0 0 12px rgba(255, 215, 0, 0.06);
 }
 
 .nm-trigger[data-state='open'] {
   color: var(--color-bessblock-yellow);
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 215, 0, 0.18);
+  box-shadow: 0 0 16px rgba(255, 215, 0, 0.08);
 }
 
 /* When scrolled, revert to dark text on light background */
@@ -48,14 +51,17 @@
   color: var(--text-secondary);
 }
 
+.navbar-scrolled .nm-trigger.active,
 .navbar-scrolled .nm-trigger:hover {
   color: var(--color-bessblock-blue);
   background: rgba(var(--bg-card-rgb), 0.5);
+  box-shadow: 0 0 12px rgba(64, 64, 136, 0.06);
 }
 
 .navbar-scrolled .nm-trigger[data-state='open'] {
   color: var(--color-bessblock-blue);
   background: rgba(var(--bg-card-rgb), 0.6);
+  box-shadow: 0 0 16px rgba(64, 64, 136, 0.08);
 }
 
 .nm-trigger:focus-visible {
