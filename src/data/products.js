@@ -37,7 +37,7 @@ const productCategories = [
     name: 'Paving Slabs',
     path: '/products/paving-slabs',
     description: 'Large-format concrete slabs designed for pedestrian areas, patios, and public spaces requiring a premium finish.',
-    image: '/images/categories/paving-slabs.webp',
+    image: '/images/categories/paving-slabs.jpg',
     imageGradient: '#5a5a9a',
     subcategories: [
       { id: 'textured-paving-slabs', name: 'Textured Paving Slabs', path: '/products/paving-slabs/textured', description: 'Surface-textured slabs offering slip resistance and visual interest for public areas.' },

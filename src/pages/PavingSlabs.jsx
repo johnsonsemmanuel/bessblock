@@ -60,9 +60,9 @@ export default function PavingSlabs() {
           <SectionTitle label="Product Range" title="Our paving slab range" align="left" />
           <div className="subcategory-grid">
               {[
-                { ...cat.subcategories[0], image: '/images/products/rectangular-paving-2.webp' },
-                { ...cat.subcategories[1], image: '/images/products/rectangular-paving-3.webp' },
-                { ...cat.subcategories[2], image: '/images/products/rectangular-paving-4.webp' },
+                { ...cat.subcategories[0], image: '/images/products/textured-paving-slabs.jpg' },
+                { ...cat.subcategories[1], image: '/images/products/smooth-paving-slabs.jpg' },
+                { ...cat.subcategories[2], image: '/images/products/large-format-slabs.jpg' },
               ].map(sub => (
               <ProductHighlightCard
                 key={sub.id}

@@ -33,9 +33,9 @@ const subImages = {
   'barrier-kerbs': '/images/products/rectangular-paving-8.webp',
   'gutter-kerbs': '/images/products/interlocking-paving-1.webp',
   'slotted-kerbs': '/images/products/hexagonal-paving-blocks-2.webp',
-  'textured-paving-slabs': '/images/products/rectangular-paving-2.webp',
-  'smooth-paving-slabs': '/images/products/rectangular-paving-4.webp',
-  'large-format-slabs': '/images/products/rectangular-paving-5.webp',
+  'textured-paving-slabs': '/images/products/textured-paving-slabs.jpg',
+  'smooth-paving-slabs': '/images/products/smooth-paving-slabs.jpg',
+  'large-format-slabs': '/images/products/large-format-slabs.jpg',
   'standard-step-risers': '/images/products/rectangular-paving-6.webp',
   'wide-tread-steps': '/images/products/rectangular-paving-7.webp',
   'bullnose-steps': '/images/products/rectangular-paving-8.webp',
@@ -44,7 +44,7 @@ const subImages = {
 const categoryImages = {
   'paving-blocks': '/images/products/interlocking-paving-1.webp',
   'walling': '/images/products/hollow-blocks-1.webp',
-  'paving-slabs': '/images/products/rectangular-paving-2.webp',
+  'paving-slabs': '/images/products/textured-paving-slabs.jpg',
   'step-risers': '/images/products/rectangular-paving-3.webp',
   'kerbs-edging': '/images/products/rectangular-paving-4.webp',
 };

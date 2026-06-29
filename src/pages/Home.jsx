@@ -54,7 +54,7 @@ const appItems = [
 const categoryLinks = [
   { name: 'Paving Blocks', path: '/products/paving-blocks', image: '/images/products/interlocking-paving-1.webp' },
   { name: 'Walling', path: '/products/walling', image: '/images/products/hollow-blocks-1.webp' },
-  { name: 'Paving Slabs', path: '/products/paving-slabs', image: '/images/categories/paving-slabs.webp' },
+  { name: 'Paving Slabs', path: '/products/paving-slabs', image: '/images/categories/paving-slabs.jpg' },
   { name: 'Retaining Walls', path: '/products/walling/retaining-walls', image: '/images/products/retaining-wall-1.webp' },
   { name: 'Kerbs & Edging', path: '/products/kerbs-edging', image: '/images/products/rectangular-paving-3.webp' },
   { name: 'Step Risers', path: '/products/step-risers', image: '/images/categories/step-risers.webp' },

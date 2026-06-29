@@ -77,7 +77,7 @@ const related = [
   {
     name: 'Paving Slabs',
     path: '/products/paving-slabs',
-    image: '/images/categories/paving-slabs.webp',
+    image: '/images/categories/paving-slabs.jpg',
     category: 'Paving Slabs',
     icon: SlabIcon,
     desc: 'Concrete slabs for pedestrian areas, patios, and public spaces.',
