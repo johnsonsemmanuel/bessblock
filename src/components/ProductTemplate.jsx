@@ -204,8 +204,10 @@ export default function ProductTemplate({ productKey, heroImage }) {
       <SiteCTA
         title={`Need ${product.name} for your project?`}
         description="Contact our team for pricing, technical specifications, and delivery options."
-        secondaryText="Request a Quote"
-        secondaryLink="/request-quote"
+        primaryText="Get a Quote"
+        primaryLink="/request-quote"
+        secondaryText="Contact Us"
+        secondaryLink="/contact"
       />
     </div>
     </>
