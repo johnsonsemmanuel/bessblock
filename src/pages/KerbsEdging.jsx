@@ -85,11 +85,11 @@ export default function KerbsEdging() {
           <SectionTitle label="Product Range" title="Our kerb and edging products" />
           <div className="kerbs-sub-grid">
             {[
-              { ...cat.subcategories[0], image: '/images/products/road-kerbs.jpg' },
-              { ...cat.subcategories[1], image: '/images/products/demarcation-kerbs.jpg' },
-              { ...cat.subcategories[2], image: '/images/products/garden-kerbs.jpg' },
-              { ...cat.subcategories[3], image: '/images/products/barrier-kerbs.jpg' },
-              { ...cat.subcategories[4], image: '/images/products/gutter-kerbs.jpg' },
+              { ...cat.subcategories[0], image: '/images/products/road-kerbs.webp' },
+              { ...cat.subcategories[1], image: '/images/products/demarcation-kerbs.webp' },
+              { ...cat.subcategories[2], image: '/images/products/garden-kerbs.webp' },
+              { ...cat.subcategories[3], image: '/images/products/barrier-kerbs.webp' },
+              { ...cat.subcategories[4], image: '/images/products/gutter-kerbs.webp' },
               { ...cat.subcategories[5], image: '/images/products/hexagonal-paving-blocks-2.webp' },
             ].map((sub, i) => (
               <ScrollReveal key={sub.id} delay={i * 0.06}>

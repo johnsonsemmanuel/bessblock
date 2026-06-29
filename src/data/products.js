@@ -37,7 +37,7 @@ const productCategories = [
     name: 'Paving Slabs',
     path: '/products/paving-slabs',
     description: 'Large-format concrete slabs designed for pedestrian areas, patios, and public spaces requiring a premium finish.',
-    image: '/images/categories/paving-slabs.jpg',
+    image: '/images/categories/paving-slabs.webp',
     imageGradient: '#5a5a9a',
     subcategories: [
       { id: 'textured-paving-slabs', name: 'Textured Paving Slabs', path: '/products/paving-slabs/textured', description: 'Surface-textured slabs offering slip resistance and visual interest for public areas.' },
@@ -50,7 +50,7 @@ const productCategories = [
     name: 'Step Risers',
     path: '/products/step-risers',
     description: 'Precast concrete step and riser units designed for durable, safe, and visually consistent stair construction.',
-    image: '/images/products/standard-step-risers.jpg',
+    image: '/images/products/standard-step-risers.webp',
     imageGradient: '#6a6aaa',
     subcategories: [
       { id: 'standard-step-risers', name: 'Standard Step Risers', path: '/products/step-risers/standard', description: 'Standard rise-and-go units for straightforward stair installations in residential and commercial settings.' },

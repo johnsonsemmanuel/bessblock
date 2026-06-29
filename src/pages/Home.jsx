@@ -47,17 +47,17 @@ const appItems = [
   { label: 'Footpaths and pedestrian areas.', link: '/products/paving-blocks', image: '/images/products/interlocking-paving-3.jpg' },
   { label: 'Commercial forecourts and parking areas.', link: '/products/paving-blocks', image: '/images/products/rectangular-paving-3.jpg' },
   { label: 'Landscaping and public realm schemes.', link: '/products/paving-blocks', image: '/images/categories/paving-blocks.webp' },
-  { label: 'Roads, estate developments, and edge restraint.', link: '/products/kerbs-edging', image: '/images/products/road-kerbs.jpg' },
-  { label: 'Retaining and terracing applications.', link: '/products/walling/retaining-walls', image: '/images/products/retaining-walls.jpg' },
+  { label: 'Roads, estate developments, and edge restraint.', link: '/products/kerbs-edging', image: '/images/products/road-kerbs.webp' },
+  { label: 'Retaining and terracing applications.', link: '/products/walling/retaining-walls', image: '/images/products/retaining-walls.webp' },
 ];
 
 const categoryLinks = [
   { name: 'Paving Blocks', path: '/products/paving-blocks', image: '/images/products/interlocking-paving-1.webp' },
   { name: 'Walling', path: '/products/walling', image: '/images/products/hollow-blocks-1.webp' },
-  { name: 'Paving Slabs', path: '/products/paving-slabs', image: '/images/categories/paving-slabs.jpg' },
-  { name: 'Retaining Walls', path: '/products/walling/retaining-walls', image: '/images/products/retaining-walls.jpg' },
-  { name: 'Kerbs & Edging', path: '/products/kerbs-edging', image: '/images/products/road-kerbs.jpg' },
-  { name: 'Step Risers', path: '/products/step-risers', image: '/images/products/standard-step-risers.jpg' },
+  { name: 'Paving Slabs', path: '/products/paving-slabs', image: '/images/categories/paving-slabs.webp' },
+  { name: 'Retaining Walls', path: '/products/walling/retaining-walls', image: '/images/products/retaining-walls.webp' },
+  { name: 'Kerbs & Edging', path: '/products/kerbs-edging', image: '/images/products/road-kerbs.webp' },
+  { name: 'Step Risers', path: '/products/step-risers', image: '/images/products/standard-step-risers.webp' },
 ];
 
 export default function Home() {
@@ -234,7 +234,7 @@ export default function Home() {
                 link: '/products/paving-blocks',
               },
               {
-                image: '/images/products/retaining-walls.jpg',
+                image: '/images/products/retaining-walls.webp',
                 label: 'Featured Product',
                 title: 'Retaining wall systems for real site challenges',
                 text: 'Our retaining wall range includes modular solutions for soil retention, slope stabilisation, terracing, landscaping, and engineered applications. Terraforce-compatible products bring the benefit of dry-stack construction, curved layouts, drainage-friendly design, and the flexibility to support both gravity and reinforced wall systems.',

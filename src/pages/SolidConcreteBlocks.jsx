@@ -68,7 +68,7 @@ const related = [
   {
     name: 'Retaining Walls',
     path: '/products/walling/retaining-walls',
-    image: '/images/products/retaining-walls.jpg',
+    image: '/images/products/retaining-walls.webp',
     category: 'Walling',
     icon: WallingIcon,
     desc: 'Terraforce® interlocking retaining wall system.',

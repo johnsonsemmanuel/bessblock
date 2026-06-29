@@ -59,7 +59,7 @@ export default function RetainingWalls() {
       <PageHero
         title="Retaining Walls"
         description="Bessblock's Retaining Walls is a licensed Terraforce® retaining wall system designed for soil retention, erosion control, terracing, and reinforced slopes. The Terraforce® system combines a reversible hollow-core block design with horizontal interlock, allowing wall angles and curves to be formed to suit project requirements."
-        bgImage="/images/products/retaining-walls.jpg"
+        bgImage="/images/products/retaining-walls.webp"
       />
 
       {/* Overview */}
@@ -178,12 +178,12 @@ export default function RetainingWalls() {
           <div className="retaining-sub-grid">
             {retainingSubs.map((sub, i) => {
               const subImageMap = {
-                'l-range-standard': '/images/products/l-range-standard.jpg',
-                'l-range-rock-face': '/images/products/l-range-rock-face.jpg',
-                'terralite': '/images/products/terralite.jpg',
-                '4x4-step-block': '/images/products/4x4-step-block.jpg',
-                'terrafix': '/images/products/terrafix.jpg',
-                'terracrete': '/images/products/terracrete.jpg',
+                'l-range-standard': '/images/products/l-range-standard.webp',
+                'l-range-rock-face': '/images/products/l-range-rock-face.webp',
+                'terralite': '/images/products/terralite.webp',
+                '4x4-step-block': '/images/products/4x4-step-block.webp',
+                'terrafix': '/images/products/terrafix.webp',
+                'terracrete': '/images/products/terracrete.webp',
               };
               return (
               <ScrollReveal key={sub.id} delay={i * 0.06}>
@@ -207,7 +207,7 @@ export default function RetainingWalls() {
         <div className="container">
           <SectionTitle label="Project Gallery" title="See it in action" align="left" />
           <GalleryLightbox
-            images={['/images/products/retaining-walls.jpg', '/images/products/l-range-rock-face.jpg', '/images/products/4x4-step-block.jpg']}
+            images={['/images/products/retaining-walls.webp', '/images/products/l-range-rock-face.webp', '/images/products/4x4-step-block.webp']}
           />
         </div>
       </section>

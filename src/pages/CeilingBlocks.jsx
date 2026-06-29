@@ -69,7 +69,7 @@ const related = [
   {
     name: 'Retaining Walls',
     path: '/products/walling/retaining-walls',
-    image: '/images/products/retaining-walls.jpg',
+    image: '/images/products/retaining-walls.webp',
     category: 'Walling',
     icon: WallingIcon,
     desc: 'Terraforce® interlocking retaining wall system.',
@@ -77,7 +77,7 @@ const related = [
   {
     name: 'Paving Slabs',
     path: '/products/paving-slabs',
-    image: '/images/categories/paving-slabs.jpg',
+    image: '/images/categories/paving-slabs.webp',
     category: 'Paving Slabs',
     icon: SlabIcon,
     desc: 'Concrete slabs for pedestrian areas, patios, and public spaces.',
