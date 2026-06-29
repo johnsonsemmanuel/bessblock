@@ -57,7 +57,7 @@ const categoryLinks = [
   { name: 'Paving Slabs', path: '/products/paving-slabs', image: '/images/categories/paving-slabs.jpg' },
   { name: 'Retaining Walls', path: '/products/walling/retaining-walls', image: '/images/products/retaining-walls.jpg' },
   { name: 'Kerbs & Edging', path: '/products/kerbs-edging', image: '/images/products/road-kerbs.jpg' },
-  { name: 'Step Risers', path: '/products/step-risers', image: '/images/categories/step-risers.webp' },
+  { name: 'Step Risers', path: '/products/step-risers', image: '/images/products/standard-step-risers.jpg' },
 ];
 
 export default function Home() {

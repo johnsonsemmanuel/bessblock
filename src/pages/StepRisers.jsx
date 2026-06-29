@@ -59,9 +59,9 @@ export default function StepRisers() {
           <SectionTitle label="Product Range" title="Our step riser range" align="left" />
           <div className="subcategory-grid">
               {[
-                { ...cat.subcategories[0], image: '/images/products/rectangular-paving-1.webp' },
-                { ...cat.subcategories[1], image: '/images/products/rectangular-paving-2.webp' },
-                { ...cat.subcategories[2], image: '/images/products/rectangular-paving-3.webp' },
+                { ...cat.subcategories[0], image: '/images/products/standard-step-risers.jpg' },
+                { ...cat.subcategories[1], image: '/images/products/wide-tread-steps.jpg' },
+                { ...cat.subcategories[2], image: '/images/products/bullnose-steps.jpg' },
               ].map(sub => (
               <ProductHighlightCard
                 key={sub.id}

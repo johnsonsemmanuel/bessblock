@@ -36,16 +36,16 @@ const subImages = {
   'textured-paving-slabs': '/images/products/textured-paving-slabs.jpg',
   'smooth-paving-slabs': '/images/products/smooth-paving-slabs.jpg',
   'large-format-slabs': '/images/products/large-format-slabs.jpg',
-  'standard-step-risers': '/images/products/rectangular-paving-6.webp',
-  'wide-tread-steps': '/images/products/rectangular-paving-7.webp',
-  'bullnose-steps': '/images/products/rectangular-paving-8.webp',
+  'standard-step-risers': '/images/products/standard-step-risers.jpg',
+  'wide-tread-steps': '/images/products/wide-tread-steps.jpg',
+  'bullnose-steps': '/images/products/bullnose-steps.jpg',
 };
 
 const categoryImages = {
   'paving-blocks': '/images/products/interlocking-paving-1.webp',
   'walling': '/images/products/hollow-blocks-1.webp',
   'paving-slabs': '/images/products/textured-paving-slabs.jpg',
-  'step-risers': '/images/products/rectangular-paving-3.webp',
+  'step-risers': '/images/products/standard-step-risers.jpg',
   'kerbs-edging': '/images/products/road-kerbs.jpg',
 };
 

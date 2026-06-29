@@ -50,7 +50,7 @@ const productCategories = [
     name: 'Step Risers',
     path: '/products/step-risers',
     description: 'Precast concrete step and riser units designed for durable, safe, and visually consistent stair construction.',
-    image: '/images/categories/step-risers.webp',
+    image: '/images/products/standard-step-risers.jpg',
     imageGradient: '#6a6aaa',
     subcategories: [
       { id: 'standard-step-risers', name: 'Standard Step Risers', path: '/products/step-risers/standard', description: 'Standard rise-and-go units for straightforward stair installations in residential and commercial settings.' },
