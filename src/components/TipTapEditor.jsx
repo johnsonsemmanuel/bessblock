@@ -12,7 +12,7 @@ import {
   Quote, Code, Image, Link, AlignLeft, AlignCenter, AlignRight,
   Undo, Redo,
 } from 'lucide-react';
-import { sanityClient } from '../lib/sanity';
+import { sanityApi } from '../lib/sanity';
 import './TipTapEditor.css';
 
 function ToolbarBtn({ onClick, active, title, children }) {
@@ -73,8 +73,9 @@ export default function TipTapEditor({ content, onChange }) {
       const src = URL.createObjectURL(file);
       editor.chain().focus().setImage({ src }).run();
       try {
-        const asset = await sanityClient.assets.upload('image', file);
-        editor.chain().focus().setImage({ src: asset.url }).run();
+        const asset = await sanityApi.uploadImage(file);
+        const url = asset.url || `https://cdn.sanity.io/images/${import.meta.env.VITE_SANITY_PROJECT_ID}/production/${asset._id.replace('image-', '').replace(/-[^-]*$/, '')}.${asset.extension || 'jpg'}`;
+        editor.chain().focus().setImage({ src: url }).run();
       } catch {
         // keep local blob URL if upload fails
       }

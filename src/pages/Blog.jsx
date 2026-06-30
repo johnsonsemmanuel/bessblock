@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { sanityClient, urlFor } from '../lib/sanity';
+import { sanityApi, urlFor } from '../lib/sanity';
 import SEO from '../components/SEO';
 import PageHero from '../components/PageHero';
 import BlogCard from '../components/BlogCard';
@@ -31,8 +31,7 @@ export default function Blog() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    if (!sanityClient) { setLoading(false); return; }
-    sanityClient.fetch(QUERY)
+    sanityApi.fetch(QUERY)
       .then(data => setPosts((data || []).map(toStaticPost)))
       .catch(() => {})
       .finally(() => setLoading(false));

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useAdminAuth } from './AdminAuth';
-import { sanityClient, urlFor } from '../lib/sanity';
+import { sanityApi, urlFor } from '../lib/sanity';
 import { pmToPt, ptToPm } from '../lib/pmToPt';
 import TipTapEditor from '../components/TipTapEditor';
 import {
@@ -16,10 +16,6 @@ const NAV = [
   { id: 'contact', label: 'Contact Submissions', icon: MessageSquare },
   { id: 'quotes', label: 'Quote Requests', icon: ClipboardList },
 ];
-
-const writeClient = sanityClient
-  ? sanityClient.withConfig({ token: import.meta.env.VITE_SANITY_TOKEN, useCdn: false })
-  : null;
 
 const POSTS_QUERY = `*[_type == "post"] | order(publishedAt desc) {
   _id, title, "slug": slug.current, author->{name}, category, publishedAt, excerpt, "image": mainImage
@@ -140,16 +136,15 @@ function AuthorForm({ author, onSave, onCancel }) {
   };
 
   const handleSave = async () => {
-    if (!writeClient) { setErr('Sanity CMS is not configured.'); return; }
     if (!form.name || !form.slug) { setErr('Name and slug are required.'); return; }
     setSaving(true);
     setErr('');
     try {
       const doc = { _type: 'author', ...form, slug: { _type: 'slug', current: form.slug } };
       if (editing) {
-        await writeClient.patch(author._id).set(doc).commit();
+        await sanityApi.patch(author._id, doc);
       } else {
-        await writeClient.create(doc);
+        await sanityApi.create(doc);
       }
       onSave();
     } catch (e) {
@@ -254,12 +249,11 @@ function PostForm({ post, onSave, onCancel, authors }) {
 
   const uploadImage = async (file) => {
     if (!file) return null;
-    const asset = await sanityClient.assets.upload('image', file);
+    const asset = await sanityApi.uploadImage(file);
     return { _type: 'image', asset: { _ref: asset._id, _type: 'reference' } };
   };
 
   const handleSave = async () => {
-    if (!writeClient) { setErr('Sanity CMS is not configured.'); return; }
     if (!form.title || !form.slug || !form.excerpt) { setErr('Title, slug, and excerpt are required.'); return; }
     setSaving(true);
     setErr('');
@@ -281,9 +275,9 @@ function PostForm({ post, onSave, onCancel, authors }) {
         doc.mainImage = await uploadImage(mainImageFile);
       }
       if (editing) {
-        await writeClient.patch(post._id).set(doc).commit();
+        await sanityApi.patch(post._id, doc);
       } else {
-        await writeClient.create(doc);
+        await sanityApi.create(doc);
       }
       onSave();
     } catch (e) {
@@ -373,10 +367,9 @@ function PostsTab({ posts, onRefresh, authors }) {
   const [deleting, setDeleting] = useState(null);
 
   const handleDelete = async (id) => {
-    if (!writeClient) return;
     if (!confirm('Delete this post? This cannot be undone.')) return;
     setDeleting(id);
-    await writeClient.delete(id).catch(() => {});
+    await sanityApi.delete(id).catch(() => {});
     setDeleting(null);
     onRefresh();
   };
@@ -452,16 +445,15 @@ function AuthorsTab() {
   const [deleting, setDeleting] = useState(null);
 
   const fetch = () => {
-    sanityClient.fetch(AUTHORS_QUERY).then(setAuthors).catch(() => {});
+    sanityApi.fetch(AUTHORS_QUERY).then(setAuthors).catch(() => {});
   };
 
   useEffect(() => { fetch(); }, []);
 
   const handleDelete = async (id) => {
-    if (!writeClient) return;
     if (!confirm('Delete this author? Posts referencing them will lose the author link.')) return;
     setDeleting(id);
-    await writeClient.delete(id).catch(() => {});
+    await sanityApi.delete(id).catch(() => {});
     setDeleting(null);
     fetch();
   };
@@ -528,14 +520,13 @@ function ContactTab() {
   const [selected, setSelected] = useState(null);
 
   const fetch = () => {
-    sanityClient.fetch(CONTACT_QUERY).then(setSubmissions).catch(() => {});
+    sanityApi.fetch(CONTACT_QUERY).then(setSubmissions).catch(() => {});
   };
 
   useEffect(() => { fetch(); }, []);
 
   const markRead = async (id) => {
-    if (!writeClient) return;
-    await writeClient.patch(id).set({ read: true }).commit().catch(() => {});
+    await sanityApi.patch(id, { read: true }).catch(() => {});
     fetch();
   };
 
@@ -609,19 +600,18 @@ function QuotesTab() {
   const [selected, setSelected] = useState(null);
 
   const fetch = () => {
-    sanityClient.fetch(QUOTES_QUERY).then(setSubmissions).catch(() => {});
+    sanityApi.fetch(QUOTES_QUERY).then(setSubmissions).catch(() => {});
   };
 
   useEffect(() => { fetch(); }, []);
 
   const markRead = async (id) => {
-    await writeClient.patch(id).set({ read: true }).commit().catch(() => {});
+    await sanityApi.patch(id, { read: true }).catch(() => {});
     fetch();
   };
 
   const updateStatus = async (id, status) => {
-    if (!writeClient) return;
-    await writeClient.patch(id).set({ status }).commit().catch(() => {});
+    await sanityApi.patch(id, { status }).catch(() => {});
     fetch();
   };
 
@@ -717,16 +707,16 @@ export default function AdminDashboard() {
   const [quotes, setQuotes] = useState([]);
 
   const fetchPosts = () => {
-    sanityClient.fetch(POSTS_QUERY).then(setPosts).catch(() => {});
+    sanityApi.fetch(POSTS_QUERY).then(setPosts).catch(() => {});
   };
   const fetchAuthors = () => {
-    sanityClient.fetch(AUTHORS_QUERY).then(setAuthors).catch(() => {});
+    sanityApi.fetch(AUTHORS_QUERY).then(setAuthors).catch(() => {});
   };
   const fetchContacts = () => {
-    sanityClient.fetch(CONTACT_QUERY).then(setContacts).catch(() => {});
+    sanityApi.fetch(CONTACT_QUERY).then(setContacts).catch(() => {});
   };
   const fetchQuotes = () => {
-    sanityClient.fetch(QUOTES_QUERY).then(setQuotes).catch(() => {});
+    sanityApi.fetch(QUOTES_QUERY).then(setQuotes).catch(() => {});
   };
 
   useEffect(() => { fetchPosts(); fetchAuthors(); fetchContacts(); fetchQuotes(); }, []);

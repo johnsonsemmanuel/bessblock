@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { PortableText } from '@portabletext/react';
-import { sanityClient, urlFor } from '../lib/sanity';
+import { sanityApi, urlFor } from '../lib/sanity';
 import PageHero from '../components/PageHero';
 import SEO from '../components/SEO';
 import './Blog.css';
@@ -39,8 +39,7 @@ export default function BlogPost() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    if (!sanityClient) { setLoading(false); return; }
-    sanityClient.fetch(QUERY, { slug })
+    sanityApi.fetch(QUERY, { slug })
       .then(setPost)
       .catch(() => {})
       .finally(() => setLoading(false));

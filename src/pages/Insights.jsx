@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowRight, Clock, FileText, HelpCircle } from 'lucide-react';
-import { sanityClient, urlFor } from '../lib/sanity';
+import { sanityApi, urlFor } from '../lib/sanity';
 import SEO from '../components/SEO';
 import PageHero from '../components/PageHero';
 import ScrollReveal from '../components/ScrollReveal';
@@ -36,8 +36,7 @@ export default function Insights() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    if (!sanityClient) { setLoading(false); return; }
-    sanityClient.fetch(QUERY)
+    sanityApi.fetch(QUERY)
       .then(data => setPosts((data || []).map(fmtPost)))
       .catch(() => {})
       .finally(() => setLoading(false));
