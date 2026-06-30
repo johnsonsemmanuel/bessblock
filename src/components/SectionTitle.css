@@ -14,7 +14,7 @@
 }
 
 .section-title-label {
-  display: inline-block;
+  display: block;
   font-size: var(--text-sm);
   font-weight: var(--font-weight-semibold);
   color: var(--color-bessblock-blue);
