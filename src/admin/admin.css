@@ -1,4 +1,17 @@
 /* Admin Dashboard Styles */
+:root {
+  --bg-primary: var(--bg);
+  --bg-secondary: var(--bg-card);
+  --bg-tertiary: var(--bg-section);
+  --border-primary: var(--border);
+  --text-primary: var(--text);
+  --color-accent: var(--color-bessblock-blue);
+  --color-accent-rgb: 64, 64, 136;
+}
+[data-theme='dark'] {
+  --color-accent-rgb: 90, 90, 158;
+}
+
 .admin-login {
   position: relative;
   min-height: 100vh;
