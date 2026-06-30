@@ -154,6 +154,7 @@ export default function App() {
           <Route path="/products/step-risers/standard" element={<AnimatedPage><StandardStepRisers /></AnimatedPage>} />
           <Route path="/products/step-risers/wide-tread" element={<AnimatedPage><WideTreadSteps /></AnimatedPage>} />
           <Route path="/products/step-risers/bullnose" element={<AnimatedPage><BullnoseSteps /></AnimatedPage>} />
+          <Route path="/products/step-risers/bullnose-steps" element={<AnimatedPage><BullnoseSteps /></AnimatedPage>} />
 
           <Route path="/projects" element={<AnimatedPage><ProjectsGallery /></AnimatedPage>} />
           <Route path="/insights" element={<AnimatedPage><Insights /></AnimatedPage>} />
