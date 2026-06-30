@@ -59,7 +59,7 @@ export default function GutterKerbs() {
     <>
       <SEO title="Gutter Kerbs" description="Bessblock gutter kerbs combine edge restraint with water management, helping guide surface runoff along roads, driveways, and paved areas." />
       <div className="page">
-      <PageHero title="Gutter Kerbs" description="Bessblock Gutter Kerbs are designed to combine edge restraint with water management, helping guide surface runoff along roads, driveways, and paved areas. They are a practical choice where the kerb line also needs to support drainage performance and keep the paved edge tidy and durable." bgImage="/images/products/gutter-kerbs.webp" />
+      <PageHero title="Gutter Kerbs" description="Bessblock Gutter Kerbs combine edge restraint with water management for surface runoff along roads and paved areas." bgImage="/images/products/gutter-kerbs.webp" />
 
       <section className="section">
         <div className="container">

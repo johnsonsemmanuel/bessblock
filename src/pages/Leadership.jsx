@@ -15,7 +15,7 @@ export default function Leadership() {
       <div className="page">
       <PageHero
         title="Leadership"
-        description="Bessblock's leadership team brings together experience in operations, production, sales, and financial oversight to guide the company with focus and accountability. Working closely with the wider RG Group, the team is committed to driving quality, operational efficiency, and sustainable growth while supporting customers, partners, and project delivery across every stage of the business."
+        description="Bessblock's leadership team brings experience in operations, production, sales, and financial oversight to guide the company."
         bgImage="/images/hero/concrete-texture-1.webp"
       />
 

@@ -59,7 +59,7 @@ export default function GardenKerbs() {
     <>
       <SEO title="Garden Kerbs" description="Bessblock garden kerbs create neat boundaries for lawns, paths, flower beds, and landscaped edges with a clean, finished appearance for outdoor spaces." />
       <div className="page">
-      <PageHero title="Garden Kerbs" description="Bessblock Garden Kerbs are designed to create neat boundaries for lawns, paths, flower beds, and landscaped edges while giving outdoor spaces a clean, finished appearance. They are a simple and effective way to separate soft landscaping from paved or trafficked areas without the heavier look of road kerbs." bgImage="/images/products/garden-kerbs.webp" />
+      <PageHero title="Garden Kerbs" description="Bessblock Garden Kerbs create neat boundaries for lawns, paths, and flower beds with a clean, finished appearance." bgImage="/images/products/garden-kerbs.webp" />
 
       <section className="section">
         <div className="container">

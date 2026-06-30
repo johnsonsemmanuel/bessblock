@@ -59,7 +59,7 @@ export default function BarrierKerbs() {
     <>
       <SEO title="Barrier Kerbs" description="Bessblock barrier kerbs provide strong physical separation between vehicles and pedestrian areas for improved safety in high-traffic locations." />
       <div className="page">
-      <PageHero title="Barrier Kerbs" description="Bessblock Barrier Kerbs are designed to provide a stronger, more protective edge than standard edging or low-profile kerbs. They are used where vehicles need clearer physical separation from pedestrian areas, structures, or sensitive paved zones." bgImage="/images/products/barrier-kerbs.webp" />
+      <PageHero title="Barrier Kerbs" description="Bessblock Barrier Kerbs provide a strong protective edge separating vehicles from pedestrian areas." bgImage="/images/products/barrier-kerbs.webp" />
 
       <section className="section">
         <div className="container">

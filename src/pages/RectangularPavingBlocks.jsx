@@ -32,7 +32,7 @@ export default function RectangularPavingBlocks() {
       <div className="page">
       <PageHero title="Rectangular Paving Block" bgImage="/images/products/rectangular-paving-1.webp">
         <p className="page-hero-desc">
-          Rectangular concrete paving block manufactured from high-quality cement, graded aggregates, and pigments (where applicable), compacted under high pressure to ensure dimensional accuracy and durability.
+          High-quality precast rectangular concrete paving blocks for pedestrian, residential, commercial, and industrial surfacing.
         </p>
       </PageHero>
 

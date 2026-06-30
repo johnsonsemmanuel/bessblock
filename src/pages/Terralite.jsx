@@ -51,7 +51,7 @@ export default function Terralite() {
     <>
       <SEO title="Terralite" description="Terraforce® Terralite, a compact dry-stack interlocking retaining block for DIY landscaping, garden walls, borders, and small retaining projects." />
       <div className="page">
-      <PageHero title="Terralite" description="Terralite is Terraforce's smaller retaining wall block, aimed mainly at the DIY and light landscaping market. It is a dry-stack, interlocking concrete block system that is easy to use for garden walls, borders, and small retaining projects." bgImage="/images/products/terralite.webp" />
+      <PageHero title="Terralite" description="A smaller dry-stack interlocking retaining block for garden walls, borders, and DIY landscaping." bgImage="/images/products/terralite.webp" />
 
       <section className="section">
         <div className="container">

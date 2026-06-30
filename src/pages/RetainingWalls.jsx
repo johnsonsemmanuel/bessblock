@@ -58,7 +58,7 @@ export default function RetainingWalls() {
       <div className="page">
       <PageHero
         title="Retaining Walls"
-        description="Bessblock's Retaining Walls is a licensed Terraforce® retaining wall system designed for soil retention, erosion control, terracing, and reinforced slopes. The Terraforce® system combines a reversible hollow-core block design with horizontal interlock, allowing wall angles and curves to be formed to suit project requirements."
+        description="A licensed Terraforce® retaining wall system for soil retention, erosion control, and reinforced slopes."
         bgImage="/images/products/retaining-walls.webp"
       />
 

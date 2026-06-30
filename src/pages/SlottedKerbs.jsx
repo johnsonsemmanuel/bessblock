@@ -59,7 +59,7 @@ export default function SlottedKerbs() {
     <>
       <SEO title="Slotted Kerbs" description="Bessblock slotted kerbs combine edge restraint with integrated drainage slots for effective surface water management along roads and paved areas." />
       <div className="page">
-      <PageHero title="Slotted Kerbs" description="Bessblock Slotted Kerbs are designed to combine edge restraint with drainage performance, making them suitable for projects where surface water needs to be guided away efficiently. They provide a practical kerb solution for roads, paved areas, and drainage-led layouts." bgImage="/images/categories/kerbs-edging.webp" />
+      <PageHero title="Slotted Kerbs" description="Bessblock Slotted Kerbs combine edge restraint with drainage for efficient surface water management along roads." bgImage="/images/categories/kerbs-edging.webp" />
 
       <section className="section">
         <div className="container">

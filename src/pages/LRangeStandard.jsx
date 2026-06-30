@@ -53,7 +53,7 @@ export default function LRangeStandard() {
     <>
       <SEO title="L-Range Standard" description="Terraforce® L Range Standard Option, a versatile dry-stack interlocking concrete retaining block for landscaping, erosion control, and gravity retaining walls." />
       <div className="page">
-      <PageHero title="L Range - Standard Option" description="A versatile concrete retaining block for landscaping and erosion control, designed to stack without mortar in most applications using dry-stacked construction for faster installation and reduced consumables." bgImage="/images/products/l-range-standard.webp" />
+      <PageHero title="L Range - Standard Option" description="A versatile concrete retaining block for landscaping and erosion control with dry-stacked construction." bgImage="/images/products/l-range-standard.webp" />
 
       <section className="section">
         <div className="container">

@@ -78,9 +78,6 @@ export default function About() {
         <p className="page-hero-desc">
           Bessblock Concrete Products Ltd (Bessblock) is a specialist manufacturer of concrete products serving the needs of residential, commercial, and civil construction projects. As part of the RG Group, Bessblock was established to help ensure the timely supply of high-quality materials that support project delivery, durability, and consistency across every stage of development.
         </p>
-        <p className="page-hero-desc">
-          Bessblock exists to solve a practical construction challenge: when projects depend on dependable materials, quality and timing matter just as much as price. That is why our focus is on producing concrete products that contractors, developers, engineers, and project managers can rely on for performance, specification compliance, and ease of installation.
-        </p>
       </PageHero>
 
       {/* Stats */}

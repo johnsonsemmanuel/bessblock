@@ -38,10 +38,7 @@ export default function ManufacturingQuality() {
       <div className="page">
       <PageHero title="Manufacturing & Quality" bgImage="/images/hero/concrete-texture-2.webp">
         <p className="page-hero-desc">
-          At Bessblock, manufacturing is built around one clear principle: every block, paver, and concrete product should leave the plant consistent, durable, and fit for purpose. Our production process combines modern plant operations, controlled material handling, and quality-focused curing methods to help ensure dependable performance across all product lines.
-        </p>
-        <p className="page-hero-desc">
-          Bessblock's manufacturing approach is hinged on strength, not just a background process. That means showing visitors that the company is not simply selling concrete products, but producing them with a disciplined system designed to support contractors, developers, engineers, and project owners.
+          Bessblock manufacturing ensures every block, paver, and concrete product is consistent, durable, and fit for purpose.
         </p>
       </PageHero>
 

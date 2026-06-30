@@ -81,7 +81,7 @@ export default function HexagonalPavingBlocks() {
     <>
       <SEO title="Hexagonal Paving Blocks" description="Distinctive hexagonal concrete paving blocks from Bessblock with superior interlocking for excellent load distribution in landscaping and high-traffic areas." />
       <div className="page">
-      <PageHero title="Hexagonal Paving Blocks" description="Hexagonal paving blocks provide a distinctive appearance and excellent load distribution due to their six-sided geometry. They are widely used in landscaping and high-traffic paved areas." bgImage="/images/products/hexagonal-paving-blocks-1.webp" />
+      <PageHero title="Hexagonal Paving Blocks" description="Hexagonal paving blocks provide distinctive appearance and load distribution for landscaping and high-traffic areas." bgImage="/images/products/hexagonal-paving-blocks-1.webp" />
 
       {/* Overview with hex image */}
       <section className="section">
