@@ -46,10 +46,10 @@ const installation = [
 ];
 
 const galleryImages = [
-  '/images/gallery/hollow-blocks.webp',
-  '/images/gallery/solid-blocks.webp',
-  '/images/gallery/retaining-action.webp',
-  '/images/gallery/paving-blocks-stack.webp',
+  '/images/products/hollow-blocks-2.webp',
+  '/images/products/hollow-blocks-3.webp',
+  '/images/products/hollow-blocks-4.webp',
+  '/images/products/hollow-blocks-1.webp',
 ];
 
 const related = [

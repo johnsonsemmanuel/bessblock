@@ -43,10 +43,10 @@ const installation = [
 ];
 
 const galleryImages = [
-  '/images/gallery/hollow-blocks.webp',
-  '/images/gallery/solid-blocks.webp',
-  '/images/gallery/retaining-action.webp',
-  '/images/gallery/paving-blocks-stack.webp',
+  '/images/products/ceiling-blocks-2.webp',
+  '/images/products/ceiling-blocks-3.webp',
+  '/images/products/ceiling-blocks-rib.webp',
+  '/images/products/ceiling-blocks-1.webp',
 ];
 
 const related = [

@@ -35,11 +35,10 @@ const applications = [
 ];
 
 const galleryImages = [
-  '/images/gallery/interlocking-residential.webp',
-  '/images/gallery/rectangular-residential.webp',
-  '/images/gallery/rectangular-katamanso.webp',
-  '/images/gallery/rectangular-residential-2.webp',
-  '/images/gallery/paving-blocks-stack.webp',
+  '/images/products/hexagonal-paving-blocks-1.webp',
+  '/images/products/hexagonal-paving-blocks-2.webp',
+  '/images/products/hexagonal-paving-blocks-3.webp',
+  '/images/products/hexagonal-paving-blocks-4.webp',
 ];
 
 const related = [

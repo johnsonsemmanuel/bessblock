@@ -207,7 +207,7 @@ export default function RetainingWalls() {
         <div className="container">
           <SectionTitle label="Project Gallery" title="See it in action" align="left" />
           <GalleryLightbox
-            images={['/images/gallery/retaining-action.webp', '/images/gallery/paving-blocks-stack.webp', '/images/gallery/solid-blocks.webp']}
+            images={['/images/products/retaining-walls.webp', '/images/products/l-range-rock-face.webp', '/images/products/4x4-step-block.webp']}
           />
         </div>
       </section>
