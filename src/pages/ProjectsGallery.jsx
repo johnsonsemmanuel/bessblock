@@ -12,18 +12,16 @@ import projects from '../data/projects';
 import './ProjectsGallery.css';
 
 const galleryImages = [
-  '/images/production/IMG_0500.webp',
-  '/images/production/IMG_0583.webp',
-  '/images/production/IMG_0598.webp',
-  '/images/production/IMG_0610.webp',
-  '/images/production/IMG_0618.webp',
-  '/images/production/IMG_0589.webp',
-  '/images/production/IMG_0599.webp',
-  '/images/production/IMG_0604.webp',
-  '/images/production/IMG_0611.webp',
-  '/images/production/IMG_0597.webp',
-  '/images/production/IMG_0614.webp',
-  '/images/production/IMG_0620.webp',
+  '/images/gallery/paving-blocks-stack.webp',
+  '/images/gallery/hollow-blocks.webp',
+  '/images/gallery/solid-blocks.webp',
+  '/images/gallery/interlocking-residential.webp',
+  '/images/gallery/rectangular-residential.webp',
+  '/images/gallery/rectangular-katamanso.webp',
+  '/images/gallery/rectangular-residential-2.webp',
+  '/images/gallery/retaining-action.webp',
+  '/images/gallery/road-kerbs-delivery.webp',
+  '/images/gallery/textured-slabs-pool.webp',
 ];
 
 export default function ProjectsGallery() {
@@ -117,10 +115,10 @@ export default function ProjectsGallery() {
           </div>
         </section>
 
-      {/* Company photo gallery */}
+      {/* Products Gallery */}
       <section className="section section-light">
         <div className="container">
-          <SectionTitle label="Company Gallery" title="Our products, people, and facility" />
+          <SectionTitle label="Products Gallery" title="Our products in action" />
           <div className="gallery-grid">
             {galleryImages.map((src, i) => (
               <ScrollReveal key={i} delay={i * 0.03}>

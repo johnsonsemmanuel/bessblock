@@ -13,10 +13,10 @@ import CoverageCalculator from '../components/CoverageCalculator';
 import './Home.css';
 
 const heroSlides = [
+  { image: '/images/hero/production-site-4.webp', label: 'Bessblock team at work in the factory' },
   { image: '/images/hero/hexagonal-paving-1.webp', label: 'Bessblock hexagonal paving blocks installation' },
   { image: '/images/hero/production-site-1.webp', label: 'Bessblock production facility and operations' },
   { image: '/images/hero/production-site-3.webp', label: 'Bessblock product showcase and site development' },
-  { image: '/images/hero/production-site-4.webp', label: 'Bessblock team at work in the factory' },
 ];
 
 const stagger = {
@@ -44,21 +44,21 @@ const whyItems = [
 ];
 
 const appItems = [
-  { label: 'Domestic driveways and gardens.', link: '/products/paving-blocks', image: '/images/app-domestic-driveways.webp' },
-  { label: 'Footpaths and pedestrian areas.', link: '/products/paving-blocks', image: '/images/products/interlocking-paving-3.jpg' },
-  { label: 'Commercial forecourts and parking areas.', link: '/products/paving-blocks', image: '/images/products/rectangular-paving-3.jpg' },
-  { label: 'Landscaping and public realm schemes.', link: '/products/paving-blocks', image: '/images/categories/paving-blocks.webp' },
-  { label: 'Roads, estate developments, and edge restraint.', link: '/products/kerbs-edging', image: '/images/products/road-kerbs.webp' },
-  { label: 'Retaining and terracing applications.', link: '/products/walling/retaining-walls', image: '/images/products/retaining-walls.webp' },
+  { label: 'Domestic driveways and gardens.', link: '/products/paving-blocks', image: '/images/applications/domestic-driveways.webp' },
+  { label: 'Footpaths and pedestrian areas.', link: '/products/paving-blocks', image: '/images/applications/footpaths.webp' },
+  { label: 'Commercial forecourts and parking areas.', link: '/products/paving-blocks', image: '/images/applications/commercial-forecourts.webp' },
+  { label: 'Landscaping and public realm schemes.', link: '/products/paving-blocks', image: '/images/applications/landscaping.webp' },
+  { label: 'Roads, estate developments, and edge restraint.', link: '/products/kerbs-edging', image: '/images/applications/roads-estate.webp' },
+  { label: 'Retaining and terracing applications.', link: '/products/walling/retaining-walls', image: '/images/applications/retaining-terracing.webp' },
 ];
 
 const categoryLinks = [
   { name: 'Paving Blocks', path: '/products/paving-blocks', image: '/images/products/interlocking-paving-1.webp' },
   { name: 'Walling', path: '/products/walling', image: '/images/products/hollow-blocks-1.webp' },
   { name: 'Paving Slabs', path: '/products/paving-slabs', image: '/images/categories/paving-slabs.webp' },
-  { name: 'Retaining Walls', path: '/products/walling/retaining-walls', image: '/images/products/retaining-walls.webp' },
-  { name: 'Kerbs & Edging', path: '/products/kerbs-edging', image: '/images/products/road-kerbs.webp' },
-  { name: 'Step Risers', path: '/products/step-risers', image: '/images/products/standard-step-risers.webp' },
+  { name: 'Retaining Walls', path: '/products/walling/retaining-walls', image: '/images/categories/retaining-walls.webp' },
+  { name: 'Kerbs & Edging', path: '/products/kerbs-edging', image: '/images/categories/kerbs-edging.webp' },
+  { name: 'Step Risers', path: '/products/step-risers', image: '/images/categories/step-risers.webp' },
 ];
 
 export default function Home() {

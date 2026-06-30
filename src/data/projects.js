@@ -1,10 +1,10 @@
 const projects = [
-  { title: 'Ring Road Interchange', client: 'Urban Roads Authority', scope: 'Road kerbs, paving blocks, drainage kerbs', image: '/images/production/IMG_1861.webp' },
-  { title: 'Central Business District Plaza', client: 'City Municipal Council', scope: 'Hexagonal paving blocks, demarcation kerbs', image: '/images/production/IMG_1850.webp' },
-  { title: 'University Campus Development', client: 'State University', scope: 'Hollow concrete blocks, ceiling blocks, paving', image: '/images/production/IMG_1871.webp' },
-  { title: 'Industrial Park Phase 3', client: 'Industrial Development Corp', scope: 'Solid concrete blocks, retaining walls, paving', image: '/images/production/IMG_1865.webp' },
-  { title: 'Hospital Complex', client: 'Ministry of Health', scope: 'Hollow blocks, solid blocks, kerbs', image: '/images/production/IMG_1859.webp' },
-  { title: 'Shopping Mall Expansion', client: 'Retail Holdings Ltd', scope: 'Interlocking paving, ceiling blocks, garden kerbs', image: '/images/production/IMG_1855.webp' },
+  { title: 'Project Gallery', client: 'Bessblock Concrete Products', scope: 'Paving blocks, kerbs, retaining walls', image: '/images/gallery/project-1.webp' },
+  { title: 'Residential Development', client: 'Bessblock Concrete Products', scope: 'Paving blocks, kerbs', image: '/images/gallery/project-2.webp' },
+  { title: 'Retaining Wall Installation', client: 'Bessblock Concrete Products', scope: 'Retaining walls, terracing', image: '/images/gallery/project-3.webp' },
+  { title: 'Road Infrastructure', client: 'Bessblock Concrete Products', scope: 'Road kerbs, edge restraint', image: '/images/gallery/project-4.webp' },
+  { title: 'Terracing Application', client: 'Bessblock Concrete Products', scope: 'Retaining walls, landscaping', image: '/images/gallery/project-5.webp' },
+  { title: 'Site Development', client: 'Bessblock Concrete Products', scope: 'Paving, kerbs, drainage', image: '/images/gallery/project-6.webp' },
 ];
 
 export default projects;

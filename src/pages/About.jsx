@@ -55,7 +55,7 @@ const flowPanels = [
   {
     label: 'Mission',
     title: 'Our Philosophy',
-    bg: '/images/production/IMG_0628.webp',
+    bg: '/images/about/philosophy.webp',
     text: 'The RG Group philosophy is to invest in and build world-class, sustainable businesses from Ghana that can serve generations. Bessblock reflects that philosophy through a commitment to dependable manufacturing, practical product development, and long-term value. We aim to supply products that are not only strong and functional, but also relevant to modern construction demands and future growth.',
     align: 'right',
   },

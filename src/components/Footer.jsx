@@ -60,10 +60,14 @@ function LogoIcon() {
 }
 
 export default function Footer() {
-  const [tablet, setTablet] = useState(false);
+  const [breakpoint, setBreakpoint] = useState('desktop');
 
   useEffect(() => {
-    const check = () => setTablet(window.innerWidth <= 1024);
+    const check = () => {
+      if (window.innerWidth <= 640) setBreakpoint('mobile');
+      else if (window.innerWidth <= 1024) setBreakpoint('tablet');
+      else setBreakpoint('desktop');
+    };
     check();
     window.addEventListener('resize', check);
     return () => window.removeEventListener('resize', check);
@@ -107,11 +111,11 @@ export default function Footer() {
       </div>
       <div className="footer-grid-area">
         <FlickeringGrid
-          text={tablet ? 'BESSBLOCK' : 'PRECISION BLOCK MANUFACTURING'}
-          fontSize={tablet ? 70 : 90}
+          text={breakpoint === 'mobile' ? 'BESSBLOCK' : breakpoint === 'tablet' ? 'BESSBLOCK' : 'PRECISION BLOCK MANUFACTURING'}
+          fontSize={breakpoint === 'mobile' ? 48 : breakpoint === 'tablet' ? 70 : 90}
           className="footer-grid-canvas"
           squareSize={2}
-          gridGap={tablet ? 2 : 3}
+          gridGap={breakpoint === 'mobile' ? 2 : breakpoint === 'tablet' ? 2 : 3}
           color="#6B7280"
           maxOpacity={0.3}
           flickerChance={0.1}

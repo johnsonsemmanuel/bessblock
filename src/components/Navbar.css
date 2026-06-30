@@ -31,9 +31,15 @@
 }
 
 .navbar-logo-img {
-  height: 52px;
+  height: 60px;
   width: auto;
   display: block;
+}
+
+@media (max-width: 768px) {
+  .navbar-logo-img {
+    height: 48px;
+  }
 }
 
 .navbar-menu {

@@ -25,10 +25,10 @@ const qcItems = [
 ];
 
 const mfgImages = [
-  '/images/production/IMG_1803.webp',
-  '/images/production/IMG_1873.webp',
-  '/images/production/IMG_0628.webp',
-  '/images/production/IMG_1836.webp',
+  '/images/about/built-for-consistency.webp',
+  '/images/about/automated-block-production.webp',
+  '/images/about/mist-curing.webp',
+  '/images/about/why-it-matters.webp',
 ];
 
 export default function ManufacturingQuality() {

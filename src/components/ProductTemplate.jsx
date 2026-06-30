@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Link, Navigate } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 import SectionTitle from './SectionTitle';
 import SEO from './SEO';
 import Breadcrumbs from './Breadcrumbs';
@@ -15,6 +15,37 @@ import { productPages } from '../data/products';
 import './ProductTemplate.css';
 
 const categoryIcons = { 'paving-blocks': PavingIcon, 'walling': WallingIcon, 'paving-slabs': SlabIcon, 'step-risers': StepIcon, 'kerbs-edging': KerbIcon };
+
+const categoryGalleryImages = {
+  'paving-blocks': [
+    '/images/gallery/interlocking-residential.webp',
+    '/images/gallery/rectangular-residential.webp',
+    '/images/gallery/rectangular-katamanso.webp',
+    '/images/gallery/rectangular-residential-2.webp',
+    '/images/gallery/paving-blocks-stack.webp',
+  ],
+  'walling': [
+    '/images/gallery/hollow-blocks.webp',
+    '/images/gallery/solid-blocks.webp',
+    '/images/gallery/retaining-action.webp',
+    '/images/gallery/paving-blocks-stack.webp',
+  ],
+  'paving-slabs': [
+    '/images/gallery/textured-slabs-pool.webp',
+    '/images/gallery/paving-blocks-stack.webp',
+    '/images/gallery/interlocking-residential.webp',
+  ],
+  'step-risers': [
+    '/images/gallery/rectangular-residential.webp',
+    '/images/gallery/paving-blocks-stack.webp',
+    '/images/gallery/textured-slabs-pool.webp',
+  ],
+  'kerbs-edging': [
+    '/images/gallery/road-kerbs-delivery.webp',
+    '/images/gallery/paving-blocks-stack.webp',
+    '/images/gallery/solid-blocks.webp',
+  ],
+};
 
 const productImages = {
   'interlocking-paving-blocks': '/images/products/interlocking-paving-1.webp',
@@ -156,7 +187,7 @@ export default function ProductTemplate({ productKey, heroImage }) {
                 <p className="product-sidebar-cta-desc">
                   Our team can provide pricing, technical specifications, and delivery options.
                 </p>
-                <AnimatedButton to="/request-quote" variant="primary">Request a Quote</AnimatedButton>
+                <AnimatedButton to="/contact" variant="primary">Contact Sales</AnimatedButton>
               </motion.div>
             </aside>
           </div>
@@ -167,7 +198,7 @@ export default function ProductTemplate({ productKey, heroImage }) {
       <section className="section section-light">
         <div className="container">
           <SectionTitle label="Project Gallery" title="See it in action" align="left" />
-          <GalleryLightbox images={['/images/hero/production-site-3.webp', '/images/hero/production-site-4.webp', '/images/hero/production-site-1.webp']} />
+          <GalleryLightbox images={categoryGalleryImages[product.category] || ['/images/gallery/paving-blocks-stack.webp', '/images/gallery/interlocking-residential.webp', '/images/gallery/rectangular-residential.webp']} />
         </div>
       </section>
 

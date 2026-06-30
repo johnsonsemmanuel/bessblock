@@ -92,7 +92,7 @@
 .hero-arrow-right { right: 16px; }
 
 @media (max-width: 768px) {
-  .hero-arrow { display: none; }
+  .hero-arrow { display: flex; }
 }
 
 .hero-dot {
