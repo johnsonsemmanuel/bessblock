@@ -61,7 +61,7 @@ const related = [
   {
     name: 'Walling',
     path: '/products/walling',
-    image: '/images/categories/walling.webp',
+    image: '/images/products/hollow-blocks-1.webp',
     category: 'Walling',
     icon: WallingIcon,
     desc: 'Hollow, solid, and ceiling blocks for construction.',
@@ -69,7 +69,7 @@ const related = [
   {
     name: 'Kerbs & Edging',
     path: '/products/kerbs-edging',
-    image: '/images/categories/kerbs-edging.webp',
+    image: '/images/products/road-kerbs.webp',
     category: 'Kerbs & Edging',
     icon: KerbIcon,
     desc: 'Precast concrete kerbs, edgings, and channels.',

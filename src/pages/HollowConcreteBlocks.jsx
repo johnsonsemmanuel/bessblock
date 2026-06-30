@@ -80,7 +80,7 @@ const related = [
   {
     name: 'Kerbs & Edging',
     path: '/products/kerbs-edging',
-    image: '/images/categories/kerbs-edging.webp',
+    image: '/images/products/road-kerbs.webp',
     category: 'Kerbs & Edging',
     icon: KerbIcon,
     desc: 'Precast concrete kerbs, edgings, and channels.',

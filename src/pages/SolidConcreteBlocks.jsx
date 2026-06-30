@@ -76,7 +76,7 @@ const related = [
   {
     name: 'Paving Blocks',
     path: '/products/paving-blocks',
-    image: '/images/categories/paving-blocks.webp',
+    image: '/images/products/interlocking-paving-1.webp',
     category: 'Paving Blocks',
     icon: PavingIcon,
     desc: 'Concrete paving blocks for pedestrian and vehicular surfaces.',
