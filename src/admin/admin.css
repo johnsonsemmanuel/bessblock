@@ -390,13 +390,38 @@
   padding-top: 0.5rem;
 }
 
-/* Studio iframe */
-.admin-studio-iframe {
-  width: 100%;
-  height: calc(100vh - 6rem);
-  border: none;
-  border-radius: 10px;
+/* Image upload */
+.admin-image-upload {
+  display: flex;
+  align-items: flex-start;
+}
+
+.admin-image-preview img {
+  max-width: 200px;
+  max-height: 120px;
+  border-radius: 6px;
+  object-fit: cover;
   border: 1px solid var(--border-primary);
+}
+
+.admin-upload-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-size: var(--text-sm);
+  font-weight: 500;
+  cursor: pointer;
+  background: none;
+  border: 1px dashed var(--border-primary);
+  color: var(--text-secondary);
+  transition: border-color 0.15s, color 0.15s;
+}
+
+.admin-upload-btn:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
 }
 
 /* Empty state */

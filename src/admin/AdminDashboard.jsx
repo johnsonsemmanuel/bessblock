@@ -1,16 +1,17 @@
 import { useState, useEffect } from 'react';
 import { useAdminAuth } from './AdminAuth';
 import { sanityClient, urlFor } from '../lib/sanity';
+import { pmToPt, ptToPm } from '../lib/pmToPt';
+import TipTapEditor from '../components/TipTapEditor';
 import {
   LayoutDashboard, FileText, MessageSquare, ClipboardList,
-  LogOut, Plus, Pencil, Trash2, ExternalLink, X, Save, Eye
+  LogOut, Plus, Pencil, Trash2, X, Save, Eye, Image
 } from 'lucide-react';
 import './admin.css';
 
 const NAV = [
   { id: 'overview', label: 'Overview', icon: LayoutDashboard },
   { id: 'posts', label: 'Blog Posts', icon: FileText },
-  { id: 'studio', label: 'Rich Editor', icon: ExternalLink },
 ];
 
 // Sanity write client (needs token)
@@ -101,21 +102,35 @@ function Overview({ posts }) {
 }
 
 /* ── Post Form ── */
-const EMPTY_POST = { title: '', slug: '', author: 'Bessblock Admin', category: 'Construction', excerpt: '', body: '' };
+const EMPTY_POST = { title: '', slug: '', author: 'Bessblock Admin', category: 'Construction', excerpt: '', bodyPm: null, mainImage: null };
 const CATEGORIES = ['Construction', 'Products', 'Industry News', 'Company News', 'Uncategorized'];
 
 function PostForm({ post, onSave, onCancel }) {
   const editing = !!post?._id;
-  const [form, setForm] = useState(editing ? {
-    title: post.title || '',
-    slug: post.slug || '',
-    author: post.author || 'Bessblock Admin',
-    category: post.category || 'Construction',
-    excerpt: post.excerpt || '',
-    body: post.body ? post.body.map(b => b.children?.map(c => c.text).join('') || '').join('\n\n') : '',
-  } : EMPTY_POST);
+  const [form, setForm] = useState(EMPTY_POST);
+  const [pmContent, setPmContent] = useState(null);
   const [saving, setSaving] = useState(false);
   const [err, setErr] = useState('');
+  const [mainImagePreview, setMainImagePreview] = useState(null);
+  const [mainImageFile, setMainImageFile] = useState(null);
+
+  useEffect(() => {
+    if (editing) {
+      setForm({
+        title: post.title || '',
+        slug: post.slug || '',
+        author: post.author || 'Bessblock Admin',
+        category: post.category || 'Construction',
+        excerpt: post.excerpt || '',
+        bodyPm: null,
+        mainImage: post.image || null,
+      });
+      setPmContent(post.body ? ptToPm(post.body) : null);
+      if (post.image) {
+        setMainImagePreview(urlFor(post.image).width(400).url());
+      }
+    }
+  }, [post, editing]);
 
   const slugify = (t) => t.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
 
@@ -128,20 +143,25 @@ function PostForm({ post, onSave, onCancel }) {
     }));
   };
 
-  const toBlocks = (text) =>
-    text.split(/\n\n+/).filter(Boolean).map(para => ({
-      _type: 'block',
-      _key: Math.random().toString(36).slice(2),
-      style: 'normal',
-      children: [{ _type: 'span', _key: Math.random().toString(36).slice(2), text: para, marks: [] }],
-      markDefs: [],
-    }));
+  const handleMainImage = (e) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    setMainImageFile(file);
+    setMainImagePreview(URL.createObjectURL(file));
+  };
+
+  const uploadImage = async (file) => {
+    if (!file) return null;
+    const asset = await sanityClient.assets.upload('image', file);
+    return { _type: 'image', asset: { _ref: asset._id, _type: 'reference' } };
+  };
 
   const handleSave = async () => {
     if (!form.title || !form.slug || !form.excerpt) { setErr('Title, slug, and excerpt are required.'); return; }
     setSaving(true);
     setErr('');
     try {
+      const body = pmContent ? pmToPt(pmContent) : [];
       const doc = {
         _type: 'post',
         title: form.title,
@@ -150,8 +170,11 @@ function PostForm({ post, onSave, onCancel }) {
         category: form.category,
         excerpt: form.excerpt,
         publishedAt: editing ? post.publishedAt : new Date().toISOString(),
-        body: toBlocks(form.body),
+        body,
       };
+      if (mainImageFile) {
+        doc.mainImage = await uploadImage(mainImageFile);
+      }
       if (editing) {
         await writeClient.patch(post._id).set(doc).commit();
       } else {
@@ -199,13 +222,31 @@ function PostForm({ post, onSave, onCancel }) {
           <label htmlFor="excerpt">Excerpt *</label>
           <textarea id="excerpt" rows={2} value={form.excerpt} onChange={handleChange} placeholder="Short description shown on blog listing…" style={{ minHeight: '70px' }} />
         </div>
+
         <div className="admin-form-group">
-          <label htmlFor="body">Content (paragraphs separated by blank lines)</label>
-          <textarea id="body" rows={14} value={form.body} onChange={handleChange} placeholder="Write your blog post content here. Separate paragraphs with a blank line." />
+          <label>Featured Image</label>
+          <div className="admin-image-upload">
+            {mainImagePreview ? (
+              <div className="admin-image-preview">
+                <img src={mainImagePreview} alt="Preview" />
+                <button type="button" className="admin-btn admin-btn-outline" onClick={() => { setMainImagePreview(null); setMainImageFile(null); setForm(prev => ({ ...prev, mainImage: null })); }} style={{ marginTop: '0.5rem' }}>
+                  <X size={12} /> Remove
+                </button>
+              </div>
+            ) : (
+              <label className="admin-upload-btn">
+                <Image size={16} /> Choose Image
+                <input type="file" accept="image/*" onChange={handleMainImage} style={{ display: 'none' }} />
+              </label>
+            )}
+          </div>
         </div>
-        <p style={{ fontSize: 'var(--text-xs)', color: 'var(--text-tertiary)' }}>
-          💡 For rich content with images, headings, and formatting — use the <strong>Rich Editor</strong> tab (Sanity Studio).
-        </p>
+
+        <div className="admin-form-group">
+          <label>Content</label>
+          <TipTapEditor content={pmContent} onChange={setPmContent} />
+        </div>
+
         <div className="admin-form-actions">
           <button className="admin-btn admin-btn-outline" onClick={onCancel}>Cancel</button>
           <button className="admin-btn admin-btn-primary" onClick={handleSave} disabled={saving}>
@@ -292,30 +333,6 @@ function PostsTab({ posts, onRefresh }) {
   );
 }
 
-/* ── Studio Tab ── */
-function StudioTab() {
-  const studioUrl = import.meta.env.VITE_SANITY_STUDIO_URL || 'http://localhost:3333';
-  return (
-    <>
-      <div className="admin-topbar">
-        <div>
-          <h1 className="admin-page-title">Rich Editor</h1>
-          <p className="admin-page-sub">Full Sanity Studio for rich content authoring with images and formatting.</p>
-        </div>
-        <a href={studioUrl} target="_blank" rel="noopener noreferrer" className="admin-btn admin-btn-outline">
-          <ExternalLink size={14} /> Open in new tab
-        </a>
-      </div>
-      <iframe
-        src={studioUrl}
-        className="admin-studio-iframe"
-        title="Sanity Studio"
-        allow="same-origin"
-      />
-    </>
-  );
-}
-
 /* ── Main Dashboard ── */
 export default function AdminDashboard() {
   const { logout } = useAdminAuth();
@@ -361,7 +378,6 @@ export default function AdminDashboard() {
       <main className="admin-main">
         {tab === 'overview' && <Overview posts={posts} />}
         {tab === 'posts' && <PostsTab posts={posts} onRefresh={fetchPosts} />}
-        {tab === 'studio' && <StudioTab />}
       </main>
     </div>
   );
