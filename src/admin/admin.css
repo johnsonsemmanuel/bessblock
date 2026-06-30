@@ -397,7 +397,7 @@
   color: #3b82f6;
 }
 
-/* Buttons */
+/* Buttons — use site button system */
 .admin-btn {
   display: inline-flex;
   align-items: center;
@@ -405,29 +405,51 @@
   padding: 0.5rem 1rem;
   border-radius: 8px;
   font-size: var(--text-sm);
-  font-weight: 500;
+  font-weight: var(--font-weight-semibold);
   cursor: pointer;
   border: none;
-  transition: opacity 0.15s;
+  font-family: inherit;
+  letter-spacing: 0.02em;
+  transition: background 200ms ease, color 200ms ease, border-color 200ms ease, transform 150ms ease;
 }
 
-.admin-btn:hover { opacity: 0.85; }
+.admin-btn:active {
+  transform: scale(0.96);
+}
 
 .admin-btn-primary {
-  background: var(--color-accent);
+  background: var(--color-bessblock-blue);
+  color: #fff;
+}
+.admin-btn-primary:hover {
+  background: var(--color-bessblock-blue-dark);
   color: #fff;
 }
 
 .admin-btn-outline {
   background: none;
-  border: 1px solid var(--border-primary);
-  color: var(--text-secondary);
+  border: 1.5px solid var(--color-bessblock-blue);
+  color: var(--color-bessblock-blue);
+}
+[data-theme='dark'] .admin-btn-outline {
+  border-color: var(--color-bessblock-blue-light);
+  color: var(--color-bessblock-blue-light);
+}
+.admin-btn-outline:hover {
+  background: var(--color-bessblock-blue);
+  color: #fff;
+  border-color: var(--color-bessblock-blue);
 }
 
 .admin-btn-danger {
   background: rgba(239, 68, 68, 0.1);
   color: #ef4444;
-  border: 1px solid rgba(239, 68, 68, 0.2);
+  border: 1.5px solid rgba(239, 68, 68, 0.25);
+}
+.admin-btn-danger:hover {
+  background: #ef4444;
+  color: #fff;
+  border-color: #ef4444;
 }
 
 /* Form */
