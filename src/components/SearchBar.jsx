@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Search, X, Package, FileText, Rows3, ArrowRight } from 'lucide-react';
-import { performSearch } from '../lib/search';
+import { performSearch, initSearch } from '../lib/search';
 import './SearchBar.css';
 
 const typeMeta = {
@@ -18,6 +18,15 @@ export default function SearchBar() {
   const inputRef = useRef(null);
   const wrapperRef = useRef(null);
   const location = useLocation();
+
+  useEffect(() => {
+    initSearch().then(() => {
+      if (query) {
+        const r = performSearch(query);
+        setResults(r);
+      }
+    });
+  }, []);
 
   useEffect(() => {
     if (open) {

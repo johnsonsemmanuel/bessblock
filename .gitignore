@@ -28,3 +28,4 @@ Bessblock Website 2026 - Images/
 
 # Environment variables (secrets)
 .env
+scripts/

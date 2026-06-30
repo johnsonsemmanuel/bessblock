@@ -1,6 +1,7 @@
+import { useState, useEffect } from 'react';
 import { useSearchParams, Link } from 'react-router-dom';
 import { Search, Package, BookOpen, Grid3X3, FileText } from 'lucide-react';
-import { performSearch, searchIndex } from '../lib/search';
+import { performSearch, searchIndex, initSearch } from '../lib/search';
 import SEO from '../components/SEO';
 import SectionTitle from '../components/SectionTitle';
 import Breadcrumbs from '../components/Breadcrumbs';
@@ -15,7 +16,20 @@ const iconMap = {
 export default function SearchResults() {
   const [searchParams, setSearchParams] = useSearchParams();
   const query = searchParams.get('q') || '';
-  const items = query ? performSearch(query, searchIndex()) : [];
+  const [items, setItems] = useState([]);
+  const [ready, setReady] = useState(false);
+
+  useEffect(() => {
+    initSearch().then(() => {
+      setReady(true);
+      if (query) setItems(performSearch(query, searchIndex()));
+    });
+  }, []);
+
+  useEffect(() => {
+    if (ready && query) setItems(performSearch(query, searchIndex()));
+    if (!query) setItems([]);
+  }, [query, ready]);
 
   const handleSearch = (e) => {
     e.preventDefault();
@@ -55,7 +69,7 @@ export default function SearchResults() {
           <p className="sr-count">{items.length} result{items.length !== 1 ? 's' : ''} found</p>
         )}
 
-        {query && items.length === 0 && (
+        {query && items.length === 0 && ready && (
           <div className="sr-empty">
             <FileText size={48} className="sr-empty-icon" />
             <h3 className="sr-empty-title">No results found</h3>
@@ -68,6 +82,10 @@ export default function SearchResults() {
               <Link to="/faqs" className="sr-empty-link">View FAQs</Link>
             </div>
           </div>
+        )}
+
+        {!ready && query && (
+          <p className="sr-count">Searching…</p>
         )}
 
         {items.length > 0 && (

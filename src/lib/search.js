@@ -1,5 +1,4 @@
 import productCategories, { productPages } from '../data/products';
-import blogPosts from '../data/blog';
 
 function tokenize(text) {
   return text.toLowerCase().split(/\s+/).filter(Boolean);
@@ -16,6 +15,19 @@ function score(queryTokens, text) {
     }
   }
   return score;
+}
+
+let cachedBlogPosts = null;
+
+export async function initSearch() {
+  if (cachedBlogPosts) return;
+  try {
+    const { sanityApi } = await import('./sanity');
+    const posts = await sanityApi.fetch(`*[_type == "post"] { title, excerpt, "slug": slug.current }`);
+    cachedBlogPosts = posts || [];
+  } catch {
+    cachedBlogPosts = [];
+  }
 }
 
 export function searchIndex() {
@@ -44,15 +56,16 @@ export function searchIndex() {
     });
   }
 
-  for (const post of blogPosts) {
-    const tokens = `${post.title} ${post.excerpt} ${post.sections.map(s => `${s.heading} ${s.body}`).join(' ')}`;
-    results.push({
-      type: 'blog',
-      title: post.title,
-      description: post.excerpt,
-      path: `/insights/blog/${post.slug}`,
-      keywords: tokens,
-    });
+  if (cachedBlogPosts) {
+    for (const post of cachedBlogPosts) {
+      results.push({
+        type: 'blog',
+        title: post.title,
+        description: post.excerpt || '',
+        path: `/insights/blog/${post.slug}`,
+        keywords: `${post.title} ${post.excerpt || ''}`,
+      });
+    }
   }
 
   return results;
