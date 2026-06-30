@@ -132,7 +132,7 @@ export default function Terralite() {
       <section className="section section-light">
         <div className="container">
           <SectionTitle label="Project Gallery" title="See it in action" align="left" />
-          <GalleryLightbox images={['/images/gallery/retaining-action.webp', '/images/gallery/paving-blocks-stack.webp', '/images/gallery/solid-blocks.webp']} />
+          <GalleryLightbox images={['/images/products/terralite.webp', '/images/products/terrafix.webp', '/images/products/terracrete.webp']} />
         </div>
       </section>
 

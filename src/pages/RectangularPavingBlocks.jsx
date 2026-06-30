@@ -127,7 +127,7 @@ export default function RectangularPavingBlocks() {
       <section className="section section-light">
         <div className="container">
           <SectionTitle label="Project Gallery" title="See it in action" align="left" />
-          <GalleryLightbox images={['/images/gallery/interlocking-residential.webp', '/images/gallery/rectangular-residential.webp', '/images/gallery/rectangular-katamanso.webp', '/images/gallery/rectangular-residential-2.webp', '/images/gallery/paving-blocks-stack.webp']} />
+          <GalleryLightbox images={['/images/products/rectangular-paving-1.webp', '/images/products/rectangular-paving-2.webp', '/images/products/rectangular-paving-3.webp', '/images/products/rectangular-paving-4.webp']} />
         </div>
       </section>
 

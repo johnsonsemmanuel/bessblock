@@ -100,7 +100,7 @@ export default function FourByFourStepBlock() {
       <section className="section section-light">
         <div className="container">
           <SectionTitle label="Project Gallery" title="See it in action" align="left" />
-          <GalleryLightbox images={['/images/gallery/retaining-action.webp', '/images/gallery/paving-blocks-stack.webp', '/images/gallery/solid-blocks.webp']} />
+          <GalleryLightbox images={['/images/products/4x4-step-block.webp', '/images/products/l-range-standard.webp', '/images/products/retaining-walls.webp']} />
         </div>
       </section>
 
