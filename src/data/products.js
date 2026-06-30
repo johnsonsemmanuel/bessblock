@@ -555,6 +555,7 @@ export const productPages = {
     applications: 'Pedestrian precincts, shopping centres, civic plazas, school playgrounds, park pathways, and public transport interchanges.',
     installation: 'Slabs should be laid on a full mortar bed (50mm minimum) with a compacted sub-base of 150mm. Joints of 5-8mm should be pointed with a 1:3 cement-sand mortar. A fall of 1:60 should be maintained for drainage. Heavy slabs require mechanical handling or two-person lifting.',
     relatedProducts: ['smooth-paving-slabs', 'large-format-slabs'],
+    galleryImages: ['/images/gallery/paving-slabs/textured-slabs-action.webp', '/images/gallery/paving-slabs/paving-slabs-action-1.webp', '/images/gallery/paving-slabs/paving-slabs-action-2.webp'],
   },
   'smooth-paving-slabs': {
     name: 'Smooth Paving Slabs',
@@ -579,6 +580,7 @@ export const productPages = {
     applications: 'Residential patios, rooftop terraces, courtyard gardens, showroom forecourts, memorial spaces, and contemporary landscape designs.',
     installation: 'Standard paving slab installation on a full mortar bed. For pedestrian-only applications, a 100mm compacted sub-base with 30mm sharp sand laying course may be used. Joints should be 5mm maximum for a clean appearance. Point with fine sand or mortar.',
     relatedProducts: ['textured-paving-slabs', 'large-format-slabs'],
+    galleryImages: ['/images/gallery/paving-slabs/smooth-slabs-action.webp', '/images/gallery/paving-slabs/paving-slabs-action-1.webp', '/images/gallery/paving-slabs/paving-slabs-action-2.webp'],
   },
   'large-format-slabs': {
     name: 'Large Format Slabs',
@@ -603,6 +605,7 @@ export const productPages = {
     applications: 'Civic squares, commercial forecourts, entrance plazas, airport terminals, retail centres, and prestige landscape projects.',
     installation: 'Large format slabs require mechanical handling equipment. A full mortar bed of 50mm minimum is essential to prevent point loading. Slabs should be lifted using vacuum lifters or heavy-duty slab grabs. Installation team must include a minimum of 3 persons for slabs over 80kg.',
     relatedProducts: ['textured-paving-slabs', 'smooth-paving-slabs'],
+    galleryImages: ['/images/gallery/paving-slabs/paving-slabs-action-1.webp', '/images/gallery/paving-slabs/paving-slabs-action-2.webp', '/images/gallery/paving-slabs/Paving Slabs - See it in action - Bessblock Concrete Product Ltd.webp'],
   },
   'standard-step-risers': {
     name: 'Standard Step Risers',
