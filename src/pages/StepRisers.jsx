@@ -3,6 +3,7 @@ import PageHero from '../components/PageHero';
 import { ProductHighlightCard } from '../components/ProductHighlightCard';
 import SEO from '../components/SEO';
 import SectionTitle from '../components/SectionTitle';
+import GalleryLightbox from '../components/GalleryLightbox';
 import ScrollReveal from '../components/ScrollReveal';
 import SiteCTA from '../components/SiteCTA';
 import BlockDesign from '../components/BlockDesigns';
@@ -23,7 +24,7 @@ export default function StepRisers() {
     <>
       <SEO title="Step Risers" description="Explore Bessblock's concrete step riser range, standard step risers, wide tread steps, and bullnose steps for durable outdoor stair construction." />
       <div className="page">
-      <PageHero title="Step Risers" description={cat.description} bgImage="/images/hero/concrete-texture-2.webp" />
+      <PageHero title="Step Risers" description={cat.description} bgImage="/images/categories/step-risers.webp" />
 
       <section className="section">
         <div className="container">
@@ -75,6 +76,14 @@ export default function StepRisers() {
               />
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Project Gallery */}
+      <section className="section section-light">
+        <div className="container">
+          <SectionTitle label="Project Gallery" title="See it in action" align="left" />
+          <GalleryLightbox images={['/images/gallery/rectangular-residential.webp', '/images/gallery/paving-blocks-stack.webp', '/images/gallery/textured-slabs-pool.webp']} />
         </div>
       </section>
 

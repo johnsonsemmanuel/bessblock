@@ -14,12 +14,11 @@ import './InterlockingPavingBlocks.css';
 import '../components/ProductTemplate.css';
 
 const galImages = [
-  '/images/products/interlocking-paving-1.webp',
-  '/images/products/interlocking-paving-2.webp',
-  '/images/products/interlocking-paving-3.webp',
-  '/images/products/interlocking-paving-4.webp',
-  '/images/products/hexagonal-paving-blocks-1.webp',
-  '/images/products/rectangular-paving-1.webp',
+  '/images/gallery/interlocking-residential.webp',
+  '/images/gallery/rectangular-residential.webp',
+  '/images/gallery/rectangular-katamanso.webp',
+  '/images/gallery/rectangular-residential-2.webp',
+  '/images/gallery/paving-blocks-stack.webp',
 ];
 
 function PlusIcon() {

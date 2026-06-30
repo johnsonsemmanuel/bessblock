@@ -3,6 +3,7 @@ import PageHero from '../components/PageHero';
 import { ProductHighlightCard } from '../components/ProductHighlightCard';
 import SEO from '../components/SEO';
 import SectionTitle from '../components/SectionTitle';
+import GalleryLightbox from '../components/GalleryLightbox';
 import ScrollReveal from '../components/ScrollReveal';
 import SiteCTA from '../components/SiteCTA';
 import BlockDesign from '../components/BlockDesigns';
@@ -24,7 +25,7 @@ export default function PavingSlabs() {
     <>
       <SEO title="Paving Slabs" description="Explore Bessblock's concrete paving slab range, textured, smooth, and large format slabs for pedestrian areas, patios, and commercial spaces." />
       <div className="page">
-      <PageHero title="Paving Slabs" description={cat.description} bgImage="/images/hero/concrete-texture-1.webp" />
+      <PageHero title="Paving Slabs" description={cat.description} bgImage="/images/categories/paving-slabs.webp" />
 
       <section className="section">
         <div className="container">
@@ -76,6 +77,14 @@ export default function PavingSlabs() {
               />
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Project Gallery */}
+      <section className="section section-light">
+        <div className="container">
+          <SectionTitle label="Project Gallery" title="See it in action" align="left" />
+          <GalleryLightbox images={['/images/gallery/textured-slabs-pool.webp', '/images/gallery/paving-blocks-stack.webp', '/images/gallery/interlocking-residential.webp']} />
         </div>
       </section>
 

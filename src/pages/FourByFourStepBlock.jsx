@@ -5,6 +5,7 @@ import PageHero from '../components/PageHero';
 import SectionTitle from '../components/SectionTitle';
 import ScrollReveal from '../components/ScrollReveal';
 import SiteCTA from '../components/SiteCTA';
+import GalleryLightbox from '../components/GalleryLightbox';
 import SpecSheet from '../components/SpecSheet';
 import './Walling.css';
 
@@ -35,7 +36,7 @@ export default function FourByFourStepBlock() {
     <>
       <SEO title="4x4 Step Block" description="Terraforce® 4x4 Step Block for creating stepped transitions and tiered wall layouts within retaining wall systems without cutting or special detailing." />
       <div className="page">
-      <PageHero title="4x4 Step Block" description="A Terraforce retaining wall component designed for creating stepped transitions, tiered wall layouts, and changes in wall elevation within the retaining wall system." bgImage="/images/hero/concrete-texture-2.webp" />
+      <PageHero title="4x4 Step Block" description="A Terraforce retaining wall component designed for creating stepped transitions, tiered wall layouts, and changes in wall elevation within the retaining wall system." bgImage="/images/products/4x4-step-block.webp" />
 
       <section className="section">
         <div className="container">
@@ -92,6 +93,14 @@ export default function FourByFourStepBlock() {
               </Link>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Project Gallery */}
+      <section className="section section-light">
+        <div className="container">
+          <SectionTitle label="Project Gallery" title="See it in action" align="left" />
+          <GalleryLightbox images={['/images/gallery/retaining-action.webp', '/images/gallery/paving-blocks-stack.webp', '/images/gallery/solid-blocks.webp']} />
         </div>
       </section>
 

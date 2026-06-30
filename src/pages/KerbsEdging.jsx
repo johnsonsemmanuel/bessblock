@@ -4,6 +4,7 @@ import SectionTitle from '../components/SectionTitle';
 import ScrollReveal from '../components/ScrollReveal';
 import SpecSheet from '../components/SpecSheet';
 import SiteCTA from '../components/SiteCTA';
+import GalleryLightbox from '../components/GalleryLightbox';
 import { ProductHighlightCard } from '../components/ProductHighlightCard';
 import { KerbIcon } from '../components/CategoryIcons';
 import productCategories from '../data/products';
@@ -50,7 +51,7 @@ export default function KerbsEdging() {
       <PageHero
         title="Kerbs & Edging"
         description="Bessblock's Kerbs & Edging range is designed to provide clean boundaries, edge restraint, and durable finishing detail for roads, pavements, driveways, parking areas, and landscaped spaces."
-        bgImage="/images/hero/concrete-texture-2.webp"
+        bgImage="/images/categories/kerbs-edging.webp"
       />
 
       <section className="section">
@@ -138,6 +139,14 @@ export default function KerbsEdging() {
               </ScrollReveal>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Project Gallery */}
+      <section className="section section-light">
+        <div className="container">
+          <SectionTitle label="Project Gallery" title="See it in action" align="left" />
+          <GalleryLightbox images={['/images/gallery/road-kerbs-delivery.webp', '/images/gallery/paving-blocks-stack.webp', '/images/gallery/solid-blocks.webp']} />
         </div>
       </section>
 

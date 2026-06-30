@@ -3,6 +3,7 @@ import { ArrowRight, CheckCircle2 } from 'lucide-react';
 import SEO from '../components/SEO';
 import PageHero from '../components/PageHero';
 import SectionTitle from '../components/SectionTitle';
+import GalleryLightbox from '../components/GalleryLightbox';
 import ScrollReveal from '../components/ScrollReveal';
 import SpecSheet from '../components/SpecSheet';
 import SiteCTA from '../components/SiteCTA';
@@ -50,7 +51,7 @@ export default function Terralite() {
     <>
       <SEO title="Terralite" description="Terraforce® Terralite, a compact dry-stack interlocking retaining block for DIY landscaping, garden walls, borders, and small retaining projects." />
       <div className="page">
-      <PageHero title="Terralite" description="Terralite is Terraforce's smaller retaining wall block, aimed mainly at the DIY and light landscaping market. It is a dry-stack, interlocking concrete block system that is easy to use for garden walls, borders, and small retaining projects." bgImage="/images/hero/concrete-texture-1.webp" />
+      <PageHero title="Terralite" description="Terralite is Terraforce's smaller retaining wall block, aimed mainly at the DIY and light landscaping market. It is a dry-stack, interlocking concrete block system that is easy to use for garden walls, borders, and small retaining projects." bgImage="/images/products/terralite.webp" />
 
       <section className="section">
         <div className="container">
@@ -124,6 +125,14 @@ export default function Terralite() {
               </Link>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Project Gallery */}
+      <section className="section section-light">
+        <div className="container">
+          <SectionTitle label="Project Gallery" title="See it in action" align="left" />
+          <GalleryLightbox images={['/images/gallery/retaining-action.webp', '/images/gallery/paving-blocks-stack.webp', '/images/gallery/solid-blocks.webp']} />
         </div>
       </section>
 

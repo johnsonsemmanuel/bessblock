@@ -4,6 +4,7 @@ import PageHero from '../components/PageHero';
 import SectionTitle from '../components/SectionTitle';
 import ScrollReveal from '../components/ScrollReveal';
 import SiteCTA from '../components/SiteCTA';
+import GalleryLightbox from '../components/GalleryLightbox';
 import SpecSheet from '../components/SpecSheet';
 import { ProductHighlightCard } from '../components/ProductHighlightCard';
 import { KerbIcon } from '../components/CategoryIcons';
@@ -57,7 +58,7 @@ export default function DemarcationKerbs() {
     <>
       <SEO title="Demarcation Kerbs" description="Bessblock demarcation kerbs provide clear visual separation between traffic lanes, pedestrian areas, cycle routes, and paved zones for safer streets." />
       <div className="page">
-      <PageHero title="Demarcation Kerbs" description="Bessblock Demarcation Kerbs are designed to provide clear visual separation between traffic lanes, pedestrian areas, cycle routes, and other paved zones. They are a practical way to improve safety, guide movement, and give public or private spaces a clean, organised finish." bgImage="/images/hero/concrete-texture-2.webp" />
+      <PageHero title="Demarcation Kerbs" description="Bessblock Demarcation Kerbs are designed to provide clear visual separation between traffic lanes, pedestrian areas, cycle routes, and other paved zones. They are a practical way to improve safety, guide movement, and give public or private spaces a clean, organised finish." bgImage="/images/products/demarcation-kerbs.webp" />
 
       <section className="section">
         <div className="container">
@@ -151,6 +152,14 @@ export default function DemarcationKerbs() {
               </ScrollReveal>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Project Gallery */}
+      <section className="section section-light">
+        <div className="container">
+          <SectionTitle label="Project Gallery" title="See it in action" align="left" />
+          <GalleryLightbox images={['/images/gallery/road-kerbs-delivery.webp', '/images/gallery/paving-blocks-stack.webp', '/images/gallery/solid-blocks.webp']} />
         </div>
       </section>
 

@@ -5,6 +5,7 @@ import PageHero from '../components/PageHero';
 import SectionTitle from '../components/SectionTitle';
 import ScrollReveal from '../components/ScrollReveal';
 import SiteCTA from '../components/SiteCTA';
+import GalleryLightbox from '../components/GalleryLightbox';
 import SpecSheet from '../components/SpecSheet';
 import './Walling.css';
 
@@ -52,7 +53,7 @@ export default function LRangeStandard() {
     <>
       <SEO title="L-Range Standard" description="Terraforce® L Range Standard Option, a versatile dry-stack interlocking concrete retaining block for landscaping, erosion control, and gravity retaining walls." />
       <div className="page">
-      <PageHero title="L Range - Standard Option" description="A versatile concrete retaining block for landscaping and erosion control, designed to stack without mortar in most applications using dry-stacked construction for faster installation and reduced consumables." bgImage="/images/hero/concrete-texture-2.webp" />
+      <PageHero title="L Range - Standard Option" description="A versatile concrete retaining block for landscaping and erosion control, designed to stack without mortar in most applications using dry-stacked construction for faster installation and reduced consumables." bgImage="/images/products/l-range-standard.webp" />
 
       <section className="section">
         <div className="container">
@@ -139,6 +140,14 @@ export default function LRangeStandard() {
               </Link>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Project Gallery */}
+      <section className="section section-light">
+        <div className="container">
+          <SectionTitle label="Project Gallery" title="See it in action" align="left" />
+          <GalleryLightbox images={['/images/gallery/retaining-action.webp', '/images/gallery/paving-blocks-stack.webp', '/images/gallery/solid-blocks.webp']} />
         </div>
       </section>
 

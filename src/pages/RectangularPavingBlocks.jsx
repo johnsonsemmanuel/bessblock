@@ -2,6 +2,7 @@ import { CheckCircle2, Shield, Layers, Wrench, Clock, Award } from 'lucide-react
 import SEO from '../components/SEO';
 import PageHero from '../components/PageHero';
 import SectionTitle from '../components/SectionTitle';
+import GalleryLightbox from '../components/GalleryLightbox';
 import ScrollReveal from '../components/ScrollReveal';
 import SiteCTA from '../components/SiteCTA';
 import SpecSheet from '../components/SpecSheet';
@@ -119,6 +120,14 @@ export default function RectangularPavingBlocks() {
               <span>Dimension reference</span>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Project Gallery */}
+      <section className="section section-light">
+        <div className="container">
+          <SectionTitle label="Project Gallery" title="See it in action" align="left" />
+          <GalleryLightbox images={['/images/gallery/interlocking-residential.webp', '/images/gallery/rectangular-residential.webp', '/images/gallery/rectangular-katamanso.webp', '/images/gallery/rectangular-residential-2.webp', '/images/gallery/paving-blocks-stack.webp']} />
         </div>
       </section>
 

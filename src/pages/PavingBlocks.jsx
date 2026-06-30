@@ -7,6 +7,7 @@ import ScrollReveal from '../components/ScrollReveal';
 import BlockDesign from '../components/BlockDesigns';
 import CoverageCalculator from '../components/CoverageCalculator';
 import SiteCTA from '../components/SiteCTA';
+import GalleryLightbox from '../components/GalleryLightbox';
 import '../components/CoverageCalculator.css';
 import { PavingIcon } from '../components/CategoryIcons';
 import productCategories from '../data/products';
@@ -94,6 +95,14 @@ export default function PavingBlocks() {
             </div>
             <CoverageCalculator />
           </div>
+        </div>
+      </section>
+
+      {/* Project Gallery */}
+      <section className="section section-light">
+        <div className="container">
+          <SectionTitle label="Project Gallery" title="See it in action" align="left" />
+          <GalleryLightbox images={['/images/gallery/interlocking-residential.webp', '/images/gallery/rectangular-residential.webp', '/images/gallery/rectangular-katamanso.webp', '/images/gallery/rectangular-residential-2.webp', '/images/gallery/paving-blocks-stack.webp']} />
         </div>
       </section>
 

@@ -4,6 +4,7 @@ import PageHero from '../components/PageHero';
 import SectionTitle from '../components/SectionTitle';
 import ScrollReveal from '../components/ScrollReveal';
 import SiteCTA from '../components/SiteCTA';
+import GalleryLightbox from '../components/GalleryLightbox';
 import SpecSheet from '../components/SpecSheet';
 import { ProductHighlightCard } from '../components/ProductHighlightCard';
 import { KerbIcon } from '../components/CategoryIcons';
@@ -58,7 +59,7 @@ export default function GutterKerbs() {
     <>
       <SEO title="Gutter Kerbs" description="Bessblock gutter kerbs combine edge restraint with water management, helping guide surface runoff along roads, driveways, and paved areas." />
       <div className="page">
-      <PageHero title="Gutter Kerbs" description="Bessblock Gutter Kerbs are designed to combine edge restraint with water management, helping guide surface runoff along roads, driveways, and paved areas. They are a practical choice where the kerb line also needs to support drainage performance and keep the paved edge tidy and durable." bgImage="/images/hero/concrete-texture-2.webp" />
+      <PageHero title="Gutter Kerbs" description="Bessblock Gutter Kerbs are designed to combine edge restraint with water management, helping guide surface runoff along roads, driveways, and paved areas. They are a practical choice where the kerb line also needs to support drainage performance and keep the paved edge tidy and durable." bgImage="/images/products/gutter-kerbs.webp" />
 
       <section className="section">
         <div className="container">
@@ -152,6 +153,14 @@ export default function GutterKerbs() {
               </ScrollReveal>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Project Gallery */}
+      <section className="section section-light">
+        <div className="container">
+          <SectionTitle label="Project Gallery" title="See it in action" align="left" />
+          <GalleryLightbox images={['/images/gallery/road-kerbs-delivery.webp', '/images/gallery/paving-blocks-stack.webp', '/images/gallery/solid-blocks.webp']} />
         </div>
       </section>
 

@@ -2,6 +2,7 @@ import { CheckCircle2 } from 'lucide-react';
 import SEO from '../components/SEO';
 import PageHero from '../components/PageHero';
 import SectionTitle from '../components/SectionTitle';
+import GalleryLightbox from '../components/GalleryLightbox';
 import ScrollReveal from '../components/ScrollReveal';
 import SiteCTA from '../components/SiteCTA';
 import SpecSheet from '../components/SpecSheet';
@@ -59,7 +60,7 @@ export default function RoadKerbs() {
     <>
       <SEO title="Road Kerbs" description="Bessblock road kerbs provide strong edge restraint and a clean, durable finish for roads, parking areas, pavements, and traffic-bearing surfaces." />
       <div className="page">
-      <PageHero title="Road Kerbs" description="Bessblock Road Kerbs are designed to provide strong edge restraint and a clean, durable finish for roads, parking areas, pavements, and other traffic-bearing surfaces. They help hold the pavement structure in place while defining the road edge clearly and professionally." bgImage="/images/hero/concrete-texture-2.webp" />
+      <PageHero title="Road Kerbs" description="Bessblock Road Kerbs are designed to provide strong edge restraint and a clean, durable finish for roads, parking areas, pavements, and other traffic-bearing surfaces. They help hold the pavement structure in place while defining the road edge clearly and professionally." bgImage="/images/products/road-kerbs.webp" />
 
       <section className="section">
         <div className="container">
@@ -153,6 +154,14 @@ export default function RoadKerbs() {
               </ScrollReveal>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Project Gallery */}
+      <section className="section section-light">
+        <div className="container">
+          <SectionTitle label="Project Gallery" title="See it in action" align="left" />
+          <GalleryLightbox images={['/images/gallery/road-kerbs-delivery.webp', '/images/gallery/paving-blocks-stack.webp', '/images/gallery/solid-blocks.webp']} />
         </div>
       </section>
 

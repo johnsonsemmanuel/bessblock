@@ -3,6 +3,7 @@ import { ArrowRight } from 'lucide-react';
 import SEO from '../components/SEO';
 import PageHero from '../components/PageHero';
 import SectionTitle from '../components/SectionTitle';
+import GalleryLightbox from '../components/GalleryLightbox';
 import ScrollReveal from '../components/ScrollReveal';
 import SiteCTA from '../components/SiteCTA';
 import SpecSheet from '../components/SpecSheet';
@@ -35,7 +36,7 @@ export default function Terracrete() {
     <>
       <SEO title="Terracrete" description="Terraforce® Terracrete, a retaining wall solution for constrained sites using cement stabilised backfill where conventional reinforced wall construction is impractical." />
       <div className="page">
-      <PageHero title="Terracrete" description="A Terraforce retaining wall solution designed for use with cement stabilised backfill in constrained site conditions where space or geometry limits conventional reinforced wall construction." bgImage="/images/hero/concrete-texture-2.webp" />
+      <PageHero title="Terracrete" description="A Terraforce retaining wall solution designed for use with cement stabilised backfill in constrained site conditions where space or geometry limits conventional reinforced wall construction." bgImage="/images/products/terracrete.webp" />
 
       <section className="section">
         <div className="container">
@@ -92,6 +93,14 @@ export default function Terracrete() {
               </Link>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Project Gallery */}
+      <section className="section section-light">
+        <div className="container">
+          <SectionTitle label="Project Gallery" title="See it in action" align="left" />
+          <GalleryLightbox images={['/images/gallery/retaining-action.webp', '/images/gallery/paving-blocks-stack.webp', '/images/gallery/solid-blocks.webp']} />
         </div>
       </section>
 

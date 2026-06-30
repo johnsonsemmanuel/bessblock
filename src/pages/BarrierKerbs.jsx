@@ -4,6 +4,7 @@ import PageHero from '../components/PageHero';
 import SectionTitle from '../components/SectionTitle';
 import ScrollReveal from '../components/ScrollReveal';
 import SiteCTA from '../components/SiteCTA';
+import GalleryLightbox from '../components/GalleryLightbox';
 import SpecSheet from '../components/SpecSheet';
 import { ProductHighlightCard } from '../components/ProductHighlightCard';
 import { KerbIcon } from '../components/CategoryIcons';
@@ -58,7 +59,7 @@ export default function BarrierKerbs() {
     <>
       <SEO title="Barrier Kerbs" description="Bessblock barrier kerbs provide strong physical separation between vehicles and pedestrian areas for improved safety in high-traffic locations." />
       <div className="page">
-      <PageHero title="Barrier Kerbs" description="Bessblock Barrier Kerbs are designed to provide a stronger, more protective edge than standard edging or low-profile kerbs. They are used where vehicles need clearer physical separation from pedestrian areas, structures, or sensitive paved zones." bgImage="/images/hero/concrete-texture-1.webp" />
+      <PageHero title="Barrier Kerbs" description="Bessblock Barrier Kerbs are designed to provide a stronger, more protective edge than standard edging or low-profile kerbs. They are used where vehicles need clearer physical separation from pedestrian areas, structures, or sensitive paved zones." bgImage="/images/products/barrier-kerbs.webp" />
 
       <section className="section">
         <div className="container">
@@ -152,6 +153,14 @@ export default function BarrierKerbs() {
               </ScrollReveal>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Project Gallery */}
+      <section className="section section-light">
+        <div className="container">
+          <SectionTitle label="Project Gallery" title="See it in action" align="left" />
+          <GalleryLightbox images={['/images/gallery/road-kerbs-delivery.webp', '/images/gallery/paving-blocks-stack.webp', '/images/gallery/solid-blocks.webp']} />
         </div>
       </section>
 

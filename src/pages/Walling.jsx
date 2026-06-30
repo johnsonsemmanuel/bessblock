@@ -2,6 +2,7 @@ import { Grid3x3, Wrench, Shield, Home, PanelBottom, CheckCircle2 } from 'lucide
 import SEO from '../components/SEO';
 import PageHero from '../components/PageHero';
 import SectionTitle from '../components/SectionTitle';
+import GalleryLightbox from '../components/GalleryLightbox';
 import ScrollReveal from '../components/ScrollReveal';
 import SpecSheet from '../components/SpecSheet';
 import SiteCTA from '../components/SiteCTA';
@@ -130,6 +131,14 @@ export default function Walling() {
             </div>
             <CoverageCalculator />
           </div>
+        </div>
+      </section>
+
+      {/* Project Gallery */}
+      <section className="section section-light">
+        <div className="container">
+          <SectionTitle label="Project Gallery" title="See it in action" align="left" />
+          <GalleryLightbox images={['/images/gallery/hollow-blocks.webp', '/images/gallery/solid-blocks.webp', '/images/gallery/retaining-action.webp', '/images/gallery/paving-blocks-stack.webp']} />
         </div>
       </section>
 

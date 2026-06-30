@@ -2,6 +2,7 @@ import { CheckCircle2 } from 'lucide-react';
 import SEO from '../components/SEO';
 import PageHero from '../components/PageHero';
 import SectionTitle from '../components/SectionTitle';
+import GalleryLightbox from '../components/GalleryLightbox';
 import ScrollReveal from '../components/ScrollReveal';
 import SiteCTA from '../components/SiteCTA';
 import SpecSheet from '../components/SpecSheet';
@@ -58,7 +59,7 @@ export default function SlottedKerbs() {
     <>
       <SEO title="Slotted Kerbs" description="Bessblock slotted kerbs combine edge restraint with integrated drainage slots for effective surface water management along roads and paved areas." />
       <div className="page">
-      <PageHero title="Slotted Kerbs" description="Bessblock Slotted Kerbs are designed to combine edge restraint with drainage performance, making them suitable for projects where surface water needs to be guided away efficiently. They provide a practical kerb solution for roads, paved areas, and drainage-led layouts." bgImage="/images/hero/concrete-texture-1.webp" />
+      <PageHero title="Slotted Kerbs" description="Bessblock Slotted Kerbs are designed to combine edge restraint with drainage performance, making them suitable for projects where surface water needs to be guided away efficiently. They provide a practical kerb solution for roads, paved areas, and drainage-led layouts." bgImage="/images/products/hexagonal-paving-blocks-2.webp" />
 
       <section className="section">
         <div className="container">
@@ -152,6 +153,14 @@ export default function SlottedKerbs() {
               </ScrollReveal>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Project Gallery */}
+      <section className="section section-light">
+        <div className="container">
+          <SectionTitle label="Project Gallery" title="See it in action" align="left" />
+          <GalleryLightbox images={['/images/gallery/road-kerbs-delivery.webp', '/images/gallery/paving-blocks-stack.webp', '/images/gallery/solid-blocks.webp']} />
         </div>
       </section>
 

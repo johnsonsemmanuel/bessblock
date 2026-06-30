@@ -36,8 +36,8 @@
 .nm-trigger.active,
 .nm-trigger:hover {
   color: var(--color-bessblock-yellow);
-  background: rgba(255, 215, 0, 0.12);
-  box-shadow: 0 0 12px rgba(255, 215, 0, 0.06);
+  background: rgba(255, 215, 0, 0.18);
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.12);
 }
 
 .nm-trigger.active {
@@ -59,8 +59,8 @@
 .navbar-scrolled .nm-trigger.active,
 .navbar-scrolled .nm-trigger:hover {
   color: var(--color-bessblock-blue);
-  background: rgba(var(--bg-card-rgb), 0.5);
-  box-shadow: 0 0 12px rgba(64, 64, 136, 0.06);
+  background: rgba(64, 64, 136, 0.1);
+  box-shadow: 0 0 20px rgba(64, 64, 136, 0.1);
 }
 
 .navbar-scrolled .nm-trigger.active {
@@ -366,9 +366,10 @@
 }
 
 .nav-cat-sub:hover {
-  background: rgba(64, 64, 136, 0.1);
+  background: rgba(64, 64, 136, 0.12);
   color: var(--color-bessblock-blue);
-  box-shadow: 0 0 8px rgba(64, 64, 136, 0.06);
+  box-shadow: 0 0 12px rgba(64, 64, 136, 0.1);
+  transform: translateX(3px);
 }
 
 .nav-cat-all {

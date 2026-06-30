@@ -3,6 +3,7 @@ import { ArrowRight } from 'lucide-react';
 import SEO from '../components/SEO';
 import PageHero from '../components/PageHero';
 import SectionTitle from '../components/SectionTitle';
+import GalleryLightbox from '../components/GalleryLightbox';
 import ScrollReveal from '../components/ScrollReveal';
 import SiteCTA from '../components/SiteCTA';
 import SpecSheet from '../components/SpecSheet';
@@ -35,7 +36,7 @@ export default function Terrafix() {
     <>
       <SEO title="Terrafix" description="Terraforce® Terrafix, a retaining wall block designed for geosynthetic reinforced segmental retaining wall systems requiring higher wall heights." />
       <div className="page">
-      <PageHero title="Terrafix" description="A Terraforce retaining wall block designed for geosynthetic reinforced segmental retaining wall systems where higher wall heights and additional reinforcement are required." bgImage="/images/hero/concrete-texture-1.webp" />
+      <PageHero title="Terrafix" description="A Terraforce retaining wall block designed for geosynthetic reinforced segmental retaining wall systems where higher wall heights and additional reinforcement are required." bgImage="/images/products/terrafix.webp" />
 
       <section className="section">
         <div className="container">
@@ -92,6 +93,14 @@ export default function Terrafix() {
               </Link>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Project Gallery */}
+      <section className="section section-light">
+        <div className="container">
+          <SectionTitle label="Project Gallery" title="See it in action" align="left" />
+          <GalleryLightbox images={['/images/gallery/retaining-action.webp', '/images/gallery/paving-blocks-stack.webp', '/images/gallery/solid-blocks.webp']} />
         </div>
       </section>
 

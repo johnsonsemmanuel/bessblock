@@ -4,6 +4,7 @@ import PageHero from '../components/PageHero';
 import SectionTitle from '../components/SectionTitle';
 import ScrollReveal from '../components/ScrollReveal';
 import SiteCTA from '../components/SiteCTA';
+import GalleryLightbox from '../components/GalleryLightbox';
 import SpecSheet from '../components/SpecSheet';
 import { ProductHighlightCard } from '../components/ProductHighlightCard';
 import { KerbIcon } from '../components/CategoryIcons';
@@ -58,7 +59,7 @@ export default function GardenKerbs() {
     <>
       <SEO title="Garden Kerbs" description="Bessblock garden kerbs create neat boundaries for lawns, paths, flower beds, and landscaped edges with a clean, finished appearance for outdoor spaces." />
       <div className="page">
-      <PageHero title="Garden Kerbs" description="Bessblock Garden Kerbs are designed to create neat boundaries for lawns, paths, flower beds, and landscaped edges while giving outdoor spaces a clean, finished appearance. They are a simple and effective way to separate soft landscaping from paved or trafficked areas without the heavier look of road kerbs." bgImage="/images/hero/concrete-texture-1.webp" />
+      <PageHero title="Garden Kerbs" description="Bessblock Garden Kerbs are designed to create neat boundaries for lawns, paths, flower beds, and landscaped edges while giving outdoor spaces a clean, finished appearance. They are a simple and effective way to separate soft landscaping from paved or trafficked areas without the heavier look of road kerbs." bgImage="/images/products/garden-kerbs.webp" />
 
       <section className="section">
         <div className="container">
@@ -152,6 +153,14 @@ export default function GardenKerbs() {
               </ScrollReveal>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Project Gallery */}
+      <section className="section section-light">
+        <div className="container">
+          <SectionTitle label="Project Gallery" title="See it in action" align="left" />
+          <GalleryLightbox images={['/images/gallery/road-kerbs-delivery.webp', '/images/gallery/paving-blocks-stack.webp', '/images/gallery/solid-blocks.webp']} />
         </div>
       </section>
 
