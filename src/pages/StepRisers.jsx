@@ -84,7 +84,7 @@ export default function StepRisers() {
       <section className="section section-light">
         <div className="container">
           <SectionTitle label="Project Gallery" title="See it in action" align="left" />
-          <GalleryLightbox images={['/images/gallery/step-risers/Paving%20Slabs%20-%20See%20it%20in%20action%20-%20Bessblock%20Concrete%20Product%20Ltd%20-.webp', '/images/gallery/step-risers/Paving%20Slabs%20-%20See%20it%20in%20action%20-%20Bessblock%20Concrete%20Product%20Ltd%20--..webp', '/images/gallery/step-risers/Paving%20Slabs%20-%20See%20it%20in%20action%20-%20Bessblock%20Concrete%20Product%20Ltd%20----.webp']} />
+          <GalleryLightbox images={['/images/gallery/step-risers/Paving%20Slabs%20-%20See%20it%20in%20action%20-%20Bessblock%20Concrete%20Product%20Ltd%20----.webp', '/images/gallery/step-risers/Paving%20Slabs%20-%20See%20it%20in%20action%20-%20Bessblock%20Concrete%20Product%20Ltd%20--..webp', '/images/gallery/step-risers/Paving%20Slabs%20-%20See%20it%20in%20action%20-%20Bessblock%20Concrete%20Product%20Ltd%20-..webp']} />
         </div>
       </section>
 
