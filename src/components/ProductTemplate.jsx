@@ -11,7 +11,7 @@ import SpecSheet from './SpecSheet';
 import SiteCTA from './SiteCTA';
 import AnimatedButton from './AnimatedButton';
 import { PavingIcon, WallingIcon, KerbIcon, SlabIcon, StepIcon } from './CategoryIcons';
-import { productPages } from '../data/products';
+import { productPages, getProductPath } from '../data/products';
 import './ProductTemplate.css';
 
 const categoryIcons = { 'paving-blocks': PavingIcon, 'walling': WallingIcon, 'paving-slabs': SlabIcon, 'step-risers': StepIcon, 'kerbs-edging': KerbIcon };
@@ -106,7 +106,7 @@ export default function ProductTemplate({ productKey, heroImage }) {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4 }}
           >
-            <Breadcrumbs path={`products/${product.category}/${productKey}`} current={product.name} />
+            <Breadcrumbs path={getProductPath(productKey).slice(1)} current={product.name} />
             <h1 className="product-hero-title">{product.name}</h1>
           </motion.div>
         </div>
@@ -221,7 +221,7 @@ export default function ProductTemplate({ productKey, heroImage }) {
                     category={related.category.replace(/-/g, ' ')}
                     title={related.name}
                     description={related.overview.slice(0, 100) + '...'}
-                    to={`/products/${related.category}/${key}`}
+                    to={getProductPath(key)}
                     imageSrc={productImages[key]}
                     imageAlt={related.name}
                   />

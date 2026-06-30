@@ -678,4 +678,14 @@ export const productPages = {
   },
 };
 
+export function getProductPath(productKey) {
+  for (const cat of productCategories) {
+    const sub = cat.subcategories.find((s) => s.id === productKey);
+    if (sub) return sub.path;
+  }
+  const page = productPages[productKey];
+  if (page) return `/products/${page.category}/${productKey}`;
+  return null;
+}
+
 export default productCategories;

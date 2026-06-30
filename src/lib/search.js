@@ -1,4 +1,4 @@
-import productCategories, { productPages } from '../data/products';
+import productCategories, { productPages, getProductPath } from '../data/products';
 
 function tokenize(text) {
   return text.toLowerCase().split(/\s+/).filter(Boolean);
@@ -50,7 +50,7 @@ export function searchIndex() {
       type: 'product',
       title: page.name,
       description: page.overview.slice(0, 160),
-      path: `/products/${page.category}/${key}`,
+      path: getProductPath(key),
       keywords: tokens,
       category: page.category,
     });
