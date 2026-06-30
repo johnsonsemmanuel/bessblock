@@ -9,6 +9,7 @@ import SiteCTA from '../components/SiteCTA';
 import BlockDesign from '../components/BlockDesigns';
 import { StepIcon } from '../components/CategoryIcons';
 import productCategories from '../data/products';
+import '../pages/About.css';
 
 const benefits = [
   { icon: Shield, text: 'Precast concrete step and riser units for durable stair construction.' },

@@ -9,6 +9,7 @@ import CoverageCalculator from '../components/CoverageCalculator';
 import SiteCTA from '../components/SiteCTA';
 import GalleryLightbox from '../components/GalleryLightbox';
 import '../components/CoverageCalculator.css';
+import '../pages/About.css';
 import { PavingIcon } from '../components/CategoryIcons';
 import productCategories from '../data/products';
 
