@@ -46,6 +46,12 @@ export default defineType({
       initialValue: () => new Date().toISOString(),
     }),
     defineField({
+      name: 'readTime',
+      title: 'Read Time (minutes)',
+      type: 'number',
+      initialValue: 5,
+    }),
+    defineField({
       name: 'excerpt',
       title: 'Excerpt',
       type: 'text',

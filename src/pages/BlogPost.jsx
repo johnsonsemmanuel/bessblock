@@ -14,6 +14,7 @@ const QUERY = `*[_type == "post" && slug.current == $slug][0] {
   category,
   excerpt,
   publishedAt,
+  readTime,
   body,
   "image": mainImage,
   "imageAlt": mainImage.alt
@@ -38,8 +39,10 @@ export default function BlogPost() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    if (!sanityClient) { setLoading(false); return; }
     sanityClient.fetch(QUERY, { slug })
       .then(setPost)
+      .catch(() => {})
       .finally(() => setLoading(false));
   }, [slug]);
 

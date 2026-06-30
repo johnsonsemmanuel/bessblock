@@ -149,7 +149,7 @@ function PostForm({ post, onSave, onCancel }) {
         author: form.author,
         category: form.category,
         excerpt: form.excerpt,
-        publishedAt: new Date().toISOString(),
+        publishedAt: editing ? post.publishedAt : new Date().toISOString(),
         body: toBlocks(form.body),
       };
       if (editing) {

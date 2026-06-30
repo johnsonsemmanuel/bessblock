@@ -12,6 +12,7 @@ const QUERY = `*[_type == "post"] | order(publishedAt desc) {
   author,
   category,
   excerpt,
+  readTime,
   "image": mainImage,
   "imageAlt": mainImage.alt
 }`;
@@ -30,8 +31,10 @@ export default function Blog() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    if (!sanityClient) { setLoading(false); return; }
     sanityClient.fetch(QUERY)
-      .then(data => setPosts(data.map(toStaticPost)))
+      .then(data => setPosts((data || []).map(toStaticPost)))
+      .catch(() => {})
       .finally(() => setLoading(false));
   }, []);
 
