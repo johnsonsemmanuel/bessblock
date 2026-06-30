@@ -5,7 +5,7 @@ import { pmToPt, ptToPm } from '../lib/pmToPt';
 import TipTapEditor from '../components/TipTapEditor';
 import {
   LayoutDashboard, FileText, MessageSquare, ClipboardList,
-  LogOut, Plus, Pencil, Trash2, X, Save, Eye, Image, Users
+  LogOut, Plus, Pencil, Trash2, X, Save, Eye, Image, Users, Menu
 } from 'lucide-react';
 import './admin.css';
 
@@ -701,6 +701,7 @@ function QuotesTab() {
 export default function AdminDashboard() {
   const { logout } = useAdminAuth();
   const [tab, setTab] = useState('overview');
+  const [menuOpen, setMenuOpen] = useState(false);
   const [posts, setPosts] = useState([]);
   const [authors, setAuthors] = useState([]);
   const [contacts, setContacts] = useState([]);
@@ -723,12 +724,15 @@ export default function AdminDashboard() {
 
   return (
     <div className="admin-layout">
-      <aside className="admin-sidebar">
+      {menuOpen && <div className="admin-mobile-overlay" onClick={() => setMenuOpen(false)} />}
+
+      <aside className={`admin-sidebar${menuOpen ? ' admin-sidebar-open' : ''}`}>
         <div className="admin-sidebar-header">
           <div className="admin-sidebar-logo">
             <img src="/bessblocklogo.png" alt="Bessblock" />
           </div>
           <span className="admin-sidebar-badge">Admin Portal</span>
+          <button className="admin-sidebar-close" onClick={() => setMenuOpen(false)}><X size={18} /></button>
         </div>
 
         <nav className="admin-nav">
@@ -737,7 +741,7 @@ export default function AdminDashboard() {
             <button
               key={id}
               className={`admin-nav-item${tab === id ? ' active' : ''}`}
-              onClick={() => setTab(id)}
+              onClick={() => { setTab(id); setMenuOpen(false); }}
             >
               <Icon size={16} /> {label}
             </button>
@@ -752,6 +756,13 @@ export default function AdminDashboard() {
       </aside>
 
       <main className="admin-main">
+        <div className="admin-mobile-header">
+          <button className="admin-mobile-menu-btn" onClick={() => setMenuOpen(true)}>
+            <Menu size={20} />
+          </button>
+          <span className="admin-mobile-title">{NAV.find(n => n.id === tab)?.label || 'Dashboard'}</span>
+          <div style={{ width: 36 }} />
+        </div>
         {tab === 'overview' && <Overview posts={posts} contacts={contacts} quotes={quotes} />}
         {tab === 'posts' && <PostsTab posts={posts} onRefresh={fetchPosts} authors={authors} />}
         {tab === 'authors' && <AuthorsTab />}
