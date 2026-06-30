@@ -17,10 +17,9 @@ const NAV = [
   { id: 'quotes', label: 'Quote Requests', icon: ClipboardList },
 ];
 
-const writeClient = sanityClient.withConfig({
-  token: import.meta.env.VITE_SANITY_TOKEN,
-  useCdn: false,
-});
+const writeClient = sanityClient
+  ? sanityClient.withConfig({ token: import.meta.env.VITE_SANITY_TOKEN, useCdn: false })
+  : null;
 
 const POSTS_QUERY = `*[_type == "post"] | order(publishedAt desc) {
   _id, title, "slug": slug.current, author->{name}, category, publishedAt, excerpt, "image": mainImage
@@ -141,6 +140,7 @@ function AuthorForm({ author, onSave, onCancel }) {
   };
 
   const handleSave = async () => {
+    if (!writeClient) { setErr('Sanity CMS is not configured.'); return; }
     if (!form.name || !form.slug) { setErr('Name and slug are required.'); return; }
     setSaving(true);
     setErr('');
@@ -259,6 +259,7 @@ function PostForm({ post, onSave, onCancel, authors }) {
   };
 
   const handleSave = async () => {
+    if (!writeClient) { setErr('Sanity CMS is not configured.'); return; }
     if (!form.title || !form.slug || !form.excerpt) { setErr('Title, slug, and excerpt are required.'); return; }
     setSaving(true);
     setErr('');
@@ -372,6 +373,7 @@ function PostsTab({ posts, onRefresh, authors }) {
   const [deleting, setDeleting] = useState(null);
 
   const handleDelete = async (id) => {
+    if (!writeClient) return;
     if (!confirm('Delete this post? This cannot be undone.')) return;
     setDeleting(id);
     await writeClient.delete(id).catch(() => {});
@@ -456,6 +458,7 @@ function AuthorsTab() {
   useEffect(() => { fetch(); }, []);
 
   const handleDelete = async (id) => {
+    if (!writeClient) return;
     if (!confirm('Delete this author? Posts referencing them will lose the author link.')) return;
     setDeleting(id);
     await writeClient.delete(id).catch(() => {});
@@ -531,6 +534,7 @@ function ContactTab() {
   useEffect(() => { fetch(); }, []);
 
   const markRead = async (id) => {
+    if (!writeClient) return;
     await writeClient.patch(id).set({ read: true }).commit().catch(() => {});
     fetch();
   };
@@ -616,6 +620,7 @@ function QuotesTab() {
   };
 
   const updateStatus = async (id, status) => {
+    if (!writeClient) return;
     await writeClient.patch(id).set({ status }).commit().catch(() => {});
     fetch();
   };
