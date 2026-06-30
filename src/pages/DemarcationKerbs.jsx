@@ -46,10 +46,10 @@ const benefits = [
 ];
 
 const related = [
-  { name: 'Road Kerbs', path: '/products/kerbs-edging/road-kerbs', image: '/images/categories/kerbs-edging.webp', desc: 'Strong edge restraint for roads, parking areas, and traffic surfaces.' },
-  { name: 'Garden Kerbs', path: '/products/kerbs-edging/garden-kerbs', image: '/images/categories/kerbs-edging.webp', desc: 'Neat boundaries for lawns, paths, and landscaped edges.' },
-  { name: 'Barrier Kerbs', path: '/products/kerbs-edging/barrier-kerbs', image: '/images/categories/kerbs-edging.webp', desc: 'Strong physical separation between vehicles and pedestrian areas.' },
-  { name: 'Gutter Kerbs', path: '/products/kerbs-edging/gutter-kerbs', image: '/images/categories/kerbs-edging.webp', desc: 'Edge restraint combined with surface water management.' },
+  { name: 'Road Kerbs', path: '/products/kerbs-edging/road-kerbs', image: '/images/products/road-kerbs.webp', desc: 'Strong edge restraint for roads, parking areas, and traffic surfaces.' },
+  { name: 'Garden Kerbs', path: '/products/kerbs-edging/garden-kerbs', image: '/images/products/garden-kerbs.webp', desc: 'Neat boundaries for lawns, paths, and landscaped edges.' },
+  { name: 'Barrier Kerbs', path: '/products/kerbs-edging/barrier-kerbs', image: '/images/products/barrier-kerbs.webp', desc: 'Strong physical separation between vehicles and pedestrian areas.' },
+  { name: 'Gutter Kerbs', path: '/products/kerbs-edging/gutter-kerbs', image: '/images/products/gutter-kerbs.webp', desc: 'Edge restraint combined with surface water management.' },
   { name: 'Slotted Kerbs', path: '/products/kerbs-edging/slotted-kerbs', image: '/images/categories/kerbs-edging.webp', desc: 'Edge restraint with integrated drainage slots.' },
 ];
 

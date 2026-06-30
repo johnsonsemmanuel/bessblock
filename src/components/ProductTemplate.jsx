@@ -60,7 +60,7 @@ const productImages = {
   'garden-kerbs': '/images/products/garden-kerbs.webp',
   'barrier-kerbs': '/images/products/barrier-kerbs.webp',
   'gutter-kerbs': '/images/products/gutter-kerbs.webp',
-  'slotted-kerbs': '/images/products/hexagonal-paving-blocks-2.webp',
+  'slotted-kerbs': '/images/categories/kerbs-edging.webp',
   'textured-paving-slabs': '/images/products/textured-paving-slabs.webp',
   'smooth-paving-slabs': '/images/products/smooth-paving-slabs.webp',
   'large-format-slabs': '/images/products/large-format-slabs.webp',

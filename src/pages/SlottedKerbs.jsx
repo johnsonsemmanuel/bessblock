@@ -47,11 +47,11 @@ const benefits = [
 ];
 
 const related = [
-  { name: 'Road Kerbs', path: '/products/kerbs-edging/road-kerbs', image: '/images/categories/kerbs-edging.webp', desc: 'Strong edge restraint for roads, parking areas, and traffic surfaces.' },
-  { name: 'Garden Kerbs', path: '/products/kerbs-edging/garden-kerbs', image: '/images/categories/kerbs-edging.webp', desc: 'Neat boundaries for lawns, paths, and landscaped edges.' },
-  { name: 'Barrier Kerbs', path: '/products/kerbs-edging/barrier-kerbs', image: '/images/categories/kerbs-edging.webp', desc: 'Strong physical separation between vehicles and pedestrian areas.' },
-  { name: 'Gutter Kerbs', path: '/products/kerbs-edging/gutter-kerbs', image: '/images/categories/kerbs-edging.webp', desc: 'Edge restraint combined with surface water management.' },
-  { name: 'Demarcation Kerbs', path: '/products/kerbs-edging/demarcation-kerbs', image: '/images/categories/kerbs-edging.webp', desc: 'Clear visual separation between traffic lanes and pedestrian areas.' },
+  { name: 'Road Kerbs', path: '/products/kerbs-edging/road-kerbs', image: '/images/products/road-kerbs.webp', desc: 'Strong edge restraint for roads, parking areas, and traffic surfaces.' },
+  { name: 'Garden Kerbs', path: '/products/kerbs-edging/garden-kerbs', image: '/images/products/garden-kerbs.webp', desc: 'Neat boundaries for lawns, paths, and landscaped edges.' },
+  { name: 'Barrier Kerbs', path: '/products/kerbs-edging/barrier-kerbs', image: '/images/products/barrier-kerbs.webp', desc: 'Strong physical separation between vehicles and pedestrian areas.' },
+  { name: 'Gutter Kerbs', path: '/products/kerbs-edging/gutter-kerbs', image: '/images/products/gutter-kerbs.webp', desc: 'Edge restraint combined with surface water management.' },
+  { name: 'Demarcation Kerbs', path: '/products/kerbs-edging/demarcation-kerbs', image: '/images/products/demarcation-kerbs.webp', desc: 'Clear visual separation between traffic lanes and pedestrian areas.' },
 ];
 
 export default function SlottedKerbs() {
@@ -59,7 +59,7 @@ export default function SlottedKerbs() {
     <>
       <SEO title="Slotted Kerbs" description="Bessblock slotted kerbs combine edge restraint with integrated drainage slots for effective surface water management along roads and paved areas." />
       <div className="page">
-      <PageHero title="Slotted Kerbs" description="Bessblock Slotted Kerbs are designed to combine edge restraint with drainage performance, making them suitable for projects where surface water needs to be guided away efficiently. They provide a practical kerb solution for roads, paved areas, and drainage-led layouts." bgImage="/images/products/hexagonal-paving-blocks-2.webp" />
+      <PageHero title="Slotted Kerbs" description="Bessblock Slotted Kerbs are designed to combine edge restraint with drainage performance, making them suitable for projects where surface water needs to be guided away efficiently. They provide a practical kerb solution for roads, paved areas, and drainage-led layouts." bgImage="/images/categories/kerbs-edging.webp" />
 
       <section className="section">
         <div className="container">

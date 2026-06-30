@@ -91,7 +91,7 @@ export default function KerbsEdging() {
               { ...cat.subcategories[2], image: '/images/products/garden-kerbs.webp' },
               { ...cat.subcategories[3], image: '/images/products/barrier-kerbs.webp' },
               { ...cat.subcategories[4], image: '/images/products/gutter-kerbs.webp' },
-              { ...cat.subcategories[5], image: '/images/products/hexagonal-paving-blocks-2.webp' },
+              { ...cat.subcategories[5], image: '/images/categories/kerbs-edging.webp' },
             ].map((sub, i) => (
               <ScrollReveal key={sub.id} delay={i * 0.06}>
                 <ProductHighlightCard
