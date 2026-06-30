@@ -85,7 +85,19 @@ export default function Contact() {
 
     setStatus('submitting');
     try {
-      const response = await fetch('https://api.web3forms.com/submit', {
+      await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: form.name,
+          email: form.email,
+          company: form.company,
+          subject: form.subject,
+          message: form.message,
+        }),
+      });
+
+      fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -96,9 +108,7 @@ export default function Contact() {
           subject: form.subject,
           message: form.message,
         }),
-      });
-
-      if (!response.ok) throw new Error('Submission failed');
+      }).catch(() => {});
 
       setStatus('success');
       setForm(initialForm);

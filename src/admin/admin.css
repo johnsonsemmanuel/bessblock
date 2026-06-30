@@ -1,64 +1,132 @@
 /* Admin Dashboard Styles */
 .admin-login {
+  position: relative;
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--bg-primary);
+  background: #141414;
   padding: 2rem;
+  overflow: hidden;
+}
+
+.admin-login-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-image: url('/images/hero/concrete-texture-1.webp');
+  background-size: cover;
+  background-position: center;
+}
+
+.admin-login-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: rgba(15, 15, 20, 0.75);
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='30' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='0.5' y='0.5' width='28' height='13' fill='none' stroke='%235a5a9e' stroke-width='0.5' rx='1'/%3E%3Crect x='30.5' y='0.5' width='28' height='13' fill='none' stroke='%235a5a9e' stroke-width='0.5' rx='1'/%3E%3Crect x='-13.5' y='15.5' width='28' height='13' fill='none' stroke='%235a5a9e' stroke-width='0.5' rx='1'/%3E%3Crect x='16.5' y='15.5' width='28' height='13' fill='none' stroke='%235a5a9e' stroke-width='0.5' rx='1'/%3E%3Crect x='46.5' y='15.5' width='28' height='13' fill='none' stroke='%235a5a9e' stroke-width='0.5' rx='1'/%3E%3C/svg%3E");
+  background-size: 60px 30px;
 }
 
 .admin-login-card {
-  background: var(--bg-secondary);
-  border: 1px solid var(--border-primary);
-  border-radius: 12px;
+  position: relative;
+  z-index: 2;
+  background: #fff;
+  border-radius: 16px;
   padding: 2.5rem;
   width: 100%;
   max-width: 400px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
 }
 
 .admin-login-logo {
   display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  margin-bottom: 2rem;
+  justify-content: center;
+  margin-bottom: 1.5rem;
 }
 
 .admin-login-logo img {
-  height: 36px;
+  height: 40px;
   width: auto;
 }
 
-.admin-login-logo span {
-  font-size: var(--text-sm);
-  color: var(--text-tertiary);
-  font-weight: 500;
-}
-
 .admin-login-title {
-  font-size: var(--text-2xl);
+  font-size: 1.5rem;
   font-weight: 700;
-  color: var(--text-primary);
+  color: #111;
+  text-align: center;
   margin-bottom: 0.25rem;
 }
 
 .admin-login-sub {
   font-size: var(--text-sm);
-  color: var(--text-secondary);
-  margin-bottom: 2rem;
+  color: #666;
+  text-align: center;
+  margin-bottom: 1.75rem;
 }
 
 .admin-login-error {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  background: rgba(239, 68, 68, 0.1);
-  border: 1px solid rgba(239, 68, 68, 0.3);
-  color: #ef4444;
+  background: rgba(239, 68, 68, 0.08);
+  border: 1px solid rgba(239, 68, 68, 0.25);
+  color: #dc2626;
   border-radius: 8px;
   padding: 0.75rem 1rem;
   font-size: var(--text-sm);
   margin-bottom: 1rem;
+}
+
+.admin-login-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-bottom: 1rem;
+}
+
+.admin-login-field label {
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: #444;
+}
+
+.admin-login-field input {
+  padding: 0.7rem 0.85rem;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  background: #f9fafb;
+  color: #111;
+  font-size: var(--text-sm);
+  font-family: inherit;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.admin-login-field input:focus {
+  outline: none;
+  border-color: #f5c518;
+  box-shadow: 0 0 0 3px rgba(245, 197, 24, 0.15);
+}
+
+.admin-login-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.7rem;
+  border-radius: 8px;
+  border: none;
+  font-size: var(--text-sm);
+  font-weight: 600;
+  cursor: pointer;
+  background: #f5c518;
+  color: #111;
+  transition: opacity 0.15s;
+}
+
+.admin-login-btn:hover {
+  opacity: 0.9;
 }
 
 /* Dashboard Layout */
@@ -422,6 +490,38 @@
 .admin-upload-btn:hover {
   border-color: var(--color-accent);
   color: var(--color-accent);
+}
+
+/* Submission detail */
+.admin-submission-detail {
+  padding: 0.5rem 0;
+}
+
+.admin-submission-field {
+  margin-bottom: 0.5rem;
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+}
+
+.admin-submission-field strong {
+  color: var(--text-primary);
+}
+
+.admin-unread-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #f5c518;
+  margin-left: 6px;
+  vertical-align: middle;
+}
+
+.admin-stat-sub {
+  font-size: var(--text-xs);
+  color: #f5c518;
+  font-weight: 600;
+  margin-top: 0.25rem;
 }
 
 /* Empty state */

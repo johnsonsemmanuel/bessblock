@@ -1,18 +1,51 @@
-import { motion } from 'framer-motion';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import { ArrowRight, Clock, FileText, HelpCircle } from 'lucide-react';
+import { sanityClient, urlFor } from '../lib/sanity';
 import SEO from '../components/SEO';
 import PageHero from '../components/PageHero';
 import ScrollReveal from '../components/ScrollReveal';
 import AnimatedButton from '../components/AnimatedButton';
-import blogPosts from '../data/blog';
 import './Insights.css';
 
-const categories = [...new Set(blogPosts.map(p => p.category))];
+const QUERY = `*[_type == "post"] | order(publishedAt desc) {
+  "slug": slug.current,
+  title,
+  "date": publishedAt,
+  author->{name},
+  category,
+  excerpt,
+  readTime,
+  "image": mainImage,
+  "imageAlt": mainImage.alt
+}`;
+
+function fmtPost(p) {
+  return {
+    ...p,
+    date: p.date ? new Date(p.date).toLocaleDateString('en-GB', { year: 'numeric', month: 'long', day: 'numeric' }) : '',
+    image: p.image ? urlFor(p.image).width(800).url() : '/images/production/IMG_1750.webp',
+    imageAlt: p.imageAlt || p.title,
+    readTime: p.readTime ? `${p.readTime} min read` : '5 min read',
+  };
+}
 
 export default function Insights() {
-  const featured = blogPosts[0];
-  const rest = blogPosts.slice(1);
+  const [posts, setPosts] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    if (!sanityClient) { setLoading(false); return; }
+    sanityClient.fetch(QUERY)
+      .then(data => setPosts((data || []).map(fmtPost)))
+      .catch(() => {})
+      .finally(() => setLoading(false));
+  }, []);
+
+  const featured = posts[0];
+  const rest = posts.slice(1);
+  const categories = [...new Set(posts.map(p => p.category))];
 
   return (
     <>
@@ -24,8 +57,13 @@ export default function Insights() {
           bgImage="/images/hero/concrete-texture-1.webp"
         />
 
-        {/* Featured post */}
-        {featured && (
+        {loading && (
+          <section className="section">
+            <div className="container" style={{ textAlign: 'center', color: 'var(--text-tertiary)' }}>Loading…</div>
+          </section>
+        )}
+
+        {!loading && featured && (
           <section className="section">
             <div className="container">
               <Link to={`/insights/blog/${featured.slug}`} className="insights-featured">
@@ -54,8 +92,7 @@ export default function Insights() {
           </section>
         )}
 
-        {/* Blog post grid */}
-        {rest.length > 0 && (
+        {!loading && rest.length > 0 && (
           <section className="section section-light">
             <div className="container">
               <h2 className="insights-section-title">More Articles</h2>
@@ -92,8 +129,7 @@ export default function Insights() {
           </section>
         )}
 
-        {/* Categories */}
-        {categories.length > 0 && (
+        {!loading && categories.length > 0 && (
           <section className="section">
             <div className="container">
               <h2 className="insights-section-title">Browse by Category</h2>
@@ -111,7 +147,6 @@ export default function Insights() {
           </section>
         )}
 
-        {/* FAQ CTA */}
         <section className="section section-light">
           <div className="container">
             <div className="insights-faq-cta">

@@ -9,7 +9,7 @@ const QUERY = `*[_type == "post"] | order(publishedAt desc) {
   "slug": slug.current,
   title,
   "date": publishedAt,
-  author,
+  author->{name, "avatar": avatar.asset->url},
   category,
   excerpt,
   readTime,

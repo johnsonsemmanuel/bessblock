@@ -307,6 +307,19 @@
   color: var(--color-bessblock-blue);
 }
 
+.blog-post-author {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.blog-post-avatar {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
 @media (max-width: 768px) {
   .blog-grid {
     grid-template-columns: 1fr;

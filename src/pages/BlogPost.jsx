@@ -10,7 +10,7 @@ import './Blog.css';
 const QUERY = `*[_type == "post" && slug.current == $slug][0] {
   title,
   "slug": slug.current,
-  author,
+  author->{name, "avatar": avatar.asset->url, role, bio},
   category,
   excerpt,
   publishedAt,
@@ -66,6 +66,8 @@ export default function BlogPost() {
     );
   }
 
+  const authorName = typeof post.author === 'object' ? post.author?.name : post.author || 'Bessblock Team';
+  const authorAvatar = typeof post.author === 'object' ? post.author?.avatar : null;
   const imageUrl = post.image ? urlFor(post.image).width(1200).url() : '/images/production/IMG_1750.webp';
   const dateStr = post.publishedAt
     ? new Date(post.publishedAt).toLocaleDateString('en-GB', { year: 'numeric', month: 'long', day: 'numeric' })
@@ -82,7 +84,7 @@ export default function BlogPost() {
           description: post.excerpt,
           image: imageUrl,
           datePublished: post.publishedAt,
-          author: { '@type': 'Person', name: post.author },
+          author: { '@type': 'Person', name: authorName },
           publisher: {
             '@type': 'Organization',
             name: 'Bessblock Concrete Products Ltd',
@@ -101,7 +103,10 @@ export default function BlogPost() {
               <div className="blog-post-meta">
                 <span>{dateStr}</span>
                 <span className="blog-card-cat">{post.category}</span>
-                <span>By {post.author}</span>
+                <span className="blog-post-author">
+                  {authorAvatar && <img src={authorAvatar} alt="" className="blog-post-avatar" />}
+                  By {authorName}
+                </span>
               </div>
               {post.body && <PortableText value={post.body} components={ptComponents} />}
             </motion.article>

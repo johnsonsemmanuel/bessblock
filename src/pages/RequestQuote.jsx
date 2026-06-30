@@ -64,7 +64,23 @@ export default function RequestQuote() {
 
     setStatus('submitting');
     try {
-      const response = await fetch('https://api.web3forms.com/submit', {
+      await fetch('/api/quote', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: form.name,
+          email: form.email,
+          phone: form.phone,
+          company: form.company,
+          product: form.product,
+          quantity: form.quantity,
+          projectDetails: form.projectDetails,
+          delivery: form.delivery,
+          timeline: form.timeline,
+        }),
+      });
+
+      fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -80,9 +96,7 @@ export default function RequestQuote() {
           timeline: form.timeline,
           subject: 'Quote Request',
         }),
-      });
-
-      if (!response.ok) throw new Error('Submission failed');
+      }).catch(() => {});
 
       setStatus('success');
       setForm(initialForm);

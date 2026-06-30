@@ -21,8 +21,8 @@ export default defineType({
     defineField({
       name: 'author',
       title: 'Author',
-      type: 'string',
-      initialValue: 'Bessblock Admin',
+      type: 'reference',
+      to: [{ type: 'author' }],
     }),
     defineField({
       name: 'category',

@@ -25,3 +25,6 @@ dist-ssr
 
 # Source images
 Bessblock Website 2026 - Images/
+
+# Environment variables (secrets)
+.env

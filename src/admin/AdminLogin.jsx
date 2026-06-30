@@ -18,12 +18,13 @@ export default function AdminLogin() {
 
   return (
     <div className="admin-login">
+      <div className="admin-login-bg" />
+      <div className="admin-login-overlay" />
       <div className="admin-login-card">
         <div className="admin-login-logo">
           <img src="/bessblocklogo.png" alt="Bessblock" />
-          <span>Admin Portal</span>
         </div>
-        <h1 className="admin-login-title">Welcome back</h1>
+        <h1 className="admin-login-title">Admin Portal</h1>
         <p className="admin-login-sub">Sign in to manage your website content.</p>
 
         {error && (
@@ -33,8 +34,8 @@ export default function AdminLogin() {
           </div>
         )}
 
-        <form className="admin-form" onSubmit={handleSubmit}>
-          <div className="admin-form-group">
+        <form onSubmit={handleSubmit}>
+          <div className="admin-login-field">
             <label htmlFor="pin">Password</label>
             <input
               id="pin"
@@ -46,7 +47,7 @@ export default function AdminLogin() {
               required
             />
           </div>
-          <button type="submit" className="admin-btn admin-btn-primary" style={{ width: '100%', justifyContent: 'center', padding: '0.7rem' }}>
+          <button type="submit" className="admin-login-btn">
             <Lock size={15} /> Sign In
           </button>
         </form>
