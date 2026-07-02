@@ -160,7 +160,7 @@ export default function RoadKerbs() {
       {/* Project Gallery */}
       <section className="section section-light">
         <div className="container">
-          <SectionTitle label="Products and Real World" title="See it in action" align="left" />
+          <SectionTitle label="Gallery" title="Products and Real World" align="left" />
           <GalleryLightbox images={['/images/gallery/kerbs-edging/road-kerbs-action.webp', '/images/products/road-kerbs.webp', '/images/products/demarcation-kerbs.webp', '/images/products/barrier-kerbs.webp']} />
         </div>
       </section>

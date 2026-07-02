@@ -197,7 +197,7 @@ export default function ProductTemplate({ productKey, heroImage }) {
       {/* Project Gallery */}
       <section className="section section-light">
         <div className="container">
-          <SectionTitle label="Products and Real World" title="See it in action" align="left" />
+          <SectionTitle label="Gallery" title="Products and Real World" align="left" />
           <GalleryLightbox images={product.galleryImages || categoryGalleryImages[product.category] || ['/images/gallery/paving-blocks-stack.webp', '/images/gallery/interlocking-residential.webp', '/images/gallery/rectangular-residential.webp']} />
         </div>
       </section>

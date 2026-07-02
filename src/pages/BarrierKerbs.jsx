@@ -159,7 +159,7 @@ export default function BarrierKerbs() {
       {/* Project Gallery */}
       <section className="section section-light">
         <div className="container">
-          <SectionTitle label="Products and Real World" title="See it in action" align="left" />
+          <SectionTitle label="Gallery" title="Products and Real World" align="left" />
           <GalleryLightbox images={['/images/gallery/kerbs-edging/barrier-kerbs-action.webp', '/images/products/barrier-kerbs.webp', '/images/products/road-kerbs.webp', '/images/products/demarcation-kerbs.webp']} />
         </div>
       </section>

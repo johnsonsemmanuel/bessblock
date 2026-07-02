@@ -99,7 +99,7 @@ export default function Terracrete() {
       {/* Project Gallery */}
       <section className="section section-light">
         <div className="container">
-          <SectionTitle label="Products and Real World" title="See it in action" align="left" />
+          <SectionTitle label="Gallery" title="Products and Real World" align="left" />
           <GalleryLightbox images={['/images/gallery/retaining-walls/retaining-walls-action-1.webp', '/images/gallery/retaining-walls/retaining-walls-action-2.webp', '/images/gallery/retaining-walls/retaining-walls-action.webp', '/images/products/terracrete.webp', '/images/products/terrafix.webp', '/images/products/terralite.webp']} />
         </div>
       </section>

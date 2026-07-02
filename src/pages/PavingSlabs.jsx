@@ -83,7 +83,7 @@ export default function PavingSlabs() {
       {/* Gallery */}
       <section className="section section-light">
         <div className="container">
-          <SectionTitle label="Products and Real World" title="See it in action" align="left" />
+          <SectionTitle label="Gallery" title="Products and Real World" align="left" />
           <GalleryLightbox images={['/images/gallery/paving-slabs/paving-slabs-action-1.webp', '/images/gallery/paving-slabs/paving-slabs-action-2.webp', '/images/gallery/paving-slabs/Paving Slabs - See it in action - Bessblock Concrete Product Ltd.webp', '/images/products/textured-paving-slabs.webp', '/images/products/smooth-paving-slabs.webp', '/images/products/large-format-slabs.webp']} />
         </div>
       </section>
