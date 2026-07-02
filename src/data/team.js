@@ -1,6 +1,6 @@
 const team = [
   {
-    name: 'Joel',
+    name: 'Joel Tetteh',
     role: 'Commercial Manager',
     bio: 'Drives commercial strategy, customer relationships, and business development across all product lines.',
     image: '/images/team/joel.webp',
@@ -12,14 +12,14 @@ const team = [
     image: '',
   },
   {
-    name: 'George Asante',
-    role: 'Technical Manager',
+    name: 'George Quainoo',
+    role: 'Production Manager',
     bio: 'Manages product development, technical specifications, and quality assurance processes.',
     image: '/images/team/george.webp',
   },
   {
-    name: 'Hope Adjei',
-    role: 'Sales and Marketing Executive',
+    name: 'Hope Soglo',
+    role: 'Sales & Marketing Executive',
     bio: 'Drives customer relationships, product promotion, and market development across all product lines.',
     image: '/images/team/hope.webp',
   },

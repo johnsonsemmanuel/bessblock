@@ -14,10 +14,8 @@ import './InterlockingPavingBlocks.css';
 import '../components/ProductTemplate.css';
 
 const galImages = [
-  '/images/products/interlocking-paving-1.webp',
-  '/images/products/interlocking-paving-2.webp',
-  '/images/products/interlocking-paving-3.webp',
-  '/images/products/interlocking-paving-4.webp',
+  '/images/gallery/paving-blocks/interlocking-residential-action.webp',
+  '/images/gallery/paving-blocks/interlocking-ghana-action.webp',
 ];
 
 function PlusIcon() {
