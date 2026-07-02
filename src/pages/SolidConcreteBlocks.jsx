@@ -171,7 +171,7 @@ export default function SolidConcreteBlocks() {
       {/* Gallery */}
       <section className="section section-light">
         <div className="container">
-          <SectionTitle label="Gallery" title="Solid block applications" align="left" />
+          <SectionTitle label="Products and Real World" title="Solid block applications" align="left" />
           <GalleryLightbox images={galleryImages} />
         </div>
       </section>

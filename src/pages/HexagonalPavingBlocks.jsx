@@ -180,7 +180,7 @@ export default function HexagonalPavingBlocks() {
       {/* Gallery */}
       <section className="section section-light">
         <div className="container">
-          <SectionTitle label="Gallery" title="Hexagonal in the real world" align="left" />
+          <SectionTitle label="Products and Real World" title="Hexagonal in the real world" align="left" />
           <GalleryLightbox images={galleryImages} />
         </div>
       </section>

@@ -172,7 +172,7 @@ export default function CeilingBlocks() {
       {/* Gallery */}
       <section className="section section-light">
         <div className="container">
-          <SectionTitle label="Gallery" title="Ceiling blocks in construction" align="left" />
+          <SectionTitle label="Products and Real World" title="Ceiling blocks in construction" align="left" />
           <GalleryLightbox images={galleryImages} />
         </div>
       </section>

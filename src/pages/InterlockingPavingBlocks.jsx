@@ -189,7 +189,7 @@ export default function InterlockingPavingBlocks() {
       {/* Gallery */}
       <section className="section section-light">
         <div className="container">
-          <SectionTitle label="Gallery" title="See interlocking in action" align="left" />
+          <SectionTitle label="Products and Real World" title="See interlocking in action" align="left" />
           <GalleryLightbox images={galImages} />
         </div>
       </section>

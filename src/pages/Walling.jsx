@@ -137,7 +137,7 @@ export default function Walling() {
       {/* Project Gallery */}
       <section className="section section-light">
         <div className="container">
-          <SectionTitle label="Gallery" title="See it in action" align="left" />
+          <SectionTitle label="Products and Real World" title="See it in action" align="left" />
           <GalleryLightbox images={['/images/gallery/hollow-blocks.webp', '/images/gallery/solid-blocks.webp', '/images/gallery/retaining-action.webp', '/images/products/hollow-blocks-1.webp', '/images/products/hollow-blocks-2.webp', '/images/products/hollow-blocks-3.webp', '/images/products/hollow-blocks-4.webp', '/images/products/solid-blocks-1.webp', '/images/products/solid-blocks-2.webp', '/images/products/solid-blocks-3.webp', '/images/products/solid-blocks-4.webp', '/images/products/solid-blocks-5.webp', '/images/products/solid-blocks-6.webp', '/images/products/solid-blocks-7.webp', '/images/products/solid-blocks-8.webp', '/images/products/ceiling-blocks-1.webp', '/images/products/ceiling-blocks-2.webp', '/images/products/ceiling-blocks-3.webp', '/images/products/ceiling-blocks-rib.webp']} />
         </div>
       </section>

@@ -130,7 +130,7 @@ export default function LRangeRockFace() {
       {/* Project Gallery */}
       <section className="section section-light">
         <div className="container">
-          <SectionTitle label="Gallery" title="See it in action" align="left" />
+          <SectionTitle label="Products and Real World" title="See it in action" align="left" />
           <GalleryLightbox images={['/images/gallery/retaining-walls/retaining-walls-action-1.webp', '/images/gallery/retaining-walls/retaining-walls-action-2.webp', '/images/gallery/retaining-walls/retaining-walls-action.webp', '/images/products/l-range-rock-face.webp', '/images/products/l-range-standard.webp', '/images/products/retaining-walls.webp']} />
         </div>
       </section>
