@@ -81,7 +81,21 @@ export default function Walling() {
       <section className="section">
         <div className="container">
           <SectionTitle label="Technical Range" title="Common specifications" align="left" />
-          <ScrollReveal><SpecSheet specs={techItems} columns={2} /></ScrollReveal>
+          <div className="rect-specs-layout">
+            <div>
+              <ScrollReveal><SpecSheet specs={techItems} columns={2} /></ScrollReveal>
+            </div>
+            <div
+              className="rect-specs-img"
+              style={{
+                backgroundImage: 'url(/images/products/solid-blocks-1.webp)',
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+              }}
+            >
+              <span>Walling reference</span>
+            </div>
+          </div>
         </div>
       </section>
 

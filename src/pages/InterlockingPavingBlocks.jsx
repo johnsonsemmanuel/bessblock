@@ -98,8 +98,29 @@ export default function InterlockingPavingBlocks() {
       <div className="page">
       <PageHero title="Interlocking Paving Blocks" description="Precision-engineered interlocking paving blocks for durable pavement surfaces for pedestrian and vehicular traffic." bgImage="/images/products/interlocking-paving-1.webp" />
 
-      {/* How It Works */}
+      {/* Overview with image */}
       <section className="section">
+        <div className="container">
+          <SectionTitle label="Overview" title="Interlocking precision for pavement stability" align="left" />
+          <div className="hex-overview-split">
+            <ScrollReveal direction="left">
+              <div>
+                <p className="about-text">
+                  Interlocking paving blocks are precision-manufactured concrete paving units designed with a unique shape that locks adjacent blocks together, creating a stable and durable pavement surface. Their superior interlocking capability minimizes movement under heavy loads, making them ideal for both pedestrian and vehicular traffic areas.
+                </p>
+              </div>
+            </ScrollReveal>
+            <ScrollReveal direction="right" delay={0.1}>
+              <div className="hex-overview-img"
+                style={{ backgroundImage: 'url(/images/products/interlocking-paving-2.webp)', backgroundSize: 'cover', backgroundPosition: 'center' }}
+              />
+            </ScrollReveal>
+          </div>
+        </div>
+      </section>
+
+      {/* How It Works */}
+      <section className="section section-light">
         <div className="container">
           <SectionTitle label="Process" title="How interlocking paving works" />
           <div className="inter-steps">
@@ -159,15 +180,19 @@ export default function InterlockingPavingBlocks() {
       <section className="section section-light">
         <div className="container">
           <SectionTitle label="Technical Information" title="Manufacturing & performance" align="left" />
-          <div className="inter-tech-list">
-            {techItems.map((item, i) => (
-              <ScrollReveal key={i} delay={i * 0.05}>
-                <div className="inter-tech-item">
-                  <Info size={16} className="inter-tech-dot" />
-                  <p>{item}</p>
-                </div>
-              </ScrollReveal>
-            ))}
+          <div className="hex-tech-layout">
+            <ScrollReveal direction="left">
+              <div className="hex-tech-text">
+                {techItems.map((item, i) => (
+                  <p key={i}>{item}</p>
+                ))}
+              </div>
+            </ScrollReveal>
+            <ScrollReveal direction="right" delay={0.1}>
+              <div className="hex-tech-img"
+                style={{ backgroundImage: 'url(/images/products/interlocking-paving-3.webp)', backgroundSize: 'cover', backgroundPosition: 'center' }}
+              />
+            </ScrollReveal>
           </div>
         </div>
       </section>

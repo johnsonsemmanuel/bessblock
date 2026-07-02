@@ -53,15 +53,23 @@ export default function Terralite() {
       <div className="page">
       <PageHero title="Terralite" description="A smaller dry-stack interlocking retaining block for garden walls, borders, and DIY landscaping." bgImage="/images/products/terralite.webp" />
 
+      {/* Overview with image */}
       <section className="section">
         <div className="container">
           <SectionTitle label="Overview" title="Compact retaining for landscaping" align="left" />
-          <ScrollReveal>
-            <div className="wall-sub-overview">
-              <p>Terralite is a smaller landscaping retaining wall block designed for garden projects, light retaining, and DIY applications. Its compact size and interlocking dry-stack format make it easy to install and ideal for curved walls, borders, and stepped landscape features.</p>
-              <p>Supplied largely in a rockface finish, Terralite delivers a natural, textured appearance that suits decorative garden settings as well as practical retaining needs. It can also be reversed to create steps and used in combination with Stairblock units for added design flexibility.</p>
-            </div>
-          </ScrollReveal>
+          <div className="hex-overview-split">
+            <ScrollReveal direction="left">
+              <div className="wall-sub-tech">
+                <p>Terralite is a smaller landscaping retaining wall block designed for garden projects, light retaining, and DIY applications. Its compact size and interlocking dry-stack format make it easy to install and ideal for curved walls, borders, and stepped landscape features.</p>
+                <p>Supplied largely in a rockface finish, Terralite delivers a natural, textured appearance that suits decorative garden settings as well as practical retaining needs. It can also be reversed to create steps and used in combination with Stairblock units for added design flexibility.</p>
+              </div>
+            </ScrollReveal>
+            <ScrollReveal direction="right" delay={0.1}>
+              <div className="hex-overview-img"
+                style={{ backgroundImage: 'url(/images/products/terralite.webp)', backgroundSize: 'cover', backgroundPosition: 'center' }}
+              />
+            </ScrollReveal>
+          </div>
         </div>
       </section>
 
@@ -88,15 +96,23 @@ export default function Terralite() {
         </div>
       </section>
 
+      {/* Technical info with image */}
       <section className="section section-light">
         <div className="container">
           <SectionTitle label="Technical Information" title="How Terralite works" align="left" />
-          <div className="wall-sub-tech">
-            {techItems.map((item, i) => (
-              <ScrollReveal key={i} delay={i * 0.04}>
-                <p>{item}</p>
-              </ScrollReveal>
-            ))}
+          <div className="hex-tech-layout">
+            <ScrollReveal direction="left">
+              <div className="hex-tech-text">
+                {techItems.map((item, i) => (
+                  <p key={i}>{item}</p>
+                ))}
+              </div>
+            </ScrollReveal>
+            <ScrollReveal direction="right" delay={0.1}>
+              <div className="hex-tech-img"
+                style={{ backgroundImage: 'url(/images/products/terrafix.webp)', backgroundSize: 'cover', backgroundPosition: 'center' }}
+              />
+            </ScrollReveal>
           </div>
         </div>
       </section>

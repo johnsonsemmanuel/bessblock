@@ -27,13 +27,26 @@ export default function StepRisers() {
       <div className="page">
       <PageHero title="Step Risers" description={cat.description} bgImage="/images/categories/step-risers.webp" />
 
+      {/* Overview with image */}
       <section className="section">
         <div className="container">
           <SectionTitle label="Overview" title="Precast concrete steps for durable stair construction" align="left" />
-          <ScrollReveal>
-            <p className="about-text">Our step risers are precast concrete units designed for outdoor stair construction in residential, commercial, and institutional settings. Available in standard, wide tread, and bullnose profiles, each unit is manufactured to precise dimensions for consistent installation and a professional finish.</p>
-            <p className="about-text">Whether the project requires straightforward step installations, generous tread depths for public entrances, or rounded-edge finishes for refined stair details, our step range provides reliable performance and visual consistency.</p>
-          </ScrollReveal>
+          <div className="rect-specs-layout">
+            <div>
+              <p className="about-text">Our step risers are precast concrete units designed for outdoor stair construction in residential, commercial, and institutional settings. Available in standard, wide tread, and bullnose profiles, each unit is manufactured to precise dimensions for consistent installation and a professional finish.</p>
+              <p className="about-text" style={{ marginTop: 'var(--spacing-4)' }}>Whether the project requires straightforward step installations, generous tread depths for public entrances, or rounded-edge finishes for refined stair details, our step range provides reliable performance and visual consistency.</p>
+            </div>
+            <div
+              className="rect-specs-img"
+              style={{
+                backgroundImage: 'url(/images/products/wide-tread-steps.webp)',
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+              }}
+            >
+              <span>Step profile reference</span>
+            </div>
+          </div>
         </div>
       </section>
 

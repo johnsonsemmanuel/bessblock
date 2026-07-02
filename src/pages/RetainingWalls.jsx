@@ -62,16 +62,23 @@ export default function RetainingWalls() {
         bgImage="/images/products/retaining-walls.webp"
       />
 
-      {/* Overview */}
+      {/* Overview with image */}
       <section className="section">
         <div className="container">
           <SectionTitle label="Overview" title="Terraforce® retaining system" align="left" />
-          <ScrollReveal>
-            <div className="retaining-overview">
-              <p>Terraforce® retaining wall blocks are a versatile concrete retaining solution for landscaping, earth retention, and structural retaining wall applications. The system is suitable for gravity retaining walls, geosynthetic reinforced segmental retaining walls, and cement stabilised backfill installations.</p>
-              <p>The blocks are lightweight for delivery and installation, yet heavy in mass when filled with soil, gravel, or concrete, helping provide additional vertical interlock and stability. Terraforce® products are also fully permeable, plantable, and suitable for environmentally friendly retaining wall designs.</p>
-            </div>
-          </ScrollReveal>
+          <div className="hex-overview-split">
+            <ScrollReveal direction="left">
+              <div className="retaining-overview">
+                <p>Terraforce® retaining wall blocks are a versatile concrete retaining solution for landscaping, earth retention, and structural retaining wall applications. The system is suitable for gravity retaining walls, geosynthetic reinforced segmental retaining walls, and cement stabilised backfill installations.</p>
+                <p>The blocks are lightweight for delivery and installation, yet heavy in mass when filled with soil, gravel, or concrete, helping provide additional vertical interlock and stability. Terraforce® products are also fully permeable, plantable, and suitable for environmentally friendly retaining wall designs.</p>
+              </div>
+            </ScrollReveal>
+            <ScrollReveal direction="right" delay={0.1}>
+              <div className="hex-overview-img"
+                style={{ backgroundImage: 'url(/images/products/retaining-walls.webp)', backgroundSize: 'cover', backgroundPosition: 'center' }}
+              />
+            </ScrollReveal>
+          </div>
         </div>
       </section>
 
@@ -106,16 +113,23 @@ export default function RetainingWalls() {
         </div>
       </section>
 
-      {/* Technical */}
+      {/* Technical with image */}
       <section className="section section-light">
         <div className="container">
           <SectionTitle label="Technical Information" title="How the system works" align="left" />
-          <ScrollReveal>
-            <div className="retaining-tech">
-              <p>Terraforce® retaining blocks are designed to stack with a distinctive horizontal interlock and can be used as part of a gravity wall or as the fascia of a geosynthetic reinforced wall structure. The system can also be used with cement stabilised backfill where space or site conditions require it.</p>
-              <p>The blocks are manufactured as hollow-core units that can be filled with soil, gravel, or concrete, depending on the engineered design. This construction method supports soil stabilisation while allowing water to drain through the wall structure.</p>
-            </div>
-          </ScrollReveal>
+          <div className="hex-tech-layout">
+            <ScrollReveal direction="left">
+              <div className="hex-tech-text">
+                <p>Terraforce® retaining blocks are designed to stack with a distinctive horizontal interlock and can be used as part of a gravity wall or as the fascia of a geosynthetic reinforced wall structure. The system can also be used with cement stabilised backfill where space or site conditions require it.</p>
+                <p>The blocks are manufactured as hollow-core units that can be filled with soil, gravel, or concrete, depending on the engineered design. This construction method supports soil stabilisation while allowing water to drain through the wall structure.</p>
+              </div>
+            </ScrollReveal>
+            <ScrollReveal direction="right" delay={0.1}>
+              <div className="hex-tech-img"
+                style={{ backgroundImage: 'url(/images/products/l-range-rock-face.webp)', backgroundSize: 'cover', backgroundPosition: 'center' }}
+              />
+            </ScrollReveal>
+          </div>
         </div>
       </section>
 

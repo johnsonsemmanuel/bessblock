@@ -156,6 +156,10 @@
   gap: var(--spacing-6);
 }
 
+.retaining-overview {
+  max-width: 600px;
+}
+
 @media (max-width: 1024px) {
   .retaining-benefits {
     grid-template-columns: 1fr;
@@ -169,6 +173,12 @@
   .retaining-sub-grid {
     grid-template-columns: 1fr 1fr;
   }
+
+  .hex-overview-split,
+  .hex-tech-layout {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-8);
+  }
 }
 
 @media (max-width: 768px) {
@@ -179,5 +189,11 @@
   .retaining-families,
   .retaining-sub-grid {
     grid-template-columns: 1fr;
+  }
+
+  .hex-overview-img,
+  .hex-tech-img {
+    max-width: 240px;
+    margin: 0 auto;
   }
 }

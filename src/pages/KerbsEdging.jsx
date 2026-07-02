@@ -57,11 +57,21 @@ export default function KerbsEdging() {
       <section className="section">
         <div className="container">
           <SectionTitle label="Overview" title="The foundation of neat edges" align="left" />
-          <ScrollReveal>
-            <div className="kerbs-overview">
-              <p>Kerbs and edging units are a vital part of paving construction because they define the boundary between surfaces and help prevent movement or crumbling at the edges. They also improve the visual finish of a project by giving it a more complete and professional appearance.</p>
+          <div className="rect-specs-layout">
+            <div>
+              <p className="about-text">Kerbs and edging units are a vital part of paving construction because they define the boundary between surfaces and help prevent movement or crumbling at the edges. They also improve the visual finish of a project by giving it a more complete and professional appearance.</p>
             </div>
-          </ScrollReveal>
+            <div
+              className="rect-specs-img"
+              style={{
+                backgroundImage: 'url(/images/products/road-kerbs.webp)',
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+              }}
+            >
+              <span>Kerb profile reference</span>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -119,12 +129,19 @@ export default function KerbsEdging() {
       <section className="section">
         <div className="container">
           <SectionTitle label="Technical Information" title="Installation principles" align="left" />
-          <div className="kerbs-tech">
-            {techItems.map((item, i) => (
-              <ScrollReveal key={i} delay={i * 0.04}>
-                <p>{item}</p>
-              </ScrollReveal>
-            ))}
+          <div className="hex-tech-layout">
+            <ScrollReveal direction="left">
+              <div className="hex-tech-text">
+                {techItems.map((item, i) => (
+                  <p key={i}>{item}</p>
+                ))}
+              </div>
+            </ScrollReveal>
+            <ScrollReveal direction="right" delay={0.1}>
+              <div className="hex-tech-img"
+                style={{ backgroundImage: 'url(/images/products/barrier-kerbs.webp)', backgroundSize: 'cover', backgroundPosition: 'center' }}
+              />
+            </ScrollReveal>
           </div>
         </div>
       </section>
