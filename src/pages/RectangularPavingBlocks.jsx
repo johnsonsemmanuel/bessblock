@@ -109,16 +109,14 @@ export default function RectangularPavingBlocks() {
                 </div>
               </ScrollReveal>
             </div>
-            <div
-              className="rect-specs-img"
-              style={{
-                backgroundImage: 'url(/images/products/rectangular-paving-1.webp)',
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-              }}
-            >
-              <span>Dimension reference</span>
-            </div>
+<div
+               className="rect-specs-img"
+               style={{
+                 backgroundImage: 'url(/images/products/rectangular-paving-1.webp)',
+                 backgroundSize: 'cover',
+                 backgroundPosition: 'center',
+               }}
+             />
           </div>
         </div>
       </section>
