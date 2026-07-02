@@ -12,15 +12,15 @@ import projects from '../data/projects';
 import './ProjectsGallery.css';
 
 const galleryImages = [
-  '/images/gallery/paving-blocks-stack.webp',
-  '/images/gallery/hollow-blocks.webp',
-  '/images/gallery/solid-blocks.webp',
+  '/images/gallery/paving-blocks/interlocking-residential-action.webp',
+  '/images/gallery/retaining-walls/retaining-walls-action.webp',
+  '/images/gallery/paving-blocks/hexagonal-paving-ghana.webp',
   '/images/gallery/interlocking-residential.webp',
   '/images/gallery/rectangular-residential.webp',
   '/images/gallery/rectangular-katamanso.webp',
   '/images/gallery/rectangular-residential-2.webp',
   '/images/gallery/retaining-action.webp',
-  '/images/gallery/road-kerbs-delivery.webp',
+  '/images/gallery/paving-slabs/paving-slabs-in-action.webp',
   '/images/gallery/textured-slabs-pool.webp',
 ];
 
