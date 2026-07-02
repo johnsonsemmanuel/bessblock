@@ -61,15 +61,24 @@ export default function GutterKerbs() {
       <div className="page">
       <PageHero title="Gutter Kerbs" description="Bessblock Gutter Kerbs combine edge restraint with water management for surface runoff along roads and paved areas." bgImage="/images/products/gutter-kerbs.webp" />
 
+      {/* Overview with image */}
       <section className="section">
         <div className="container">
           <SectionTitle label="Overview" title="Edge restraint meets drainage" align="left" />
-          <ScrollReveal>
-            <div className="kerb-sub-tech">
-              <p>Gutter kerbs are used where a kerb and drainage function work together, often along road edges, access routes, and paved surfaces that need controlled runoff. They help channel water while still providing a strong boundary between the carriageway and adjacent areas.</p>
-              <p>Gutter Kerbs are a functional infrastructure product rather than purely a decorative edge. The emphasis should be on durability, line-and-level accuracy, and the ability to support a clean road or channel detail in both public and private schemes.</p>
+          <div className="rect-specs-layout">
+            <div>
+              <p className="about-text">Gutter kerbs are used where a kerb and drainage function work together, often along road edges, access routes, and paved surfaces that need controlled runoff. They help channel water while still providing a strong boundary between the carriageway and adjacent areas.</p>
+              <p className="about-text" style={{ marginTop: 'var(--spacing-4)' }}>Gutter Kerbs are a functional infrastructure product rather than purely a decorative edge. The emphasis should be on durability, line-and-level accuracy, and the ability to support a clean road or channel detail in both public and private schemes.</p>
             </div>
-          </ScrollReveal>
+            <div
+              className="rect-specs-img"
+              style={{
+                backgroundImage: 'url(/images/products/gutter-kerbs.webp)',
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+              }}
+            />
+          </div>
         </div>
       </section>
 
@@ -99,12 +108,19 @@ export default function GutterKerbs() {
       <section className="section section-light">
         <div className="container">
           <SectionTitle label="Technical Information" title="How gutter kerbs work" align="left" />
-          <div className="kerb-sub-tech">
-            {techItems.map((item, i) => (
-              <ScrollReveal key={i} delay={i * 0.04}>
-                <p>{item}</p>
-              </ScrollReveal>
-            ))}
+          <div className="hex-tech-layout">
+            <ScrollReveal direction="left">
+              <div className="hex-tech-text">
+                {techItems.map((item, i) => (
+                  <p key={i}>{item}</p>
+                ))}
+              </div>
+            </ScrollReveal>
+            <ScrollReveal direction="right" delay={0.1}>
+              <div className="hex-tech-img"
+                style={{ backgroundImage: 'url(/images/products/road-kerbs.webp)', backgroundSize: 'cover', backgroundPosition: 'center' }}
+              />
+            </ScrollReveal>
           </div>
         </div>
       </section>

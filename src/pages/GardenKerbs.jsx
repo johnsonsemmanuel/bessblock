@@ -61,15 +61,24 @@ export default function GardenKerbs() {
       <div className="page">
       <PageHero title="Garden Kerbs" description="Bessblock Garden Kerbs create neat boundaries for lawns, paths, and flower beds with a clean, finished appearance." bgImage="/images/products/garden-kerbs.webp" />
 
+      {/* Overview with image */}
       <section className="section">
         <div className="container">
           <SectionTitle label="Overview" title="A refined edge for landscapes" align="left" />
-          <ScrollReveal>
-            <div className="kerb-sub-tech">
-              <p>Garden kerbs are used where a low-profile concrete edge is needed to define landscaped spaces and keep surfaces visually tidy. They are ideal for residential gardens, parks, courtyards, and decorative outdoor schemes where appearance matters as much as function.</p>
-              <p>This is a practical landscaping product that helps control the spread of gravel, soil, or turf while giving the project a more refined border. The product also fits well with both modern and traditional outdoor settings.</p>
+          <div className="rect-specs-layout">
+            <div>
+              <p className="about-text">Garden kerbs are used where a low-profile concrete edge is needed to define landscaped spaces and keep surfaces visually tidy. They are ideal for residential gardens, parks, courtyards, and decorative outdoor schemes where appearance matters as much as function.</p>
+              <p className="about-text" style={{ marginTop: 'var(--spacing-4)' }}>This is a practical landscaping product that helps control the spread of gravel, soil, or turf while giving the project a more refined border. The product also fits well with both modern and traditional outdoor settings.</p>
             </div>
-          </ScrollReveal>
+            <div
+              className="rect-specs-img"
+              style={{
+                backgroundImage: 'url(/images/products/garden-kerbs.webp)',
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+              }}
+            />
+          </div>
         </div>
       </section>
 
@@ -99,12 +108,19 @@ export default function GardenKerbs() {
       <section className="section section-light">
         <div className="container">
           <SectionTitle label="Technical Information" title="Installation principles" align="left" />
-          <div className="kerb-sub-tech">
-            {techItems.map((item, i) => (
-              <ScrollReveal key={i} delay={i * 0.04}>
-                <p>{item}</p>
-              </ScrollReveal>
-            ))}
+          <div className="hex-tech-layout">
+            <ScrollReveal direction="left">
+              <div className="hex-tech-text">
+                {techItems.map((item, i) => (
+                  <p key={i}>{item}</p>
+                ))}
+              </div>
+            </ScrollReveal>
+            <ScrollReveal direction="right" delay={0.1}>
+              <div className="hex-tech-img"
+                style={{ backgroundImage: 'url(/images/products/demarcation-kerbs.webp)', backgroundSize: 'cover', backgroundPosition: 'center' }}
+              />
+            </ScrollReveal>
           </div>
         </div>
       </section>

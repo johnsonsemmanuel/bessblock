@@ -60,15 +60,24 @@ export default function DemarcationKerbs() {
       <div className="page">
       <PageHero title="Demarcation Kerbs" description="Bessblock Demarcation Kerbs provide visual separation between traffic lanes, pedestrian areas, and cycle routes." bgImage="/images/products/demarcation-kerbs.webp" />
 
+      {/* Overview with image */}
       <section className="section">
         <div className="container">
           <SectionTitle label="Overview" title="Clear boundaries for safer spaces" align="left" />
-          <ScrollReveal>
-            <div className="kerb-sub-tech">
-              <p>Demarcation kerbs are used where a physical or visual boundary is needed without necessarily creating a high or heavy containment edge. They are especially useful in urban streets, cycle lanes, car parks, and access routes where the layout needs to be easy to understand at a glance.</p>
-              <p>It is a functional and visually neat kerb solution that supports safe movement and clear site definition. It sits between simple edging and heavier road kerb profiles in terms of purpose and profile.</p>
+          <div className="rect-specs-layout">
+            <div>
+              <p className="about-text">Demarcation kerbs are used where a physical or visual boundary is needed without necessarily creating a high or heavy containment edge. They are especially useful in urban streets, cycle lanes, car parks, and access routes where the layout needs to be easy to understand at a glance.</p>
+              <p className="about-text" style={{ marginTop: 'var(--spacing-4)' }}>It is a functional and visually neat kerb solution that supports safe movement and clear site definition. It sits between simple edging and heavier road kerb profiles in terms of purpose and profile.</p>
             </div>
-          </ScrollReveal>
+            <div
+              className="rect-specs-img"
+              style={{
+                backgroundImage: 'url(/images/products/demarcation-kerbs.webp)',
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+              }}
+            />
+          </div>
         </div>
       </section>
 
@@ -98,12 +107,19 @@ export default function DemarcationKerbs() {
       <section className="section section-light">
         <div className="container">
           <SectionTitle label="Technical Information" title="How demarcation kerbs work" align="left" />
-          <div className="kerb-sub-tech">
-            {techItems.map((item, i) => (
-              <ScrollReveal key={i} delay={i * 0.04}>
-                <p>{item}</p>
-              </ScrollReveal>
-            ))}
+          <div className="hex-tech-layout">
+            <ScrollReveal direction="left">
+              <div className="hex-tech-text">
+                {techItems.map((item, i) => (
+                  <p key={i}>{item}</p>
+                ))}
+              </div>
+            </ScrollReveal>
+            <ScrollReveal direction="right" delay={0.1}>
+              <div className="hex-tech-img"
+                style={{ backgroundImage: 'url(/images/products/road-kerbs.webp)', backgroundSize: 'cover', backgroundPosition: 'center' }}
+              />
+            </ScrollReveal>
           </div>
         </div>
       </section>

@@ -129,13 +129,8 @@
   border-radius: 10px;
   background: var(--bg-section);
   border: 1px solid var(--border);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: var(--spacing-3);
-  color: var(--color-grey-400);
-  font-size: var(--text-sm);
+  background-size: cover;
+  background-position: center;
   position: sticky;
   top: 100px;
 }

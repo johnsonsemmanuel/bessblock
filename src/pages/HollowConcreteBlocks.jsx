@@ -151,9 +151,7 @@ export default function HollowConcreteBlocks() {
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
               }}
-            >
-              <span>Dimension reference</span>
-            </div>
+            />
           </div>
         </div>
       </section>

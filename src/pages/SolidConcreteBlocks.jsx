@@ -150,9 +150,7 @@ export default function SolidConcreteBlocks() {
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
               }}
-            >
-              <span>Dimension reference</span>
-            </div>
+            />
           </div>
         </div>
       </section>

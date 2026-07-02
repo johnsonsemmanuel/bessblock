@@ -59,17 +59,26 @@ export default function SlottedKerbs() {
     <>
       <SEO title="Slotted Kerbs" description="Bessblock slotted kerbs combine edge restraint with integrated drainage slots for effective surface water management along roads and paved areas." />
       <div className="page">
-      <PageHero title="Slotted Kerbs" description="Bessblock Slotted Kerbs combine edge restraint with drainage for efficient surface water management along roads." bgImage="/images/categories/kerbs-edging.webp" />
+      <PageHero title="Slotted Kerbs" description="Bessblock Slotted Kerbs combine edge restraint with drainage for efficient surface water management along roads." bgImage="/images/products/road-kerbs.webp" />
 
+      {/* Overview with image */}
       <section className="section">
         <div className="container">
           <SectionTitle label="Overview" title="Edge restraint with drainage built in" align="left" />
-          <ScrollReveal>
-            <div className="kerb-sub-tech">
-              <p>Slotted kerbs are used where controlled water runoff is needed alongside a strong kerb edge. The slot openings allow water to enter the drainage system more effectively, which makes them useful in streetscape and highway-style detailing.</p>
-              <p>Slotted Kerbs are a functional civil and landscape product rather than a decorative edging item. The core focus is on drainage support, durability, and clean integration with adjacent paving or road construction.</p>
+          <div className="rect-specs-layout">
+            <div>
+              <p className="about-text">Slotted kerbs are used where controlled water runoff is needed alongside a strong kerb edge. The slot openings allow water to enter the drainage system more effectively, which makes them useful in streetscape and highway-style detailing.</p>
+              <p className="about-text" style={{ marginTop: 'var(--spacing-4)' }}>Slotted Kerbs are a functional civil and landscape product rather than a decorative edging item. The core focus is on drainage support, durability, and clean integration with adjacent paving or road construction.</p>
             </div>
-          </ScrollReveal>
+            <div
+              className="rect-specs-img"
+              style={{
+                backgroundImage: 'url(/images/products/gutter-kerbs.webp)',
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+              }}
+            />
+          </div>
         </div>
       </section>
 
@@ -99,12 +108,19 @@ export default function SlottedKerbs() {
       <section className="section section-light">
         <div className="container">
           <SectionTitle label="Technical Information" title="How slotted kerbs work" align="left" />
-          <div className="kerb-sub-tech">
-            {techItems.map((item, i) => (
-              <ScrollReveal key={i} delay={i * 0.04}>
-                <p>{item}</p>
-              </ScrollReveal>
-            ))}
+          <div className="hex-tech-layout">
+            <ScrollReveal direction="left">
+              <div className="hex-tech-text">
+                {techItems.map((item, i) => (
+                  <p key={i}>{item}</p>
+                ))}
+              </div>
+            </ScrollReveal>
+            <ScrollReveal direction="right" delay={0.1}>
+              <div className="hex-tech-img"
+                style={{ backgroundImage: 'url(/images/products/road-kerbs.webp)', backgroundSize: 'cover', backgroundPosition: 'center' }}
+              />
+            </ScrollReveal>
           </div>
         </div>
       </section>

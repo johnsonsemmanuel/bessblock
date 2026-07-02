@@ -61,15 +61,24 @@ export default function BarrierKerbs() {
       <div className="page">
       <PageHero title="Barrier Kerbs" description="Bessblock Barrier Kerbs provide a strong protective edge separating vehicles from pedestrian areas." bgImage="/images/products/barrier-kerbs.webp" />
 
+      {/* Overview with image */}
       <section className="section">
         <div className="container">
           <SectionTitle label="Overview" title="Stronger separation where it matters" align="left" />
-          <ScrollReveal>
-            <div className="kerb-sub-tech">
-              <p>Barrier kerbs are heavy-duty concrete kerb units used to create a firmer boundary between traffic and adjoining surfaces. Their role is not just visual; they also help reduce vehicle encroachment and improve safety in higher-risk or higher-load locations.</p>
-              <p>This is the containment-focused option in the kerb range. They are especially relevant for roads, junctions, busy access routes, and public realm schemes where a more robust interface is needed between carriageway and adjacent areas.</p>
+          <div className="rect-specs-layout">
+            <div>
+              <p className="about-text">Barrier kerbs are heavy-duty concrete kerb units used to create a firmer boundary between traffic and adjoining surfaces. Their role is not just visual; they also help reduce vehicle encroachment and improve safety in higher-risk or higher-load locations.</p>
+              <p className="about-text" style={{ marginTop: 'var(--spacing-4)' }}>This is the containment-focused option in the kerb range. They are especially relevant for roads, junctions, busy access routes, and public realm schemes where a more robust interface is needed between carriageway and adjacent areas.</p>
             </div>
-          </ScrollReveal>
+            <div
+              className="rect-specs-img"
+              style={{
+                backgroundImage: 'url(/images/products/barrier-kerbs.webp)',
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+              }}
+            />
+          </div>
         </div>
       </section>
 
@@ -99,12 +108,19 @@ export default function BarrierKerbs() {
       <section className="section section-light">
         <div className="container">
           <SectionTitle label="Technical Information" title="Performance characteristics" align="left" />
-          <div className="kerb-sub-tech">
-            {techItems.map((item, i) => (
-              <ScrollReveal key={i} delay={i * 0.04}>
-                <p>{item}</p>
-              </ScrollReveal>
-            ))}
+          <div className="hex-tech-layout">
+            <ScrollReveal direction="left">
+              <div className="hex-tech-text">
+                {techItems.map((item, i) => (
+                  <p key={i}>{item}</p>
+                ))}
+              </div>
+            </ScrollReveal>
+            <ScrollReveal direction="right" delay={0.1}>
+              <div className="hex-tech-img"
+                style={{ backgroundImage: 'url(/images/products/road-kerbs.webp)', backgroundSize: 'cover', backgroundPosition: 'center' }}
+              />
+            </ScrollReveal>
           </div>
         </div>
       </section>
