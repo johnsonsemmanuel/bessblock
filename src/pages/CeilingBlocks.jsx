@@ -96,6 +96,26 @@ export default function CeilingBlocks() {
       <div className="page">
       <PageHero title="Ceiling Blocks" description="Non-structural concrete infill units for rib-and-block slab systems in suspended floors and ceilings." bgImage="/images/products/ceiling-blocks-1.webp" />
 
+      {/* Overview with image */}
+      <section className="section">
+        <div className="container">
+          <SectionTitle label="Overview" title="Rib-and-block slab systems" align="left" />
+          <div className="rect-specs-layout">
+            <div>
+              <p className="about-text">Ceiling blocks are used in rib-and-block slab systems for suspended floors and ceilings. The blocks act as non-structural filler units that sit between precast or cast-in-situ ribs.</p>
+            </div>
+            <div
+              className="rect-specs-img"
+              style={{
+                backgroundImage: 'url(/images/products/ceiling-blocks-rib.webp)',
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+              }}
+            />
+          </div>
+        </div>
+      </section>
+
       {/* Benefits */}
       <section className="section">
         <div className="container">
@@ -127,16 +147,23 @@ export default function CeilingBlocks() {
         </div>
       </section>
 
-      {/* Technical info */}
+      {/* Technical info with image */}
       <section className="section">
         <div className="container">
           <SectionTitle label="Technical Information" title="How ceiling blocks work" align="left" />
-          <div className="wall-sub-tech">
-            {techItems.map((item, i) => (
-              <ScrollReveal key={i} delay={i * 0.04}>
-                <p>{item}</p>
-              </ScrollReveal>
-            ))}
+          <div className="hex-tech-layout">
+            <ScrollReveal direction="left">
+              <div className="hex-tech-text">
+                {techItems.map((item, i) => (
+                  <p key={i}>{item}</p>
+                ))}
+              </div>
+            </ScrollReveal>
+            <ScrollReveal direction="right" delay={0.1}>
+              <div className="hex-tech-img"
+                style={{ backgroundImage: 'url(/images/products/ceiling-blocks-1.webp)', backgroundSize: 'cover', backgroundPosition: 'center' }}
+              />
+            </ScrollReveal>
           </div>
         </div>
       </section>

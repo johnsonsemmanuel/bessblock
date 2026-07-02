@@ -38,14 +38,23 @@ export default function FourByFourStepBlock() {
       <div className="page">
       <PageHero title="4x4 Step Block" description="A Terraforce retaining wall component for stepped transitions and tiered wall layouts within retaining wall systems." bgImage="/images/products/4x4-step-block.webp" />
 
+      {/* Overview with image */}
       <section className="section">
         <div className="container">
           <SectionTitle label="Overview" title="Step transitions made simple" align="left" />
-          <ScrollReveal>
-            <div className="wall-sub-overview">
-              <p>The 4x4 Step Block enables wall elevation changes without cutting or special detailing, integrating seamlessly with the L Range system for tiered retaining wall layouts.</p>
+          <div className="rect-specs-layout">
+            <div>
+              <p className="about-text">The 4x4 Step Block enables wall elevation changes without cutting or special detailing, integrating seamlessly with the L Range system for tiered retaining wall layouts.</p>
             </div>
-          </ScrollReveal>
+            <div
+              className="rect-specs-img"
+              style={{
+                backgroundImage: 'url(/images/products/4x4-step-block.webp)',
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+              }}
+            />
+          </div>
         </div>
       </section>
 
@@ -59,12 +68,19 @@ export default function FourByFourStepBlock() {
       <section className="section">
         <div className="container">
           <SectionTitle label="Technical Information" title="How it works" align="left" />
-          <div className="wall-sub-tech">
-            {techItems.map((item, i) => (
-              <ScrollReveal key={i} delay={i * 0.04}>
-                <p>{item}</p>
-              </ScrollReveal>
-            ))}
+          <div className="hex-tech-layout">
+            <ScrollReveal direction="left">
+              <div className="hex-tech-text">
+                {techItems.map((item, i) => (
+                  <p key={i}>{item}</p>
+                ))}
+              </div>
+            </ScrollReveal>
+            <ScrollReveal direction="right" delay={0.1}>
+              <div className="hex-tech-img"
+                style={{ backgroundImage: 'url(/images/products/l-range-standard.webp)', backgroundSize: 'cover', backgroundPosition: 'center' }}
+              />
+            </ScrollReveal>
           </div>
         </div>
       </section>
