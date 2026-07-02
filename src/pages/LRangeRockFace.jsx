@@ -52,15 +52,24 @@ export default function LRangeRockFace() {
       <div className="page">
       <PageHero title="L Range - Rock Face Option" description="A concrete retaining block with a rock-face finish for a rugged, natural appearance in landscaping and erosion control." bgImage="/images/products/l-range-rock-face.webp" />
 
+      {/* Overview with image */}
       <section className="section">
         <div className="container">
           <SectionTitle label="Overview" title="Rock-face retaining system" align="left" />
-          <ScrollReveal>
-            <div className="wall-sub-overview">
-              <p>The Rock Face Option is part of the Terraforce retaining wall range and is intended for gravity and reinforced retaining wall applications. Its hollow-core, interlocking design supports stable construction while allowing curves and wall angles without restrictive nib-and-slot geometry.</p>
-              <p>The rock-face finish gives the wall a more textured, natural look, making it suitable for visible landscaping works where appearance matters as much as performance.</p>
+          <div className="rect-specs-layout">
+            <div>
+              <p className="about-text">The Rock Face Option is part of the Terraforce retaining wall range and is intended for gravity and reinforced retaining wall applications. Its hollow-core, interlocking design supports stable construction while allowing curves and wall angles without restrictive nib-and-slot geometry.</p>
+              <p className="about-text" style={{ marginTop: 'var(--spacing-4)' }}>The rock-face finish gives the wall a more textured, natural look, making it suitable for visible landscaping works where appearance matters as much as performance.</p>
             </div>
-          </ScrollReveal>
+            <div
+              className="rect-specs-img"
+              style={{
+                backgroundImage: 'url(/images/products/l-range-rock-face.webp)',
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+              }}
+            />
+          </div>
         </div>
       </section>
 
@@ -90,12 +99,19 @@ export default function LRangeRockFace() {
       <section className="section section-light">
         <div className="container">
           <SectionTitle label="Technical Information" title="Performance characteristics" align="left" />
-          <div className="wall-sub-tech">
-            {techItems.map((item, i) => (
-              <ScrollReveal key={i} delay={i * 0.04}>
-                <p>{item}</p>
-              </ScrollReveal>
-            ))}
+          <div className="hex-tech-layout">
+            <ScrollReveal direction="left">
+              <div className="hex-tech-text">
+                {techItems.map((item, i) => (
+                  <p key={i}>{item}</p>
+                ))}
+              </div>
+            </ScrollReveal>
+            <ScrollReveal direction="right" delay={0.1}>
+              <div className="hex-tech-img"
+                style={{ backgroundImage: 'url(/images/products/retaining-walls.webp)', backgroundSize: 'cover', backgroundPosition: 'center' }}
+              />
+            </ScrollReveal>
           </div>
         </div>
       </section>

@@ -38,14 +38,23 @@ export default function Terracrete() {
       <div className="page">
       <PageHero title="Terracrete" description="A Terraforce retaining wall solution for constrained sites using cement stabilised backfill where conventional construction is impractical." bgImage="/images/products/terracrete.webp" />
 
+      {/* Overview with image */}
       <section className="section">
         <div className="container">
           <SectionTitle label="Overview" title="Solutions for constrained sites" align="left" />
-          <ScrollReveal>
-            <div className="wall-sub-overview">
-              <p>Terracrete is used where space or site conditions make conventional geosynthetic reinforced walls impractical. Cement stabilised backfill creates a monolithic reinforced block mass, making it ideal for constrained urban sites and limited-access locations.</p>
+          <div className="rect-specs-layout">
+            <div>
+              <p className="about-text">Terracrete is used where space or site conditions make conventional geosynthetic reinforced walls impractical. Cement stabilised backfill creates a monolithic reinforced block mass, making it ideal for constrained urban sites and limited-access locations.</p>
             </div>
-          </ScrollReveal>
+            <div
+              className="rect-specs-img"
+              style={{
+                backgroundImage: 'url(/images/products/terracrete.webp)',
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+              }}
+            />
+          </div>
         </div>
       </section>
 

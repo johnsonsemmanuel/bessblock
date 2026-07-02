@@ -43,9 +43,7 @@ export default function StepRisers() {
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
               }}
-            >
-              <span>Step profile reference</span>
-            </div>
+            />
           </div>
         </div>
       </section>

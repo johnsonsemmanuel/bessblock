@@ -38,14 +38,23 @@ export default function Terrafix() {
       <div className="page">
       <PageHero title="Terrafix" description="A Terraforce retaining wall block designed for geosynthetic reinforced segmental retaining wall systems where higher wall heights and additional reinforcement are required." bgImage="/images/products/terrafix.webp" />
 
+      {/* Overview with image */}
       <section className="section">
         <div className="container">
           <SectionTitle label="Overview" title="Reinforced wall solutions" align="left" />
-          <ScrollReveal>
-            <div className="wall-sub-overview">
-              <p>Terrafix is engineered for mechanically stabilised earth (MSE) wall construction, where geogrid layers are placed between block courses to create reinforced soil mass. This system enables taller retaining walls while maintaining the aesthetic and practical benefits of the Terraforce block system.</p>
+          <div className="rect-specs-layout">
+            <div>
+              <p className="about-text">Terrafix is engineered for mechanically stabilised earth (MSE) wall construction, where geogrid layers are placed between block courses to create reinforced soil mass. This system enables taller retaining walls while maintaining the aesthetic and practical benefits of the Terraforce block system.</p>
             </div>
-          </ScrollReveal>
+            <div
+              className="rect-specs-img"
+              style={{
+                backgroundImage: 'url(/images/products/terrafix.webp)',
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+              }}
+            />
+          </div>
         </div>
       </section>
 

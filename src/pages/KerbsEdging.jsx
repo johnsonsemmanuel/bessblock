@@ -68,9 +68,7 @@ export default function KerbsEdging() {
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
               }}
-            >
-              <span>Kerb profile reference</span>
-            </div>
+            />
           </div>
         </div>
       </section>

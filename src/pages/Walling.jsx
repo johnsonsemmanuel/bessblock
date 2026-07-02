@@ -92,9 +92,7 @@ export default function Walling() {
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
               }}
-            >
-              <span>Walling reference</span>
-            </div>
+            />
           </div>
         </div>
       </section>
