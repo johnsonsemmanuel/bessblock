@@ -7,11 +7,23 @@ import SectionTitle from '../components/SectionTitle';
 import ScrollReveal from '../components/ScrollReveal';
 import LazyBackground from '../components/LazyBackground';
 import Lightbox from '../components/Lightbox';
+import AnimatedButton from '../components/AnimatedButton';
 import SiteCTA from '../components/SiteCTA';
 import projects from '../data/projects';
 import './ProjectsGallery.css';
 
 const galleryImages = [
+  '/images/gallery/projects/project-gallery.webp',
+  '/images/gallery/paving-slabs/paving-slabs-bessblock.webp',
+  '/images/gallery/products/landscaping-public-realm.webp',
+  '/images/gallery/paving-blocks/orca-decor-project.webp',
+  '/images/gallery/products/retaining-terracing.webp',
+  '/images/gallery/retaining-walls/retaining-walls-action-2.webp',
+  '/images/gallery/retaining-walls/retaining-walls-action-1.webp',
+  '/images/gallery/retaining-walls/l-range-triple.webp',
+  '/images/gallery/retaining-walls/l-range-double.webp',
+  '/images/gallery/retaining-walls/l-range-single.webp',
+  '/images/gallery/retaining-walls/l-range-main.webp',
   '/images/gallery/paving-blocks/interlocking-residential-action.webp',
   '/images/gallery/retaining-walls/retaining-walls-action.webp',
   '/images/gallery/paving-blocks/hexagonal-paving-ghana.webp',
@@ -24,13 +36,19 @@ const galleryImages = [
   '/images/gallery/textured-slabs-pool.webp',
 ];
 
+const PER_PAGE = 6;
+
 export default function ProjectsGallery() {
   const [lightboxIndex, setLightboxIndex] = useState(null);
+  const [visibleCount, setVisibleCount] = useState(PER_PAGE);
 
   const handleLightbox = ({ index }) => {
     if (index === null) setLightboxIndex(null);
     else setLightboxIndex(index);
   };
+
+  const visibleImages = galleryImages.slice(0, visibleCount);
+  const hasMore = visibleCount < galleryImages.length;
 
   return (
     <>
@@ -56,7 +74,6 @@ export default function ProjectsGallery() {
                     viewport={{ once: true, margin: '-40px' }}
                     transition={{ duration: 0.4, delay: i * 0.08 }}
                   >
-                    {/* ─── Image ─── */}
                     <div className="project-card-image-wrap">
                       <div
                         className="project-card-image"
@@ -64,7 +81,6 @@ export default function ProjectsGallery() {
                       />
                       <div className="project-card-image-overlay" />
 
-                      {/* Tags on image */}
                       {highlights.length > 0 && (
                         <div className="project-card-tags">
                           {highlights.slice(0, 2).map((tag, idx) => (
@@ -75,7 +91,6 @@ export default function ProjectsGallery() {
                         </div>
                       )}
 
-                      {/* Hover overlay */}
                       <div className="project-card-hover-overlay">
                         <motion.span
                           whileHover={{ scale: 1.05 }}
@@ -88,7 +103,6 @@ export default function ProjectsGallery() {
                       </div>
                     </div>
 
-                    {/* ─── Content ─── */}
                     <div className="project-card-content">
                       <div className="project-card-body">
                         <h3 className="project-card-title">{project.title}</h3>
@@ -120,7 +134,7 @@ export default function ProjectsGallery() {
         <div className="container">
           <SectionTitle label="Products Gallery" title="Our products in action" />
           <div className="gallery-grid">
-            {galleryImages.map((src, i) => (
+            {visibleImages.map((src, i) => (
               <ScrollReveal key={i} delay={i * 0.03}>
                 <button className="gallery-grid-item" onClick={() => setLightboxIndex(i)} aria-label={`View image ${i + 1}`}>
                   <LazyBackground src={src} className="gallery-grid-bg" />
@@ -128,6 +142,13 @@ export default function ProjectsGallery() {
               </ScrollReveal>
             ))}
           </div>
+          {hasMore && (
+            <div style={{ textAlign: 'center', marginTop: 'var(--spacing-8)' }}>
+              <AnimatedButton onClick={() => setVisibleCount(c => Math.min(c + PER_PAGE, galleryImages.length))}>
+                Load More
+              </AnimatedButton>
+            </div>
+          )}
         </div>
       </section>
 

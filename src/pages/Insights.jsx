@@ -42,8 +42,8 @@ export default function Insights() {
       .finally(() => setLoading(false));
   }, []);
 
-  const featured = posts[0];
-  const rest = posts.slice(1);
+  const featured = posts[1] || posts[0];
+  const rest = posts.filter((_, i) => i !== 1);
   const categories = [...new Set(posts.map(p => p.category))];
 
   return (
