@@ -42,10 +42,15 @@ const installation = [
 ];
 
 const galleryImages = [
+  '/images/gallery/solid-blocks.webp',
+  '/images/products/solid-blocks-1.webp',
   '/images/products/solid-blocks-2.webp',
   '/images/products/solid-blocks-3.webp',
   '/images/products/solid-blocks-4.webp',
   '/images/products/solid-blocks-5.webp',
+  '/images/products/solid-blocks-6.webp',
+  '/images/products/solid-blocks-7.webp',
+  '/images/products/solid-blocks-8.webp',
 ];
 
 const related = [
@@ -166,7 +171,7 @@ export default function SolidConcreteBlocks() {
       {/* Gallery */}
       <section className="section section-light">
         <div className="container">
-          <SectionTitle label="Project Gallery" title="Solid block applications" align="left" />
+          <SectionTitle label="Gallery" title="Solid block applications" align="left" />
           <GalleryLightbox images={galleryImages} />
         </div>
       </section>

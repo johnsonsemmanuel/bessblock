@@ -159,8 +159,8 @@ export default function BarrierKerbs() {
       {/* Project Gallery */}
       <section className="section section-light">
         <div className="container">
-          <SectionTitle label="Project Gallery" title="See it in action" align="left" />
-          <GalleryLightbox images={['/images/products/barrier-kerbs.webp', '/images/products/road-kerbs.webp', '/images/products/demarcation-kerbs.webp']} />
+          <SectionTitle label="Gallery" title="See it in action" align="left" />
+          <GalleryLightbox images={['/images/gallery/kerbs-edging/barrier-kerbs-action.webp', '/images/products/barrier-kerbs.webp', '/images/products/road-kerbs.webp', '/images/products/demarcation-kerbs.webp']} />
         </div>
       </section>
 

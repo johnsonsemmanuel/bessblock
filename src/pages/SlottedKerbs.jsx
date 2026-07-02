@@ -159,8 +159,8 @@ export default function SlottedKerbs() {
       {/* Project Gallery */}
       <section className="section section-light">
         <div className="container">
-          <SectionTitle label="Project Gallery" title="See it in action" align="left" />
-          <GalleryLightbox images={['/images/categories/kerbs-edging.webp', '/images/products/road-kerbs.webp', '/images/products/gutter-kerbs.webp']} />
+          <SectionTitle label="Gallery" title="See it in action" align="left" />
+          <GalleryLightbox images={['/images/gallery/kerbs-edging/road-kerbs-action.webp', '/images/products/road-kerbs.webp', '/images/products/gutter-kerbs.webp']} />
         </div>
       </section>
 

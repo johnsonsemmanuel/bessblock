@@ -46,10 +46,11 @@ const installation = [
 ];
 
 const galleryImages = [
+  '/images/gallery/hollow-blocks.webp',
+  '/images/products/hollow-blocks-1.webp',
   '/images/products/hollow-blocks-2.webp',
   '/images/products/hollow-blocks-3.webp',
   '/images/products/hollow-blocks-4.webp',
-  '/images/products/hollow-blocks-1.webp',
 ];
 
 const related = [
@@ -170,7 +171,7 @@ export default function HollowConcreteBlocks() {
       {/* Gallery */}
       <section className="section section-light">
         <div className="container">
-          <SectionTitle label="Project Gallery" title="Hollow blocks in action" align="left" />
+          <SectionTitle label="Gallery" title="Hollow blocks in action" align="left" />
           <GalleryLightbox images={galleryImages} />
         </div>
       </section>

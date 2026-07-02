@@ -42,9 +42,6 @@ const galleryImages = [
   '/images/products/hexagonal-paving-blocks-2.webp',
   '/images/products/hexagonal-paving-blocks-3.webp',
   '/images/products/hexagonal-paving-blocks-4.webp',
-];
-
-const productImages = [
   '/images/products/hexagonal-paving-ghana.webp',
   '/images/products/hexagonal-paving-ghana-2.webp',
 ];
@@ -183,16 +180,8 @@ export default function HexagonalPavingBlocks() {
       {/* Gallery */}
       <section className="section section-light">
         <div className="container">
-          <SectionTitle label="Project Gallery" title="Hexagonal in the real world" align="left" />
+          <SectionTitle label="Gallery" title="Hexagonal in the real world" align="left" />
           <GalleryLightbox images={galleryImages} />
-        </div>
-      </section>
-
-      {/* Product Images */}
-      <section className="section">
-        <div className="container">
-          <SectionTitle label="Product Images" title="Hexagonal paving block range" align="left" />
-          <GalleryLightbox images={productImages} />
         </div>
       </section>
 

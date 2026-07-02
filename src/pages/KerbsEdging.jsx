@@ -145,8 +145,8 @@ export default function KerbsEdging() {
       {/* Project Gallery */}
       <section className="section section-light">
         <div className="container">
-          <SectionTitle label="Project Gallery" title="See it in action" align="left" />
-          <GalleryLightbox images={['/images/gallery/road-kerbs-delivery.webp', '/images/gallery/paving-blocks-stack.webp', '/images/gallery/solid-blocks.webp']} />
+          <SectionTitle label="Gallery" title="See it in action" align="left" />
+          <GalleryLightbox images={['/images/gallery/kerbs-edging/road-kerbs-action.webp', '/images/gallery/kerbs-edging/barrier-kerbs-action.webp', '/images/gallery/kerbs-edging/demarcation-kerbs-action.webp', '/images/gallery/kerbs-edging/garden-kerbs-action.webp', '/images/gallery/kerbs-edging/gutter-kerbs-action.webp', '/images/gallery/road-kerbs-delivery.webp', '/images/products/road-kerbs.webp', '/images/products/barrier-kerbs.webp', '/images/products/demarcation-kerbs.webp', '/images/products/garden-kerbs.webp', '/images/products/gutter-kerbs.webp']} />
         </div>
       </section>
 

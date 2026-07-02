@@ -43,10 +43,15 @@ const installation = [
 ];
 
 const galleryImages = [
+  '/images/gallery/walling/ceiling-blocks-ghana-1.webp',
+  '/images/gallery/walling/ceiling-blocks-ghana-2.webp',
+  '/images/gallery/walling/ceiling-blocks-ghana-3.webp',
+  '/images/gallery/walling/ceiling-blocks-ghana.webp',
+  '/images/gallery/walling/ceiling-rib-slab-system.webp',
+  '/images/products/ceiling-blocks-1.webp',
   '/images/products/ceiling-blocks-2.webp',
   '/images/products/ceiling-blocks-3.webp',
   '/images/products/ceiling-blocks-rib.webp',
-  '/images/products/ceiling-blocks-1.webp',
 ];
 
 const related = [
@@ -167,7 +172,7 @@ export default function CeilingBlocks() {
       {/* Gallery */}
       <section className="section section-light">
         <div className="container">
-          <SectionTitle label="Project Gallery" title="Ceiling blocks in construction" align="left" />
+          <SectionTitle label="Gallery" title="Ceiling blocks in construction" align="left" />
           <GalleryLightbox images={galleryImages} />
         </div>
       </section>

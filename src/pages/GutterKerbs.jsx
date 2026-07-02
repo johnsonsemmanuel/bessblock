@@ -159,8 +159,8 @@ export default function GutterKerbs() {
       {/* Project Gallery */}
       <section className="section section-light">
         <div className="container">
-          <SectionTitle label="Project Gallery" title="See it in action" align="left" />
-          <GalleryLightbox images={['/images/products/gutter-kerbs.webp', '/images/products/road-kerbs.webp', '/images/products/barrier-kerbs.webp']} />
+          <SectionTitle label="Gallery" title="See it in action" align="left" />
+          <GalleryLightbox images={['/images/gallery/kerbs-edging/gutter-kerbs-action.webp', '/images/products/gutter-kerbs.webp', '/images/products/road-kerbs.webp', '/images/products/barrier-kerbs.webp']} />
         </div>
       </section>
 

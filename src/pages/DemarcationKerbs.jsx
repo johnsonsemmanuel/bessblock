@@ -158,8 +158,8 @@ export default function DemarcationKerbs() {
       {/* Project Gallery */}
       <section className="section section-light">
         <div className="container">
-          <SectionTitle label="Project Gallery" title="See it in action" align="left" />
-          <GalleryLightbox images={['/images/products/demarcation-kerbs.webp', '/images/products/road-kerbs.webp', '/images/products/garden-kerbs.webp']} />
+          <SectionTitle label="Gallery" title="See it in action" align="left" />
+          <GalleryLightbox images={['/images/gallery/kerbs-edging/demarcation-kerbs-action.webp', '/images/products/demarcation-kerbs.webp', '/images/products/road-kerbs.webp', '/images/products/garden-kerbs.webp']} />
         </div>
       </section>
 

@@ -16,6 +16,10 @@ import '../components/ProductTemplate.css';
 const galImages = [
   '/images/gallery/paving-blocks/interlocking-residential-action.webp',
   '/images/gallery/paving-blocks/interlocking-ghana-action.webp',
+  '/images/products/interlocking-paving-1.webp',
+  '/images/products/interlocking-paving-2.webp',
+  '/images/products/interlocking-paving-3.webp',
+  '/images/products/interlocking-paving-4.webp',
 ];
 
 function PlusIcon() {
@@ -185,7 +189,7 @@ export default function InterlockingPavingBlocks() {
       {/* Gallery */}
       <section className="section section-light">
         <div className="container">
-          <SectionTitle label="Project Gallery" title="See interlocking in action" align="left" />
+          <SectionTitle label="Gallery" title="See interlocking in action" align="left" />
           <GalleryLightbox images={galImages} />
         </div>
       </section>

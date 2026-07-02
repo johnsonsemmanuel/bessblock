@@ -80,11 +80,11 @@ export default function StepRisers() {
         </div>
       </section>
 
-      {/* Project Gallery */}
+      {/* Gallery */}
       <section className="section section-light">
         <div className="container">
-          <SectionTitle label="Project Gallery" title="See it in action" align="left" />
-          <GalleryLightbox images={['/images/gallery/step-risers/Paving%20Slabs%20-%20See%20it%20in%20action%20-%20Bessblock%20Concrete%20Product%20Ltd%20----.webp', '/images/gallery/step-risers/Paving%20Slabs%20-%20See%20it%20in%20action%20-%20Bessblock%20Concrete%20Product%20Ltd%20--..webp', '/images/gallery/step-risers/Paving%20Slabs%20-%20See%20it%20in%20action%20-%20Bessblock%20Concrete%20Product%20Ltd%20-..webp']} />
+          <SectionTitle label="Gallery" title="See it in action" align="left" />
+          <GalleryLightbox images={['/images/gallery/step-risers/Paving%20Slabs%20-%20See%20it%20in%20action%20-%20Bessblock%20Concrete%20Product%20Ltd%20----.webp', '/images/gallery/step-risers/Paving%20Slabs%20-%20See%20it%20in%20action%20-%20Bessblock%20Concrete%20Product%20Ltd%20--..webp', '/images/gallery/step-risers/Paving%20Slabs%20-%20See%20it%20in%20action%20-%20Bessblock%20Concrete%20Product%20Ltd%20-..webp', '/images/products/standard-step-risers.webp', '/images/products/wide-tread-steps.webp', '/images/products/bullnose-steps.webp']} />
         </div>
       </section>
 
