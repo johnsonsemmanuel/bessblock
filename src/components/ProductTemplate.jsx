@@ -41,9 +41,9 @@ const categoryGalleryImages = {
     '/images/gallery/step-risers/Paving%20Slabs%20-%20See%20it%20in%20action%20-%20Bessblock%20Concrete%20Product%20Ltd%20-..webp',
   ],
   'kerbs-edging': [
-    '/images/gallery/road-kerbs-delivery.webp',
-    '/images/gallery/paving-blocks-stack.webp',
-    '/images/gallery/solid-blocks.webp',
+    '/images/gallery/kerbs-edging/road-kerbs-action.webp',
+    '/images/gallery/kerbs-edging/barrier-kerbs-action.webp',
+    '/images/gallery/kerbs-edging/demarcation-kerbs-action.webp',
   ],
 };
 

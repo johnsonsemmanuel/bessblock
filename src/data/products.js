@@ -406,6 +406,7 @@ export const productPages = {
     applications: 'Road edges, carriageways, estate roads, parking areas, pavement restraint, traffic separation zones, access roads, highway-related works.',
     installation: 'Lay on a properly prepared concrete bed. Set the kerbs accurately to line and level. Use rear haunching or backing concrete where required. Ensure joints are consistent and properly finished. Protect the units until the bedding and backing have cured. Match the kerb profile to the road design and loading conditions.',
     relatedProducts: ['demarcation-kerbs', 'garden-kerbs', 'barrier-kerbs', 'gutter-kerbs', 'slotted-kerbs'],
+    galleryImages: ['/images/gallery/kerbs-edging/road-kerbs-action.webp', '/images/gallery/kerbs-edging/barrier-kerbs-action.webp', '/images/gallery/kerbs-edging/demarcation-kerbs-action.webp'],
   },
   'demarcation-kerbs': {
     name: 'Demarcation Kerbs',
@@ -431,6 +432,7 @@ export const productPages = {
     applications: 'Cycle lanes, carriageway separation, footpath edges, car park entrances, crossings, urban public realm projects, shared surface transitions, access routes requiring visual separation.',
     installation: 'Set out the kerb line carefully to maintain a consistent route boundary. Install on the correct bedding and backing detail for the site conditions. Match the profile to the intended use, especially where cycle movement is involved. Ensure alignment remains smooth where the kerb is used to create a transition. Use the appropriate finish and accessory details where appearance is important.',
     relatedProducts: ['road-kerbs', 'garden-kerbs', 'barrier-kerbs', 'gutter-kerbs', 'slotted-kerbs'],
+    galleryImages: ['/images/gallery/kerbs-edging/demarcation-kerbs-action.webp', '/images/gallery/kerbs-edging/demarcation-kerbs-action-2.webp', '/images/gallery/kerbs-edging/road-kerbs-action.webp'],
   },
   'garden-kerbs': {
     name: 'Garden Kerbs',
@@ -456,6 +458,7 @@ export const productPages = {
     applications: 'Garden borders, lawn edging, flower bed boundaries, path edges, courtyard landscaping, residential outdoor spaces, park and estate landscaping, decorative softscape separation.',
     installation: 'Excavate a shallow trench to the required line. Prepare a firm and level concrete bedding base. Set the kerbs accurately to line and level. Maintain consistent joints between units. Backfill carefully after installation. Match the kerb edge to the surrounding paving or landscaping detail.',
     relatedProducts: ['road-kerbs', 'demarcation-kerbs', 'barrier-kerbs', 'gutter-kerbs', 'slotted-kerbs'],
+    galleryImages: ['/images/gallery/kerbs-edging/garden-kerbs-action.webp', '/images/gallery/kerbs-edging/road-kerbs-action.webp', '/images/gallery/kerbs-edging/barrier-kerbs-action.webp'],
   },
   'barrier-kerbs': {
     name: 'Barrier Kerbs',
@@ -481,6 +484,7 @@ export const productPages = {
     applications: 'Roads and highways, junction protection, parking area containment, commercial access roads, traffic separation zones, edges requiring vehicle restraint, public realm schemes with higher safety needs, boundary protection around paved areas.',
     installation: 'Excavate the kerb trench to the correct line and level. Lay units on a stable concrete bed. Set kerbs carefully to maintain containment performance. Use rear haunching or backing concrete where needed. Align joints and profiles consistently along the full run. Match the kerb type to the expected traffic and site conditions.',
     relatedProducts: ['road-kerbs', 'demarcation-kerbs', 'garden-kerbs', 'gutter-kerbs', 'slotted-kerbs'],
+    galleryImages: ['/images/gallery/kerbs-edging/barrier-kerbs-action.webp', '/images/gallery/kerbs-edging/road-kerbs-action.webp', '/images/gallery/kerbs-edging/demarcation-kerbs-action.webp'],
   },
   'gutter-kerbs': {
     name: 'Gutter Kerbs',
@@ -506,6 +510,7 @@ export const productPages = {
     applications: 'Roadside drainage detail, carriageway edge restraint, combined kerb and gutter construction, estate roads, parking areas, access roads, channel and runoff control, minor civil engineering works.',
     installation: 'Excavate to the required depth before installation. Compact the base to a firm, even surface. Remove soft or unsuitable material before laying. Set to the correct line, grade, and level. Use preformed filler joints where specified in cast sections. Make good any defects with suitable mortar and replace rejected sections if required.',
     relatedProducts: ['road-kerbs', 'demarcation-kerbs', 'garden-kerbs', 'barrier-kerbs', 'slotted-kerbs'],
+    galleryImages: ['/images/gallery/kerbs-edging/gutter-kerbs-action.webp', '/images/gallery/kerbs-edging/road-kerbs-action.webp', '/images/gallery/kerbs-edging/barrier-kerbs-action.webp'],
   },
   'slotted-kerbs': {
     name: 'Slotted Kerbs',
@@ -531,6 +536,7 @@ export const productPages = {
     applications: 'Roadside drainage edges, car parks, estate roads, access roads, paved runoff control zones, hard landscaping with drainage requirements, public realm and civic schemes, areas needing kerb restraint with water entry points.',
     installation: 'Excavate the trench to the required line and level. Prepare a firm concrete bedding base. Set the kerbs accurately so the slots align with the drainage line. Ensure joints are consistent and secure. Backfill and compact after placement. Match the kerb detail to the surrounding pavement or channel construction.',
     relatedProducts: ['road-kerbs', 'garden-kerbs', 'barrier-kerbs', 'gutter-kerbs', 'demarcation-kerbs'],
+    galleryImages: ['/images/gallery/kerbs-edging/gutter-kerbs-action.webp', '/images/gallery/kerbs-edging/road-kerbs-action.webp', '/images/gallery/kerbs-edging/barrier-kerbs-action.webp'],
   },
   'textured-paving-slabs': {
     name: 'Textured Paving Slabs',
