@@ -35,10 +35,18 @@ const applications = [
 ];
 
 const galleryImages = [
+  '/images/gallery/paving-blocks/hexagonal-ghana-main.webp',
+  '/images/gallery/paving-blocks/hexagonal-ghana-1.webp',
+  '/images/gallery/paving-blocks/hexagonal-residential.webp',
   '/images/products/hexagonal-paving-blocks-1.webp',
   '/images/products/hexagonal-paving-blocks-2.webp',
   '/images/products/hexagonal-paving-blocks-3.webp',
   '/images/products/hexagonal-paving-blocks-4.webp',
+];
+
+const productImages = [
+  '/images/products/hexagonal-paving-ghana.webp',
+  '/images/products/hexagonal-paving-ghana-2.webp',
 ];
 
 const related = [
@@ -177,6 +185,14 @@ export default function HexagonalPavingBlocks() {
         <div className="container">
           <SectionTitle label="Project Gallery" title="Hexagonal in the real world" align="left" />
           <GalleryLightbox images={galleryImages} />
+        </div>
+      </section>
+
+      {/* Product Images */}
+      <section className="section">
+        <div className="container">
+          <SectionTitle label="Product Images" title="Hexagonal paving block range" align="left" />
+          <GalleryLightbox images={productImages} />
         </div>
       </section>
 
