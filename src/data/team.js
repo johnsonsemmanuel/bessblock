@@ -1,14 +1,14 @@
 const team = [
   {
     name: 'Joel Tetteh',
-    role: 'Commercial Manager',
+    role: 'Sales & Marketing Officer',
     bio: 'Drives commercial strategy, customer relationships, and business development across all product lines.',
     image: '/images/team/joel.webp',
   },
   {
     name: 'Name TBC',
-    role: 'Account Manager',
-    bio: 'Details to follow.',
+    role: 'Commercial Manager',
+    bio: '',
     image: '',
   },
   {
@@ -19,7 +19,7 @@ const team = [
   },
   {
     name: 'Hope Soglo',
-    role: 'Sales & Marketing Executive',
+    role: 'Operations Manager',
     bio: 'Drives customer relationships, product promotion, and market development across all product lines.',
     image: '/images/team/hope.webp',
   },
