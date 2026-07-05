@@ -82,7 +82,7 @@ function Layout({ children }) {
       <Footer />
       <CookieConsent />
       <LiveChat />
-      <NewsletterPopup delay={10000} />
+      <NewsletterPopup delay={5000} />
     </>
   );
 }

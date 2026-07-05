@@ -20,7 +20,7 @@ function setDismissed(state) {
   } catch {}
 }
 
-export default function NewsletterPopup({ delay = 10000 }) {
+export default function NewsletterPopup({ delay = 5000 }) {
   const [show, setShow] = useState(false);
   const [email, setEmail] = useState('');
   const [status, setStatus] = useState('idle');
