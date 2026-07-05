@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { getConsent } from '../lib/consent';
 
 const GA4_ID = import.meta.env.VITE_GA4_ID;
 
@@ -6,8 +7,7 @@ export default function Analytics() {
   useEffect(() => {
     if (!GA4_ID || GA4_ID === 'G-PLACEHOLDER') return;
 
-    const consent = localStorage.getItem('bessblock-cookies');
-    if (consent !== 'accepted') return;
+    if (getConsent() !== 'accepted') return;
 
     const script1 = document.createElement('script');
     script1.async = true;

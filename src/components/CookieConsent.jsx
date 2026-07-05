@@ -1,14 +1,22 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Cookie } from 'lucide-react';
+import { getConsent, acceptConsent, declineConsent, clearConsent } from '../lib/consent';
 import './CookieConsent.css';
 
 export default function CookieConsent() {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    const accepted = localStorage.getItem('bessblock-cookies');
-    if (!accepted) {
+    const existing = getConsent();
+    if (!existing) {
+      const legacy = localStorage.getItem('bessblock-cookies');
+      if (legacy === 'accepted' || legacy === 'declined') {
+        if (legacy === 'accepted') acceptConsent();
+        else declineConsent();
+        localStorage.removeItem('bessblock-cookies');
+        return;
+      }
       const timer = setTimeout(() => {
         setVisible(true);
       }, 1000);
@@ -17,17 +25,17 @@ export default function CookieConsent() {
   }, []);
 
   const accept = () => {
-    localStorage.setItem('bessblock-cookies', 'accepted');
+    acceptConsent();
     setVisible(false);
   };
 
   const decline = () => {
-    localStorage.setItem('bessblock-cookies', 'declined');
+    declineConsent();
     setVisible(false);
   };
 
   const showAgain = () => {
-    localStorage.removeItem('bessblock-cookies');
+    clearConsent();
     setVisible(true);
   };
 
