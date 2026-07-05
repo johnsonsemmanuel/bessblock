@@ -86,11 +86,11 @@
 /* ── Yellow ── */
 .abtn-yellow {
   background: var(--color-bessblock-yellow);
-  color: var(--color-grey-900);
+  color: var(--color-bessblock-blue);
 }
 .abtn-yellow:hover {
   background: var(--color-bessblock-yellow-dark);
-  color: var(--color-grey-900);
+  color: var(--color-bessblock-blue);
 }
 .abtn-yellow .abtn-icon {
   background: rgba(0, 0, 0, 0.1);

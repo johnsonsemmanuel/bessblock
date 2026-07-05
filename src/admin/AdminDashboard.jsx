@@ -1,11 +1,13 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { useAdminAuth } from './AdminAuth';
 import { sanityApi, urlFor } from '../lib/sanity';
 import { pmToPt, ptToPm } from '../lib/pmToPt';
 import TipTapEditor from '../components/TipTapEditor';
+import { useToast } from '../components/Toast';
 import {
   LayoutDashboard, FileText, MessageSquare, ClipboardList,
-  LogOut, Plus, Pencil, Trash2, X, Save, Eye, Image, Users, Menu
+  LogOut, Plus, Pencil, Trash2, X, Save, Eye, Image, Users,
+  Search, Download, CheckSquare, Square, ChevronLeft, ChevronRight
 } from 'lucide-react';
 import './admin.css';
 
@@ -13,8 +15,8 @@ const NAV = [
   { id: 'overview', label: 'Overview', icon: LayoutDashboard },
   { id: 'posts', label: 'Blog Posts', icon: FileText },
   { id: 'authors', label: 'Authors', icon: Users },
-  { id: 'contact', label: 'Contact Submissions', icon: MessageSquare },
-  { id: 'quotes', label: 'Quote Requests', icon: ClipboardList },
+  { id: 'contact', label: 'Contact', icon: MessageSquare },
+  { id: 'quotes', label: 'Quotes', icon: ClipboardList },
 ];
 
 const POSTS_QUERY = `*[_type == "post"] | order(publishedAt desc) {
@@ -23,6 +25,8 @@ const POSTS_QUERY = `*[_type == "post"] | order(publishedAt desc) {
 const AUTHORS_QUERY = `*[_type == "author"] | order(name asc) { _id, name, "slug": slug.current, email, role, "avatar": avatar.asset->url }`;
 const CONTACT_QUERY = `*[_type == "contactSubmission"] | order(submittedAt desc) { _id, name, email, company, subject, message, submittedAt, read }`;
 const QUOTES_QUERY = `*[_type == "quoteRequest"] | order(submittedAt desc) { _id, name, email, phone, company, product, quantity, projectDetails, delivery, timeline, status, submittedAt, read }`;
+
+const PER_PAGE = 10;
 
 function formatDate(iso) {
   if (!iso) return '—';
@@ -44,6 +48,53 @@ function statusBadge(status) {
   return map[status] || 'admin-badge-blue';
 }
 
+function exportToCsv(filename, headers, rows) {
+  const csv = [headers.join(','), ...rows.map(r => r.map(c => `"${String(c).replace(/"/g, '""')}"`).join(','))].join('\n');
+  const blob = new Blob([csv], { type: 'text/csv' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = filename;
+  a.click();
+  URL.revokeObjectURL(a.href);
+}
+
+function ConfirmModal({ open, message, onConfirm, onCancel }) {
+  if (!open) return null;
+  return (
+    <div className="admin-confirm-overlay" onClick={onCancel}>
+      <div className="admin-confirm-modal" onClick={e => e.stopPropagation()}>
+        <p>{message}</p>
+        <div className="admin-confirm-actions">
+          <button className="admin-btn admin-btn-outline" onClick={onCancel}>Cancel</button>
+          <button className="admin-btn admin-btn-danger" onClick={onConfirm}>Delete</button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function SearchBar({ value, onChange, placeholder }) {
+  return (
+    <div className="admin-search">
+      <Search size={14} />
+      <input type="text" value={value} onChange={e => onChange(e.target.value)} placeholder={placeholder} />
+      {value && <button className="admin-search-clear" onClick={() => onChange('')}><X size={14} /></button>}
+    </div>
+  );
+}
+
+function Pagination({ page, total, perPage, onChange }) {
+  const totalPages = Math.ceil(total / perPage);
+  if (totalPages <= 1) return null;
+  return (
+    <div className="admin-pagination">
+      <button className="admin-btn admin-btn-outline" disabled={page <= 1} onClick={() => onChange(page - 1)}><ChevronLeft size={14} /></button>
+      <span className="admin-pagination-info">{page} / {totalPages}</span>
+      <button className="admin-btn admin-btn-outline" disabled={page >= totalPages} onClick={() => onChange(page + 1)}><ChevronRight size={14} /></button>
+    </div>
+  );
+}
+
 /* ── Overview ── */
 function Overview({ posts, contacts, quotes }) {
   const unreadContacts = contacts.filter(c => !c.read).length;
@@ -55,9 +106,7 @@ function Overview({ posts, contacts, quotes }) {
           <h1 className="admin-page-title">Dashboard</h1>
           <p className="admin-page-sub">Welcome to the Bessblock content portal.</p>
         </div>
-        <a href="/" target="_blank" rel="noopener noreferrer" className="admin-btn admin-btn-outline">
-          <Eye size={14} /> View Website
-        </a>
+        <a href="/" target="_blank" rel="noopener noreferrer" className="admin-btn admin-btn-outline"><Eye size={14} /> View Website</a>
       </div>
 
       <div className="admin-stats">
@@ -114,12 +163,9 @@ function Overview({ posts, contacts, quotes }) {
 /* ── Author Form ── */
 function AuthorForm({ author, onSave, onCancel }) {
   const editing = !!author?._id;
+  const toast = useToast();
   const [form, setForm] = useState(editing ? {
-    name: author.name || '',
-    slug: author.slug || '',
-    email: author.email || '',
-    role: author.role || '',
-    bio: author.bio || '',
+    name: author.name || '', slug: author.slug || '', email: author.email || '', role: author.role || '', bio: author.bio || '',
   } : { name: '', slug: '', email: '', role: '', bio: '' });
   const [saving, setSaving] = useState(false);
   const [err, setErr] = useState('');
@@ -128,11 +174,7 @@ function AuthorForm({ author, onSave, onCancel }) {
 
   const handleChange = (e) => {
     const { id, value } = e.target;
-    setForm(prev => ({
-      ...prev,
-      [id]: value,
-      ...(id === 'name' && !editing ? { slug: slugify(value) } : {}),
-    }));
+    setForm(prev => ({ ...prev, [id]: value, ...(id === 'name' && !editing ? { slug: slugify(value) } : {}) }));
   };
 
   const handleSave = async () => {
@@ -141,11 +183,9 @@ function AuthorForm({ author, onSave, onCancel }) {
     setErr('');
     try {
       const doc = { _type: 'author', ...form, slug: { _type: 'slug', current: form.slug } };
-      if (editing) {
-        await sanityApi.patch(author._id, doc);
-      } else {
-        await sanityApi.create(doc);
-      }
+      if (editing) await sanityApi.patch(author._id, doc);
+      else await sanityApi.create(doc);
+      toast?.(editing ? 'Author updated' : 'Author created');
       onSave();
     } catch (e) {
       setErr('Save failed: ' + (e.message || 'Unknown error'));
@@ -203,6 +243,7 @@ const CATEGORIES = ['Construction', 'Products', 'Industry News', 'Company News',
 
 function PostForm({ post, onSave, onCancel, authors }) {
   const editing = !!post?._id;
+  const toast = useToast();
   const [form, setForm] = useState(EMPTY_POST);
   const [pmContent, setPmContent] = useState(null);
   const [saving, setSaving] = useState(false);
@@ -214,18 +255,12 @@ function PostForm({ post, onSave, onCancel, authors }) {
     if (editing) {
       const authorId = typeof post.author === 'object' ? post.author?._id || '' : '';
       setForm({
-        title: post.title || '',
-        slug: post.slug || '',
-        authorRef: authorId,
-        category: post.category || 'Construction',
-        excerpt: post.excerpt || '',
-        bodyPm: null,
-        mainImage: post.image || null,
+        title: post.title || '', slug: post.slug || '', authorRef: authorId,
+        category: post.category || 'Construction', excerpt: post.excerpt || '',
+        bodyPm: null, mainImage: post.image || null,
       });
       setPmContent(post.body ? ptToPm(post.body) : null);
-      if (post.image) {
-        setMainImagePreview(urlFor(post.image).width(400).url());
-      }
+      if (post.image) setMainImagePreview(urlFor(post.image).width(400).url());
     }
   }, [post, editing]);
 
@@ -233,11 +268,7 @@ function PostForm({ post, onSave, onCancel, authors }) {
 
   const handleChange = (e) => {
     const { id, value } = e.target;
-    setForm(prev => ({
-      ...prev,
-      [id]: value,
-      ...(id === 'title' && !editing ? { slug: slugify(value) } : {}),
-    }));
+    setForm(prev => ({ ...prev, [id]: value, ...(id === 'title' && !editing ? { slug: slugify(value) } : {}) }));
   };
 
   const handleMainImage = (e) => {
@@ -260,25 +291,15 @@ function PostForm({ post, onSave, onCancel, authors }) {
     try {
       const body = pmContent ? pmToPt(pmContent) : [];
       const doc = {
-        _type: 'post',
-        title: form.title,
-        slug: { _type: 'slug', current: form.slug },
-        category: form.category,
-        excerpt: form.excerpt,
-        publishedAt: editing ? post.publishedAt : new Date().toISOString(),
-        body,
+        _type: 'post', title: form.title, slug: { _type: 'slug', current: form.slug },
+        category: form.category, excerpt: form.excerpt,
+        publishedAt: editing ? post.publishedAt : new Date().toISOString(), body,
       };
-      if (form.authorRef) {
-        doc.author = { _type: 'reference', _ref: form.authorRef };
-      }
-      if (mainImageFile) {
-        doc.mainImage = await uploadImage(mainImageFile);
-      }
-      if (editing) {
-        await sanityApi.patch(post._id, doc);
-      } else {
-        await sanityApi.create(doc);
-      }
+      if (form.authorRef) doc.author = { _type: 'reference', _ref: form.authorRef };
+      if (mainImageFile) doc.mainImage = await uploadImage(mainImageFile);
+      if (editing) await sanityApi.patch(post._id, doc);
+      else await sanityApi.create(doc);
+      toast?.(editing ? 'Post updated' : 'Post created');
       onSave();
     } catch (e) {
       setErr('Save failed: ' + (e.message || 'Unknown error'));
@@ -330,7 +351,7 @@ function PostForm({ post, onSave, onCancel, authors }) {
           <div className="admin-image-upload">
             {mainImagePreview ? (
               <div className="admin-image-preview">
-                <img src={mainImagePreview} alt="Preview" />
+                <img src={mainImagePreview} alt="Preview" loading="lazy" />
                 <button type="button" className="admin-btn admin-btn-outline" onClick={() => { setMainImagePreview(null); setMainImageFile(null); setForm(prev => ({ ...prev, mainImage: null })); }} style={{ marginTop: '0.5rem' }}>
                   <X size={12} /> Remove
                 </button>
@@ -365,12 +386,25 @@ function PostsTab({ posts, onRefresh, authors }) {
   const [view, setView] = useState('list');
   const [editing, setEditing] = useState(null);
   const [deleting, setDeleting] = useState(null);
+  const [confirmDelete, setConfirmDelete] = useState(null);
+  const [search, setSearch] = useState('');
+  const [page, setPage] = useState(1);
+  const toast = useToast();
+
+  const filtered = useMemo(() => {
+    if (!search) return posts;
+    const q = search.toLowerCase();
+    return posts.filter(p => p.title?.toLowerCase().includes(q) || p.category?.toLowerCase().includes(q));
+  }, [posts, search]);
+
+  const paged = filtered.slice(0, page * PER_PAGE);
 
   const handleDelete = async (id) => {
-    if (!confirm('Delete this post? This cannot be undone.')) return;
     setDeleting(id);
+    setConfirmDelete(null);
     await sanityApi.delete(id).catch(() => {});
     setDeleting(null);
+    toast?.('Post deleted');
     onRefresh();
   };
 
@@ -386,53 +420,49 @@ function PostsTab({ posts, onRefresh, authors }) {
           <h1 className="admin-page-title">Blog Posts</h1>
           <p className="admin-page-sub">Manage articles published on the Bessblock website.</p>
         </div>
-        <button className="admin-btn admin-btn-primary" onClick={() => setView('new')}>
-          <Plus size={14} /> New Post
-        </button>
+        <button className="admin-btn admin-btn-primary" onClick={() => setView('new')}><Plus size={14} /> New Post</button>
       </div>
 
+      <SearchBar value={search} onChange={v => { setSearch(v); setPage(1); }} placeholder="Search posts by title or category…" />
+
       <div className="admin-card">
-        {posts.length === 0 ? (
-          <p className="admin-empty">No posts yet. Click <strong>New Post</strong> to get started.</p>
+        {filtered.length === 0 ? (
+          <p className="admin-empty">No posts found.</p>
         ) : (
-          <table className="admin-table">
-            <thead>
-              <tr>
-                <th>Title</th>
-                <th>Category</th>
-                <th>Author</th>
-                <th>Published</th>
-                <th></th>
-              </tr>
-            </thead>
-            <tbody>
-              {posts.map(p => (
-                <tr key={p._id}>
-                  <td className="admin-table-title">{p.title}</td>
-                  <td><span className={`admin-badge ${categoryBadge(p.category)}`}>{p.category || '—'}</span></td>
-                  <td>{authorName(p)}</td>
-                  <td>{formatDate(p.publishedAt)}</td>
-                  <td>
-                    <div style={{ display: 'flex', gap: '0.5rem' }}>
-                      <button className="admin-btn admin-btn-outline" style={{ padding: '0.3rem 0.6rem' }}
-                        onClick={() => { setEditing(p); setView('edit'); }}>
-                        <Pencil size={12} />
-                      </button>
-                      <a href={`/insights/blog/${p.slug}`} target="_blank" rel="noopener" className="admin-btn admin-btn-outline" style={{ padding: '0.3rem 0.6rem' }}>
-                        <Eye size={12} />
-                      </a>
-                      <button className="admin-btn admin-btn-danger" style={{ padding: '0.3rem 0.6rem' }}
-                        onClick={() => handleDelete(p._id)} disabled={deleting === p._id}>
-                        <Trash2 size={12} />
-                      </button>
-                    </div>
-                  </td>
+          <>
+            <table className="admin-table">
+              <thead>
+                <tr>
+                  <th>Title</th>
+                  <th>Category</th>
+                  <th>Author</th>
+                  <th>Published</th>
+                  <th></th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
+              </thead>
+              <tbody>
+                {paged.map(p => (
+                  <tr key={p._id}>
+                    <td className="admin-table-title">{p.title}</td>
+                    <td><span className={`admin-badge ${categoryBadge(p.category)}`}>{p.category || '—'}</span></td>
+                    <td>{authorName(p)}</td>
+                    <td>{formatDate(p.publishedAt)}</td>
+                    <td>
+                      <div style={{ display: 'flex', gap: '0.5rem' }}>
+                        <button className="admin-btn admin-btn-outline" style={{ padding: '0.3rem 0.6rem' }} onClick={() => { setEditing(p); setView('edit'); }}><Pencil size={12} /></button>
+                        <a href={`/insights/blog/${p.slug}`} target="_blank" rel="noopener" className="admin-btn admin-btn-outline" style={{ padding: '0.3rem 0.6rem' }}><Eye size={12} /></a>
+                        <button className="admin-btn admin-btn-danger" style={{ padding: '0.3rem 0.6rem' }} onClick={() => setConfirmDelete(p._id)} disabled={deleting === p._id}><Trash2 size={12} /></button>
+                      </div>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+            <Pagination page={page} total={filtered.length} perPage={PER_PAGE} onChange={setPage} />
+          </>
         )}
       </div>
+      <ConfirmModal open={!!confirmDelete} message="Delete this post? This cannot be undone." onConfirm={() => handleDelete(confirmDelete)} onCancel={() => setConfirmDelete(null)} />
     </>
   );
 }
@@ -443,18 +473,25 @@ function AuthorsTab() {
   const [view, setView] = useState('list');
   const [editing, setEditing] = useState(null);
   const [deleting, setDeleting] = useState(null);
+  const [confirmDelete, setConfirmDelete] = useState(null);
+  const [search, setSearch] = useState('');
+  const toast = useToast();
 
-  const fetch = () => {
-    sanityApi.fetch(AUTHORS_QUERY).then(setAuthors).catch(() => {});
-  };
-
+  const fetch = () => sanityApi.fetch(AUTHORS_QUERY).then(setAuthors).catch(() => {});
   useEffect(() => { fetch(); }, []);
 
+  const filtered = useMemo(() => {
+    if (!search) return authors;
+    const q = search.toLowerCase();
+    return authors.filter(a => a.name?.toLowerCase().includes(q) || a.email?.toLowerCase().includes(q));
+  }, [authors, search]);
+
   const handleDelete = async (id) => {
-    if (!confirm('Delete this author? Posts referencing them will lose the author link.')) return;
     setDeleting(id);
+    setConfirmDelete(null);
     await sanityApi.delete(id).catch(() => {});
     setDeleting(null);
+    toast?.('Author deleted');
     fetch();
   };
 
@@ -468,14 +505,14 @@ function AuthorsTab() {
           <h1 className="admin-page-title">Authors</h1>
           <p className="admin-page-sub">Manage blog authors who can be assigned to posts.</p>
         </div>
-        <button className="admin-btn admin-btn-primary" onClick={() => setView('new')}>
-          <Plus size={14} /> New Author
-        </button>
+        <button className="admin-btn admin-btn-primary" onClick={() => setView('new')}><Plus size={14} /> New Author</button>
       </div>
 
+      <SearchBar value={search} onChange={setSearch} placeholder="Search authors by name or email…" />
+
       <div className="admin-card">
-        {authors.length === 0 ? (
-          <p className="admin-empty">No authors yet. Click <strong>New Author</strong> to add one.</p>
+        {filtered.length === 0 ? (
+          <p className="admin-empty">No authors found.</p>
         ) : (
           <table className="admin-table">
             <thead>
@@ -487,21 +524,15 @@ function AuthorsTab() {
               </tr>
             </thead>
             <tbody>
-              {authors.map(a => (
+              {filtered.map(a => (
                 <tr key={a._id}>
                   <td className="admin-table-title">{a.name}</td>
                   <td>{a.email || '—'}</td>
                   <td>{a.role || '—'}</td>
                   <td>
                     <div style={{ display: 'flex', gap: '0.5rem' }}>
-                      <button className="admin-btn admin-btn-outline" style={{ padding: '0.3rem 0.6rem' }}
-                        onClick={() => { setEditing(a); setView('edit'); }}>
-                        <Pencil size={12} />
-                      </button>
-                      <button className="admin-btn admin-btn-danger" style={{ padding: '0.3rem 0.6rem' }}
-                        onClick={() => handleDelete(a._id)} disabled={deleting === a._id}>
-                        <Trash2 size={12} />
-                      </button>
+                      <button className="admin-btn admin-btn-outline" style={{ padding: '0.3rem 0.6rem' }} onClick={() => { setEditing(a); setView('edit'); }}><Pencil size={12} /></button>
+                      <button className="admin-btn admin-btn-danger" style={{ padding: '0.3rem 0.6rem' }} onClick={() => setConfirmDelete(a._id)} disabled={deleting === a._id}><Trash2 size={12} /></button>
                     </div>
                   </td>
                 </tr>
@@ -510,6 +541,7 @@ function AuthorsTab() {
           </table>
         )}
       </div>
+      <ConfirmModal open={!!confirmDelete} message="Delete this author? Posts referencing them will lose the author link." onConfirm={() => handleDelete(confirmDelete)} onCancel={() => setConfirmDelete(null)} />
     </>
   );
 }
@@ -518,16 +550,57 @@ function AuthorsTab() {
 function ContactTab() {
   const [submissions, setSubmissions] = useState([]);
   const [selected, setSelected] = useState(null);
+  const [search, setSearch] = useState('');
+  const [page, setPage] = useState(1);
+  const [checked, setChecked] = useState(new Set());
+  const toast = useToast();
 
-  const fetch = () => {
-    sanityApi.fetch(CONTACT_QUERY).then(setSubmissions).catch(() => {});
-  };
-
+  const fetch = () => sanityApi.fetch(CONTACT_QUERY).then(setSubmissions).catch(() => {});
   useEffect(() => { fetch(); }, []);
+
+  const filtered = useMemo(() => {
+    if (!search) return submissions;
+    const q = search.toLowerCase();
+    return submissions.filter(s => s.name?.toLowerCase().includes(q) || s.email?.toLowerCase().includes(q) || s.subject?.toLowerCase().includes(q));
+  }, [submissions, search]);
+
+  const paged = filtered.slice(0, page * PER_PAGE);
 
   const markRead = async (id) => {
     await sanityApi.patch(id, { read: true }).catch(() => {});
     fetch();
+  };
+
+  const bulkMarkRead = async () => {
+    for (const id of checked) {
+      await sanityApi.patch(id, { read: true }).catch(() => {});
+    }
+    toast?.(`${checked.size} marked as read`);
+    setChecked(new Set());
+    fetch();
+  };
+
+  const bulkDelete = async () => {
+    for (const id of checked) {
+      await sanityApi.delete(id).catch(() => {});
+    }
+    toast?.(`${checked.size} deleted`);
+    setChecked(new Set());
+    fetch();
+  };
+
+  const toggleCheck = (id) => {
+    setChecked(prev => {
+      const next = new Set(prev);
+      if (next.has(id)) next.delete(id);
+      else next.add(id);
+      return next;
+    });
+  };
+
+  const toggleAll = () => {
+    if (checked.size === paged.length) setChecked(new Set());
+    else setChecked(new Set(paged.map(s => s._id)));
   };
 
   if (selected) {
@@ -557,37 +630,52 @@ function ContactTab() {
           <h1 className="admin-page-title">Contact Submissions</h1>
           <p className="admin-page-sub">Messages received from the contact form.</p>
         </div>
+        <button className="admin-btn admin-btn-outline" onClick={() => exportToCsv('contacts.csv', ['Name', 'Email', 'Company', 'Subject', 'Date', 'Message'], filtered.map(s => [s.name, s.email, s.company || '', s.subject || '', formatDateTime(s.submittedAt), s.message]))}>
+          <Download size={14} /> Export CSV
+        </button>
       </div>
 
+      <SearchBar value={search} onChange={v => { setSearch(v); setPage(1); }} placeholder="Search by name, email, or subject…" />
+
+      {checked.size > 0 && (
+        <div className="admin-bulk-bar">
+          <span>{checked.size} selected</span>
+          <button className="admin-btn admin-btn-outline" onClick={bulkMarkRead}><Eye size={14} /> Mark Read</button>
+          <button className="admin-btn admin-btn-danger" onClick={bulkDelete}><Trash2 size={14} /> Delete</button>
+        </div>
+      )}
+
       <div className="admin-card">
-        {submissions.length === 0 ? (
-          <p className="admin-empty">No submissions yet.</p>
+        {filtered.length === 0 ? (
+          <p className="admin-empty">No submissions found.</p>
         ) : (
-          <table className="admin-table">
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>Subject</th>
-                <th>Date</th>
-                <th></th>
-              </tr>
-            </thead>
-            <tbody>
-              {submissions.map(s => (
-                <tr key={s._id} style={{ fontWeight: s.read ? 'normal' : '600' }}>
-                  <td className="admin-table-title">{s.name} {!s.read && <span className="admin-unread-dot" />}</td>
-                  <td>{s.subject || '—'}</td>
-                  <td>{formatDateTime(s.submittedAt)}</td>
-                  <td>
-                    <button className="admin-btn admin-btn-outline" style={{ padding: '0.3rem 0.6rem' }}
-                      onClick={() => { setSelected(s); if (!s.read) markRead(s._id); }}>
-                      <Eye size={12} />
-                    </button>
-                  </td>
+          <>
+            <table className="admin-table">
+              <thead>
+                <tr>
+                  <th><button className="admin-check-toggle" onClick={toggleAll}>{checked.size === paged.length ? <CheckSquare size={14} /> : <Square size={14} />}</button></th>
+                  <th>Name</th>
+                  <th>Subject</th>
+                  <th>Date</th>
+                  <th></th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
+              </thead>
+              <tbody>
+                {paged.map(s => (
+                  <tr key={s._id} style={{ fontWeight: s.read ? 'normal' : '600' }}>
+                    <td><button className="admin-check-toggle" onClick={() => toggleCheck(s._id)}>{checked.has(s._id) ? <CheckSquare size={14} /> : <Square size={14} />}</button></td>
+                    <td className="admin-table-title">{s.name} {!s.read && <span className="admin-unread-dot" />}</td>
+                    <td>{s.subject || '—'}</td>
+                    <td>{formatDateTime(s.submittedAt)}</td>
+                    <td>
+                      <button className="admin-btn admin-btn-outline" style={{ padding: '0.3rem 0.6rem' }} onClick={() => { setSelected(s); if (!s.read) markRead(s._id); }}><Eye size={12} /></button>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+            <Pagination page={page} total={filtered.length} perPage={PER_PAGE} onChange={setPage} />
+          </>
         )}
       </div>
     </>
@@ -598,12 +686,21 @@ function ContactTab() {
 function QuotesTab() {
   const [submissions, setSubmissions] = useState([]);
   const [selected, setSelected] = useState(null);
+  const [search, setSearch] = useState('');
+  const [page, setPage] = useState(1);
+  const [checked, setChecked] = useState(new Set());
+  const toast = useToast();
 
-  const fetch = () => {
-    sanityApi.fetch(QUOTES_QUERY).then(setSubmissions).catch(() => {});
-  };
-
+  const fetch = () => sanityApi.fetch(QUOTES_QUERY).then(setSubmissions).catch(() => {});
   useEffect(() => { fetch(); }, []);
+
+  const filtered = useMemo(() => {
+    if (!search) return submissions;
+    const q = search.toLowerCase();
+    return submissions.filter(s => s.name?.toLowerCase().includes(q) || s.email?.toLowerCase().includes(q) || s.product?.toLowerCase().includes(q) || s.status?.toLowerCase().includes(q));
+  }, [submissions, search]);
+
+  const paged = filtered.slice(0, page * PER_PAGE);
 
   const markRead = async (id) => {
     await sanityApi.patch(id, { read: true }).catch(() => {});
@@ -612,7 +709,36 @@ function QuotesTab() {
 
   const updateStatus = async (id, status) => {
     await sanityApi.patch(id, { status }).catch(() => {});
+    toast?.('Status updated');
     fetch();
+  };
+
+  const bulkMarkRead = async () => {
+    for (const id of checked) await sanityApi.patch(id, { read: true }).catch(() => {});
+    toast?.(`${checked.size} marked as read`);
+    setChecked(new Set());
+    fetch();
+  };
+
+  const bulkDelete = async () => {
+    for (const id of checked) await sanityApi.delete(id).catch(() => {});
+    toast?.(`${checked.size} deleted`);
+    setChecked(new Set());
+    fetch();
+  };
+
+  const toggleCheck = (id) => {
+    setChecked(prev => {
+      const next = new Set(prev);
+      if (next.has(id)) next.delete(id);
+      else next.add(id);
+      return next;
+    });
+  };
+
+  const toggleAll = () => {
+    if (checked.size === paged.length) setChecked(new Set());
+    else setChecked(new Set(paged.map(s => s._id)));
   };
 
   if (selected) {
@@ -658,39 +784,54 @@ function QuotesTab() {
           <h1 className="admin-page-title">Quote Requests</h1>
           <p className="admin-page-sub">Quote requests from the website.</p>
         </div>
+        <button className="admin-btn admin-btn-outline" onClick={() => exportToCsv('quotes.csv', ['Name', 'Email', 'Phone', 'Company', 'Product', 'Quantity', 'Status', 'Date'], filtered.map(s => [s.name, s.email, s.phone || '', s.company || '', s.product || '', s.quantity || '', s.status || 'pending', formatDateTime(s.submittedAt)]))}>
+          <Download size={14} /> Export CSV
+        </button>
       </div>
 
+      <SearchBar value={search} onChange={v => { setSearch(v); setPage(1); }} placeholder="Search by name, email, product, or status…" />
+
+      {checked.size > 0 && (
+        <div className="admin-bulk-bar">
+          <span>{checked.size} selected</span>
+          <button className="admin-btn admin-btn-outline" onClick={bulkMarkRead}><Eye size={14} /> Mark Read</button>
+          <button className="admin-btn admin-btn-danger" onClick={bulkDelete}><Trash2 size={14} /> Delete</button>
+        </div>
+      )}
+
       <div className="admin-card">
-        {submissions.length === 0 ? (
-          <p className="admin-empty">No quote requests yet.</p>
+        {filtered.length === 0 ? (
+          <p className="admin-empty">No quote requests found.</p>
         ) : (
-          <table className="admin-table">
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>Product</th>
-                <th>Status</th>
-                <th>Date</th>
-                <th></th>
-              </tr>
-            </thead>
-            <tbody>
-              {submissions.map(s => (
-                <tr key={s._id} style={{ fontWeight: s.read ? 'normal' : '600' }}>
-                  <td className="admin-table-title">{s.name} {!s.read && <span className="admin-unread-dot" />}</td>
-                  <td>{s.product || '—'}</td>
-                  <td><span className={`admin-badge ${statusBadge(s.status)}`}>{s.status || 'pending'}</span></td>
-                  <td>{formatDateTime(s.submittedAt)}</td>
-                  <td>
-                    <button className="admin-btn admin-btn-outline" style={{ padding: '0.3rem 0.6rem' }}
-                      onClick={() => { setSelected(s); if (!s.read) markRead(s._id); }}>
-                      <Eye size={12} />
-                    </button>
-                  </td>
+          <>
+            <table className="admin-table">
+              <thead>
+                <tr>
+                  <th><button className="admin-check-toggle" onClick={toggleAll}>{checked.size === paged.length ? <CheckSquare size={14} /> : <Square size={14} />}</button></th>
+                  <th>Name</th>
+                  <th>Product</th>
+                  <th>Status</th>
+                  <th>Date</th>
+                  <th></th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
+              </thead>
+              <tbody>
+                {paged.map(s => (
+                  <tr key={s._id} style={{ fontWeight: s.read ? 'normal' : '600' }}>
+                    <td><button className="admin-check-toggle" onClick={() => toggleCheck(s._id)}>{checked.has(s._id) ? <CheckSquare size={14} /> : <Square size={14} />}</button></td>
+                    <td className="admin-table-title">{s.name} {!s.read && <span className="admin-unread-dot" />}</td>
+                    <td>{s.product || '—'}</td>
+                    <td><span className={`admin-badge ${statusBadge(s.status)}`}>{s.status || 'pending'}</span></td>
+                    <td>{formatDateTime(s.submittedAt)}</td>
+                    <td>
+                      <button className="admin-btn admin-btn-outline" style={{ padding: '0.3rem 0.6rem' }} onClick={() => { setSelected(s); if (!s.read) markRead(s._id); }}><Eye size={12} /></button>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+            <Pagination page={page} total={filtered.length} perPage={PER_PAGE} onChange={setPage} />
+          </>
         )}
       </div>
     </>
@@ -701,67 +842,47 @@ function QuotesTab() {
 export default function AdminDashboard() {
   const { logout } = useAdminAuth();
   const [tab, setTab] = useState('overview');
-  const [menuOpen, setMenuOpen] = useState(false);
   const [posts, setPosts] = useState([]);
   const [authors, setAuthors] = useState([]);
   const [contacts, setContacts] = useState([]);
   const [quotes, setQuotes] = useState([]);
 
-  const fetchPosts = () => {
-    sanityApi.fetch(POSTS_QUERY).then(setPosts).catch(() => {});
-  };
-  const fetchAuthors = () => {
-    sanityApi.fetch(AUTHORS_QUERY).then(setAuthors).catch(() => {});
-  };
-  const fetchContacts = () => {
-    sanityApi.fetch(CONTACT_QUERY).then(setContacts).catch(() => {});
-  };
-  const fetchQuotes = () => {
-    sanityApi.fetch(QUOTES_QUERY).then(setQuotes).catch(() => {});
-  };
+  const fetchPosts = () => sanityApi.fetch(POSTS_QUERY).then(setPosts).catch(() => {});
+  const fetchAuthors = () => sanityApi.fetch(AUTHORS_QUERY).then(setAuthors).catch(() => {});
+  const fetchContacts = () => sanityApi.fetch(CONTACT_QUERY).then(setContacts).catch(() => {});
+  const fetchQuotes = () => sanityApi.fetch(QUOTES_QUERY).then(setQuotes).catch(() => {});
 
   useEffect(() => { fetchPosts(); fetchAuthors(); fetchContacts(); fetchQuotes(); }, []);
 
+  const unreadContacts = contacts.filter(c => !c.read).length;
+  const unreadQuotes = quotes.filter(q => !q.read).length;
+
   return (
     <div className="admin-layout">
-      {menuOpen && <div className="admin-mobile-overlay" onClick={() => setMenuOpen(false)} />}
-
-      <aside className={`admin-sidebar${menuOpen ? ' admin-sidebar-open' : ''}`}>
+      <aside className="admin-sidebar">
         <div className="admin-sidebar-header">
           <div className="admin-sidebar-logo">
-            <img src="/bessblocklogo.png" alt="Bessblock" />
+            <img src="/bessblocklogo.png" alt="Bessblock" loading="lazy" />
           </div>
           <span className="admin-sidebar-badge">Admin Portal</span>
-          <button className="admin-sidebar-close" onClick={() => setMenuOpen(false)}><X size={18} /></button>
         </div>
-
         <nav className="admin-nav">
           <div className="admin-nav-section">Content</div>
           {NAV.map(({ id, label, icon: Icon }) => (
-            <button
-              key={id}
-              className={`admin-nav-item${tab === id ? ' active' : ''}`}
-              onClick={() => { setTab(id); setMenuOpen(false); }}
-            >
+            <button key={id} className={`admin-nav-item${tab === id ? ' active' : ''}`} onClick={() => setTab(id)}>
               <Icon size={16} /> {label}
             </button>
           ))}
         </nav>
-
         <div className="admin-sidebar-footer">
-          <button className="admin-logout-btn" onClick={logout}>
-            <LogOut size={14} /> Sign Out
-          </button>
+          <button className="admin-logout-btn" onClick={logout}><LogOut size={14} /> Sign Out</button>
         </div>
       </aside>
 
       <main className="admin-main">
         <div className="admin-mobile-header">
-          <button className="admin-mobile-menu-btn" onClick={() => setMenuOpen(true)}>
-            <Menu size={20} />
-          </button>
           <span className="admin-mobile-title">{NAV.find(n => n.id === tab)?.label || 'Dashboard'}</span>
-          <div style={{ width: 36 }} />
+          <button className="admin-logout-mobile" onClick={logout}><LogOut size={16} /> Sign Out</button>
         </div>
         {tab === 'overview' && <Overview posts={posts} contacts={contacts} quotes={quotes} />}
         {tab === 'posts' && <PostsTab posts={posts} onRefresh={fetchPosts} authors={authors} />}
@@ -769,6 +890,21 @@ export default function AdminDashboard() {
         {tab === 'contact' && <ContactTab />}
         {tab === 'quotes' && <QuotesTab />}
       </main>
+
+      <nav className="admin-bottom-nav">
+        {NAV.map(({ id, label, icon: Icon }) => {
+          const badge = id === 'contact' ? unreadContacts : id === 'quotes' ? unreadQuotes : 0;
+          return (
+            <button key={id} className={`admin-bottom-nav-item${tab === id ? ' active' : ''}`} onClick={() => setTab(id)}>
+              <span style={{ position: 'relative' }}>
+                <Icon size={20} />
+                {badge > 0 && <span className="admin-nav-badge">{badge}</span>}
+              </span>
+              <span>{label}</span>
+            </button>
+          );
+        })}
+      </nav>
     </div>
   );
 }

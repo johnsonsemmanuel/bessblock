@@ -83,31 +83,33 @@ export default function RectangularPavingBlocks() {
 
       <section className="section section-light">
         <div className="container">
-          <SectionTitle label="Detailed Specifications" title="Sizes & performance data" align="left" />
           <div className="rect-specs-layout">
-            <div className="rect-specs-groups">
-              <ScrollReveal>
-                <div className="rect-spec-group">
-                  <h3 className="rect-spec-group-title">Standard sizes</h3>
-                  <div className="rect-spec-items">
-                    <div className="rect-spec-item">200mm x 100mm x 60mm</div>
-                    <div className="rect-spec-item">200mm x 100mm x 80mm</div>
-                    <div className="rect-spec-item">200mm x 100mm x 100mm</div>
+            <div className="rect-specs-left">
+              <SectionTitle label="Detailed Specifications" title="Sizes & performance data" align="left" />
+              <div className="rect-specs-groups">
+                <ScrollReveal>
+                  <div className="rect-spec-group">
+                    <h3 className="rect-spec-group-title">Standard sizes</h3>
+                    <div className="rect-spec-items">
+                      <div className="rect-spec-item">200mm x 100mm x 60mm</div>
+                      <div className="rect-spec-item">200mm x 100mm x 80mm</div>
+                      <div className="rect-spec-item">200mm x 100mm x 100mm</div>
+                    </div>
                   </div>
-                </div>
-              </ScrollReveal>
-              <ScrollReveal delay={0.05}>
-                <div className="rect-spec-group">
-                  <h3 className="rect-spec-group-title">Performance range</h3>
-                  <div className="rect-spec-items">
-                    <div className="rect-spec-item">Compressive strength: 25 MPa to 50 MPa depending on grade.</div>
-                    <div className="rect-spec-item">Water absorption: Low to moderate depending on finish and cure.</div>
-                    <div className="rect-spec-item">Surface tolerance: Suitable for pedestrian, commercial and domestic paving applications.</div>
-                    <div className="rect-spec-item">Coverage: Approx. 50pcs per m²</div>
-                    <div className="rect-spec-item">Pack quantity: Typically 600pcs per pallet depending on dimensions.</div>
+                </ScrollReveal>
+                <ScrollReveal delay={0.05}>
+                  <div className="rect-spec-group">
+                    <h3 className="rect-spec-group-title">Performance range</h3>
+                    <div className="rect-spec-items">
+                      <div className="rect-spec-item">Compressive strength: 25 MPa to 50 MPa depending on grade.</div>
+                      <div className="rect-spec-item">Water absorption: Low to moderate depending on finish and cure.</div>
+                      <div className="rect-spec-item">Surface tolerance: Suitable for pedestrian, commercial and domestic paving applications.</div>
+                      <div className="rect-spec-item">Coverage: Approx. 50pcs per m²</div>
+                      <div className="rect-spec-item">Pack quantity: Typically 600pcs per pallet depending on dimensions.</div>
+                    </div>
                   </div>
-                </div>
-              </ScrollReveal>
+                </ScrollReveal>
+              </div>
             </div>
 <div
                className="rect-specs-img"

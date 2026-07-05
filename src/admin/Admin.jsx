@@ -1,6 +1,7 @@
 import { AdminAuthProvider, useAdminAuth } from './AdminAuth';
 import AdminLogin from './AdminLogin';
 import AdminDashboard from './AdminDashboard';
+import { ToastProvider } from '../components/Toast';
 
 function AdminGate() {
   const { authed } = useAdminAuth();
@@ -10,7 +11,9 @@ function AdminGate() {
 export default function Admin() {
   return (
     <AdminAuthProvider>
-      <AdminGate />
+      <ToastProvider>
+        <AdminGate />
+      </ToastProvider>
     </AdminAuthProvider>
   );
 }

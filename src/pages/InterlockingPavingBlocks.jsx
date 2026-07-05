@@ -101,15 +101,15 @@ export default function InterlockingPavingBlocks() {
       {/* Overview with image */}
       <section className="section">
         <div className="container">
-          <SectionTitle label="Overview" title="Interlocking precision for pavement stability" align="left" />
           <div className="hex-overview-split">
-            <ScrollReveal direction="left">
-              <div>
+            <div className="hex-overview-left">
+              <SectionTitle label="Overview" title="Interlocking precision for pavement stability" align="left" />
+              <ScrollReveal direction="left">
                 <p className="about-text">
                   Interlocking paving blocks are precision-manufactured concrete paving units designed with a unique shape that locks adjacent blocks together, creating a stable and durable pavement surface. Their superior interlocking capability minimizes movement under heavy loads, making them ideal for both pedestrian and vehicular traffic areas.
                 </p>
-              </div>
-            </ScrollReveal>
+              </ScrollReveal>
+            </div>
             <ScrollReveal direction="right" delay={0.1}>
               <div className="hex-overview-img"
                 style={{ backgroundImage: 'url(/images/products/interlocking-paving-2.webp)', backgroundSize: 'cover', backgroundPosition: 'center' }}
@@ -179,15 +179,17 @@ export default function InterlockingPavingBlocks() {
       {/* Technical Information */}
       <section className="section section-light">
         <div className="container">
-          <SectionTitle label="Technical Information" title="Manufacturing & performance" align="left" />
           <div className="hex-tech-layout">
-            <ScrollReveal direction="left">
-              <div className="hex-tech-text">
-                {techItems.map((item, i) => (
-                  <p key={i}>{item}</p>
-                ))}
-              </div>
-            </ScrollReveal>
+            <div className="hex-tech-left">
+              <SectionTitle label="Technical Information" title="Manufacturing & performance" align="left" />
+              <ScrollReveal direction="left">
+                <div className="hex-tech-text">
+                  {techItems.map((item, i) => (
+                    <p key={i}>{item}</p>
+                  ))}
+                </div>
+              </ScrollReveal>
+            </div>
             <ScrollReveal direction="right" delay={0.1}>
               <div className="hex-tech-img"
                 style={{ backgroundImage: 'url(/images/products/interlocking-paving-3.webp)', backgroundSize: 'cover', backgroundPosition: 'center' }}

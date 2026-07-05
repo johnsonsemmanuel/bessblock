@@ -109,8 +109,8 @@
 
 .hex-overview-split {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--spacing-10);
+  grid-template-columns: 5fr 3fr;
+  gap: var(--spacing-6);
   align-items: center;
 }
 
@@ -128,11 +128,47 @@
   font-size: var(--text-sm);
 }
 
+.rect-specs-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-12);
+  align-items: center;
+}
+
+.rect-specs-left .section-title {
+  margin-bottom: var(--spacing-6);
+}
+
+.rect-specs-left p {
+  font-size: var(--text-base);
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin-bottom: var(--spacing-4);
+}
+
+.rect-specs-left p:last-child {
+  margin-bottom: 0;
+}
+
+.rect-specs-img {
+  border-radius: 10px;
+  background: var(--bg-section);
+  border: 1px solid var(--border);
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+}
+
 .hex-tech-layout {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: var(--spacing-10);
+  gap: var(--spacing-12);
   align-items: center;
+}
+
+.hex-tech-left .section-title {
+  margin-bottom: var(--spacing-6);
 }
 
 .hex-tech-text p {
@@ -147,17 +183,13 @@
 }
 
 .hex-tech-img {
-  aspect-ratio: 4 / 3;
   border-radius: 10px;
   background: var(--bg-section);
   border: 1px solid var(--border);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: var(--spacing-3);
-  color: var(--color-grey-400);
-  font-size: var(--text-sm);
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  aspect-ratio: 4 / 3;
 }
 
 .kerbs-apps {
@@ -193,10 +225,20 @@
     grid-template-columns: 1fr 1fr;
   }
 
-  .hex-overview-split,
+  .rect-specs-layout,
   .hex-tech-layout {
     grid-template-columns: 1fr;
-    gap: var(--spacing-8);
+    gap: var(--spacing-6);
+  }
+
+  .rect-specs-left .section-title,
+  .hex-tech-left .section-title {
+    margin-bottom: var(--spacing-4);
+  }
+
+  .rect-specs-img,
+  .hex-tech-img {
+    aspect-ratio: 16 / 9;
   }
 }
 
@@ -211,11 +253,5 @@
 
   .kerbs-apps {
     grid-template-columns: 1fr;
-  }
-
-  .hex-overview-img,
-  .hex-tech-img {
-    max-width: 240px;
-    margin: 0 auto;
   }
 }

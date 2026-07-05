@@ -65,9 +65,10 @@ export default function RoadKerbs() {
       {/* Overview with image */}
       <section className="section">
         <div className="container">
-          <SectionTitle label="Overview" title="The standard for road edge restraint" align="left" />
           <div className="hex-overview-split">
-            <ScrollReveal direction="left">
+            <div className="hex-overview-left">
+              <SectionTitle label="Overview" title="The standard for road edge restraint" align="left" />
+              <ScrollReveal direction="left">
               <div>
                 <p>Road kerbs are heavy-duty concrete edging units used to separate carriageways from pedestrian areas and to protect the edges of paved surfaces. They are a standard component in highways, estates, commercial developments, and access roads because they help maintain line, level, and durability over time.</p>
                 <p className="about-text" style={{ marginTop: 'var(--spacing-4)' }}>Road Kerbs are the most robust kerb option in the range. The product is suitable where traffic loads, repeated impact, and long-term edge stability are important.</p>
@@ -78,6 +79,7 @@ export default function RoadKerbs() {
                 style={{ backgroundImage: 'url(/images/products/road-kerbs.webp)', backgroundSize: 'cover', backgroundPosition: 'center' }}
               />
             </ScrollReveal>
+            </div>
           </div>
         </div>
       </section>
@@ -107,9 +109,10 @@ export default function RoadKerbs() {
 
       <section className="section section-light">
         <div className="container">
-          <SectionTitle label="Technical Information" title="Performance characteristics" align="left" />
           <div className="hex-tech-layout">
-            <ScrollReveal direction="left">
+            <div className="hex-tech-left">
+              <SectionTitle label="Technical Information" title="Performance characteristics" align="left" />
+              <ScrollReveal direction="left">
               <div className="hex-tech-text">
                 {techItems.map((item, i) => (
                   <p key={i}>{item}</p>
@@ -121,6 +124,7 @@ export default function RoadKerbs() {
                 style={{ backgroundImage: 'url(/images/products/barrier-kerbs.webp)', backgroundSize: 'cover', backgroundPosition: 'center' }}
               />
             </ScrollReveal>
+            </div>
           </div>
         </div>
       </section>

@@ -64,9 +64,9 @@ export default function SlottedKerbs() {
       {/* Overview with image */}
       <section className="section">
         <div className="container">
-          <SectionTitle label="Overview" title="Edge restraint with drainage built in" align="left" />
           <div className="rect-specs-layout">
-            <div>
+            <div className="rect-specs-left">
+              <SectionTitle label="Overview" title="Edge restraint with drainage built in" align="left" />
               <p className="about-text">Slotted kerbs are used where controlled water runoff is needed alongside a strong kerb edge. The slot openings allow water to enter the drainage system more effectively, which makes them useful in streetscape and highway-style detailing.</p>
               <p className="about-text" style={{ marginTop: 'var(--spacing-4)' }}>Slotted Kerbs are a functional civil and landscape product rather than a decorative edging item. The core focus is on drainage support, durability, and clean integration with adjacent paving or road construction.</p>
             </div>
@@ -107,15 +107,17 @@ export default function SlottedKerbs() {
 
       <section className="section section-light">
         <div className="container">
-          <SectionTitle label="Technical Information" title="How slotted kerbs work" align="left" />
           <div className="hex-tech-layout">
-            <ScrollReveal direction="left">
-              <div className="hex-tech-text">
-                {techItems.map((item, i) => (
-                  <p key={i}>{item}</p>
-                ))}
-              </div>
-            </ScrollReveal>
+            <div className="hex-tech-left">
+              <SectionTitle label="Technical Information" title="How slotted kerbs work" align="left" />
+              <ScrollReveal direction="left">
+                <div className="hex-tech-text">
+                  {techItems.map((item, i) => (
+                    <p key={i}>{item}</p>
+                  ))}
+                </div>
+              </ScrollReveal>
+            </div>
             <ScrollReveal direction="right" delay={0.1}>
               <div className="hex-tech-img"
                 style={{ backgroundImage: 'url(/images/products/road-kerbs.webp)', backgroundSize: 'cover', backgroundPosition: 'center' }}

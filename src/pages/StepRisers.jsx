@@ -30,9 +30,9 @@ export default function StepRisers() {
       {/* Overview with image */}
       <section className="section">
         <div className="container">
-          <SectionTitle label="Overview" title="Precast concrete steps for durable stair construction" align="left" />
           <div className="rect-specs-layout">
-            <div>
+            <div className="rect-specs-left">
+              <SectionTitle label="Overview" title="Precast concrete steps for durable stair construction" align="left" />
               <p className="about-text">Our step risers are precast concrete units designed for outdoor stair construction in residential, commercial, and institutional settings. Available in standard, wide tread, and bullnose profiles, each unit is manufactured to precise dimensions for consistent installation and a professional finish.</p>
               <p className="about-text" style={{ marginTop: 'var(--spacing-4)' }}>Whether the project requires straightforward step installations, generous tread depths for public entrances, or rounded-edge finishes for refined stair details, our step range provides reliable performance and visual consistency.</p>
             </div>

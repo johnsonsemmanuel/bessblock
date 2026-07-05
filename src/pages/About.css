@@ -1,3 +1,81 @@
+/* ─── Side-by-side layout for product overviews ─── */
+.hex-overview-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-12);
+  align-items: center;
+}
+
+.hex-overview-left .section-title {
+  margin-bottom: var(--spacing-6);
+}
+
+.hex-overview-left p {
+  font-size: var(--text-base);
+  color: var(--text-secondary);
+  line-height: 1.8;
+}
+
+.hex-overview-img {
+  border-radius: 10px;
+  background: var(--bg-section);
+  border: 1px solid var(--border);
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+}
+
+.rect-specs-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-12);
+  align-items: center;
+}
+
+.rect-specs-left .section-title {
+  margin-bottom: var(--spacing-6);
+}
+
+.rect-specs-left p {
+  font-size: var(--text-base);
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin-bottom: var(--spacing-4);
+}
+
+.rect-specs-left p:last-child {
+  margin-bottom: 0;
+}
+
+.rect-specs-img {
+  border-radius: 10px;
+  background: var(--bg-section);
+  border: 1px solid var(--border);
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+}
+
+@media (max-width: 1024px) {
+  .hex-overview-split,
+  .rect-specs-layout {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-6);
+  }
+
+  .hex-overview-left .section-title,
+  .rect-specs-left .section-title {
+    margin-bottom: var(--spacing-4);
+  }
+
+  .hex-overview-img,
+  .rect-specs-img {
+    aspect-ratio: 16 / 9;
+  }
+}
+
 /* ─── Content layout ─── */
 .about-content {
   max-width: 820px;

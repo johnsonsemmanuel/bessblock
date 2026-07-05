@@ -121,27 +121,29 @@ export default function SolidConcreteBlocks() {
       {/* Specs */}
       <section className="section section-light">
         <div className="container">
-          <SectionTitle label="Detailed Specifications" title="Technical data" align="left" />
           <div className="rect-specs-layout">
-            <div className="rect-specs-groups">
-              <ScrollReveal>
-                <div className="rect-spec-group">
-                  <h3 className="rect-spec-group-title">Standard sizes</h3>
-                  <div className="rect-spec-items">
-                    <div className="rect-spec-item">4", 5", 6", and 8" solid blocks.</div>
-                    <div className="rect-spec-item">Face dimensions: 390mm x 190mm nominal across variants.</div>
+            <div className="rect-specs-left">
+              <SectionTitle label="Detailed Specifications" title="Technical data" align="left" />
+              <div className="rect-specs-groups">
+                <ScrollReveal>
+                  <div className="rect-spec-group">
+                    <h3 className="rect-spec-group-title">Standard sizes</h3>
+                    <div className="rect-spec-items">
+                      <div className="rect-spec-item">4", 5", 6", and 8" solid blocks.</div>
+                      <div className="rect-spec-item">Face dimensions: 390mm x 190mm nominal across variants.</div>
+                    </div>
                   </div>
-                </div>
-              </ScrollReveal>
-              <ScrollReveal delay={0.05}>
-                <div className="rect-spec-group">
-                  <h3 className="rect-spec-group-title">Performance range</h3>
-                  <div className="rect-spec-items">
-                    <div className="rect-spec-item">Compressive strength: Range of 5 MPa to 12 MPa.</div>
-                    <div className="rect-spec-item">Structure: Dense solid body for maximum strength.</div>
+                </ScrollReveal>
+                <ScrollReveal delay={0.05}>
+                  <div className="rect-spec-group">
+                    <h3 className="rect-spec-group-title">Performance range</h3>
+                    <div className="rect-spec-items">
+                      <div className="rect-spec-item">Compressive strength: Range of 5 MPa to 12 MPa.</div>
+                      <div className="rect-spec-item">Structure: Dense solid body for maximum strength.</div>
+                    </div>
                   </div>
-                </div>
-              </ScrollReveal>
+                </ScrollReveal>
+              </div>
             </div>
             <div
               className="rect-specs-img"
@@ -158,15 +160,17 @@ export default function SolidConcreteBlocks() {
       {/* Technical info with image */}
       <section className="section">
         <div className="container">
-          <SectionTitle label="Technical Information" title="Performance characteristics" align="left" />
           <div className="hex-tech-layout">
-            <ScrollReveal direction="left">
-              <div className="hex-tech-text">
-                {techItems.map((item, i) => (
-                  <p key={i}>{item}</p>
-                ))}
-              </div>
-            </ScrollReveal>
+            <div className="hex-tech-left">
+              <SectionTitle label="Technical Information" title="Performance characteristics" align="left" />
+              <ScrollReveal direction="left">
+                <div className="hex-tech-text">
+                  {techItems.map((item, i) => (
+                    <p key={i}>{item}</p>
+                  ))}
+                </div>
+              </ScrollReveal>
+            </div>
             <ScrollReveal direction="right" delay={0.1}>
               <div className="hex-tech-img"
                 style={{ backgroundImage: 'url(/images/products/solid-blocks-1.webp)', backgroundSize: 'cover', backgroundPosition: 'center' }}

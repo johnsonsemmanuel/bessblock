@@ -41,9 +41,9 @@ export default function FourByFourStepBlock() {
       {/* Overview with image */}
       <section className="section">
         <div className="container">
-          <SectionTitle label="Overview" title="Step transitions made simple" align="left" />
           <div className="rect-specs-layout">
-            <div>
+            <div className="rect-specs-left">
+              <SectionTitle label="Overview" title="Step transitions made simple" align="left" />
               <p className="about-text">The 4x4 Step Block enables wall elevation changes without cutting or special detailing, integrating seamlessly with the L Range system for tiered retaining wall layouts.</p>
             </div>
             <div
@@ -67,15 +67,17 @@ export default function FourByFourStepBlock() {
 
       <section className="section">
         <div className="container">
-          <SectionTitle label="Technical Information" title="How it works" align="left" />
           <div className="hex-tech-layout">
-            <ScrollReveal direction="left">
-              <div className="hex-tech-text">
-                {techItems.map((item, i) => (
-                  <p key={i}>{item}</p>
-                ))}
-              </div>
-            </ScrollReveal>
+            <div className="hex-tech-left">
+              <SectionTitle label="Technical Information" title="How it works" align="left" />
+              <ScrollReveal direction="left">
+                <div className="hex-tech-text">
+                  {techItems.map((item, i) => (
+                    <p key={i}>{item}</p>
+                  ))}
+                </div>
+              </ScrollReveal>
+            </div>
             <ScrollReveal direction="right" delay={0.1}>
               <div className="hex-tech-img"
                 style={{ backgroundImage: 'url(/images/products/l-range-standard.webp)', backgroundSize: 'cover', backgroundPosition: 'center' }}

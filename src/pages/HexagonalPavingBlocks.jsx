@@ -91,15 +91,15 @@ export default function HexagonalPavingBlocks() {
       {/* Overview with hex image */}
       <section className="section">
         <div className="container">
-          <SectionTitle label="Overview" title="Geometry that works harder" align="left" />
           <div className="hex-overview-split">
-            <ScrollReveal direction="left">
-              <div>
+            <div className="hex-overview-left">
+              <SectionTitle label="Overview" title="Geometry that works harder" align="left" />
+              <ScrollReveal direction="left">
                 <p className="about-text">
                   Hexagonal paving blocks are precision-manufactured concrete paving units designed with a unique shape that locks adjacent blocks together, creating a stable and durable pavement surface. Their superior interlocking capability minimizes movement under heavy loads, making them ideal for both pedestrian and vehicular traffic areas.
                 </p>
-              </div>
-            </ScrollReveal>
+              </ScrollReveal>
+            </div>
             <ScrollReveal direction="right" delay={0.1}>
               <div className="hex-overview-img"
                 style={{ backgroundImage: 'url(/images/products/hexagonal-paving-blocks-2.webp)', backgroundSize: 'cover', backgroundPosition: 'center' }}
@@ -144,14 +144,16 @@ export default function HexagonalPavingBlocks() {
       {/* Tech Info */}
       <section className="section section-light">
         <div className="container">
-          <SectionTitle label="Technical Information" title="How hexagonal paving works" align="left" />
           <div className="hex-tech-layout">
-            <ScrollReveal direction="left">
-              <div className="hex-tech-text">
-                <p>A specific type of interlocking paving system that features hexagon-shaped units. These blocks are designed to fit together seamlessly, creating a unique and visually appealing pavement surface.</p>
-                <p>Manufactured in a hexagon shape, with six equal sides and angles, allowing them to interlock tightly with neighboring units. Individual units or blocks fit together tightly to form a durable and visually appealing surface. Suitable in commercial and domestic use such as pathways, gardens, footpaths, parking areas etc.</p>
-              </div>
-            </ScrollReveal>
+            <div className="hex-tech-left">
+              <SectionTitle label="Technical Information" title="How hexagonal paving works" align="left" />
+              <ScrollReveal direction="left">
+                <div className="hex-tech-text">
+                  <p>A specific type of interlocking paving system that features hexagon-shaped units. These blocks are designed to fit together seamlessly, creating a unique and visually appealing pavement surface.</p>
+                  <p>Manufactured in a hexagon shape, with six equal sides and angles, allowing them to interlock tightly with neighboring units. Individual units or blocks fit together tightly to form a durable and visually appealing surface. Suitable in commercial and domestic use such as pathways, gardens, footpaths, parking areas etc.</p>
+                </div>
+              </ScrollReveal>
+            </div>
             <ScrollReveal direction="right" delay={0.1}>
               <div className="hex-tech-img"
                 style={{ backgroundImage: 'url(/images/products/hexagonal-paving-blocks-3.webp)', backgroundSize: 'cover', backgroundPosition: 'center' }}

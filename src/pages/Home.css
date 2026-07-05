@@ -284,6 +284,15 @@
   right: 10%;
 }
 
+[data-theme='dark'] .home-trust-card-icon {
+  background: color-mix(in srgb, var(--color-bessblock-blue-light) 18%, transparent);
+  color: var(--color-bessblock-blue-light);
+}
+
+[data-theme='dark'] .home-trust-card-text {
+  color: var(--text);
+}
+
 /* Shared overlay card pattern — both .home-range-card and .home-app-card use these */
 .home-range-card,
 .home-app-card {

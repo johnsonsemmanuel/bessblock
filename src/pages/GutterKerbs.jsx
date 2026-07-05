@@ -64,9 +64,9 @@ export default function GutterKerbs() {
       {/* Overview with image */}
       <section className="section">
         <div className="container">
-          <SectionTitle label="Overview" title="Edge restraint meets drainage" align="left" />
           <div className="rect-specs-layout">
-            <div>
+            <div className="rect-specs-left">
+              <SectionTitle label="Overview" title="Edge restraint meets drainage" align="left" />
               <p className="about-text">Gutter kerbs are used where a kerb and drainage function work together, often along road edges, access routes, and paved surfaces that need controlled runoff. They help channel water while still providing a strong boundary between the carriageway and adjacent areas.</p>
               <p className="about-text" style={{ marginTop: 'var(--spacing-4)' }}>Gutter Kerbs are a functional infrastructure product rather than purely a decorative edge. The emphasis should be on durability, line-and-level accuracy, and the ability to support a clean road or channel detail in both public and private schemes.</p>
             </div>
@@ -107,15 +107,17 @@ export default function GutterKerbs() {
 
       <section className="section section-light">
         <div className="container">
-          <SectionTitle label="Technical Information" title="How gutter kerbs work" align="left" />
           <div className="hex-tech-layout">
-            <ScrollReveal direction="left">
-              <div className="hex-tech-text">
-                {techItems.map((item, i) => (
-                  <p key={i}>{item}</p>
-                ))}
-              </div>
-            </ScrollReveal>
+            <div className="hex-tech-left">
+              <SectionTitle label="Technical Information" title="How gutter kerbs work" align="left" />
+              <ScrollReveal direction="left">
+                <div className="hex-tech-text">
+                  {techItems.map((item, i) => (
+                    <p key={i}>{item}</p>
+                  ))}
+                </div>
+              </ScrollReveal>
+            </div>
             <ScrollReveal direction="right" delay={0.1}>
               <div className="hex-tech-img"
                 style={{ backgroundImage: 'url(/images/products/road-kerbs.webp)', backgroundSize: 'cover', backgroundPosition: 'center' }}

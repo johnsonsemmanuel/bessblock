@@ -99,9 +99,9 @@ export default function CeilingBlocks() {
       {/* Overview with image */}
       <section className="section">
         <div className="container">
-          <SectionTitle label="Overview" title="Rib-and-block slab systems" align="left" />
           <div className="rect-specs-layout">
-            <div>
+            <div className="rect-specs-left">
+              <SectionTitle label="Overview" title="Rib-and-block slab systems" align="left" />
               <p className="about-text">Ceiling blocks are used in rib-and-block slab systems for suspended floors and ceilings. The blocks act as non-structural filler units that sit between precast or cast-in-situ ribs.</p>
             </div>
             <div
@@ -150,15 +150,17 @@ export default function CeilingBlocks() {
       {/* Technical info with image */}
       <section className="section">
         <div className="container">
-          <SectionTitle label="Technical Information" title="How ceiling blocks work" align="left" />
           <div className="hex-tech-layout">
-            <ScrollReveal direction="left">
-              <div className="hex-tech-text">
-                {techItems.map((item, i) => (
-                  <p key={i}>{item}</p>
-                ))}
-              </div>
-            </ScrollReveal>
+            <div className="hex-tech-left">
+              <SectionTitle label="Technical Information" title="How ceiling blocks work" align="left" />
+              <ScrollReveal direction="left">
+                <div className="hex-tech-text">
+                  {techItems.map((item, i) => (
+                    <p key={i}>{item}</p>
+                  ))}
+                </div>
+              </ScrollReveal>
+            </div>
             <ScrollReveal direction="right" delay={0.1}>
               <div className="hex-tech-img"
                 style={{ backgroundImage: 'url(/images/products/ceiling-blocks-1.webp)', backgroundSize: 'cover', backgroundPosition: 'center' }}

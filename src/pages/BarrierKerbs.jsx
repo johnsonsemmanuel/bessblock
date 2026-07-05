@@ -64,9 +64,9 @@ export default function BarrierKerbs() {
       {/* Overview with image */}
       <section className="section">
         <div className="container">
-          <SectionTitle label="Overview" title="Stronger separation where it matters" align="left" />
           <div className="rect-specs-layout">
-            <div>
+            <div className="rect-specs-left">
+              <SectionTitle label="Overview" title="Stronger separation where it matters" align="left" />
               <p className="about-text">Barrier kerbs are heavy-duty concrete kerb units used to create a firmer boundary between traffic and adjoining surfaces. Their role is not just visual; they also help reduce vehicle encroachment and improve safety in higher-risk or higher-load locations.</p>
               <p className="about-text" style={{ marginTop: 'var(--spacing-4)' }}>This is the containment-focused option in the kerb range. They are especially relevant for roads, junctions, busy access routes, and public realm schemes where a more robust interface is needed between carriageway and adjacent areas.</p>
             </div>
@@ -107,15 +107,17 @@ export default function BarrierKerbs() {
 
       <section className="section section-light">
         <div className="container">
-          <SectionTitle label="Technical Information" title="Performance characteristics" align="left" />
           <div className="hex-tech-layout">
-            <ScrollReveal direction="left">
-              <div className="hex-tech-text">
-                {techItems.map((item, i) => (
-                  <p key={i}>{item}</p>
-                ))}
-              </div>
-            </ScrollReveal>
+            <div className="hex-tech-left">
+              <SectionTitle label="Technical Information" title="Performance characteristics" align="left" />
+              <ScrollReveal direction="left">
+                <div className="hex-tech-text">
+                  {techItems.map((item, i) => (
+                    <p key={i}>{item}</p>
+                  ))}
+                </div>
+              </ScrollReveal>
+            </div>
             <ScrollReveal direction="right" delay={0.1}>
               <div className="hex-tech-img"
                 style={{ backgroundImage: 'url(/images/products/road-kerbs.webp)', backgroundSize: 'cover', backgroundPosition: 'center' }}

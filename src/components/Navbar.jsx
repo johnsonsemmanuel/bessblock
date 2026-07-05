@@ -175,7 +175,7 @@ export default function Navbar() {
     <nav ref={navRef} className={`navbar ${scrolled ? 'navbar-scrolled' : ''}`}>
       <div className="navbar-inner container">
         <Link to="/" className="navbar-logo">
-          <img src="/bessblocklogo.png" alt="Bessblock" className="navbar-logo-img" />
+          <img src="/bessblocklogo.png" alt="Bessblock" className="navbar-logo-img" loading="lazy" />
         </Link>
 
         <button
@@ -196,7 +196,7 @@ export default function Navbar() {
               <NavigationMenuList>
                 <NavigationMenuItem>
                   <NavigationMenuLink asChild>
-                    <Link to="/" className={`nm-trigger${isActive(location.pathname, '/') ? ' active' : ''}`}>Home</Link>
+                    <Link to="/" className={`nm-trigger${isActive(location.pathname, '/') ? ' active' : ''}`} aria-current={isActive(location.pathname, '/') ? 'page' : undefined}>Home</Link>
                   </NavigationMenuLink>
                 </NavigationMenuItem>
 
@@ -216,7 +216,7 @@ export default function Navbar() {
 
                 <NavigationMenuItem>
                   <NavigationMenuLink asChild>
-                    <Link to="/projects" className={`nm-trigger${isActive(location.pathname, '/projects') ? ' active' : ''}`}>Projects Gallery</Link>
+                    <Link to="/projects" className={`nm-trigger${isActive(location.pathname, '/projects') ? ' active' : ''}`} aria-current={isActive(location.pathname, '/projects') ? 'page' : undefined}>Projects Gallery</Link>
                   </NavigationMenuLink>
                 </NavigationMenuItem>
 
@@ -229,7 +229,7 @@ export default function Navbar() {
 
                 <NavigationMenuItem>
                   <NavigationMenuLink asChild>
-                    <Link to="/contact" className={`nm-trigger${isActive(location.pathname, '/contact') ? ' active' : ''}`}>Contact</Link>
+                    <Link to="/contact" className={`nm-trigger${isActive(location.pathname, '/contact') ? ' active' : ''}`} aria-current={isActive(location.pathname, '/contact') ? 'page' : undefined}>Contact</Link>
                   </NavigationMenuLink>
                 </NavigationMenuItem>
 

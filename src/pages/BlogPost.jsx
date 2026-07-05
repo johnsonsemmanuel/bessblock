@@ -97,13 +97,13 @@ export default function BlogPost() {
           <div className="container blog-post">
             <Link to="/insights/blog" className="blog-post-back">&larr; Back to Blog</Link>
             <motion.article initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }}>
-              <img src={imageUrl} alt={post.imageAlt || post.title} className="blog-post-image" />
+              <img src={imageUrl} alt={post.imageAlt || post.title} className="blog-post-image" loading="lazy" />
               <h1 className="blog-post-title">{post.title}</h1>
               <div className="blog-post-meta">
                 <span>{dateStr}</span>
                 <span className="blog-card-cat">{post.category}</span>
                 <span className="blog-post-author">
-                  {authorAvatar && <img src={authorAvatar} alt="" className="blog-post-avatar" />}
+                  {authorAvatar && <img src={authorAvatar} alt="" className="blog-post-avatar" loading="lazy" />}
                   By {authorName}
                 </span>
               </div>

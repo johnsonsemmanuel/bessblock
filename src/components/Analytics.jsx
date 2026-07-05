@@ -6,6 +6,9 @@ export default function Analytics() {
   useEffect(() => {
     if (!GA4_ID || GA4_ID === 'G-PLACEHOLDER') return;
 
+    const consent = localStorage.getItem('bessblock-cookies');
+    if (consent !== 'accepted') return;
+
     const script1 = document.createElement('script');
     script1.async = true;
     script1.src = `https://www.googletagmanager.com/gtag/js?id=${GA4_ID}`;

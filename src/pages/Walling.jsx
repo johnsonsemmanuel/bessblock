@@ -80,9 +80,9 @@ export default function Walling() {
 
       <section className="section">
         <div className="container">
-          <SectionTitle label="Technical Range" title="Common specifications" align="left" />
           <div className="rect-specs-layout">
-            <div>
+            <div className="rect-specs-left">
+              <SectionTitle label="Technical Range" title="Common specifications" align="left" />
               <ScrollReveal><SpecSheet specs={techItems} columns={2} /></ScrollReveal>
             </div>
             <div

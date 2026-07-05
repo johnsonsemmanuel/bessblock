@@ -22,7 +22,7 @@ export default function AdminLogin() {
       <div className="admin-login-overlay" />
       <div className="admin-login-card">
         <div className="admin-login-logo">
-          <img src="/bessblocklogo.png" alt="Bessblock" />
+          <img src="/bessblocklogo.png" alt="Bessblock" loading="lazy" />
         </div>
         <h1 className="admin-login-title">Admin Portal</h1>
         <p className="admin-login-sub">Sign in to manage your website content.</p>

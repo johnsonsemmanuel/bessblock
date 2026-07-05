@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { useReducedMotion } from '../lib/animation';
 
 const directionVariants = {
   up: { y: 24 },
@@ -10,6 +11,12 @@ const directionVariants = {
 };
 
 export default function ScrollReveal({ children, className = '', delay = 0, direction = 'up' }) {
+  const reducedMotion = useReducedMotion();
+
+  if (reducedMotion) {
+    return <div className={className}>{children}</div>;
+  }
+
   const dir = directionVariants[direction] || directionVariants.up;
 
   const hidden = { opacity: 0, ...dir };

@@ -55,9 +55,9 @@ export default function LRangeRockFace() {
       {/* Overview with image */}
       <section className="section">
         <div className="container">
-          <SectionTitle label="Overview" title="Rock-face retaining system" align="left" />
           <div className="rect-specs-layout">
-            <div>
+            <div className="rect-specs-left">
+              <SectionTitle label="Overview" title="Rock-face retaining system" align="left" />
               <p className="about-text">The Rock Face Option is part of the Terraforce retaining wall range and is intended for gravity and reinforced retaining wall applications. Its hollow-core, interlocking design supports stable construction while allowing curves and wall angles without restrictive nib-and-slot geometry.</p>
               <p className="about-text" style={{ marginTop: 'var(--spacing-4)' }}>The rock-face finish gives the wall a more textured, natural look, making it suitable for visible landscaping works where appearance matters as much as performance.</p>
             </div>
@@ -98,15 +98,17 @@ export default function LRangeRockFace() {
 
       <section className="section section-light">
         <div className="container">
-          <SectionTitle label="Technical Information" title="Performance characteristics" align="left" />
           <div className="hex-tech-layout">
-            <ScrollReveal direction="left">
-              <div className="hex-tech-text">
-                {techItems.map((item, i) => (
-                  <p key={i}>{item}</p>
-                ))}
-              </div>
-            </ScrollReveal>
+            <div className="hex-tech-left">
+              <SectionTitle label="Technical Information" title="Performance characteristics" align="left" />
+              <ScrollReveal direction="left">
+                <div className="hex-tech-text">
+                  {techItems.map((item, i) => (
+                    <p key={i}>{item}</p>
+                  ))}
+                </div>
+              </ScrollReveal>
+            </div>
             <ScrollReveal direction="right" delay={0.1}>
               <div className="hex-tech-img"
                 style={{ backgroundImage: 'url(/images/products/retaining-walls.webp)', backgroundSize: 'cover', backgroundPosition: 'center' }}

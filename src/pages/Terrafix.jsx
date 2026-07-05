@@ -41,9 +41,9 @@ export default function Terrafix() {
       {/* Overview with image */}
       <section className="section">
         <div className="container">
-          <SectionTitle label="Overview" title="Reinforced wall solutions" align="left" />
           <div className="rect-specs-layout">
-            <div>
+            <div className="rect-specs-left">
+              <SectionTitle label="Overview" title="Reinforced wall solutions" align="left" />
               <p className="about-text">Terrafix is engineered for mechanically stabilised earth (MSE) wall construction, where geogrid layers are placed between block courses to create reinforced soil mass. This system enables taller retaining walls while maintaining the aesthetic and practical benefits of the Terraforce block system.</p>
             </div>
             <div

@@ -58,9 +58,9 @@ export default function LRangeStandard() {
       {/* Overview with image */}
       <section className="section">
         <div className="container">
-          <SectionTitle label="Overview" title="The original Terraforce® block" align="left" />
           <div className="rect-specs-layout">
-            <div>
+            <div className="rect-specs-left">
+              <SectionTitle label="Overview" title="The original Terraforce® block" align="left" />
               <p className="about-text">The L Range - Standard Option is a versatile concrete retaining block for landscaping and erosion control. It is suitable for creating terraced gardens, civil engineering retaining structures, and other projects where soil retention is required.</p>
               <p className="about-text" style={{ marginTop: 'var(--spacing-4)' }}>The block is designed to stack without mortar in most applications, using dry-stacked construction for faster installation and reduced consumables. The hollow-core form also allows the wall to be planted, creating a softer living wall appearance where required.</p>
             </div>
@@ -101,15 +101,17 @@ export default function LRangeStandard() {
 
       <section className="section section-light">
         <div className="container">
-          <SectionTitle label="Technical Information" title="How the system works" align="left" />
           <div className="hex-tech-layout">
-            <ScrollReveal direction="left">
-              <div className="hex-tech-text">
-                {techItems.map((item, i) => (
-                  <p key={i}>{item}</p>
-                ))}
-              </div>
-            </ScrollReveal>
+            <div className="hex-tech-left">
+              <SectionTitle label="Technical Information" title="How the system works" align="left" />
+              <ScrollReveal direction="left">
+                <div className="hex-tech-text">
+                  {techItems.map((item, i) => (
+                    <p key={i}>{item}</p>
+                  ))}
+                </div>
+              </ScrollReveal>
+            </div>
             <ScrollReveal direction="right" delay={0.1}>
               <div className="hex-tech-img"
                 style={{ backgroundImage: 'url(/images/products/retaining-walls.webp)', backgroundSize: 'cover', backgroundPosition: 'center' }}

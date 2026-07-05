@@ -64,9 +64,9 @@ export default function GardenKerbs() {
       {/* Overview with image */}
       <section className="section">
         <div className="container">
-          <SectionTitle label="Overview" title="A refined edge for landscapes" align="left" />
           <div className="rect-specs-layout">
-            <div>
+            <div className="rect-specs-left">
+              <SectionTitle label="Overview" title="A refined edge for landscapes" align="left" />
               <p className="about-text">Garden kerbs are used where a low-profile concrete edge is needed to define landscaped spaces and keep surfaces visually tidy. They are ideal for residential gardens, parks, courtyards, and decorative outdoor schemes where appearance matters as much as function.</p>
               <p className="about-text" style={{ marginTop: 'var(--spacing-4)' }}>This is a practical landscaping product that helps control the spread of gravel, soil, or turf while giving the project a more refined border. The product also fits well with both modern and traditional outdoor settings.</p>
             </div>
@@ -107,15 +107,17 @@ export default function GardenKerbs() {
 
       <section className="section section-light">
         <div className="container">
-          <SectionTitle label="Technical Information" title="Installation principles" align="left" />
           <div className="hex-tech-layout">
-            <ScrollReveal direction="left">
-              <div className="hex-tech-text">
-                {techItems.map((item, i) => (
-                  <p key={i}>{item}</p>
-                ))}
-              </div>
-            </ScrollReveal>
+            <div className="hex-tech-left">
+              <SectionTitle label="Technical Information" title="Installation principles" align="left" />
+              <ScrollReveal direction="left">
+                <div className="hex-tech-text">
+                  {techItems.map((item, i) => (
+                    <p key={i}>{item}</p>
+                  ))}
+                </div>
+              </ScrollReveal>
+            </div>
             <ScrollReveal direction="right" delay={0.1}>
               <div className="hex-tech-img"
                 style={{ backgroundImage: 'url(/images/products/demarcation-kerbs.webp)', backgroundSize: 'cover', backgroundPosition: 'center' }}

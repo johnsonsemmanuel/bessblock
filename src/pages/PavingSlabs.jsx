@@ -30,9 +30,10 @@ export default function PavingSlabs() {
       {/* Overview with image */}
       <section className="section">
         <div className="container">
-          <SectionTitle label="Overview" title="Premium paving slabs for public and commercial spaces" align="left" />
           <div className="hex-overview-split">
-            <ScrollReveal direction="left">
+            <div className="hex-overview-left">
+              <SectionTitle label="Overview" title="Premium paving slabs for public and commercial spaces" align="left" />
+              <ScrollReveal direction="left">
               <div>
                 <p className="about-text">Our paving slabs are designed for pedestrian areas, public spaces, and commercial settings where finish quality and durability matter. Available in textured, smooth, and large format options, each slab is manufactured to precise dimensional standards for consistent installation.</p>
                 <p className="about-text">From civic plazas to residential patios, our slab range offers the flexibility to match the aesthetic and functional requirements of each project.</p>
@@ -43,6 +44,7 @@ export default function PavingSlabs() {
                 style={{ backgroundImage: 'url(/images/products/large-format-slabs.webp)', backgroundSize: 'cover', backgroundPosition: 'center' }}
               />
             </ScrollReveal>
+            </div>
           </div>
         </div>
       </section>

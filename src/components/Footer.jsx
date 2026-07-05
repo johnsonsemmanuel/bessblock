@@ -56,7 +56,7 @@ function SocialIcon({ name }) {
 }
 
 function LogoIcon() {
-  return <img src="/bessblocklogo.png" alt="Bessblock" className="footer-logo-img" />;
+  return <img src="/bessblocklogo.png" alt="Bessblock" className="footer-logo-img" loading="lazy" />;
 }
 
 export default function Footer() {
