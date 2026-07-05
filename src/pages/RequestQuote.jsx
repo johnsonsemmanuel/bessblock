@@ -1,6 +1,7 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Send, CheckCircle, AlertCircle, Building2, FileText, Ruler, Truck, Calendar } from 'lucide-react';
+import { Send, CheckCircle, AlertCircle, Building2, FileText, Ruler, Truck, Calendar, Calculator } from 'lucide-react';
 import PageHero from '../components/PageHero';
 import AnimatedButton from '../components/AnimatedButton';
 import SEO from '../components/SEO';
@@ -33,10 +34,26 @@ function validate(form) {
 }
 
 export default function RequestQuote() {
-  const [form, setForm] = useState(initialForm);
+  const [searchParams] = useSearchParams();
+  const [form, setForm] = useState(() => {
+    const productParam = searchParams.get('product');
+    const quantityParam = searchParams.get('quantity');
+    if (!productParam && !quantityParam) return initialForm;
+
+    const matching = productOptions.find(
+      o => o.label.toLowerCase().trim() === productParam.toLowerCase().trim()
+    );
+
+    return {
+      ...initialForm,
+      product: matching ? matching.value : '',
+      quantity: quantityParam || '',
+    };
+  });
   const [errors, setErrors] = useState({});
   const [status, setStatus] = useState('idle');
   const [touched, setTouched] = useState({});
+  const fromCalculator = searchParams.has('product');
 
   const handleChange = (e) => {
     const { id, value } = e.target;
@@ -162,6 +179,18 @@ export default function RequestQuote() {
                     </motion.div>
                   ) : (
                     <form className="rq-form" onSubmit={handleSubmit} noValidate>
+                      {fromCalculator && (
+                        <motion.div
+                          className="rq-calculator-banner"
+                          initial={{ opacity: 0, y: -8 }}
+                          animate={{ opacity: 1, y: 0 }}
+                        >
+                          <Calculator size={16} />
+                          <span>
+                            Quote pre-filled from your coverage calculator. Adjust the details below and submit.
+                          </span>
+                        </motion.div>
+                      )}
                       <div className="rq-form-section">
                         <h3 className="rq-form-section-title">
                           <Building2 size={16} />

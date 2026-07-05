@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { Calculator, RefreshCw } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
+import { Calculator, RefreshCw, ShoppingCart } from 'lucide-react';
 
 const presetProducts = [
   { label: 'Interlocking Paving (60mm)', unit: 'blocks', coverage: 17, unitLabel: 'blocks' },
@@ -14,6 +15,7 @@ const presetProducts = [
 ];
 
 export default function CoverageCalculator({ className = '' }) {
+  const navigate = useNavigate();
   const [product, setProduct] = useState(presetProducts[0].label);
   const [area, setArea] = useState('');
   const [result, setResult] = useState(null);
@@ -30,12 +32,21 @@ export default function CoverageCalculator({ className = '' }) {
       area: a,
       qty: Math.ceil(qty),
       unit: selected.unitLabel,
+      productLabel: selected.label,
     });
   };
 
   const handleReset = () => {
     setArea('');
     setResult(null);
+  };
+
+  const handleRequestQuote = () => {
+    const params = new URLSearchParams({
+      product: result.productLabel,
+      quantity: `${result.qty.toLocaleString()} ${result.unit}`,
+    });
+    navigate(`/request-quote?${params.toString()}`);
   };
 
   return (
@@ -112,7 +123,7 @@ export default function CoverageCalculator({ className = '' }) {
           <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between' }}>
             <div>
               <p style={{ fontSize: 13, color: 'var(--text-secondary)', marginBottom: 2 }}>
-                For {result.area}m² of {product.toLowerCase()}
+                For {result.area}m² of {result.productLabel.toLowerCase()}
               </p>
               <p style={{ fontSize: 22, fontWeight: 700, color: 'var(--color-bessblock-blue)' }}>
                 ~{result.qty.toLocaleString()}
@@ -134,6 +145,23 @@ export default function CoverageCalculator({ className = '' }) {
               <RefreshCw size={14} />
             </button>
           </div>
+
+          <button
+            onClick={handleRequestQuote}
+            style={{
+              marginTop: 12, width: '100%', padding: '10px 16px', borderRadius: 8, border: 'none',
+              background: 'var(--color-bessblock-yellow)', color: 'var(--color-bessblock-blue)',
+              fontSize: 14, fontWeight: 600, cursor: 'pointer', whiteSpace: 'nowrap',
+              display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8,
+              transition: 'opacity var(--transition-fast)',
+            }}
+            onMouseEnter={e => e.currentTarget.style.opacity = '0.9'}
+            onMouseLeave={e => e.currentTarget.style.opacity = '1'}
+          >
+            <ShoppingCart size={16} />
+            Request a Quote
+          </button>
+
           <p style={{ fontSize: 12, color: 'var(--text-muted)', marginTop: 8, lineHeight: 1.5 }}>
             This is an estimate. Actual quantities may vary depending on layout, cutting waste, and site conditions. Add 5-10% for wastage.
           </p>
