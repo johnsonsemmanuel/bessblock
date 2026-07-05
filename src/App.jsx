@@ -11,6 +11,7 @@ import CookieConsent from './components/CookieConsent';
 import LiveChat from './components/LiveChat';
 import SideLabel from './components/SideLabel';
 import ScrollProgress from './components/ScrollProgress';
+import NewsletterPopup from './components/NewsletterPopup';
 
 const About = lazy(() => import('./pages/About'));
 const ManufacturingQuality = lazy(() => import('./pages/ManufacturingQuality'));
@@ -81,6 +82,7 @@ function Layout({ children }) {
       <Footer />
       <CookieConsent />
       <LiveChat />
+      <NewsletterPopup delay={10000} />
     </>
   );
 }

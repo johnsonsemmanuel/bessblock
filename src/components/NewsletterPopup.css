@@ -1,0 +1,173 @@
+.nlp-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 3000;
+}
+
+.nlp-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3001;
+  width: 400px;
+  max-width: calc(100vw - 32px);
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 40px 32px 32px;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+}
+
+.nlp-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  border: none;
+  background: var(--bg-section);
+  color: var(--text-muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--transition-fast), color var(--transition-fast);
+}
+
+.nlp-close:hover {
+  background: var(--bg);
+  color: var(--text);
+}
+
+.nlp-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--color-bessblock-blue) 12%, transparent);
+  color: var(--color-bessblock-blue);
+  margin-bottom: 16px;
+}
+
+.nlp-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+
+.nlp-desc {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.nlp-form {
+  display: flex;
+  gap: 8px;
+}
+
+.nlp-form input {
+  flex: 1;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  font-size: 14px;
+  font-family: inherit;
+  outline: none;
+  background: var(--bg);
+  color: var(--text);
+  transition: border-color var(--transition-fast);
+}
+
+.nlp-form input:focus {
+  border-color: var(--color-bessblock-blue);
+}
+
+.nlp-form button {
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  background: var(--color-bessblock-blue);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: opacity var(--transition-fast);
+}
+
+.nlp-form button:hover {
+  opacity: 0.9;
+}
+
+.nlp-form button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.nlp-spinner {
+  animation: nlp-spin 1s linear infinite;
+}
+
+@keyframes nlp-spin {
+  to { transform: rotate(360deg); }
+}
+
+.nlp-skip {
+  display: inline-block;
+  margin-top: 14px;
+  background: none;
+  border: none;
+  font-size: 13px;
+  color: var(--text-muted);
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color var(--transition-fast);
+}
+
+.nlp-skip:hover {
+  color: var(--text-secondary);
+}
+
+.nlp-success {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 0;
+}
+
+.nlp-success svg {
+  color: #22c55e;
+}
+
+.nlp-success h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.nlp-success p {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+@media (max-width: 480px) {
+  .nlp-modal {
+    padding: 32px 20px 24px;
+  }
+
+  .nlp-form {
+    flex-direction: column;
+  }
+}
