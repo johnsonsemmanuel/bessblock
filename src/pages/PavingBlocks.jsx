@@ -35,17 +35,15 @@ export default function PavingBlocks() {
             <div className="hex-overview-left">
               <SectionTitle label="Overview" title="Premium paving for commercial and institutional projects" align="left" />
               <ScrollReveal direction="left">
-              <div>
                 <p className="about-text">Our paving blocks are designed for projects that demand durability, dimensional accuracy, and a professional finish. Manufactured to relevant British and European standards, each block type — interlocking, rectangular, and hexagonal — is suited to different loading and aesthetic requirements.</p>
                 <p className="about-text">Whether the application is a public roadway, a housing estate, a car park, or a pedestrian precinct, our paving range provides reliable performance and consistent appearance across the installation.</p>
-              </div>
-            </ScrollReveal>
+              </ScrollReveal>
+            </div>
             <ScrollReveal direction="right" delay={0.1}>
               <div className="hex-overview-img"
                 style={{ backgroundImage: 'url(/images/products/hexagonal-paving-blocks-1.webp)', backgroundSize: 'cover', backgroundPosition: 'center' }}
               />
             </ScrollReveal>
-            </div>
           </div>
         </div>
       </section>
