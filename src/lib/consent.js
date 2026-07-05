@@ -1,20 +1,26 @@
 const COOKIE_NAME = 'bessblock-cookies';
 const YEAR = 365 * 24 * 60 * 60;
 
-function rootDomain() {
-  const parts = window.location.hostname.split('.');
+function isLocal(hostname) {
+  return hostname === 'localhost' || hostname === '127.0.0.1' || hostname === '::1';
+}
+
+function domainAttr() {
+  const host = window.location.hostname;
+  if (isLocal(host)) return '';
+  const parts = host.split('.');
   if (parts.length >= 3 && /^(www|staging|dev|test|admin)$/i.test(parts[0])) {
-    return '.' + parts.slice(1).join('.');
+    return `;domain=.${parts.slice(1).join('.')}`;
   }
   if (parts.length >= 2) {
-    return '.' + parts.slice(-2).join('.');
+    return `;domain=.${parts.slice(-2).join('.')}`;
   }
-  return window.location.hostname;
+  return '';
 }
 
 function setCookie(value) {
-  const domain = rootDomain();
-  document.cookie = `${COOKIE_NAME}=${value};path=/;domain=${domain};max-age=${YEAR};SameSite=Lax`;
+  const d = domainAttr();
+  document.cookie = `${COOKIE_NAME}=${value};path=/${d};max-age=${YEAR};SameSite=Lax`;
 }
 
 function getCookie() {
@@ -23,8 +29,8 @@ function getCookie() {
 }
 
 function removeCookie() {
-  const domain = rootDomain();
-  document.cookie = `${COOKIE_NAME}=;path=/;domain=${domain};max-age=0;SameSite=Lax`;
+  const d = domainAttr();
+  document.cookie = `${COOKIE_NAME}=;path=/${d};max-age=0;SameSite=Lax`;
 }
 
 export function getConsent() {
