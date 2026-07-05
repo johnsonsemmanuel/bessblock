@@ -1,18 +1,20 @@
 .nlp-backdrop {
   position: fixed;
   inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   background: rgba(0, 0, 0, 0.5);
   z-index: 3000;
-  padding: 16px;
 }
 
 .nlp-modal {
-  position: relative;
+  position: fixed;
+  inset: 0;
+  margin: auto;
+  z-index: 3001;
   width: 400px;
-  max-width: 100%;
+  max-width: calc(100vw - 32px);
+  height: fit-content;
+  max-height: calc(100vh - 32px);
+  overflow-y: auto;
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: 18px;
