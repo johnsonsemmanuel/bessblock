@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { BookOpen } from 'lucide-react';
 import SEO from '../components/SEO';
@@ -35,6 +36,23 @@ const galleryImages = [
   '/images/gallery/paving-slabs/paving-slabs-in-action.webp',
   '/images/gallery/textured-slabs-pool.webp',
 ];
+
+const scopeToProduct = {
+  'paving blocks': '/products/paving-blocks',
+  'paving': '/products/paving-blocks',
+  'kerbs': '/products/kerbs-edging',
+  'road kerbs': '/products/kerbs-edging',
+  'edge restraint': '/products/kerbs-edging',
+  'retaining walls': '/products/walling/retaining-walls',
+  'terracing': '/products/walling',
+  'landscaping': '/products/walling',
+  'drainage': '/products/kerbs-edging',
+};
+
+function getProductLink(scope) {
+  const firstType = scope.split(', ')[0].toLowerCase();
+  return scopeToProduct[firstType] || '/products';
+}
 
 const PER_PAGE = 6;
 
@@ -92,14 +110,15 @@ export default function ProjectsGallery() {
                       )}
 
                       <div className="project-card-hover-overlay">
-                        <motion.span
+                        <motion.div
                           whileHover={{ scale: 1.05 }}
                           whileTap={{ scale: 0.95 }}
-                          className="project-card-read-btn"
                         >
-                          <BookOpen size={16} />
-                          View Project
-                        </motion.span>
+                          <Link to={getProductLink(project.scope)} className="project-card-read-btn">
+                            <BookOpen size={16} />
+                            View Products
+                          </Link>
+                        </motion.div>
                       </div>
                     </div>
 

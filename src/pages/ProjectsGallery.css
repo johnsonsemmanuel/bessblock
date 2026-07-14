@@ -115,6 +115,7 @@
   position: relative;
   overflow: hidden;
   transition: transform 150ms ease;
+  text-decoration: none;
 }
 
 .project-card-read-btn:active {

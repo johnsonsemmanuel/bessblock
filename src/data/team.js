@@ -1,11 +1,5 @@
 const team = [
   {
-    name: 'Name TBC',
-    role: 'Commercial Manager',
-    bio: '',
-    image: '',
-  },
-  {
     name: 'Hope Soglo',
     role: 'Operations Manager',
     bio: 'Drives customer relationships, product promotion, and market development across all product lines.',
