@@ -16,14 +16,20 @@ const contactDetails = [
   {
     icon: Phone,
     label: 'Phone',
-    value: '+233 302 555 019',
-    href: 'tel:+233302555019',
+    value: '027 695 5161',
+    href: 'tel:+233276955161',
+  },
+  {
+    icon: Phone,
+    label: 'Phone',
+    value: '024 355 4079',
+    href: 'tel:+233243554079',
   },
   {
     icon: Mail,
     label: 'Email',
-    value: 'info@bessblock.com',
-    href: 'mailto:info@bessblock.com',
+    value: 'sales@bessblock.com',
+    href: 'mailto:sales@bessblock.com',
   },
   {
     icon: Clock,
@@ -284,7 +290,7 @@ export default function Contact() {
                           role="alert"
                         >
                           <AlertCircle size={16} />
-                          <span>Something went wrong. Please try again or email us directly at <a href="mailto:info@bessblock.com">info@bessblock.com</a>.</span>
+                          <span>Something went wrong. Please try again or email us directly at <a href="mailto:sales@bessblock.com">sales@bessblock.com</a>.</span>
                         </motion.div>
                       )}
                     </form>

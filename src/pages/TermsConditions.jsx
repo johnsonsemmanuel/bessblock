@@ -44,8 +44,8 @@ export default function TermsConditions() {
             <h2>10. Contact</h2>
             <p>For questions about these terms, contact us at:<br />
             Bessblock Concrete Products Limited<br />
-            Email: info@bessblock.com<br />
-            Phone: +233 302 555 019</p>
+            Email: sales@bessblock.com<br />
+            Phone: 027 695 5161 / 024 355 4079</p>
           </div>
         </div>
       </section>

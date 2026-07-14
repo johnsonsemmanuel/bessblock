@@ -20,9 +20,9 @@ const organizationSchema = {
   },
   contactPoint: {
     '@type': 'ContactPoint',
-    telephone: '+233-302-555-019',
+    telephone: '027 695 5161 / 024 355 4079',
     contactType: 'sales',
-    email: 'info@bessblock.com',
+    email: 'sales@bessblock.com',
   },
   sameAs: [
     'https://www.linkedin.com/company/bessblock-concrete-products-ltd/',

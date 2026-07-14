@@ -8,10 +8,26 @@ import SEO from '../components/SEO';
 import { productPages } from '../data/products';
 import './RequestQuote.css';
 
-const productOptions = Object.entries(productPages).map(([key, p]) => ({
-  value: key,
-  label: p.name,
-}));
+const discontinuedProducts = [
+  '4x4-step-block',
+  'bullnose-steps',
+  'l-range-rock-face',
+  'large-format-slabs',
+  'smooth-paving-slabs',
+  'standard-step-risers',
+  'terracrete',
+  'terrafix',
+  'terralite',
+  'textured-paving-slabs',
+  'wide-tread-steps',
+];
+
+const productOptions = Object.entries(productPages)
+  .filter(([key]) => !discontinuedProducts.includes(key))
+  .map(([key, p]) => ({
+    value: key,
+    label: p.name,
+  }));
 
 productOptions.sort((a, b) => a.label.localeCompare(b.label));
 
@@ -393,7 +409,7 @@ export default function RequestQuote() {
                           role="alert"
                         >
                           <AlertCircle size={16} />
-                          <span>Something went wrong. Please try again or email us directly at <a href="mailto:info@bessblock.com">info@bessblock.com</a>.</span>
+                          <span>Something went wrong. Please try again or email us directly at <a href="mailto:sales@bessblock.com">sales@bessblock.com</a>.</span>
                         </motion.div>
                       )}
                     </form>
@@ -428,7 +444,8 @@ export default function RequestQuote() {
                   <p className="rq-sidebar-text">
                     You can also reach our sales team directly:
                   </p>
-                  <a href="tel:+233302555019" className="rq-sidebar-phone">+233 302 555 019</a>
+                  <a href="tel:+233276955161" className="rq-sidebar-phone">027 695 5161</a>
+                  <a href="tel:+233243554079" className="rq-sidebar-phone">024 355 4079</a>
                 </div>
 
                 <div className="rq-sidebar-card">

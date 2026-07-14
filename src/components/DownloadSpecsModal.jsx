@@ -138,7 +138,7 @@ export default function DownloadSpecsModal({ open, onClose }) {
           {status === 'error' && (
             <div className="ds-modal-error-banner">
               <AlertCircle size={16} />
-              <span>Something went wrong. Please try again or email us directly at <a href="mailto:info@bessblock.com">info@bessblock.com</a>.</span>
+              <span>Something went wrong. Please try again or email us directly at <a href="mailto:sales@bessblock.com">sales@bessblock.com</a>.</span>
             </div>
           )}
 

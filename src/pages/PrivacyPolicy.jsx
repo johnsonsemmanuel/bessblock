@@ -111,7 +111,7 @@ export default function PrivacyPolicy() {
                   </motion.div>
                 ))}
               </div>
-              <p style={{ marginTop: 'var(--spacing-4)' }}>To exercise these rights, please contact us at <strong>info@bessblock.com</strong>.</p>
+              <p style={{ marginTop: 'var(--spacing-4)' }}>To exercise these rights, please contact us at <strong>sales@bessblock.com</strong>.</p>
             </ScrollReveal>
 
             <ScrollReveal delay={0.3}>
@@ -144,11 +144,11 @@ export default function PrivacyPolicy() {
                   </div>
                   <div className="legal-contact-item">
                     <Mail size={16} />
-                    <span>info@bessblock.com</span>
+                    <span>sales@bessblock.com</span>
                   </div>
                   <div className="legal-contact-item">
                     <Phone size={16} />
-                    <span>+233 302 555 019</span>
+                    <span>027 695 5161 / 024 355 4079</span>
                   </div>
                 </div>
               </div>
