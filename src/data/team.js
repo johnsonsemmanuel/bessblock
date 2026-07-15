@@ -1,5 +1,11 @@
 const team = [
   {
+    name: 'Richmond Joe Kyeremeh',
+    role: 'Commercial Manager',
+    bio: 'Oversees commercial operations, business partnerships, and strategic growth initiatives.',
+    image: '/images/team/richmond.webp',
+  },
+  {
     name: 'Hope Soglo',
     role: 'Operations Manager',
     bio: 'Drives customer relationships, product promotion, and market development across all product lines.',
