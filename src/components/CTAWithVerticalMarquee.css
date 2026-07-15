@@ -75,8 +75,6 @@
 }
 
 .cta-marquee-track-wrapper {
-  display: flex;
-  flex-direction: column;
   height: 100%;
   overflow: hidden;
 }
@@ -86,13 +84,6 @@
   flex-direction: column;
   animation: cta-marquee-up var(--duration, 30s) linear infinite;
   will-change: transform;
-}
-
-.cta-marquee-track-duplicate {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  right: 0;
 }
 
 .cta-marquee-pause-hover {

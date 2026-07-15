@@ -21,11 +21,6 @@ function VerticalMarquee({ children, pauseOnHover = false, reverse = false, spee
         className={`cta-marquee-track${pauseOnHover ? ' cta-marquee-pause-hover' : ''}${reverse ? ' cta-marquee-reverse' : ''}`}
       >
         {children}
-      </div>
-      <div
-        className={`cta-marquee-track cta-marquee-track-duplicate${pauseOnHover ? ' cta-marquee-pause-hover' : ''}${reverse ? ' cta-marquee-reverse' : ''}`}
-        aria-hidden="true"
-      >
         {children}
       </div>
     </div>
