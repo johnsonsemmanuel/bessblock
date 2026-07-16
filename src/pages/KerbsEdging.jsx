@@ -59,7 +59,6 @@ export default function KerbsEdging() {
           <div className="rect-specs-layout">
             <div className="rect-specs-left">
               <SectionTitle label="Overview" title="The foundation of neat edges" align="left" />
-              <div>
               <p className="about-text">Kerbs and edging units are a vital part of paving construction because they define the boundary between surfaces and help prevent movement or crumbling at the edges. They also improve the visual finish of a project by giving it a more complete and professional appearance.</p>
             </div>
             <div
@@ -70,7 +69,6 @@ export default function KerbsEdging() {
                 backgroundPosition: 'center',
               }}
             />
-            </div>
           </div>
         </div>
       </section>

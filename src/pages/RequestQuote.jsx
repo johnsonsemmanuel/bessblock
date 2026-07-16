@@ -445,6 +445,7 @@ export default function RequestQuote() {
                     You can also reach our sales team directly:
                   </p>
                   <a href="tel:+233276955161" className="rq-sidebar-phone">027 695 5161</a>
+                  <span className="rq-sidebar-phone-separator"> / </span>
                   <a href="tel:+233243554079" className="rq-sidebar-phone">024 355 4079</a>
                 </div>
 

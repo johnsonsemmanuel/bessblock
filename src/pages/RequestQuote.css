@@ -214,6 +214,14 @@
   color: var(--color-bessblock-blue-dark);
 }
 
+.rq-sidebar-phone-separator {
+  display: inline-block;
+  font-size: var(--text-lg);
+  font-weight: var(--font-weight-bold);
+  color: var(--text-secondary);
+  margin: 0 var(--spacing-1);
+}
+
 .rq-sidebar-steps {
   display: flex;
   flex-direction: column;

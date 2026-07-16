@@ -122,8 +122,20 @@ export default function ProductTemplate({ productKey, heroImage }) {
               animate="visible"
             >
               <motion.div variants={sectionVariants}>
-                <h2 className="product-section-title">Overview</h2>
-                <p className="product-text">{product.overview}</p>
+                <div className="product-overview-layout">
+                  <div>
+                    <h2 className="product-section-title">Overview</h2>
+                    <p className="product-text">{product.overview}</p>
+                  </div>
+                  {productImages[productKey] && (
+                    <div
+                      className="product-overview-img"
+                      style={{ backgroundImage: `url(${productImages[productKey]})` }}
+                      role="img"
+                      aria-label={product.name}
+                    />
+                  )}
+                </div>
               </motion.div>
 
               {product.benefits && product.benefits.length > 0 && (
