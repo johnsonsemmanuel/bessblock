@@ -95,18 +95,18 @@
 }
 
 [data-theme='dark'] {
-  --color-white: #0f0f14;
-  --color-black: #f0f0f4;
+  --color-white: #ffffff;
+  --color-black: #ffffff;
   --color-grey-50: #18181d;
   --color-grey-100: #1e1e24;
   --color-grey-200: #282830;
   --color-grey-300: #383840;
-  --color-grey-400: #505058;
-  --color-grey-500: #787880;
-  --color-grey-600: #a0a0a8;
-  --color-grey-700: #c8c8d0;
-  --color-grey-800: #e0e0e8;
-  --color-grey-900: #f0f0f4;
+  --color-grey-400: #90909e;
+  --color-grey-500: #b0b0be;
+  --color-grey-600: #c4c4d2;
+  --color-grey-700: #d4d4e0;
+  --color-grey-800: #e8e8f2;
+  --color-grey-900: #ffffff;
 
   --bg: var(--color-grey-50);
   --bg-section: var(--color-grey-100);
@@ -116,13 +116,13 @@
   --bg-rgb: 24 24 29;
   --border: var(--color-grey-200);
   --border-rgb: 40 40 48;
-  --text: var(--color-grey-800);
+  --text: var(--color-grey-900);
   --text-secondary: var(--color-grey-500);
   --text-muted: var(--color-grey-400);
 
   --card: var(--color-grey-100);
-  --card-foreground: var(--color-grey-800);
-  --muted-foreground: var(--color-grey-400);
+  --card-foreground: var(--color-grey-900);
+  --muted-foreground: var(--color-grey-500);
 
   --page-hero-bg: var(--color-bessblock-blue);
 
