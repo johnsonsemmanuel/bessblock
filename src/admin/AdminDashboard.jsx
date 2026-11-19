@@ -1,13 +1,14 @@
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect, useMemo, useCallback } from 'react';
 import { useAdminAuth } from './AdminAuth';
 import { sanityApi, urlFor } from '../lib/sanity';
 import { pmToPt, ptToPm } from '../lib/pmToPt';
 import TipTapEditor from '../components/TipTapEditor';
 import { useToast } from '../components/Toast';
+import { GA_ID_PATTERN, GTM_ID_PATTERN, PLACEHOLDER_GA_ID, normalizeReportUrl } from '../lib/analytics';
 import {
   LayoutDashboard, FileText, MessageSquare, ClipboardList,
   LogOut, Plus, Pencil, Trash2, X, Save, Eye, Image, Users,
-  Search, Download, CheckSquare, Square, ChevronLeft, ChevronRight
+  Search, Download, CheckSquare, Square, ChevronLeft, ChevronRight, BarChart3
 } from 'lucide-react';
 import './admin.css';
 
@@ -18,6 +19,14 @@ const NAV = [
   { id: 'contact', label: 'Contact', icon: MessageSquare },
   { id: 'quotes', label: 'Quotes', icon: ClipboardList },
 ];
+
+const SETTINGS_NAV = [
+  { id: 'analytics', label: 'Analytics', icon: BarChart3 },
+];
+
+const SITE_SETTINGS_QUERY = `*[_type == "siteSettings"][0]{
+  _id, googleAnalyticsId, googleTagManagerId, googleSearchConsoleVerification, lookerStudioReportUrl
+}`;
 
 const POSTS_QUERY = `*[_type == "post"] | order(publishedAt desc) {
   _id, title, "slug": slug.current, author->{name}, category, publishedAt, excerpt, "image": mainImage
@@ -838,6 +847,220 @@ function QuotesTab() {
   );
 }
 
+/* ── Analytics ── */
+function AnalyticsTab() {
+  const toast = useToast();
+  const [settings, setSettings] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [editing, setEditing] = useState(false);
+  const [saving, setSaving] = useState(false);
+  const [form, setForm] = useState({
+    googleAnalyticsId: '',
+    googleTagManagerId: '',
+    googleSearchConsoleVerification: '',
+    lookerStudioReportUrl: '',
+  });
+
+  const load = useCallback(() => {
+    setLoading(true);
+    sanityApi.fetch(SITE_SETTINGS_QUERY)
+      .then((result) => {
+        const doc = Array.isArray(result) ? result[0] : result;
+        setSettings(doc || {});
+      })
+      .catch(() => {
+        setSettings(null);
+        toast?.('Could not load analytics settings.', 'error');
+      })
+      .finally(() => setLoading(false));
+  }, [toast]);
+
+  useEffect(() => { queueMicrotask(load); }, [load]);
+
+  const startEdit = () => {
+    const current = settings || {};
+    setForm({
+      googleAnalyticsId: current.googleAnalyticsId === PLACEHOLDER_GA_ID ? '' : (current.googleAnalyticsId || ''),
+      googleTagManagerId: current.googleTagManagerId || '',
+      googleSearchConsoleVerification: current.googleSearchConsoleVerification || '',
+      lookerStudioReportUrl: current.lookerStudioReportUrl || '',
+    });
+    setEditing(true);
+  };
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setForm((previous) => ({ ...previous, [name]: value }));
+  };
+
+  const save = async () => {
+    const gaId = form.googleAnalyticsId.trim().toUpperCase();
+    const gtmId = form.googleTagManagerId.trim().toUpperCase();
+    const gsc = form.googleSearchConsoleVerification.trim();
+    const reportRaw = form.lookerStudioReportUrl.trim();
+
+    if (gaId && !GA_ID_PATTERN.test(gaId)) {
+      toast?.('GA4 Measurement ID must look like G-XXXXXXXXXX.', 'error');
+      return;
+    }
+    if (gtmId && !GTM_ID_PATTERN.test(gtmId)) {
+      toast?.('GTM Container ID must look like GTM-XXXXXXX.', 'error');
+      return;
+    }
+    if (!gaId && !gtmId) {
+      toast?.('Enter a GA4 Measurement ID or a GTM Container ID.', 'error');
+      return;
+    }
+    const reportUrl = normalizeReportUrl(reportRaw);
+    if (reportRaw && !reportUrl) {
+      toast?.('Report link must be an https link from lookerstudio.google.com.', 'error');
+      return;
+    }
+
+    setSaving(true);
+    try {
+      const patch = {
+        googleAnalyticsId: gaId,
+        googleTagManagerId: gtmId,
+        googleSearchConsoleVerification: gsc,
+        lookerStudioReportUrl: reportUrl,
+      };
+      if (settings?._id) await sanityApi.patch(settings._id, patch);
+      else await sanityApi.create({ _type: 'siteSettings', ...patch });
+      setEditing(false);
+      await load();
+      toast?.('Analytics keys saved. The site reads them on the next page load.', 'success', 5000);
+    } catch (error) {
+      toast?.(`Save failed: ${error.message}`, 'error');
+    } finally {
+      setSaving(false);
+    }
+  };
+
+  const current = settings || {};
+  const gaId = current.googleAnalyticsId || '';
+  const gtmId = current.googleTagManagerId || '';
+  const gsc = current.googleSearchConsoleVerification || '';
+  const reportUrl = normalizeReportUrl(current.lookerStudioReportUrl);
+  const active = GA_ID_PATTERN.test(gaId) || GTM_ID_PATTERN.test(gtmId);
+
+  if (editing) {
+    return (
+      <>
+        <div className="admin-topbar">
+          <div>
+            <h1 className="admin-page-title">Analytics</h1>
+            <p className="admin-page-sub">Edit tracking keys for bessblock.com</p>
+          </div>
+        </div>
+        <div className="admin-card">
+          <div className="admin-card-header">
+            <span className="admin-card-title">Edit keys</span>
+            <button className="admin-btn admin-btn-outline" onClick={() => setEditing(false)}><X size={14} /> Cancel</button>
+          </div>
+          <div className="admin-form">
+            <div className="admin-form-row">
+              <div className="admin-form-group">
+                <label htmlFor="gaMeasurementId">GA4 Measurement ID</label>
+                <input id="gaMeasurementId" name="googleAnalyticsId" value={form.googleAnalyticsId} onChange={handleChange} placeholder="G-XXXXXXXXXX" />
+                <small>From GA4 under Admin, Data streams, Web. Leave blank if you use Tag Manager.</small>
+              </div>
+              <div className="admin-form-group">
+                <label htmlFor="gtmContainerId">GTM Container ID</label>
+                <input id="gtmContainerId" name="googleTagManagerId" value={form.googleTagManagerId} onChange={handleChange} placeholder="GTM-XXXXXXX" />
+                <small>From Tag Manager under Admin, Container Settings. Leave blank if you use GA4 directly.</small>
+              </div>
+            </div>
+            <div className="admin-form-row">
+              <div className="admin-form-group">
+                <label htmlFor="gscVerification">Search Console verification code (optional)</label>
+                <input id="gscVerification" name="googleSearchConsoleVerification" value={form.googleSearchConsoleVerification} onChange={handleChange} placeholder="Verification code from the HTML tag method" />
+                <small>Use the code only — not the full meta tag or a verification file name.</small>
+              </div>
+              <div className="admin-form-group">
+                <label htmlFor="lookerReport">Looker Studio report link (optional)</label>
+                <input id="lookerReport" name="lookerStudioReportUrl" value={form.lookerStudioReportUrl} onChange={handleChange} placeholder="https://lookerstudio.google.com/..." />
+                <small>Build the report from your GA4 property, then Share, Enable embedding.</small>
+              </div>
+            </div>
+            <div className="admin-form-actions">
+              <button className="admin-btn admin-btn-outline" onClick={() => setEditing(false)}>Cancel</button>
+              <button className="admin-btn admin-btn-primary" onClick={save} disabled={saving}>
+                <Save size={14} /> {saving ? 'Saving…' : 'Save keys'}
+              </button>
+            </div>
+          </div>
+        </div>
+      </>
+    );
+  }
+
+  return (
+    <>
+      <div className="admin-topbar">
+        <div>
+          <h1 className="admin-page-title">Analytics</h1>
+          <p className="admin-page-sub">Tracking keys are saved here and read by the live site — no code changes needed.</p>
+        </div>
+      </div>
+
+      <div className="admin-card">
+        <div className="admin-card-header">
+          <span className="admin-card-title">Tracking keys</span>
+        </div>
+        {loading ? (
+          <p>Loading analytics settings…</p>
+        ) : !settings ? (
+          <p>Could not load analytics settings. Check the Sanity connection and try again.</p>
+        ) : (
+          <div className="admin-table-wrap">
+            <table className="admin-table">
+              <thead>
+                <tr>
+                  <th>Property</th>
+                  <th>GA4 Measurement ID</th>
+                  <th>GTM Container ID</th>
+                  <th>Search Console</th>
+                  <th>Report</th>
+                  <th>Status</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td className="admin-table-title">Bessblock<br /><code>bessblock.com</code></td>
+                  <td>{gaId ? <code>{gaId}</code> : '—'}</td>
+                  <td>{gtmId ? <code>{gtmId}</code> : '—'}</td>
+                  <td>{gsc ? 'Set' : '—'}</td>
+                  <td>{reportUrl ? 'Linked' : '—'}</td>
+                  <td><span className={`admin-badge ${active ? 'admin-badge-green' : 'admin-badge-orange'}`}>{active ? 'Active' : 'Not set'}</span></td>
+                  <td><button className="admin-btn admin-btn-outline" onClick={startEdit}><Pencil size={14} /> Edit keys</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        )}
+      </div>
+
+      {reportUrl && (
+        <div className="admin-card" style={{ marginTop: '1.5rem' }}>
+          <div className="admin-card-header">
+            <span className="admin-card-title">Detailed analytics, live from Looker Studio</span>
+            <a href={reportUrl} target="_blank" rel="noopener noreferrer" className="admin-btn admin-btn-outline">Open in a new tab</a>
+          </div>
+          <iframe
+            title="Bessblock analytics report"
+            src={reportUrl}
+            loading="lazy"
+            allow="autoplay; fullscreen"
+            style={{ display: 'block', width: '100%', height: '70vh', minHeight: 480, border: 0, background: '#fff' }}
+          />
+        </div>
+      )}
+    </>
+  );
+}
+
 /* ── Main Dashboard ── */
 export default function AdminDashboard() {
   const { logout } = useAdminAuth();
@@ -873,6 +1096,12 @@ export default function AdminDashboard() {
               <Icon size={16} /> {label}
             </button>
           ))}
+          <div className="admin-nav-section">Settings</div>
+          {SETTINGS_NAV.map(({ id, label, icon: Icon }) => (
+            <button key={id} className={`admin-nav-item${tab === id ? ' active' : ''}`} onClick={() => setTab(id)}>
+              <Icon size={16} /> {label}
+            </button>
+          ))}
         </nav>
         <div className="admin-sidebar-footer">
           <button className="admin-logout-btn" onClick={logout}><LogOut size={14} /> Sign Out</button>
@@ -881,7 +1110,7 @@ export default function AdminDashboard() {
 
       <main className="admin-main">
         <div className="admin-mobile-header">
-          <span className="admin-mobile-title">{NAV.find(n => n.id === tab)?.label || 'Dashboard'}</span>
+          <span className="admin-mobile-title">{[...NAV, ...SETTINGS_NAV].find(n => n.id === tab)?.label || 'Dashboard'}</span>
           <button className="admin-logout-mobile" onClick={logout}><LogOut size={16} /> Sign Out</button>
         </div>
         {tab === 'overview' && <Overview posts={posts} contacts={contacts} quotes={quotes} />}
@@ -889,10 +1118,11 @@ export default function AdminDashboard() {
         {tab === 'authors' && <AuthorsTab />}
         {tab === 'contact' && <ContactTab />}
         {tab === 'quotes' && <QuotesTab />}
+        {tab === 'analytics' && <AnalyticsTab />}
       </main>
 
       <nav className="admin-bottom-nav">
-        {NAV.map(({ id, label, icon: Icon }) => {
+        {[...NAV, ...SETTINGS_NAV].map(({ id, label, icon: Icon }) => {
           const badge = id === 'contact' ? unreadContacts : id === 'quotes' ? unreadQuotes : 0;
           return (
             <button key={id} className={`admin-bottom-nav-item${tab === id ? ' active' : ''}`} onClick={() => setTab(id)}>

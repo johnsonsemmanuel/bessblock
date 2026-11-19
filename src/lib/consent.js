@@ -1,5 +1,6 @@
 const COOKIE_NAME = 'bessblock-cookies';
 const YEAR = 365 * 24 * 60 * 60;
+const CONSENT_EVENT = 'bessblock:consentchange';
 
 function isLocal(hostname) {
   return hostname === 'localhost' || hostname === '127.0.0.1' || hostname === '::1';
@@ -37,14 +38,26 @@ export function getConsent() {
   return getCookie();
 }
 
+export function onConsentChange(callback) {
+  window.addEventListener(CONSENT_EVENT, callback);
+  return () => window.removeEventListener(CONSENT_EVENT, callback);
+}
+
+function notify() {
+  window.dispatchEvent(new Event(CONSENT_EVENT));
+}
+
 export function acceptConsent() {
   setCookie('accepted');
+  notify();
 }
 
 export function declineConsent() {
   setCookie('declined');
+  notify();
 }
 
 export function clearConsent() {
   removeCookie();
+  notify();
 }
