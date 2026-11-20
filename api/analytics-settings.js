@@ -25,7 +25,7 @@ export default async function handler(req, res) {
     return res.status(405).json({ error: 'Method not allowed' })
   }
 
-  res.setHeader('Cache-Control', 'public, max-age=0, s-maxage=60, stale-while-revalidate=300')
+  res.setHeader('Cache-Control', 'private, no-store, max-age=0')
 
   if (!client) return res.json(EMPTY)
 
